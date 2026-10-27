@@ -19,9 +19,14 @@ def write_if_changed(path: Path, content: str):
         path.write_text(content)
 
 
-def render_page(profile: DeviceProfile) -> str:
+def render_page(profile: DeviceProfile, *, cohort="reference") -> str:
     e = html.escape
     p = profile
+    attribution = (
+        '<span>Data adapted from TechAPI · <a href="../assets/stage-c-attribution.txt">CC BY-SA 4.0 / attribution</a></span>'
+        if cohort == "generated"
+        else ""
+    )
     review = "Human-reviewed" if is_review_approved(p) else "Human review pending"
     cutout_note = (
         " Cutout geometry is unknown; the illustration omits it."
@@ -39,7 +44,7 @@ def render_page(profile: DeviceProfile) -> str:
 <section class="detail"><span class="kicker">ORIGINAL FRAME. SOURCED PROFILE.</span><h1><small>{e(p.brand)}</small>{e(p.model)}</h1><p class="lead">A static device preview, built from an original web shell and a sourced device profile.</p>
 <dl class="specs"><div><dt>Resolution</dt><dd>{p.screen.width_px} × {p.screen.height_px}</dd></div><div><dt>Android</dt><dd>{e(p.os_version)}</dd></div><div><dt>Physical density*</dt><dd>{p.screen.dpi:g} PPI</dd></div><div><dt>Hardware RAM</dt><dd>{p.ram_gb:g} GB</dd></div></dl>
 <p class="notice">{review}. Runtime is disabled; build provenance and human approval are required for promotion. Original artwork; no manufacturer UI is reproduced.{cutout_note}</p><div class="sources">*Physical density from sourced specifications or labeled calculations; not Android logical DPI.{source_links}</div></section></main>
-<footer><span>SOFTWARE ONLY · NO HANDSETS · NO CLOUD RESOURCES</span><span>Profile year · {p.release_year}</span></footer></body></html>
+<footer><span>SOFTWARE ONLY · NO HANDSETS · NO CLOUD RESOURCES</span><span>Profile year · {p.release_year}</span>{attribution}</footer></body></html>
 """
 
 
@@ -72,7 +77,9 @@ def generate(profile_dir: Path, output: Path, *, allow_draft=False, root=ROOT):
     # All profiles are validated before output writes.
     catalog = []
     for p in profiles:
-        write_if_changed(output / "simulators" / f"{p.id}.html", render_page(p))
+        write_if_changed(
+            output / "simulators" / f"{p.id}.html", render_page(p, cohort=cohorts[p.id])
+        )
         data = p.model_dump(mode="json", by_alias=True)
         write_if_changed(output / "profiles" / f"{p.id}.json", json.dumps(data, indent=2) + "\n")
         catalog.append(
@@ -85,6 +92,9 @@ def generate(profile_dir: Path, output: Path, *, allow_draft=False, root=ROOT):
         )
     write_if_changed(output / "catalog.json", json.dumps(catalog, indent=2) + "\n")
     write_if_changed(output / "assets/static.css", SITE_CSS + "\n")
+    attribution_source = root / "data/research/stage-c/ATTRIBUTION.md"
+    if attribution_source.exists():
+        write_if_changed(output / "assets/stage-c-attribution.txt", attribution_source.read_text())
     for shell_id in sorted({p.shell_id for p in profiles}):
         for name in ("shell.html", "shell.css", "shell.js", "meta.json"):
             write_if_changed(

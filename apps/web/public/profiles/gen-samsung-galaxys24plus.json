@@ -1,0 +1,31 @@
+{
+  "id": "gen-samsung-galaxys24plus",
+  "brand": "samsung",
+  "model": "Galaxy S24+",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "samsung",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1440,
+    "height_px": 3120,
+    "dpi": 513.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Samsung_Galaxy_S24",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2024/galaxy-s24-plus.json",
+    "https://www.samsung.com/global/galaxy/galaxy-s24/specs/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

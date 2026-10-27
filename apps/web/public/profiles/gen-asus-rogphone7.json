@@ -1,0 +1,31 @@
+{
+  "id": "gen-asus-rogphone7",
+  "brand": "asus",
+  "model": "ASUS ROG Phone 7",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "asus",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2448,
+    "dpi": 395.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 16.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Asus_ROG_Phone_7",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2023/asus-rog-phone-7.json",
+    "https://rog.asus.com/phones/rog-phone-7-model/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

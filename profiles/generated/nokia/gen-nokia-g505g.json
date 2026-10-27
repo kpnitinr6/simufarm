@@ -1,0 +1,30 @@
+{
+  "id": "gen-nokia-g505g",
+  "brand": "nokia",
+  "model": "Nokia G50 5G",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "11",
+  "shell_id": "nokia",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1640,
+    "dpi": 263.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g50-5g/nokia-g50-5g-4gb-64gb-5g.json",
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

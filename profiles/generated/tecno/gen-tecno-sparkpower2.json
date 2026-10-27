@@ -1,0 +1,30 @@
+{
+  "id": "gen-tecno-sparkpower2",
+  "brand": "tecno",
+  "model": "TECNO Spark Power 2",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1640,
+    "dpi": 256.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2020/spark-power-2/tecno-spark-power-2-scrapegsma-677.json",
+    "https://github.com/cigarplug/scrape-gsma"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

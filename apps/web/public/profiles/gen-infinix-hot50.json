@@ -1,0 +1,30 @@
+{
+  "id": "gen-infinix-hot50",
+  "brand": "infinix",
+  "model": "Infinix Hot 50",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "infinix",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 262.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/infinix/2024/hot-50/infinix-hot-50-8gb-128gb-5g.json",
+    "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

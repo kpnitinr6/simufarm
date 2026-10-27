@@ -1,0 +1,31 @@
+{
+  "id": "gen-nokia-c12pro",
+  "brand": "nokia",
+  "model": "Nokia C12 Pro",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "nokia",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 278.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 2.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c12-pro/nokia-c12-pro-beridzeg45-5198-2gb.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/nokia_c12_pro-12184.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

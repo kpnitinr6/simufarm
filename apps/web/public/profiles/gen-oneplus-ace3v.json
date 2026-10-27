@@ -1,0 +1,30 @@
+{
+  "id": "gen-oneplus-ace3v",
+  "brand": "oneplus",
+  "model": "OnePlus Ace 3V",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "oneplus",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1240,
+    "height_px": 2772,
+    "dpi": 451.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/ace-3v/oneplus-ace-3v-beridzeg45-5190-12gb.json",
+    "https://www.gsmarena.com/oneplus_ace_3v-12889.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

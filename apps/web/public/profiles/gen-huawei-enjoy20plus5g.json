@@ -1,0 +1,30 @@
+{
+  "id": "gen-huawei-enjoy20plus5g",
+  "brand": "huawei",
+  "model": "Huawei Enjoy 20 Plus 5G",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "huawei",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 397.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 6.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/huawei/2020/enjoy-20-plus-5g/huawei-enjoy-20-plus-5g-beridzeg45-987-6gb.json",
+    "https://www.gsmarena.com/huawei_enjoy_20_plus_5g-10417.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gen-xiaomi-redmi14c5g",
+  "brand": "xiaomi",
+  "model": "Xiaomi Redmi 14C 5G",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "xiaomi",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1640,
+    "dpi": 260.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 6.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://aitoolbuzz.com/mobiles/xiaomi-redmi-14c-5g",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/redmi-14c-5g/xiaomi-redmi-14c-5g-aitoolbuzz-12931-6gb-64gb-5g.json"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

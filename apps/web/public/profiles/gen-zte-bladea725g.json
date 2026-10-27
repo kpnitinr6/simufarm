@@ -1,0 +1,30 @@
+{
+  "id": "gen-zte-bladea725g",
+  "brand": "zte",
+  "model": "ZTE Blade A72 5G",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "11",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 269.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2022/blade-a72-5g/zte-blade-a72-5g-beridzeg45-4197-4gb.json",
+    "https://www.gsmarena.com/zte_blade_a72_5g-11958.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

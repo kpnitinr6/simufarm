@@ -1,0 +1,30 @@
+{
+  "id": "gen-tecno-camon40pro",
+  "brand": "tecno",
+  "model": "Tecno Camon 40 Pro",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2436,
+    "dpi": 393.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://aitoolbuzz.com/mobiles/tecno-camon-40-pro-5g",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2025/camon-40-pro/tecno-camon-40-pro-aitoolbuzz-11287-12gb-256gb-5g.json"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

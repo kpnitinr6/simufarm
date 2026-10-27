@@ -1,0 +1,32 @@
+{
+  "id": "gen-asus-rogphone9",
+  "brand": "asus",
+  "model": "ASUS ROG Phone 9",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "asus",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 388.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/ASUS_ROG_Phone_9",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2024/asus-rog-phone-9.json",
+    "https://rog.asus.com/phones/rog-phone-9/",
+    "https://storage.googleapis.com/play_public/supported_devices.csv"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

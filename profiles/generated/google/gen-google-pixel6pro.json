@@ -1,0 +1,31 @@
+{
+  "id": "gen-google-pixel6pro",
+  "brand": "google",
+  "model": "Pixel 6 Pro",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "google",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1440,
+    "height_px": 3120,
+    "dpi": 513.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pixel_6_Pro",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2021/pixel-6-pro.json",
+    "https://store.google.com/us/product/pixel_6_pro_specs"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

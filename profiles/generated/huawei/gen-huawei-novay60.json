@@ -1,0 +1,30 @@
+{
+  "id": "gen-huawei-novay60",
+  "brand": "huawei",
+  "model": "Huawei nova Y60",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "huawei",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 266.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/huawei/2021/nova-y60/huawei-nova-y60-beridzeg45-2458-4gb.json",
+    "https://www.gsmarena.com/huawei_nova_y60-11328.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,31 @@
+{
+  "id": "gen-huawei-pura70ultra",
+  "brand": "huawei",
+  "model": "Huawei Pura 70 Ultra",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "huawei",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1260,
+    "height_px": 2844,
+    "dpi": 457.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 16.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://consumer.huawei.com/en/phones/pura70ultra/specs/",
+    "https://en.wikipedia.org/wiki/Huawei_Pura_70_Ultra",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/huawei/2024/huawei-pura-70-ultra.json"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gen-lenovo-k15plus",
+  "brand": "lenovo",
+  "model": "K15 Plus 2022",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "lenovo",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 270.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/lenovo/2022/k15-plus-2022.json",
+    "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

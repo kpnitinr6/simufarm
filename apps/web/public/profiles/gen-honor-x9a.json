@@ -1,0 +1,30 @@
+{
+  "id": "gen-honor-x9a",
+  "brand": "honor",
+  "model": "Honor X9a",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "honor",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 395.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/honor/2023/honor-x9a.json",
+    "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

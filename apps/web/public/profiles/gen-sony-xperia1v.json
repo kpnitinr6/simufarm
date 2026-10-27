@@ -1,0 +1,31 @@
+{
+  "id": "gen-sony-xperia1v",
+  "brand": "sony",
+  "model": "Xperia 1 V",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "sony",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1644,
+    "height_px": 3840,
+    "dpi": 643.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Sony_Xperia_1_V",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2023/xperia-1-v.json",
+    "https://www.sony.com/en/articles/xperia-1-v-specifications"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

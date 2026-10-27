@@ -1,0 +1,32 @@
+{
+  "id": "gen-realme-note60x",
+  "brand": "realme",
+  "model": "Realme Note 60x",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "realme",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 260.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2025/note-60x/realme-note-60x-4gb-64gb-4g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/realme-note-60x"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

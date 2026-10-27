@@ -1,0 +1,31 @@
+{
+  "id": "gen-nokia-c2tennen",
+  "brand": "nokia",
+  "model": "Nokia C2 Tennen",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "nokia",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1440,
+    "dpi": 295.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 2.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/c2-tennen/nokia-c2-tennen-scrapegsma-1267.json",
+    "https://github.com/cigarplug/scrape-gsma",
+    "https://storage.googleapis.com/play_public/supported_devices.csv"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

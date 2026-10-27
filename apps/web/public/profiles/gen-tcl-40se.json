@@ -1,0 +1,30 @@
+{
+  "id": "gen-tcl-40se",
+  "brand": "tcl",
+  "model": "TCL 40 SE",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "tcl",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 260.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2023/40-se/tcl-40-se-4gb-128gb-4g-lte.json",
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "gen-zte-bladev60design",
+  "brand": "zte",
+  "model": "Zte Blade V60 Design",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 267.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2024/blade-v60-design/zte-blade-v60-design-4gb-256gb-4g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/zte-blade-v60-design"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

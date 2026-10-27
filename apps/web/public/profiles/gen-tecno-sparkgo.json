@@ -1,0 +1,31 @@
+{
+  "id": "gen-tecno-sparkgo",
+  "brand": "tecno",
+  "model": "Tecno Spark Go 2024",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 267.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 3.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2023/spark-go-2024/tecno-spark-go-2024-beridzeg45-911-3gb.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/tecno_spark_go_2024-12702.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

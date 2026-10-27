@@ -1,0 +1,30 @@
+{
+  "id": "gen-tecno-camon15premier",
+  "brand": "tecno",
+  "model": "TECNO Camon 15 Premier",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2340,
+    "dpi": 390.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 6.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2020/camon-15-premier/tecno-camon-15-premier-scrapegsma-680.json",
+    "https://github.com/cigarplug/scrape-gsma"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -10,11 +10,13 @@
     "teardrop",
     "punch_hole",
     "notch",
-    "dynamic_island"
+    "dynamic_island",
+    "unknown"
   ],
   "sources": [
     "https://www.vivo.com/in/products/y100",
     "https://www.vivo.com/in/products/x100",
     "https://www.vivo.com/in/products/v30"
-  ]
+  ],
+  "unknown_cutout_policy": "Omit cutout artwork when source geometry is unknown; not a hardware absence claim."
 }

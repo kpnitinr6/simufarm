@@ -1,0 +1,30 @@
+{
+  "id": "gen-huawei-mate40rsporschedesign",
+  "brand": "huawei",
+  "model": "Huawei Mate 40 RS Porsche Design",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "huawei",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1344,
+    "height_px": 2772,
+    "dpi": 456.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/huawei/2020/mate-40-rs-porsche-design/huawei-mate-40-rs-porsche-design-beridzeg45-1771-8gb.json",
+    "https://www.gsmarena.com/huawei_mate_40_rs_porsche_design-10551.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

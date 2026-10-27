@@ -1,0 +1,31 @@
+{
+  "id": "gen-infinix-smart8pro",
+  "brand": "infinix",
+  "model": "Infinix Smart 8 Pro",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "infinix",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 267.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/infinix/2024/smart-8-pro/infinix-smart-8-pro-beridzeg45-6107-4gb.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/infinix_smart_8_pro-12812.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

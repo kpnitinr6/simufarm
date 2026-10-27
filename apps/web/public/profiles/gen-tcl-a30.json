@@ -1,0 +1,30 @@
+{
+  "id": "gen-tcl-a30",
+  "brand": "tcl",
+  "model": "TCL A30",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "11",
+  "shell_id": "tcl",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1440,
+    "dpi": 293.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 3.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/a30/tcl-a30-beridzeg45-165-3gb.json",
+    "https://www.gsmarena.com/tcl_a30-11360.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

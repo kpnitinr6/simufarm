@@ -1,0 +1,30 @@
+{
+  "id": "gen-honor-x50pro",
+  "brand": "honor",
+  "model": "Honor X50 Pro",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "honor",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1220,
+    "height_px": 2652,
+    "dpi": 431.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/honor/2023/x50-pro/honor-x50-pro-beridzeg45-5650-12gb.json",
+    "https://www.gsmarena.com/honor_x50_pro-12763.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

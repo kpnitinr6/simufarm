@@ -1,0 +1,32 @@
+{
+  "id": "gen-oppo-k13",
+  "brand": "oppo",
+  "model": "Oppo K13",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "oppo",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 395.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oppo/2025/k13/oppo-k13-8gb-128gb-5g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/oppo-k13"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

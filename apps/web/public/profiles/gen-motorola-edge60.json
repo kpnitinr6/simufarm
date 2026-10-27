@@ -1,0 +1,31 @@
+{
+  "id": "gen-motorola-edge60",
+  "brand": "motorola",
+  "model": "Motorola Edge 60",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "motorola",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1220,
+    "height_px": 2712,
+    "dpi": 446.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://aitoolbuzz.com/mobiles/motorola-edge-60",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/motorola/2025/edge-60/motorola-edge-60-aitoolbuzz-6127-12gb-256gb-5g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

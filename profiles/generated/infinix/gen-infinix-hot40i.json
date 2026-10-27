@@ -1,0 +1,32 @@
+{
+  "id": "gen-infinix-hot40i",
+  "brand": "infinix",
+  "model": "Infinix Hot 40i",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "infinix",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 269.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/infinix/2024/hot-40i/infinix-hot-40i-8gb-128gb-4g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/infinix-hot-40i"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

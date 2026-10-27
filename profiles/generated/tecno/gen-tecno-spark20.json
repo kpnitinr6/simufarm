@@ -1,0 +1,32 @@
+{
+  "id": "gen-tecno-spark20",
+  "brand": "tecno",
+  "model": "Tecno Spark 20",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 267.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2023/spark-20/tecno-spark-20-8gb-256gb-4g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/tecno-spark-20"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

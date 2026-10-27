@@ -1,0 +1,31 @@
+{
+  "id": "gen-realme-gtneo6se",
+  "brand": "realme",
+  "model": "Realme GT Neo6 SE",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "realme",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1264,
+    "height_px": 2780,
+    "dpi": 450.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2024/gt-neo6-se/realme-gt-neo6-se-beridzeg45-3679-8gb.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/realme_gt_neo6_se-12898.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

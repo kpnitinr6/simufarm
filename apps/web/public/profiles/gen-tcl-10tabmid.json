@@ -1,0 +1,30 @@
+{
+  "id": "gen-tcl-10tabmid",
+  "brand": "tcl",
+  "model": "TCL 10 TabMid",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "tcl",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1200,
+    "height_px": 1920,
+    "dpi": 283.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 3.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-tabmid/tcl-10-tabmid-3gb-32gb-4g-lte.json",
+    "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

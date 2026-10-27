@@ -1,0 +1,31 @@
+{
+  "id": "gen-vivo-x200fe",
+  "brand": "vivo",
+  "model": "Vivo X200 FE",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "vivo",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1216,
+    "height_px": 2640,
+    "dpi": 461.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/x200-fe/vivo-x200-fe-12gb-256gb-5g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

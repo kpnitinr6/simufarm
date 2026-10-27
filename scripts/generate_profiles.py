@@ -73,8 +73,7 @@ def read_rows(csv_path):
             raise ValueError(f"Unsafe identity on line {line}")
         model_key = re.sub(r"[^a-z0-9]", "", row["model"].casefold().replace("+", "plus"))
         brand_key = re.sub(r"[^a-z0-9]", "", row["brand"].casefold())
-        if model_key.startswith(brand_key):
-            model_key = model_key[len(brand_key) :]
+        model_key = model_key.removeprefix(brand_key)
         identity = (row["brand"], model_key)
         if row["id"] in ids or identity in identities:
             raise ValueError(f"Duplicate device on line {line}")

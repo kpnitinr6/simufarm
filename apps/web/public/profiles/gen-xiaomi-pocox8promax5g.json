@@ -1,0 +1,30 @@
+{
+  "id": "gen-xiaomi-pocox8promax5g",
+  "brand": "xiaomi",
+  "model": "Poco X8 Pro Max 5G",
+  "release_year": 2026,
+  "os_family": "android",
+  "os_version": "16",
+  "shell_id": "xiaomi",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1280,
+    "height_px": 2772,
+    "dpi": 447.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2026/poco-x8-pro-max-5g-12gb-ram-512gb/xiaomi-poco-x8-pro-max-5g-12gb-ram-512gb-12gb-512gb-5g.json",
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}
