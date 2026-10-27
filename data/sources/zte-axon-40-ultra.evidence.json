@@ -1,0 +1,130 @@
+{
+  "profile_id": "zte-axon-40-ultra",
+  "market": "China;8GB physical RAM /256GB; not global128GB variant",
+  "hardware_ram_gb": 8,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; public primary sources, no paid model/API calls",
+  "field_evidence": {
+    "brand": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://www.zte.com.cn/global/about/news/20220511e1.html"
+      ],
+      "method": "manufacturer dated announcement; launch year, not a firmware timestamp"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "derived physical PPI = round(sqrt(1116² + 2480²)/6.8); not Android logical density"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "manufacturer physical RAM option; excludes storage-backed expansion"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "visual classification of manufacturer product illustration/text; stylized shell, human review pending"
+    },
+    "id": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    }
+  },
+  "runtime_ready": false,
+  "source_summary": "ZTE China lists MyOS12 compatible withAndroid12,8GB+256GB,6.8-inch2480x1116 and under-display camera. Manufacturer China launch article dated11May2022.",
+  "notes": [
+    "Original stylized shell artwork; not an OEM screenshot.",
+    "Build properties unknown; no fingerprint or firmware property inferred from marketed model name.",
+    "Physical display PPI does not establish Android wm density."
+  ]
+}

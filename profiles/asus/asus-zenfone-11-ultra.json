@@ -1,0 +1,36 @@
+{
+  "id": "asus-zenfone-11-ultra",
+  "brand": "asus",
+  "model": "Zenfone 11 Ultra",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "asus",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 388
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 12,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/",
+    "https://press.asus.com/news/press-releases/en-asus-introduces-zenfone-11-ultra-smartphone-innovation"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

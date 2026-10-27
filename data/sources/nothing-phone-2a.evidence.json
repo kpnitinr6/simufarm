@@ -1,0 +1,131 @@
+{
+  "profile_id": "nothing-phone-2a",
+  "market": "Netherlands manufacturer launch-era specification;8GB physical RAM /128GB",
+  "hardware_ram_gb": 8,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; public primary sources, no paid model/API calls",
+  "field_evidence": {
+    "brand": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "model": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://nothing.community/d/6119-this-is-phone-2a"
+      ],
+      "method": "manufacturer dated announcement; launch year, not a firmware timestamp"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer-stated physical PPI; not Android logical density"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "manufacturer physical RAM option; excludes storage-backed expansion"
+    },
+    "notch": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "visual classification of manufacturer product illustration/text; stylized shell, human review pending"
+    },
+    "id": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "build": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "sources": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    }
+  },
+  "runtime_ready": false,
+  "source_summary": "Nothing Netherlands product page lists Android14,8GB option,1084x2412 and394PPI. Manufacturer newsroom announcement gives5March2024 reveal.",
+  "notes": [
+    "Original stylized shell artwork; not an OEM screenshot.",
+    "Build properties unknown; no fingerprint or firmware property inferred from marketed model name.",
+    "Physical display PPI does not establish Android wm density.",
+    "Unresolved manufacturer discrepancy: product page says1084x2412; support article says1080x2412. Product-page value retained as a static draft and must be reconciled before human approval/runtime promotion."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "tcl-50-pro-nxtpaper-5g",
+  "brand": "tcl",
+  "model": "50 PRO NXTPAPER 5G",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "tcl",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2460,
+    "dpi": 396
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.tcl.com/global/en/mobile/tcl-50-pro-nxtpaper-5g",
+    "https://www.tcl.com/global/en/news/tcl-unveils-two-new-ai-enhanced-nxtpaper-smartphones-revolutionizing-smart-comfort-for-consuming-creating-and-reading-content-on-the-go",
+    "https://pimcontent1.ingrammicro.com/se/assets/media/brochure/cl66164_cl66164_2104817074.pdf"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}
