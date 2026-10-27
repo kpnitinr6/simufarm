@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "planning-only",
+  "images": [],
+  "policy": {
+    "target_shared_images_min": 5,
+    "target_shared_images_max": 8,
+    "per_brand_clones_allowed": false,
+    "binary_images_in_git": false
+  },
+  "note": "Add licensed, checksummed shared Android images only in P4; no availability asserted."
+}

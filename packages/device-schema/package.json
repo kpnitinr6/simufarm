@@ -1,0 +1,9 @@
+{
+  "name": "@simufarm/device-schema",
+  "version": "0.1.0",
+  "types": "src/index.d.ts",
+  "files": [
+    "src",
+    "json-schema"
+  ]
+}

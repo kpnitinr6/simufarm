@@ -1,0 +1,31 @@
+{
+  "id": "P1-generator",
+  "agent": "codex",
+  "branch": "agent/codex/P1-generator",
+  "status": "blocked",
+  "inputs": [
+    "Approved human-verified profiles",
+    "packages/simulator-renderer"
+  ],
+  "outputs": [
+    "Static generator",
+    "1000 dev URLs",
+    "50 visual snapshots"
+  ],
+  "acceptance_criteria": [
+    "1000 approved static simulators generated",
+    "50 visual regression samples reviewed"
+  ],
+  "guardrails": [
+    "No invented specifications",
+    "No unverified profiles on main",
+    "No trademarked assets without license approval",
+    "No functional iOS emulation",
+    "No parallel edits to shared files",
+    "More than 50 concurrent emulators requires approval"
+  ],
+  "needs_human": [
+    "P0 complete or approved skip ADR",
+    "Verified profile data"
+  ]
+}

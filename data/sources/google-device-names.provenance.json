@@ -1,0 +1,32 @@
+{
+  "source_url": "https://storage.googleapis.com/play_public/supported_devices.csv",
+  "publisher_page": "https://support.google.com/googleplay/answer/1727131",
+  "retrieved_on": "2026-10-27",
+  "raw_sha256": "649184a1b1895f8b5451d67e67f205e65be541849169a39237b2bb8bcb1c406c",
+  "raw_row_count": 54288,
+  "selected_count": 1000,
+  "brand_counts": {
+    "Samsung": 53,
+    "Xiaomi": 52,
+    "OPPO": 52,
+    "vivo": 52,
+    "motorola": 52,
+    "HUAWEI": 52,
+    "HONOR": 52,
+    "realme": 52,
+    "OnePlus": 52,
+    "Google": 52,
+    "Sony": 52,
+    "Nokia": 52,
+    "ASUS": 52,
+    "Lenovo": 52,
+    "LGE": 52,
+    "TECNO": 52,
+    "Infinix": 52,
+    "Nothing": 11,
+    "ZTE": 52,
+    "TCL": 52
+  },
+  "use": "Names and model identifiers only. Not a source of technical device specifications.",
+  "license_status": "Public reference; redistribution rights not independently established. No logos, wallpapers, images, or raw full dataset bundled."
+}

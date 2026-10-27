@@ -1,0 +1,94 @@
+{
+  "$defs": {
+    "Limits": {
+      "additionalProperties": false,
+      "properties": {
+        "ram_mb": {
+          "exclusiveMinimum": 0,
+          "maximum": 32768,
+          "title": "Ram Mb",
+          "type": "integer"
+        },
+        "vcpu": {
+          "exclusiveMinimum": 0,
+          "maximum": 16,
+          "title": "Vcpu",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ram_mb",
+        "vcpu"
+      ],
+      "title": "Limits",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "simulator_id": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Simulator Id",
+      "type": "string"
+    },
+    "profile_id": {
+      "minLength": 1,
+      "title": "Profile Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "static",
+        "interactive",
+        "emulator"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "base_image_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Base Image Id"
+    },
+    "shell_asset_id": {
+      "minLength": 1,
+      "title": "Shell Asset Id",
+      "type": "string"
+    },
+    "storage_ref": {
+      "pattern": "^(?:s3|https)://.+$",
+      "title": "Storage Ref",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "building",
+        "failed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "limits": {
+      "$ref": "#/$defs/Limits"
+    }
+  },
+  "required": [
+    "simulator_id",
+    "profile_id",
+    "kind",
+    "base_image_id",
+    "shell_asset_id",
+    "storage_ref",
+    "status",
+    "limits"
+  ],
+  "title": "SimulatorManifest",
+  "type": "object"
+}

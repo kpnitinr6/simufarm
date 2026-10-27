@@ -1,0 +1,32 @@
+{
+  "id": "P0-bootstrap",
+  "agent": "codex",
+  "branch": "agent/codex/P0-bootstrap",
+  "status": "in_progress",
+  "inputs": [
+    "Master prompt"
+  ],
+  "outputs": [
+    "Monorepo scaffold",
+    "Schemas",
+    "CI configuration"
+  ],
+  "acceptance_criteria": [
+    "Local checks pass",
+    "Docker services verified on Docker host",
+    "Remote CI green",
+    "Packages published to approved registry"
+  ],
+  "guardrails": [
+    "No invented specifications",
+    "No unverified profiles on main",
+    "No trademarked assets without license approval",
+    "No functional iOS emulation",
+    "No parallel edits to shared files",
+    "More than 50 concurrent emulators requires approval"
+  ],
+  "needs_human": [
+    "Repository and registry access",
+    "Docker runtime"
+  ]
+}

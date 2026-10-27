@@ -1,0 +1,13 @@
+id: TASK-ID
+agent: codex
+branch: agent/codex/TASK-ID
+status: pending
+inputs: []
+outputs: []
+acceptance_criteria: []
+guardrails:
+  - No invented device specifications
+  - No paid provisioning without human approval
+  - No parallel edits to shared files
+  - No functional iOS emulation
+needs_human: []

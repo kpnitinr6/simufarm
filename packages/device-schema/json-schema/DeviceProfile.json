@@ -1,0 +1,212 @@
+{
+  "$defs": {
+    "Body": {
+      "additionalProperties": false,
+      "properties": {
+        "width_mm": {
+          "exclusiveMinimum": 0,
+          "title": "Width Mm",
+          "type": "number"
+        },
+        "height_mm": {
+          "exclusiveMinimum": 0,
+          "title": "Height Mm",
+          "type": "number"
+        },
+        "thickness_mm": {
+          "exclusiveMinimum": 0,
+          "title": "Thickness Mm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "width_mm",
+        "height_mm",
+        "thickness_mm"
+      ],
+      "title": "Body",
+      "type": "object"
+    },
+    "Notch": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "none",
+            "punch_hole",
+            "notch",
+            "dynamic_island"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "position": {
+          "enum": [
+            "none",
+            "top_center",
+            "top_left",
+            "top_right"
+          ],
+          "title": "Position",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "position"
+      ],
+      "title": "Notch",
+      "type": "object"
+    },
+    "Screen": {
+      "additionalProperties": false,
+      "properties": {
+        "width_px": {
+          "exclusiveMinimum": 0,
+          "title": "Width Px",
+          "type": "integer"
+        },
+        "height_px": {
+          "exclusiveMinimum": 0,
+          "title": "Height Px",
+          "type": "integer"
+        },
+        "dpi": {
+          "exclusiveMinimum": 0,
+          "title": "Dpi",
+          "type": "number"
+        },
+        "aspect": {
+          "pattern": "^\\d+(?:\\.\\d+)?:\\d+(?:\\.\\d+)?$",
+          "title": "Aspect",
+          "type": "string"
+        }
+      },
+      "required": [
+        "width_px",
+        "height_px",
+        "dpi",
+        "aspect"
+      ],
+      "title": "Screen",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "brand": {
+      "minLength": 1,
+      "title": "Brand",
+      "type": "string"
+    },
+    "model": {
+      "minLength": 1,
+      "title": "Model",
+      "type": "string"
+    },
+    "release_year": {
+      "maximum": 2100,
+      "minimum": 1980,
+      "title": "Release Year",
+      "type": "integer"
+    },
+    "os_family": {
+      "enum": [
+        "android",
+        "ios"
+      ],
+      "title": "Os Family",
+      "type": "string"
+    },
+    "os_versions": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Os Versions",
+      "type": "array"
+    },
+    "screen": {
+      "$ref": "#/$defs/Screen"
+    },
+    "body": {
+      "$ref": "#/$defs/Body"
+    },
+    "notch": {
+      "$ref": "#/$defs/Notch"
+    },
+    "buttons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Buttons",
+      "type": "array"
+    },
+    "ram_gb": {
+      "exclusiveMinimum": 0,
+      "title": "Ram Gb",
+      "type": "number"
+    },
+    "storage_gb": {
+      "exclusiveMinimum": 0,
+      "title": "Storage Gb",
+      "type": "number"
+    },
+    "sources": {
+      "items": {
+        "format": "uri",
+        "maxLength": 2083,
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Sources",
+      "type": "array"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "verified_by": {
+      "enum": [
+        "human",
+        "gemini",
+        "ollama"
+      ],
+      "title": "Verified By",
+      "type": "string"
+    },
+    "verified_at": {
+      "format": "date-time",
+      "title": "Verified At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "brand",
+    "model",
+    "release_year",
+    "os_family",
+    "os_versions",
+    "screen",
+    "body",
+    "notch",
+    "buttons",
+    "ram_gb",
+    "storage_gb",
+    "sources",
+    "confidence",
+    "verified_by",
+    "verified_at"
+  ],
+  "title": "DeviceProfile",
+  "type": "object"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "P4-emulator-spinup",
+  "agent": "deepseek",
+  "branch": "agent/deepseek/P4-emulator-spinup",
+  "status": "blocked",
+  "inputs": [
+    "Approved emulator manifests",
+    "Shared Android image references"
+  ],
+  "outputs": [
+    "Lifecycle worker",
+    "Host benchmark",
+    "Redroid ADR"
+  ],
+  "acceptance_criteria": [
+    "KVM checked",
+    "Fair queue and idle teardown tested",
+    "No full brand image clones",
+    "Cold start and resume measured"
+  ],
+  "guardrails": [
+    "No invented specifications",
+    "No unverified profiles on main",
+    "No trademarked assets without license approval",
+    "No functional iOS emulation",
+    "No parallel edits to shared files",
+    "More than 50 concurrent emulators requires approval"
+  ],
+  "needs_human": [
+    "P0-P3 complete or skip ADR",
+    "KVM host",
+    "Cloud provider selection and cost approval"
+  ]
+}

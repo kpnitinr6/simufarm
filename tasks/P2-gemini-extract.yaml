@@ -1,0 +1,32 @@
+{
+  "id": "P2-gemini-extract",
+  "agent": "gemini",
+  "branch": "agent/gemini/P2-gemini-extract",
+  "status": "blocked",
+  "inputs": [
+    "Human-approved _targets.yaml",
+    "Manufacturer spec pages"
+  ],
+  "outputs": [
+    "Draft profiles",
+    "Field evidence maps",
+    "Review queue"
+  ],
+  "acceptance_criteria": [
+    "All fields sourced",
+    "Confidence recorded",
+    "Human review before promotion"
+  ],
+  "guardrails": [
+    "No invented specifications",
+    "No unverified profiles on main",
+    "No trademarked assets without license approval",
+    "No functional iOS emulation",
+    "No parallel edits to shared files",
+    "More than 50 concurrent emulators requires approval"
+  ],
+  "needs_human": [
+    "Explicit target-list approval",
+    "Gemini integration or manual dispatch"
+  ]
+}
