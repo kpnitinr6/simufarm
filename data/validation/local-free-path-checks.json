@@ -1,0 +1,16 @@
+{
+  "observed_on": "2026-10-27",
+  "schema_version": "0.2.0",
+  "python": "3.14.6",
+  "node": "26.4.0",
+  "pytest_passed": 35,
+  "browser_smoke": "passed",
+  "ruff": "passed",
+  "contracts_drift": "passed",
+  "typescript_vite_build": "passed",
+  "active_yaml_parsed": 11,
+  "automatic_remote_ci": false,
+  "docker_runtime": "not_available",
+  "cloud_deployment": "not_performed",
+  "target_runtime_remote_ci": "not_run"
+}

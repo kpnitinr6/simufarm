@@ -1,12 +1,11 @@
 {
   "schema_version": 1,
-  "status": "planning-only",
+  "status": "blocked-runtime-compatibility",
   "images": [],
   "policy": {
-    "target_shared_images_min": 5,
-    "target_shared_images_max": 8,
     "per_brand_clones_allowed": false,
-    "binary_images_in_git": false
+    "binary_images_in_git": false,
+    "max_simultaneously_running_images": 1
   },
-  "note": "Add licensed, checksummed shared Android images only in P4; no availability asserted."
+  "note": "No compatible ARM/no-KVM docker-android image has been validated; no image pulled."
 }
