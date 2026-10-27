@@ -1,0 +1,22 @@
+{
+  "id": "honor",
+  "version": "0.1.0",
+  "kind": "static",
+  "author": "SimuFarm",
+  "assets": "Original HTML/CSS artwork only; no logo or manufacturer wallpaper",
+  "geometry": "Stylized bezel/button proportions, not dimensional hardware fidelity",
+  "theme": {
+    "frame_radius_px": 31,
+    "bezel_px": 8,
+    "accent": "#b9b0dc",
+    "volume_top_percent": 19
+  },
+  "supported_notches": [
+    "none",
+    "teardrop",
+    "punch_hole",
+    "notch",
+    "dynamic_island"
+  ],
+  "sources": []
+}

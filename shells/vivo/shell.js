@@ -10,6 +10,7 @@ export class VivoShell extends HTMLElement {
    if(width>0&&height>0)this.style.setProperty('--aspect',String(width/height));
    root.querySelector('[data-model]').textContent=this.getAttribute('model')||'Preview';
    root.querySelector('.device').dataset.notch=this.getAttribute('notch')||'none';
+   root.querySelector('.device').dataset.notchPosition=this.getAttribute('notch-position')||'top_center';
    this.setAttribute('data-ready','true');
   }catch{root.textContent='Device shell unavailable';this.setAttribute('data-error','true')}
  }
