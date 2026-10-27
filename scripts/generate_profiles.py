@@ -191,6 +191,11 @@ def prepare(row, template, csv_name):
         "runtime_ready": False,
         "field_evidence": fields,
         "cohort": "stage-c-generated",
+        "source_record": {
+            key: row.get(key)
+            for key in ("source_record", "source_record_sha256", "source_dataset", "source_notes")
+            if row.get(key)
+        },
         "pre_2020_justification": row.get("pre_2020_justification") or None,
         "screen_inches": float(row["screen_inches"]),
         "screen_size_class": screen_class(float(row["screen_inches"])),
@@ -230,6 +235,13 @@ def generate(
     rows = read_rows(csv_path)
     if require_cohort:
         validate_cohort(rows, exemptions)
+    reference_ids = {
+        path.stem
+        for path in (root / "profiles").rglob("*.json")
+        if "_templates" not in path.parts and not path.is_relative_to(output)
+    }
+    if reference_ids.intersection(row["id"] for row in rows):
+        raise ValueError("Generated identities collide with preserved reference/runtime profiles")
     pending = []
     for row in sorted(rows, key=lambda item: item["id"]):
         template = json.loads((templates / f"{row['brand']}.json").read_text())

@@ -26,6 +26,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/",
@@ -35,6 +36,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/asus-zenfone-11-ultra.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -64,6 +66,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://support.google.com/pixelphone/answer/7158570?hl=en",
@@ -73,6 +76,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/google-pixel-7.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -102,6 +106,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367",
@@ -111,6 +116,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/honor-90.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -140,6 +146,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://consumer.huawei.com/se/phones/p401/specs/",
@@ -149,6 +156,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/huawei-p40.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -178,6 +186,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.infinixmobility.com/specs/note-40",
@@ -189,6 +198,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/infinix-note-40.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -218,6 +228,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://gaming.lenovo.com/news/post/lenovo-unleashes-next-mobile-gaming-powerhouse-with-the-lenovo-legion-pWeMligmSqYKWUe",
@@ -227,6 +238,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/lenovo-legion-phone-duel-2.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -256,6 +268,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.lgcorp.com/media/release/22014",
@@ -265,6 +278,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/lg-velvet.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -294,6 +308,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://en-us.support.motorola.com/app/answers/detail/a_id/175746/~/technischen-daten--motorola-edge-40",
@@ -304,6 +319,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/motorola-edge-40.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -333,6 +349,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.hmd.com/en_gb/nokia-g-42/specs",
@@ -342,6 +359,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/nokia-g42.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -371,6 +389,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://nl.nothing.tech/pages/phone-2a",
@@ -381,6 +400,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/nothing-phone-2a.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -410,6 +430,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.oneplus.com/za/11/specs",
@@ -419,6 +440,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/oneplus-11.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -448,6 +470,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.oppo.com/cn/smartphones/series-find-x/find-x5/specs/",
@@ -458,6 +481,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/oppo-find-x5.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -487,6 +511,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.realme.com/global/realme-gt-2/specs",
@@ -496,6 +521,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/realme-gt-2.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -525,6 +551,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://image-us.samsung.com/SamsungUS/samsungbusiness/pdfs/datasheet/Galaxy_S21_Series_Datasheet_Unlocked.pdf",
@@ -534,6 +561,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/samsung-galaxy-s21.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -563,6 +591,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications",
@@ -573,6 +602,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/sony-xperia-1-vi.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -602,6 +632,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.tcl.com/global/en/mobile/tcl-50-pro-nxtpaper-5g",
@@ -612,6 +643,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/tcl-50-pro-nxtpaper-5g.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -641,6 +673,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/",
@@ -650,6 +683,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/tecno-camon-30.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -679,6 +713,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.vivo.com/in/products/param/v30",
@@ -689,6 +724,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/vivo-v30.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -720,6 +756,7 @@
         "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip"
       ]
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.vivo.com/in/products/param/x100",
@@ -733,6 +770,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/vivo-x100.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -764,6 +802,7 @@
         "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip"
       ]
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.vivo.com/in/products/param/y100",
@@ -777,6 +816,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/vivo-y100.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -806,6 +846,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.mi.com/global/product/xiaomi-13/specs/",
@@ -815,6 +856,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/xiaomi-13.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   },
   {
@@ -844,6 +886,7 @@
       "source_type": null,
       "sources": []
     },
+    "runtime_eligible": false,
     "source_type": "manual",
     "sources": [
       "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/",
@@ -853,6 +896,7 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/zte-axon-40-ultra.html",
+    "cohort": "reference",
     "review_status": "needs-human"
   }
 ]

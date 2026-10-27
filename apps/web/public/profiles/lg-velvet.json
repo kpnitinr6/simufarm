@@ -25,6 +25,7 @@
     "source_type": null,
     "sources": []
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://www.lgcorp.com/media/release/22014",

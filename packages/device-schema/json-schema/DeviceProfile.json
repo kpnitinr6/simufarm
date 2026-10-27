@@ -96,7 +96,8 @@
             "punch_hole",
             "notch",
             "teardrop",
-            "dynamic_island"
+            "dynamic_island",
+            "unknown"
           ],
           "title": "Type",
           "type": "string"
@@ -106,7 +107,8 @@
             "none",
             "top_center",
             "top_left",
-            "top_right"
+            "top_right",
+            "unknown"
           ],
           "title": "Position",
           "type": "string"

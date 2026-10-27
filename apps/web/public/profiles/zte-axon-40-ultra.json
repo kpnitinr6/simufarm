@@ -25,6 +25,7 @@
     "source_type": null,
     "sources": []
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/",

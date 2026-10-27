@@ -1,0 +1,19 @@
+{
+  "id": "stage-c-implementation",
+  "agent": "codex",
+  "branch": "agent/codex/stage-c-integration",
+  "status": "in_progress",
+  "outputs": [
+    "Deterministic generator",
+    "Null build and false runtime eligibility",
+    "1000 sourced static profiles/pages",
+    "Per-brand measured counts and exemptions",
+    "Green CI and proof"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "passed": true,
+    "execution_class": "local_only",
+    "reason": "Public dataset research and local code/public standard CI only; no cloud, paid APIs, MobileAPI calls or provisioning."
+  }
+}

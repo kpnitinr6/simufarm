@@ -14,8 +14,8 @@ class Screen(Contract):
 
 
 class Notch(Contract):
-    type: Literal["none", "punch_hole", "notch", "teardrop", "dynamic_island"]
-    position: Literal["none", "top_center", "top_left", "top_right"]
+    type: Literal["none", "punch_hole", "notch", "teardrop", "dynamic_island", "unknown"]
+    position: Literal["none", "top_center", "top_left", "top_right", "unknown"]
 
 
 class Build(Contract):

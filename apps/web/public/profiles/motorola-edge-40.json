@@ -25,6 +25,7 @@
     "source_type": null,
     "sources": []
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://en-us.support.motorola.com/app/answers/detail/a_id/175746/~/technischen-daten--motorola-edge-40",

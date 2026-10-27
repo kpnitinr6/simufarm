@@ -23,23 +23,29 @@ def render_page(profile: DeviceProfile) -> str:
     e = html.escape
     p = profile
     review = "Human-reviewed" if is_review_approved(p) else "Human review pending"
+    cutout_note = (
+        " Cutout geometry is unknown; the illustration omits it."
+        if p.notch.type == "unknown"
+        else ""
+    )
     source_links = "".join(
-        f'<a href="{e(str(url), quote=True)}" rel="noreferrer">Manufacturer source {i + 1} ↗</a>'
+        f'<a href="{e(str(url), quote=True)}" rel="noreferrer">Source {i + 1} ↗</a>'
         for i, url in enumerate(p.sources)
     )
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{e(p.brand)} {e(p.model)} — SimuFarm</title><link rel="stylesheet" href="../assets/static.css"><script type="module" src="../assets/shells/{e(p.shell_id)}/shell.js"></script></head>
-<body><header><a class="wordmark" href="../">simu<span>farm</span></a><span class="pill">STAGE B / STATIC DRAFT</span></header>
+<body><header><a class="wordmark" href="../">simu<span>farm</span></a><span class="pill">STATIC DEVICE DRAFT</span></header>
 <main class="layout"><section class="device-stage" aria-label="Device preview"><{e(p.shell_id)}-shell model="{e(p.model, quote=True)}" screen-width="{p.screen.width_px}" screen-height="{p.screen.height_px}" notch="{p.notch.type}" notch-position="{p.notch.position}"></{e(p.shell_id)}-shell></section>
 <section class="detail"><span class="kicker">ORIGINAL FRAME. SOURCED PROFILE.</span><h1><small>{e(p.brand)}</small>{e(p.model)}</h1><p class="lead">A static device preview, built from an original web shell and a sourced device profile.</p>
 <dl class="specs"><div><dt>Resolution</dt><dd>{p.screen.width_px} × {p.screen.height_px}</dd></div><div><dt>Android</dt><dd>{e(p.os_version)}</dd></div><div><dt>Physical density*</dt><dd>{p.screen.dpi:g} PPI</dd></div><div><dt>Hardware RAM</dt><dd>{p.ram_gb:g} GB</dd></div></dl>
-<p class="notice">{review}. Runtime is disabled; build provenance and human approval are required for promotion. Original artwork; no manufacturer UI is reproduced.</p><div class="sources">*Physical density from manufacturer specifications or labeled source calculations; not Android logical DPI.{source_links}</div></section></main>
+<p class="notice">{review}. Runtime is disabled; build provenance and human approval are required for promotion. Original artwork; no manufacturer UI is reproduced.{cutout_note}</p><div class="sources">*Physical density from sourced specifications or labeled calculations; not Android logical DPI.{source_links}</div></section></main>
 <footer><span>SOFTWARE ONLY · NO HANDSETS · NO CLOUD RESOURCES</span><span>Profile year · {p.release_year}</span></footer></body></html>
 """
 
 
 def generate(profile_dir: Path, output: Path, *, allow_draft=False, root=ROOT):
     profiles = []
+    cohorts = {}
     for path in sorted(profile_dir.rglob("*.json")):
         if "_templates" in path.parts:
             continue
@@ -58,6 +64,9 @@ def generate(profile_dir: Path, output: Path, *, allow_draft=False, root=ROOT):
         if p.id != path.stem:
             raise ValueError("Profile filename identity mismatch")
         profiles.append(p)
+        cohorts[p.id] = (
+            "generated" if "generated" in path.relative_to(profile_dir).parts else "reference"
+        )
     if len({p.id for p in profiles}) != len(profiles):
         raise ValueError("Duplicate profile identities")
     # All profiles are validated before output writes.
@@ -70,6 +79,7 @@ def generate(profile_dir: Path, output: Path, *, allow_draft=False, root=ROOT):
             {
                 **data,
                 "url": f"/simulators/{p.id}.html",
+                "cohort": cohorts[p.id],
                 "review_status": "human-reviewed" if is_review_approved(p) else "needs-human",
             }
         )

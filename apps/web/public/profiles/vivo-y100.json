@@ -27,6 +27,7 @@
       "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip"
     ]
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://www.vivo.com/in/products/param/y100",

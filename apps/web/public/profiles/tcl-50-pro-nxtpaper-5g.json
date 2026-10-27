@@ -25,6 +25,7 @@
     "source_type": null,
     "sources": []
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://www.tcl.com/global/en/mobile/tcl-50-pro-nxtpaper-5g",

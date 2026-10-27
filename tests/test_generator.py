@@ -157,3 +157,11 @@ def test_per_brand_exemption_must_be_explicit_and_current():
     assert generator.validate_cohort(rows, exemptions)["nothing"] == 11
     with pytest.raises(ValueError, match="Stale"):
         generator.validate_cohort(cohort_rows(), exemptions)
+
+
+def test_generated_ids_cannot_overwrite_reference_evidence(tmp_path):
+    (tmp_path / "profiles/google").mkdir(parents=True)
+    (tmp_path / "profiles/google/google-test.json").write_text("{}")
+    with pytest.raises(ValueError, match="collide"):
+        run(tmp_path, [row()])
+    assert not (tmp_path / "data").exists()
