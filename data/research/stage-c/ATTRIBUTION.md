@@ -1,0 +1,14 @@
+# Stage C specification candidate provenance
+
+The derived CSV and selected row-provenance receipts adapt factual records from **GetTechAPI / GTA Foundation, TechAPI**, revision `db1dea0c38ff07fcf400aa05d8c8e4393348eb25`:
+https://github.com/GetTechAPI/TechAPI/tree/db1dea0c38ff07fcf400aa05d8c8e4393348eb25
+
+The upstream README expressly identifies its **data as CC BY-SA 4.0**, despite its general repository LICENSE being MIT for software. This factual-data adaptation and `row-provenance.json` are distributed under **CC BY-SA 4.0**: https://creativecommons.org/licenses/by-sa/4.0/ . Attribution, source links, changes, and share-alike terms are retained here. SimuFarm's own code license is unchanged. Original manufacturer source ownership remains with its respective owner; no logos, photographs, or wallpapers are reproduced.
+
+Changes: select Android phones released 2020 through 2026-10-27 with required numerical specifications; reject future/non-Android, obvious tablets, regional/carrier/RAM/cosmetic duplicates, invalid geometry, missing/unknown chipsets, known misdated LG X4 Plus, and unverified ASUS ROG Phone10/7Pro records. Normalize model identity and chipset families. Recompute **physical PPI**, not Android logical density, from cited pixels and diagonal. Mark notch geometry unknown rather than infer it. Choose a deterministic coverage/release-recency cohort; this is **not a model-popularity ranking**. Supplemental Nothing Phone4a/4aPro and Phone2aPlus facts use cited official product specifications with literal excerpts.
+
+Every CSV row includes an immutable dataset record URL plus underlying source URLs, or direct official supplement URL(s). `row-provenance.json` includes raw selected technical fields, source-record SHA256, path, and transformation explanations. Run `import_techapi.py /path/to/TechAPI` at this pinned revision, then `measure_diversity.py`, from repository root to reproduce.
+
+**Evidence limits:** this is a secondary-source static draft cohort, not 1,000 independently manufacturer-verified devices. Upstream `verified: true` is not adopted as human approval. The upstream corpus contains inconsistencies and duplicate or inaccurate rows; simple soundness filters do not prove every specification correct. The known regional Pixel9Pro erroneous record is excluded by regional filters. Ambiguous OS and region claims need human/source review before runtime use. All generated build blocks must remain null and runtime eligibility false. No inferred build properties or unsupported model popularity scores are supplied.
+
+Nothing count11 includes two actual CMF-branded Nothing-company models (CMFPhone1 and CMFPhone2Pro), disclosed explicitly. No Community Edition/cosmetic variants fill its quota. Diversity measurements count actual stated Android versions, manufacturer diagonal size classes, and normalized chip families; filed exemptions are measured, not assumed from brand stereotypes.
