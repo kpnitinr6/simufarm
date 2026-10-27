@@ -118,6 +118,14 @@
         "https://www.vivo.com/in/products/param/v30"
       ],
       "method": "manual provenance/editorial confidence metadata, not device fact"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30",
+        "https://vivonewsroom.in/press-release/vivo-announces-vivo-v30-series-elevating-portrait-photography-with-studio-quality-aura-light-and-zeiss-partnership-in-v30-pro/",
+        "https://www.vivo.com/in/products/v30"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

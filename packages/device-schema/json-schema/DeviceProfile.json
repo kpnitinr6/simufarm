@@ -54,7 +54,9 @@
                 "manufacturer_spec",
                 "lineageos_tree",
                 "xda_dump",
-                "firmware"
+                "firmware",
+                "third_party_device_db",
+                "firmware_dump"
               ],
               "type": "string"
             },
@@ -209,7 +211,19 @@
       "type": "number"
     },
     "build": {
-      "$ref": "#/$defs/Build"
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Build"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "runtime_eligible": {
+      "default": false,
+      "title": "Runtime Eligible",
+      "type": "boolean"
     },
     "source_type": {
       "enum": [

@@ -13,6 +13,7 @@ def profile_data():
         "os_version": "14",
         "shell_id": "synthetic-shell",
         "base_image_id": "shared-android14",
+        "runtime_eligible": True,
         "build": {
             "ro.product.brand": "Synthetic",
             "ro.product.model": "Fixture",

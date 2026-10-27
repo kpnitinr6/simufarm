@@ -120,6 +120,17 @@
         "https://www.vivo.com/in/products/param/y100"
       ],
       "method": "manual provenance/editorial confidence metadata, not device fact"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/y100",
+        "https://vivonewsroom.in/press-release/vivo-launches-y100-the-first-premium-y-series-smartphone-with-two-color-changing-variants-in-india/",
+        "https://www.vivo.com/in/products/y100",
+        "https://www.vivo.com/in/support/upgradePackageData?id=198",
+        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip",
+        "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

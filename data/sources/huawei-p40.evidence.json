@@ -127,6 +127,13 @@
         "https://consumer.huawei.com/se/phones/p401/specs/"
       ],
       "method": "derived approximate physical PPI=round(hypot(1080,2340)/6.1)=422; diagonal 6.1 inches manufacturer-stated; not Android logical densityDpi"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://consumer.huawei.com/se/phones/p401/specs/",
+        "https://consumer.huawei.com/en/about-us/"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

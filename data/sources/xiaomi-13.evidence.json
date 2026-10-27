@@ -127,6 +127,13 @@
         "https://www.mi.com/global/product/xiaomi-13/specs/"
       ],
       "method": "derived approximate physical PPI=round(hypot(1080,2400)/6.36)=414; diagonal 6.36 inches manufacturer-stated; not Android logical densityDpi"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.mi.com/global/product/xiaomi-13/specs/",
+        "https://www.mi.com/uk/discover/article?id=3382"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

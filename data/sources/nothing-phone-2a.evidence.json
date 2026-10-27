@@ -118,6 +118,14 @@
         "https://nl.nothing.tech/pages/phone-2a"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://nl.nothing.tech/pages/phone-2a",
+        "https://nothing.community/d/6119-this-is-phone-2a",
+        "https://support.nothing.tech/hc/en-us/articles/22960522709265-What-s-the-screen-parameter-information-of-Phone-2a"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

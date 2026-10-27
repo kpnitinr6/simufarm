@@ -11,7 +11,8 @@
     "Verify account-specific free A1 eligibility and 2 OCPU / 12 GB baseline",
     "Review retry tool source and pin revision",
     "Keep keys/env out of tracked files",
-    "Operator Stage C acceptance required before execute"
+    "Operator Stage C acceptance required before execute",
+    "Confirm X100 region decision (China vs India) before Stage E"
   ],
   "zero_spend_check": {
     "will_create_bill": false,

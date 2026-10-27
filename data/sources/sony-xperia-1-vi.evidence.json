@@ -51,7 +51,7 @@
       "source_urls": [
         "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
       ],
-      "method": "derived physical PPI = round(sqrt(1080² + 2340²)/6.5); not Android logical density"
+      "method": "derived physical PPI = round(sqrt(1080\u00b2 + 2340\u00b2)/6.5); not Android logical density"
     },
     "ram_gb": {
       "source_urls": [
@@ -118,6 +118,14 @@
         "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications",
+        "https://www.sony.com.hk/press/pdf/20240515_e.pdf",
+        "https://store.sony.com.my/products/xperia-1m6"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

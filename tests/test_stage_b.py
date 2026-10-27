@@ -38,7 +38,7 @@ def test_twenty_original_shells_and_templates():
         signatures.add((folder / "shell.css").read_text())
         template = json.loads((ROOT / "profiles/_templates" / f"{brand}.json").read_text())
         assert template["brand"] == template["shell_id"] == brand
-        assert template["build"]["sources"] == [] and template["verified_by"] is None
+        assert template["build"] is None and template["runtime_eligible"] is False and template["verified_by"] is None
         assert "{{" in template["model"]
     assert len(signatures) == 20
 

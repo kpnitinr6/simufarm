@@ -127,6 +127,13 @@
         "https://www.oneplus.com/za/11/specs"
       ],
       "method": "manufacturer physical PPI 525; not Android logical densityDpi"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs",
+        "https://www.oneplus.com/us/press/press-release/oneplus-welcomes-2023-with-the-launch-of-three-flagship-products"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,
