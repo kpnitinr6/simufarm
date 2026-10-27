@@ -1,0 +1,36 @@
+{
+  "id": "huawei-p40",
+  "brand": "HUAWEI",
+  "model": "P40",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "huawei",
+  "base_image_id": "android-10-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2340,
+    "dpi": 422.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_left"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://consumer.huawei.com/se/phones/p401/specs/",
+    "https://consumer.huawei.com/en/about-us/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

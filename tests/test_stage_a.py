@@ -18,7 +18,11 @@ def test_three_stage_a_profiles_are_sourced_drafts():
     for path in paths:
         p = DeviceProfile.model_validate_json(path.read_text())
         assert len(p.sources) >= 2 and p.verified_by is None and p.verified_at is None
-        assert all(value is None for value in p.build.properties())
+        assert p.build.brand is None and p.build.model is None and p.build.device is None
+        if p.id != "vivo-v30":
+            assert p.build.fingerprint and p.build.source_type == "firmware"
+        else:
+            assert p.build.fingerprint is None
 
 
 def test_static_generation_is_deterministic_and_idempotent(tmp_path):

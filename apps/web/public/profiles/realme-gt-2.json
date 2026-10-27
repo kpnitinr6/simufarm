@@ -1,0 +1,36 @@
+{
+  "id": "realme-gt-2",
+  "brand": "realme",
+  "model": "GT 2",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "realme",
+  "base_image_id": "android-12-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 398.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_left"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.realme.com/global/realme-gt-2/specs",
+    "https://www.realme.com/eu/newsroom/announces-launch-gt-2-series"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

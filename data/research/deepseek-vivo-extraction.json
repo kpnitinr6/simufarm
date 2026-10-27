@@ -1,0 +1,49 @@
+{
+  "provider": "local-ollama",
+  "paid_api_used": false,
+  "receipts": [
+    {
+      "profile_id": "vivo-y100",
+      "source_sha256": "068da9357eadfe051826b714141ae241b36610a1fdb87cff8d34c834fe891908",
+      "model": "deepseek-r1:8b",
+      "done_reason": "stop",
+      "elapsed_seconds": 16.206,
+      "response": "{\n\n  \"profile_id\": \"vivo-y100\",\n  \"fingerprint\": \"vivo/V2239/V2239:13/TP1A.220624.014/compiler07102210:user/release-keys\",\n  \"source_url\": \"https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip\"\n}",
+      "parsed": {
+        "profile_id": "vivo-y100",
+        "fingerprint": "vivo/V2239/V2239:13/TP1A.220624.014/compiler07102210:user/release-keys",
+        "source_url": "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip"
+      },
+      "exact_source_match": false
+    },
+    {
+      "profile_id": "vivo-x100",
+      "source_sha256": "466a33ebe89e0fd4cb84e0848f2f748985c0404ec910cab99c9274a2e4a4ff11",
+      "model": "deepseek-r1:8b",
+      "done_reason": "stop",
+      "elapsed_seconds": 12.06,
+      "response": "{\n\n  \"profile_id\": \"vivo-x100\",\n  \"fingerprint\": \"vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys\",\n  \"source_url\": \"https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip\"\n}",
+      "parsed": {
+        "profile_id": "vivo-x100",
+        "fingerprint": "vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys",
+        "source_url": "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip"
+      },
+      "exact_source_match": true
+    },
+    {
+      "profile_id": "vivo-v30",
+      "source_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "model": "deepseek-r1:8b",
+      "done_reason": "stop",
+      "elapsed_seconds": 1.957,
+      "response": "{\n\n\n  \"profile_id\": \"vivo-v30\",\n  \"fingerprint\": null,\n  \"source_url\": null\n}",
+      "parsed": {
+        "profile_id": "vivo-v30",
+        "fingerprint": null,
+        "source_url": null
+      },
+      "exact_source_match": false
+    }
+  ],
+  "review": "Y100 model output rejected: compiler suffix differs from raw firmware metadata. Root copied exact source text instead. X100 exact match accepted as partial fingerprint only. V30 null retained. No complete build block or runtime promotion."
+}

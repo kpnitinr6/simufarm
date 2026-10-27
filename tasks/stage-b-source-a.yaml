@@ -2,7 +2,7 @@
   "id": "stage-b-source-a",
   "agent": "codex",
   "branch": "agent/codex/stage-b-source-a",
-  "status": "in_progress",
+  "status": "completed",
   "inputs": [
     "Samsung",
     "Xiaomi",

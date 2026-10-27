@@ -1,0 +1,36 @@
+{
+  "id": "xiaomi-13",
+  "brand": "Xiaomi",
+  "model": "13",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "xiaomi",
+  "base_image_id": "android-13-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 414.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.mi.com/global/product/xiaomi-13/specs/",
+    "https://www.mi.com/uk/discover/article?id=3382"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

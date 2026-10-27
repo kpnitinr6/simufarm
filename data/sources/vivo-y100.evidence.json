@@ -85,9 +85,11 @@
     },
     "build": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/y100"
+        "https://www.vivo.com/in/support/upgradePackageData?id=198",
+        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip",
+        "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files"
       ],
-      "method": "unknown/not stated; null is not a claimed manufacturer fact"
+      "method": "Literal post-build from official India OTA META-INF/com/android/metadata, mapped by cited AOSP GetBuildProp implementation. Other three properties remain unknown; not inferred from fingerprint segments. Root verified exact excerpt; offline DeepSeek extraction is reviewed separately."
     },
     "verified_by": {
       "source_urls": [
