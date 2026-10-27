@@ -1,0 +1,130 @@
+{
+  "profile_id": "sony-xperia-1-vi",
+  "market": "Malaysia; 12GB physical RAM /256GB",
+  "hardware_ram_gb": 12,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; public primary sources, no paid model/API calls",
+  "field_evidence": {
+    "brand": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://www.sony.com.hk/press/pdf/20240515_e.pdf"
+      ],
+      "method": "manufacturer dated announcement; launch year, not a firmware timestamp"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "derived physical PPI = round(sqrt(1080² + 2340²)/6.5); not Android logical density"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://store.sony.com.my/products/xperia-1m6"
+      ],
+      "method": "manufacturer physical RAM option; excludes storage-backed expansion"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "visual classification of manufacturer product illustration/text; stylized shell, human review pending"
+    },
+    "id": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    }
+  },
+  "runtime_ready": false,
+  "source_summary": "Sony specifications identify Android14, FHD+1080x2340 and6.5-inch display; Malaysian Sony store lists12GB. Sony launch announcement dated15May2024; Malaysian review remains pending.",
+  "notes": [
+    "Original stylized shell artwork; not an OEM screenshot.",
+    "Build properties unknown; no fingerprint or firmware property inferred from marketed model name.",
+    "Physical display PPI does not establish Android wm density."
+  ]
+}

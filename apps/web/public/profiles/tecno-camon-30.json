@@ -1,0 +1,36 @@
+{
+  "id": "tecno-camon-30",
+  "brand": "tecno",
+  "model": "CAMON 30",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "tecno",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2436,
+    "dpi": 393.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/",
+    "https://www.tecno-mobile.com/pak/news/tecno-unveils-ai-enhanced-camon-30-series/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

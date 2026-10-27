@@ -1,0 +1,17 @@
+{
+  "id": "stage-b-shells",
+  "agent": "codex",
+  "branch": "agent/codex/stage-b-integration",
+  "status": "completed",
+  "outputs": [
+    "20 original shells",
+    "20 templates",
+    "generic renderer/catalog"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "passed": true,
+    "execution_class": "local_only",
+    "reason": "Local code and browser checks; public standard-runner CI only. No deploy, paid API or provisioning."
+  }
+}

@@ -1,4 +1,4 @@
-name: Stage A checks
+name: Shell and profile checks
 on:
   push:
     branches: [main]

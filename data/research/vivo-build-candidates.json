@@ -1,0 +1,242 @@
+{
+  "research_version": 2,
+  "retrieved_on": "2026-10-27",
+  "researcher_role": "Codex source-research helper; not DeepSeek",
+  "execution": "Public source browsing plus two bounded HTTP Range reads of 65536 bytes each; no full firmware download, paid API or MobileAPI. Offline DeepSeek parsing is a separate root-owned step.",
+  "conclusion": "Two official India firmware archives supply literal post-build fingerprints. Other build properties remain null; do not infer brand/model/device from fingerprint segments. India V30 remains entirely unknown.",
+  "models": [
+    {
+      "profile_id": "vivo-y100",
+      "release_year": 2023,
+      "requested_market": "India",
+      "build": {
+        "ro.product.brand": null,
+        "ro.product.model": null,
+        "ro.product.device": null,
+        "ro.build.fingerprint": "vivo/V2239/V2239:13/TP1A.220624.014/compiler07102212:user/release-keys"
+      },
+      "build_sources": [
+        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip"
+      ],
+      "candidates": [
+        {
+          "id": "y100-india-official-package",
+          "source_url": "https://www.vivo.com/in/support/upgradePackageData?id=198",
+          "source_type": "firmware",
+          "raw_excerpt": "Y100 System update\nPD2257F_EX_A_13.0.6.6.W30.V000L1 New\nRelease date : 2024-02-26\nFile size : 4812.8M",
+          "matching_reason": "Manufacturer India support route explicitly names Y100 and package version. Exact V2239 runtime identity and all requested properties are absent.",
+          "disposition": "retain_package_metadata_only",
+          "contains_requested_raw_properties": false,
+          "property_values": {
+            "ro.product.brand": null,
+            "ro.product.model": null,
+            "ro.product.device": null,
+            "ro.build.fingerprint": null
+          },
+          "aliases_observed": {}
+        },
+        {
+          "id": "y100-india-official-ota-metadata",
+          "source_url": "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip",
+          "source_type": "firmware",
+          "raw_excerpt": "anti-rollback-level=0\nhardware-device=PD2257F_EXMA\nota-control=ro.vivo.system.region.version,none,W30|ro.vgc.cust.name,none,NULL,V000|\nota-property-files=metadata:               ,metadata.pb:               \nota-required-cache=0\nota-type=BLOCK\npackage-type=full\npost-boot-security_patch=2019-06-06\npost-build=vivo/V2239/V2239:13/TP1A.220624.014/compiler07102212:user/release-keys\npost-build-incremental=eng.compil.20230710.221743\npost-sdk-level=33\npost-security-patch-level=2023-07-01\npost-security_patch=2023-07-01\npost-timestamp=1688998367\npost-vendor-security_patch=2021-11-05\npost-version=PD2257F_EX_A_13.0.6.6.W30.V000L1\npre-device=V2239\nregion_verison=W30\nvfs-type=ext4\n",
+          "raw_excerpt_sha256": "0aaada5ae24429a88e8525ff8b0d058f062007082d437d0757c34f4bd1a87ad6",
+          "matching_reason": "Download linked directly by the India manufacturer support page for this marketing model; OTA pre-device matches the exact requested model identifier. This verifies the target OTA fingerprint, not a running emulator or physical device.",
+          "disposition": "accept_literal_post_build_as_target_fingerprint_only",
+          "contains_requested_raw_properties": false,
+          "contains_standard_ota_metadata": true,
+          "property_values": {
+            "ro.product.brand": null,
+            "ro.product.model": null,
+            "ro.product.device": null,
+            "ro.build.fingerprint": "vivo/V2239/V2239:13/TP1A.220624.014/compiler07102212:user/release-keys"
+          },
+          "aliases_observed": {
+            "post-build": "ro.build.fingerprint"
+          },
+          "mapping_source": "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files",
+          "mapping_rule": "AOSP OTA generator writes post-build from GetBuildProp(\"ro.build.fingerprint\", input_zip). Exact value copied verbatim; no reconstruction. pre-device is retained as metadata context only, not promoted in this packet."
+        }
+      ],
+      "status": "partial_firmware_fingerprint_only_other_three_properties_unknown"
+    },
+    {
+      "profile_id": "vivo-x100",
+      "release_year": 2024,
+      "requested_market": "India",
+      "build": {
+        "ro.product.brand": null,
+        "ro.product.model": null,
+        "ro.product.device": null,
+        "ro.build.fingerprint": "vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys"
+      },
+      "build_sources": [
+        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip"
+      ],
+      "candidates": [
+        {
+          "id": "x100-india-official-package",
+          "source_url": "https://www.vivo.com/in/support/upgradePackageData?id=214",
+          "source_type": "firmware",
+          "raw_excerpt": "X100 System update\nPD2309F_EX_A_14.0.13.4.W30.V000L1 New\nRelease date : 2024-02-26\nFile size : 5632M",
+          "matching_reason": "Manufacturer India support route explicitly names X100. Package label is not ro.product.device or a fingerprint.",
+          "disposition": "retain_package_metadata_only",
+          "contains_requested_raw_properties": false,
+          "property_values": {
+            "ro.product.brand": null,
+            "ro.product.model": null,
+            "ro.product.device": null,
+            "ro.build.fingerprint": null
+          },
+          "aliases_observed": {}
+        },
+        {
+          "id": "x100-india-official-ota-metadata",
+          "source_url": "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip",
+          "source_type": "firmware",
+          "raw_excerpt": "anti-rollback-level=0\nhardware-device=PD2309F_EXMA\nota-control=ro.vivo.system.region.version,none,W30|ro.vgc.cust.name,none,NULL,V000|\nota-required-cache=0\nota-type=AB\npackage-type=full\npost-boot-security_patch=2019-06-06\npost-build=vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys\npost-build-incremental=eng.compil.20240123.213647\npost-sdk-level=34\npost-security-patch-level=2024-01-01\npost-security_patch=2024-01-01\npost-timestamp=1706016567\npost-vendor-security_patch=2023-10-05\npost-version=PD2309F_EX_A_14.0.13.4.W30.V000L1\npre-device=V2308\nregion_verison=W30\nvbuild-version=14\nvfs-type=erofs\nvos-version=5.0\nvota-arb=1\nvota-tags=user\nvpost-install=true\n",
+          "raw_excerpt_sha256": "998703f17408d8cece3013c918a9f871140a93f1611f0ed78fcf0af03aa7977a",
+          "matching_reason": "Download linked directly by the India manufacturer support page for this marketing model; OTA pre-device matches the exact requested model identifier. This verifies the target OTA fingerprint, not a running emulator or physical device.",
+          "disposition": "accept_literal_post_build_as_target_fingerprint_only",
+          "contains_requested_raw_properties": false,
+          "contains_standard_ota_metadata": true,
+          "property_values": {
+            "ro.product.brand": null,
+            "ro.product.model": null,
+            "ro.product.device": null,
+            "ro.build.fingerprint": "vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys"
+          },
+          "aliases_observed": {
+            "post-build": "ro.build.fingerprint"
+          },
+          "mapping_source": "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files",
+          "mapping_rule": "AOSP OTA generator writes post-build from GetBuildProp(\"ro.build.fingerprint\", input_zip). Exact value copied verbatim; no reconstruction. pre-device is retained as metadata context only, not promoted in this packet."
+        }
+      ],
+      "status": "partial_firmware_fingerprint_only_other_three_properties_unknown"
+    },
+    {
+      "profile_id": "vivo-v30",
+      "release_year": 2024,
+      "requested_market": "India",
+      "build": {
+        "ro.product.brand": null,
+        "ro.product.model": null,
+        "ro.product.device": null,
+        "ro.build.fingerprint": null
+      },
+      "build_sources": [],
+      "candidates": [
+        {
+          "id": "v30-india-product",
+          "source_url": "https://www.vivo.com/in/products/param/v30",
+          "source_type": "manufacturer_spec",
+          "raw_excerpt": "V30\nOperating System\nFuntouch OS 14 Global (Based on Android 14)\nAndroid Version\nAndroid 14",
+          "matching_reason": "Exact India marketing model page. It contains OS marketing information rather than raw properties.",
+          "disposition": "retain_identity_context_only",
+          "contains_requested_raw_properties": false,
+          "property_values": {
+            "ro.product.brand": null,
+            "ro.product.model": null,
+            "ro.product.device": null,
+            "ro.build.fingerprint": null
+          },
+          "aliases_observed": {}
+        },
+        {
+          "id": "v30-indonesia-official-package",
+          "source_url": "https://www.vivo.com/id/support/upgradePackageData?id=2648",
+          "source_type": "firmware",
+          "raw_excerpt": "V30 Pembaruan sistem\nPD2323F_EX_A_14.0.5.5.W20.V000L1 New\nTanggal rilis : 2024-04-18\nUkuran file : 4812.8M",
+          "matching_reason": "Manufacturer source and V30 match, but Indonesia market does not establish exact India firmware or runtime values.",
+          "disposition": "reject_wrong_market_for_india_backfill",
+          "contains_requested_raw_properties": false,
+          "property_values": {
+            "ro.product.brand": null,
+            "ro.product.model": null,
+            "ro.product.device": null,
+            "ro.build.fingerprint": null
+          },
+          "aliases_observed": {}
+        }
+      ],
+      "status": "unknown_requires_exact_market_raw_property_evidence"
+    }
+  ],
+  "rejected_or_insufficient_leads": [
+    {
+      "url": "https://github.com/KHwang9883/MobileModels/blob/master/brands/vivo_global_en.md",
+      "reason": "Community marketing-name/model mapping, not a manufacturer dump, LineageOS tree or XDA getprop. Potential V2239/V2308/V2318 and PD mappings are search leads only; shared PD2257F also maps another product. Not accepted as build evidence."
+    },
+    {
+      "url": "https://github.com/Android-FW-Dumps/vivo_2026_dump",
+      "reason": "Unrelated codename 2026, Android 11; reject for all three requested 2023/2024 India devices. Do not borrow its brand, device or fingerprint."
+    },
+    {
+      "url": "https://github.com/fcitx5-android/fcitx5-android/issues/659",
+      "reason": "User issue reports V2309A/PD2309 with China OriginOS-type version; wrong market/model identifier for India X100. Not an allowed raw firmware/tree/XDA source."
+    },
+    {
+      "url": "https://github.com/airsdk/Adobe-Runtime-Support/issues/4112",
+      "reason": "User names V30 V2318 on Android15; no raw requested property excerpt and no India market proof. Not an accepted source_type."
+    },
+    {
+      "url": "https://www.vivo.com/my/support/upgradePackageData?id=2617",
+      "reason": "Manufacturer source is X100 Pro in Malaysia, not X100 India; reject."
+    }
+  ],
+  "search_log": [
+    "github vivo V2308 ro.build.fingerprint PD2309F",
+    "github vivo V2318 ro.build.fingerprint V30",
+    "github vivo PD2257F fingerprint Y100",
+    "\"V2308\" \"ro.product\" github",
+    "\"V2318\" \"ro.build.fingerprint\"",
+    "\"V2239\" \"ro.build.fingerprint\"",
+    "github \"PD2323F\" \"build.prop\"",
+    "\"vivo/V2308\"",
+    "\"vivo/V2318\"",
+    "\"vivo/V2239\"",
+    "site:github.com \"PD2309\"",
+    "site:github.com \"PD2257\"",
+    "site:github.com \"V2318\" dump",
+    "\"PD2257F\" \"ro.product\"",
+    "\"PD2309F\" \"ro.build\"",
+    "\"PD2323F\" \"ro.product\"",
+    "site:xdaforums.com \"Y100\" \"getprop\""
+  ],
+  "access_limits": [
+    "Unauthenticated web search can miss unindexed repositories; no assertion that a dump does not exist.",
+    "No large firmware archive downloaded or unpacked.",
+    "No partition aliases observed in accepted retrieved excerpts; aliases_observed remains empty rather than inferred.",
+    "Escalated read-only network allowed bounded official ZIP reads; initial sandbox DNS failure was bypassed for this metadata-only research.",
+    "Earlier ZIP64 offset parsing attempt read incorrect offsets; its undecodable bytes were rejected and replaced by the successful ZIP64-aware extraction above. No corrupted bytes accepted as evidence."
+  ],
+  "bounded_official_firmware_range_attempts": [
+    {
+      "download_url": "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip",
+      "range_requested": "bytes=-65536",
+      "http_status": 206,
+      "content_range": "bytes 5032471963-5032537498/5032537499",
+      "response_bytes": 65536,
+      "response_sha256": "c664da6524e9a8b75edcb7e771bdaa31ff1a5e61e5f075a54a72bf2554069258",
+      "zip64_offsets_resolved": true,
+      "entry": "META-INF/com/android/metadata",
+      "metadata_raw_utf8": "anti-rollback-level=0\nhardware-device=PD2257F_EXMA\nota-control=ro.vivo.system.region.version,none,W30|ro.vgc.cust.name,none,NULL,V000|\nota-property-files=metadata:               ,metadata.pb:               \nota-required-cache=0\nota-type=BLOCK\npackage-type=full\npost-boot-security_patch=2019-06-06\npost-build=vivo/V2239/V2239:13/TP1A.220624.014/compiler07102212:user/release-keys\npost-build-incremental=eng.compil.20230710.221743\npost-sdk-level=33\npost-security-patch-level=2023-07-01\npost-security_patch=2023-07-01\npost-timestamp=1688998367\npost-vendor-security_patch=2021-11-05\npost-version=PD2257F_EX_A_13.0.6.6.W30.V000L1\npre-device=V2239\nregion_verison=W30\nvfs-type=ext4\n",
+      "metadata_sha256": "0aaada5ae24429a88e8525ff8b0d058f062007082d437d0757c34f4bd1a87ad6",
+      "result": "metadata parsed successfully from the single tail range; no additional archive bytes fetched"
+    },
+    {
+      "download_url": "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip",
+      "range_requested": "bytes=-65536",
+      "http_status": 206,
+      "content_range": "bytes 5955732306-5955797841/5955797842",
+      "response_bytes": 65536,
+      "response_sha256": "323e6983cc1b77cca819e48379a3146b0413bae2fb4bf25074919046839941d4",
+      "zip64_offsets_resolved": true,
+      "entry": "META-INF/com/android/metadata",
+      "metadata_raw_utf8": "anti-rollback-level=0\nhardware-device=PD2309F_EXMA\nota-control=ro.vivo.system.region.version,none,W30|ro.vgc.cust.name,none,NULL,V000|\nota-required-cache=0\nota-type=AB\npackage-type=full\npost-boot-security_patch=2019-06-06\npost-build=vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys\npost-build-incremental=eng.compil.20240123.213647\npost-sdk-level=34\npost-security-patch-level=2024-01-01\npost-security_patch=2024-01-01\npost-timestamp=1706016567\npost-vendor-security_patch=2023-10-05\npost-version=PD2309F_EX_A_14.0.13.4.W30.V000L1\npre-device=V2308\nregion_verison=W30\nvbuild-version=14\nvfs-type=erofs\nvos-version=5.0\nvota-arb=1\nvota-tags=user\nvpost-install=true\n",
+      "metadata_sha256": "998703f17408d8cece3013c918a9f871140a93f1611f0ed78fcf0af03aa7977a",
+      "result": "metadata parsed successfully from the single tail range; no additional archive bytes fetched"
+    }
+  ]
+}

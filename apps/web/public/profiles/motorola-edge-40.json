@@ -1,0 +1,37 @@
+{
+  "id": "motorola-edge-40",
+  "brand": "Motorola",
+  "model": "edge 40",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "motorola",
+  "base_image_id": "android-13-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 402.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://en-us.support.motorola.com/app/answers/detail/a_id/175746/~/technischen-daten--motorola-edge-40",
+    "https://motorolanews.com/introducing-the-motorola-edge-40-a-device-completely-submersed-in-style/",
+    "https://en-emea.support.motorola.com/app/software-security-update/g_id/7112/productid/11533"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

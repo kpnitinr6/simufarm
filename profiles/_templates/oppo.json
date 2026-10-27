@@ -1,0 +1,35 @@
+{
+  "id": "{{id}}",
+  "brand": "oppo",
+  "model": "{{model}}",
+  "release_year": "{{release_year}}",
+  "os_family": "android",
+  "os_version": "{{os_version}}",
+  "shell_id": "oppo",
+  "base_image_id": "android-{{os_version}}-arm64",
+  "screen": {
+    "width_px": "{{width_px}}",
+    "height_px": "{{height_px}}",
+    "dpi": "{{physical_ppi}}"
+  },
+  "notch": {
+    "type": "{{notch_type}}",
+    "position": "{{notch_position}}"
+  },
+  "ram_gb": "{{ram_gb}}",
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "{{manufacturer_source_url}}"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

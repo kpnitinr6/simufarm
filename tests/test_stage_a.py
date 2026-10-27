@@ -18,25 +18,37 @@ def test_three_stage_a_profiles_are_sourced_drafts():
     for path in paths:
         p = DeviceProfile.model_validate_json(path.read_text())
         assert len(p.sources) >= 2 and p.verified_by is None and p.verified_at is None
-        assert all(value is None for value in p.build.model_dump().values())
+        assert p.build.brand is None and p.build.model is None and p.build.device is None
+        if p.id != "vivo-v30":
+            assert p.build.fingerprint and p.build.source_type == "firmware"
+        else:
+            assert p.build.fingerprint is None
 
 
 def test_static_generation_is_deterministic_and_idempotent(tmp_path):
-    assert renderer.generate(ROOT / "profiles", tmp_path, allow_draft=True) == 3
+    assert renderer.generate(ROOT / "profiles", tmp_path, allow_draft=True) == len(
+        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+    )
     first = {
         str(p.relative_to(tmp_path)): (p.read_bytes(), p.stat().st_mtime_ns)
         for p in tmp_path.rglob("*")
         if p.is_file()
     }
-    assert renderer.generate(ROOT / "profiles", tmp_path, allow_draft=True) == 3
+    assert renderer.generate(ROOT / "profiles", tmp_path, allow_draft=True) == len(
+        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+    )
     second = {
         str(p.relative_to(tmp_path)): (p.read_bytes(), p.stat().st_mtime_ns)
         for p in tmp_path.rglob("*")
         if p.is_file()
     }
     assert first == second
-    assert len(list((tmp_path / "simulators").glob("*.html"))) == 3
-    assert len(json.loads((tmp_path / "catalog.json").read_text())) == 3
+    assert len(list((tmp_path / "simulators").glob("*.html"))) == len(
+        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+    )
+    assert len(json.loads((tmp_path / "catalog.json").read_text())) == len(
+        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+    )
 
 
 def test_draft_rendering_requires_explicit_opt_in(tmp_path):

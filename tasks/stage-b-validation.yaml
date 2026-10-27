@@ -1,0 +1,18 @@
+{
+  "id": "stage-b-validation",
+  "agent": "codex",
+  "branch": "agent/codex/stage-b-integration",
+  "status": "completed",
+  "outputs": [
+    "schema provenance gates",
+    "22 static manifests",
+    "10 visual snapshots",
+    "CI evidence"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "passed": true,
+    "execution_class": "local_only",
+    "reason": "Local code and browser checks; public standard-runner CI only. No deploy, paid API or provisioning."
+  }
+}

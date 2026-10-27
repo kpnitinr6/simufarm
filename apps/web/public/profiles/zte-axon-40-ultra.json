@@ -1,0 +1,36 @@
+{
+  "id": "zte-axon-40-ultra",
+  "brand": "zte",
+  "model": "Axon 40 Ultra",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "zte",
+  "base_image_id": "android-12-arm64",
+  "screen": {
+    "width_px": 1116,
+    "height_px": 2480,
+    "dpi": 400.0
+  },
+  "notch": {
+    "type": "none",
+    "position": "none"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/",
+    "https://www.zte.com.cn/global/about/news/20220511e1.html"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

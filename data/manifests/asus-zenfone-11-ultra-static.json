@@ -1,0 +1,12 @@
+{
+  "simulator_id": "asus-zenfone-11-ultra-static",
+  "profile_id": "asus-zenfone-11-ultra",
+  "kind": "static",
+  "shell_id": "asus",
+  "base_image_id": "android-14-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

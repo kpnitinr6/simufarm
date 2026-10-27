@@ -1,0 +1,36 @@
+{
+  "id": "oneplus-11",
+  "brand": "OnePlus",
+  "model": "11 5G",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "oneplus",
+  "base_image_id": "android-13-arm64",
+  "screen": {
+    "width_px": 1440,
+    "height_px": 3216,
+    "dpi": 525
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_left"
+  },
+  "ram_gb": 8,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.oneplus.com/za/11/specs",
+    "https://www.oneplus.com/us/press/press-release/oneplus-welcomes-2023-with-the-launch-of-three-flagship-products"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

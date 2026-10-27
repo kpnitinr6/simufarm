@@ -1,0 +1,58 @@
+{
+  "id": "vivo-build-property-evidence",
+  "title": "Vivo build-property evidence",
+  "agent": "deepseek-local",
+  "branch": "agent/deepseek/vivo-build-property-evidence",
+  "status": "queued",
+  "parallel_with": "stage-c",
+  "scope": "candidate evidence only; no profile promotion",
+  "models": {
+    "vivo-x100": {
+      "candidate_values": {
+        "ro.product.model": "V2309A",
+        "ro.product.device": "PD2309",
+        "ro.product.brand": "vivo"
+      },
+      "source_host": "deviceinfohw.ru",
+      "source_type": "third_party_device_db",
+      "fingerprint": "Preserve verified India fingerprint as separate evidence; do not combine until region/variant consistency is human-reviewed. V2309A may describe a different regional variant from the existing India V2308 profile.",
+      "required_checks": [
+        "Exact URL, numbered raw source lines and retrieval hash",
+        "Identify region and firmware version; explicitly flag mismatch with India V2308"
+      ]
+    },
+    "vivo-v30": {
+      "candidate_values": {
+        "ro.product.model": "V2318",
+        "ro.product.device": "V2318T",
+        "ro.product.brand": "vivo"
+      },
+      "identity_source_host": "deviceinfohw.ru",
+      "identity_source_type": "third_party_device_db",
+      "fingerprint_source": "needrom PD2323F/PD2323DF dump",
+      "fingerprint_source_type": "firmware_dump",
+      "required_checks": [
+        "Exact source URL and literal property lines",
+        "Verify model/region/Android version of dump before pairing",
+        "No paid downloads, credentials, executable downloads or inferred fingerprint"
+      ]
+    },
+    "vivo-y100": {
+      "status": "needs-human",
+      "extraction_allowed": false,
+      "blocker": "Resolve India versus China region first; do not extract additional Y100 properties"
+    }
+  },
+  "deliverables": [
+    "Candidate JSON per field: value, exact source URL, source_type, line_start, line_end, quoted literal lines, raw-text SHA256, retrieval time, confidence 0\u20131 and variant/region caveats",
+    "Review packet with accept/reject/pending disposition; human alone promotes",
+    "Record inaccessible sources and contradictions without substituting guessed values"
+  ],
+  "schema_note": "Current enum lacks third_party_device_db and firmware_dump. Retain these requested classes in candidate evidence; extend reviewed field-level provenance schema before any later promotion. Mixed field provenance cannot be flattened to one misleading source type.",
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "passed": true,
+    "execution_class": "local_only",
+    "reason": "Public read-only sources and installed local DeepSeek via Ollama; no paid APIs/downloads/provisioning"
+  }
+}

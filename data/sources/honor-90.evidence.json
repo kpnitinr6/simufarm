@@ -1,0 +1,140 @@
+{
+  "profile_id": "honor-90",
+  "market": "China, REA-AN00, 12 GB RAM + 256 GB storage variant; May 2023 manufacturer listing",
+  "hardware_ram_gb": 12,
+  "display_diagonal_inches": 6.7,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; manual public manufacturer source research; no Gemini/Ollama API claim",
+  "checked_date": "2026-10-27",
+  "field_evidence": {
+    "id": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "brand": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://www.honor.com/global/news/honor-90-global-launch/"
+      ],
+      "method": "manufacturer launch/year evidence for selected market: China, REA-AN00, 12 GB RAM + 256 GB storage variant; May 2023 manufacturer listing; not necessarily worldwide first release"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "screen": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "provisional visual-target classification from manufacturer product illustration; inference, human review pending; cutout dimensions not measured"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367",
+        "https://www.honor.com/global/news/honor-90-global-launch/"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; portrait pixel dimensions"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "manufacturer-text; portrait pixel dimensions"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
+      ],
+      "method": "derived approximate physical PPI=round(hypot(1200,2664)/6.7)=436; diagonal 6.7 inches manufacturer-stated; not Android logical densityDpi"
+    }
+  },
+  "runtime_ready": false,
+  "notes": [
+    "Stage B static visual target only; original generic artwork, no firmware or branded asset downloads",
+    "All runtime build identity properties unknown; build provenance null/empty; no runtime-ready claim",
+    "Notch is a provisional inferred visual classification, not human-verified geometry",
+    "RAM is selected physical RAM, excluding virtual/extended RAM",
+    "China manufacturer store lists May 2023; linked global launch July 2023 corroborates year, not identical regional availability or RAM variants"
+  ]
+}

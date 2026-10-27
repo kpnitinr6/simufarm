@@ -1,5 +1,658 @@
 [
   {
+    "id": "asus-zenfone-11-ultra",
+    "brand": "asus",
+    "model": "Zenfone 11 Ultra",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "asus",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 388.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 12.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/",
+      "https://press.asus.com/news/press-releases/en-asus-introduces-zenfone-11-ultra-smartphone-innovation"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/asus-zenfone-11-ultra.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "google-pixel-7",
+    "brand": "Google",
+    "model": "Pixel 7",
+    "release_year": 2022,
+    "os_family": "android",
+    "os_version": "13",
+    "shell_id": "google",
+    "base_image_id": "android-13-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 416.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "https://blog.google/products-and-platforms/devices/pixel/pixel-7-pixel-7-pro/"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/google-pixel-7.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "honor-90",
+    "brand": "HONOR",
+    "model": "90",
+    "release_year": 2023,
+    "os_family": "android",
+    "os_version": "13",
+    "shell_id": "honor",
+    "base_image_id": "android-13-arm64",
+    "screen": {
+      "width_px": 1200,
+      "height_px": 2664,
+      "dpi": 436.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 12.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367",
+      "https://www.honor.com/global/news/honor-90-global-launch/"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/honor-90.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "huawei-p40",
+    "brand": "HUAWEI",
+    "model": "P40",
+    "release_year": 2020,
+    "os_family": "android",
+    "os_version": "10",
+    "shell_id": "huawei",
+    "base_image_id": "android-10-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2340,
+      "dpi": 422.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_left"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://consumer.huawei.com/se/phones/p401/specs/",
+      "https://consumer.huawei.com/en/about-us/"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/huawei-p40.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "infinix-note-40",
+    "brand": "infinix",
+    "model": "NOTE 40",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "infinix",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2436,
+      "dpi": 393.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.infinixmobility.com/specs/note-40",
+      "https://www.infinixmobility.com/all-round-hyper-speed-lab",
+      "https://www.infinixmobility.com/api/V1/xpark-app/get-product-spec?id=935",
+      "https://www.prnewswire.com/ae/news-releases/infinix-launches-all-new-note-40-series-racing-edition-in-partnership-with-bmw-group-designworks-in-saudi-arabia-302166985.html"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/infinix-note-40.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "lenovo-legion-phone-duel-2",
+    "brand": "lenovo",
+    "model": "Legion Phone Duel 2",
+    "release_year": 2021,
+    "os_family": "android",
+    "os_version": "11",
+    "shell_id": "lenovo",
+    "base_image_id": "android-11-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2460,
+      "dpi": 388.0
+    },
+    "notch": {
+      "type": "none",
+      "position": "none"
+    },
+    "ram_gb": 12.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://gaming.lenovo.com/news/post/lenovo-unleashes-next-mobile-gaming-powerhouse-with-the-lenovo-legion-pWeMligmSqYKWUe",
+      "https://news.lenovo.com/pressroom/press-releases/next-mobile-gaming-powerhouse-lenovo-legion-phone-duel-2/"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/lenovo-legion-phone-duel-2.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "lg-velvet",
+    "brand": "lg",
+    "model": "VELVET",
+    "release_year": 2020,
+    "os_family": "android",
+    "os_version": "10",
+    "shell_id": "lg",
+    "base_image_id": "android-10-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2460,
+      "dpi": 395.0
+    },
+    "notch": {
+      "type": "teardrop",
+      "position": "top_center"
+    },
+    "ram_gb": 6.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.lgcorp.com/media/release/22014",
+      "https://www.lg.com/us/mobile-phones/velvet-5g/specs"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/lg-velvet.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "motorola-edge-40",
+    "brand": "Motorola",
+    "model": "edge 40",
+    "release_year": 2023,
+    "os_family": "android",
+    "os_version": "13",
+    "shell_id": "motorola",
+    "base_image_id": "android-13-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 402.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://en-us.support.motorola.com/app/answers/detail/a_id/175746/~/technischen-daten--motorola-edge-40",
+      "https://motorolanews.com/introducing-the-motorola-edge-40-a-device-completely-submersed-in-style/",
+      "https://en-emea.support.motorola.com/app/software-security-update/g_id/7112/productid/11533"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/motorola-edge-40.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "nokia-g42",
+    "brand": "nokia",
+    "model": "G42 5G",
+    "release_year": 2023,
+    "os_family": "android",
+    "os_version": "13",
+    "shell_id": "nokia",
+    "base_image_id": "android-13-arm64",
+    "screen": {
+      "width_px": 720,
+      "height_px": 1612,
+      "dpi": 269.0
+    },
+    "notch": {
+      "type": "teardrop",
+      "position": "top_center"
+    },
+    "ram_gb": 6.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.hmd.com/en_gb/nokia-g-42/specs",
+      "https://www.hmd.com/en_gb/press/category/devices"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/nokia-g42.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "nothing-phone-2a",
+    "brand": "nothing",
+    "model": "Phone (2a)",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "nothing",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1084,
+      "height_px": 2412,
+      "dpi": 394.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://nl.nothing.tech/pages/phone-2a",
+      "https://nothing.community/d/6119-this-is-phone-2a",
+      "https://support.nothing.tech/hc/en-us/articles/22960522709265-What-s-the-screen-parameter-information-of-Phone-2a"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/nothing-phone-2a.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "oneplus-11",
+    "brand": "OnePlus",
+    "model": "11 5G",
+    "release_year": 2023,
+    "os_family": "android",
+    "os_version": "13",
+    "shell_id": "oneplus",
+    "base_image_id": "android-13-arm64",
+    "screen": {
+      "width_px": 1440,
+      "height_px": 3216,
+      "dpi": 525.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_left"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.oneplus.com/za/11/specs",
+      "https://www.oneplus.com/us/press/press-release/oneplus-welcomes-2023-with-the-launch-of-three-flagship-products"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/oneplus-11.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "oppo-find-x5",
+    "brand": "OPPO",
+    "model": "Find X5",
+    "release_year": 2022,
+    "os_family": "android",
+    "os_version": "12",
+    "shell_id": "oppo",
+    "base_image_id": "android-12-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 402.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_left"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.oppo.com/cn/smartphones/series-find-x/find-x5/specs/",
+      "https://www.oppo.com/cn/newsroom/press/480/",
+      "https://bdev.oppo.com/open/resource/index/document/detail?id=100"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/oppo-find-x5.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "realme-gt-2",
+    "brand": "realme",
+    "model": "GT 2",
+    "release_year": 2022,
+    "os_family": "android",
+    "os_version": "12",
+    "shell_id": "realme",
+    "base_image_id": "android-12-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 398.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_left"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.realme.com/global/realme-gt-2/specs",
+      "https://www.realme.com/eu/newsroom/announces-launch-gt-2-series"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/realme-gt-2.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "samsung-galaxy-s21",
+    "brand": "Samsung",
+    "model": "Galaxy S21 5G",
+    "release_year": 2021,
+    "os_family": "android",
+    "os_version": "11",
+    "shell_id": "samsung",
+    "base_image_id": "android-11-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 424.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://image-us.samsung.com/SamsungUS/samsungbusiness/pdfs/datasheet/Galaxy_S21_Series_Datasheet_Unlocked.pdf",
+      "https://www.samsungmobilepress.com/articles/make-every-day-epic-with-samsung-galaxy-s21-and-galaxy-s21-plus"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/samsung-galaxy-s21.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "sony-xperia-1-vi",
+    "brand": "sony",
+    "model": "Xperia 1 VI",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "sony",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2340,
+      "dpi": 396.0
+    },
+    "notch": {
+      "type": "none",
+      "position": "none"
+    },
+    "ram_gb": 12.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications",
+      "https://www.sony.com.hk/press/pdf/20240515_e.pdf",
+      "https://store.sony.com.my/products/xperia-1m6"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/sony-xperia-1-vi.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "tcl-50-pro-nxtpaper-5g",
+    "brand": "tcl",
+    "model": "50 PRO NXTPAPER 5G",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "tcl",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2460,
+      "dpi": 396.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.tcl.com/global/en/mobile/tcl-50-pro-nxtpaper-5g",
+      "https://www.tcl.com/global/en/news/tcl-unveils-two-new-ai-enhanced-nxtpaper-smartphones-revolutionizing-smart-comfort-for-consuming-creating-and-reading-content-on-the-go",
+      "https://pimcontent1.ingrammicro.com/se/assets/media/brochure/cl66164_cl66164_2104817074.pdf"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/tcl-50-pro-nxtpaper-5g.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "tecno-camon-30",
+    "brand": "tecno",
+    "model": "CAMON 30",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "tecno",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2436,
+      "dpi": 393.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/",
+      "https://www.tecno-mobile.com/pak/news/tecno-unveils-ai-enhanced-camon-30-series/"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/tecno-camon-30.html",
+    "review_status": "needs-human"
+  },
+  {
     "id": "vivo-v30",
     "brand": "vivo",
     "model": "V30",
@@ -22,7 +675,9 @@
       "ro.product.brand": null,
       "ro.product.model": null,
       "ro.product.device": null,
-      "ro.build.fingerprint": null
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
     },
     "source_type": "manual",
     "sources": [
@@ -59,13 +714,20 @@
       "ro.product.brand": null,
       "ro.product.model": null,
       "ro.product.device": null,
-      "ro.build.fingerprint": null
+      "ro.build.fingerprint": "vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys",
+      "source_type": "firmware",
+      "sources": [
+        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip"
+      ]
     },
     "source_type": "manual",
     "sources": [
       "https://www.vivo.com/in/products/param/x100",
       "https://vivonewsroom.in/press-release/vivo-launches-the-ultimate-flagship-x100-series-with-next-level-of-imaging-co-engineered-with-zeiss/",
-      "https://www.vivo.com/in/products/x100"
+      "https://www.vivo.com/in/products/x100",
+      "https://www.vivo.com/in/support/upgradePackageData?id=214",
+      "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip",
+      "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -96,18 +758,101 @@
       "ro.product.brand": null,
       "ro.product.model": null,
       "ro.product.device": null,
-      "ro.build.fingerprint": null
+      "ro.build.fingerprint": "vivo/V2239/V2239:13/TP1A.220624.014/compiler07102212:user/release-keys",
+      "source_type": "firmware",
+      "sources": [
+        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip"
+      ]
     },
     "source_type": "manual",
     "sources": [
       "https://www.vivo.com/in/products/param/y100",
       "https://vivonewsroom.in/press-release/vivo-launches-y100-the-first-premium-y-series-smartphone-with-two-color-changing-variants-in-india/",
-      "https://www.vivo.com/in/products/y100"
+      "https://www.vivo.com/in/products/y100",
+      "https://www.vivo.com/in/support/upgradePackageData?id=198",
+      "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2257F_EX_A_13.0.6.6.W30.V000L1-update-full_1689575876.zip",
+      "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/vivo-y100.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "xiaomi-13",
+    "brand": "Xiaomi",
+    "model": "13",
+    "release_year": 2023,
+    "os_family": "android",
+    "os_version": "13",
+    "shell_id": "xiaomi",
+    "base_image_id": "android-13-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 414.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.mi.com/global/product/xiaomi-13/specs/",
+      "https://www.mi.com/uk/discover/article?id=3382"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/xiaomi-13.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "zte-axon-40-ultra",
+    "brand": "zte",
+    "model": "Axon 40 Ultra",
+    "release_year": 2022,
+    "os_family": "android",
+    "os_version": "12",
+    "shell_id": "zte",
+    "base_image_id": "android-12-arm64",
+    "screen": {
+      "width_px": 1116,
+      "height_px": 2480,
+      "dpi": 400.0
+    },
+    "notch": {
+      "type": "none",
+      "position": "none"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null,
+      "source_type": null,
+      "sources": []
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/",
+      "https://www.zte.com.cn/global/about/news/20220511e1.html"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/zte-axon-40-ultra.html",
     "review_status": "needs-human"
   }
 ]

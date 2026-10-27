@@ -1,0 +1,12 @@
+{
+  "simulator_id": "motorola-edge-40-static",
+  "profile_id": "motorola-edge-40",
+  "kind": "static",
+  "shell_id": "motorola",
+  "base_image_id": "android-13-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

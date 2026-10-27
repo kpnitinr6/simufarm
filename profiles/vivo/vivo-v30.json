@@ -21,7 +21,9 @@
     "ro.product.brand": null,
     "ro.product.model": null,
     "ro.product.device": null,
-    "ro.build.fingerprint": null
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
   },
   "source_type": "manual",
   "sources": [

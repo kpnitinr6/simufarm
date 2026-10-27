@@ -1,0 +1,140 @@
+{
+  "profile_id": "realme-gt-2",
+  "market": "Global, 8 GB physical RAM variant",
+  "hardware_ram_gb": 8,
+  "display_diagonal_inches": 6.62,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; manual public manufacturer source research; no Gemini/Ollama API claim",
+  "checked_date": "2026-10-27",
+  "field_evidence": {
+    "id": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "brand": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://www.realme.com/eu/newsroom/announces-launch-gt-2-series"
+      ],
+      "method": "manufacturer launch/year evidence for selected market: Global, 8 GB physical RAM variant; not necessarily worldwide first release"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "screen": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "provisional visual-target classification from manufacturer product illustration; inference, human review pending; cutout dimensions not measured"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs",
+        "https://www.realme.com/eu/newsroom/announces-launch-gt-2-series"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; portrait pixel dimensions"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "manufacturer-text; portrait pixel dimensions"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.realme.com/global/realme-gt-2/specs"
+      ],
+      "method": "derived approximate physical PPI=round(hypot(1080,2400)/6.62)=398; diagonal 6.62 inches manufacturer-stated; not Android logical densityDpi"
+    }
+  },
+  "runtime_ready": false,
+  "notes": [
+    "Stage B static visual target only; original generic artwork, no firmware or branded asset downloads",
+    "All runtime build identity properties unknown; build provenance null/empty; no runtime-ready claim",
+    "Notch is a provisional inferred visual classification, not human-verified geometry",
+    "RAM is selected physical RAM, excluding virtual/extended RAM",
+    "Launch source heading/body specify MWC 2022 but introductory dateline says 2021; retain source inconsistency for reviewer; release_year uses explicit event year 2022"
+  ]
+}

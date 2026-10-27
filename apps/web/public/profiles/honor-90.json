@@ -1,0 +1,36 @@
+{
+  "id": "honor-90",
+  "brand": "HONOR",
+  "model": "90",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "honor",
+  "base_image_id": "android-13-arm64",
+  "screen": {
+    "width_px": 1200,
+    "height_px": 2664,
+    "dpi": 436.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 12.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367",
+    "https://www.honor.com/global/news/honor-90-global-launch/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

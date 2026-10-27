@@ -1,0 +1,12 @@
+{
+  "simulator_id": "xiaomi-13-static",
+  "profile_id": "xiaomi-13",
+  "kind": "static",
+  "shell_id": "xiaomi",
+  "base_image_id": "android-13-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

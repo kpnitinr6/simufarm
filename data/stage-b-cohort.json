@@ -1,0 +1,25 @@
+{
+  "profile_ids": [
+    "asus-zenfone-11-ultra",
+    "google-pixel-7",
+    "honor-90",
+    "huawei-p40",
+    "infinix-note-40",
+    "lenovo-legion-phone-duel-2",
+    "lg-velvet",
+    "motorola-edge-40",
+    "nokia-g42",
+    "nothing-phone-2a",
+    "oneplus-11",
+    "oppo-find-x5",
+    "realme-gt-2",
+    "samsung-galaxy-s21",
+    "sony-xperia-1-vi",
+    "tcl-50-pro-nxtpaper-5g",
+    "tecno-camon-30",
+    "vivo-x100",
+    "xiaomi-13",
+    "zte-axon-40-ultra"
+  ],
+  "scope": "20 static reference drafts, one per brand; two earlier Vivo drafts preserved outside cohort"
+}

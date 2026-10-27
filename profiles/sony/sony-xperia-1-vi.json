@@ -1,0 +1,37 @@
+{
+  "id": "sony-xperia-1-vi",
+  "brand": "sony",
+  "model": "Xperia 1 VI",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "sony",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2340,
+    "dpi": 396
+  },
+  "notch": {
+    "type": "none",
+    "position": "none"
+  },
+  "ram_gb": 12,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.sony.com.my/electronics/support/mobile-phones-tablets-mobile-phones/xperia-1-vi-256gb/specifications",
+    "https://www.sony.com.hk/press/pdf/20240515_e.pdf",
+    "https://store.sony.com.my/products/xperia-1m6"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

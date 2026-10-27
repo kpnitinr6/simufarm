@@ -1,0 +1,36 @@
+{
+  "id": "google-pixel-7",
+  "brand": "Google",
+  "model": "Pixel 7",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "google",
+  "base_image_id": "android-13-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 416.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://support.google.com/pixelphone/answer/7158570?hl=en",
+    "https://blog.google/products-and-platforms/devices/pixel/pixel-7-pixel-7-pro/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

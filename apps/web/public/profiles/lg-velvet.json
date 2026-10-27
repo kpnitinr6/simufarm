@@ -1,0 +1,36 @@
+{
+  "id": "lg-velvet",
+  "brand": "lg",
+  "model": "VELVET",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "lg",
+  "base_image_id": "android-10-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2460,
+    "dpi": 395.0
+  },
+  "notch": {
+    "type": "teardrop",
+    "position": "top_center"
+  },
+  "ram_gb": 6.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.lgcorp.com/media/release/22014",
+    "https://www.lg.com/us/mobile-phones/velvet-5g/specs"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

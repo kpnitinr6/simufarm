@@ -1,0 +1,130 @@
+{
+  "profile_id": "tecno-camon-30",
+  "market": "Côte d’Ivoire manufacturer specification;8GB physical RAM /256GB;4G",
+  "hardware_ram_gb": 8,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; public primary sources, no paid model/API calls",
+  "field_evidence": {
+    "brand": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/pak/news/tecno-unveils-ai-enhanced-camon-30-series/"
+      ],
+      "method": "manufacturer dated announcement; launch year, not a firmware timestamp"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "derived physical PPI = round(sqrt(1080² + 2436²)/6.78); not Android logical density"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "manufacturer physical RAM option; excludes storage-backed expansion"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "visual classification of manufacturer product illustration/text; stylized shell, human review pending"
+    },
+    "id": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.tecno-mobile.com/ci/telephones/tech-specs/techspecs/camon-30/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    }
+  },
+  "runtime_ready": false,
+  "source_summary": "TECNO lists Android14,1080x2436,6.78-inch and8GB plus8GB extended RAM; only physical8GB used. April2,2024 announcement confirms African market rollout.",
+  "notes": [
+    "Original stylized shell artwork; not an OEM screenshot.",
+    "Build properties unknown; no fingerprint or firmware property inferred from marketed model name.",
+    "Physical display PPI does not establish Android wm density."
+  ]
+}

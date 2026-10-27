@@ -1,0 +1,130 @@
+{
+  "profile_id": "asus-zenfone-11-ultra",
+  "market": "United States;12GB physical RAM /256GB",
+  "hardware_ram_gb": 12,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; public primary sources, no paid model/API calls",
+  "field_evidence": {
+    "brand": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "manufacturer text; selected regional variant"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://press.asus.com/news/press-releases/en-asus-introduces-zenfone-11-ultra-smartphone-innovation"
+      ],
+      "method": "manufacturer dated announcement; launch year, not a firmware timestamp"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "manufacturer OS text; Android release family, not measured guest identity"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "manufacturer resolution text, portrait pixel orientation"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "derived physical PPI = round(sqrt(1080² + 2400²)/6.78); not Android logical density"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "manufacturer physical RAM option; excludes storage-backed expansion"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "visual classification of manufacturer product illustration/text; stylized shell, human review pending"
+    },
+    "id": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "SimuFarm authored identifiers and planned Android base; not observed firmware identity"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "unknown; null is not an asserted manufacturer fact"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
+      ],
+      "method": "editorial provenance/confidence metadata; no human verification claimed"
+    }
+  },
+  "runtime_ready": false,
+  "source_summary": "ASUS US lists Android14,12GBLPDDR5X,6.78-inch2400x1080. Manufacturer announcement dated14March2024.",
+  "notes": [
+    "Original stylized shell artwork; not an OEM screenshot.",
+    "Build properties unknown; no fingerprint or firmware property inferred from marketed model name.",
+    "Physical display PPI does not establish Android wm density."
+  ]
+}

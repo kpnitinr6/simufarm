@@ -6,8 +6,11 @@
   "assets": "Original HTML/CSS artwork only; no logo or manufacturer wallpaper",
   "geometry": "Stylized bezel/button proportions, not dimensional hardware fidelity",
   "supported_notches": [
+    "none",
     "teardrop",
-    "punch_hole"
+    "punch_hole",
+    "notch",
+    "dynamic_island"
   ],
   "sources": [
     "https://www.vivo.com/in/products/y100",

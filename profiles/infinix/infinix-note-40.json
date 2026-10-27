@@ -1,0 +1,38 @@
+{
+  "id": "infinix-note-40",
+  "brand": "infinix",
+  "model": "NOTE 40",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "infinix",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2436,
+    "dpi": 393
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.infinixmobility.com/specs/note-40",
+    "https://www.infinixmobility.com/all-round-hyper-speed-lab",
+    "https://www.infinixmobility.com/api/V1/xpark-app/get-product-spec?id=935",
+    "https://www.prnewswire.com/ae/news-releases/infinix-launches-all-new-note-40-series-racing-edition-in-partnership-with-bmw-group-designworks-in-saudi-arabia-302166985.html"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

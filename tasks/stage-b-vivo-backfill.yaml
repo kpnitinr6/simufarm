@@ -1,0 +1,27 @@
+{
+  "id": "stage-b-vivo-backfill",
+  "agent": "deepseek-local",
+  "branch": "agent/deepseek/stage-b-vivo-backfill",
+  "status": "deferred",
+  "inputs": [
+    "vivo-y100",
+    "vivo-x100",
+    "vivo-v30"
+  ],
+  "outputs": [
+    "Verified primary-source facts and evidence; unknowns explicitly null"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "execution_class": "local_only",
+    "passed": true,
+    "reason": "Public primary-source research and installed local model only; no MobileAPI/cloud/paid APIs"
+  },
+  "acceptance_criteria": [
+    "Do not invent specs/build fingerprints",
+    "Preserve market/variant identity",
+    "Exact URL and extraction evidence for every asserted value"
+  ],
+  "blocker": "Partial fingerprints verified for Y100/X100; 10 of 12 raw properties still unavailable from matching primary evidence. Local DeepSeek executed, outputs exact-source checked.",
+  "superseded_by": "vivo-build-property-evidence"
+}

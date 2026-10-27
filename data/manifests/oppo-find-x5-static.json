@@ -1,0 +1,12 @@
+{
+  "simulator_id": "oppo-find-x5-static",
+  "profile_id": "oppo-find-x5",
+  "kind": "static",
+  "shell_id": "oppo",
+  "base_image_id": "android-12-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

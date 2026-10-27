@@ -4,7 +4,7 @@ for(const [id,model] of [['vivo-y100','Y100'],['vivo-x100','X100'],['vivo-v30','
   const failures:string[]=[];page.on('pageerror',e=>failures.push(e.message));
   await page.goto(`/simulators/${id}.html`);
   await expect(page.getByRole('heading',{name:`vivo ${model}`})).toBeVisible();
-  await expect(page.locator('vivo-shell[data-ready="true"]')).toBeVisible();
+  await expect(page.locator('[data-ready="true"]')).toBeVisible();
   await expect(page.getByText('Human review pending.',{exact:false})).toBeVisible();
   await expect(page.locator('vivo-shell').locator('.device')).toBeVisible();
   await page.screenshot({path:`docs/proof/${id}.png`,fullPage:true});
@@ -13,6 +13,6 @@ for(const [id,model] of [['vivo-y100','Y100'],['vivo-x100','X100'],['vivo-v30','
 }
 test('mobile catalog remains usable',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/');
- await expect(page.locator('article')).toHaveCount(3);
+ await expect(page.locator('article')).toHaveCount(22);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
 });

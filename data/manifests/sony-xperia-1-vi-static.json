@@ -1,0 +1,12 @@
+{
+  "simulator_id": "sony-xperia-1-vi-static",
+  "profile_id": "sony-xperia-1-vi",
+  "kind": "static",
+  "shell_id": "sony",
+  "base_image_id": "android-14-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

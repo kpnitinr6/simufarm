@@ -1,0 +1,139 @@
+{
+  "profile_id": "oneplus-11",
+  "market": "South Africa manufacturer spec, 8 GB RAM + 128 GB storage variant; 2023 global launch",
+  "hardware_ram_gb": 8,
+  "display_diagonal_inches": 6.7,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; manual public manufacturer source research; no Gemini/Ollama API claim",
+  "checked_date": "2026-10-27",
+  "field_evidence": {
+    "id": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "brand": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://www.oneplus.com/us/press/press-release/oneplus-welcomes-2023-with-the-launch-of-three-flagship-products"
+      ],
+      "method": "manufacturer launch/year evidence for selected market: South Africa manufacturer spec, 8 GB RAM + 128 GB storage variant; 2023 global launch; not necessarily worldwide first release"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "SimuFarm authored catalog/planned-runtime identifier; not manufacturer spec; no image built or provisioned"
+    },
+    "screen": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "provisional visual-target classification from manufacturer product illustration; inference, human review pending; cutout dimensions not measured"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; selected hardware variant stated in market; original OS version, not later update"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs",
+        "https://www.oneplus.com/us/press/press-release/oneplus-welcomes-2023-with-the-launch-of-three-flagship-products"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manually authored provenance/editorial confidence metadata, not device fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "unknown/not established; null is not manufacturer evidence or human verification"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; portrait pixel dimensions"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer-text; portrait pixel dimensions"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.oneplus.com/za/11/specs"
+      ],
+      "method": "manufacturer physical PPI 525; not Android logical densityDpi"
+    }
+  },
+  "runtime_ready": false,
+  "notes": [
+    "Stage B static visual target only; original generic artwork, no firmware or branded asset downloads",
+    "All runtime build identity properties unknown; build provenance null/empty; no runtime-ready claim",
+    "Notch is a provisional inferred visual classification, not human-verified geometry",
+    "RAM is selected physical RAM, excluding virtual/extended RAM"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "samsung-galaxy-s21",
+  "brand": "Samsung",
+  "model": "Galaxy S21 5G",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "11",
+  "shell_id": "samsung",
+  "base_image_id": "android-11-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 424.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://image-us.samsung.com/SamsungUS/samsungbusiness/pdfs/datasheet/Galaxy_S21_Series_Datasheet_Unlocked.pdf",
+    "https://www.samsungmobilepress.com/articles/make-every-day-epic-with-samsung-galaxy-s21-and-galaxy-s21-plus"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

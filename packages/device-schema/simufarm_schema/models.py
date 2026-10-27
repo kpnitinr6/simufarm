@@ -23,6 +23,22 @@ class Build(Contract):
     model: str | None = Field(alias="ro.product.model")
     device: str | None = Field(alias="ro.product.device")
     fingerprint: str | None = Field(alias="ro.build.fingerprint")
+    source_type: Literal["manufacturer_spec", "lineageos_tree", "xda_dump", "firmware"] | None = (
+        None
+    )
+    sources: list[HttpUrl] = Field(default_factory=list)
+
+    def properties(self):
+        return (self.brand, self.model, self.device, self.fingerprint)
+
+    @model_validator(mode="after")
+    def provenance_required(self):
+        if any(v is not None for v in self.properties()):
+            if not self.source_type or not self.sources:
+                raise ValueError("Asserted build properties require build source_type and sources")
+            if any(v is not None and not v.strip() for v in self.properties()):
+                raise ValueError("Build properties must be nonblank or null")
+        return self
 
 
 class DeviceProfile(Contract):
@@ -98,5 +114,7 @@ def validate_pair(profile: DeviceProfile, manifest: SimulatorManifest) -> None:
     if manifest.kind == "runtime":
         if profile.base_image_id != manifest.base_image_id:
             raise ValueError("Base image identity mismatch")
-        if any(v is None or not v.strip() for v in profile.build.model_dump().values()):
+        if any(v is None or not v.strip() for v in profile.build.properties()):
             raise ValueError("Runtime build identity is unknown; static previews only")
+        if not profile.build.source_type or not profile.build.sources:
+            raise ValueError("Runtime requires verifiable build provenance")
