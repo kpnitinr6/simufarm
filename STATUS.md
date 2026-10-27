@@ -19,3 +19,5 @@ Usage: MobileAPI requests made by project0; account remaining unknown. GitHub wo
 35 local backend/schema/policy checks and one browser smoke passed; Ruff, schema drift and frontend build passed. See data/validation/local-free-path-checks.json. No Docker, target-runtime remote CI or cloud runtime success is claimed. Public research/downloads did not consume authenticated MobileAPI quota. The email and local secrets remain in ignored .env, never public project files.
 
 Next gate: supported zero-cost runtime ADR and account-specific Oracle eligibility/capacity. CI remains manual-only until private-repository free usage/control evidence is available. Do not dispatch automatically or provision resources. User-provided account confirmation alone does not establish that a chosen resource is non-billable.
+
+Source pushed successfully to the supplied private repository on main; GitHub Actions run count was verified as 0 after publication. Receipt: data/validation/repository-receipt.json.

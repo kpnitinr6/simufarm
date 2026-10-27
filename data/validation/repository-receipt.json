@@ -1,0 +1,12 @@
+{
+  "observed_on": "2026-10-27",
+  "repository_url": "https://github.com/kpnitinr6/simufarm",
+  "visibility": "PRIVATE",
+  "default_branch": "main",
+  "verified_published_source_commit": "e76ef0f58e34b33972c3ec4cc1c72d269ffb8491",
+  "source_push_succeeded": true,
+  "github_actions_runs_observed": 0,
+  "automatic_workflows_enabled": false,
+  "cloud_resources_created": 0,
+  "note": "Receipt observed after initial source push; subsequent report-only commits retain manual-only workflows."
+}
