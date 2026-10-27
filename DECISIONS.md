@@ -32,3 +32,6 @@ The requested dpi field is physical PPI for these static references: X100 452 is
 
 ## Stage B / Stage D gates
 MOBILEAPI_KEY_STORED=yes was confirmed by the operator; no MobileAPI call is needed for Stage B and none is made. Conservative cap remains 50/month until dashboard verification. Re-verify PUBLIC repository visibility immediately before Stage D touches Oracle, even though it was verified for Stage A. No provisioning during Stage B.
+
+## Operator addendum — Stage B accepted; Stage C authorized
+Stage B static/interactive scope accepted. Missing Vivo build blocks are deferred and no longer block Stage C. All 1,000 generated profiles must deterministically emit build: null and runtime_eligible: false. Runtime admission remains separate: complete human-reviewed identities, consistent variants and field-level sources only. Stage E operates only on that subset. Third-party-device-db and firmware-dump evidence classes are authorized for candidate research; schema extension and human review precede promotion. Do not merge China X100 V2309A identity candidates into the India V2308 fingerprint without resolving the mismatch. Y100 additional extraction requires human region resolution. Stage D prep switches to verified 64only image tags and an inspected/pinned oci-arm-free-retry task, with no execution until Stage C acceptance.

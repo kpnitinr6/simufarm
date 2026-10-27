@@ -1,6 +1,6 @@
 # SimuFarm v3 status — 27 October 2026
 
-Stage A accepted and merged in PR #1. Stage B is authorized and in progress; Stage C is not started. Overall Stage B completion is below 100% because the three complete Vivo build backfills remain blocked. Counts below describe delivered artifacts, not human technical approval.
+Stage A accepted and merged. Stage B static DoD accepted by the operator: 20 shells, 20 templates, 22 profiles/pages, 52 Python tests, 16 browser tests and green Python 3.12 / Node 22 CI. Vivo backfill is deferred to an independent runtime-evidence track and does not block Stage C. Stage C is authorized; planning has begun, generated cohort count is currently 0/1,000. Generator implementation is pending and must explicitly emit build: null and runtime_eligible: false. Stage D is preparation only until Stage C acceptance.
 
 | Counter | Actual |
 |---|---:|
@@ -25,3 +25,5 @@ Repository PUBLIC reverified through GitHub on 27 October. MOBILEAPI_KEY_STORED=
 ADR 014 approved with build provenance addendum. Schema rejects asserted build properties without classified sources; runtime requires all four properties and human review. Y100/X100 official firmware supplies fingerprints only. Other three properties per device and all V30 properties remain unknown. Offline DeepSeek assignment executed; a Y100 transcription mismatch was rejected against literal firmware evidence. See docs/VIVO_BUILD_BACKFILL_RESEARCH.md.
 
 Validation: 52 Python tests and 16 browser tests passed locally; Ruff, source validation, contracts and frontend build passed. Remote run 40506761632 on 77d47c3 passed all steps on Python 3.12 / Node 22 (job wall time 66.0 seconds; public standard runner, $0). Final report-only commit may have a separate check. Public standard-runner CI only; CI contains no emulator/cloud deployment. No paid APIs, trials, provisioning, or model downloads. Stage C allocation corrected to 20 × 50 = 1,000, with diversity requirements per brand. No bulk extraction/generator has started.
+
+New runtime evidence task: tasks/vivo-build-property-evidence.yaml, assigned to local DeepSeek. Y100 extraction paused needs-human for region resolution. X100 candidate regional mismatch must be reviewed; third-party/firmware-dump source classes remain candidate evidence until schema support and human promotion. No resources provisioned.

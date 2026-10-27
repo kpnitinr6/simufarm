@@ -1,7 +1,15 @@
-# Stage C plan — approval required
+# Stage C — authorized plan
 
-Allocation: 20 brands × 50 distinct model rows = 1,000 rows. Nothing is included in the same allocation; do not silently fill unavailable devices with duplicates. If 50 verified models cannot be sourced for any brand, report the shortfall for an operator decision.
+Operator accepted Stage B for static/interactive scope. Runtime evidence is a separate track and does not block Stage C. Interactive behavior is not claimed to be implemented by this acceptance.
 
-Within EACH brand: at least 3 OS versions, 2 documented screen-size classes, and 2 chipset families. Record class thresholds and chipset family classification before selection. Cite popularity data and field-level technical sources; market share by brand does not establish device-level popularity. Pre-2020 entries require justification.
+1. Extend the profile contract to support build: null and explicit runtime_eligible: false. Update API, renderer, validator and generated TypeScript/JSON Schema together. Existing sourced reference build fragments remain preserved; generated static profiles never inherit them.
+2. Implement a deterministic CSV-to-profile generator using the 20 templates. Every generated profile emits build: null and runtime_eligible: false explicitly, regardless of template/input build claims. Runtime promotion is a separate human-reviewed operation, never a generator side effect. Reject unsafe IDs, duplicate IDs, invalid sources and missing required technical fields before writing output; reruns preserve identical bytes and unchanged files.
+3. Assemble a sourced popularity proposal and verify 20 brands × 50 distinct model rows = 1,000. Brand market share is not model-level popularity. Record market, ranking method, source URLs, physical PPI derivations and uncertainty. Each brand needs at least 3 OS versions, 2 screen-size classes and 2 chipset families. Define size classes by manufacturer diagonal (<6 inches, 6–<6.5 inches, >=6.5 inches); record chipset family classification. Do not invent rows or duplicate variants to fill a shortage; escalate infeasible brand quotas. Pre-2020 entries need justification. Preserve the earlier 22 reference artifacts separately from the 1,000-profile generated cohort.
+4. Generate and validate exactly 1,000 cohort profiles and pages. Test deterministic null/false defaults, malicious/duplicate input rejection, source coverage, per-brand diversity and idempotency. Run Python 3.12 / Node 22 CI and representative browser/snapshot checks. Catalog must distinguish generated drafts from approved runtime profiles.
+5. Report actual counts and exceptions for operator acceptance. Stage D execution remains blocked until Stage C is accepted.
 
-Start only after Stage B DoD and explicit operator approval. No Stage C CSV or profile generator is implemented by Stage B. The 20 reference profiles are not a batch extraction authorization.
+## Runtime subset
+Only complete, human-reviewed build identities with field-level provenance and consistent region/variant can be tagged runtime_eligible: true or admitted to profiles/runtime/. Validators must prevent directory/tag bypass and reject null/partial/unreviewed identities. Stage E consumes only this subset. Candidate evidence never promotes a profile automatically.
+
+## Zero-spend
+Local research/code and public standard CI only. No paid APIs/trials/resources. No MobileAPI calls planned; conservative cap remains 50/month. No provisioning or emulator execution in Stage C.

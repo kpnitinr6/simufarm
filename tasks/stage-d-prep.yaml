@@ -1,0 +1,22 @@
+{
+  "id": "stage-d-prep",
+  "status": "prepared-not-authorized-to-run",
+  "agent": "codex",
+  "branch": "agent/codex/stage-d-prep",
+  "depends_on": "Explicit operator acceptance of Stage C",
+  "image_policy": "Verify exact upstream redroid/*_64only-latest ARM64 tag and immutable digest before pull; Ampere Altra requires 64-bit-only userspace. Do not use prior mixed 32/64 image plan.",
+  "provisioning_plan": "Review and adapt oci-arm-free-retry; bounded retries/backoff, stop on non-free shape/budget/eligibility ambiguity, never paid fallback. No invocation or resource creation now.",
+  "preflight": [
+    "Verify repo PUBLIC",
+    "Verify account-specific free A1 eligibility and 2 OCPU / 12 GB baseline",
+    "Review retry tool source and pin revision",
+    "Keep keys/env out of tracked files",
+    "Operator Stage C acceptance required before execute"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "passed": true,
+    "execution_class": "local_only",
+    "reason": "Planning file only; no OCI command or provisioning execution"
+  }
+}
