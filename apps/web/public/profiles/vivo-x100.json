@@ -1,0 +1,35 @@
+{
+  "id": "vivo-x100",
+  "brand": "vivo",
+  "model": "X100",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "vivo",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1260,
+    "height_px": 2800,
+    "dpi": 452.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 12.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.vivo.com/in/products/param/x100",
+    "https://vivonewsroom.in/press-release/vivo-launches-the-ultimate-flagship-x100-series-with-next-level-of-imaging-co-engineered-with-zeiss/",
+    "https://www.vivo.com/in/products/x100"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,12 @@
+id: stage-a-source-audit
+agent: codex
+branch: agent/codex/stage-a-source-audit
+status: complete
+inputs: [Vivo India parameter and launch pages]
+outputs: [Read-only source audit incorporated into field-evidence files]
+acceptance_criteria: [Unknown firmware values not invented, Physical PPI derivations labeled]
+zero_spend_check:
+  will_create_bill: false
+  execution_class: local_only
+  passed: true
+  reason: Public source research only; no MobileAPI or external-model API calls

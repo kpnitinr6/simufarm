@@ -1,30 +1,60 @@
 {
   "$defs": {
-    "Body": {
+    "Build": {
       "additionalProperties": false,
       "properties": {
-        "width_mm": {
-          "exclusiveMinimum": 0,
-          "title": "Width Mm",
-          "type": "number"
+        "ro.product.brand": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ro.Product.Brand"
         },
-        "height_mm": {
-          "exclusiveMinimum": 0,
-          "title": "Height Mm",
-          "type": "number"
+        "ro.product.model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ro.Product.Model"
         },
-        "thickness_mm": {
-          "exclusiveMinimum": 0,
-          "title": "Thickness Mm",
-          "type": "number"
+        "ro.product.device": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ro.Product.Device"
+        },
+        "ro.build.fingerprint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ro.Build.Fingerprint"
         }
       },
       "required": [
-        "width_mm",
-        "height_mm",
-        "thickness_mm"
+        "ro.product.brand",
+        "ro.product.model",
+        "ro.product.device",
+        "ro.build.fingerprint"
       ],
-      "title": "Body",
+      "title": "Build",
       "type": "object"
     },
     "Notch": {
@@ -35,6 +65,7 @@
             "none",
             "punch_hole",
             "notch",
+            "teardrop",
             "dynamic_island"
           ],
           "title": "Type",
@@ -75,18 +106,12 @@
           "exclusiveMinimum": 0,
           "title": "Dpi",
           "type": "number"
-        },
-        "aspect": {
-          "pattern": "^\\d+(?:\\.\\d+)?:\\d+(?:\\.\\d+)?$",
-          "title": "Aspect",
-          "type": "string"
         }
       },
       "required": [
         "width_px",
         "height_px",
-        "dpi",
-        "aspect"
+        "dpi"
       ],
       "title": "Screen",
       "type": "object"
@@ -123,39 +148,40 @@
       "title": "Os Family",
       "type": "string"
     },
-    "os_versions": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1,
-      "title": "Os Versions",
-      "type": "array"
+    "os_version": {
+      "minLength": 1,
+      "title": "Os Version",
+      "type": "string"
+    },
+    "shell_id": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Shell Id",
+      "type": "string"
+    },
+    "base_image_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Base Image Id"
     },
     "screen": {
       "$ref": "#/$defs/Screen"
     },
-    "body": {
-      "$ref": "#/$defs/Body"
-    },
     "notch": {
       "$ref": "#/$defs/Notch"
-    },
-    "buttons": {
-      "items": {
-        "type": "string"
-      },
-      "title": "Buttons",
-      "type": "array"
     },
     "ram_gb": {
       "exclusiveMinimum": 0,
       "title": "Ram Gb",
       "type": "number"
     },
-    "storage_gb": {
-      "exclusiveMinimum": 0,
-      "title": "Storage Gb",
-      "type": "number"
+    "build": {
+      "$ref": "#/$defs/Build"
     },
     "source_type": {
       "enum": [
@@ -184,18 +210,32 @@
       "type": "number"
     },
     "verified_by": {
-      "enum": [
-        "human",
-        "gemini",
-        "ollama"
+      "anyOf": [
+        {
+          "enum": [
+            "human",
+            "gemini",
+            "ollama"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
       ],
-      "title": "Verified By",
-      "type": "string"
+      "title": "Verified By"
     },
     "verified_at": {
-      "format": "date-time",
-      "title": "Verified At",
-      "type": "string"
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Verified At"
     }
   },
   "required": [
@@ -204,13 +244,13 @@
     "model",
     "release_year",
     "os_family",
-    "os_versions",
+    "os_version",
+    "shell_id",
+    "base_image_id",
     "screen",
-    "body",
     "notch",
-    "buttons",
     "ram_gb",
-    "storage_gb",
+    "build",
     "source_type",
     "sources",
     "confidence",

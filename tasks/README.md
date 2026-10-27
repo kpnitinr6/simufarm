@@ -1,2 +1,1 @@
-# Active task handoffs
-P0-oracle-provision, P1-static-generator and P2-api-extraction are the requested first-action seed tasks; P4-single-session-runtime tracks the feasibility blocker. Every task includes a Zero-Spend Check. A check on a local preparation task does not approve deployment. Archived paid-path tasks must not execute under the free-tier plan. Each task proposes an owner branch; no external DeepSeek/Gemini/Ollama call has been made and no external agent completion is claimed.
+Active scope is Stage A only. stage-a-vivo-proof owns the requested migration branch; source-audit is read-only research. Historical P0/P1/P2 and docker-android tasks are archived. No external DeepSeek/Gemini/Ollama completion is claimed. Stage B requires human acceptance of Stage A.

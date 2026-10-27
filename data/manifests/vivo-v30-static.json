@@ -1,0 +1,12 @@
+{
+  "simulator_id": "vivo-v30-static",
+  "profile_id": "vivo-v30",
+  "kind": "static",
+  "shell_id": "vivo",
+  "base_image_id": "android-14-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

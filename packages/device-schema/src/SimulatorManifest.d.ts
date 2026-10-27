@@ -7,10 +7,9 @@
 
 export type SimulatorId = string;
 export type ProfileId = string;
-export type Kind = "static" | "interactive" | "emulator";
+export type Kind = "static" | "interactive" | "runtime";
+export type ShellId = string;
 export type BaseImageId = string | null;
-export type ShellAssetId = string;
-export type StorageRef = string;
 export type Status = "ready" | "building" | "failed";
 export type RamMb = number;
 export type Vcpu = number;
@@ -19,9 +18,8 @@ export interface SimulatorManifest {
   simulator_id: SimulatorId;
   profile_id: ProfileId;
   kind: Kind;
+  shell_id: ShellId;
   base_image_id: BaseImageId;
-  shell_asset_id: ShellAssetId;
-  storage_ref: StorageRef;
   status: Status;
   limits: Limits;
 }

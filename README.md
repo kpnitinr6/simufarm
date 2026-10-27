@@ -1,61 +1,39 @@
-# SimuFarm — zero-spend development path
+# SimuFarm v3 — Stage A Vivo proof of concept
 
-A software-only simulator platform scaffold. The active brief is MASTER_PROMPT_FREE_TIER.md and active decisions are DECISIONS.md. Recurring cloud spend and setup allowance are both **US$0**. Previous paid plans are historical and must not be provisioned.
+One handmade Vivo-style shell, three manual sourced profiles and three static pages. This branch follows MASTER_PROMPT.md and supersedes all previous runtime-first plans. No cloud, paid resource, emulator, API-quota call or deployment is involved.
 
-**Current delivery:** tested API/catalog/schema foundations, task handoffs and source-backed feasibility research. **Not delivered:** a running Oracle VM, a booted emulator, noVNC, GADS, native APK tests, or generated device-specific pages. There are zero approved technical profiles and zero launched sessions.
-
-## Free-path compatibility blockers
-
-The requested unmodified budtmo/docker-android launcher requires /dev/kvm and installs an x86_64 Android image. A native Oracle ARM/no-KVM path is not established; SwiftShader only provides software graphics. Do not claim this image boots by passing -no-accel. GADS adopts running emulators and requires MongoDB; it does not launch them. See docs/EMULATOR_COMPATIBILITY.md.
-
-Current primary-source checks show Oracle Free-only allowance equivalent to2 OCPU/12 GB and MobileAPI pricing/signup at50 requests/month, not the brief's4/24 and200. Account entitlements and remaining quota are unverified. See docs/FREE_TIER_FACT_CHECK.md. No API requests, trial signup, account upgrade or cloud resource creation has occurred.
-
-The operator confirmed the Oracle account active and ZERO_SPEND_CONFIRMED=yes. The account email is stored only in ignored .env. The supplied repository https://github.com/kpnitinr6/simufarm is **private**. Automatic CI is disabled because the current token cannot read billing usage. Manual-only workflows must not run before free-minute/billing controls are checked. Repository visibility was not changed.
-
-## Local setup
-
-Intended runtime: Python 3.12 and Node 22. Current host verification uses Python 3.14/Node 26; remote target-runtime CI has not run.
-
+## Run locally
+Python 3.12 and Node 22 are the intended CI runtime. From repository root:
 ```sh
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -e ./packages/device-schema -e '.[dev]'
 npm ci
-uvicorn simufarm_api.main:app --host 127.0.0.1 --port 8000
-# In another terminal:
+npm run build
 npm run dev
 ```
-
-Web http://127.0.0.1:5173; API documentation http://127.0.0.1:8000/docs. API liveness does not establish emulator or cloud readiness.
-
-Optional local Docker development, after setting local MinIO credentials in .env:
-```sh
-docker compose --env-file .env -f infra/docker/compose.yaml up --build -d --wait
-```
-This defines API/MinIO/bucket-init only. No Oracle, emulator, GADS, MongoDB, PostgreSQL or Redis is deployed. Docker is unavailable in the current environment, so this configuration has not been runtime-validated.
+Open http://127.0.0.1:5173. The catalog lists Y100,X100,V30 India variants. Individual pages are /simulators/vivo-y100.html, /simulators/vivo-x100.html and /simulators/vivo-v30.html. Static assets and catalog are generated under apps/web/public; one shared shells/vivo component supplies all three.
 
 ```sh
 pytest -q
 ruff check .
-python scripts/validate_data.py
+python scripts/validate_data.py --allow-draft
 npm run contracts:check
-npm run build
 npx playwright install chromium
 npm run test:web
-python scripts/zero_spend_check.py tasks/P1-static-generator.yaml
-# External-resource tasks report blocked and exit2; they execute no action.
 ```
+The browser tests save one actual page screenshot per model in docs/proof/. They also test the three-card catalog and mobile overflow. Rendering is deterministic/idempotent; tests verify that rerunning leaves bytes and modification times unchanged.
 
-## Data and approval
+## Source and review status
+All three profiles are manually researched from Vivo India parameter/launch pages. Field evidence is in data/sources/vivo-*.evidence.json. No manufacturer photographs, logos, wallpapers or firmware binaries are bundled. All on-screen art is original CSS. The shell is a generic visual interpretation, not OEM pixel fidelity.
 
-Schema 0.2.0 requires source_type=api|scraper|manual. Scraped data retains confidence<0.9 and requires actual human review before promotion. API/manual profiles retain the>=0.9 review threshold. No JSON field proves the truth of a review; evidence maps and reviewer approvals are required.
+Draft profiles have genuine firmware build identity unknown and human review pending. See proposed ADR 014: null values are honest unknowns and runtime admission rejects them. An explicit --allow-draft flag generates only labeled visual previews. Default profile validation and the approved-profile API exclude unreviewed data; it must not be presented as a verified runtime catalog. No fabricated fingerprint or false reviewer label is used.
 
-The original1000-name list is approved for static generation only, explicitly not spec extraction. The500-name alternative is vendor-share-weighted, not a measured model-popularity ranking. Its separate proposed top100 awaits explicit approval. The visual iPhone list now contains55 iPhones only, per operator direction; no iPad padding. No device specifications or branded assets were collected.
+Screen dpi currently denotes physical PPI, including disclosed calculations for Y100/V30; it is not an Android logical-density setting. Profile base_image_id values are future mapping identifiers, not proof of installed/bootable images. No static mockup establishes actual RAM allocation, OEM firmware compatibility or device attestation.
 
-## Runtime design and limits
+## Runtime limitations and later gates
+Redroid ARM64 only; no docker-android or /dev/kvm. No per-device disk images, /data copying, baked per-model build.prop, functional iOS or physical-device farm. Fresh containers and actual identity evidence belong to Stage D; unique IMEI/GSF/advertising IDs are not assumed if absent. No Play Integrity/SafetyNet/certification spoofing is attempted. Apps requiring certified devices may reject the runtime. Emulator results do not establish real-radio/sensor/camera/DRM/battery/thermal or hardware-performance behavior.
 
-The planned maximum is **one active Android session**, with a future durable SQLite queue and test-result store. The queue, lifecycle executor, GADS integration and Appium harness are not implemented. Emulator launch remains disabled until a supported, approved zero-cost architecture is established. Boot time is unmeasured;5–15 minutes is a brief assumption, not a platform guarantee. P6 scale-out is out of scope.
+No Oracle resources are created until Stage D and verified nonbillable eligibility. Capacity is unmeasured, not promised. GADS lifecycle/Appium is Stage G; Magisk Stage E. Stage B is blocked pending human approval of Stage A. The Stage C 1,000-row allocation has an arithmetic discrepancy recorded in DECISIONS.md. No CSV profile generator, additional brand shell, bulk collection or runtime executor is started here.
 
-Visual mockups do not reproduce vendor firmware. Emulator results cannot establish OEM quirks, real sensors/radio, camera fidelity, DRM, thermals, battery behavior or physical performance. iPhone support is visual-only. No functional iOS emulation, per-brand full image clones, image binaries, trademarked wallpapers/logos, or cloud-paid fallback is included.
-
-See FREE_TIER_REPORT.md, STATUS.md and data/usage/free-tier-usage.json for current evidence and remaining work.
+MobileAPI conservative cap 50/month; zero calls made by this work and account remaining quota unknown. API key existence is operator-confirmed; its contents were not read. Repository PUBLIC was already explicitly authorized and verified; no visibility change was needed for this stage. CI uses standard runners only, code/schema/static/browser checks, no emulator or cloud deployment.

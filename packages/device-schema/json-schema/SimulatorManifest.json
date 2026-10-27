@@ -40,9 +40,14 @@
       "enum": [
         "static",
         "interactive",
-        "emulator"
+        "runtime"
       ],
       "title": "Kind",
+      "type": "string"
+    },
+    "shell_id": {
+      "minLength": 1,
+      "title": "Shell Id",
       "type": "string"
     },
     "base_image_id": {
@@ -55,16 +60,6 @@
         }
       ],
       "title": "Base Image Id"
-    },
-    "shell_asset_id": {
-      "minLength": 1,
-      "title": "Shell Asset Id",
-      "type": "string"
-    },
-    "storage_ref": {
-      "pattern": "^(?:s3|https)://.+$",
-      "title": "Storage Ref",
-      "type": "string"
     },
     "status": {
       "enum": [
@@ -83,9 +78,8 @@
     "simulator_id",
     "profile_id",
     "kind",
+    "shell_id",
     "base_image_id",
-    "shell_asset_id",
-    "storage_ref",
     "status",
     "limits"
   ],

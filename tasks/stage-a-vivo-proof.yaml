@@ -1,0 +1,25 @@
+id: stage-a-vivo-proof
+agent: codex
+branch: pivot/redroid-shell-first
+status: in_review
+inputs:
+  - MASTER_PROMPT.md v3
+  - Five operator inputs received
+outputs:
+  - v0.3.0 contracts
+  - shells/vivo
+  - Three source-backed manual draft profiles
+  - Three static pages and docs/proof screenshots
+  - Stage A PR
+acceptance_criteria:
+  - Three pages render in browser and catalog lists all three
+  - Deterministic static generation and identity-evidence tests pass
+  - Original CSS assets only; no invented specs
+zero_spend_check:
+  will_create_bill: false
+  execution_class: local_only
+  passed: true
+  reason: Local code/research/testing; public standard-runner code CI only; no cloud or API extraction
+needs_human:
+  - ADR014 draft-nullability clarification
+  - Stage A acceptance before Stage B

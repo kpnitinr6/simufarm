@@ -1,6 +1,6 @@
 {
   "name": "simufarm",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "workspaces": [
     "apps/web",
@@ -10,11 +10,12 @@
   ],
   "scripts": {
     "dev": "npm run dev -w @simufarm/web",
-    "build": "npm run build -w @simufarm/web",
+    "build": "npm run generate:static && npm run build -w @simufarm/web",
     "typecheck": "tsc --noEmit -p apps/web/tsconfig.json",
     "contracts:generate": "python scripts/export_contracts.py",
     "contracts:check": "python scripts/export_contracts.py --check",
-    "test:web": "playwright test"
+    "test:web": "playwright test",
+    "generate:static": "python scripts/render_static.py --allow-draft"
   },
   "devDependencies": {
     "typescript": "^5.7.2",

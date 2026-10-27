@@ -1,0 +1,17 @@
+{
+  "id": "vivo",
+  "version": "0.1.0",
+  "kind": "static",
+  "author": "SimuFarm",
+  "assets": "Original HTML/CSS artwork only; no logo or manufacturer wallpaper",
+  "geometry": "Stylized bezel/button proportions, not dimensional hardware fidelity",
+  "supported_notches": [
+    "teardrop",
+    "punch_hole"
+  ],
+  "sources": [
+    "https://www.vivo.com/in/products/y100",
+    "https://www.vivo.com/in/products/x100",
+    "https://www.vivo.com/in/products/v30"
+  ]
+}

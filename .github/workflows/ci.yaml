@@ -1,5 +1,9 @@
-name: Free-path code checks
-on: [workflow_dispatch]
+name: Stage A checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -16,11 +20,9 @@ jobs:
       - run: npm ci
       - run: ruff check .
       - run: pytest -q
-      - run: python scripts/validate_data.py
+      - run: python scripts/validate_data.py --allow-draft
       - run: npm run contracts:check
       - run: npm run build
-# No deploy, emulator, API extraction, paid runners or cloud provisioning steps.
-# Confirm public-repository standard-runner free eligibility before enabling remotely.
-
-# Supplied repository is PRIVATE; billing usage is not readable with the current token.
-# Do not dispatch until included minutes and zero-spend enforcement are verified.
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:web
+# PUBLIC repository; standard runner only. No emulator, deploy, API or billable artifacts.

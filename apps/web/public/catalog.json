@@ -1,0 +1,113 @@
+[
+  {
+    "id": "vivo-v30",
+    "brand": "vivo",
+    "model": "V30",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "vivo",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1260,
+      "height_px": 2800,
+      "dpi": 453.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.vivo.com/in/products/param/v30",
+      "https://vivonewsroom.in/press-release/vivo-announces-vivo-v30-series-elevating-portrait-photography-with-studio-quality-aura-light-and-zeiss-partnership-in-v30-pro/",
+      "https://www.vivo.com/in/products/v30"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/vivo-v30.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "vivo-x100",
+    "brand": "vivo",
+    "model": "X100",
+    "release_year": 2024,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "vivo",
+    "base_image_id": "android-14-arm64",
+    "screen": {
+      "width_px": 1260,
+      "height_px": 2800,
+      "dpi": 452.0
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 12.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.vivo.com/in/products/param/x100",
+      "https://vivonewsroom.in/press-release/vivo-launches-the-ultimate-flagship-x100-series-with-next-level-of-imaging-co-engineered-with-zeiss/",
+      "https://www.vivo.com/in/products/x100"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/vivo-x100.html",
+    "review_status": "needs-human"
+  },
+  {
+    "id": "vivo-y100",
+    "brand": "vivo",
+    "model": "Y100",
+    "release_year": 2023,
+    "os_family": "android",
+    "os_version": "13",
+    "shell_id": "vivo",
+    "base_image_id": "android-13-arm64",
+    "screen": {
+      "width_px": 1080,
+      "height_px": 2400,
+      "dpi": 413.0
+    },
+    "notch": {
+      "type": "teardrop",
+      "position": "top_center"
+    },
+    "ram_gb": 8.0,
+    "build": {
+      "ro.product.brand": null,
+      "ro.product.model": null,
+      "ro.product.device": null,
+      "ro.build.fingerprint": null
+    },
+    "source_type": "manual",
+    "sources": [
+      "https://www.vivo.com/in/products/param/y100",
+      "https://vivonewsroom.in/press-release/vivo-launches-y100-the-first-premium-y-series-smartphone-with-two-color-changing-variants-in-india/",
+      "https://www.vivo.com/in/products/y100"
+    ],
+    "confidence": 0.85,
+    "verified_by": null,
+    "verified_at": null,
+    "url": "/simulators/vivo-y100.html",
+    "review_status": "needs-human"
+  }
+]

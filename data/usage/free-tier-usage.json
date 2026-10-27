@@ -8,7 +8,8 @@
     "account_entitlement_verified": false,
     "authenticated_requests_made_by_this_project": 0,
     "account_used": null,
-    "account_remaining": null
+    "account_remaining": null,
+    "key_stored_operator_confirmed": true
   },
   "github": {
     "remote_runs_started_by_this_project": 0,
@@ -17,11 +18,11 @@
     "account_minutes_remaining": null,
     "standard_public_runner_only": true,
     "provided_repository": "https://github.com/kpnitinr6/simufarm",
-    "repository_visibility": "PRIVATE",
+    "repository_visibility": "PUBLIC",
     "repository_empty_at_inspection": true,
     "billing_usage_read": "blocked_token_lacks_user_scope",
     "actions_enabled": true,
-    "automatic_workflows_enabled": false
+    "automatic_workflows_enabled": true
   },
   "oracle": {
     "account_active_verified": false,
@@ -39,5 +40,7 @@
     "novnc_verified": false,
     "gads_verified": false,
     "status": "blocked_unsupported_requested_runtime"
-  }
+  },
+  "controlling_prompt": "v3-shell-first",
+  "stage": "A"
 }

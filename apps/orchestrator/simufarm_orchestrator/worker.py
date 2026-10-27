@@ -1,18 +1,5 @@
-"""Free-path orchestration is deliberately disabled until compatibility/approval gates pass."""
-
-MAX_CONCURRENT_EMULATORS = 1
-
-
+"""Runtime/lifecycle work is not started before the v3 stage gates."""
 def health():
-    return {
-        "status": "blocked",
-        "max_concurrent_emulators": MAX_CONCURRENT_EMULATORS,
-        "emulator_launch_enabled": False,
-        "reason": "Oracle account approval and supported ARM/no-KVM runtime are unverified",
-    }
-
-
-if __name__ == "__main__":
-    import json
-
-    print(json.dumps(health()))
+    return {"status":"disabled-stage-a", "runtime":"redroid-arm64-planned",
+            "containers_running":0, "validated_concurrency":None,
+            "launch_enabled":False, "lifecycle_stage":"G"}
