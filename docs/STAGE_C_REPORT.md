@@ -36,7 +36,7 @@ The static generation pipeline is implemented and the real cohort contains **1,0
 | zte | 64 | 7 | 2 | 4 |
 | tcl | 61 | 6 | 3 | 4 |
 
-Total 1,000; global diversity 7 Android versions (10–16),3 screen classes and7 chipset families. Measured exemptions: Lenovo screen-size diversity, LG OS-version spread and Nothing screen-size diversity. All 20 quota deviations from50 are recorded. Nothing-company 11 includes two CMF phones and nine Nothing-branded phones; no cosmetic/RAM/carrier duplicates. This parent-company grouping is disclosed for operator review.
+Total 1,000; global diversity 7 Android versions (10–16), 3 screen classes and 7 chipset families. Measured exemptions: Lenovo screen-size diversity, LG OS-version spread and Nothing screen-size diversity. All 20 quota deviations from 50 are recorded. Nothing-company 11 includes two CMF phones and nine Nothing-branded phones; no cosmetic/RAM/carrier duplicates. This parent-company grouping is disclosed for operator review.
 
 ## Source quality and ranking limit
 
@@ -44,7 +44,7 @@ The cohort adapts public GetTechAPI/TechAPI revision db1dea0c38ff07fcf400aa05d8c
 
 Source research removed unknown chipsets, aliases, regional/carrier/RAM/cosmetic duplicates, future/non-Android and obvious tablet records, known misdated LG X4 Plus and identified bad candidate records. These filters are useful checks, not independent verification of 1,000 manufacturer facts. Every generated profile remains unreviewed; upstream verified flags were not adopted. No firmware/build values were inferred.
 
-Public vendor market share does not establish model-level popularity for 1,000 Android devices. **No model rank is fabricated.** Current selection is deterministic coverage and release recency. This original popularity requirement remains a scope gap: accept that disclosed selection method or provide suitable model-level reach/ranking evidence before treating Stage C as fully accepted. No further bulk specs or runtime work is implied by this report.
+Public vendor market share does not establish model-level popularity for 1,000 Android devices. **No model rank is fabricated.** Current selection is deterministic coverage and release recency. This original popularity requirement remains a scope gap: accept that disclosed selection method or provide suitable model-level reach/ranking evidence before treating Stage C as fully accepted. 
 
 ## Runtime evidence and later gates
 
@@ -54,6 +54,8 @@ Stage D task is prepared-not-authorized. It specifies verified ARM64 redroid/*_6
 
 ## Verification and actual costs
 
-Local 76 Python tests and 19 Playwright tests pass, including 1,000 HTTP page checks, five representative brand renderings, ten visual snapshot regressions, real-cohort policy/count validation and idempotency. Ruff, schema/type drift,1,022 profile/source validation, TypeScript and Vite build pass. Host Python 3.14 / Node 26; remote CI is specifically Python 3.12 / Node 22 and will be recorded when complete.
+Local 76 Python tests and 19 Playwright tests pass, including 1,000 HTTP page checks, five representative brand renderings, ten visual snapshot regressions, real-cohort policy/count validation and idempotency. Ruff, schema/type drift, 1,022 profile/source validation, TypeScript and Vite build pass. Host Python 3.14 / Node 26; remote CI passed on Python 3.12 / Node 22: [run 40512173427](https://github.com/kpnitinr6/simufarm/actions/runs/40512173427), commit 04878ce, public standard-runner job elapsed 49 seconds. Evidence is saved in data/validation/stage-c-ci.json. [PR #3](https://github.com/kpnitinr6/simufarm/pull/3) remains draft and unmerged.
 
 Billable resources touched **0**; spend **$0**. Oracle VMs/uptime 0/0; runtime containers 0; MobileAPI calls 0, actual account remaining unknown. No paid model API, trial, deployment, image pull or provisioning. Stage C code and drafts are ready for review; acceptance remains the operator's decision.
+
+Pinned-source importer was rerun separately and reproduced identical CSV bytes (SHA256 e6712a51267d2eceb0b99654b980ca048c3bd8c6222f368b583688482397a7b2).

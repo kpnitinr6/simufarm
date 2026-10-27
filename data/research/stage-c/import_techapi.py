@@ -8,6 +8,7 @@ import json
 import math
 import pathlib
 import re
+import subprocess
 
 BRANDS = [
     "vivo",
@@ -237,6 +238,14 @@ def main():
     ap.add_argument("dataset", type=pathlib.Path)
     ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data"))
     a = ap.parse_args()
+    observed_revision = subprocess.run(
+        ["git", "-C", str(a.dataset), "rev-parse", "HEAD"],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    if observed_revision != REV:
+        raise ValueError(f"Dataset revision mismatch: expected {REV}, got {observed_revision}")
     allrows, rejected = collect(a.dataset)
     supplement = json.loads(
         pathlib.Path(__file__).with_name("nothing-primary-supplement.json").read_text()

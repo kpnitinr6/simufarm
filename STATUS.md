@@ -32,11 +32,11 @@ All **1,000 generated profiles explicitly serialize build: null and runtime_elig
 
 Nothing-company count 11 includes nine Nothing phones and two explicitly disclosed CMF models; no cosmetic Community Edition or RAM/carrier variants pad the quota. If the operator requires the Nothing brand alone, that leaves a two-model shortfall and needs a quota decision, not invented devices.
 
-Global mandatory minima (3 OS versions / 2 sizes / 2 chipset families) pass. Observed Android versions10–16; seven normalized chipset families. Size classes: <6 inches, 6–<6.5 inches, >=6.5 inches.
+Global mandatory minima (3 OS versions / 2 sizes / 2 chipset families) pass. Observed Android versions 10–16; seven normalized chipset families. Size classes: <6 inches, 6–<6.5 inches, >=6.5 inches.
 
 ## Exemptions filed
 
-23 measured entries in data/devices.csv.exemptions.yaml: quota redistribution for all20brands plus three diversity exceptions:
+23 measured entries in data/devices.csv.exemptions.yaml: quota redistribution for all 20 brands plus three diversity exceptions:
 - Lenovo: 1 screen-size class (large).
 - LG: 1 Android version (10).
 - Nothing-company: 1 screen-size class (large).
@@ -45,8 +45,10 @@ Each entry includes brand, constraint, reason and actual global diversity preser
 
 ## Validation and zero-spend counters
 
-Local validation: **76 Python tests, 19 Playwright tests**, Ruff, contract drift, 1,022-profile source validation, frontend build and two-run idempotency checks pass. All 1,000 generated URLs served HTTP200 and expected shell/static warnings; five brands were browser-rendered and ten existing visual snapshots passed. Remote Python 3.12 / Node 22 CI is pending the Stage C PR.
+Local validation: **76 Python tests, 19 Playwright tests**, Ruff, contract drift, 1,022-profile source validation, frontend build and two-run idempotency checks pass. All 1,000 generated URLs served HTTP 200 and expected shell/static warnings; five brands were browser-rendered and ten existing visual snapshots passed. Remote Python 3.12 / Node 22 CI passed on 04878ce: run 40512173427, job elapsed 49 seconds on a public standard runner. Evidence: data/validation/stage-c-ci.json. PR #3 remains draft and unmerged. A later report-only commit has separate checks.
 
 Oracle VMs created 0; VM managed uptime 0; containers 0; boot time/RAM unmeasured; MobileAPI calls 0; conservative cap 50/month, actual account remaining unknown. Billable resources touched 0; spend **$0**. No paid API, provisioning, trial or runtime image pull. Repository public standard-runner CI only.
 
 Contract 0.4.0 includes third_party_device_db and firmware_dump and rejects incomplete/unreviewed runtime promotion. X100 China/India choice is needs-human in the runtime task. Separate DeepSeek evidence commit 25848cb is candidate-only; Y100 additional extraction remains paused. Stage D task remains prepared-not-authorized and includes X100 region confirmation before Stage E.
+
+Pinned-source importer was rerun separately and reproduced identical CSV bytes (SHA256 e6712a51267d2eceb0b99654b980ca048c3bd8c6222f368b583688482397a7b2).
