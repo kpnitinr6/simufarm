@@ -14,5 +14,6 @@ def test_target_proposal():
     assert all(
         x["review_status"] == "pending" and x["source_url"].startswith("https://") for x in rows
     )
-    assert proposal["approval_status"] == "pending-human"
+    assert proposal["approval_status"] == "approved-static-only"
+    assert proposal["approval_scope"]["spec_extraction"] is False
     assert not list((ROOT / "data/profiles").glob("*.json"))

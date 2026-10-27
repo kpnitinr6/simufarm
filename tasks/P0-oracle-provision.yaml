@@ -1,0 +1,43 @@
+{
+  "id": "P0-oracle-provision",
+  "agent": "codex",
+  "branch": "agent/codex/P0-oracle-provision",
+  "status": "blocked",
+  "inputs": [
+    "Active Oracle account confirmation",
+    "GITHUB_REPO_URL",
+    "ZERO_SPEND_CONFIRMED=yes",
+    "Proven nonbillable account plan",
+    "Supported ARM/no-KVM runtime ADR"
+  ],
+  "outputs": [
+    "Reviewed account-specific free plan",
+    "Runtime evidence only after approvals"
+  ],
+  "acceptance_criteria": [
+    "Verified Always Free eligibility and remaining quota",
+    "Supported no-KVM runtime boots; noVNC measured",
+    "Deployed API health reachable",
+    "Zero billable resources"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": "unknown",
+    "execution_class": "cloud_resource",
+    "passed": false,
+    "reason": "External cost, authorization or feasibility unverified; do not execute"
+  },
+  "needs_human": [
+    "Active Oracle account confirmation",
+    "GITHUB_REPO_URL",
+    "ZERO_SPEND_CONFIRMED=yes",
+    "Proven nonbillable account plan",
+    "Supported ARM/no-KVM runtime ADR"
+  ],
+  "guardrails": [
+    "Zero paid infrastructure",
+    "No trials or account upgrades",
+    "No guessed specs",
+    "Single emulator session maximum",
+    "No functional iOS emulation"
+  ]
+}

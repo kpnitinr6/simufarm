@@ -2,20 +2,20 @@ import os
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
-from simufarm_schema import DeviceProfile
+from simufarm_schema import DeviceProfile, is_review_approved
 
 DEFAULT_PROFILES = Path(__file__).resolve().parents[3] / "data" / "profiles"
 
 
 def create_app(profile_dir: Path | None = None) -> FastAPI:
-    app = FastAPI(title="SimuFarm", version="0.1.0")
+    app = FastAPI(title="SimuFarm", version="0.2.0")
     directory = profile_dir or Path(os.getenv("PROFILE_DIR", str(DEFAULT_PROFILES)))
 
     def approved():
         profiles = []
         for path in sorted(directory.glob("*.json")):
             profile = DeviceProfile.model_validate_json(path.read_text())
-            if profile.verified_by == "human" and profile.confidence >= 0.9:
+            if is_review_approved(profile):
                 profiles.append(profile)
         return profiles
 

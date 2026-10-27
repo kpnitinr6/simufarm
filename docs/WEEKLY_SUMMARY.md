@@ -1,4 +1,8 @@
-# Operator summary — week of 26 October 2026
+> HISTORICAL PAID-PATH DOCUMENT. Superseded by MASTER_PROMPT_FREE_TIER.md, current DECISIONS.md and FREE_TIER_REPORT.md. Do not provision from these instructions.
+
+# Initial operator summary — week of 26 October 2026
+
+> Superseded where decisions differ by DECISION_UPDATE_REPORT.md and current ADRs 007/009. The new budget includes $100 one-time month-1 setup allowance.
 
 Delivered the master prompt's initial local artifacts. P0 is partial; P1–P6 have not started. No device specifications were fetched and no external model task was dispatched. All 1,000 proposed targets require review.
 

@@ -5,6 +5,7 @@ COPY pyproject.toml /app/
 COPY apps /app/apps
 RUN pip install --no-cache-dir ./packages/device-schema .
 COPY data /app/data
+COPY scripts /app/scripts
 RUN useradd --create-home simufarm
 USER simufarm
 EXPOSE 8000

@@ -1,37 +1,40 @@
-# SimuFarm
-A software-only mobile simulator platform scaffold for simufarm-team/simufarm.
+# SimuFarm — zero-spend development path
 
-This delivery executes the master prompt's initial bootstrap and planning actions. It is not a deployed emulator farm. There are **1,000 proposed device names, zero approved profiles, zero generated simulator URLs, and zero running emulators**.
+A software-only simulator platform scaffold. The active brief is MASTER_PROMPT_FREE_TIER.md and active decisions are DECISIONS.md. Recurring cloud spend and setup allowance are both **US$0**. Previous paid plans are historical and must not be provisioned.
 
-## What is implemented
-- FastAPI health and approved-profile read API; Pydantic profile/manifest contracts.
-- Generated JSON Schema and TypeScript packages with drift checks.
-- React/Vite catalog shell and a generic Web Component primitive.
-- Celery worker health task; no emulator launch implementation.
-- PostgreSQL/Redis/MinIO Compose definitions, SQL schema and API Dockerfile.
-- Unit/integration checks, Playwright bootstrap smoke, CI and nightly web workflow.
-- Task handoffs, ADRs, target proposal, provenance, status and execution report.
+**Current delivery:** tested API/catalog/schema foundations, task handoffs and source-backed feasibility research. **Not delivered:** a running Oracle VM, a booted emulator, noVNC, GADS, native APK tests, or generated device-specific pages. There are zero approved technical profiles and zero launched sessions.
+
+## Free-path compatibility blockers
+
+The requested unmodified budtmo/docker-android launcher requires /dev/kvm and installs an x86_64 Android image. A native Oracle ARM/no-KVM path is not established; SwiftShader only provides software graphics. Do not claim this image boots by passing -no-accel. GADS adopts running emulators and requires MongoDB; it does not launch them. See docs/EMULATOR_COMPATIBILITY.md.
+
+Current primary-source checks show Oracle Free-only allowance equivalent to2 OCPU/12 GB and MobileAPI pricing/signup at50 requests/month, not the brief's4/24 and200. Account entitlements and remaining quota are unverified. See docs/FREE_TIER_FACT_CHECK.md. No API requests, trial signup, account upgrade or cloud resource creation has occurred.
+
+The operator confirmed the Oracle account active and ZERO_SPEND_CONFIRMED=yes. The account email is stored only in ignored .env. The supplied repository https://github.com/kpnitinr6/simufarm is **private**. Automatic CI is disabled because the current token cannot read billing usage. Manual-only workflows must not run before free-minute/billing controls are checked. Repository visibility was not changed.
 
 ## Local setup
-Python 3.12, Node 22, npm, and Docker Compose v2 are the intended toolchain.
+
+Intended runtime: Python 3.12 and Node 22. Current host verification uses Python 3.14/Node 26; remote target-runtime CI has not run.
 
 ```sh
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -e ./packages/device-schema -e '.[dev]'
 npm ci
-cp .env.example .env
-# Replace local password placeholders in .env before starting services.
-docker compose --env-file .env -f infra/compose.yaml up -d
 uvicorn simufarm_api.main:app --host 127.0.0.1 --port 8000
 # In another terminal:
 npm run dev
 ```
-Web: http://127.0.0.1:5173; API docs: http://127.0.0.1:8000/docs.
-API liveness is not a database/object-store readiness check. Compose currently starts backing services only; API and worker are started separately. MinIO bucket creation, database projection sync and application storage integration remain to implement.
+
+Web http://127.0.0.1:5173; API documentation http://127.0.0.1:8000/docs. API liveness does not establish emulator or cloud readiness.
+
+Optional local Docker development, after setting local MinIO credentials in .env:
+```sh
+docker compose --env-file .env -f infra/docker/compose.yaml up --build -d --wait
+```
+This defines API/MinIO/bucket-init only. No Oracle, emulator, GADS, MongoDB, PostgreSQL or Redis is deployed. Docker is unavailable in the current environment, so this configuration has not been runtime-validated.
 
 ```sh
-celery -A simufarm_orchestrator.worker:app worker --loglevel=info
 pytest -q
 ruff check .
 python scripts/validate_data.py
@@ -39,18 +42,20 @@ npm run contracts:check
 npm run build
 npx playwright install chromium
 npm run test:web
+python scripts/zero_spend_check.py tasks/P1-static-generator.yaml
+# External-resource tasks report blocked and exit2; they execute no action.
 ```
 
-## Profile approval and provenance
-Review data/profiles/_targets.yaml before spec extraction. Names come from Google's public device inventory, not invented technical specifications. It is a balanced candidate pool, not a market-share ranking. Models, regional aliases, tablet inclusion and device class require human review. Current proposal covers Android; iOS visual targets can be added after approval.
-See docs/PROFILE_EVIDENCE.md for evidence and human review requirements. No real profile may be committed based only on a model's confidence or self-declared reviewer label. The P2 promotion workflow must validate those records. Synthetic data exists only in tests, clearly marked, with example.org references.
+## Data and approval
 
-## Fidelity limits and prohibited uses
-A visual shell is not a real OEM operating system. Android emulator results cannot establish OEM firmware compatibility, actual radio/cellular behavior, physical sensor behavior, thermal/battery performance, camera fidelity, DRM behavior, or real-hardware performance. Google Play services and images depend on image selection and licensing. Real handset testing may still be needed outside this platform. iOS is supported only through static/interactive web visuals; no functional iOS emulator is supplied or planned.
-No logos, branded wallpapers or redistributable device imagery are bundled. Generic frames only until licenses receive human approval. No per-brand full image clones, committed secrets, or image binaries.
+Schema 0.2.0 requires source_type=api|scraper|manual. Scraped data retains confidence<0.9 and requires actual human review before promotion. API/manual profiles retain the>=0.9 review threshold. No JSON field proves the truth of a review; evidence maps and reviewer approvals are required.
 
-## Scope, costs and handoffs
-Budget ceiling US$200/month; provider selection is provisional in ADR 009. No cloud resources have been purchased. A 1,000-device catalog does not imply 1,000 simultaneous emulators. Functional scaling must fit measured host capacity and budget. More than 50 concurrent emulator instances always requires explicit approval; any new paid resources also require approval under the master prompt.
-External agent task files are ready for manual routing; the named external agents have not run. No GitHub repository, PR, remote CI run, registry publication or production deployment is claimed.
+The original1000-name list is approved for static generation only, explicitly not spec extraction. The500-name alternative is vendor-share-weighted, not a measured model-popularity ranking. Its separate proposed top100 awaits explicit approval. The visual iPhone list now contains55 iPhones only, per operator direction; no iPad padding. No device specifications or branded assets were collected.
 
-Read STATUS.md, DECISIONS.md and EXECUTION_REPORT.md for exact completion evidence and remaining work.
+## Runtime design and limits
+
+The planned maximum is **one active Android session**, with a future durable SQLite queue and test-result store. The queue, lifecycle executor, GADS integration and Appium harness are not implemented. Emulator launch remains disabled until a supported, approved zero-cost architecture is established. Boot time is unmeasured;5–15 minutes is a brief assumption, not a platform guarantee. P6 scale-out is out of scope.
+
+Visual mockups do not reproduce vendor firmware. Emulator results cannot establish OEM quirks, real sensors/radio, camera fidelity, DRM, thermals, battery behavior or physical performance. iPhone support is visual-only. No functional iOS emulation, per-brand full image clones, image binaries, trademarked wallpapers/logos, or cloud-paid fallback is included.
+
+See FREE_TIER_REPORT.md, STATUS.md and data/usage/free-tier-usage.json for current evidence and remaining work.

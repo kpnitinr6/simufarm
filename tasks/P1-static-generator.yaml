@@ -1,0 +1,35 @@
+{
+  "id": "P1-static-generator",
+  "agent": "codex",
+  "branch": "agent/codex/P1-static-generator",
+  "status": "pending",
+  "inputs": [
+    "Separately approved top100 with human-reviewed sourced profiles"
+  ],
+  "outputs": [
+    "100 static pages",
+    "20 visual samples"
+  ],
+  "acceptance_criteria": [
+    "All100 generated from source-backed profiles",
+    "No fabricated dimensions",
+    "20 visual snapshots reviewed",
+    "Free hosting independently verified before deployment"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "execution_class": "local_only",
+    "passed": true,
+    "reason": "Local preparation only; no hosting/API calls"
+  },
+  "needs_human": [
+    "Separately approved top100 with human-reviewed sourced profiles"
+  ],
+  "guardrails": [
+    "Zero paid infrastructure",
+    "No trials or account upgrades",
+    "No guessed specs",
+    "Single emulator session maximum",
+    "No functional iOS emulation"
+  ]
+}

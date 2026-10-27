@@ -1,0 +1,119 @@
+{
+  "reviewed_at": "2026-10-27",
+  "scope": "Read-only primary upstream documentation and source review",
+  "deployment_performed": false,
+  "docker_pull_performed": false,
+  "emulator_boot_validated": false,
+  "registry_manifest_validated": false,
+  "source_refs_mutable": true,
+  "sources": [
+    {
+      "id": "budtmo-readme",
+      "url": "https://github.com/budtmo/docker-android",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "budtmo-dockerfile",
+      "url": "https://raw.githubusercontent.com/budtmo/docker-android/master/docker/emulator/Dockerfile",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "budtmo-launcher",
+      "url": "https://raw.githubusercontent.com/budtmo/docker-android/master/cli/src/device/emulator.py",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "budtmo-config",
+      "url": "https://raw.githubusercontent.com/budtmo/docker-android/master/documentations/CUSTOM_CONFIGURATIONS.md",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "android-graphics",
+      "url": "https://developer.android.com/studio/run/emulator-acceleration",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "android-cli",
+      "url": "https://developer.android.com/studio/run/emulator-commandline",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "gads-readme",
+      "url": "https://raw.githubusercontent.com/shamanec/GADS/main/README.md",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "gads-provider",
+      "url": "https://raw.githubusercontent.com/shamanec/GADS/main/docs/provider.md",
+      "accessed": "2026-10-27"
+    },
+    {
+      "id": "gads-hub",
+      "url": "https://raw.githubusercontent.com/shamanec/GADS/main/docs/hub.md",
+      "accessed": "2026-10-27"
+    }
+  ],
+  "findings": [
+    {
+      "id": "budtmo-image-architecture",
+      "status": "verified-source",
+      "finding": "Emulator image build selects x86_64 Google APIs system images. Native Linux ARM64 support is not demonstrated by the inspected upstream path; registry platform manifests were not inspected.",
+      "source_id": "budtmo-dockerfile"
+    },
+    {
+      "id": "budtmo-kvm-preflight",
+      "status": "verified-source",
+      "finding": "Launcher raises when /dev/kvm is absent, before invoking emulator; default CPU acceleration is on.",
+      "source_id": "budtmo-launcher"
+    },
+    {
+      "id": "software-gpu-not-cpu",
+      "status": "verified-source",
+      "finding": "SwiftShader is graphics software rendering, separate from VM/CPU acceleration. swiftshader_indirect is deprecated in current Android documentation.",
+      "source_id": "android-graphics"
+    },
+    {
+      "id": "no-accel-flag",
+      "status": "verified-source",
+      "finding": "Current Android CLI documentation lists -no-accel as deprecated, potentially ignored or rejected depending on emulator version.",
+      "source_id": "android-cli"
+    },
+    {
+      "id": "extra-args-not-kvm-bypass",
+      "status": "source-inference",
+      "finding": "EMULATOR_ADDITIONAL_ARGS passes options but does not skip the earlier KVM existence check. No supported no-KVM launch identified.",
+      "source_id": "budtmo-launcher"
+    },
+    {
+      "id": "oracle-arm-no-kvm",
+      "status": "blocked-inference",
+      "finding": "An ARM VM without KVM is not a supported drop-in for the inspected unmodified budtmo path. No boot was attempted; alternative native ARM/emulation solution requires separate evidence and measurement.",
+      "source_id": "budtmo-launcher"
+    },
+    {
+      "id": "gads-mongo",
+      "status": "verified-source",
+      "finding": "MongoDB is required; README recommends 6.0. PostgreSQL/Redis do not replace it.",
+      "source_id": "gads-readme"
+    },
+    {
+      "id": "gads-roles",
+      "status": "verified-source",
+      "finding": "Hub needs MongoDB and at least one Provider for devices. Hub embeds Appium grid, so external Selenium Grid is optional.",
+      "source_id": "gads-hub"
+    },
+    {
+      "id": "gads-adoption",
+      "status": "verified-source",
+      "finding": "Provider adopts already-running Android emulators via adb; it does not boot or stop AVDs. Provider emulator support must be enabled.",
+      "source_id": "gads-provider"
+    },
+    {
+      "id": "gads-container-adb",
+      "status": "unverified-integration",
+      "finding": "Container-hosted ADB visibility, emulator identity, streaming, and Appium routing have not been validated end to end.",
+      "source_id": "gads-provider"
+    }
+  ],
+  "decision": "Do not present Oracle ARM/no-KVM plus unmodified budtmo as a validated free emulator route."
+}

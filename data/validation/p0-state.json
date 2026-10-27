@@ -1,0 +1,28 @@
+{
+  "observed_on": "2026-10-27",
+  "path": "free-tier",
+  "p0_complete": false,
+  "docker_validated": false,
+  "oracle_vm_provisioned": false,
+  "software_emulator_boot": "not_run_blocked_architecture_and_kvm",
+  "novnc": "not_run",
+  "deployed_api_health": "not_run",
+  "remote_ci_python312_node22": "not_run",
+  "provisioning_authorized": false,
+  "pending_inputs": [],
+  "compatibility_gate": "Unmodified docker-android requires KVM; ARM/noKVM unproven; no speculative deployment",
+  "operator_confirmations": {
+    "oracle_account_active": true,
+    "zero_spend_confirmed": true,
+    "github_repository_provided": true
+  },
+  "pending_evidence": [
+    "Account-specific Oracle free eligibility, quotas and capacity",
+    "Supported ARM/no-KVM runtime or approved zero-cost alternative",
+    "Docker-capable execution environment",
+    "Actual deployment/API/noVNC evidence"
+  ],
+  "github_access": "repository_read_succeeded_with_network_permission",
+  "github_repository_visibility": "PRIVATE",
+  "remote_ci_gate": "Manual dispatch only; account billing usage inaccessible with current token"
+}

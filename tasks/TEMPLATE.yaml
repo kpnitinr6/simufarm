@@ -5,9 +5,14 @@ status: pending
 inputs: []
 outputs: []
 acceptance_criteria: []
-guardrails:
-  - No invented device specifications
-  - No paid provisioning without human approval
-  - No parallel edits to shared files
-  - No functional iOS emulation
+zero_spend_check:
+  will_create_bill: unknown
+  execution_class: unverified_external
+  passed: false
+  reason: Unknown cost blocks execution
 needs_human: []
+guardrails:
+  - Zero paid infrastructure or trial fallback
+  - No unverified account entitlement or API quota consumption
+  - One emulator session maximum; no functional iOS emulation
+  - No invented specifications or unlicensed branded assets

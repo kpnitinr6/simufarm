@@ -1,0 +1,109 @@
+{
+  "checked_date": "2026-10-27",
+  "quote_confirmed": false,
+  "provisioned": false,
+  "budget": {
+    "currency": "USD",
+    "recurring_ceiling": 200,
+    "month1_one_time_setup_allowance": 100,
+    "month1_total_ceiling": 300
+  },
+  "unknowns": [
+    "billing_country",
+    "tax_registration",
+    "actual_tax",
+    "checkout_currency_and_fees",
+    "current_stock",
+    "host_KVM_runtime_validation"
+  ],
+  "providers": [
+    {
+      "provider": "Hetzner",
+      "candidate": "AX42-1",
+      "currency": "USD",
+      "server_monthly_before_tax": 117.1,
+      "primary_ipv4_monthly_before_tax": 1.9,
+      "total_monthly_before_tax": 119,
+      "setup_before_tax": 59,
+      "sources": [
+        "https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/",
+        "https://docs.hetzner.com/general/infrastructure-and-availability/ipv4-pricing/",
+        "https://docs.hetzner.com/robot/dedicated-server/virtualization/general/"
+      ],
+      "kvm_status": "documented_platform_support_host_untested"
+    },
+    {
+      "provider": "OVHcloud",
+      "candidate": "RISE-S",
+      "currency": "GBP",
+      "monthly_before_tax": 55.99,
+      "monthly_uk_vat_inclusive_displayed": 67.19,
+      "setup_before_tax": 55.99,
+      "primary_ipv4": "included",
+      "stock": "Soon available",
+      "sources": [
+        "https://eco.ovhcloud.com/en-gb/rise/",
+        "https://support.us.ovhcloud.com/hc/en-us/articles/360002394324-Connecting-a-VM-to-the-Internet-Using-Proxmox-VE"
+      ],
+      "kvm_status": "documented_platform_support_host_untested"
+    },
+    {
+      "provider": "Scaleway",
+      "candidate": "EM-A610R-NVMe",
+      "currency": "EUR",
+      "monthly_before_tax": 39.99,
+      "hourly_before_tax": 0.11,
+      "primary_ipv4": "provided_by_default",
+      "setup_commitment_budget_before_tax": 39.99,
+      "fee_status": "pricing_label_and_documentation_conflict_quote_required",
+      "sources": [
+        "https://www.scaleway.com/en/pricing/elastic-metal/",
+        "https://www.scaleway.com/en/docs/elastic-metal/",
+        "https://www.scaleway.com/en/docs/elastic-metal/reference-content/elastic-metal-networking/"
+      ],
+      "kvm_status": "documented_platform_support_host_untested"
+    },
+    {
+      "provider": "AWS",
+      "candidate": "m7i.metal-24xl",
+      "region": "us-east-1",
+      "currency": "USD",
+      "hourly_compute_before_tax": 4.8384,
+      "hourly_ipv4_before_tax": 0.005,
+      "hours_assumed": 730,
+      "monthly_compute_ipv4_lower_bound": 3535.682,
+      "storage": "EBS only; not included",
+      "official_offer_evidence": {
+        "sku": "99WJEN6ZJK4XJAV5",
+        "effective_date": "2026-10-01",
+        "os": "Linux",
+        "tenancy": "Shared",
+        "term": "OnDemand",
+        "capacity_status": "Used",
+        "preinstalled_software": "NA"
+      },
+      "sources": [
+        "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/us-east-1/index.csv",
+        "https://aws.amazon.com/vpc/pricing/",
+        "https://aws.amazon.com/ec2/dedicated-hosts/faqs/",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nested-virtualization.html"
+      ],
+      "kvm_status": "documented_platform_support_host_untested"
+    }
+  ],
+  "planning_scenario": {
+    "actual_quote": false,
+    "hetzner_tax": 0.19,
+    "ovh_tax": "UK displayed inclusive",
+    "scaleway_tax": 0.2,
+    "aws_tax": 0.19,
+    "usd_per_eur_assumed": 1.2,
+    "usd_per_gbp_assumed": 1.35,
+    "project_monthly_reserve_usd": 30
+  },
+  "provisioning_gates": [
+    "P0 fully green including remote Python 3.12 and Node 22 CI",
+    "confirmed dated all-in Hetzner quote with tax IPv4 setup stock attached",
+    "recurring and setup separately within ceilings"
+  ]
+}

@@ -1,14 +1,18 @@
-import os
+"""Free-path orchestration is deliberately disabled until compatibility/approval gates pass."""
 
-from celery import Celery
-
-app = Celery("simufarm", broker=os.environ.get("REDIS_URL", "redis://localhost:6379/0"))
-app.conf.update(task_serializer="json", accept_content=["json"], result_serializer="json")
+MAX_CONCURRENT_EMULATORS = 1
 
 
-@app.task(name="simufarm.health")
 def health():
-    return {"status": "ok", "emulator_launch_enabled": False}
+    return {
+        "status": "blocked",
+        "max_concurrent_emulators": MAX_CONCURRENT_EMULATORS,
+        "emulator_launch_enabled": False,
+        "reason": "Oracle account approval and supported ARM/no-KVM runtime are unverified",
+    }
 
 
-# Emulator creation is deliberately not implemented before P4 and host approval.
+if __name__ == "__main__":
+    import json
+
+    print(json.dumps(health()))

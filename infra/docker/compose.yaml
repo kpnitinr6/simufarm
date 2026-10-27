@@ -1,0 +1,47 @@
+name: simufarm-free
+x-api-image: &api-image
+  image: simufarm-api:local
+  build:
+    context: ../..
+    dockerfile: infra/Dockerfile.api
+x-storage-env: &storage-env
+  S3_ENDPOINT: http://minio:9000
+  S3_BUCKET: ${S3_BUCKET:-simufarm}
+  AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER:?Set MINIO_ROOT_USER}
+  AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD}
+  AWS_DEFAULT_REGION: us-east-1
+services:
+  minio:
+    image: minio/minio:RELEASE.2025-04-22T22-12-26Z
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?Set MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD}
+    command: server /data --console-address :9001
+    ports: ["127.0.0.1:9000:9000", "127.0.0.1:9001:9001"]
+    volumes: ["minio-data:/data"]
+  minio-init:
+    <<: *api-image
+    command: ["python", "scripts/storage_init.py"]
+    restart: "no"
+    environment: *storage-env
+    depends_on:
+      minio: {condition: service_started}
+  api:
+    <<: *api-image
+    environment:
+      <<: *storage-env
+      SQLITE_PATH: /app/state/simufarm.sqlite3
+      MAX_CONCURRENT_EMULATORS: "1"
+      EMULATOR_LAUNCH_ENABLED: "false"
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      minio-init: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/live', timeout=5)"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+volumes:
+  minio-data:
+# No docker-android/GADS service is enabled: ARM/no-KVM compatibility is blocked.
+# This is a local-only development stack, not an Oracle provisioning manifest.

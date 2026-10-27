@@ -1,40 +1,42 @@
-# Architecture decisions — SimuFarm
-Recorded 27 October 2026. Owner: Codex. Organization: simufarm-team. Repository: simufarm.
+# SimuFarm Free-Tier architecture decisions
+27 October 2026. This is the active decision register. The replacement master prompt supersedes the $200/month + $100 setup plan. Paid-path ADRs are archived in docs/archive/PAID_PATH_DECISIONS.md. Recurring cloud budget and setup allowance are now **US$0**. No billable provisioning or trial fallback is authorized.
 
-## ADR 001 — Python API and worker stack (accepted)
-Python 3.12, FastAPI, Celery, Redis. One API plus independent queue workers. This scaffold exposes health and approved-profile read endpoints only. No emulator lifecycle is claimed.
+## ADR 001 — Oracle Always Free ARM proposed; provisioning blocked
+Oracle A1 is the requested compute candidate. Lack of usable nested KVM is a constraint, not proof that the selected emulator can run. Software graphics rendering is acceptable in principle, but the prescribed unmodified runtime is blocked (ADR 002). Do not assert a 5–15 minute boot time without a successful measurement.
 
-## ADR 002 — Web and reusable simulator shells (accepted)
-React, Vite, TypeScript with Web Components for reusable shells. The initial generic CSS shell contains no branded assets. P1/P3 remain gated; it is not a device-fidelity implementation.
+Primary Oracle documentation currently describes 1,500 OCPU-hours/9,000 GB-hours for Free tenancies (equivalent to 2 OCPU/12 GB), not the prompt's assumed 4/24. The larger price-list allowance is associated with paid tenancies. Do not upgrade accounts to obtain it. Account-specific free allocation, home region, capacity, storage, reclamation rules and current usage remain unverified. 200 GB boot/block and 20 GB object/archive are distinct pools; do not combine them as a 20 GB total. Read docs/FREE_TIER_FACT_CHECK.md.
 
-## ADR 003 — Versioned profile contracts and PostgreSQL JSONB (accepted)
-Versioned JSON is the profile source of truth; PostgreSQL JSONB becomes the query projection. Pydantic is the canonical wire schema; JSON Schema and TypeScript declarations are generated and drift-checked. Python/JSON runtime validation enforces numeric ranges and cross-object rules that TS types cannot encode. The bootstrap API reads approved JSON; database sync is pending P2. Contracts are version 0.1.0; future wire changes require versioning and migration notes.
+No provisioning until the operator supplies an active Oracle account confirmation, GITHUB_REPO_URL, ZERO_SPEND_CONFIRMED=yes, and a reviewed account-specific plan proving every selected resource non-billable. Unknown cost blocks action. Email alone is not proof of active/free eligibility. No Terraform apply or resource-creation code is enabled.
 
-## ADR 004 — Shared Android base images and KVM containers (accepted)
-Use 5–8 shared base system images with device profiles. Never create full per-brand clones. Linux KVM hosts are required for functional Android emulation. iOS is static/interactive visual only. Redroid must be evaluated and benchmarked during P4 before adoption. The image manifest is empty by design until licensed images are selected.
+## ADR 002 — docker-android + GADS requested; compatibility blocked
+Keep the requested stack as a candidate only. Upstream docker-android launcher requires /dev/kvm and requests acceleration; its image installs x86_64 Android. Native ARM/no-KVM support is not established. Passing -no-accel or SwiftShader flags does not bypass the launcher's earlier KVM check. Both proposed flags have version/deprecation concerns. Do not publish a nonworking compose file or claim the emulator boots on Oracle ARM.
 
-## ADR 005 — S3-compatible artifact storage (accepted)
-MinIO for local development; provider-compatible object storage for production. Store manifests, shell outputs, screenshots, and test artifacts separately from shared image binaries. No image binaries enter git. Local Compose defines persistent volumes but has not been deployed here.
+GADS adopts already-running emulators; a separate lifecycle owner must start/stop them. GADS requires MongoDB even for ephemeral emulator discovery. Its separate hub-ui licensing must be reviewed before redistribution. Do not pretend SQLite replaces GADS MongoDB: SQLite is planned only for SimuFarm queue/test results. No emulator/GADS service is enabled in the local Compose stack. Read docs/EMULATOR_COMPATIBILITY.md. A supported no-cost runtime alternative requires a reviewed deviation ADR before deployment.
 
-## ADR 006 — CI, testing, and controlled agent handoffs (accepted)
-GitHub Actions runs lint, contract drift, backend unit/integration, frontend build and Playwright smoke checks. A nightly web workflow is included; native nightly runs wait for P5 and an approved KVM runner. YAML task files define ownership and branches. DeepSeek, Gemini, and Ollama integrations are unavailable: tasks are prepared for manual dispatch, not represented as executed. Packages remain local; registry publication and remote CI require repository access.
+## ADR 003 — Device API quota: conservative 50/month, no calls authorized
+The prompt's 200-request allowance is not supported by checked provider pricing/signup. Both show 50 free requests/month; a main-page FAQ contradicts this at 1,000. Set a conservative planning ceiling of 50 and require actual account entitlement/remaining quota before any call. Current remaining quota is unknown; project-made API calls are zero. No quota experiment, signup, key request, paid plan or upgrade is authorized.
 
-## ADR 007 — Milestone order and explicit approval boundary (accepted)
-Execute the prompt's five first actions now. Fetch device names only to propose the target list; do not extract specifications. P1 depends on verified profiles while the brief orders P1 before P2: record that dependency, and request an explicit P2-before-P1 dependency resolution after target approval. Do not pretend P1's 1,000 URLs exist or silently skip DoD. No later milestone has started. Human review remains required for every promoted profile. The 'top 200 brands' criterion conflicts with a 20-brand initial proposal and needs scope clarification during target review.
+The first 100 devices still require explicit identity approval. At one detail call/device, at least two 50-call allocations are needed before retries/searches; 200 profiles cannot be promised this month from that API. Cache every permitted response; reserve retries and stop before the confirmed cap. Review reuse/redistribution terms. Scrapers and local Ollama are separate tools; an LLM is not a network scraper. No scraping, external Gemini/DeepSeek calls or model downloads are authorized automatically as 'free'.
 
-## ADR 008 — Wire-contract clarifications (accepted)
-The detailed §5 manifest omits os_version although §4 mentions it. Preserve the frozen §5 field set: encode Android version in the shared base-image record and simulator identity; add an explicit os_version field only through a later versioned contract change. base_image_id is required as a key but nullable for visual simulators, required non-null for emulators. Notch enum values are limited initially and need versioned expansion if sourced devices require other shapes. Per-field evidence lives in sidecars to preserve the profile field set. Schema validation alone cannot establish the truth of a human review claim; signed/referenced evidence checks are a P2 prerequisite.
+## ADR 004 — Public repository standard-runner CI; remote execution blocked
+Default to a public GitHub repository and standard runners only. Current public standard-runner CI is free, but larger runners, other storage/services and private quotas can create costs. Current docs say self-hosted Actions usage is free and the announced platform fee was postponed; do not repeat the prompt's obsolete blanket fee claim. Official hosted Android acceleration exists for supported runners, but this project obeys the prompt's restriction: **no Android emulator in CI**. CI only checks code, contracts and web builds. Manual browser smoke has no schedule; deployments are disabled. Confirm repository visibility/account usage before enabling remotely. Existing GitHub auth is invalid and no remote is configured.
 
-## ADR 009 — Budget and provisional KVM provider selection (proposed; no purchase)
-User ceiling: US$200/month. Provisional provider: Hetzner dedicated Server Auction, selecting the cheapest currently available x86_64 machine that passes KVM, storage, memory and all-in-price checks. This is a selection policy, not a verified cheapest SKU or a global lowest-price claim. Dynamic inventory did not expose a reliably purchasable price in this session. Final provider/SKU selection therefore remains open; do not provision.
+## ADR 005 — Schema 0.2.0 and source-specific human review
+Required source_type is api|scraper|manual. Generate TS and JSON Schema from canonical Pydantic. This is a breaking field addition from 0.1.0; bump both package ecosystems and dependent apps to 0.2.0. Existing real profiles would need provenance-backed migration; none exist here.
 
-Primary-source review, 27 October 2026:
-- https://www.hetzner.com/sb/ documents refurbished dedicated servers, root access, dynamic inventory and no setup fees. Recheck at checkout.
-- https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/ lists AX42-1 at $117.10/month plus $59 setup, excluding VAT and IPv4. This is a published reference, not an availability quote; first month exceeds $176.10 before additions.
-- https://www.netcup.com/en/helpcenter/documentation/server warns about nested virtualization. Being hosted on KVM does not prove a guest can run KVM emulators; exclude unverified nested-virtualization VPS plans.
-- OVHcloud Eco/RISE remains a comparison candidate; no verified comparable all-in offer was obtained.
+Scraper profiles must retain confidence <0.9 and require human review before promotion. Human-reviewed low-confidence scraper data is allowed by the revised prompt; API/manual data retains the >=0.9 threshold. Confidence is not factual proof. Every source field still needs a URL; a separate field-evidence sidecar and reviewer record are required before real promotion. Functional iOS emulation remains prohibited.
 
-Planning allocations, not vendor quotes: host <= $120, object backup <= $15, tax/network reserve <= $35, contingency >= $30 = $200. Setup fees must fit the first month's $200 total unless separately approved. These allocations may prove infeasible. Start with one emulator at a time; thousands of catalog entries are metadata, not thousands of concurrent instances. Require measured /dev/kvm availability, CPU virtualization flags, a successful emulator boot, and checkout total before purchase. No automated provisioning configuration is supplied.
+## ADR 006 — One-session design; local SQLite, no farm scale-out
+Maximum planned active emulator sessions is1. A future SQLite queue/result store must claim requests atomically, allow one active lease, renew/expire it and handle cancellation/restarts before enabling launches. No queue service or lifecycle implementation is claimed today. GADS runtime/DB remains a separate prerequisite. Catalog definitions do not imply running sessions. Local API+MinIO development Compose contains no PostgreSQL/Redis or emulator service; paid Compose is archived. A VM, MinIO and image layers all count against actual disk/CPU quotas.
 
-## ADR 010 — Local verification runtime (accepted for bootstrap verification only)
-Host Python is 3.14 and Node is 26. Docker is absent. Production/API image and GitHub CI target Python 3.12; CI targets Node 22. Host checks supplement, and do not replace, the required target-runtime CI and Docker checks. P0 remains partial until those checks and publication/deployment requirements pass.
+## ADR 007 — Option A and preserved scoped approvals
+Keep the operator's Option A: separately approve100 specific devices, collect and human-verify sources, generate100 static pages and review20 visual samples, then expand. The old1,000-name list remains approved for static generation only and explicitly not spec extraction. New500-name vendor-share proxy/top100 are proposals, not inherited approval. The operator chose **iPhone only, accept fewer than100**:55 named iPhone candidates remain, no iPads. No device specs have been fetched. P1/P2 do not start from unsupported names/spec guesses.
+
+## ADR 008 — P6 requires paid infrastructure. Not executed.
+P6 is out of scope for the free path. No 10,000-device scale-out or1,000 concurrent emulator plan is executed. Reconsidering paid infrastructure requires a new operator instruction, not exhausting a trial/free quota.
+
+## ADR 009 — Zero-spend task gate and blocked work
+Every active task records will_create_bill, local/external scope and remaining approval gates. Local code/docs/tests are non-billable infrastructure actions; resource creation, quota-consuming calls and unknown external charges remain blocked. No unknown-cost action is treated as zero-cost. scripts/zero_spend_check.py evaluates declarations and reports only; it is not an executor or an independent billing guarantee. No automatic resource, API or remote CI calls are attached to it. Trials, upgrades, public noVNC/ADB exposure and paid-provider fallback are disabled.
+
+## ADR 010 — Completion evidence and host limitations
+Docker CLI/socket, OCI access, target Python 3.12 and usable GitHub authentication are absent. Host checks use Python 3.14/Node 26; intended CI is3.12/22. P0 is not done: no VM exists from this task, no emulator/noVNC boot was observed, and no deployed API was tested. Source research and YAML parsing do not replace runtime evidence. Every milestone additionally requires zero-spend/quota evidence and applicable human approvals.

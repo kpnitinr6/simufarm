@@ -1,0 +1,105 @@
+{
+  "checked_date": "2026-10-27",
+  "primary_sources_only": true,
+  "account_api_calls": false,
+  "provisioning": false,
+  "budget_usd_monthly": 0,
+  "account_state_verified": false,
+  "sources": [
+    {
+      "id": "oracle-free",
+      "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+      "facts": {
+        "a1_ocpu_hours": 1500,
+        "a1_memory_gb_hours": 9000,
+        "free_tenancy_ocpu": 2,
+        "free_tenancy_memory_gb": 12,
+        "combined_boot_block_gb": 200,
+        "volume_backups": 5,
+        "free_only_object_gb": 20,
+        "object_requests_monthly": 50000
+      },
+      "constraints": [
+        "home_region",
+        "capacity_not_guaranteed",
+        "idle_reclamation"
+      ]
+    },
+    {
+      "id": "oracle-paid-distinction",
+      "url": "https://www.oracle.com/cloud/price-list/",
+      "paid_tenancy_a1_ocpu_hours": 3000,
+      "paid_tenancy_a1_memory_gb_hours": 18000,
+      "decision": "do_not_apply_paid_allowance_to_free_only_account"
+    },
+    {
+      "id": "oracle-trial",
+      "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier.htm",
+      "decision": "trial_credit_not_sustainable_free_architecture"
+    },
+    {
+      "id": "mobileapi-pricing",
+      "url": "https://mobileapi.dev/",
+      "free_monthly_pricing_card": 50,
+      "free_rate_per_minute": 5,
+      "conflicting_faq_monthly": 1000,
+      "claimed_200_supported": false
+    },
+    {
+      "id": "mobileapi-signup",
+      "url": "https://api.mobileapi.dev/signup/",
+      "free_requests_monthly": 50,
+      "signup_performed": false
+    },
+    {
+      "id": "github-billing",
+      "url": "https://docs.github.com/en/actions/concepts/billing-and-usage",
+      "standard_public_runner_usage_free": true,
+      "self_hosted_actions_usage_free": true
+    },
+    {
+      "id": "github-quotas",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "github_free_private_minutes": 2000,
+      "artifact_mb": 500,
+      "cache_gb_per_repo": 10,
+      "larger_runners_paid": true
+    },
+    {
+      "id": "github-announcement",
+      "url": "https://github.com/resources/insights/2026-pricing-changes-for-github-actions",
+      "self_hosted_charge": "postponed",
+      "old_march_1_fee_text_still_present": true
+    },
+    {
+      "id": "github-android-kvm",
+      "url": "https://github.blog/changelog/2024-04-02-github-actions-hardware-accelerated-android-virtualization-now-available/",
+      "announcement_date": "2024-04-02",
+      "scope": "2-vCPU GitHub-hosted Linux Android hardware acceleration"
+    },
+    {
+      "id": "github-nested-limit",
+      "url": "https://docs.github.com/en/actions/concepts/runners/github-hosted-runners",
+      "general_nested_vm_support": "experimental_not_officially_supported"
+    },
+    {
+      "id": "github-budget",
+      "url": "https://docs.github.com/en/billing/concepts/budgets-and-alerts",
+      "stop_metered_usage_controls_documented": true,
+      "account_controls_verified": false
+    }
+  ],
+  "pending_inputs": [
+    "ORACLE_ACCOUNT_EMAIL_and_active_state",
+    "GITHUB_REPO_URL",
+    "ZERO_SPEND_CONFIRMED"
+  ],
+  "pending_runtime_validation": [
+    "OCI_remaining_quota_eligibility_capacity",
+    "OCI_KVM_not_assumed",
+    "remote_CI",
+    "selected_GitHub_runner_KVM",
+    "actual_emulator_boot"
+  ],
+  "conservative_mobileapi_monthly_request_limit": 50
+}

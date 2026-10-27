@@ -1,0 +1,43 @@
+{
+  "observed_on": "2026-10-27",
+  "recurring_cloud_budget_usd": 0,
+  "setup_allowance_usd": 0,
+  "resources_provisioned_by_this_project": 0,
+  "mobileapi": {
+    "planning_cap": 50,
+    "account_entitlement_verified": false,
+    "authenticated_requests_made_by_this_project": 0,
+    "account_used": null,
+    "account_remaining": null
+  },
+  "github": {
+    "remote_runs_started_by_this_project": 0,
+    "repository_visibility_verified": true,
+    "account_minutes_used": null,
+    "account_minutes_remaining": null,
+    "standard_public_runner_only": true,
+    "provided_repository": "https://github.com/kpnitinr6/simufarm",
+    "repository_visibility": "PRIVATE",
+    "repository_empty_at_inspection": true,
+    "billing_usage_read": "blocked_token_lacks_user_scope",
+    "actions_enabled": true,
+    "automatic_workflows_enabled": false
+  },
+  "oracle": {
+    "account_active_verified": false,
+    "zero_spend_confirmed": true,
+    "created_vm_count": 0,
+    "managed_vm_uptime_seconds": 0,
+    "existing_account_usage": null,
+    "account_active_confirmed_by_operator": true,
+    "account_quota_independently_verified": false
+  },
+  "runtime": {
+    "max_concurrent_sessions": 1,
+    "sessions_launched": 0,
+    "boot_time_seconds": null,
+    "novnc_verified": false,
+    "gads_verified": false,
+    "status": "blocked_unsupported_requested_runtime"
+  }
+}

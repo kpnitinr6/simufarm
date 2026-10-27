@@ -157,6 +157,15 @@
       "title": "Storage Gb",
       "type": "number"
     },
+    "source_type": {
+      "enum": [
+        "api",
+        "scraper",
+        "manual"
+      ],
+      "title": "Source Type",
+      "type": "string"
+    },
     "sources": {
       "items": {
         "format": "uri",
@@ -202,6 +211,7 @@
     "buttons",
     "ram_gb",
     "storage_gb",
+    "source_type",
     "sources",
     "confidence",
     "verified_by",

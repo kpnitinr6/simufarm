@@ -1,3 +1,2 @@
-JSON documents with .yaml extension are valid YAML 1.2. TEMPLATE.yaml uses conventional YAML.
-External DeepSeek/Gemini/Ollama integrations are not configured. Dispatch the task files manually.
-The named agent branches are handoff contracts; no claim that these agents have run.
+# Active task handoffs
+P0-oracle-provision, P1-static-generator and P2-api-extraction are the requested first-action seed tasks; P4-single-session-runtime tracks the feasibility blocker. Every task includes a Zero-Spend Check. A check on a local preparation task does not approve deployment. Archived paid-path tasks must not execute under the free-tier plan. Each task proposes an owner branch; no external DeepSeek/Gemini/Ollama call has been made and no external agent completion is claimed.

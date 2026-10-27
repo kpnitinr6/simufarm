@@ -1,4 +1,8 @@
-# SimuFarm — master prompt execution report
+> HISTORICAL PAID-PATH DOCUMENT. Superseded by MASTER_PROMPT_FREE_TIER.md, current DECISIONS.md and FREE_TIER_REPORT.md. Do not provision from these instructions.
+
+# SimuFarm — initial master prompt execution report
+
+> Historical initial delivery. The operator's later decisions are implemented in DECISION_UPDATE_REPORT.md, ADRs 007/009 and STATUS.md; those supersede budget, approval and sequencing statements below.
 
 Date: 27 October 2026, Asia/Kolkata. Requested organization/repository: **simufarm-team/simufarm**. Infrastructure budget ceiling: **US$200 per month**.
 

@@ -1,0 +1,39 @@
+{
+  "id": "P4-single-session-runtime",
+  "agent": "codex",
+  "branch": "agent/codex/P4-single-session-runtime",
+  "status": "blocked",
+  "inputs": [
+    "Supported runtime architecture",
+    "Approved nonbillable host",
+    "GADS/MongoDB dependency and license review"
+  ],
+  "outputs": [
+    "Atomic single-session lifecycle/queue",
+    "ADB/noVNC/Appium measurements"
+  ],
+  "acceptance_criteria": [
+    "One active session only",
+    "NoKVM mode actually boots on selected host",
+    "GADS integration proven; no claim it launches AVDs",
+    "No5\u201315minute claim without timing"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": "unknown",
+    "execution_class": "cloud_runtime",
+    "passed": false,
+    "reason": "External cost, authorization or feasibility unverified; do not execute"
+  },
+  "needs_human": [
+    "Supported runtime architecture",
+    "Approved nonbillable host",
+    "GADS/MongoDB dependency and license review"
+  ],
+  "guardrails": [
+    "Zero paid infrastructure",
+    "No trials or account upgrades",
+    "No guessed specs",
+    "Single emulator session maximum",
+    "No functional iOS emulation"
+  ]
+}

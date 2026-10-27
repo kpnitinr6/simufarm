@@ -1,0 +1,40 @@
+{
+  "id": "P2-api-extraction",
+  "agent": "codex",
+  "branch": "agent/codex/P2-api-extraction",
+  "status": "blocked",
+  "inputs": [
+    "Approved device-level top100",
+    "Verified MobileAPI account entitlement and remaining quota",
+    "Permitted source/reuse terms"
+  ],
+  "outputs": [
+    "Cached permitted responses",
+    "Provenance-backed profiles",
+    "Human review queue"
+  ],
+  "acceptance_criteria": [
+    "No call before quota approval",
+    "Respect confirmed cap; no assumed200/month",
+    "source_type present; field evidence complete",
+    "100 API+100 scraped target accepted only after actual collection/review"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": "unknown",
+    "execution_class": "quota_consuming_api",
+    "passed": false,
+    "reason": "External cost, authorization or feasibility unverified; do not execute"
+  },
+  "needs_human": [
+    "Approved device-level top100",
+    "Verified MobileAPI account entitlement and remaining quota",
+    "Permitted source/reuse terms"
+  ],
+  "guardrails": [
+    "Zero paid infrastructure",
+    "No trials or account upgrades",
+    "No guessed specs",
+    "Single emulator session maximum",
+    "No functional iOS emulation"
+  ]
+}

@@ -1,8 +1,11 @@
-name: CI
-on: [push, pull_request]
+name: Free-path code checks
+on: [workflow_dispatch]
+permissions:
+  contents: read
 jobs:
   checks:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -16,6 +19,8 @@ jobs:
       - run: python scripts/validate_data.py
       - run: npm run contracts:check
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:web
-      - run: cp .env.example .env && docker compose --env-file .env -f infra/compose.yaml config --quiet
+# No deploy, emulator, API extraction, paid runners or cloud provisioning steps.
+# Confirm public-repository standard-runner free eligibility before enabling remotely.
+
+# Supplied repository is PRIVATE; billing usage is not readable with the current token.
+# Do not dispatch until included minutes and zero-spend enforcement are verified.

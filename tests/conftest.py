@@ -18,6 +18,7 @@ def profile_data():
         "ram_gb": 4,
         "storage_gb": 64,
         "sources": ["https://example.org/test-fixture"],
+        "source_type": "manual",
         "confidence": 1,
         "verified_by": "human",
         "verified_at": "2026-10-27T00:00:00Z",

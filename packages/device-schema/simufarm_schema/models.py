@@ -38,10 +38,24 @@ class DeviceProfile(Contract):
     buttons: list[str]
     ram_gb: float = Field(gt=0)
     storage_gb: float = Field(gt=0)
+    source_type: Literal["api", "scraper", "manual"]
     sources: list[HttpUrl] = Field(min_length=1)
     confidence: float = Field(ge=0, le=1)
     verified_by: Literal["human", "gemini", "ollama"]
     verified_at: AwareDatetime
+
+    @model_validator(mode="after")
+    def scraped_profiles_keep_lower_confidence(self):
+        if self.source_type == "scraper" and self.confidence >= 0.9:
+            raise ValueError("Scraped profiles must retain confidence below 0.9")
+        return self
+
+
+def is_review_approved(profile: DeviceProfile) -> bool:
+    # Human review is always required. Scraped data keeps lower confidence after review.
+    return profile.verified_by == "human" and (
+        profile.source_type == "scraper" or profile.confidence >= 0.9
+    )
 
 
 class Limits(Contract):
@@ -71,5 +85,7 @@ def validate_pair(profile: DeviceProfile, manifest: SimulatorManifest) -> None:
         raise ValueError("Manifest/profile identity mismatch")
     if profile.os_family == "ios" and manifest.kind == "emulator":
         raise ValueError("Functional iOS emulation is prohibited")
-    if profile.verified_by != "human" or profile.confidence < 0.9:
-        raise ValueError("Human review with confidence >= 0.9 is required for promotion")
+    if not is_review_approved(profile):
+        raise ValueError(
+            "Human review and source-specific confidence policy required for promotion"
+        )

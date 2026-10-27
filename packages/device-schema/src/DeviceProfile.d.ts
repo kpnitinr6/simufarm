@@ -26,6 +26,7 @@ export type Position = "none" | "top_center" | "top_left" | "top_right";
 export type Buttons = string[];
 export type RamGb = number;
 export type StorageGb = number;
+export type SourceType = "api" | "scraper" | "manual";
 /**
  * @minItems 1
  */
@@ -47,6 +48,7 @@ export interface DeviceProfile {
   buttons: Buttons;
   ram_gb: RamGb;
   storage_gb: StorageGb;
+  source_type: SourceType;
   sources: Sources;
   confidence: Confidence;
   verified_by: VerifiedBy;

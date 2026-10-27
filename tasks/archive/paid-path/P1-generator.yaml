@@ -4,8 +4,9 @@
   "branch": "agent/codex/P1-generator",
   "status": "blocked",
   "inputs": [
-    "Approved human-verified profiles",
-    "packages/simulator-renderer"
+    "Separately approved top-100 pilot with human-verified profiles",
+    "Scoped static-only name-list approval",
+    "P0 completion evidence"
   ],
   "outputs": [
     "Static generator",
@@ -13,8 +14,9 @@
     "50 visual snapshots"
   ],
   "acceptance_criteria": [
-    "1000 approved static simulators generated",
-    "50 visual regression samples reviewed"
+    "100 pilot static simulators generated from verified specs",
+    "Visual snapshots reviewed",
+    "Expand toward 1000 only after pilot acceptance"
   ],
   "guardrails": [
     "No invented specifications",
@@ -25,7 +27,8 @@
     "More than 50 concurrent emulators requires approval"
   ],
   "needs_human": [
-    "P0 complete or approved skip ADR",
-    "Verified profile data"
+    "P0 green",
+    "Approved top-100 pilot identity",
+    "Profile human sign-off"
   ]
 }

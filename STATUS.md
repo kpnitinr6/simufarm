@@ -1,40 +1,21 @@
-# SimuFarm status — 27 October 2026
+# SimuFarm status — free-tier replacement, 27 October 2026
 
-Organization: simufarm-team. Repository: simufarm. Monthly ceiling: US$200.
-Provider: provisional Hetzner dedicated Server Auction policy, exact SKU and all-in quote unverified (ADR 009).
+Budget: $0 recurring and $0 setup. Paid plans superseded. Operator confirmed active Oracle account and ZERO_SPEND_CONFIRMED=yes. Provided GitHub repository is private and empty at inspection; remote read access works, billing usage access does not. No visibility change or workflow dispatch is authorized by that observation.
 
-| Milestone | Progress | Completion evidence / blocker | Next task |
-|---|---:|---|---|
-| Initial five actions | 100% of local artifacts | Scaffold, ADRs, contracts, tasks, 1,000-target proposal and report delivered; approval pending | Human target review |
-| P0 Bootstrap | 70% engineering estimate | Local code/checks pass; Docker deployment, Python 3.12/Node 22 CI, registry publication and remote review outstanding | P0-bootstrap |
-| P1 Static pipeline | 0% of DoD | No verified profiles; generic shell primitive only | P1-generator after dependency resolution |
-| P2 Profile extraction | 0% | Explicit target approval required; external agents not connected | P2-gemini-extract after approval |
-| P3 Interactive simulators | 0% | Not started; mock chrome and device pages absent | Scope after verified data |
-| P4 Emulator farm | 0% | Not started; KVM host and paid resource approval absent | P4-emulator-spinup |
-| P5 App testing | 0% | No Appium/APK runs, result API or report UI | Define sample APK and native harness |
-| P6 Scale | 0% | No benchmarks, audit, autoscaling or unit-cost measurements | Post-MVP only |
+| Item | State |
+|---|---|
+| Initial free-path scaffold/ADRs/tasks | Prepared |
+| Schemas | v0.2.0, source_type added; generated TS/JSON |
+| P0 | **Blocked/incomplete**: Oracle eligibility/quotas unverified, requested runtime incompatible/unproven, Docker absent |
+| P1 | Not generated; approved technical profiles0 |
+| P2 | No API/spec extraction; proposed top100 unapproved;200 request assumption invalid |
+| P3 | Not started |
+| P4 | Blocked; one-session design only, no runtime |
+| P5 | Not started; no APK/native nightly run |
+| P6 | Out of scope; not executed (ADR 008) |
 
-Percentages are not a claim of global DoD. The 70% P0 value estimates preparation effort, not production readiness. No PR was merged and no remote CI run occurred.
+Usage: MobileAPI requests made by project0; account remaining unknown. GitHub workflow runs started0; private included minutes remaining unknown. Oracle VM created0; managed uptime0; existing account usage unknown. Emulator launches0; boot time unmeasured; noVNC/GADS/Appium unverified.
 
-## Current evidence
-- 19 pytest checks pass, including API integration and safety/data-contract rules.
-- One Playwright browser smoke test passes.
-- Ruff, generated-contract drift checks, TypeScript validation and Vite production build pass.
-- Target checks: exactly 1,000 unique proposals, source URLs present, no approved real profiles.
-- Six task/service YAML documents parse. Docker Compose runtime/config semantics not verified with Docker.
-- npm dependency audit at installation reported zero known vulnerabilities.
-- Host runtime: Python 3.14.6, Node 26.4.0; target-runtime checks remain pending.
-- A FastAPI/Starlette TestClient httpx deprecation warning remains; tests pass.
+35 local backend/schema/policy checks passed before final UI verification; source/build checks and final validation are recorded in FREE_TIER_REPORT.md. No Docker, target-runtime remote CI or cloud runtime success is claimed. Public research/downloads did not consume authenticated MobileAPI quota. The email and local secrets remain in ignored .env, never public project files.
 
-## Counters
-Approved profiles 0; proposed targets 1,000; live static URLs 0; interactive simulators 0; functional Android instances 0; cloud resources purchased 0.
-
-## Next actions and blockers
-1. Review and approve or revise _targets.yaml; define intended phones/tablets/regions and iOS visual coverage. Clarify 'top 200 brands'.
-2. Finish P0 on a Docker-capable host and GitHub repository; approve registry/publication destination.
-3. Resolve P1/P2 dependency ordering with the human operator before extraction, using ADR 007.
-4. Establish field-evidence validation and a human review workflow before promoting extracted profiles.
-5. Dispatch task files manually to external agents, or approve/configure explicit integrations later.
-6. Confirm a real KVM host, final quote and cost approval before P4.
-
-See EXECUTION_REPORT.md for the complete delivery report and docs/WEEKLY_SUMMARY.md for costs and risks.
+Next gate: supported zero-cost runtime ADR and account-specific Oracle eligibility/capacity. CI remains manual-only until private-repository free usage/control evidence is available. Do not dispatch automatically or provision resources. User-provided account confirmation alone does not establish that a chosen resource is non-billable.

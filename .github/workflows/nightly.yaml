@@ -1,11 +1,11 @@
-name: Nightly web smoke
-on:
-  schedule:
-    - cron: '30 20 * * *'
-  workflow_dispatch:
+name: Manual web smoke only
+on: [workflow_dispatch]
+permissions:
+  contents: read
 jobs:
   web-smoke:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -13,4 +13,4 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run test:web
-# P5 native APK matrix requires an approved KVM self-hosted runner and sample APK.
+# No nightly scheduled run or Android emulator job enabled before repository/free-quota verification.

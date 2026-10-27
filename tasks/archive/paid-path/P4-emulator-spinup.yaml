@@ -5,7 +5,8 @@
   "status": "blocked",
   "inputs": [
     "Approved emulator manifests",
-    "Shared Android image references"
+    "Shared Android image references",
+    "Confirmed all-in Hetzner quote with VAT, IPv4 and stock; not yet attached"
   ],
   "outputs": [
     "Lifecycle worker",
@@ -24,11 +25,12 @@
     "No trademarked assets without license approval",
     "No functional iOS emulation",
     "No parallel edits to shared files",
-    "More than 50 concurrent emulators requires approval"
+    "More than 50 concurrent emulators requires approval",
+    "No provisioning before fully green P0 AND confirmed all-in Hetzner quote"
   ],
   "needs_human": [
-    "P0-P3 complete or skip ADR",
-    "KVM host",
-    "Cloud provider selection and cost approval"
+    "Fully green P0",
+    "Confirmed all-in Hetzner quote with VAT, IPv4, stock and setup",
+    "Host/provisioning approval; not granted"
   ]
 }

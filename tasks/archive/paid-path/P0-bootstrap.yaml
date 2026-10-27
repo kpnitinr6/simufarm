@@ -12,10 +12,12 @@
     "CI configuration"
   ],
   "acceptance_criteria": [
-    "Local checks pass",
-    "Docker services verified on Docker host",
-    "Remote CI green",
-    "Packages published to approved registry"
+    "docker compose up succeeds",
+    "API Python 3.12 image builds",
+    "MinIO bucket init succeeds and is idempotent",
+    "API/Postgres/Redis/S3 object roundtrip passes",
+    "Remote CI green on Python 3.12 and Node 22 with commit-bound evidence",
+    "Packages published to approved registry; required reviews completed"
   ],
   "guardrails": [
     "No invented specifications",

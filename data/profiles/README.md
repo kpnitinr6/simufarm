@@ -1,6 +1,4 @@
-Only human-reviewed, schema-valid device profiles belong here as *.json.
-_targets.yaml is a proposal, not device specifications or approved inventory.
-Extraction must wait for written target-list approval. Keep drafts outside this directory.
-Every technical field needs a source mapping in data/sources/<id>.evidence.json.
-The schema confidence and verified_by fields are declarations, not proof of human sign-off;
-record reviewer identity, review timestamp, and approval reference in the evidence file.
+# Device profile source of truth
+Only schema 0.2.0 human-reviewed profiles belong here as *.json. None are present.
+source_type=api|scraper|manual is required. Scraper confidence must remain <0.9; actual human review/evidence is required even at low confidence. API/manual profiles need >=0.9 and human review. Every technical field needs source mappings and reviewer evidence in data/sources/<id>.evidence.json.
+The original _targets.yaml approval is static-only and explicitly not extraction authorization. The separate top100 proposal remains unapproved. Names are not verified dimensions. iOS visual proposal is iPhone-only. Do not populate profiles from invented specs or unverified reviewer claims.

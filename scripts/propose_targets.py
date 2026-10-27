@@ -17,6 +17,11 @@ def j(p, value):
     (R / p).write_text(json.dumps(value, indent=2) + "\n")
 
 
+existing = R / "data/profiles/_targets.yaml"
+if existing.exists() and json.loads(existing.read_text()).get("approval_status") != "pending-human":
+    raise SystemExit(
+        "Refusing to overwrite a reviewed target list. Create a new versioned proposal."
+    )
 raw = Path(sys.argv[1]).read_bytes()
 rows = list(csv.DictReader(raw.decode("utf-16").splitlines()))
 priority = [

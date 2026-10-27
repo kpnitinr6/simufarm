@@ -4,8 +4,9 @@
   "branch": "agent/gemini/P2-gemini-extract",
   "status": "blocked",
   "inputs": [
-    "Human-approved _targets.yaml",
-    "Manufacturer spec pages"
+    "Separately approved top-100 pilot; identity still pending",
+    "Manufacturer field sources",
+    "Explicit extraction authorization for this pilot"
   ],
   "outputs": [
     "Draft profiles",
@@ -23,10 +24,11 @@
     "No trademarked assets without license approval",
     "No functional iOS emulation",
     "No parallel edits to shared files",
-    "More than 50 concurrent emulators requires approval"
+    "More than 50 concurrent emulators requires approval",
+    "Do not extract specs from the original static-only approved 1000-name list"
   ],
   "needs_human": [
-    "Explicit target-list approval",
+    "Approved extraction pilot artifact; original static-only list is not extraction authorization",
     "Gemini integration or manual dispatch"
   ]
 }

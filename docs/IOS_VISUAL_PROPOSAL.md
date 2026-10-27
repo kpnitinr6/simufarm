@@ -1,0 +1,4 @@
+# iPhone-only visual proposal — updated 27 October 2026
+The operator selected **iPhone only; accept fewer than 100**. The current proposal contains 55 unique official iPhone catalog names, is visual-only, and excludes every iPad/iPadOS row. There is a documented 45-device shortfall against the original 100 request; no storage/color/region variants were invented to fill it.
+
+Names: [Apple iPhone identification catalog](https://support.apple.com/en-us/108044). Each row cites that source. Catalog order is a review order, not measured model popularity. Popularity ranks remain null and individual target/extraction approval remains pending. No specifications, screenshots or branded imagery have been extracted. The free-tier master prompt supersedes paid hosting assumptions but does not alter visual-only iPhone scope.

@@ -1,6 +1,6 @@
 {
   "proposal_version": 1,
-  "approval_status": "pending-human",
+  "approval_status": "approved-static-only",
   "target_count": 1000,
   "scope": "Android names only; balanced brand coverage, not a popularity ranking. iOS visual targets can be added after review. No specs extracted.",
   "selection": "Round-robin over 20 familiar brands; distinct marketing names per brand; alphabetical within brand; filters obvious TV/watch/box names. Phone/tablet classification and regional variants need human review.",
@@ -12005,5 +12005,13 @@
       "review_status": "pending",
       "device_class": "needs-human-classification"
     }
-  ]
+  ],
+  "approval_scope": {
+    "static_generation": true,
+    "spec_extraction": false,
+    "interactive": false,
+    "functional_emulation": false,
+    "approved_on": "2026-10-27",
+    "approved_by": "human operator; decision message in this chat"
+  }
 }
