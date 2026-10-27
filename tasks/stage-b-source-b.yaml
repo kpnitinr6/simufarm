@@ -1,0 +1,32 @@
+{
+  "id": "stage-b-source-b",
+  "agent": "codex",
+  "branch": "agent/codex/stage-b-source-b",
+  "status": "in_progress",
+  "inputs": [
+    "Nokia",
+    "Sony",
+    "Asus",
+    "Lenovo",
+    "LG",
+    "Tecno",
+    "Infinix",
+    "Nothing",
+    "ZTE",
+    "TCL"
+  ],
+  "outputs": [
+    "Verified primary-source facts and evidence; unknowns explicitly null"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "execution_class": "local_only",
+    "passed": true,
+    "reason": "Public primary-source research and installed local model only; no MobileAPI/cloud/paid APIs"
+  },
+  "acceptance_criteria": [
+    "Do not invent specs/build fingerprints",
+    "Preserve market/variant identity",
+    "Exact URL and extraction evidence for every asserted value"
+  ]
+}
