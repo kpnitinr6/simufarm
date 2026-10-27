@@ -33,6 +33,8 @@ def validate(root=ROOT, allow_draft=False):
                     raise ValueError(f"Missing field evidence: {p.id}:{key}")
                 if not set(item["source_urls"]).issubset({str(url) for url in p.sources}):
                     raise ValueError(f"Evidence source absent from profile sources: {p.id}:{key}")
+        if not {str(url) for url in p.build.sources}.issubset({str(url) for url in p.sources}):
+            raise ValueError(f"Build provenance absent from profile sources: {p.id}")
         profiles[p.id] = p
     for path in (root / "data/manifests").glob("*.json"):
         m = SimulatorManifest.model_validate_json(path.read_text())

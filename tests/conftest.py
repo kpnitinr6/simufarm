@@ -18,6 +18,8 @@ def profile_data():
             "ro.product.model": "Fixture",
             "ro.product.device": "fixture",
             "ro.build.fingerprint": "synthetic/test-only",
+            "source_type": "firmware",
+            "sources": ["https://example.org/test-fixture"],
         },
         "screen": {"width_px": 1000, "height_px": 2000, "dpi": 400},
         "notch": {"type": "none", "position": "none"},

@@ -46,6 +46,34 @@
             }
           ],
           "title": "Ro.Build.Fingerprint"
+        },
+        "source_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "manufacturer_spec",
+                "lineageos_tree",
+                "xda_dump",
+                "firmware"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Type"
+        },
+        "sources": {
+          "items": {
+            "format": "uri",
+            "maxLength": 2083,
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
         }
       },
       "required": [

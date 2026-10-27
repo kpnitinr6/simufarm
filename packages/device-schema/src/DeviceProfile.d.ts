@@ -23,11 +23,13 @@ export type RoProductBrand = string | null;
 export type RoProductModel = string | null;
 export type RoProductDevice = string | null;
 export type RoBuildFingerprint = string | null;
-export type SourceType = "api" | "scraper" | "manual";
+export type SourceType = ("manufacturer_spec" | "lineageos_tree" | "xda_dump" | "firmware") | null;
+export type Sources = string[];
+export type SourceType1 = "api" | "scraper" | "manual";
 /**
  * @minItems 1
  */
-export type Sources = [string, ...string[]];
+export type Sources1 = [string, ...string[]];
 export type Confidence = number;
 export type VerifiedBy = ("human" | "gemini" | "ollama") | null;
 export type VerifiedAt = string | null;
@@ -45,8 +47,8 @@ export interface DeviceProfile {
   notch: Notch;
   ram_gb: RamGb;
   build: Build;
-  source_type: SourceType;
-  sources: Sources;
+  source_type: SourceType1;
+  sources: Sources1;
   confidence: Confidence;
   verified_by: VerifiedBy;
   verified_at: VerifiedAt;
@@ -65,4 +67,6 @@ export interface Build {
   "ro.product.model": RoProductModel;
   "ro.product.device": RoProductDevice;
   "ro.build.fingerprint": RoBuildFingerprint;
+  source_type?: SourceType;
+  sources?: Sources;
 }
