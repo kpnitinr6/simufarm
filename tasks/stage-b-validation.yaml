@@ -2,7 +2,7 @@
   "id": "stage-b-validation",
   "agent": "codex",
   "branch": "agent/codex/stage-b-integration",
-  "status": "in_progress",
+  "status": "completed",
   "outputs": [
     "schema provenance gates",
     "22 static manifests",
