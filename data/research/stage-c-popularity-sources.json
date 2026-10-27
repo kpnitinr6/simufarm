@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-10-27",
+  "paid_requests": 0,
+  "complete_model_ranking_available": false,
+  "sources": [
+    {
+      "id": "statcounter-worldwide-mobile-2026-09",
+      "url": "https://gs.statcounter.com/vendor-market-share/mobile/worldwide/",
+      "methodology_url": "https://gs.statcounter.com/faq#methodology",
+      "geography": "worldwide",
+      "period": "2026-09",
+      "measurement": "mobile vendor website-page-view share",
+      "observed_android_vendors_percent": {"samsung": 23.52, "xiaomi": 11.06, "oppo": 5.79, "vivo": 5.33},
+      "complete_twenty_brand_table": false,
+      "supports_model_popularity_rank": false
+    },
+    {
+      "id": "counterpoint-global-model-sales-2025",
+      "url": "https://counterpointresearch.com/en/insights/iphone-16-worlds-best-selling-smartphone-in-2025-apple-takes-7-spots-in-top-10-models",
+      "geography": "worldwide",
+      "period": "2025",
+      "measurement": "handset model sell-through ranking",
+      "public_scope": "global top ten, three Samsung Android models",
+      "observed_claim": "Galaxy A16 5G is best-selling Android smartphone of 2025",
+      "supports_full_1000_model_ranking": false
+    },
+    {
+      "id": "google-play-public-supported-device-list",
+      "url": "https://support.google.com/googleplay/answer/1727131?hl=en",
+      "data_url": "https://storage.googleapis.com/play_public/supported_devices.html",
+      "measurement": "compatibility inventory, not popularity or public installed-base reach",
+      "supports_model_popularity_rank": false
+    },
+    {
+      "id": "google-play-console-device-catalog",
+      "url": "https://google.play/business/devicecatalog/",
+      "measurement": "app-specific device metrics in authenticated Play Console",
+      "operator_export_supplied": false,
+      "supports_public_global_model_popularity_rank": false
+    }
+  ],
+  "quota_policy": {
+    "brands": 20,
+    "baseline_other_brand_rows": 50,
+    "nothing_rows_cap": 11,
+    "baseline_total": 961,
+    "minimum_extra_slots": 39,
+    "target_total": 1000,
+    "invented_models_allowed": false,
+    "duplicate_skus_allowed": false,
+    "actual_inventory_counts_pending": true
+  },
+  "diversity_policy": {
+    "global_os_versions_minimum": 3,
+    "global_screen_classes_minimum": 2,
+    "global_chipset_families_minimum": 2,
+    "exemptions_require_observed_rows": true,
+    "expected_brand_failures_are_not_observed_exemptions": true
+  }
+}
