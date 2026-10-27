@@ -1,0 +1,129 @@
+{
+  "profile_id": "vivo-v30",
+  "market": "India",
+  "hardware_ram_gb": 8,
+  "review_status": "needs-human",
+  "facts_researched_by": "Codex; no Gemini/Ollama API claim",
+  "field_evidence": {
+    "brand": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manufacturer-text"
+    },
+    "model": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manufacturer-text"
+    },
+    "os_family": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manufacturer-text"
+    },
+    "os_version": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manufacturer-text"
+    },
+    "screen.width_px": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manufacturer-text"
+    },
+    "screen.height_px": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manufacturer-text"
+    },
+    "ram_gb": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manufacturer-text"
+    },
+    "release_year": {
+      "source_urls": [
+        "https://vivonewsroom.in/press-release/vivo-announces-vivo-v30-series-elevating-portrait-photography-with-studio-quality-aura-light-and-zeiss-partnership-in-v30-pro/"
+      ],
+      "method": "India-market launch year; not worldwide first release"
+    },
+    "screen.dpi": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "derived physical PPI=round(hypot(1260,2800)/6.78); not Android logical densityDpi"
+    },
+    "notch": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/v30"
+      ],
+      "method": "visual classification from manufacturer product illustration; human review pending"
+    },
+    "id": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "SimuFarm catalog/planned-runtime identifier; authored metadata, not manufacturer spec"
+    },
+    "shell_id": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "SimuFarm catalog/planned-runtime identifier; authored metadata, not manufacturer spec"
+    },
+    "base_image_id": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "SimuFarm catalog/planned-runtime identifier; authored metadata, not manufacturer spec"
+    },
+    "build": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "unknown/not stated; null is not a claimed manufacturer fact"
+    },
+    "verified_by": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "unknown/not stated; null is not a claimed manufacturer fact"
+    },
+    "verified_at": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "unknown/not stated; null is not a claimed manufacturer fact"
+    },
+    "source_type": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manual provenance/editorial confidence metadata, not device fact"
+    },
+    "sources": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manual provenance/editorial confidence metadata, not device fact"
+    },
+    "confidence": {
+      "source_urls": [
+        "https://www.vivo.com/in/products/param/v30"
+      ],
+      "method": "manual provenance/editorial confidence metadata, not device fact"
+    }
+  },
+  "runtime_ready": false,
+  "notes": [
+    "Generic original artwork; not a firmware screenshot",
+    "Screen dpi carries physical PPI only",
+    "Build properties remain unknown; no fabricated fingerprints"
+  ]
+}

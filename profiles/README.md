@@ -1,0 +1,2 @@
+# v3 profile source of truth
+Stage A includes exactly three manually researched Vivo India profiles. All are static-only drafts with explicit null firmware properties and pending human review. See proposed ADR014. No reviewed state is asserted and runtime admission rejects unknown build identity. Sources/evidence must remain attached. No other brand or CSV generator is started until the proper stage gate.

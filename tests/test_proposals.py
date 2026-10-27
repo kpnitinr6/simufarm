@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def load(name):
-    return json.loads((ROOT / "data/proposals" / name).read_text())
+    return json.loads((ROOT / "docs/archive/pre-v3/proposals" / name).read_text())
 
 
 def test_popularity_proposal_has_no_inherited_extraction_approval():

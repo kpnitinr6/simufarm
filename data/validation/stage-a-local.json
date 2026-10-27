@@ -1,0 +1,28 @@
+{
+  "observed_on": "2026-10-27",
+  "stage": "A",
+  "schema_version": "0.3.0-candidate",
+  "profile_count": 3,
+  "approved_profile_count": 0,
+  "shell_count": 1,
+  "static_page_count": 3,
+  "backend_tests_passed": 46,
+  "browser_tests_passed": 5,
+  "lint": "passed",
+  "schema_drift": "passed",
+  "production_build": "passed",
+  "source_validation": "passed-explicit-static-drafts",
+  "proof_screenshots": [
+    "docs/proof/vivo-y100.png",
+    "docs/proof/vivo-x100.png",
+    "docs/proof/vivo-v30.png",
+    "docs/proof/catalog.png"
+  ],
+  "stage_b_started": false,
+  "new_billable_resources_touched": 0,
+  "mobileapi_calls": 0,
+  "oracle_vms_created": 0,
+  "containers_started": 0,
+  "human_acceptance": "pending",
+  "proposed_adr_014": "needs-human"
+}

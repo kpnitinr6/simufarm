@@ -10,30 +10,27 @@ export type Brand = string;
 export type Model = string;
 export type ReleaseYear = number;
 export type OsFamily = "android" | "ios";
-/**
- * @minItems 1
- */
-export type OsVersions = [string, ...string[]];
+export type OsVersion = string;
+export type ShellId = string;
+export type BaseImageId = string | null;
 export type WidthPx = number;
 export type HeightPx = number;
 export type Dpi = number;
-export type Aspect = string;
-export type WidthMm = number;
-export type HeightMm = number;
-export type ThicknessMm = number;
-export type Type = "none" | "punch_hole" | "notch" | "dynamic_island";
+export type Type = "none" | "punch_hole" | "notch" | "teardrop" | "dynamic_island";
 export type Position = "none" | "top_center" | "top_left" | "top_right";
-export type Buttons = string[];
 export type RamGb = number;
-export type StorageGb = number;
+export type RoProductBrand = string | null;
+export type RoProductModel = string | null;
+export type RoProductDevice = string | null;
+export type RoBuildFingerprint = string | null;
 export type SourceType = "api" | "scraper" | "manual";
 /**
  * @minItems 1
  */
 export type Sources = [string, ...string[]];
 export type Confidence = number;
-export type VerifiedBy = "human" | "gemini" | "ollama";
-export type VerifiedAt = string;
+export type VerifiedBy = ("human" | "gemini" | "ollama") | null;
+export type VerifiedAt = string | null;
 
 export interface DeviceProfile {
   id: Id;
@@ -41,13 +38,13 @@ export interface DeviceProfile {
   model: Model;
   release_year: ReleaseYear;
   os_family: OsFamily;
-  os_versions: OsVersions;
+  os_version: OsVersion;
+  shell_id: ShellId;
+  base_image_id: BaseImageId;
   screen: Screen;
-  body: Body;
   notch: Notch;
-  buttons: Buttons;
   ram_gb: RamGb;
-  storage_gb: StorageGb;
+  build: Build;
   source_type: SourceType;
   sources: Sources;
   confidence: Confidence;
@@ -58,14 +55,14 @@ export interface Screen {
   width_px: WidthPx;
   height_px: HeightPx;
   dpi: Dpi;
-  aspect: Aspect;
-}
-export interface Body {
-  width_mm: WidthMm;
-  height_mm: HeightMm;
-  thickness_mm: ThicknessMm;
 }
 export interface Notch {
   type: Type;
   position: Position;
+}
+export interface Build {
+  "ro.product.brand": RoProductBrand;
+  "ro.product.model": RoProductModel;
+  "ro.product.device": RoProductDevice;
+  "ro.build.fingerprint": RoBuildFingerprint;
 }

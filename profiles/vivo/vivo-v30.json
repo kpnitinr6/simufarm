@@ -1,0 +1,35 @@
+{
+  "id": "vivo-v30",
+  "brand": "vivo",
+  "model": "V30",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "vivo",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1260,
+    "height_px": 2800,
+    "dpi": 453
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://www.vivo.com/in/products/param/v30",
+    "https://vivonewsroom.in/press-release/vivo-announces-vivo-v30-series-elevating-portrait-photography-with-studio-quality-aura-light-and-zeiss-partnership-in-v30-pro/",
+    "https://www.vivo.com/in/products/v30"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}
