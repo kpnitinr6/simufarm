@@ -19,6 +19,8 @@ jobs:
       - run: pip install -e ./packages/device-schema -e '.[dev]'
       - run: npm ci
       - run: ruff check .
+      - run: npm run generate:profiles
+      - run: git diff --exit-code -- profiles/generated data/sources
       - run: pytest -q
       - run: python scripts/validate_data.py --allow-draft
       - run: npm run contracts:check

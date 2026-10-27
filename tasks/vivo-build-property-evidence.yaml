@@ -3,7 +3,7 @@
   "title": "Vivo build-property evidence",
   "agent": "deepseek-local",
   "branch": "agent/deepseek/vivo-build-property-evidence",
-  "status": "queued",
+  "status": "candidate-review-pending",
   "parallel_with": "stage-c",
   "scope": "candidate evidence only; no profile promotion",
   "models": {
@@ -64,5 +64,7 @@
       "option_b": "Keep India profile; find V2308 / V2310A model evidence and cross-check with India fingerprint.",
       "rule": "Do not combine V2309A China identity with the existing India fingerprint. No candidate is approval."
     }
-  ]
+  ],
+  "candidate_track_commit": "25848cb1721da2af477f5cfef2dbebf9472848ab",
+  "candidate_track_notes": "Separate evidence task completed local DeepSeek extraction; no promotion. X100 region mismatch and database label/property mapping unresolved; V30 dump is Philippines Android15, not confirmed India Android14. Human decision required."
 }

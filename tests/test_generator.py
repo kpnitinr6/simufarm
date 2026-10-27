@@ -165,3 +165,29 @@ def test_generated_ids_cannot_overwrite_reference_evidence(tmp_path):
     with pytest.raises(ValueError, match="collide"):
         run(tmp_path, [row()])
     assert not (tmp_path / "data").exists()
+
+
+def test_spacing_and_punctuation_cannot_inflate_model_count(tmp_path):
+    with pytest.raises(ValueError, match="Duplicate"):
+        run(
+            tmp_path,
+            [
+                row(id="google-fold7", model="Pixel Fold 7"),
+                row(id="google-fold-7", model="Google Pixel-Fold7"),
+            ],
+        )
+
+
+def test_unknown_chipset_does_not_count_as_family(tmp_path):
+    with pytest.raises(ValueError, match="Unknown chipset"):
+        run(tmp_path, [row(chipset_family="0")])
+
+
+def test_plus_is_a_distinct_hardware_model(tmp_path):
+    assert (
+        run(
+            tmp_path,
+            [row(id="google-main", model="Pixel 7"), row(id="google-plus", model="Pixel 7+")],
+        )
+        == 2
+    )

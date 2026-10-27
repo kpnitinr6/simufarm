@@ -71,7 +71,11 @@ def read_rows(csv_path):
             raise ValueError(f"Missing or malformed CSV fields on line {line}")
         if not SAFE_ID.fullmatch(row["id"]) or not SAFE_ID.fullmatch(row["brand"]):
             raise ValueError(f"Unsafe identity on line {line}")
-        identity = (row["brand"], " ".join(row["model"].casefold().split()))
+        model_key = re.sub(r"[^a-z0-9]", "", row["model"].casefold().replace("+", "plus"))
+        brand_key = re.sub(r"[^a-z0-9]", "", row["brand"].casefold())
+        if model_key.startswith(brand_key):
+            model_key = model_key[len(brand_key) :]
+        identity = (row["brand"], model_key)
         if row["id"] in ids or identity in identities:
             raise ValueError(f"Duplicate device on line {line}")
         ids.add(row["id"])
@@ -93,6 +97,8 @@ def read_rows(csv_path):
             )
         ):
             raise ValueError(f"Invalid source_urls on line {line}")
+        if row["chipset_family"].strip().casefold() in {"0", "unknown", "none", "n/a", "null"}:
+            raise ValueError(f"Unknown chipset cannot count as diversity evidence on line {line}")
         row["_sources"] = sorted(set(urls))
         row["_line"] = line
     return rows

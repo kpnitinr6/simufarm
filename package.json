@@ -1,6 +1,6 @@
 {
   "name": "simufarm",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "workspaces": [
     "apps/web",
@@ -15,7 +15,8 @@
     "contracts:generate": "python scripts/export_contracts.py",
     "contracts:check": "python scripts/export_contracts.py --check",
     "test:web": "playwright test",
-    "generate:static": "python scripts/render_static.py --allow-draft"
+    "generate:static": "python scripts/render_static.py --allow-draft",
+    "generate:profiles": "python scripts/generate_profiles.py data/devices.csv --require-cohort --exemptions data/devices.csv.exemptions.yaml"
   },
   "devDependencies": {
     "typescript": "^5.7.2",
