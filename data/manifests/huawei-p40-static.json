@@ -1,0 +1,12 @@
+{
+  "simulator_id": "huawei-p40-static",
+  "profile_id": "huawei-p40",
+  "kind": "static",
+  "shell_id": "huawei",
+  "base_image_id": "android-10-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

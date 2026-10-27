@@ -1,0 +1,12 @@
+{
+  "simulator_id": "lenovo-legion-phone-duel-2-static",
+  "profile_id": "lenovo-legion-phone-duel-2",
+  "kind": "static",
+  "shell_id": "lenovo",
+  "base_image_id": "android-11-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

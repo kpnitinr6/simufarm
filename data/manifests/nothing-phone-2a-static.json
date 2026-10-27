@@ -1,0 +1,12 @@
+{
+  "simulator_id": "nothing-phone-2a-static",
+  "profile_id": "nothing-phone-2a",
+  "kind": "static",
+  "shell_id": "nothing",
+  "base_image_id": "android-14-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

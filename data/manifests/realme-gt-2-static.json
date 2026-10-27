@@ -1,0 +1,12 @@
+{
+  "simulator_id": "realme-gt-2-static",
+  "profile_id": "realme-gt-2",
+  "kind": "static",
+  "shell_id": "realme",
+  "base_image_id": "android-12-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

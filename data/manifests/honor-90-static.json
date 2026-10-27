@@ -1,0 +1,12 @@
+{
+  "simulator_id": "honor-90-static",
+  "profile_id": "honor-90",
+  "kind": "static",
+  "shell_id": "honor",
+  "base_image_id": "android-13-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

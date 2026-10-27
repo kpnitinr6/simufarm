@@ -1,0 +1,12 @@
+{
+  "simulator_id": "samsung-galaxy-s21-static",
+  "profile_id": "samsung-galaxy-s21",
+  "kind": "static",
+  "shell_id": "samsung",
+  "base_image_id": "android-11-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "nothing-phone-2a",
+  "brand": "nothing",
+  "model": "Phone (2a)",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "nothing",
+  "base_image_id": "android-14-arm64",
+  "screen": {
+    "width_px": 1084,
+    "height_px": 2412,
+    "dpi": 394.0
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 8.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://nl.nothing.tech/pages/phone-2a",
+    "https://nothing.community/d/6119-this-is-phone-2a",
+    "https://support.nothing.tech/hc/en-us/articles/22960522709265-What-s-the-screen-parameter-information-of-Phone-2a"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

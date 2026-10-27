@@ -1,0 +1,12 @@
+{
+  "simulator_id": "lg-velvet-static",
+  "profile_id": "lg-velvet",
+  "kind": "static",
+  "shell_id": "lg",
+  "base_image_id": "android-10-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

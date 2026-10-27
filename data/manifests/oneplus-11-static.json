@@ -1,0 +1,12 @@
+{
+  "simulator_id": "oneplus-11-static",
+  "profile_id": "oneplus-11",
+  "kind": "static",
+  "shell_id": "oneplus",
+  "base_image_id": "android-13-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

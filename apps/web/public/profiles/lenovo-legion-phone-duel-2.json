@@ -1,0 +1,36 @@
+{
+  "id": "lenovo-legion-phone-duel-2",
+  "brand": "lenovo",
+  "model": "Legion Phone Duel 2",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "11",
+  "shell_id": "lenovo",
+  "base_image_id": "android-11-arm64",
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2460,
+    "dpi": 388.0
+  },
+  "notch": {
+    "type": "none",
+    "position": "none"
+  },
+  "ram_gb": 12.0,
+  "build": {
+    "ro.product.brand": null,
+    "ro.product.model": null,
+    "ro.product.device": null,
+    "ro.build.fingerprint": null,
+    "source_type": null,
+    "sources": []
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://gaming.lenovo.com/news/post/lenovo-unleashes-next-mobile-gaming-powerhouse-with-the-lenovo-legion-pWeMligmSqYKWUe",
+    "https://news.lenovo.com/pressroom/press-releases/next-mobile-gaming-powerhouse-lenovo-legion-phone-duel-2/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

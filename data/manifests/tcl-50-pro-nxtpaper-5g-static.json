@@ -1,0 +1,12 @@
+{
+  "simulator_id": "tcl-50-pro-nxtpaper-5g-static",
+  "profile_id": "tcl-50-pro-nxtpaper-5g",
+  "kind": "static",
+  "shell_id": "tcl",
+  "base_image_id": "android-14-arm64",
+  "status": "ready",
+  "limits": {
+    "ram_mb": 2048,
+    "vcpu": 1
+  }
+}

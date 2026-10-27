@@ -2,7 +2,7 @@
   "id": "stage-b-vivo-backfill",
   "agent": "deepseek-local",
   "branch": "agent/deepseek/stage-b-vivo-backfill",
-  "status": "in_progress",
+  "status": "blocked",
   "inputs": [
     "vivo-y100",
     "vivo-x100",
@@ -21,5 +21,6 @@
     "Do not invent specs/build fingerprints",
     "Preserve market/variant identity",
     "Exact URL and extraction evidence for every asserted value"
-  ]
+  ],
+  "blocker": "Partial fingerprints verified for Y100/X100; 10 of 12 raw properties still unavailable from matching primary evidence. Local DeepSeek executed, outputs exact-source checked."
 }
