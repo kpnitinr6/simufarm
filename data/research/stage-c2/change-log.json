@@ -1,0 +1,1078 @@
+{
+  "date": "2026-10-28",
+  "policy": "Option B: no padding; remaining records are sourced distinct candidates, not blanket human-verified physical devices.",
+  "before_count": 1000,
+  "after_count": 933,
+  "removed_count": 67,
+  "changes": [
+    {
+      "action": "remove",
+      "profile_id": "gen-xiaomi-iqoo13",
+      "surviving_id": null,
+      "reason": "Incorrect Xiaomi attribution for iQOO (vivo); removed rather than re-attributed as explicitly permitted.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2024/iqoo-13.json",
+        "https://en.wikipedia.org/wiki/IQOO_13",
+        "https://www.vivo.com/iqoo/iqoo-13/specs"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-xiaomi-iqooneo11",
+      "surviving_id": null,
+      "reason": "Incorrect Xiaomi attribution for iQOO (vivo); removed rather than re-attributed as explicitly permitted.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/iqoo-neo-11.json",
+        "https://www.gsmarena.com/vivo_iqoo_neo11_5g_(china)-14268.php",
+        "https://www.vivo.com/iqoo/iqoo-neo-11/specs"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-tcl-10tabmid",
+      "surviving_id": null,
+      "reason": "Tablet; smartphone-only catalog.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-tabmid/tcl-10-tabmid-3gb-32gb-4g-lte.json",
+        "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxya26",
+      "surviving_id": "gen-samsung-galaxya265g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a26/samsung-galaxy-a26-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/samsung-galaxy-a26"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a26.json",
+        "https://en.wikipedia.org/wiki/Samsung_Galaxy_A26",
+        "https://www.samsung.com/global/galaxy/galaxy-a26/specs/"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxya565g",
+      "surviving_id": "gen-samsung-galaxya56",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a56-5g/samsung-galaxy-a56-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a56.json",
+        "https://en.wikipedia.org/wiki/Samsung_Galaxy_A56",
+        "https://www.samsung.com/global/galaxy/galaxy-a56/specs/"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxyf165g",
+      "surviving_id": "gen-samsung-galaxyf16",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f16-5g/samsung-galaxy-f16-5g-4gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f16/samsung-galaxy-f16-aitoolbuzz-9529-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/samsung-galaxy-f16"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxyf365g",
+      "surviving_id": "gen-samsung-galaxyf36",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f36-5g/samsung-galaxy-f36-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f36/samsung-galaxy-f36-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/samsung-galaxy-f36"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxyf565g",
+      "surviving_id": "gen-samsung-galaxyf56",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f56-5g/samsung-galaxy-f56-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f56/samsung-galaxy-f56-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/samsung-galaxy-f56"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxym165g",
+      "surviving_id": "gen-samsung-galaxym16",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m16-5g/samsung-galaxy-m16-5g-4gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m16/samsung-galaxy-m16-aitoolbuzz-9625-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/samsung-galaxy-m16"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxym365g",
+      "surviving_id": "gen-samsung-galaxym36",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m36-5g/samsung-galaxy-m36-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m36/samsung-galaxy-m36-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/samsung-galaxy-m36"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxym565g",
+      "surviving_id": "gen-samsung-galaxym56",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m56-5g/samsung-galaxy-m56-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m56/samsung-galaxy-m56-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/samsung-galaxy-m56"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxyzflip75g",
+      "surviving_id": "gen-samsung-galaxyzflip7",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-z-flip-7-5g/samsung-galaxy-z-flip-7-5g-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-z-flip-7.json",
+        "https://www.samsung.com/global/galaxy/galaxy-z-flip7/specs/",
+        "https://en.wikipedia.org/wiki/Samsung_Galaxy_Z_Flip_7"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxya57",
+      "surviving_id": "gen-samsung-galaxya575g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-a57-12gb-ram-256gb/samsung-galaxy-a57-12gb-ram-256gb-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-a57.json",
+        "https://news.samsung.com/global/samsung-unveils-galaxy-a57-5g-and-galaxy-a37-5g-packing-pro-level-features-at-awesome-price",
+        "https://www.samsung.com/global/galaxy/galaxy-a57/specs/",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxyf70e",
+      "surviving_id": "gen-samsung-galaxyf70e5g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/samsung-galaxy-f70e/samsung-galaxy-f70e-4gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-f70e-5g-6gb-ram-128gb/samsung-galaxy-f70e-5g-6gb-ram-128gb-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxym06",
+      "surviving_id": "gen-samsung-galaxym065g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m06-4gb-ram-64gb/samsung-galaxy-m06-4gb-ram-64gb-4gb-64gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m06-5g/samsung-galaxy-m06-5g-4gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxyzflip7fe",
+      "surviving_id": "gen-samsung-galaxyzflip7fe5g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-z-flip-7-fe-8gb-ram-256gb/samsung-galaxy-z-flip-7-fe-8gb-ram-256gb-8gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-z-flip-7-fe-5g/samsung-galaxy-z-flip-7-fe-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-vivo-t45g",
+      "surviving_id": "gen-vivo-t4",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/t4-5g/vivo-t4-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/t4/vivo-t4-aitoolbuzz-12095-12gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/vivo-t4-5g"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-vivo-t4x5g",
+      "surviving_id": "gen-vivo-t4x",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/t4x-5g/vivo-t4x-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/t4x/vivo-t4x-aitoolbuzz-12096-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/vivo-t4x"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-vivo-v50e5g",
+      "surviving_id": "gen-vivo-v50e",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/v50e-5g/vivo-v50e-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/v50e-8gb-ram-256gb/vivo-v50e-8gb-ram-256gb-8gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-vivo-x300pro5g",
+      "surviving_id": "gen-vivo-x300pro",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/x300-pro-5g/vivo-x300-pro-5g-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/vivo-x300-pro.json",
+        "https://en.wikipedia.org/wiki/Vivo_X300_Pro",
+        "https://www.vivo.com/global/product/x300-pro/specs"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-vivo-y195g",
+      "surviving_id": "gen-vivo-y19",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/y19-5g/vivo-y19-5g-4gb-64gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/y19/vivo-y19-aitoolbuzz-12286-6gb-64gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/vivo-y19-5g"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-vivo-y29s5g",
+      "surviving_id": "gen-vivo-y29s",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/y29s-5g/vivo-y29s-5g-8gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/y29s/vivo-y29s-aitoolbuzz-12330-8gb-256gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/vivo-y29s"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordce25g",
+      "surviving_id": "gen-oneplus-nordce2",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-ce-2-5g/oneplus-nord-ce-2-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-ce-2.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://www.kaggle.com/datasets/abdulmalik1518/mobiles-dataset-2025",
+        "https://www.gsmarena.com/oneplus_nord_ce_2_5g-11259.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordce2lite5g",
+      "surviving_id": "gen-oneplus-nordce2lite",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-ce-2-lite-5g/oneplus-nord-ce-2-lite-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/oneplus-nord-ce-2-lite-5g"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-ce-2-lite.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://www.kaggle.com/datasets/abdulmalik1518/mobiles-dataset-2025",
+        "https://www.gsmarena.com/oneplus_nord_ce_2_lite_5g-11344.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordce3lite5g",
+      "surviving_id": "gen-oneplus-nordce3lite",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-ce-3-lite-5g-8gb-ram-256gb/oneplus-nord-ce-3-lite-5g-8gb-ram-256gb-8gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-ce-3-lite/oneplus-nord-ce-3-lite-aitoolbuzz-7434-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/oneplus-nord-ce-3-lite"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nord3",
+      "surviving_id": "gen-oneplus-nord35g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-3/oneplus-nord-3-16gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-3-5g-16gb-ram-256gb/oneplus-nord-3-5g-16gb-ram-256gb-16gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordce55g",
+      "surviving_id": "gen-oneplus-nordce5",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/nord-ce-5-5g/oneplus-nord-ce-5-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/nord-ce5/oneplus-nord-ce5-aitoolbuzz-7440-8gb-256gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/oneplus-nord-ce5-5g",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-10pro5g",
+      "surviving_id": "gen-oneplus-10pro",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/10-pro-5g/oneplus-10-pro-5g-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/oneplus-10-pro-5g-12gb-ram"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/oneplus-10-pro.json",
+        "https://www.oneplus.com/us/oneplus-10-pro/specs",
+        "https://en.wikipedia.org/wiki/OnePlus_10_Pro"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-13s5g",
+      "surviving_id": "gen-oneplus-13s",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/13s-5g/oneplus-13s-5g-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/oneplus-13s.json",
+        "https://en.wikipedia.org/wiki/OnePlus_13s",
+        "https://www.oneplus.com/oneplus-13s/specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-155g",
+      "surviving_id": "gen-oneplus-15",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/15-5g-16gb-ram-512gb/oneplus-15-5g-16gb-ram-512gb-16gb-512gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/oneplus-15.json",
+        "https://www.oneplus.com/oneplus-15/specs",
+        "https://www.gsmarena.com/oneplus_15_5g-14206.php",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-9rt",
+      "surviving_id": "gen-oneplus-9rt5g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/9rt.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/9rt-5g-12gb-ram-256gb/oneplus-9rt-5g-12gb-ram-256gb-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nord2",
+      "surviving_id": "gen-oneplus-nord25g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/nord-2.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/nord-2-5g/oneplus-nord-2-5g-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/oneplus-nord-2-5g-12gb-256gb"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordn20",
+      "surviving_id": "gen-oneplus-nordn205g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-n20.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-n20-5g/oneplus-nord-n20-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordn305g",
+      "surviving_id": "gen-oneplus-nordn30",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-n30-5g/oneplus-nord-n30-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-n30/oneplus-nord-n30-aitoolbuzz-7446-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/oneplus-nord-n30"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordce4lite",
+      "surviving_id": "gen-oneplus-nordce4liteindia",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7438-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/oneplus-nord-ce4-lite"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7439-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/oneplus-nord-ce4-lite-india"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-oneplus-nordce4lite5g",
+      "surviving_id": "gen-oneplus-nordce4liteindia",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce-4-lite-5g/oneplus-nord-ce-4-lite-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7439-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/oneplus-nord-ce4-lite-india"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-xiaomi-pocof7pro5g",
+      "surviving_id": "gen-xiaomi-pocof7pro",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/poco-f7-pro-5g/xiaomi-poco-f7-pro-5g-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/poco-f7-pro.json",
+        "https://en.wikipedia.org/wiki/POCO_F7",
+        "https://www.mi.com/global/product/poco-f7-pro/specs"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-xiaomi-redminote14",
+      "surviving_id": "gen-xiaomi-redminote144g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/redmi-note-14/xiaomi-redmi-note-14-6gb-128gb-4g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/xiaomi-redmi-note-14"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/redmi-note-14-4g/xiaomi-redmi-note-14-4g-6gb-128gb-4g.json",
+        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+        "https://www.mobiledokan.com/mobile/xiaomi-redmi-note-14-4g"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-xiaomi-pocox65g",
+      "surviving_id": "gen-xiaomi-pocox6",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2024/poco-x6-5g/xiaomi-poco-x6-5g-8gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2024/poco-x6.json",
+        "https://www.mi.com/global/product/poco-x6",
+        "https://en.wikipedia.org/wiki/POCO_X6"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-xiaomi-pococ85x",
+      "surviving_id": "gen-xiaomi-pococ85x5g",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2026/poco-c85x/xiaomi-poco-c85x-4gb-64gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2026/poco-c85x-5g-4gb-ram-128gb/xiaomi-poco-c85x-5g-4gb-ram-128gb-4gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-10se",
+      "surviving_id": "gen-tcl-10seltelatamt766j",
+      "reason": "Regional/storage retail variants of same TCL model; manufacturer-backed canonical row preferred.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-se/tcl-10-se-4gb-128gb-4g-lte.json",
+        "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-se-lte-latam-128gb-t766j.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-10seltelatamt766a",
+      "surviving_id": "gen-tcl-10seltelatamt766j",
+      "reason": "Regional/storage retail variants of same TCL model; manufacturer-backed canonical row preferred.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-se-lte-latam-64gb-t766a.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-se-lte-latam-128gb-t766j.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-20eltelatam6125a",
+      "surviving_id": "gen-tcl-20e",
+      "reason": "Regional/storage retail variants of same TCL model; manufacturer-backed canonical row preferred.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e-2021-lte-latam-64gb-6125a.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e/tcl-20e-beridzeg45-4342-3gb.json",
+        "https://www.gsmarena.com/tcl_20e-11321.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-20eltelatam6125f",
+      "surviving_id": "gen-tcl-20e",
+      "reason": "Regional/storage retail variants of same TCL model; manufacturer-backed canonical row preferred.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e-2021-lte-latam-64gb-6125f.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e/tcl-20e-beridzeg45-4342-3gb.json",
+        "https://www.gsmarena.com/tcl_20e-11321.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-20eltelatam6125f1",
+      "surviving_id": "gen-tcl-20e",
+      "reason": "Regional/storage retail variants of same TCL model; manufacturer-backed canonical row preferred.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e-2021-lte-latam-128gb-6125f1.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e/tcl-20e-beridzeg45-4342-3gb.json",
+        "https://www.gsmarena.com/tcl_20e-11321.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-20yltelatam6156a",
+      "surviving_id": "gen-tcl-20y",
+      "reason": "Regional/storage retail variants of same TCL model; manufacturer-backed canonical row preferred.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20y-2021-lte-latam-64gb-6156a.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20y/tcl-20y-beridzeg45-5416-4gb.json",
+        "https://www.gsmarena.com/tcl_20y-11359.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-20yltelatam6156a1",
+      "surviving_id": "gen-tcl-20y",
+      "reason": "Regional/storage retail variants of same TCL model; manufacturer-backed canonical row preferred.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20y-2021-lte-latam-128gb-6156a1.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20y/tcl-20y-beridzeg45-5416-4gb.json",
+        "https://www.gsmarena.com/tcl_20y-11359.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-tcl-a30ltelatam5102o",
+      "surviving_id": "gen-tcl-a30",
+      "reason": "Same physical model, different connectivity/retail label; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/a30-lte-latam-5102o.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/a30/tcl-a30-beridzeg45-165-3gb.json",
+        "https://www.gsmarena.com/tcl_a30-11360.php"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-13lteemea",
+      "surviving_id": "gen-nokia-13",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/1-3-2020-lte-emea.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://phonedb.net/index.php?m=device&id=16725"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/1-3/nokia-1-3-aitoolbuzz-6737-1gb-16gb-4g-lte.json",
+        "https://aitoolbuzz.com/mobiles/nokia-1-3",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-24",
+      "surviving_id": "gen-nokia-24lte",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/2-4.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/2-4-lte.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-54ltelatam",
+      "surviving_id": "gen-nokia-54",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/5-4-2021-lte-latam-64gb.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/5-4/nokia-5-4-beridzeg45-437-4gb.json",
+        "https://www.gsmarena.com/nokia_5_4-10624.php",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-g10",
+      "surviving_id": "gen-nokia-g10ltelatam",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g10-2021.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g10-2021-lte-latam-64gb.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-g10lte",
+      "surviving_id": "gen-nokia-g10ltelatam",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g10-2021-lte.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g10-2021-lte-latam-64gb.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-83",
+      "surviving_id": "gen-nokia-835g",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-3-2020.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-3-5g/nokia-8-3-5g-scrapegsma-1271.json",
+        "https://github.com/cigarplug/scrape-gsma",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-8v",
+      "surviving_id": "gen-nokia-8v5guw",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-v.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-v-5g-uw/nokia-8-v-5g-uw-aitoolbuzz-7078-6gb-64gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/nokia-8-v-5g-uw",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-x305g",
+      "surviving_id": "gen-nokia-x30",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/x30-5g/nokia-x30-5g-8gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/x30/nokia-x30-aitoolbuzz-7313-8gb-128gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/nokia-x30"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-g11",
+      "surviving_id": "gen-nokia-g11nfc",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g11-2022.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g11-2022-nfc.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-g50",
+      "surviving_id": "gen-nokia-g505g",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g50-2021.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g50-5g/nokia-g50-5g-4gb-64gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-g60",
+      "surviving_id": "gen-nokia-g605g",
+      "reason": "Regional/connectivity/storage labels of same Nokia model collapsed; strongest available source retained.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g60-2022.json",
+        "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g60-5g/nokia-g60-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+        "https://storage.googleapis.com/play_public/supported_devices.csv"
+      ]
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-samsung-galaxya835g",
+      "surviving_id": null,
+      "reason": "Exact device identity not confirmed by manufacturer launch/product specification or GSMArena; quarantine, no assertion that device can never exist. A53s must not be silently conflated with A53/A52s.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-a83-5g/samsung-galaxy-a83-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-samsung-galaxya755g",
+      "surviving_id": null,
+      "reason": "Exact device identity not confirmed by manufacturer launch/product specification or GSMArena; quarantine, no assertion that device can never exist. A53s must not be silently conflated with A53/A52s.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a75-5g/samsung-galaxy-a75-5g-8gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-samsung-galaxyf645g",
+      "surviving_id": null,
+      "reason": "Exact device identity not confirmed by manufacturer launch/product specification or GSMArena; quarantine, no assertion that device can never exist. A53s must not be silently conflated with A53/A52s.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f64-5g/samsung-galaxy-f64-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-samsung-galaxyzfoldwide",
+      "surviving_id": null,
+      "reason": "Exact device identity not confirmed by manufacturer launch/product specification or GSMArena; quarantine, no assertion that device can never exist. A53s must not be silently conflated with A53/A52s.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-wide/samsung-galaxy-z-fold-wide-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-realme-x9",
+      "surviving_id": null,
+      "reason": "Exact device identity not confirmed by manufacturer launch/product specification or GSMArena; quarantine, no assertion that device can never exist. A53s must not be silently conflated with A53/A52s.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2025/x9/realme-x9-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "remove",
+      "profile_id": "gen-samsung-galaxya53s5g",
+      "surviving_id": null,
+      "reason": "Exact device identity not confirmed by manufacturer launch/product specification or GSMArena; quarantine, no assertion that device can never exist. A53s must not be silently conflated with A53/A52s.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a53s-5g/samsung-galaxy-a53s-5g-6gb-128gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": []
+    },
+    {
+      "action": "correct",
+      "profile_id": "gen-samsung-galaxym445g",
+      "before": {
+        "release_year": "2026",
+        "height_px": "2400"
+      },
+      "after": {
+        "release_year": "2023",
+        "height_px": "2408"
+      },
+      "reason": "2023 Galaxy Jump 3 / SM-M446K launch; screen 1080x2408.",
+      "source_urls": [
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php"
+      ]
+    },
+    {
+      "action": "correct",
+      "profile_id": "gen-sony-xperia1iv",
+      "before": {
+        "ram_gb": "16.0"
+      },
+      "after": {
+        "ram_gb": "12.0"
+      },
+      "reason": "Sony launch confirms 12 GB RAM, not inherited 16 GB dataset variant.",
+      "source_urls": [
+        "https://www.sony.co.uk/presscentre/sonys-new-xperia-1-iv-is-a-powerhouse-in-content-creation-with-the-worlds-first-true-optical-zoom-lens-and-more"
+      ]
+    },
+    {
+      "action": "verify",
+      "profile_id": "gen-samsung-galaxys25fe",
+      "before": {
+        "os_version": "16"
+      },
+      "after": {
+        "os_version": "16"
+      },
+      "reason": "Requested Android 15 correction conflicts with official launch OS specification; retain Android 16 and escalate source conflict.",
+      "source_urls": [
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia"
+      ]
+    },
+    {
+      "action": "correct",
+      "profile_id": "gen-samsung-galaxyzfold8ultra",
+      "before": {
+        "width_px": "1828",
+        "height_px": "2584",
+        "dpi": "416",
+        "screen_inches": "7.6"
+      },
+      "after": {
+        "width_px": "2256",
+        "height_px": "2504",
+        "dpi": "422",
+        "screen_inches": "8.0"
+      },
+      "reason": "Manufacturer July 22 2026 launch verifies existence; correct main display inherited from speculative dataset. OS remains unverified (official table empty).",
+      "source_urls": [
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living"
+      ]
+    },
+    {
+      "action": "verify",
+      "profile_id": "gen-nothing-phone-4a",
+      "before": {},
+      "after": {},
+      "reason": "Official product page confirms existence as of 2026-10-28; retain. This existence verification does not independently verify every numeric field.",
+      "source_urls": [
+        "https://nothing.tech/products/phone-4a"
+      ]
+    },
+    {
+      "action": "verify",
+      "profile_id": "gen-nothing-phone-4a-pro",
+      "before": {},
+      "after": {},
+      "reason": "Official product page confirms existence as of 2026-10-28; retain. This existence verification does not independently verify every numeric field.",
+      "source_urls": [
+        "https://us.nothing.tech/products/phone-4a-pro"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-samsung-galaxyzflip7olympicedition",
+      "surviving_id": "gen-samsung-galaxyzflip7",
+      "reason": "Olympic Edition cosmetic/retail edition collapsed into same Z Flip7 physical model.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-flip-7-olympic-edition/samsung-galaxy-z-flip-7-olympic-edition-12gb-512gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-z-flip-7.json",
+        "https://www.samsung.com/global/galaxy/galaxy-z-flip7/specs/",
+        "https://en.wikipedia.org/wiki/Samsung_Galaxy_Z_Flip_7"
+      ]
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-xiaomi-mixflip2diamondlimitededition",
+      "surviving_id": "gen-xiaomi-mixflip2",
+      "reason": "Diamond Limited Edition cosmetic retail edition collapsed into Mix Flip2 physical model.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/mix-flip-2-diamond-limited-edition/xiaomi-mix-flip-2-diamond-limited-edition-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/mix-flip-2/xiaomi-mix-flip-2-12gb-256gb-5g.json",
+        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      ]
+    },
+    {
+      "action": "normalize",
+      "profile_id": "gen-nothing-phone-2a-plus",
+      "field": "ram_gb",
+      "before": "12",
+      "after": "12.0",
+      "reason": "Consistent decimal float serialization."
+    },
+    {
+      "action": "normalize",
+      "profile_id": "gen-nothing-phone-4a",
+      "field": "ram_gb",
+      "before": "8",
+      "after": "8.0",
+      "reason": "Consistent decimal float serialization."
+    },
+    {
+      "action": "normalize",
+      "profile_id": "gen-nothing-phone-4a-pro",
+      "field": "ram_gb",
+      "before": "8",
+      "after": "8.0",
+      "reason": "Consistent decimal float serialization."
+    }
+  ]
+}
