@@ -1,9 +1,9 @@
 {
   "id": "stage-d-prep",
-  "status": "prepared-not-authorized-to-run",
+  "status": "authorized-blocked-access",
   "agent": "codex",
   "branch": "agent/codex/stage-d-prep",
-  "depends_on": "Explicit operator acceptance of Stage C",
+  "depends_on": "Authenticated local OCI configuration and verified unused Always Free allowance; Stage C engineering acceptance is complete",
   "image_policy": "Verify exact upstream redroid/*_64only-latest ARM64 tag and immutable digest before pull; Ampere Altra requires 64-bit-only userspace. Do not use prior mixed 32/64 image plan.",
   "provisioning_plan": "Review and adapt oci-arm-free-retry; bounded retries/backoff, stop on non-free shape/budget/eligibility ambiguity, never paid fallback. No invocation or resource creation now.",
   "preflight": [
@@ -19,5 +19,13 @@
     "passed": true,
     "execution_class": "local_only",
     "reason": "Planning file only; no OCI command or provisioning execution"
-  }
+  },
+  "readiness_track": "https://github.com/kpnitinr6/simufarm/pull/4",
+  "actuals": {
+    "provision_attempts": 0,
+    "vms_created": 0,
+    "containers_booted": 0,
+    "boot_time_ram_identity": "not observed"
+  },
+  "notes": "Detailed provisioning/collector code and CAPACITY.md are maintained in the separate Stage D readiness PR. Stage D does not wait for C2, but Stage E requires C2 complete/reviewed and >=1 human-reviewed runtime profile."
 }

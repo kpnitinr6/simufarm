@@ -13,8 +13,8 @@
     "dpi": 457.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 6.0,
   "build": null,
@@ -22,7 +22,8 @@
   "source_type": "scraper",
   "sources": [
     "https://aitoolbuzz.com/mobiles/sony-xperia-10-iv",
-    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-10-iv/sony-xperia-10-iv-aitoolbuzz-10726-6gb-128gb-5g.json"
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-10-iv/sony-xperia-10-iv-aitoolbuzz-10726-6gb-128gb-5g.json",
+    "https://www.sony.com.hk/press/pdf/20220511_e.pdf"
   ],
   "confidence": 0.85,
   "verified_by": null,

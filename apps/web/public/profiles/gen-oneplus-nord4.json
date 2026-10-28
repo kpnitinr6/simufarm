@@ -13,8 +13,8 @@
     "dpi": 451.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_center"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-4/oneplus-nord-4-12gb-256gb-5g.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gizmochina.com/2024/09/25/oneplus-nord-4-review/",
     "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
     "https://www.mobiledokan.com/mobile/oneplus-nord-4-12gb-256gb"
   ],

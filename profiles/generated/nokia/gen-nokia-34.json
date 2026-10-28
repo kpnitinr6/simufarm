@@ -13,8 +13,8 @@
     "dpi": 269.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 4.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/3-4/nokia-3-4-4gb-64gb-4g-lte.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.hmd.com/en_int/support/nokia-3-4-user-guide/keys-and-parts",
     "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
   ],
   "confidence": 0.85,

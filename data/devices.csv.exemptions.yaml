@@ -3,7 +3,7 @@
     {
       "brand": "vivo",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "58 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -33,7 +33,7 @@
     {
       "brand": "samsung",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "45 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -63,7 +63,7 @@
     {
       "brand": "xiaomi",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "57 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -93,7 +93,7 @@
     {
       "brand": "oppo",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "64 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -123,7 +123,7 @@
     {
       "brand": "realme",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "63 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -151,9 +151,9 @@
       }
     },
     {
-      "brand": "oneplus",
-      "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "brand": "realme",
+      "constraint": "screen_sizes",
+      "reason": "Observed 1: ['large']. No models or OS-upgrade variants invented.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -183,7 +183,7 @@
     {
       "brand": "google",
       "constraint": "quota",
-      "reason": "24 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "24 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -213,7 +213,7 @@
     {
       "brand": "motorola",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "64 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -243,7 +243,7 @@
     {
       "brand": "honor",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "64 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -273,7 +273,7 @@
     {
       "brand": "huawei",
       "constraint": "quota",
-      "reason": "55 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "55 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -303,7 +303,7 @@
     {
       "brand": "nokia",
       "constraint": "quota",
-      "reason": "60 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "48 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -333,7 +333,7 @@
     {
       "brand": "sony",
       "constraint": "quota",
-      "reason": "20 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "20 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -363,7 +363,7 @@
     {
       "brand": "asus",
       "constraint": "quota",
-      "reason": "27 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "27 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -393,7 +393,7 @@
     {
       "brand": "lenovo",
       "constraint": "quota",
-      "reason": "15 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "15 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -453,7 +453,7 @@
     {
       "brand": "lg",
       "constraint": "quota",
-      "reason": "23 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "23 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -513,7 +513,7 @@
     {
       "brand": "tecno",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "64 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -543,7 +543,7 @@
     {
       "brand": "infinix",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "64 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -573,7 +573,7 @@
     {
       "brand": "nothing",
       "constraint": "quota",
-      "reason": "11 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "11 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -633,7 +633,7 @@
     {
       "brand": "zte",
       "constraint": "quota",
-      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "64 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",
@@ -663,7 +663,7 @@
     {
       "brand": "tcl",
       "constraint": "quota",
-      "reason": "61 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "reason": "52 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",

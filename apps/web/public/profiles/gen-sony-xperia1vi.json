@@ -13,8 +13,8 @@
     "dpi": 396.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Sony_Xperia_1_VI",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2024/xperia-1-vi.json",
+    "https://www.phonearena.com/reviews/sony-xperia-1-vi-review_id6291",
     "https://www.sony.com/en/articles/xperia-1-vi-specifications"
   ],
   "confidence": 0.85,

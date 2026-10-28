@@ -10,7 +10,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "id"
     },
     "brand": {
@@ -20,7 +20,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "brand"
     },
     "model": {
@@ -30,7 +30,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "model"
     },
     "release_year": {
@@ -40,7 +40,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "release_year"
     },
     "os_family": {
@@ -50,7 +50,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "os_version": {
@@ -60,7 +60,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "os_version"
     },
     "shell_id": {
@@ -70,7 +70,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "base_image_id": {
@@ -80,7 +80,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "screen.width_px": {
@@ -90,7 +90,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "width_px"
     },
     "screen.height_px": {
@@ -100,7 +100,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "height_px"
     },
     "screen.dpi": {
@@ -110,7 +110,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "dpi"
     },
     "notch": {
@@ -120,7 +120,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "notch"
     },
     "ram_gb": {
@@ -130,7 +130,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": "ram_gb"
     },
     "build": {
@@ -140,7 +140,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "runtime_eligible": {
@@ -150,7 +150,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "source_type": {
@@ -160,7 +160,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "sources": {
@@ -170,7 +170,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "confidence": {
@@ -180,7 +180,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "verified_by": {
@@ -190,7 +190,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     },
     "verified_at": {
@@ -200,7 +200,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 786,
+      "csv_line": 727,
       "csv_column": null
     }
   },
@@ -216,7 +216,7 @@
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2024/spark-20-pro-plus/tecno-spark-20-pro-plus-aitoolbuzz-11368-8gb-256gb-4g-lte.json"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 786,
+    "csv_line": 727,
     "csv_columns": [
       "screen_inches",
       "chipset_family",

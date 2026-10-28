@@ -91,6 +91,9 @@ def generate(profile_dir: Path, output: Path, *, allow_draft=False, root=ROOT):
             }
         )
     write_if_changed(output / "catalog.json", json.dumps(catalog, indent=2) + "\n")
+    policy_path = root / "data/cohort-policy.json"
+    if policy_path.exists():
+        write_if_changed(output / "cohort-policy.json", policy_path.read_text())
     write_if_changed(output / "assets/static.css", SITE_CSS + "\n")
     attribution_source = root / "data/research/stage-c/ATTRIBUTION.md"
     if attribution_source.exists():

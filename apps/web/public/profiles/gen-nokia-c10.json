@@ -13,8 +13,8 @@
     "dpi": 269.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "teardrop",
+    "position": "top_center"
   },
   "ram_gb": 1.0,
   "build": null,
@@ -22,7 +22,8 @@
   "source_type": "scraper",
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/c10/nokia-c10-beridzeg45-6898-1gb.json",
-    "https://www.gsmarena.com/nokia_c10-10844.php"
+    "https://www.gsmarena.com/nokia_c10-10844.php",
+    "https://www.hmd.com/en_int/support/nokia-c10-user-guide/keys-and-parts"
   ],
   "confidence": 0.85,
   "verified_by": null,

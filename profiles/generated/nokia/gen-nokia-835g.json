@@ -13,8 +13,8 @@
     "dpi": 386.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,7 +23,10 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-3-5g/nokia-8-3-5g-scrapegsma-1271.json",
     "https://github.com/cigarplug/scrape-gsma",
-    "https://storage.googleapis.com/play_public/supported_devices.csv"
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/nokia_8_v_5g_uw_is_the_nokia_83_for_verizons_uw_5g_network-news-46198.php",
+    "https://www.hmd.com/en_int/press/nokia-8-v-5g-uw-press-release",
+    "https://www.hmd.com/en_int/support/nokia-8-3-5g-user-guide/keys-and-parts"
   ],
   "confidence": 0.85,
   "verified_by": null,

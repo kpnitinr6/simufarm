@@ -13,8 +13,8 @@
     "dpi": 449.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Sony_Xperia_5_V",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2023/xperia-5-v.json",
+    "https://www.notebookcheck.net/Sony-Xperia-5-V-review-Compact-premium-smartphone-with-professional-camera.756123.0.html",
     "https://www.sony.com/en/articles/xperia-5-v-specifications"
   ],
   "confidence": 0.85,

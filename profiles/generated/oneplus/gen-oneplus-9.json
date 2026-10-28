@@ -13,8 +13,8 @@
     "dpi": 402.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/OnePlus_9_series",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/oneplus-9.json",
+    "https://hothardware.com/reviews/oneplus-9-and-9-pro-review",
     "https://www.oneplus.com/global/9/specs"
   ],
   "confidence": 0.85,

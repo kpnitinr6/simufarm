@@ -21,10 +21,12 @@ def test_real_cohort_matches_csv_and_explicit_static_policy():
     exemptions = yaml.safe_load((ROOT / "data/devices.csv.exemptions.yaml").read_text())[
         "exemptions"
     ]
-    counts = generator.validate_cohort(rows, exemptions)
-    assert sum(counts.values()) == 1000 and counts["nothing"] == 11
+    counts = generator.validate_cohort(rows, exemptions, target_total=None, nothing_target=None)
+    policy = json.loads((ROOT / "data/cohort-policy.json").read_text())
+    assert sum(counts.values()) == policy["retained_candidate_count"]
+    assert policy["mode"] == "distinct_no_padding"
     paths = list((ROOT / "profiles/generated").glob("*/*.json"))
-    assert len(paths) == 1000
+    assert len(paths) == len(rows)
     observed = Counter()
     actual = {}
     for path in paths:
@@ -47,8 +49,11 @@ def test_generated_artifacts_have_no_drift_or_rewrite():
     exemptions = yaml.safe_load((ROOT / "data/devices.csv.exemptions.yaml").read_text())[
         "exemptions"
     ]
-    assert (
-        generator.generate(ROOT / "data/devices.csv", require_cohort=True, exemptions=exemptions)
-        == 1000
-    )
+    assert generator.generate(
+        ROOT / "data/devices.csv",
+        require_cohort=True,
+        exemptions=exemptions,
+        target_total=None,
+        nothing_target=None,
+    ) == len(generator.read_rows(ROOT / "data/devices.csv"))
     assert before == {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in paths}

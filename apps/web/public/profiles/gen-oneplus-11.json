@@ -13,8 +13,8 @@
     "dpi": 526.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 16.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://en.wikipedia.org/wiki/OnePlus_11",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/oneplus-11.json",
-    "https://www.oneplus.com/us/oneplus-11/specs"
+    "https://www.oneplus.com/us/oneplus-11/specs",
+    "https://www.tomsguide.com/reviews/oneplus-11"
   ],
   "confidence": 0.85,
   "verified_by": null,

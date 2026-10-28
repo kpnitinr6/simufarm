@@ -103,11 +103,15 @@ def read_rows(csv_path):
     return rows
 
 
-def validate_cohort(rows, exemptions=()):
+def validate_cohort(rows, exemptions=(), *, target_total=1000, nothing_target=11):
     """Exemptions waive per-brand constraints only; global diversity cannot be waived."""
     counts = Counter(row["brand"] for row in rows)
-    if len(rows) != 1000 or len(counts) != 20 or counts.get("nothing") != 11:
-        raise ValueError("Cohort requires exactly 1000 rows, 20 brands, and Nothing quota 11")
+    if (
+        (target_total is not None and len(rows) != target_total)
+        or len(counts) != 20
+        or (nothing_target is not None and counts.get("nothing") != nothing_target)
+    ):
+        raise ValueError("Cohort requires exactly the declared total and quota, with 20 brands")
     constraints = {
         "os_versions": (lambda row: row["os_version"], 3),
         "screen_sizes": (lambda row: screen_class(float(row["screen_inches"])), 2),
@@ -232,6 +236,8 @@ def generate(
     templates=None,
     require_cohort=False,
     exemptions=(),
+    target_total=1000,
+    nothing_target=11,
 ):
     root = Path(root)
     output = Path(output) if output else root / "profiles/generated"
@@ -239,7 +245,7 @@ def generate(
     templates = Path(templates) if templates else root / "profiles/_templates"
     rows = read_rows(csv_path)
     if require_cohort:
-        validate_cohort(rows, exemptions)
+        validate_cohort(rows, exemptions, target_total=target_total, nothing_target=nothing_target)
     reference_ids = {
         path.stem
         for path in (root / "profiles").rglob("*.json")
@@ -253,6 +259,52 @@ def generate(
         if template["brand"] != row["brand"] or template["shell_id"] != row["brand"]:
             raise ValueError("Template brand/shell identity mismatch")
         profile, evidence = prepare(row, template, Path(csv_path).name)
+        curation_path = root / "data/research/stage-c2/verified-fields.json"
+        if curation_path.exists():
+            correction = json.loads(curation_path.read_text()).get(row["id"])
+            if correction:
+                mapping = {
+                    "width_px": "screen.width_px",
+                    "height_px": "screen.height_px",
+                    "dpi": "screen.dpi",
+                }
+                for field in correction["verified_fields"]:
+                    key = mapping.get(field, field)
+                    if key in evidence["field_evidence"]:
+                        evidence["field_evidence"][key].update(
+                            source_urls=[correction["source_url"]],
+                            method="C2 targeted source check; human review pending: "
+                            + correction["explanation"],
+                            source_location=correction["source_location"],
+                        )
+                evidence["c2_targeted_source_check"] = correction
+        geometry_path = root / "data/research/stage-c2/notch-candidates.json"
+        if geometry_path.exists():
+            geometry = {
+                item["id"]: item for item in json.loads(geometry_path.read_text())["records"]
+            }.get(row["id"])
+            if geometry:
+                if (
+                    geometry["notch"] != row["notch"]
+                    or geometry["notch_position"] != row["notch_position"]
+                ):
+                    raise ValueError("C2 geometry packet disagrees with CSV")
+                if not set(geometry["sources"]).issubset(profile["sources"]):
+                    raise ValueError("C2 geometry source missing from CSV profile sources")
+                detail = {
+                    "source_urls": geometry["sources"],
+                    "method": "C2 source-backed geometry; human review pending: "
+                    + geometry["method"],
+                    "raw_quote": geometry["raw_quote"],
+                    "csv_file": Path(csv_path).name,
+                    "csv_line": row["_line"],
+                }
+                evidence["field_evidence"]["notch"] = dict(detail)
+                evidence["field_evidence"]["notch.type"] = dict(detail, csv_column="notch")
+                evidence["field_evidence"]["notch.position"] = dict(
+                    detail, csv_column="notch_position"
+                )
+                evidence["c2_geometry_check"] = geometry
         pending.extend(
             [
                 (output / row["brand"] / f"{row['id']}.json", encode(profile)),
@@ -277,6 +329,7 @@ if __name__ == "__main__":
     parser.add_argument("--templates", type=Path)
     parser.add_argument("--require-cohort", action="store_true")
     parser.add_argument("--exemptions", type=Path)
+    parser.add_argument("--cohort-policy", type=Path)
     args = parser.parse_args()
     exemptions = []
     if args.exemptions:
@@ -284,6 +337,11 @@ if __name__ == "__main__":
 
         loaded = yaml.safe_load(args.exemptions.read_text())
         exemptions = loaded.get("exemptions", []) if isinstance(loaded, dict) else loaded
+    policy = json.loads(args.cohort_policy.read_text()) if args.cohort_policy else {}
+    if policy and policy.get("mode") != "distinct_no_padding":
+        raise SystemExit("Unknown cohort policy; no generation")
+    total = None if policy else 1000
+    nothing = None if policy else 11
     print(
-        f"Generated {generate(args.csv, args.root, args.output, args.evidence_output, args.templates, args.require_cohort, exemptions)} static drafts"
+        f"Generated {generate(args.csv, args.root, args.output, args.evidence_output, args.templates, args.require_cohort, exemptions, total, nothing)} static drafts"
     )

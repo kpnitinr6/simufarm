@@ -13,8 +13,8 @@
     "dpi": 385.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "teardrop",
+    "position": "top_center"
   },
   "ram_gb": 6.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Samsung_Galaxy_A26",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a26.json",
+    "https://webcdn.cox.com/content/dam/cox/residential/support/Mobile/Print_Media/samsungA26datasheet.pdf",
     "https://www.samsung.com/global/galaxy/galaxy-a26/specs/"
   ],
   "confidence": 0.85,

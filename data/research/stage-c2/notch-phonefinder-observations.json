@@ -1,0 +1,605 @@
+{
+  "method": "Blocked-source audit only. Filtered pages returned HTTP 200 Turnstile challenges. No accepted device observations.",
+  "observations": [
+    {
+      "brand": "samsung",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=9&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "4c507622b74b5361c67001c9a948b3cfc5bceb9b2c073d0e6328ddc6cd38ff9f",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "samsung",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=9&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "fb27b859c030a1f2140fb3f35f5fb1e02b0cde9cc16a0692373f0920c41fc591",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "samsung",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=9&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "555d021427ede3c30753f1cdbc8f365cb72d54ccba481899824b6c4c55f010f5",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "google",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=107&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "a7eaeb4267dcfeb344275136ae2a408c00d4a983e056cb3158ed87b9011c8e25",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "google",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=107&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "c938467a966c91605ba1958c25b8dffe59d5e06b1fc093bdac486066bae7d05d",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "google",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=107&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "9b1ea036da9dcb1b64db5a4def46e5ba998c0fa6c0686bf5eb331bbc8918fbec",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "sony",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=7&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "5baa7521ddd87cfcdce29e79172e3db00ab91bb52a14f81aefd7734efe0df51a",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "sony",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=7&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "e45e66c621124af79c16dd7ccf30707540a17411f76c90f9bcec6714d7890ccf",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "sony",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=7&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "d5804101a1cf2d09c34a284890b0327f91147054f5e13985a05d4e0cee2acd3c",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "asus",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=46&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "07c52615783fa01ebee12c38611c7fc22561aa60e459d2333268a234bbf161fb",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "asus",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=46&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "77da4d265b54a8c544dd190b4f6e203f9d0035bbca89b15650d88cd48c40eb52",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "asus",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=46&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "c4c4fb57c51c8d8d22689f9a815223e0ba40bf9f3edb1d930af4d7e574046987",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "nothing",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=128&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "39d3fc27caf2fd1acc6c38a4abe744d85f71bceb34f34ec1ee998fd4a34ffc86",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "nothing",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=128&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "51f0a0533a1edf18087fead3988da0dc52ec737d2b6273968aebc9724c091896",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "nothing",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=128&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "6a09ad59e50ab1da140373952544b9a0782b4c5d6f1bec51c2cd3055c0ca474d",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "oneplus",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=95&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "b9363cf55a62e28ce8b33f4a0a1830fb7f4a352b8e867d82ed09ae4963a84040",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "oneplus",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=95&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "52e31b7e10e6e2cf6841135c152a695abf5a6f628305f7d9aa45ff62cca03a98",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "oneplus",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=95&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "9c9cd6e030433edc93bd0b097ec66ce6675c1758d955edc037fde1e5b64220df",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "xiaomi",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=80&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "797a5a360123b6c0318af533a0a88dd8ba3b2316aa4e86e25167ea1d06fcff34",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "xiaomi",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=80&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "4c177763369313191ad2a473113087d32c3ab85c17f06a1dc6934d4f612d10e6",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "xiaomi",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=80&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "e0b586ac3b7f2bfae132f68949603f52b144a1f4f3c09263f886cfc57ae1569e",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "vivo",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=98&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "e73c8a644331e923124e1715ffb069fb3d4d463c9ec20ca0f8784902fd152354",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "vivo",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=98&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "5a4b8ec1c62246e03ea805e04eb2e34c016214c62accb191c6815eb4e78f41fa",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "vivo",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=98&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "d371d44063ff99989023fea4df96362de0126679d7aa648be68d96f702c9ec12",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "motorola",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=4&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "f6758f28a4ac527f12fe277eb824454212ad27c1ddcaf8dd6b1332d790afa6ea",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "motorola",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=4&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "68a101dbb994bae067401e4f2e9253e622ccfa0dd810c7251f9d5781c2d2852e",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "motorola",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=4&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "42e0d587025c5bd8680135c1c46c9c1895758f43b7d97f5728ff0edce1ae6bb2",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "oppo",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=82&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "28acf958815bfc025c0b75090b5f3097746a6332a8760da2e722fdfff449043b",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "oppo",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=82&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "f52a5e8b401a27660be2f36fddbb19018ff46a4bc92be6cf6e79a7b2c2c5ce44",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "oppo",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=82&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "4d636cb38f130bd6437775ab8a80c0c86f45c318509aacbec342b647f803126a",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "realme",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=118&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "d38b62e30e76895d702e221d142cfb4558e5723d1d3ddb0e43ec5bfc5b8311f0",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "realme",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=118&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "864f064cc7b66061e6db47eb035aaa07b1075c37d157af5ccbfea3ad4c778103",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "realme",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=118&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "a37374c66b5f48f869dfdf1fce3808d6d6239ee3c651b361e254eccb7acf6f6d",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "nokia",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=1&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "b3cbb7b29d72c74acd00847b2d83dc12de11016f804a30455243a973477ac986",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "nokia",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=1&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "6ff3af7751f2a99cba0827b2a079788ded356d778494b09e3c7a5bcf1c7d4d90",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "nokia",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=1&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "8887ffba30dc8b40749c5f97afae36c3ff4113635aed3f17d2e5f5d615a91395",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "tcl",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=123&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "3830e48c1a3bfd408a37b6032aa939bae601a42e2ed883f19e9e0b2d9939469a",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "tcl",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=123&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "761c1c9ac3379fdd84b7b36dd5e8bd3f29b341d580a585964fb5546a4145982c",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "tcl",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=123&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "7a1ddcd7371eb58c9500cfcae52839d12c59b016d0174b087dde6926863bc934",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "tecno",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=120&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "1b27f447545a1185f52d7bae024c3d075c4af2fffe44ac8a95106c6f292798b9",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "tecno",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=120&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "813a72c3f9a2039dff2169bab6646c89f492f8c7f8061d0d57301c7b3f132a4a",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "tecno",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=120&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "46fd56816ebd60ba2434db2ff7645f4a0188da7af933259fb64bdc9923abf014",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "infinix",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=119&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "62c590fd22e13e8f0af9d1fccb20a001ad5d03d512c7f28c6cf5b8d469c5a19d",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "infinix",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=119&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "9b644f138e5b7b11eeecd2ec4ca37c351bce44a7d4d2a38b779b08297ed44708",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "infinix",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=119&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "ce074fa2ba07e88027a1632e3709825d827d786c492483063c3535c17ce24479",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "honor",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=121&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "297a63d6b5c47b03553e74408c46807b21130cfa36bd83856eafd2d3c28b8988",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "honor",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=121&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "82ee07d3f2de43701a0f86970ea890e34cd95165753bcfe254b8c6de4570bac8",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "honor",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=121&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "b416cfaf19c392a32e74c8ca70c8aaf2bb7ba8ce67b61baeae6802219b1f9718",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "huawei",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=58&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "29783d2bd602a9fec8f014f77e075b7e1b0e9f22bda392dfa45ab8bd66b860d6",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "huawei",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=58&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "c60d4e30a1c5b881ba81f6f5b63ae7fdc06660efe41f494c9fb7f7d1fe9b8686",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "huawei",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=58&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "8f5d9dc5a4c648f134b72b450fa231344c6a524320913f55e1b75cee11b839e2",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "lenovo",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=73&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "976f10ba2d88741564faaa1c2412ae362669f8863e1ee4af5d7e479b90d19370",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "lenovo",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=73&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "accb1a5e61791bd417df4c155b6a0fc614f798d713c975c97b58cd984d045f21",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "lenovo",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=73&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "c62be58aad768192af27801290692b372c969436e83f84dc5df54f805f5a6abd",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "lg",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=20&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "224a05d2d09e0fe47f590b04ef5f1aab3e102aa6991f91711dcc127d901ce5b2",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "lg",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=20&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "0621a83d533b60b724d23e51e00051502d339a0201dd6dd1b6ebcea7a8a9a371",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "lg",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=20&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "131b0ddcddb7be088ea398bd2e3c27d12eebb1e013000fc4887326317c95ea58",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "zte",
+      "filter": 1,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=62&nYearMin=2020&idDisplayNotch=1&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "b5942acb983171b913d79fd9f79c1ed1f8bca495c361d4a64b231d8a4ababd51",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "zte",
+      "filter": 2,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=62&nYearMin=2020&idDisplayNotch=2&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "eadab09523f34efd5ab5df9698a2f06abd32c1c1845f896c2ba5e48cdb73066d",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    },
+    {
+      "brand": "zte",
+      "filter": 3,
+      "url": "https://www.gsmarena.com/results.php3?sMakers=62&nYearMin=2020&idDisplayNotch=3&nOrder=0",
+      "retrieved_at": "2026-10-28",
+      "http_status": 200,
+      "response_sha256": "e7f03d88f90935de945e93849b2c33a7fdd975d50df76b10aafaf112b0f8f9bb",
+      "models": [],
+      "evidence_status": "unusable_turnstile_challenge"
+    }
+  ]
+}
