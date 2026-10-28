@@ -20,6 +20,18 @@ def run(*args, check=True):
     ).stdout.strip()
 
 
+def identity_checks(containers):
+    if len(containers) != 2:
+        return {key: False for key in ("android_id", "imei", "serial", "adb_serial")}
+    checks = {}
+    for field in ("android_id", "imei", "serial", "adb_serial"):
+        values = [item.get(field) for item in containers]
+        checks[field] = (
+            all(v and v not in ("null", "unknown", "0") for v in values) and len(set(values)) == 2
+        )
+    return checks
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", type=Path, required=True)
@@ -161,13 +173,7 @@ def main():
                 item["cgroup_memory_current_bytes"] = int(
                     (Path("/sys/fs/cgroup") / unified.lstrip("/") / "memory.current").read_text()
                 )
-        checks = {}
-        for field in ("android_id", "imei", "serial", "adb_serial"):
-            values = [item[field] for item in report["containers"]]
-            checks[field] = (
-                all(v and v not in ("null", "unknown", "0") for v in values)
-                and len(set(values)) == 2
-            )
+        checks = identity_checks(report["containers"])
         report["identity_uniqueness"] = checks
         report["passed"] = all(checks.values())
         if not report["passed"]:

@@ -34,3 +34,8 @@ Containers and volumes are retained for inspection; explicit cleanup follows evi
 ## Stage E gate
 
 Stage E remains blocked until Stage C2 is complete **and** at least one complete, human-reviewed runtime-eligible profile exists. Confirm X100 region decision (China versus India) before Stage E. Stage D smoke testing with `build: null` grants no runtime eligibility.
+
+## Local setup actuals
+OCI CLI 3.95.1 was installed in an isolated local Python 3.12.14 environment. The operator selected local OCI configuration. Run `oci setup config` from that environment to create the private `~/.oci/config`; keys are not sent through chat or stored in Git. Configuration has not yet been observed, and no Oracle API provisioning call has been made.
+
+The official [Appium ApiDemos v6.0.18 release](https://github.com/appium/android-apidemos/releases/tag/v6.0.18) APK was downloaded locally. Its SHA256 exactly matches the published GitHub asset digest: `14b40d24c4f129bb1b06dcdf8670c101cc1f55b89cacda4a8e3875e83f7883e8`. It has not been installed on an emulator. Receipt: data/validation/stage-d-local-preflight.json. The binary remains outside tracked source.
