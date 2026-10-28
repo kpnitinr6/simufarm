@@ -1,0 +1,30 @@
+{
+  "id": "gen-zte-nubiaredmagic9sproplus",
+  "brand": "zte",
+  "model": "ZTE nubia Red Magic 9S Pro+",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1116,
+    "height_px": 2480,
+    "dpi": 400.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 16.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2024/nubia-red-magic-9s-pro-plus/zte-nubia-red-magic-9s-pro-plus-beridzeg45-2727-16gb.json",
+    "https://www.gsmarena.com/zte_nubia_red_magic_9s_pro+-13190.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

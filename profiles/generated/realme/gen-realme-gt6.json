@@ -1,0 +1,31 @@
+{
+  "id": "gen-realme-gt6",
+  "brand": "realme",
+  "model": "realme GT 6",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "realme",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1264,
+    "height_px": 2780,
+    "dpi": 450.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Realme_GT_6",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2024/realme-gt-6.json",
+    "https://www.realme.com/global/realme-gt6"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

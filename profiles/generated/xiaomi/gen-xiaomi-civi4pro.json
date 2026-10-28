@@ -1,0 +1,30 @@
+{
+  "id": "gen-xiaomi-civi4pro",
+  "brand": "xiaomi",
+  "model": "Xiaomi Civi 4 Pro",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "xiaomi",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1236,
+    "height_px": 2750,
+    "dpi": 460.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2024/civi-4-pro/xiaomi-civi-4-pro-beridzeg45-6944-12gb.json",
+    "https://www.gsmarena.com/xiaomi_civi_4_pro-12888.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,29 +1,54 @@
-# SimuFarm v3 status — 27 October 2026
+# SimuFarm status — Stage C implementation, 27 October 2026
 
-Stage A accepted and merged. Stage B static DoD accepted by the operator: 20 shells, 20 templates, 22 profiles/pages, 52 Python tests, 16 browser tests and green Python 3.12 / Node 22 CI. Vivo backfill is deferred to an independent runtime-evidence track and does not block Stage C. Stage C is authorized; planning has begun, generated cohort count is currently 0/1,000. Generator implementation is pending and must explicitly emit build: null and runtime_eligible: false. Stage D is preparation only until Stage C acceptance.
+Stage A and Stage B static scope accepted; Stage B merged in PR #2. Stage C implementation is delivered for review. Static generation target: **100% (1,000/1,000 profiles and pages)**, plus 22 preserved reference drafts/pages. Overall Stage C acceptance remains pending. The cohort is a sourced secondary-data static draft, not 1,000 independently manufacturer-verified specifications. Model-level popularity rank coverage is 0/1,000; deterministic coverage/release-recency selection is disclosed and needs operator acceptance against the original popularity requirement. No Stage D execution.
 
-| Counter | Actual |
-|---|---:|
-| Original brand shells | 20 / 20 |
-| Brand profile templates | 20 / 20 |
-| Reference cohort profiles | 20 / 20 |
-| Additional retained Stage A profiles | 2 |
-| Total sourced draft profiles / static pages | 22 / 22 |
-| Human-approved technical profiles | 0 |
-| Complete Vivo build blocks | 0 / 3 |
-| Firmware-sourced Vivo fingerprints | 2 / 3 |
-| Visual regression sample baselines | 10 / 10 |
-| Oracle VMs created / managed uptime | 0 / 0 |
-| Runtime containers / runtime-eligible profiles | 0 / 0 |
-| MobileAPI calls | 0 |
-| MobileAPI remaining account quota | Unknown; conservative budget 50/month |
-| Billable resources touched / spend | 0 / $0 |
-| Emulator boot time / RAM | Unmeasured; Stage D only |
+All **1,000 generated profiles explicitly serialize build: null and runtime_eligible: false**. Tests inspect every real generated file and compare CSV identities/counts. Human-approved runtime profiles: 0. Approved runtime directory admissions: 0. Earlier Vivo partial build evidence remains in the separate reference/evidence track.
 
-Repository PUBLIC reverified through GitHub on 27 October. MOBILEAPI_KEY_STORED=yes is operator-confirmed; no key was read and no API call authorized or made. Re-verify repository visibility and account-specific nonbillable eligibility before Stage D.
+## Actual generated counts and diversity
 
-ADR 014 approved with build provenance addendum. Schema rejects asserted build properties without classified sources; runtime requires all four properties and human review. Y100/X100 official firmware supplies fingerprints only. Other three properties per device and all V30 properties remain unknown. Offline DeepSeek assignment executed; a Y100 transcription mismatch was rejected against literal firmware evidence. See docs/VIVO_BUILD_BACKFILL_RESEARCH.md.
+| Brand | Profiles | Android versions | Screen-size classes | Chipset families |
+|---|---:|---:|---:|---:|
+| vivo | 64 | 4 | 2 | 4 |
+| samsung | 64 | 6 | 2 | 4 |
+| xiaomi | 64 | 5 | 2 | 4 |
+| oppo | 64 | 4 | 2 | 3 |
+| realme | 64 | 6 | 2 | 4 |
+| oneplus | 64 | 6 | 2 | 3 |
+| google | 24 | 7 | 3 | 2 |
+| motorola | 64 | 6 | 2 | 4 |
+| honor | 64 | 5 | 2 | 3 |
+| huawei | 55 | 5 | 3 | 4 |
+| nokia | 60 | 4 | 3 | 3 |
+| sony | 20 | 6 | 3 | 2 |
+| asus | 27 | 6 | 2 | 2 |
+| lenovo | 15 | 3 | 1 | 3 |
+| lg | 23 | 1 | 3 | 2 |
+| tecno | 64 | 7 | 2 | 3 |
+| infinix | 64 | 6 | 2 | 3 |
+| nothing | 11 | 5 | 1 | 2 |
+| zte | 64 | 7 | 2 | 4 |
+| tcl | 61 | 6 | 3 | 4 |
+| **Total** | **1,000** | **7 global** | **3 global** | **7 global** |
 
-Validation: 52 Python tests and 16 browser tests passed locally; Ruff, source validation, contracts and frontend build passed. Remote run 40506761632 on 77d47c3 passed all steps on Python 3.12 / Node 22 (job wall time 66.0 seconds; public standard runner, $0). Final report-only commit may have a separate check. Public standard-runner CI only; CI contains no emulator/cloud deployment. No paid APIs, trials, provisioning, or model downloads. Stage C allocation corrected to 20 × 50 = 1,000, with diversity requirements per brand. No bulk extraction/generator has started.
+Nothing-company count 11 includes nine Nothing phones and two explicitly disclosed CMF models; no cosmetic Community Edition or RAM/carrier variants pad the quota. If the operator requires the Nothing brand alone, that leaves a two-model shortfall and needs a quota decision, not invented devices.
 
-New runtime evidence task: tasks/vivo-build-property-evidence.yaml, assigned to local DeepSeek. Y100 extraction paused needs-human for region resolution. X100 candidate regional mismatch must be reviewed; third-party/firmware-dump source classes remain candidate evidence until schema support and human promotion. No resources provisioned.
+Global mandatory minima (3 OS versions / 2 sizes / 2 chipset families) pass. Observed Android versions 10–16; seven normalized chipset families. Size classes: <6 inches, 6–<6.5 inches, >=6.5 inches.
+
+## Exemptions filed
+
+23 measured entries in data/devices.csv.exemptions.yaml: quota redistribution for all 20 brands plus three diversity exceptions:
+- Lenovo: 1 screen-size class (large).
+- LG: 1 Android version (10).
+- Nothing-company: 1 screen-size class (large).
+
+Each entry includes brand, constraint, reason and actual global diversity preserved. No blanket exemptions were applied to Google, Sony, TCL, Tecno, Infinix or HONOR when the actual source cohort passed. Unknown chipset placeholders and spelling duplicates are rejected.
+
+## Validation and zero-spend counters
+
+Local validation: **76 Python tests, 19 Playwright tests**, Ruff, contract drift, 1,022-profile source validation, frontend build and two-run idempotency checks pass. All 1,000 generated URLs served HTTP 200 and expected shell/static warnings; five brands were browser-rendered and ten existing visual snapshots passed. Remote Python 3.12 / Node 22 CI passed on 04878ce: run 40512173427, job elapsed 49 seconds on a public standard runner. Evidence: data/validation/stage-c-ci.json. PR #3 remains draft and unmerged. A later report-only commit has separate checks.
+
+Oracle VMs created 0; VM managed uptime 0; containers 0; boot time/RAM unmeasured; MobileAPI calls 0; conservative cap 50/month, actual account remaining unknown. Billable resources touched 0; spend **$0**. No paid API, provisioning, trial or runtime image pull. Repository public standard-runner CI only.
+
+Contract 0.4.0 includes third_party_device_db and firmware_dump and rejects incomplete/unreviewed runtime promotion. X100 China/India choice is needs-human in the runtime task. Separate DeepSeek evidence commit 25848cb is candidate-only; Y100 additional extraction remains paused. Stage D task remains prepared-not-authorized and includes X100 region confirmation before Stage E.
+
+Pinned-source importer was rerun separately and reproduced identical CSV bytes (SHA256 e6712a51267d2eceb0b99654b980ca048c3bd8c6222f368b583688482397a7b2).

@@ -1,0 +1,32 @@
+{
+  "id": "gen-oppo-findx9ultra",
+  "brand": "oppo",
+  "model": "Oppo Find X9 Ultra",
+  "release_year": 2026,
+  "os_family": "android",
+  "os_version": "16",
+  "shell_id": "oppo",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1440,
+    "height_px": 3168,
+    "dpi": 510.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 16.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oppo/2026/oppo-find-x9-ultra.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/oppo_find_x9_ultra_5g-14548.php",
+    "https://www.oppo.com/en/smartphones/series-find-x/find-x9-ultra/"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

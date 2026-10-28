@@ -1,0 +1,31 @@
+{
+  "id": "gen-realme-c51s",
+  "brand": "realme",
+  "model": "Realme C51s",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "realme",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 260.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 6.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2024/c51s/realme-c51s-beridzeg45-4976-6gb.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/realme_c51s-13130.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

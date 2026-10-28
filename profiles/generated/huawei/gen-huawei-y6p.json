@@ -1,0 +1,30 @@
+{
+  "id": "gen-huawei-y6p",
+  "brand": "huawei",
+  "model": "Huawei Y6p",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "huawei",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 278.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/huawei/2020/y6p/huawei-y6p-scrapegsma-70.json",
+    "https://github.com/cigarplug/scrape-gsma"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

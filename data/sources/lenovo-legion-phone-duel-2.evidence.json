@@ -51,7 +51,7 @@
       "source_urls": [
         "https://gaming.lenovo.com/news/post/lenovo-unleashes-next-mobile-gaming-powerhouse-with-the-lenovo-legion-pWeMligmSqYKWUe"
       ],
-      "method": "derived physical PPI = round(sqrt(1080² + 2460²)/6.92); not Android logical density"
+      "method": "derived physical PPI = round(sqrt(1080\u00b2 + 2460\u00b2)/6.92); not Android logical density"
     },
     "ram_gb": {
       "source_urls": [
@@ -118,6 +118,13 @@
         "https://gaming.lenovo.com/news/post/lenovo-unleashes-next-mobile-gaming-powerhouse-with-the-lenovo-legion-pWeMligmSqYKWUe"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://gaming.lenovo.com/news/post/lenovo-unleashes-next-mobile-gaming-powerhouse-with-the-lenovo-legion-pWeMligmSqYKWUe",
+        "https://news.lenovo.com/pressroom/press-releases/next-mobile-gaming-powerhouse-lenovo-legion-phone-duel-2/"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

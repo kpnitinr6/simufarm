@@ -1,0 +1,30 @@
+{
+  "id": "gen-zte-bladea72s",
+  "brand": "zte",
+  "model": "ZTE Blade A72s",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 260.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 3.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2022/blade-a72s/zte-blade-a72s-beridzeg45-6935-3gb.json",
+    "https://www.gsmarena.com/zte_blade_a72s-12455.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

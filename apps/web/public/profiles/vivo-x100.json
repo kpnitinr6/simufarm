@@ -27,6 +27,7 @@
       "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip"
     ]
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://www.vivo.com/in/products/param/x100",

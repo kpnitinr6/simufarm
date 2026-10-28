@@ -127,6 +127,13 @@
         "https://image-us.samsung.com/SamsungUS/samsungbusiness/pdfs/datasheet/Galaxy_S21_Series_Datasheet_Unlocked.pdf"
       ],
       "method": "derived approximate physical PPI=round(hypot(1080,2400)/6.2)=424; diagonal 6.2 inches manufacturer-stated; not Android logical densityDpi"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://image-us.samsung.com/SamsungUS/samsungbusiness/pdfs/datasheet/Galaxy_S21_Series_Datasheet_Unlocked.pdf",
+        "https://www.samsungmobilepress.com/articles/make-every-day-epic-with-samsung-galaxy-s21-and-galaxy-s21-plus"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

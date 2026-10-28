@@ -1,0 +1,30 @@
+{
+  "id": "gen-zte-bladev50design4g",
+  "brand": "zte",
+  "model": "ZTE Blade V50 Design 4G",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2408,
+    "dpi": 400.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2023/blade-v50-design-4g/zte-blade-v50-design-4g-beridzeg45-6554-8gb.json",
+    "https://www.gsmarena.com/zte_blade_v50_design_4g-12712.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

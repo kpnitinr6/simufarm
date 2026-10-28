@@ -1,0 +1,32 @@
+{
+  "id": "stage-c-implementation",
+  "agent": "codex",
+  "branch": "agent/codex/stage-c-integration",
+  "status": "needs-human",
+  "outputs": [
+    "Deterministic generator",
+    "Null build and false runtime eligibility",
+    "1000 sourced static profiles/pages",
+    "Per-brand measured counts and exemptions",
+    "Green CI and proof"
+  ],
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "passed": true,
+    "execution_class": "local_only",
+    "reason": "Public dataset research and local code/public standard CI only; no cloud, paid APIs, MobileAPI calls or provisioning."
+  },
+  "review_decisions": [
+    "Accept deterministic coverage/release-recency selection in place of unavailable model-level popularity ranking, or supply model-ranking evidence",
+    "Accept two CMF models within Nothing-company11, or resolve the two-model brand-only shortfall",
+    "Accept Stage C before Stage D execution"
+  ],
+  "validation": {
+    "python_tests": 76,
+    "browser_tests": 19,
+    "remote_ci": "https://github.com/kpnitinr6/simufarm/actions/runs/40512173427",
+    "generated_profiles": 1000,
+    "all_builds_null": true,
+    "all_runtime_eligible_false": true
+  }
+}

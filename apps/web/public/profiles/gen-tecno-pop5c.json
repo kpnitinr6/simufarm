@@ -1,0 +1,30 @@
+{
+  "id": "gen-tecno-pop5c",
+  "brand": "tecno",
+  "model": "Tecno Pop 5c",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 480,
+    "height_px": 854,
+    "dpi": 196.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 1.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2021/pop-5c/tecno-pop-5c-beridzeg45-6322-1gb.json",
+    "https://www.gsmarena.com/tecno_pop_5c-11212.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

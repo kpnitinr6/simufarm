@@ -32,5 +32,6 @@
   ],
   "confidence": 0.85,
   "verified_by": null,
-  "verified_at": null
+  "verified_at": null,
+  "runtime_eligible": false
 }

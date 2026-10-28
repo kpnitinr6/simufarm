@@ -1,0 +1,29 @@
+{
+  "id": "gen-nothing-phone-4a",
+  "brand": "nothing",
+  "model": "Phone (4a)",
+  "release_year": 2026,
+  "os_family": "android",
+  "os_version": "16",
+  "shell_id": "nothing",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1224,
+    "height_px": 2720,
+    "dpi": 440.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://nothing.tech/products/phone-4a"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

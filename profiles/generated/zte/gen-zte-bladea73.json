@@ -1,0 +1,31 @@
+{
+  "id": "gen-zte-bladea73",
+  "brand": "zte",
+  "model": "ZTE Blade A73",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 267.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2023/blade-a73/zte-blade-a73-4gb-128gb-4g-lte.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

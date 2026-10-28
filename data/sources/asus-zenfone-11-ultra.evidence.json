@@ -51,7 +51,7 @@
       "source_urls": [
         "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
       ],
-      "method": "derived physical PPI = round(sqrt(1080² + 2400²)/6.78); not Android logical density"
+      "method": "derived physical PPI = round(sqrt(1080\u00b2 + 2400\u00b2)/6.78); not Android logical density"
     },
     "ram_gb": {
       "source_urls": [
@@ -118,6 +118,13 @@
         "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.asus.com/us/mobile-handhelds/phones/zenfone/zenfone-11-ultra/techspec/",
+        "https://press.asus.com/news/press-releases/en-asus-introduces-zenfone-11-ultra-smartphone-innovation"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

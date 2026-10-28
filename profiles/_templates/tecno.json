@@ -17,19 +17,13 @@
     "position": "{{notch_position}}"
   },
   "ram_gb": "{{ram_gb}}",
-  "build": {
-    "ro.product.brand": null,
-    "ro.product.model": null,
-    "ro.product.device": null,
-    "ro.build.fingerprint": null,
-    "source_type": null,
-    "sources": []
-  },
+  "build": null,
   "source_type": "manual",
   "sources": [
     "{{manufacturer_source_url}}"
   ],
   "confidence": 0.85,
   "verified_by": null,
-  "verified_at": null
+  "verified_at": null,
+  "runtime_eligible": false
 }

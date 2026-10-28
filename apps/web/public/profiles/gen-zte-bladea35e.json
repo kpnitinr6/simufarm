@@ -1,0 +1,32 @@
+{
+  "id": "gen-zte-bladea35e",
+  "brand": "zte",
+  "model": "Zte Blade A35e",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 576,
+    "height_px": 1280,
+    "dpi": 215.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 2.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2025/blade-a35e/zte-blade-a35e-2gb-64gb-4g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/zte-blade-a35e"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

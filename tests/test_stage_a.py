@@ -27,7 +27,7 @@ def test_three_stage_a_profiles_are_sourced_drafts():
 
 def test_static_generation_is_deterministic_and_idempotent(tmp_path):
     assert renderer.generate(ROOT / "profiles", tmp_path, allow_draft=True) == len(
-        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+        [p for p in (ROOT / "profiles").rglob("*.json") if p.parent.name != "_templates"]
     )
     first = {
         str(p.relative_to(tmp_path)): (p.read_bytes(), p.stat().st_mtime_ns)
@@ -35,7 +35,7 @@ def test_static_generation_is_deterministic_and_idempotent(tmp_path):
         if p.is_file()
     }
     assert renderer.generate(ROOT / "profiles", tmp_path, allow_draft=True) == len(
-        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+        [p for p in (ROOT / "profiles").rglob("*.json") if p.parent.name != "_templates"]
     )
     second = {
         str(p.relative_to(tmp_path)): (p.read_bytes(), p.stat().st_mtime_ns)
@@ -44,10 +44,10 @@ def test_static_generation_is_deterministic_and_idempotent(tmp_path):
     }
     assert first == second
     assert len(list((tmp_path / "simulators").glob("*.html"))) == len(
-        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+        [p for p in (ROOT / "profiles").rglob("*.json") if p.parent.name != "_templates"]
     )
     assert len(json.loads((tmp_path / "catalog.json").read_text())) == len(
-        [p for p in (ROOT / "profiles").glob("*/*.json") if p.parent.name != "_templates"]
+        [p for p in (ROOT / "profiles").rglob("*.json") if p.parent.name != "_templates"]
     )
 
 

@@ -16,7 +16,9 @@
     "teardrop",
     "punch_hole",
     "notch",
-    "dynamic_island"
+    "dynamic_island",
+    "unknown"
   ],
-  "sources": []
+  "sources": [],
+  "unknown_cutout_policy": "Omit cutout artwork when source geometry is unknown; not a hardware absence claim."
 }

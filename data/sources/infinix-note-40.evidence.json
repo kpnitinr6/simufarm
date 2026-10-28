@@ -53,7 +53,7 @@
       "source_urls": [
         "https://www.infinixmobility.com/specs/note-40"
       ],
-      "method": "derived physical PPI = round(sqrt(1080² + 2436²)/6.78); not Android logical density"
+      "method": "derived physical PPI = round(sqrt(1080\u00b2 + 2436\u00b2)/6.78); not Android logical density"
     },
     "ram_gb": {
       "source_urls": [
@@ -120,6 +120,15 @@
         "https://www.infinixmobility.com/specs/note-40"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.infinixmobility.com/specs/note-40",
+        "https://www.infinixmobility.com/all-round-hyper-speed-lab",
+        "https://www.infinixmobility.com/api/V1/xpark-app/get-product-spec?id=935",
+        "https://www.prnewswire.com/ae/news-releases/infinix-launches-all-new-note-40-series-racing-edition-in-partnership-with-bmw-group-designworks-in-saudi-arabia-302166985.html"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

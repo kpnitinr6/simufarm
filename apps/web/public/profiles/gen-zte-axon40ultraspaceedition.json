@@ -1,0 +1,30 @@
+{
+  "id": "gen-zte-axon40ultraspaceedition",
+  "brand": "zte",
+  "model": "ZTE Axon 40 Ultra Space Edition",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1116,
+    "height_px": 2480,
+    "dpi": 400.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2022/axon-40-ultra-space-edition/zte-axon-40-ultra-space-edition-beridzeg45-5106-12gb.json",
+    "https://www.gsmarena.com/zte_axon_40_ultra_space_edition-12005.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

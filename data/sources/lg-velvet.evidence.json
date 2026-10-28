@@ -118,6 +118,13 @@
         "https://www.lgcorp.com/media/release/22014"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.lgcorp.com/media/release/22014",
+        "https://www.lg.com/us/mobile-phones/velvet-5g/specs"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

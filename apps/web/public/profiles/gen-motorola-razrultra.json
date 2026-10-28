@@ -1,0 +1,31 @@
+{
+  "id": "gen-motorola-razrultra",
+  "brand": "motorola",
+  "model": "Motorola Razr Ultra 2026",
+  "release_year": 2026,
+  "os_family": "android",
+  "os_version": "16",
+  "shell_id": "motorola",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1224,
+    "height_px": 2992,
+    "dpi": 462.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 16.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/motorola/2026/razr-ultra-2026/motorola-razr-ultra-2026-16gb-512gb-5g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

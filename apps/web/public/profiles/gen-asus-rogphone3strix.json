@@ -1,0 +1,30 @@
+{
+  "id": "gen-asus-rogphone3strix",
+  "brand": "asus",
+  "model": "Asus ROG Phone 3 Strix",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "asus",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2340,
+    "dpi": 391.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2020/rog-phone-3-strix/asus-rog-phone-3-strix-beridzeg45-6867-8gb.json",
+    "https://www.gsmarena.com/asus_rog_phone_3_strix-10328.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gen-infinix-smart6",
+  "brand": "infinix",
+  "model": "Infinix Smart 6",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "11",
+  "shell_id": "infinix",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 266.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 2.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/infinix/2021/smart-6/infinix-smart-6-beridzeg45-1842-2gb.json",
+    "https://www.gsmarena.com/infinix_smart_6-11189.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

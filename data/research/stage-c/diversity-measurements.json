@@ -1,0 +1,421 @@
+{
+  "global": {
+    "os_versions": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "screen_sizes": [
+      "large",
+      "medium",
+      "small"
+    ],
+    "chipset_families": [
+      "google-tensor",
+      "huawei-kirin",
+      "mediatek-dimensity",
+      "mediatek-helio",
+      "qualcomm-snapdragon",
+      "samsung-exynos",
+      "unisoc"
+    ]
+  },
+  "per_brand": {
+    "vivo": {
+      "count": 64,
+      "os_versions": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "samsung": {
+      "count": 64,
+      "os_versions": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "samsung-exynos"
+      ]
+    },
+    "xiaomi": {
+      "count": 64,
+      "os_versions": [
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "oppo": {
+      "count": 64,
+      "os_versions": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "realme": {
+      "count": 64,
+      "os_versions": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "oneplus": {
+      "count": 64,
+      "os_versions": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "google": {
+      "count": 24,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "chipset_families": [
+        "google-tensor",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "motorola": {
+      "count": 64,
+      "os_versions": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "honor": {
+      "count": 64,
+      "os_versions": [
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "huawei": {
+      "count": 55,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "chipset_families": [
+        "huawei-kirin",
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "nokia": {
+      "count": 60,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "chipset_families": [
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "sony": {
+      "count": 20,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "chipset_families": [
+        "mediatek-helio",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "asus": {
+      "count": 27,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "screen_sizes": [
+        "large",
+        "small"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "lenovo": {
+      "count": 15,
+      "os_versions": [
+        "10",
+        "11",
+        "12"
+      ],
+      "screen_sizes": [
+        "large"
+      ],
+      "chipset_families": [
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "lg": {
+      "count": 23,
+      "os_versions": [
+        "10"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "chipset_families": [
+        "mediatek-helio",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "tecno": {
+      "count": 64,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "small"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "unisoc"
+      ]
+    },
+    "infinix": {
+      "count": 64,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "unisoc"
+      ]
+    },
+    "nothing": {
+      "count": 11,
+      "os_versions": [
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "qualcomm-snapdragon"
+      ]
+    },
+    "zte": {
+      "count": 64,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "screen_sizes": [
+        "large",
+        "small"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    },
+    "tcl": {
+      "count": 61,
+      "os_versions": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "screen_sizes": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "chipset_families": [
+        "mediatek-dimensity",
+        "mediatek-helio",
+        "qualcomm-snapdragon",
+        "unisoc"
+      ]
+    }
+  }
+}

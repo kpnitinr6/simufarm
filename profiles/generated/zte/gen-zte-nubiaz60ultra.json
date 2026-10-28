@@ -1,0 +1,31 @@
+{
+  "id": "gen-zte-nubiaz60ultra",
+  "brand": "zte",
+  "model": "Zte nubia Z60 Ultra",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1116,
+    "height_px": 2480,
+    "dpi": 400.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2023/nubia-z60-ultra/zte-nubia-z60-ultra-12gb-256gb-5g.json",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/zte-nubia-z60-ultra"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

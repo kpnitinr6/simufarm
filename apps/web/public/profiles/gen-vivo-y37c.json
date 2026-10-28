@@ -1,0 +1,31 @@
+{
+  "id": "gen-vivo-y37c",
+  "brand": "vivo",
+  "model": "Vivo Y37c",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "vivo",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 260.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 6.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/y37c/vivo-y37c-6gb-128gb-4g.json",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/vivo-y37c"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

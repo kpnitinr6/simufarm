@@ -1,0 +1,32 @@
+{
+  "id": "gen-motorola-edge60pro",
+  "brand": "motorola",
+  "model": "Motorola Edge 60 Pro",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "motorola",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1220,
+    "height_px": 2712,
+    "dpi": 444.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Motorola_Edge_60_Pro",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/motorola/2025/motorola-edge-60-pro.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.motorola.com/us/smartphones-motorola-edge-60-pro/p"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

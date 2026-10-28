@@ -16,15 +16,17 @@ export type BaseImageId = string | null;
 export type WidthPx = number;
 export type HeightPx = number;
 export type Dpi = number;
-export type Type = "none" | "punch_hole" | "notch" | "teardrop" | "dynamic_island";
-export type Position = "none" | "top_center" | "top_left" | "top_right";
+export type Type = "none" | "punch_hole" | "notch" | "teardrop" | "dynamic_island" | "unknown";
+export type Position = "none" | "top_center" | "top_left" | "top_right" | "unknown";
 export type RamGb = number;
 export type RoProductBrand = string | null;
 export type RoProductModel = string | null;
 export type RoProductDevice = string | null;
 export type RoBuildFingerprint = string | null;
-export type SourceType = ("manufacturer_spec" | "lineageos_tree" | "xda_dump" | "firmware") | null;
+export type SourceType =
+  ("manufacturer_spec" | "lineageos_tree" | "xda_dump" | "firmware" | "third_party_device_db" | "firmware_dump") | null;
 export type Sources = string[];
+export type RuntimeEligible = boolean;
 export type SourceType1 = "api" | "scraper" | "manual";
 /**
  * @minItems 1
@@ -46,7 +48,8 @@ export interface DeviceProfile {
   screen: Screen;
   notch: Notch;
   ram_gb: RamGb;
-  build: Build;
+  build: Build | null;
+  runtime_eligible?: RuntimeEligible;
   source_type: SourceType1;
   sources: Sources1;
   confidence: Confidence;

@@ -25,6 +25,7 @@
     "source_type": null,
     "sources": []
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://image-us.samsung.com/SamsungUS/samsungbusiness/pdfs/datasheet/Galaxy_S21_Series_Datasheet_Unlocked.pdf",

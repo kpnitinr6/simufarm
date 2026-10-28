@@ -14,8 +14,8 @@ class Screen(Contract):
 
 
 class Notch(Contract):
-    type: Literal["none", "punch_hole", "notch", "teardrop", "dynamic_island"]
-    position: Literal["none", "top_center", "top_left", "top_right"]
+    type: Literal["none", "punch_hole", "notch", "teardrop", "dynamic_island", "unknown"]
+    position: Literal["none", "top_center", "top_left", "top_right", "unknown"]
 
 
 class Build(Contract):
@@ -23,9 +23,17 @@ class Build(Contract):
     model: str | None = Field(alias="ro.product.model")
     device: str | None = Field(alias="ro.product.device")
     fingerprint: str | None = Field(alias="ro.build.fingerprint")
-    source_type: Literal["manufacturer_spec", "lineageos_tree", "xda_dump", "firmware"] | None = (
-        None
-    )
+    source_type: (
+        Literal[
+            "manufacturer_spec",
+            "lineageos_tree",
+            "xda_dump",
+            "firmware",
+            "third_party_device_db",
+            "firmware_dump",
+        ]
+        | None
+    ) = None
     sources: list[HttpUrl] = Field(default_factory=list)
 
     def properties(self):
@@ -53,7 +61,8 @@ class DeviceProfile(Contract):
     screen: Screen
     notch: Notch
     ram_gb: float = Field(gt=0)
-    build: Build
+    build: Build | None
+    runtime_eligible: bool = False
     source_type: Literal["api", "scraper", "manual"]
     sources: list[HttpUrl] = Field(min_length=1)
     confidence: float = Field(ge=0, le=1)
@@ -68,6 +77,15 @@ class DeviceProfile(Contract):
             raise ValueError(
                 "Reviewer and verification timestamp must both be present or both unknown"
             )
+        if self.runtime_eligible:
+            if not is_review_approved(self):
+                raise ValueError("Human review required for runtime eligibility")
+            if self.build is None or any(
+                v is None or not v.strip() for v in self.build.properties()
+            ):
+                raise ValueError("Runtime build identity is unknown; static previews only")
+            if not self.build.source_type or not self.build.sources:
+                raise ValueError("Runtime requires verifiable build provenance")
         return self
 
 
@@ -114,7 +132,11 @@ def validate_pair(profile: DeviceProfile, manifest: SimulatorManifest) -> None:
     if manifest.kind == "runtime":
         if profile.base_image_id != manifest.base_image_id:
             raise ValueError("Base image identity mismatch")
-        if any(v is None or not v.strip() for v in profile.build.properties()):
+        if profile.build is None or any(
+            v is None or not v.strip() for v in profile.build.properties()
+        ):
             raise ValueError("Runtime build identity is unknown; static previews only")
         if not profile.build.source_type or not profile.build.sources:
             raise ValueError("Runtime requires verifiable build provenance")
+        if not profile.runtime_eligible:
+            raise ValueError("Runtime eligibility must be explicitly human-promoted")

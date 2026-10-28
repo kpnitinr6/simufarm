@@ -1,0 +1,30 @@
+{
+  "id": "gen-tecno-phantomvfold",
+  "brand": "tecno",
+  "model": "Tecno Phantom V Fold",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 2000,
+    "height_px": 2296,
+    "dpi": 388.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2023/phantom-v-fold/tecno-phantom-v-fold-12gb-512gb-5g.json",
+    "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

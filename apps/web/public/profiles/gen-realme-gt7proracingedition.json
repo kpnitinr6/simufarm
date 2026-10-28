@@ -1,0 +1,30 @@
+{
+  "id": "gen-realme-gt7proracingedition",
+  "brand": "realme",
+  "model": "Realme GT 7 Pro Racing Edition",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "realme",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1264,
+    "height_px": 2780,
+    "dpi": 450.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2025/gt-7-pro-racing-edition/realme-gt-7-pro-racing-edition-12gb-256gb-5g.json",
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

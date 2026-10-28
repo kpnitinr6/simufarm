@@ -127,6 +127,13 @@
         "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367"
       ],
       "method": "derived approximate physical PPI=round(hypot(1200,2664)/6.7)=436; diagonal 6.7 inches manufacturer-stated; not Android logical densityDpi"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.honor.com/cn/shop/product/10086996410212.html?cid=132367",
+        "https://www.honor.com/global/news/honor-90-global-launch/"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

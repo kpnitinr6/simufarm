@@ -1,0 +1,31 @@
+{
+  "id": "gen-tecno-pop8",
+  "brand": "tecno",
+  "model": "Tecno Pop 8",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 267.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://aitoolbuzz.com/mobiles/tecno-pop-8",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2023/pop-8/tecno-pop-8-aitoolbuzz-11332-4gb-64gb-4g-lte.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

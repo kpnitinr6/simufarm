@@ -1,0 +1,32 @@
+{
+  "id": "gen-honor-90",
+  "brand": "honor",
+  "model": "Honor 90",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "honor",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1200,
+    "height_px": 2664,
+    "dpi": 436.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/honor/2023/90/honor-90-12gb-512gb-5g.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
+    "https://www.mobiledokan.com/mobile/honor-90"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

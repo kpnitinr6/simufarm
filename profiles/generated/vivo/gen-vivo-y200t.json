@@ -1,0 +1,30 @@
+{
+  "id": "gen-vivo-y200t",
+  "brand": "vivo",
+  "model": "vivo Y200t",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "vivo",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2408,
+    "dpi": 393.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2024/y200t/vivo-y200t-beridzeg45-605-8gb.json",
+    "https://www.gsmarena.com/vivo_y200t-13017.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

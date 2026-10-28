@@ -1,0 +1,31 @@
+{
+  "id": "gen-infinix-hot12pro",
+  "brand": "infinix",
+  "model": "Infinix Hot 12 Pro",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "12",
+  "shell_id": "infinix",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1612,
+    "dpi": 267.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/infinix/2022/hot-12-pro/infinix-hot-12-pro-beridzeg45-3315-8gb.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.gsmarena.com/infinix_hot_12_pro-11822.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "gen-realme-12proplus",
+  "brand": "realme",
+  "model": "realme 12 Pro+",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "realme",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2412,
+    "dpi": 394.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Realme_12_Pro%2B",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2024/realme-12-pro-plus.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.realme.com/global/realme-12-pro-plus"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "gen-google-pixel9",
+  "brand": "google",
+  "model": "Pixel 9",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "google",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2424,
+    "dpi": 421.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pixel_9",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://store.google.com/product/pixel_9_specs"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

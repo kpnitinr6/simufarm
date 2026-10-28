@@ -1,0 +1,31 @@
+{
+  "id": "gen-tecno-camon30",
+  "brand": "tecno",
+  "model": "Tecno Camon 30",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2436,
+    "dpi": 393.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://aitoolbuzz.com/mobiles/tecno-camon-30",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2024/camon-30/tecno-camon-30-aitoolbuzz-11279-12gb-8gb-4g-lte.json",
+    "https://storage.googleapis.com/play_public/supported_devices.csv"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

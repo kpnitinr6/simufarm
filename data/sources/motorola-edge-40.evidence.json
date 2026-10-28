@@ -128,6 +128,14 @@
         "https://en-us.support.motorola.com/app/answers/detail/a_id/175746/~/technischen-daten--motorola-edge-40"
       ],
       "method": "manufacturer physical PPI 402; not Android logical densityDpi"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://en-us.support.motorola.com/app/answers/detail/a_id/175746/~/technischen-daten--motorola-edge-40",
+        "https://motorolanews.com/introducing-the-motorola-edge-40-a-device-completely-submersed-in-style/",
+        "https://en-emea.support.motorola.com/app/software-security-update/g_id/7112/productid/11533"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

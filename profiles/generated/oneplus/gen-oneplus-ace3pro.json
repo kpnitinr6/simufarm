@@ -1,0 +1,30 @@
+{
+  "id": "gen-oneplus-ace3pro",
+  "brand": "oneplus",
+  "model": "OnePlus Ace 3 Pro",
+  "release_year": 2024,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "oneplus",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1264,
+    "height_px": 2780,
+    "dpi": 450.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 24.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://aitoolbuzz.com/mobiles/oneplus-ace-3-pro",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/ace-3-pro/oneplus-ace-3-pro-aitoolbuzz-7420-24gb-256gb-5g.json"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

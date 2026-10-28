@@ -1,0 +1,30 @@
+{
+  "id": "gen-sony-xperia10ii",
+  "brand": "sony",
+  "model": "Sony Xperia 10 II",
+  "release_year": 2020,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "sony",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2520,
+    "dpi": 457.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 4.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/xperia-10-ii/sony-xperia-10-ii-scrapegsma-656.json",
+    "https://github.com/cigarplug/scrape-gsma"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

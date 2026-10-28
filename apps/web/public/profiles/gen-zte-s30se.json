@@ -1,0 +1,30 @@
+{
+  "id": "gen-zte-s30se",
+  "brand": "zte",
+  "model": "ZTE S30 SE",
+  "release_year": 2021,
+  "os_family": "android",
+  "os_version": "11",
+  "shell_id": "zte",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 395.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 6.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/zte/2021/s30-se/zte-s30-se-beridzeg45-5907-6gb.json",
+    "https://www.gsmarena.com/zte_s30_se-10821.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

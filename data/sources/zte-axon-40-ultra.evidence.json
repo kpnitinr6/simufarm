@@ -51,7 +51,7 @@
       "source_urls": [
         "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
       ],
-      "method": "derived physical PPI = round(sqrt(1116² + 2480²)/6.8); not Android logical density"
+      "method": "derived physical PPI = round(sqrt(1116\u00b2 + 2480\u00b2)/6.8); not Android logical density"
     },
     "ram_gb": {
       "source_urls": [
@@ -118,6 +118,13 @@
         "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.ztedevices.com/cn/product/zte-axon-40-ultra/",
+        "https://www.zte.com.cn/global/about/news/20220511e1.html"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

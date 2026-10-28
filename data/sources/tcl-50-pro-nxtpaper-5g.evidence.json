@@ -120,6 +120,14 @@
         "https://www.tcl.com/global/en/mobile/tcl-50-pro-nxtpaper-5g"
       ],
       "method": "editorial provenance/confidence metadata; no human verification claimed"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://www.tcl.com/global/en/mobile/tcl-50-pro-nxtpaper-5g",
+        "https://www.tcl.com/global/en/news/tcl-unveils-two-new-ai-enhanced-nxtpaper-smartphones-revolutionizing-smart-comfort-for-consuming-creating-and-reading-content-on-the-go",
+        "https://pimcontent1.ingrammicro.com/se/assets/media/brochure/cl66164_cl66164_2104817074.pdf"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

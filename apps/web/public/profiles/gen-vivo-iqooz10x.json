@@ -1,0 +1,30 @@
+{
+  "id": "gen-vivo-iqooz10x",
+  "brand": "vivo",
+  "model": "vivo iQOO Z10x",
+  "release_year": 2025,
+  "os_family": "android",
+  "os_version": "15",
+  "shell_id": "vivo",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2408,
+    "dpi": 393.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://aitoolbuzz.com/mobiles/vivo-iqoo-z10x-5g",
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/iqoo-z10x/vivo-iqoo-z10x-aitoolbuzz-11999-8gb-128gb-5g.json"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

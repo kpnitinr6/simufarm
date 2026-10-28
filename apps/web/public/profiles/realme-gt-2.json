@@ -25,6 +25,7 @@
     "source_type": null,
     "sources": []
   },
+  "runtime_eligible": false,
   "source_type": "manual",
   "sources": [
     "https://www.realme.com/global/realme-gt-2/specs",

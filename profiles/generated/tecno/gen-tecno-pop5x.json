@@ -1,0 +1,30 @@
+{
+  "id": "gen-tecno-pop5x",
+  "brand": "tecno",
+  "model": "Tecno Pop 5X",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "10",
+  "shell_id": "tecno",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 720,
+    "height_px": 1600,
+    "dpi": 269.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 2.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tecno/2022/pop-5x/tecno-pop-5x-beridzeg45-4452-2gb.json",
+    "https://www.gsmarena.com/tecno_pop_5x-11337.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

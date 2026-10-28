@@ -127,6 +127,13 @@
         "https://support.google.com/pixelphone/answer/7158570?hl=en"
       ],
       "method": "manufacturer physical PPI 416; not Android logical densityDpi"
+    },
+    "runtime_eligible": {
+      "source_urls": [
+        "https://support.google.com/pixelphone/answer/7158570?hl=en",
+        "https://blog.google/products-and-platforms/devices/pixel/pixel-7-pixel-7-pro/"
+      ],
+      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
     }
   },
   "runtime_ready": false,

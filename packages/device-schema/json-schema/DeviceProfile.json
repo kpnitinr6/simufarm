@@ -54,7 +54,9 @@
                 "manufacturer_spec",
                 "lineageos_tree",
                 "xda_dump",
-                "firmware"
+                "firmware",
+                "third_party_device_db",
+                "firmware_dump"
               ],
               "type": "string"
             },
@@ -94,7 +96,8 @@
             "punch_hole",
             "notch",
             "teardrop",
-            "dynamic_island"
+            "dynamic_island",
+            "unknown"
           ],
           "title": "Type",
           "type": "string"
@@ -104,7 +107,8 @@
             "none",
             "top_center",
             "top_left",
-            "top_right"
+            "top_right",
+            "unknown"
           ],
           "title": "Position",
           "type": "string"
@@ -209,7 +213,19 @@
       "type": "number"
     },
     "build": {
-      "$ref": "#/$defs/Build"
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Build"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "runtime_eligible": {
+      "default": false,
+      "title": "Runtime Eligible",
+      "type": "boolean"
     },
     "source_type": {
       "enum": [

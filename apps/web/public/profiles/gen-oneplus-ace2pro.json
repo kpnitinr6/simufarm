@@ -1,0 +1,30 @@
+{
+  "id": "gen-oneplus-ace2pro",
+  "brand": "oneplus",
+  "model": "OnePlus Ace 2 Pro",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "oneplus",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1240,
+    "height_px": 2772,
+    "dpi": 451.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 12.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/ace-2-pro/oneplus-ace-2-pro-beridzeg45-6509-12gb.json",
+    "https://www.gsmarena.com/oneplus_ace_2_pro-12473.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

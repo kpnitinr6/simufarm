@@ -1,0 +1,30 @@
+{
+  "id": "gen-motorola-motox40",
+  "brand": "motorola",
+  "model": "Motorola Moto X40",
+  "release_year": 2022,
+  "os_family": "android",
+  "os_version": "13",
+  "shell_id": "motorola",
+  "base_image_id": null,
+  "screen": {
+    "width_px": 1080,
+    "height_px": 2400,
+    "dpi": 393.0
+  },
+  "notch": {
+    "type": "unknown",
+    "position": "unknown"
+  },
+  "ram_gb": 8.0,
+  "build": null,
+  "runtime_eligible": false,
+  "source_type": "scraper",
+  "sources": [
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/motorola/2022/moto-x40/motorola-moto-x40-beridzeg45-7097-8gb.json",
+    "https://www.gsmarena.com/motorola_moto_x40-11961.php"
+  ],
+  "confidence": 0.85,
+  "verified_by": null,
+  "verified_at": null
+}

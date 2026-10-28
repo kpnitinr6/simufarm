@@ -8,7 +8,7 @@ DEFAULT_PROFILES = Path(__file__).resolve().parents[3] / "profiles"
 
 
 def create_app(profile_dir: Path | None = None) -> FastAPI:
-    app = FastAPI(title="SimuFarm", version="0.3.0")
+    app = FastAPI(title="SimuFarm", version="0.4.0")
     directory = profile_dir or Path(os.getenv("PROFILE_DIR", str(DEFAULT_PROFILES)))
 
     def approved():

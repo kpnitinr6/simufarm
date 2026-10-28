@@ -6,3 +6,5 @@
 .device[data-notch=none] .notch{display:none}.device[data-notch-position=top_left] .notch{left:10%;transform:none}.device[data-notch-position=top_right] .notch{left:auto;right:10%;transform:none}
 
 .device[data-notch=notch] .notch{top:0;width:38%;height:20px;border-radius:0 0 12px 12px}.device[data-notch=dynamic_island] .notch{width:28%;height:13px;border-radius:12px}.screen-bottom [data-model]{max-width:67%;line-height:1.2;font-size:13px;overflow-wrap:anywhere}
+
+.device[data-notch=unknown] .notch{display:none}

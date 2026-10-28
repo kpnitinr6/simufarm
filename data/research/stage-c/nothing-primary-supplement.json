@@ -1,0 +1,142 @@
+[
+  {
+    "row": {
+      "id": "gen-nothing-phone-4a",
+      "brand": "nothing",
+      "model": "Phone (4a)",
+      "release_year": 2026,
+      "os_version": "16",
+      "width_px": 1224,
+      "height_px": 2720,
+      "dpi": 440,
+      "notch": "unknown",
+      "notch_position": "unknown",
+      "ram_gb": 8,
+      "screen_inches": 6.78,
+      "chipset_family": "qualcomm-snapdragon",
+      "source_urls": "[\"https://nothing.tech/products/phone-4a\"]"
+    },
+    "evidence": {
+      "source_url": "https://nothing.tech/products/phone-4a",
+      "evidence_status": "manufacturer embedded product specification; human review pending",
+      "response_sha256": "89aef682c25f285b80930b7ec5ec23c4f34766206f049a7e0fcf9a6c6ca47af0",
+      "excerpts": [
+        {
+          "literal": "1224 x 2720",
+          "character_offset": 208168,
+          "excerpt": "8],\\\"Colour depth\\\",\\\"10-bit\\\",[2380,2381],\\\"Resolution\\\",\\\"1224 x 2720 (440 PPI)\\\",[2383,2384],\\\"Screen material\\\",\\\"Corning\u00ae Gorilla\u00ae Glass 7i\\\",[238"
+        },
+        {
+          "literal": "6.78",
+          "character_offset": 208278,
+          "excerpt": "ial\\\",\\\"Corning\u00ae Gorilla\u00ae Glass 7i\\\",[2386,2387],\\\"Size\\\",\\\"6.78\u201d flexible AMOLED\\\",\\\"688f4eee0394\\\",[2390],{\\\"_52\\\":2391,\\\"_54\\\":78,\\\"_81\\\":232"
+        },
+        {
+          "literal": "Android 16",
+          "character_offset": 165266,
+          "excerpt": "l experience with smart tools to keep you focused. Built on Android 16 with 3 years of OS updates and 6 years of security updates.\\\",{\\\"_426\\\":-5,\\\"_4"
+        },
+        {
+          "literal": "Snapdragon 7s Gen 4",
+          "character_offset": 7695,
+          "excerpt": " with Nothing OS, Essential AI tools and the new Glyph Bar. Snapdragon 7s Gen 4 performance.\"/><meta property=\"og:description\" content=\"Nothing Phone (4a). Cle"
+        },
+        {
+          "literal": "8+128GB",
+          "character_offset": 81617,
+          "excerpt": " dark:hover:bg-grey-darker/0 gap-2\" draggable=\"false\"><span>8+128GB</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http:/"
+        }
+      ],
+      "release_year_note": "2026 launch; Phone4aPro dataset release_date2026-03-05; family launch referenced in official Nothing community announcement",
+      "dpi_method": "round(hypot(width,height)/inches); calculated physical PPI",
+      "notch_method": "unknown; product images not used to infer cutout geometry"
+    }
+  },
+  {
+    "row": {
+      "id": "gen-nothing-phone-4a-pro",
+      "brand": "nothing",
+      "model": "Phone (4a) Pro",
+      "release_year": 2026,
+      "os_version": "16",
+      "width_px": 1260,
+      "height_px": 2800,
+      "dpi": 450,
+      "notch": "unknown",
+      "notch_position": "unknown",
+      "ram_gb": 8,
+      "screen_inches": 6.83,
+      "chipset_family": "qualcomm-snapdragon",
+      "source_urls": "[\"https://us.nothing.tech/products/phone-4a-pro\"]"
+    },
+    "evidence": {
+      "source_url": "https://us.nothing.tech/products/phone-4a-pro",
+      "evidence_status": "manufacturer embedded product specification; human review pending",
+      "response_sha256": "7435961460cb7ea8b37dafb53ac9c4edc98424ee36a7e0cc26b226c38e3bb825",
+      "excerpts": [
+        {
+          "literal": "1260 x 2800",
+          "character_offset": 220590,
+          "excerpt": "2],\\\"Colour depth\\\",\\\"10-bit\\\",[2554,2555],\\\"Resolution\\\",\\\"1260 x 2800 (450 PPI)\\\",[2557,2558],\\\"Screen material\\\",\\\"Corning\u00ae Gorilla\u00ae Glass 7i\\\",[256"
+        },
+        {
+          "literal": "6.83",
+          "character_offset": 151279,
+          "excerpt": "MOLED display, our brightest yet, combined with the largest 6.83-inch screen and slimmest bezels ever, delivers an exceptionally crisp and immer"
+        },
+        {
+          "literal": "Android 16",
+          "character_offset": 172645,
+          "excerpt": "l experience with smart tools to keep you focused. Built on Android 16 with 3 years of OS updates and 6 years of security updates.\\\",{\\\"_458\\\":-5,\\\"_4"
+        },
+        {
+          "literal": "Snapdragon 7 Gen 4",
+          "character_offset": 224707,
+          "excerpt": "9,\\\"_80\\\":2764,\\\"_82\\\":2765},\\\"e8d1e32b482f\\\",[],\\\"Qualcomm Snapdragon 7 Gen 4\\\",[2769,2770,2771,2772],\\\"Picture\\\",\\\"Dimensions\\\",{\\\"_55\\\":2798,\\\"_2799\\\":-5,\\"
+        },
+        {
+          "literal": "8+128GB",
+          "character_offset": 82620,
+          "excerpt": " dark:hover:bg-grey-darker/0 gap-2\" draggable=\"false\"><span>8+128GB</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http:/"
+        }
+      ],
+      "release_year_note": "2026 launch; Phone4aPro dataset release_date2026-03-05; family launch referenced in official Nothing community announcement",
+      "dpi_method": "round(hypot(width,height)/inches); calculated physical PPI",
+      "notch_method": "unknown; product images not used to infer cutout geometry"
+    }
+  },
+  {
+    "row": {
+      "id": "gen-nothing-phone-2a-plus",
+      "brand": "nothing",
+      "model": "Phone (2a) Plus",
+      "release_year": 2024,
+      "os_version": "14",
+      "width_px": 1084,
+      "height_px": 2412,
+      "dpi": 395,
+      "notch": "unknown",
+      "notch_position": "unknown",
+      "ram_gb": 12,
+      "screen_inches": 6.7,
+      "chipset_family": "mediatek-dimensity",
+      "source_urls": "[\"https://my.nothing.tech/pages/beta-program\",\"https://nothing.tech/pages/phone-2a-plus?variant=42641971478667\"]"
+    },
+    "evidence": {
+      "source_urls": [
+        "https://my.nothing.tech/pages/beta-program",
+        "https://nothing.tech/pages/phone-2a-plus?variant=42641971478667"
+      ],
+      "evidence_status": "manufacturer specification; human review pending",
+      "field_evidence": {
+        "os_version": "Nothing OS 2.6, powered by Android 14",
+        "chipset_family": "MediaTek Dimensity 7350 Pro 5G",
+        "screen": "Flexible 6.7 AMOLED; 1084 x 2412 (395 PPI)",
+        "ram_gb": "12 GB + 8 GB RAM Booster; physical RAM12, virtual8 excluded",
+        "release_year": "Source TechAPI Nothing Phone2aPlus release_date2024-07-31; official initialpurchase3August"
+      },
+      "dpi_method": "round(hypot(width,height)/inches); physical PPI",
+      "notch_method": "unknown; not inferred"
+    }
+  }
+]

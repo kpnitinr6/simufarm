@@ -1,0 +1,720 @@
+{
+  "exemptions": [
+    {
+      "brand": "vivo",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "samsung",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "xiaomi",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "oppo",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "realme",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "oneplus",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "google",
+      "constraint": "quota",
+      "reason": "24 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "motorola",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "honor",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "huawei",
+      "constraint": "quota",
+      "reason": "55 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "nokia",
+      "constraint": "quota",
+      "reason": "60 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "sony",
+      "constraint": "quota",
+      "reason": "20 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "asus",
+      "constraint": "quota",
+      "reason": "27 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "lenovo",
+      "constraint": "quota",
+      "reason": "15 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "lenovo",
+      "constraint": "screen_sizes",
+      "reason": "Observed 1: ['large']. No models or OS-upgrade variants invented.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "lg",
+      "constraint": "quota",
+      "reason": "23 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "lg",
+      "constraint": "os_versions",
+      "reason": "Observed 1: ['10']. No models or OS-upgrade variants invented.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "tecno",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "infinix",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "nothing",
+      "constraint": "quota",
+      "reason": "11 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "nothing",
+      "constraint": "screen_sizes",
+      "reason": "Observed 1: ['large']. No models or OS-upgrade variants invented.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "zte",
+      "constraint": "quota",
+      "reason": "64 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    },
+    {
+      "brand": "tcl",
+      "constraint": "quota",
+      "reason": "61 distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+      "global_minimum": {
+        "os_versions": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "screen_sizes": [
+          "large",
+          "medium",
+          "small"
+        ],
+        "chipset_families": [
+          "google-tensor",
+          "huawei-kirin",
+          "mediatek-dimensity",
+          "mediatek-helio",
+          "qualcomm-snapdragon",
+          "samsung-exynos",
+          "unisoc"
+        ]
+      }
+    }
+  ],
+  "global_observed": {
+    "os_versions": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "screen_sizes": [
+      "large",
+      "medium",
+      "small"
+    ],
+    "chipset_families": [
+      "google-tensor",
+      "huawei-kirin",
+      "mediatek-dimensity",
+      "mediatek-helio",
+      "qualcomm-snapdragon",
+      "samsung-exynos",
+      "unisoc"
+    ]
+  },
+  "policy": "Operator-authorized per-brand exceptions; global minimums remain mandatory."
+}
