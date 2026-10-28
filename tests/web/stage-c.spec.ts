@@ -56,3 +56,28 @@ test('all retained generated URLs serve escaped static pages', async ({request})
   }));
  }
 });
+
+test('C2 sourced cutout positions are reflected by the original shells', async ({page, request}) => {
+ const catalog = await (await request.get('/catalog.json')).json();
+ for (const [type, position] of [['punch_hole','top_left'], ['teardrop','top_center'], ['none','none']]) {
+  const profile = catalog.find((p:any) => p.cohort === 'generated' && p.notch.type === type && p.notch.position === position);
+  expect(profile).toBeTruthy();
+  await page.goto(profile.url);
+  const shell = page.locator(`${profile.shell_id}-shell[data-ready="true"]`);
+  const frame = shell.locator('.device');
+  await expect(frame).toHaveAttribute('data-notch', type);
+  await expect(frame).toHaveAttribute('data-notch-position', position);
+  const notch = shell.locator('.notch');
+  if (type === 'none') {
+   await expect(notch).toBeHidden();
+  } else {
+   await expect(notch).toBeVisible();
+   const box = await notch.boundingBox();
+   const screen = await shell.locator('.screen').boundingBox();
+   expect(box && screen).toBeTruthy();
+   const relativeCenter = (box!.x + box!.width / 2 - screen!.x) / screen!.width;
+   if (position === 'top_left') expect(relativeCenter).toBeLessThan(0.25);
+   else expect(Math.abs(relativeCenter - 0.5)).toBeLessThan(0.1);
+  }
+ }
+});

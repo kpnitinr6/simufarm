@@ -47,6 +47,6 @@ The requested redroid/redroid:13.0.0_64only-latest Linux ARM64 manifest was veri
 
 Stage E is blocked until C2 is complete/reviewed and >=1 complete human-reviewed runtime-eligible profile exists. Current subset 0. X100 China/India decision remains needs-human. C2 data changes are not merged to main.
 
-Local C2 checks: 84 Python tests and 19 Playwright checks passed, plus source validation, contract drift, frontend build and deterministic generation. Browser checks cover every retained generated page, representative rendering and ten visual snapshots. Remote Python 3.12 / Node 22 CI is recorded after publication.
+Local C2 checks: 84 Python tests and 20 Playwright checks passed, plus source validation, contract drift, frontend build and deterministic generation. Browser checks cover every retained generated page, representative rendering and ten visual snapshots. Remote Python 3.12 / Node 22 CI passed: run 40628511620 on commit 965e2a8. Evidence is saved in data/validation/stage-c2-ci.json. Final evidence/geometry-test commit has separate CI.
 
 Zero billable resources touched. Zero MobileAPI calls. Stage D boot, RAM and identity claims remain unmeasured until authenticated execution actually occurs.

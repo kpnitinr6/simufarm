@@ -25,5 +25,10 @@
     "passed": true,
     "execution_class": "local_only",
     "reason": "Public source research/local tests/public standard CI; no MobileAPI or cloud execution."
+  },
+  "validation": {
+    "python_tests": 84,
+    "browser_tests": 20,
+    "remote_ci": "https://github.com/kpnitinr6/simufarm/actions/runs/40628511620"
   }
 }

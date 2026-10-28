@@ -63,4 +63,4 @@ Actual-capacity file and runtime collection protocol are in the separate Stage D
 
 Stage E has not begun. The code gate requires C2 completion plus human acceptance and at least 1 complete human-reviewed runtime-eligible profile. Current eligible count 0; human acceptance false. X100 India/China choice remains needs-human; no mixed-region identity was promoted.
 
-Local C2 validation: 84 Python tests, source/profile validation and build pass; final browser/remote CI results follow in the report. C2 is held for review; no merge authorized. Zero billable resources and zero MobileAPI calls.
+Local C2 validation: 84 Python tests, source/profile validation and build pass; 20 browser checks passed across the local suite and targeted geometry check. Remote Python 3.12 / Node 22 CI run 40628511620 passed on 965e2a8; the final evidence/geometry-test commit has separate CI. C2 is held for review; no merge authorized. Zero billable resources and zero MobileAPI calls.

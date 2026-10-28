@@ -1,6 +1,6 @@
 {
   "stage_c2": {
-    "engineering_complete": false,
+    "engineering_complete": true,
     "human_accepted": false,
     "review_required": true
   },

@@ -14,5 +14,7 @@
   "stage_e_authorized": false,
   "notch_geometry_selection": "Operator-approved 100-device source-backed coverage sample; popularity unverified",
   "notch_known": 100,
-  "notch_unknown": 832
+  "notch_unknown": 832,
+  "stage_c2_engineering_complete": true,
+  "stage_c2_human_accepted": false
 }
