@@ -2,8 +2,8 @@
   "date": "2026-10-28",
   "policy": "Option B: no padding; remaining records are sourced distinct candidates, not blanket human-verified physical devices.",
   "before_count": 1000,
-  "after_count": 933,
-  "removed_count": 67,
+  "after_count": 932,
+  "removed_count": 68,
   "changes": [
     {
       "action": "remove",
@@ -1073,6 +1073,28 @@
       "before": "8",
       "after": "8.0",
       "reason": "Consistent decimal float serialization."
+    },
+    {
+      "action": "merge",
+      "profile_id": "gen-nokia-8v5guw",
+      "surviving_id": "gen-nokia-835g",
+      "reason": "Requested carrier-family collapse: Nokia 8 V 5G UW is the Verizon/mmWave adaptation of Nokia 8.3. Radio differs; not a claim of byte-identical hardware. Retain one family profile under user policy.",
+      "source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-v-5g-uw/nokia-8-v-5g-uw-aitoolbuzz-7078-6gb-64gb-5g.json",
+        "https://aitoolbuzz.com/mobiles/nokia-8-v-5g-uw",
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-8-v-5g-uw-user-guide/keys-and-parts",
+        "https://www.hmd.com/en_int/press/nokia-8-v-5g-uw-press-release",
+        "https://www.gsmarena.com/nokia_8_v_5g_uw_is_the_nokia_83_for_verizons_uw_5g_network-news-46198.php"
+      ],
+      "surviving_source_urls": [
+        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-3-5g/nokia-8-3-5g-scrapegsma-1271.json",
+        "https://github.com/cigarplug/scrape-gsma",
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-8-3-5g-user-guide/keys-and-parts",
+        "https://www.hmd.com/en_int/press/nokia-8-v-5g-uw-press-release",
+        "https://www.gsmarena.com/nokia_8_v_5g_uw_is_the_nokia_83_for_verizons_uw_5g_network-news-46198.php"
+      ]
     }
   ]
 }

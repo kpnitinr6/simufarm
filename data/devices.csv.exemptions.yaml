@@ -303,7 +303,7 @@
     {
       "brand": "nokia",
       "constraint": "quota",
-      "reason": "49 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
+      "reason": "48 distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
       "global_minimum": {
         "os_versions": [
           "10",

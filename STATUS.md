@@ -1,8 +1,8 @@
 # SimuFarm status — 28 October 2026
 
-Stage C engineering accepted and merged in PR #3. Stage C2 remediation is implemented for separate review and **not merged**. Option B: no padding to 1,000. The earlier claim of no carrier/cosmetic duplicates was incorrect; 67 records were removed or merged, including the wrongly branded iQOO entries, a tablet, speculative identities and label/retail aliases.
+Stage C engineering accepted and merged in PR #3. Stage C2 remediation is implemented for separate review and **not merged**. Option B: no padding to 1,000. The earlier claim of no carrier/cosmetic duplicates was incorrect; 68 records were removed or merged, including the wrongly branded iQOO entries, a tablet, speculative identities and label/retail aliases.
 
-**Source-checked distinct physical device models: 105**, limited to exact-model existence, cutout geometry or specified corrected fields. **Retained sourced candidate records: 933**. It would be inaccurate to call all 933 fully verified devices. Complete human-reviewed technical/runtime profiles: 0. Physical handsets tested: 0 (software-only project). These verification scopes are separate; see data/research/stage-c2/verification-coverage.json.
+**Source-checked distinct physical device models: 105**, limited to exact-model existence, cutout geometry or specified corrected fields. **Retained sourced candidate records: 932**. It would be inaccurate to call all 932 fully verified devices. Complete human-reviewed technical/runtime profiles: 0. Physical handsets tested: 0 (software-only project). These verification scopes are separate; see data/research/stage-c2/verification-coverage.json.
 
 ## Current generated counts
 
@@ -18,7 +18,7 @@ Stage C engineering accepted and merged in PR #3. Stage C2 remediation is implem
 | motorola | 64 | 2 |
 | honor | 64 | 0 |
 | huawei | 55 | 0 |
-| nokia | 49 | 39 |
+| nokia | 48 | 39 |
 | sony | 20 | 13 |
 | asus | 27 | 5 |
 | lenovo | 15 | 0 |
@@ -28,11 +28,11 @@ Stage C engineering accepted and merged in PR #3. Stage C2 remediation is implem
 | nothing | 11 | 3 |
 | zte | 64 | 0 |
 | tcl | 52 | 0 |
-| **Total** | **933** | **100** |
+| **Total** | **932** | **100** |
 
-22 earlier reference drafts remain separate; total static profiles/pages 955. Every generated profile has build: null and runtime_eligible: false. All current profile ram_gb JSON values are floats. No replacement rows were added.
+22 earlier reference drafts remain separate; total static profiles/pages 954. Every generated profile has build: null and runtime_eligible: false. All current profile ram_gb JSON values are floats. No replacement rows were added.
 
-Notch coverage: **100/933 (10.72%)**; 833 remain unknown. The operator approved a sourced coverage sample with popularity unverified, replacing the unavailable popularity top 100 for this task. Known geometry includes 23 none, 29 teardrop, 48 punch-hole classifications; visual inferences are labeled and all remain human-review pending. No model rank was invented.
+Notch coverage: **100/932 (10.73%)**; 832 remain unknown. The operator approved a sourced coverage sample with popularity unverified, replacing the unavailable popularity top 100 for this task. Known geometry includes 23 none, 29 teardrop, 48 punch-hole classifications; visual inferences are labeled and all remain human-review pending. No model rank was invented.
 
 Global diversity still passes: 7 Android versions, 3 size classes, 7 chipset families. All quota and measured per-brand exceptions were recomputed, including Realme/Lenovo/Nothing screen sizes and LG OS spread. No stale 1,000-count or Nothing-quota gate forces padding; CI checks the committed no-padding policy and actual CSV.
 

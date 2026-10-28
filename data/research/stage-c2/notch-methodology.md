@@ -34,10 +34,12 @@ Zero paid services, MobileAPI calls, or cloud resources were used for this resea
 
 ## Final packet
 
-`notch-candidates.json` contains exactly 100 retained IDs with both notch type and position supported, plus eight additional candidates (including type-only records). Every rank remains null. Selected records cover 11 brands: 39 Nokia, 19 Google, 11 OnePlus, 13 Sony, 5 Asus, 5 Samsung, 3 Nothing, 2 Motorola, and one each from Realme, Vivo, and Xiaomi. This is a sourced geometry coverage sample, not a brand-balanced sample or a sales ranking.
+`notch-candidates.json` contains exactly 100 retained IDs with both notch type and position supported, plus seven additional candidates (including type-only records). Every rank remains null. Selected records cover 11 brands: 39 Nokia, 19 Google, 11 OnePlus, 13 Sony, 5 Asus, 5 Samsung, 3 Nothing, 2 Motorola, and one each from Realme, Vivo, and Xiaomi. This is a sourced geometry coverage sample, not a brand-balanced sample or a sales ranking.
 
 The HMD checks used the **front product render**, not just the schematic camera marker: 41 correct-model pages yielded interpretable renders. Two redirects to the generic HMD support page were rejected even though a product image was present. Missing / redirected pages were not treated as evidence. `notch-hmd-observations.json` preserves the exact source title, resolved URL, image URL, and diagram URL for replay. Manufacturer render screenshots were inspected locally; OEM artwork was not added to the simulator or committed.
 
 Camera shapes connected to the screen's upper edge are mapped to the schema's coarse `teardrop` category; isolated round cutouts map to `punch_hole`; camera hardware entirely outside the display maps to `none`. No center position was inferred merely from the word "notch". Six type-only sources remain outside the selected 100 because a location was not independently established.
 
 All 100 selected records remain human-review pending. Geometry sourcing does not certify every other specification in the corresponding profile or promote any runtime profile.
+
+A later carrier-family collapse retires Nokia8V into8.3. The independently sourced NokiaXR20 replaces it in the selected100; no geometry was transferred between those models.

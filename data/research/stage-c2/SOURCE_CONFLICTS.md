@@ -1,6 +1,6 @@
 # Stage C2 source conflicts and verification limits
 
-Checked 2026-10-28. Option B is adopted: no padding. The 933 retained records are sourced distinct candidates after the enumerated alias cleanup, **not 933 completely verified physical devices**. Every remaining inherited specification has not been independently checked. Human review remains pending. Build/runtime flags are handled by the generator, outside this data-only change.
+Checked 2026-10-28. Option B is adopted: no padding. The 932 retained records are sourced distinct candidates after the enumerated alias cleanup, **not 932 completely verified physical devices**. Every remaining inherited specification has not been independently checked. Human review remains pending. Build/runtime flags are handled by the generator, outside this data-only change.
 
 ## Requested corrections that conflict with evidence
 
@@ -17,6 +17,6 @@ Queries used: `"Galaxy A83" site:samsung.com`, `"Galaxy A75" site:samsung.com`, 
 
 ## Regional handling
 
-The specified TCL and Nokia aliases are collapsed into one retained source row each. A surviving ID may still include a regional/storage label because IDs are stable source identifiers; this does not add a second catalog device. TCL 20 SE T671O and Nokia X100 already have only one row each, so nothing is fabricated or deleted merely to alter the spelling. No inferred equivalence between Nokia 8.3 and 8 V is asserted: those are separate requested alias groups. Vivo Y19s 5G has only one row; no Y19s base row exists to merge. Additional uncertain TCL 50 LE/50 XE cellular variants remain separate pending radio/SKU verification.
+The specified TCL and Nokia aliases are collapsed into one retained source row each. A surviving ID may still include a regional/storage label because IDs are stable source identifiers; this does not add a second catalog device. TCL 20 SE T671O and Nokia X100 already have only one row each, so nothing is fabricated or deleted merely to alter the spelling. A follow-up source check identifies Nokia 8 V as the Verizon/mmWave adaptation of Nokia 8.3; one carrier-family profile is retained under the requested policy, while the radio difference remains documented in the rejection log. Vivo Y19s 5G has only one row; no Y19s base row exists to merge. Additional uncertain TCL 50 LE/50 XE cellular variants remain separate pending radio/SKU verification.
 
 The source-ranking rule used for requested merge groups is manufacturer URLs, then GSMArena, then Wikipedia, then fewer Kaggle-only references; deterministic ID breaks ties. Original source paths and surviving source URLs are retained in change-log.json. This ranks supplied sources, rather than certifying every supplied URL or source value. The original upstream attribution remains in the repository.

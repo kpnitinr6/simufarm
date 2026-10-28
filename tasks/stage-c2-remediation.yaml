@@ -4,13 +4,13 @@
   "branch": "agent/codex/stage-c2-integration",
   "status": "needs-human",
   "option": "B no padding",
-  "retained_sourced_candidates": 933,
+  "retained_sourced_candidates": 932,
   "source_checked_models": 105,
   "source_checked_scope": "Exact-model existence, geometry or named targeted fields only; not complete specification/hardware verification.",
-  "removed_or_merged": 67,
+  "removed_or_merged": 68,
   "geometry_coverage": {
     "complete": 100,
-    "total": 933,
+    "total": 932,
     "popularity_verified": false,
     "selection_approved": "coverage"
   },

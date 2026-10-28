@@ -1,7 +1,7 @@
 # Stage C specification candidate provenance
 
-The derived CSV and selected row-provenance receipts adapt factual records from **GetTechAPI / GTA Foundation, TechAPI**, revision `db1dea0c38ff07fcf400aa05d8c8e4393348eb25`:
-https://github.com/GetTechAPI/TechAPI/tree/db1dea0c38ff07fcf400aa05d8c8e4393348eb25
+The derived CSV and selected row-provenance receipts adapt factual records from **GetTechAPI / GTA Foundation, TechAPI**, revision `db1dea0c38ff07fcf400aa05d8c8e4393248eb25`:
+https://github.com/GetTechAPI/TechAPI/tree/db1dea0c38ff07fcf400aa05d8c8e4393248eb25
 
 The upstream README expressly identifies its **data as CC BY-SA 4.0**, despite its general repository LICENSE being MIT for software. This factual-data adaptation, generated cohort profiles/evidence, derived static-page specification data, and `row-provenance.json` are distributed under **CC BY-SA 4.0**: https://creativecommons.org/licenses/by-sa/4.0/ . Attribution, source links, changes, and share-alike terms are retained here. SimuFarm's own code license is unchanged. Original manufacturer source ownership remains with its respective owner; no logos, photographs, or wallpapers are reproduced.
 
@@ -14,4 +14,4 @@ Every CSV row includes an immutable dataset record URL plus underlying source UR
 Nothing count11 includes two actual CMF-branded Nothing-company models (CMFPhone1 and CMFPhone2Pro), disclosed explicitly. No Community Edition/cosmetic variants fill its quota. Diversity measurements count actual stated Android versions, manufacturer diagonal size classes, and normalized chip families; filed exemptions are measured, not assumed from brand stereotypes.
 
 ## C2 correction (2026-10-28)
-The earlier claim that carrier/cosmetic duplicates had all been excluded was incorrect. Stage C2 removes or merges 67 known misattributions, tablet/rumor and alias records without padding. The current CSV is the curated source, with complete changes in data/research/stage-c2/change-log.json and data/rejections.md. The original import receipts preserve historical upstream fields rather than claim current validation. Reimport only into a separate scratch output; direct overwrite of the curated CSV is blocked.
+The earlier claim that carrier/cosmetic duplicates had all been excluded was incorrect. Stage C2 removes or merges 68 known misattributions, tablet/rumor and alias records without padding. The current CSV is the curated source, with complete changes in data/research/stage-c2/change-log.json and data/rejections.md. The original import receipts preserve historical upstream fields rather than claim current validation. Reimport only into a separate scratch output; direct overwrite of the curated CSV is blocked.

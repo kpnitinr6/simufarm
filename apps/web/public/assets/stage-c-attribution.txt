@@ -1,7 +1,7 @@
 # Stage C specification candidate provenance
 
-The derived CSV and selected row-provenance receipts adapt factual records from **GetTechAPI / GTA Foundation, TechAPI**, revision `db1dea0c38ff07fcf400aa05d8c8e4393348eb25`:
-https://github.com/GetTechAPI/TechAPI/tree/db1dea0c38ff07fcf400aa05d8c8e4393348eb25
+The derived CSV and selected row-provenance receipts adapt factual records from **GetTechAPI / GTA Foundation, TechAPI**, revision `db1dea0c38ff07fcf400aa05d8c8e4393248eb25`:
+https://github.com/GetTechAPI/TechAPI/tree/db1dea0c38ff07fcf400aa05d8c8e4393248eb25
 
 The upstream README expressly identifies its **data as CC BY-SA 4.0**, despite its general repository LICENSE being MIT for software. This factual-data adaptation, generated cohort profiles/evidence, derived static-page specification data, and `row-provenance.json` are distributed under **CC BY-SA 4.0**: https://creativecommons.org/licenses/by-sa/4.0/ . Attribution, source links, changes, and share-alike terms are retained here. SimuFarm's own code license is unchanged. Original manufacturer source ownership remains with its respective owner; no logos, photographs, or wallpapers are reproduced.
 

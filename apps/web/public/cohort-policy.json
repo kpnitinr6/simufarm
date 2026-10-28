@@ -2,7 +2,7 @@
   "mode": "distinct_no_padding",
   "decision": "Option B",
   "original_claimed_count": 1000,
-  "retained_candidate_count": 933,
+  "retained_candidate_count": 932,
   "physical_device_verification": "No blanket verification claim; primary existence checks and unresolved candidates reported separately.",
   "expected_brands": 20,
   "mandatory_global_diversity": {
@@ -14,5 +14,5 @@
   "stage_e_authorized": false,
   "notch_geometry_selection": "Operator-approved 100-device source-backed coverage sample; popularity unverified",
   "notch_known": 100,
-  "notch_unknown": 833
+  "notch_unknown": 832
 }

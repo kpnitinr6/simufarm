@@ -50,7 +50,7 @@
         "https://www.01net.com/tests/test-des-samsung-galaxy-s24-et-s24-plus-plus-petits-plus-endurants-et-moins-chers.html"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "un écran plat et un poinçon centré",
+      "raw_quote": "un \u00e9cran plat et un poin\u00e7on centr\u00e9",
       "rank": null,
       "rank_source": null,
       "confidence": 0.9,
@@ -67,7 +67,7 @@
         "https://www.01net.com/tests/test-des-samsung-galaxy-s24-et-s24-plus-plus-petits-plus-endurants-et-moins-chers.html"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "un écran plat et un poinçon centré",
+      "raw_quote": "un \u00e9cran plat et un poin\u00e7on centr\u00e9",
       "rank": null,
       "rank_source": null,
       "confidence": 0.9,
@@ -266,7 +266,7 @@
         "https://www.techradar.com/phones/sony-xperia-phones/sony-xperia-1-vii-review"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "there’s no notch or punch-hole in the screen",
+      "raw_quote": "there\u2019s no notch or punch-hole in the screen",
       "rank": null,
       "rank_source": null,
       "confidence": 0.95,
@@ -300,7 +300,7 @@
         "https://jamonline.ph/reviews/asus-rog-phone-7-review/"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "the ASUS ROG Phone 7 still packs a display that doesn’t come with a notch.",
+      "raw_quote": "the ASUS ROG Phone 7 still packs a display that doesn\u2019t come with a notch.",
       "rank": null,
       "rank_source": null,
       "confidence": 0.9,
@@ -702,7 +702,7 @@
         "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "No notch por aquí, no notch por allá",
+      "raw_quote": "No notch por aqu\u00ed, no notch por all\u00e1",
       "rank": null,
       "rank_source": null,
       "confidence": 0.9,
@@ -719,7 +719,7 @@
         "https://www.xataka.com/analisis/asus-rog-phone-5-analisis-caracteristicas-precio-especificaciones/amp"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "sin notch ni agujero para la cámara frontal",
+      "raw_quote": "sin notch ni agujero para la c\u00e1mara frontal",
       "rank": null,
       "rank_source": null,
       "confidence": 0.95,
@@ -940,7 +940,7 @@
         "https://www.nextpit.de/handys/sony-xperia-10-v/test"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "Displayränder recht dick (dafür gibt's keine Notch)",
+      "raw_quote": "Displayr\u00e4nder recht dick (daf\u00fcr gibt's keine Notch)",
       "rank": null,
       "rank_source": null,
       "confidence": 0.9,
@@ -974,7 +974,7 @@
         "https://www.dxomark.com/asus-rog-phone-3-display-review-struggles-with-video/"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "The ROG Phone 3 doesn’t have a notch",
+      "raw_quote": "The ROG Phone 3 doesn\u2019t have a notch",
       "rank": null,
       "rank_source": null,
       "confidence": 0.95,
@@ -1025,7 +1025,7 @@
         "https://www.techadvisor.com/article/722526/oneplus-nord-2-review.html"
       ],
       "method": "published_geometry_description",
-      "raw_quote": "There’s a punch-hole selfie camera interrupting the top-left corner of the display",
+      "raw_quote": "There\u2019s a punch-hole selfie camera interrupting the top-left corner of the display",
       "rank": null,
       "rank_source": null,
       "confidence": 0.95,
@@ -1245,27 +1245,6 @@
       "image_url": "https://images.ctfassets.net/0weg701w29lb/1U0UlndqRax5bPHSZtEhLG/850abdea79362590abaf74fcefd69518/nokia_8_3_5G-user_guide-hero.png",
       "source_title": "Nokia 8.3 5G user guide",
       "diagram_url": "https://images.ctfassets.net/0weg701w29lb/5Y0iGEaamZlcLXIEuoXcEm/948e88f991e0daa7b7390e132bc2cc12/Nokia_8_3_5G_keys_and_parts.jpg?h=400&fm=png&fl=png8",
-      "geometry_note": "Front product render shows circular isolated camera hole at top_left."
-    },
-    {
-      "id": "gen-nokia-8v5guw",
-      "model": "Nokia 8 V 5G UW",
-      "brand": "nokia",
-      "notch": "punch_hole",
-      "notch_position": "top_left",
-      "sources": [
-        "https://www.hmd.com/en_int/support/nokia-8-v-5g-uw-user-guide/keys-and-parts"
-      ],
-      "method": "manufacturer_front_render_visual_inference",
-      "raw_quote": "",
-      "rank": null,
-      "rank_source": null,
-      "confidence": 0.95,
-      "human_review": "pending",
-      "runtime_eligible": false,
-      "image_url": "https://images.ctfassets.net/0weg701w29lb/6U1RlGACzoxlpHCCScfmX6/02b40c10861571714d2d9865ac9293b9/nokia_8_V_5G-user_guide-hero.png",
-      "source_title": "Nokia 8 V 5G UW user guide",
-      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/1ztFFalQTBoa0dYQ3XiS8A/3e422815ab1c8e0284d611429cb3c7e6/Nokia_8_V_5G_UW_front_and_back.jpg?h=400&fm=png&fl=png8",
       "geometry_note": "Front product render shows circular isolated camera hole at top_left."
     },
     {
@@ -1918,6 +1897,27 @@
       "source_title": "Nokia X20 user guide",
       "diagram_url": "https://images.ctfassets.net/0weg701w29lb/KR0WC1C3TTLokMaBybdD9/0e7342d1217ff34bfad524e9d9eb62ae/Nokia_X20_front_and_back.jpg?h=400&fm=png&fl=png8",
       "geometry_note": "Front product render shows circular isolated camera hole at top_center."
+    },
+    {
+      "id": "gen-nokia-xr20",
+      "model": "Nokia XR20",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-xr20-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/7HYswbxM78WwzvhYs6dXka/0232b6275a641e02a850c6f786acf6c3/nokia_XR20-user_guide-hero.png",
+      "source_title": "Nokia XR20 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/P2IUO00evPyBDNzOJTojZ/d0d49f25d465c08ac682658638497087/Nokia_XR20_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_center."
     }
   ],
   "additional_geometry_candidates": [
@@ -2026,27 +2026,6 @@
       "runtime_eligible": false
     },
     {
-      "id": "gen-nokia-xr20",
-      "model": "Nokia XR20",
-      "brand": "nokia",
-      "notch": "punch_hole",
-      "notch_position": "top_center",
-      "sources": [
-        "https://www.hmd.com/en_int/support/nokia-xr20-user-guide/keys-and-parts"
-      ],
-      "method": "manufacturer_front_render_visual_inference",
-      "raw_quote": "",
-      "rank": null,
-      "rank_source": null,
-      "confidence": 0.95,
-      "human_review": "pending",
-      "runtime_eligible": false,
-      "image_url": "https://images.ctfassets.net/0weg701w29lb/7HYswbxM78WwzvhYs6dXka/0232b6275a641e02a850c6f786acf6c3/nokia_XR20-user_guide-hero.png",
-      "source_title": "Nokia XR20 user guide",
-      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/P2IUO00evPyBDNzOJTojZ/d0d49f25d465c08ac682658638497087/Nokia_XR20_front_and_back.jpg?h=400&fm=png&fl=png8",
-      "geometry_note": "Front product render shows circular isolated camera hole at top_center."
-    },
-    {
       "id": "gen-nokia-xr21",
       "model": "Nokia XR21",
       "brand": "nokia",
@@ -2080,5 +2059,28 @@
   ],
   "human_review": "pending",
   "billable_resources_touched": 0,
-  "mobileapi_calls": 0
+  "mobileapi_calls": 0,
+  "excluded_after_carrier_family_collapse": [
+    {
+      "id": "gen-nokia-8v5guw",
+      "model": "Nokia 8 V 5G UW",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-8-v-5g-uw-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/6U1RlGACzoxlpHCCScfmX6/02b40c10861571714d2d9865ac9293b9/nokia_8_V_5G-user_guide-hero.png",
+      "source_title": "Nokia 8 V 5G UW user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/1ztFFalQTBoa0dYQ3XiS8A/3e422815ab1c8e0284d611429cb3c7e6/Nokia_8_V_5G_UW_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_left."
+    }
+  ]
 }

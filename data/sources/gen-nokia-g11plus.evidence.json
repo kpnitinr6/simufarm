@@ -11,7 +11,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "id"
     },
     "brand": {
@@ -22,7 +22,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "brand"
     },
     "model": {
@@ -33,7 +33,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "model"
     },
     "release_year": {
@@ -44,7 +44,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "release_year"
     },
     "os_family": {
@@ -55,7 +55,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "os_version": {
@@ -66,7 +66,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "os_version"
     },
     "shell_id": {
@@ -77,7 +77,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "base_image_id": {
@@ -88,7 +88,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "screen.width_px": {
@@ -99,7 +99,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "width_px"
     },
     "screen.height_px": {
@@ -110,7 +110,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "height_px"
     },
     "screen.dpi": {
@@ -121,7 +121,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "dpi"
     },
     "notch": {
@@ -131,7 +131,7 @@
       "method": "C2 source-backed geometry; human review pending: manufacturer_front_render_visual_inference",
       "raw_quote": "",
       "csv_file": "devices.csv",
-      "csv_line": 580
+      "csv_line": 579
     },
     "ram_gb": {
       "source_urls": [
@@ -141,7 +141,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "ram_gb"
     },
     "build": {
@@ -152,7 +152,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "runtime_eligible": {
@@ -163,7 +163,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "source_type": {
@@ -174,7 +174,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "sources": {
@@ -185,7 +185,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "confidence": {
@@ -196,7 +196,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "verified_by": {
@@ -207,7 +207,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "verified_at": {
@@ -218,7 +218,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": null
     },
     "notch.type": {
@@ -228,7 +228,7 @@
       "method": "C2 source-backed geometry; human review pending: manufacturer_front_render_visual_inference",
       "raw_quote": "",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "notch"
     },
     "notch.position": {
@@ -238,7 +238,7 @@
       "method": "C2 source-backed geometry; human review pending: manufacturer_front_render_visual_inference",
       "raw_quote": "",
       "csv_file": "devices.csv",
-      "csv_line": 580,
+      "csv_line": 579,
       "csv_column": "notch_position"
     }
   },
@@ -255,7 +255,7 @@
       "https://www.hmd.com/en_int/support/nokia-g11-plus-user-guide/keys-and-parts"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 580,
+    "csv_line": 579,
     "csv_columns": [
       "screen_inches",
       "chipset_family",

@@ -1,6 +1,6 @@
 # SimuFarm — C2 data remediation (review pending)
 
-Twenty original brand shells and templates; 933 retained sourced candidates plus 22 reference drafts (955 static previews). This branch follows MASTER_PROMPT.md and supersedes all previous runtime-first plans. No cloud, paid resource, emulator, API-quota call or deployment is involved.
+Twenty original brand shells and templates; 932 retained sourced candidates plus 22 reference drafts (954 static previews). This branch follows MASTER_PROMPT.md and supersedes all previous runtime-first plans. No cloud, paid resource, emulator, API-quota call or deployment is involved.
 
 ## Run locally
 Python 3.12 and Node 22 are the intended CI runtime. From repository root:
@@ -34,7 +34,7 @@ Screen dpi currently denotes physical PPI, including disclosed calculations for 
 ## Runtime limitations and later gates
 Redroid ARM64 only; no docker-android or /dev/kvm. No per-device disk images, /data copying, baked per-model build.prop, functional iOS or physical-device farm. Fresh containers and actual identity evidence belong to Stage D; unique IMEI/GSF/advertising IDs are not assumed if absent. No Play Integrity/SafetyNet/certification spoofing is attempted. Apps requiring certified devices may reject the runtime. Emulator results do not establish real-radio/sensor/camera/DRM/battery/thermal or hardware-performance behavior.
 
-No Oracle resources are created until Stage D and verified nonbillable eligibility. Capacity is unmeasured, not promised. GADS lifecycle/Appium is Stage G; Magisk Stage E. Stage B static scope is accepted. Runtime evidence is separate and does not block Stage C. The original 1,000-row target is retired under C2 Option B; actual retained counts and exemptions govern the cohort. Stage C engineering is accepted; C2 adopts Option B with 933 retained sourced candidates, without claiming they are all independently verified. The earlier claim of no carrier/cosmetic duplicates was incorrect. The generator is implemented; no runtime executor or provisioning runs here.
+No Oracle resources are created until Stage D and verified nonbillable eligibility. Capacity is unmeasured, not promised. GADS lifecycle/Appium is Stage G; Magisk Stage E. Stage B static scope is accepted. Runtime evidence is separate and does not block Stage C. The original 1,000-row target is retired under C2 Option B; actual retained counts and exemptions govern the cohort. Stage C engineering is accepted; C2 adopts Option B with 932 retained sourced candidates, without claiming they are all independently verified. The earlier claim of no carrier/cosmetic duplicates was incorrect. The generator is implemented; no runtime executor or provisioning runs here.
 
 MobileAPI conservative cap 50/month; zero calls made by this work and account remaining quota unknown. API key existence is operator-confirmed; its contents were not read. Repository PUBLIC was already explicitly authorized and verified; no visibility change was needed for this stage. CI uses standard runners only, code/schema/static/browser checks, no emulator or cloud deployment.
 
@@ -53,4 +53,4 @@ Runtime eligibility requires complete sourced identity plus actual human review 
 
 C2 curations, source conflicts and rejected/merged IDs are recorded in data/rejections.md and data/research/stage-c2/. A 100-device sourced geometry coverage cohort is operator-approved; it is not a model-popularity ranking. No padding restores a round total. Historical Stage C import receipts remain evidence of the original source, not verification of current facts.
 
-Current C2 source-checked subset: 105 distinct device models for existence/geometry or named corrected fields; this is not complete verification of all 933 candidate specifications. Cutout type and position are sourced for 100/933 (10.72%). The approved sample is selected for coverage with popularity unverified. Stage E gate: `python scripts/stage_e_gate.py` returns a nonzero exit until both C2 review and a human-reviewed runtime subset exist.
+Current C2 source-checked subset: 105 distinct device models for existence/geometry or named corrected fields; this is not complete verification of all 932 candidate specifications. Cutout type and position are sourced for 100/932 (10.73%). The approved sample is selected for coverage with popularity unverified. Stage E gate: `python scripts/stage_e_gate.py` returns a nonzero exit until both C2 review and a human-reviewed runtime subset exist.

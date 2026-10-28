@@ -1,6 +1,6 @@
 {
   "date": "2026-10-28",
-  "retained_sourced_candidates": 933,
+  "retained_sourced_candidates": 932,
   "source_checked_distinct_physical_device_models": 105,
   "source_checked_scope": "Exact-model existence, geometry or named targeted fields only; not complete specification/hardware verification.",
   "source_checked_ids": [
@@ -37,7 +37,6 @@
     "gen-nokia-53",
     "gen-nokia-54",
     "gen-nokia-835g",
-    "gen-nokia-8v5guw",
     "gen-nokia-c01plus",
     "gen-nokia-c10",
     "gen-nokia-c110",
@@ -69,6 +68,7 @@
     "gen-nokia-g605g",
     "gen-nokia-x10",
     "gen-nokia-x20",
+    "gen-nokia-xr20",
     "gen-nothing-cmfphone1",
     "gen-nothing-phone-4a",
     "gen-nothing-phone-4a-pro",
@@ -113,11 +113,11 @@
   "fully_human_reviewed_profiles": 0,
   "runtime_eligible_profiles": 0,
   "notch_and_position_known": 100,
-  "notch_and_position_unknown": 833,
-  "notch_coverage_ratio": 0.10718113612004287,
+  "notch_and_position_unknown": 832,
+  "notch_coverage_ratio": 0.1072961373390558,
   "model_popularity_verified": false,
   "selection": "Operator-approved sourced geometry coverage sample",
   "no_padding": true,
-  "removed_or_merged": 67,
+  "removed_or_merged": 68,
   "previous_duplicate_free_claim_correct": false
 }

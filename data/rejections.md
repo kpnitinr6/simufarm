@@ -73,3 +73,14 @@ Manufacturer/specification identity confirmation is required before quarantined 
 | gen-samsung-galaxya53s5g | quarantined | Exact device identity not confirmed by manufacturer launch/product specification or GSMArena; quarantine, no assertion that device can never exist. A53s must not be silently conflated with A53/A52s. | https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a53s-5g/samsung-galaxy-a53s-5g-6gb-128gb-5g.json; https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset |
 | gen-samsung-galaxyzflip7olympicedition | gen-samsung-galaxyzflip7 | Olympic Edition cosmetic/retail edition collapsed into same Z Flip7 physical model. | https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-flip-7-olympic-edition/samsung-galaxy-z-flip-7-olympic-edition-12gb-512gb-5g.json; https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset |
 | gen-xiaomi-mixflip2diamondlimitededition | gen-xiaomi-mixflip2 | Diamond Limited Edition cosmetic retail edition collapsed into Mix Flip2 physical model. | https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/mix-flip-2-diamond-limited-edition/xiaomi-mix-flip-2-diamond-limited-edition-12gb-256gb-5g.json; https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset |
+
+## Additional carrier-family merge
+`gen-nokia-8v5guw` → `gen-nokia-835g`. HMD confirms Verizon exclusivity; GSMArena identifies the mmWave-supporting Nokia8.3 adaptation. This is a carrier-family grouping under the requested policy; radio hardware is not asserted identical. Geometry coverage replaces the retired8V entry with independently sourced NokiaXR20.
+
+Sources:
+- https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-v-5g-uw/nokia-8-v-5g-uw-aitoolbuzz-7078-6gb-64gb-5g.json
+- https://aitoolbuzz.com/mobiles/nokia-8-v-5g-uw
+- https://storage.googleapis.com/play_public/supported_devices.csv
+- https://www.hmd.com/en_int/support/nokia-8-v-5g-uw-user-guide/keys-and-parts
+- https://www.hmd.com/en_int/press/nokia-8-v-5g-uw-press-release
+- https://www.gsmarena.com/nokia_8_v_5g_uw_is_the_nokia_83_for_verizons_uw_5g_network-news-46198.php
