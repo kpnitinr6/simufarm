@@ -1,0 +1,18 @@
+{
+  "stage_c2": {
+    "engineering_complete": false,
+    "human_accepted": false,
+    "review_required": true
+  },
+  "stage_d": {
+    "authorized": true,
+    "provisioning_observed": false
+  },
+  "stage_e": {
+    "requires": [
+      "stage_c2 engineering complete and human accepted",
+      "at least one complete human-reviewed runtime-eligible profile"
+    ],
+    "started": false
+  }
+}

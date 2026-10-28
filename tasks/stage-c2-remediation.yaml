@@ -1,0 +1,29 @@
+{
+  "id": "stage-c2-remediation",
+  "agent": "codex",
+  "branch": "agent/codex/stage-c2-integration",
+  "status": "needs-human",
+  "option": "B no padding",
+  "retained_sourced_candidates": 933,
+  "source_checked_models": 105,
+  "source_checked_scope": "Exact-model existence, geometry or named targeted fields only; not complete specification/hardware verification.",
+  "removed_or_merged": 67,
+  "geometry_coverage": {
+    "complete": 100,
+    "total": 933,
+    "popularity_verified": false,
+    "selection_approved": "coverage"
+  },
+  "source_conflicts": [
+    "S25 FE official launch says Android16; requested15 not applied",
+    "A53s identity unconfirmed; removed rather than relabeled",
+    "Nothing4a/Pro and Fold8Ultra official existence confirmed"
+  ],
+  "stage_e_started": false,
+  "zero_spend_check": {
+    "will_create_bill": false,
+    "passed": true,
+    "execution_class": "local_only",
+    "reason": "Public source research/local tests/public standard CI; no MobileAPI or cloud execution."
+  }
+}

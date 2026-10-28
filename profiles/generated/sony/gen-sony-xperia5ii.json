@@ -13,8 +13,8 @@
     "dpi": 449.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Sony_Xperia_5_II",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-5-ii.json",
+    "https://www.dxomark.com/sony-xperia-5-ii-display-review-holding-the-middle-ground/",
     "https://www.sony.com/electronics/mobile-phones/xperia-5-ii"
   ],
   "confidence": 0.85,

@@ -4,7 +4,8 @@ test('generated collection is isolated, static-only and paginated', async ({page
  const response = await request.get('/catalog.json');
  const catalog = await response.json();
  const generated = catalog.filter((p:any) => p.cohort === 'generated');
- expect(generated).toHaveLength(1000);
+ const policy = await (await request.get('/cohort-policy.json')).json();
+ expect(generated).toHaveLength(policy.retained_candidate_count);
  for (const p of generated) {
   expect(p.build).toBeNull();
   expect(p.runtime_eligible).toBe(false);
@@ -13,7 +14,7 @@ test('generated collection is isolated, static-only and paginated', async ({page
  await page.goto('/');
  await page.getByLabel('Collection', {exact:true}).selectOption('generated');
  await expect(page.locator('article')).toHaveCount(24);
- await expect(page.getByText('1000 previews', {exact:true})).toBeVisible();
+ await expect(page.getByText(`${generated.length} previews`, {exact:true})).toBeVisible();
  const first = await page.locator('article h2').first().innerText();
  await page.getByRole('button', {name:'Next', exact:true}).click();
  await expect(page.locator('article')).toHaveCount(24);
@@ -38,11 +39,12 @@ test('representative generated pages load original shells', async ({page, reques
 });
 
 
-test('all 1000 generated URLs serve escaped static pages', async ({request}) => {
+test('all retained generated URLs serve escaped static pages', async ({request}) => {
  test.setTimeout(60000);
  const data = await (await request.get('/catalog.json')).json();
  const generated = data.filter((p:any) => p.cohort === 'generated');
- expect(generated).toHaveLength(1000);
+ const policy = await (await request.get('/cohort-policy.json')).json();
+ expect(generated).toHaveLength(policy.retained_candidate_count);
  for (let offset = 0; offset < generated.length; offset += 20) {
   await Promise.all(generated.slice(offset, offset + 20).map(async (p:any) => {
    const response = await request.get(p.url);

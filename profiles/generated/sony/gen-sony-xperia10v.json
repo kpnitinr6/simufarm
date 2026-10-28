@@ -13,8 +13,8 @@
     "dpi": 449.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 6.0,
   "build": null,
@@ -22,7 +22,8 @@
   "source_type": "scraper",
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2023/xperia-10-v/sony-xperia-10-v-6gb-128gb-5g.json",
-    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+    "https://www.nextpit.de/handys/sony-xperia-10-v/test"
   ],
   "confidence": 0.85,
   "verified_by": null,

@@ -7,221 +7,258 @@
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "id"
     },
     "brand": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "brand"
     },
     "model": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "model"
     },
     "release_year": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "release_year"
     },
     "os_family": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "os_version": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "os_version"
     },
     "shell_id": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "base_image_id": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "screen.width_px": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "width_px"
     },
     "screen.height_px": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "height_px"
     },
     "screen.dpi": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "dpi"
     },
     "notch": {
       "source_urls": [
-        "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
-        "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 source-backed geometry; human review pending: published_geometry_description",
+      "raw_quote": "the Xperia 1 II still has no notch, instead keeping the selfie camera in the top bezel.",
       "csv_file": "devices.csv",
-      "csv_line": 659,
-      "csv_column": "notch"
+      "csv_line": 601
     },
     "ram_gb": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": "ram_gb"
     },
     "build": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "runtime_eligible": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "source_type": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "sources": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "confidence": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "verified_by": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
     },
     "verified_at": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
         "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 659,
+      "csv_line": 601,
       "csv_column": null
+    },
+    "notch.type": {
+      "source_urls": [
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php"
+      ],
+      "method": "C2 source-backed geometry; human review pending: published_geometry_description",
+      "raw_quote": "the Xperia 1 II still has no notch, instead keeping the selfie camera in the top bezel.",
+      "csv_file": "devices.csv",
+      "csv_line": 601,
+      "csv_column": "notch"
+    },
+    "notch.position": {
+      "source_urls": [
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php"
+      ],
+      "method": "C2 source-backed geometry; human review pending: published_geometry_description",
+      "raw_quote": "the Xperia 1 II still has no notch, instead keeping the selfie camera in the top bezel.",
+      "csv_file": "devices.csv",
+      "csv_line": 601,
+      "csv_column": "notch_position"
     }
   },
   "cohort": "stage-c-generated",
@@ -234,10 +271,11 @@
     "source_urls": [
       "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+      "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
       "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 659,
+    "csv_line": 601,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -252,5 +290,22 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_geometry_check": {
+    "id": "gen-sony-xperia1ii",
+    "model": "Sony Xperia 1 II",
+    "brand": "sony",
+    "notch": "none",
+    "notch_position": "none",
+    "sources": [
+      "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php"
+    ],
+    "method": "published_geometry_description",
+    "raw_quote": "the Xperia 1 II still has no notch, instead keeping the selfie camera in the top bezel.",
+    "rank": null,
+    "rank_source": null,
+    "confidence": 0.95,
+    "human_review": "pending",
+    "runtime_eligible": false
+  }
 }

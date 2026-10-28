@@ -13,8 +13,8 @@
     "dpi": 394.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_center"
   },
   "ram_gb": 16.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/OnePlus_10T",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/oneplus-10t.json",
+    "https://www.androidcentral.com/phones/oneplus-10t-review",
     "https://www.oneplus.com/global/10t/specs"
   ],
   "confidence": 0.85,

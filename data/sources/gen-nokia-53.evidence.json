@@ -7,221 +7,258 @@
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "id"
     },
     "brand": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "brand"
     },
     "model": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "model"
     },
     "release_year": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "release_year"
     },
     "os_family": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "os_version": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "os_version"
     },
     "shell_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "base_image_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "screen.width_px": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "width_px"
     },
     "screen.height_px": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "height_px"
     },
     "screen.dpi": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "dpi"
     },
     "notch": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
-        "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 source-backed geometry; human review pending: manufacturer_front_render_visual_inference",
+      "raw_quote": "",
       "csv_file": "devices.csv",
-      "csv_line": 600,
-      "csv_column": "notch"
+      "csv_line": 551
     },
     "ram_gb": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": "ram_gb"
     },
     "build": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "runtime_eligible": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "source_type": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "sources": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "confidence": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "verified_by": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
     },
     "verified_at": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
         "https://github.com/cigarplug/scrape-gsma",
-        "https://storage.googleapis.com/play_public/supported_devices.csv"
+        "https://storage.googleapis.com/play_public/supported_devices.csv",
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 600,
+      "csv_line": 551,
       "csv_column": null
+    },
+    "notch.type": {
+      "source_urls": [
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
+      ],
+      "method": "C2 source-backed geometry; human review pending: manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "csv_file": "devices.csv",
+      "csv_line": 551,
+      "csv_column": "notch"
+    },
+    "notch.position": {
+      "source_urls": [
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
+      ],
+      "method": "C2 source-backed geometry; human review pending: manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "csv_file": "devices.csv",
+      "csv_line": 551,
+      "csv_column": "notch_position"
     }
   },
   "cohort": "stage-c-generated",
@@ -234,10 +271,11 @@
     "source_urls": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
       "https://github.com/cigarplug/scrape-gsma",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 600,
+    "csv_line": 551,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -252,5 +290,26 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_geometry_check": {
+    "id": "gen-nokia-53",
+    "model": "Nokia 5.3",
+    "brand": "nokia",
+    "notch": "teardrop",
+    "notch_position": "top_center",
+    "sources": [
+      "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
+    ],
+    "method": "manufacturer_front_render_visual_inference",
+    "raw_quote": "",
+    "rank": null,
+    "rank_source": null,
+    "confidence": 0.95,
+    "human_review": "pending",
+    "runtime_eligible": false,
+    "image_url": "https://images.ctfassets.net/0weg701w29lb/3ByifJAZWRJIvBQ5uUnOY0/63fd9e54d085dda6c9cb0313f764dc13/nokia_5_3-user_guide-hero.png",
+    "source_title": "Nokia 5.3 user guide",
+    "diagram_url": "https://images.ctfassets.net/0weg701w29lb/3PiTwVNvo4DDIgtbuBfJNE/cb7f64c686bb26a64e3ca59370f6716f/Nokia_5_3_front_and_back.jpg?h=400&fm=png&fl=png8",
+    "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+  }
 }

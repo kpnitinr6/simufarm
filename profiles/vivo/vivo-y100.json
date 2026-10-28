@@ -16,7 +16,7 @@
     "type": "teardrop",
     "position": "top_center"
   },
-  "ram_gb": 8,
+  "ram_gb": 8.0,
   "build": {
     "ro.product.brand": null,
     "ro.product.model": null,

@@ -24,7 +24,7 @@ def profile_data():
         },
         "screen": {"width_px": 1000, "height_px": 2000, "dpi": 400},
         "notch": {"type": "none", "position": "none"},
-        "ram_gb": 4,
+        "ram_gb": 4.0,
         "sources": ["https://example.org/test-fixture"],
         "source_type": "manual",
         "confidence": 1,

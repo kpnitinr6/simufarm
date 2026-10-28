@@ -13,8 +13,8 @@
     "dpi": 396.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -24,7 +24,8 @@
     "https://en.wikipedia.org/wiki/Sony_Xperia_1_VII",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2025/sony-xperia-1-vii.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
-    "https://www.sony.com/electronics/mobile-phones/xperia-1-vii"
+    "https://www.sony.com/electronics/mobile-phones/xperia-1-vii",
+    "https://www.techradar.com/phones/sony-xperia-phones/sony-xperia-1-vii-review"
   ],
   "confidence": 0.85,
   "verified_by": null,

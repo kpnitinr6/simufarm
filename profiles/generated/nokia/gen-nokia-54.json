@@ -13,8 +13,8 @@
     "dpi": 269.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 4.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/5-4/nokia-5-4-beridzeg45-437-4gb.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
-    "https://www.gsmarena.com/nokia_5_4-10624.php"
+    "https://www.gsmarena.com/nokia_5_4-10624.php",
+    "https://www.hmd.com/en_int/support/nokia-5-4-user-guide/keys-and-parts"
   ],
   "confidence": 0.85,
   "verified_by": null,

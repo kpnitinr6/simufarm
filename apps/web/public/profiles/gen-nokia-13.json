@@ -13,8 +13,8 @@
     "dpi": 295.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "teardrop",
+    "position": "top_center"
   },
   "ram_gb": 1.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://aitoolbuzz.com/mobiles/nokia-1-3",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/1-3/nokia-1-3-aitoolbuzz-6737-1gb-16gb-4g-lte.json",
-    "https://storage.googleapis.com/play_public/supported_devices.csv"
+    "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.hmd.com/en_int/support/nokia-1-3-user-guide/keys-and-parts"
   ],
   "confidence": 0.85,
   "verified_by": null,

@@ -16,7 +16,7 @@
     "contracts:check": "python scripts/export_contracts.py --check",
     "test:web": "playwright test",
     "generate:static": "python scripts/render_static.py --allow-draft",
-    "generate:profiles": "python scripts/generate_profiles.py data/devices.csv --require-cohort --exemptions data/devices.csv.exemptions.yaml"
+    "generate:profiles": "python scripts/generate_profiles.py data/devices.csv --require-cohort --exemptions data/devices.csv.exemptions.yaml --cohort-policy data/cohort-policy.json"
   },
   "devDependencies": {
     "typescript": "^5.7.2",

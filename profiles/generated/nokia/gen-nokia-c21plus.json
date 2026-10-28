@@ -13,8 +13,8 @@
     "dpi": 269.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "teardrop",
+    "position": "top_center"
   },
   "ram_gb": 3.0,
   "build": null,
@@ -22,6 +22,7 @@
   "source_type": "scraper",
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/c21-plus/nokia-c21-plus-3gb-32gb-4g-lte.json",
+    "https://www.hmd.com/en_int/support/nokia-c21-plus-user-guide/keys-and-parts",
     "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
   ],
   "confidence": 0.85,

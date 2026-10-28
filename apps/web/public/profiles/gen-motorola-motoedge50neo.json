@@ -13,8 +13,8 @@
     "dpi": 465.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_center"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/motorola/2024/moto-edge-50-neo/motorola-moto-edge-50-neo-8gb-256gb-5g.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
-    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+    "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+    "https://www.replacebase.co.uk/media/wysiwyg/pdf/Edge-50-Neo/XT2409-X_motorola-edge-50-neo_Level-3-Service-Manual-for-EU_V1.0.PDF"
   ],
   "confidence": 0.85,
   "verified_by": null,

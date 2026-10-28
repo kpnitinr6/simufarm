@@ -26,7 +26,7 @@
   },
   "per_brand": {
     "vivo": {
-      "count": 64,
+      "count": 58,
       "os_versions": [
         "13",
         "14",
@@ -45,9 +45,8 @@
       ]
     },
     "samsung": {
-      "count": 64,
+      "count": 45,
       "os_versions": [
-        "11",
         "12",
         "13",
         "14",
@@ -66,7 +65,7 @@
       ]
     },
     "xiaomi": {
-      "count": 64,
+      "count": 57,
       "os_versions": [
         "12",
         "13",
@@ -104,9 +103,8 @@
       ]
     },
     "realme": {
-      "count": 64,
+      "count": 63,
       "os_versions": [
-        "11",
         "12",
         "13",
         "14",
@@ -114,8 +112,7 @@
         "16"
       ],
       "screen_sizes": [
-        "large",
-        "medium"
+        "large"
       ],
       "chipset_families": [
         "mediatek-dimensity",
@@ -125,7 +122,7 @@
       ]
     },
     "oneplus": {
-      "count": 64,
+      "count": 50,
       "os_versions": [
         "11",
         "12",
@@ -227,7 +224,7 @@
       ]
     },
     "nokia": {
-      "count": 60,
+      "count": 49,
       "os_versions": [
         "10",
         "11",
@@ -396,7 +393,7 @@
       ]
     },
     "tcl": {
-      "count": 61,
+      "count": 52,
       "os_versions": [
         "10",
         "11",

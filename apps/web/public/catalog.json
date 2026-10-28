@@ -54,8 +54,8 @@
       "dpi": 391.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -63,6 +63,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2020/rog-phone-3.json",
+      "https://www.dxomark.com/asus-rog-phone-3-display-review-struggles-with-video/",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
@@ -120,8 +121,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -130,7 +131,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/ASUS_ROG_Phone_5",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2021/asus-rog-phone-5.json",
-      "https://rog.asus.com/phones/rog-phone-5/"
+      "https://rog.asus.com/phones/rog-phone-5/",
+      "https://www.xataka.com/analisis/asus-rog-phone-5-analisis-caracteristicas-precio-especificaciones/amp"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -286,8 +288,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -296,7 +298,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Asus_ROG_Phone_6",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2022/asus-rog-phone-6.json",
-      "https://rog.asus.com/phones/rog-phone-6-model/"
+      "https://rog.asus.com/phones/rog-phone-6-model/",
+      "https://www.techadvisor.com/article/1418170/asus-rog-phone-6-review.html"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -419,8 +422,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -429,6 +432,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Asus_ROG_Phone_7",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2023/asus-rog-phone-7.json",
+      "https://jamonline.ph/reviews/asus-rog-phone-7-review/",
       "https://rog.asus.com/phones/rog-phone-7-model/"
     ],
     "confidence": 0.85,
@@ -453,8 +457,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -462,6 +466,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2023/rog-phone-7-ultimate.json",
+      "https://www.computerbase.de/artikel/smartphones/asus-rog-phone-7-ultimate-test.83847/",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
@@ -960,8 +965,8 @@
       "dpi": 421.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -971,7 +976,8 @@
       "https://en.wikipedia.org/wiki/Pixel_10",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2025/pixel-10.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_10_specs"
+      "https://store.google.com/product/pixel_10_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -995,8 +1001,8 @@
       "dpi": 421.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -1006,7 +1012,8 @@
       "https://en.wikipedia.org/wiki/Pixel_10a",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2026/pixel-10a.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_10a_specs"
+      "https://store.google.com/product/pixel_10a_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10a"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1030,8 +1037,8 @@
       "dpi": 497.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -1041,7 +1048,8 @@
       "https://en.wikipedia.org/wiki/Pixel_10_Pro",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2025/pixel-10-pro.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_10_pro_specs"
+      "https://store.google.com/product/pixel_10_pro_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10Pro"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1100,8 +1108,8 @@
       "dpi": 482.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -1111,7 +1119,8 @@
       "https://en.wikipedia.org/wiki/Pixel_10_Pro",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2025/pixel-10-pro-xl.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_10_pro_xl_specs"
+      "https://store.google.com/product/pixel_10_pro_xl_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10ProXL"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1170,8 +1179,8 @@
       "dpi": 416.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -1181,7 +1190,8 @@
       "https://en.wikipedia.org/wiki/Pixel_4a",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2020/pixel-4a-5g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_4a_5g_specs"
+      "https://store.google.com/product/pixel_4a_5g_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel4a(5G)"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1205,8 +1215,8 @@
       "dpi": 430.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -1215,7 +1225,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Pixel_5",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2020/pixel-5.json",
-      "https://store.google.com/product/pixel_5_specs"
+      "https://store.google.com/product/pixel_5_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel5"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1239,8 +1250,8 @@
       "dpi": 415.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -1250,7 +1261,8 @@
       "https://en.wikipedia.org/wiki/Pixel_5a",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2021/pixel-5a.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_5a_specs"
+      "https://store.google.com/product/pixel_5a_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel5a(5G)"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1274,8 +1286,8 @@
       "dpi": 411.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -1284,7 +1296,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Pixel_6",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2021/pixel-6.json",
-      "https://store.google.com/us/product/pixel_6_specs"
+      "https://store.google.com/us/product/pixel_6_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel6"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1308,8 +1321,8 @@
       "dpi": 431.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -1318,7 +1331,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Pixel_6a",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2022/pixel-6a.json",
-      "https://store.google.com/us/product/pixel_6a_specs"
+      "https://store.google.com/us/product/pixel_6a_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel6a"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1342,8 +1356,8 @@
       "dpi": 513.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -1352,7 +1366,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Pixel_6_Pro",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2021/pixel-6-pro.json",
-      "https://store.google.com/us/product/pixel_6_pro_specs"
+      "https://store.google.com/us/product/pixel_6_pro_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel6Pro"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1376,8 +1391,8 @@
       "dpi": 418.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -1386,7 +1401,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Pixel_7",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2022/pixel-7.json",
-      "https://store.google.com/us/product/pixel_7_specs"
+      "https://store.google.com/us/product/pixel_7_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel7"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1410,8 +1426,8 @@
       "dpi": 431.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -1421,7 +1437,8 @@
       "https://en.wikipedia.org/wiki/Pixel_7a",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2023/pixel-7a.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/us/product/pixel_7a_specs"
+      "https://store.google.com/us/product/pixel_7a_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel7a"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1445,8 +1462,8 @@
       "dpi": 513.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -1455,7 +1472,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Pixel_7",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2022/pixel-7-pro.json",
-      "https://store.google.com/product/pixel_7_pro_specs"
+      "https://store.google.com/product/pixel_7_pro_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel7Pro"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1514,8 +1532,8 @@
       "dpi": 431.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -1525,7 +1543,8 @@
       "https://en.wikipedia.org/wiki/Pixel_8a",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-8a.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_8a_specs"
+      "https://store.google.com/product/pixel_8a_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel8a"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1549,8 +1568,8 @@
       "dpi": 490.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -1560,7 +1579,8 @@
       "https://en.wikipedia.org/wiki/Pixel_8",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2023/pixel-8-pro.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_8_pro_specs"
+      "https://store.google.com/product/pixel_8_pro_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel8Pro"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1584,8 +1604,8 @@
       "dpi": 421.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -1595,7 +1615,8 @@
       "https://en.wikipedia.org/wiki/Pixel_9",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_9_specs"
+      "https://store.google.com/product/pixel_9_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1619,8 +1640,8 @@
       "dpi": 421.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -1630,7 +1651,8 @@
       "https://en.wikipedia.org/wiki/Pixel_9a",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2025/pixel-9a.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_9a_specs"
+      "https://store.google.com/product/pixel_9a_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9a"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1654,8 +1676,8 @@
       "dpi": 497.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -1665,7 +1687,8 @@
       "https://en.wikipedia.org/wiki/Pixel_9_Pro",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_9_pro_specs"
+      "https://store.google.com/product/pixel_9_pro_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9Pro"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -1724,8 +1747,8 @@
       "dpi": 482.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -1735,7 +1758,8 @@
       "https://en.wikipedia.org/wiki/Pixel_9",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_9_pro_specs"
+      "https://store.google.com/product/pixel_9_pro_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -9372,8 +9396,8 @@
       "dpi": 474.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -9382,7 +9406,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/motorola/2024/edge-50-neo/motorola-edge-50-neo-12gb-512gb-5g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
+      "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024",
+      "https://www.replacebase.co.uk/media/wysiwyg/pdf/Edge-50-Neo/XT2409-X_motorola-edge-50-neo_Level-3-Service-Manual-for-EU_V1.0.PDF"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -9848,8 +9873,8 @@
       "dpi": 465.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -9858,7 +9883,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/motorola/2024/moto-edge-50-neo/motorola-moto-edge-50-neo-8gb-256gb-5g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+      "https://www.replacebase.co.uk/media/wysiwyg/pdf/Edge-50-Neo/XT2409-X_motorola-edge-50-neo_Level-3-Service-Manual-for-EU_V1.0.PDF"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -11360,8 +11386,8 @@
       "dpi": 295.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 1.0,
     "build": null,
@@ -11370,46 +11396,13 @@
     "sources": [
       "https://aitoolbuzz.com/mobiles/nokia-1-3",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/1-3/nokia-1-3-aitoolbuzz-6737-1gb-16gb-4g-lte.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-1-3-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-13.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-13lteemea",
-    "brand": "nokia",
-    "model": "Nokia 1.3 2020 LTE EMEA",
-    "release_year": 2020,
-    "os_family": "android",
-    "os_version": "10",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1520,
-      "dpi": 295.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 1.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/1-3-2020-lte-emea.json",
-      "https://phonedb.net/index.php?m=device&id=16725",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-13lteemea.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -11428,8 +11421,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -11438,46 +11431,13 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/1-4-3gb-ram-64gb/nokia-1-4-3gb-ram-64gb-3gb-64gb-4g-lte.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-1-4-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-14.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-24",
-    "brand": "nokia",
-    "model": "2.4",
-    "release_year": 2020,
-    "os_family": "android",
-    "os_version": "10",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 270.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 3.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/2-4.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-24.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -11496,8 +11456,8 @@
       "dpi": 270.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -11506,6 +11466,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/2-4-lte.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-2-4-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
@@ -11564,8 +11525,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -11574,6 +11535,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/3-4/nokia-3-4-4gb-64gb-4g-lte.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-3-4-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -11598,8 +11560,8 @@
       "dpi": 268.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -11608,7 +11570,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/5-3/nokia-5-3-scrapegsma-1272.json",
       "https://github.com/cigarplug/scrape-gsma",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -11632,8 +11595,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -11642,78 +11605,13 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/5-4/nokia-5-4-beridzeg45-437-4gb.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.gsmarena.com/nokia_5_4-10624.php"
+      "https://www.gsmarena.com/nokia_5_4-10624.php",
+      "https://www.hmd.com/en_int/support/nokia-5-4-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-54.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-54ltelatam",
-    "brand": "nokia",
-    "model": "5.4 2021 LTE LATAM 64GB",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1560,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/5-4-2021-lte-latam-64gb.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-54ltelatam.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-83",
-    "brand": "nokia",
-    "model": "8.3 2020",
-    "release_year": 2020,
-    "os_family": "android",
-    "os_version": "10",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 386.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-3-2020.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-83.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -11732,8 +11630,8 @@
       "dpi": 386.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -11742,45 +11640,13 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-3-5g/nokia-8-3-5g-scrapegsma-1271.json",
       "https://github.com/cigarplug/scrape-gsma",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-8-3-5g-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-835g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-8v",
-    "brand": "nokia",
-    "model": "8 V",
-    "release_year": 2020,
-    "os_family": "android",
-    "os_version": "10",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 386.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-v.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-8v.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -11799,8 +11665,8 @@
       "dpi": 386.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -11809,7 +11675,8 @@
     "sources": [
       "https://aitoolbuzz.com/mobiles/nokia-8-v-5g-uw",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/8-v-5g-uw/nokia-8-v-5g-uw-aitoolbuzz-7078-6gb-64gb-5g.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-8-v-5g-uw-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -11833,8 +11700,8 @@
       "dpi": 295.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 1.0,
     "build": null,
@@ -11843,7 +11710,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/c01-plus/nokia-c01-plus-beridzeg45-4683-1gb.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.gsmarena.com/nokia_c01_plus-10955.php"
+      "https://www.gsmarena.com/nokia_c01_plus-10955.php",
+      "https://www.hmd.com/en_int/support/nokia-c01-plus-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -11867,8 +11735,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 1.0,
     "build": null,
@@ -11876,7 +11744,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/c10/nokia-c10-beridzeg45-6898-1gb.json",
-      "https://www.gsmarena.com/nokia_c10-10844.php"
+      "https://www.gsmarena.com/nokia_c10-10844.php",
+      "https://www.hmd.com/en_int/support/nokia-c10-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -11900,8 +11769,8 @@
       "dpi": 273.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -11909,7 +11778,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c110/nokia-c110-beridzeg45-5649-3gb.json",
-      "https://www.gsmarena.com/nokia_c110-12321.php"
+      "https://www.gsmarena.com/nokia_c110-12321.php",
+      "https://www.hmd.com/en_int/support/nokia-c110-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -11933,8 +11803,8 @@
       "dpi": 278.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 2.0,
     "build": null,
@@ -11943,6 +11813,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c12/nokia-c12-2gb-64gb-4g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c12-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
       "https://www.mobiledokan.com/mobile/nokia-c12"
     ],
@@ -11968,8 +11839,8 @@
       "dpi": 295.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 1.0,
     "build": null,
@@ -11978,7 +11849,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/c1-2nd-edition/nokia-c1-2nd-edition-beridzeg45-4055-1gb.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.gsmarena.com/nokia_c1_2nd_edition-11019.php"
+      "https://www.gsmarena.com/nokia_c1_2nd_edition-11019.php",
+      "https://www.hmd.com/en_int/support/nokia-c1-2nd-edition-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12036,8 +11908,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 1.0,
     "build": null,
@@ -12046,7 +11918,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/c20/nokia-c20-beridzeg45-3376-1gb.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.gsmarena.com/nokia_c20-10843.php"
+      "https://www.gsmarena.com/nokia_c20-10843.php",
+      "https://www.hmd.com/en_int/support/nokia-c20-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12070,8 +11943,8 @@
       "dpi": 282.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12079,7 +11952,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/c200/nokia-c200-beridzeg45-2123-3gb.json",
-      "https://www.gsmarena.com/nokia_c200-11629.php"
+      "https://www.gsmarena.com/nokia_c200-11629.php",
+      "https://www.hmd.com/en_int/support/nokia-c200-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12136,8 +12010,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 2.0,
     "build": null,
@@ -12146,7 +12020,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/c21/nokia-c21-beridzeg45-2252-2gb.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.gsmarena.com/nokia_c21-11380.php"
+      "https://www.gsmarena.com/nokia_c21-11380.php",
+      "https://www.hmd.com/en_int/support/nokia-c21-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12170,8 +12045,8 @@
       "dpi": 273.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12180,7 +12055,8 @@
     "sources": [
       "https://aitoolbuzz.com/mobiles/nokia-c210",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c210/nokia-c210-aitoolbuzz-7166-3gb-32gb-4g-lte.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c210-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12204,8 +12080,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12213,6 +12089,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/c21-plus/nokia-c21-plus-3gb-32gb-4g-lte.json",
+      "https://www.hmd.com/en_int/support/nokia-c21-plus-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -12237,8 +12114,8 @@
       "dpi": 270.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12247,6 +12124,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c22/nokia-c22-3gb-64gb-4g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c22-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
       "https://www.mobiledokan.com/mobile/nokia-c22"
     ],
@@ -12272,8 +12150,8 @@
       "dpi": 295.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 2.0,
     "build": null,
@@ -12281,7 +12159,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/c2-tava/nokia-c2-tava-scrapegsma-1268.json",
-      "https://github.com/cigarplug/scrape-gsma"
+      "https://github.com/cigarplug/scrape-gsma",
+      "https://www.hmd.com/en_int/support/nokia-c2-tava-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12305,8 +12184,8 @@
       "dpi": 295.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 2.0,
     "build": null,
@@ -12315,7 +12194,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/c2-tennen/nokia-c2-tennen-scrapegsma-1267.json",
       "https://github.com/cigarplug/scrape-gsma",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c2-tennen-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12339,8 +12219,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12349,6 +12229,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/c3/nokia-c3-3gb-32gb-4g-lte.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c3-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
     ],
     "confidence": 0.85,
@@ -12373,8 +12254,8 @@
       "dpi": 257.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 2.0,
     "build": null,
@@ -12383,7 +12264,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/c30/nokia-c30-beridzeg45-2253-2gb.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.gsmarena.com/nokia_c30-10967.php"
+      "https://www.gsmarena.com/nokia_c30-10967.php",
+      "https://www.hmd.com/en_int/support/nokia-c30-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12407,8 +12289,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12416,7 +12298,8 @@
     "source_type": "scraper",
     "sources": [
       "https://aitoolbuzz.com/mobiles/nokia-c300",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c300/nokia-c300-aitoolbuzz-7171-3gb-32gb-4g-lte.json"
+      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c300/nokia-c300-aitoolbuzz-7171-3gb-32gb-4g-lte.json",
+      "https://www.hmd.com/en_int/support/nokia-c300-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12440,8 +12323,8 @@
       "dpi": 260.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12450,6 +12333,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/c31/nokia-c31-3gb-32gb-4g-lte.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c31-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -12474,8 +12358,8 @@
       "dpi": 270.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -12484,6 +12368,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c32/nokia-c32-4gb-64gb-4g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c32-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
       "https://www.mobiledokan.com/mobile/nokia-c32"
     ],
@@ -12509,8 +12394,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12519,7 +12404,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/c5-endi/nokia-c5-endi-scrapegsma-1266.json",
       "https://github.com/cigarplug/scrape-gsma",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-c5-endi-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12562,39 +12448,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-nokia-g10",
-    "brand": "nokia",
-    "model": "G10 2021",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 270.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g10-2021.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-g10.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-nokia-g100",
     "brand": "nokia",
     "model": "Nokia G100",
@@ -12609,8 +12462,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -12618,45 +12471,13 @@
     "source_type": "scraper",
     "sources": [
       "https://aitoolbuzz.com/mobiles/nokia-g100",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g100/nokia-g100-aitoolbuzz-7211-4gb-32gb-4g-lte.json"
+      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g100/nokia-g100-aitoolbuzz-7211-4gb-32gb-4g-lte.json",
+      "https://www.hmd.com/en_int/support/nokia-g100-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-g100.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-g10lte",
-    "brand": "nokia",
-    "model": "G10 2021 LTE",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 270.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 3.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g10-2021-lte.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-g10lte.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -12675,8 +12496,8 @@
       "dpi": 270.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12684,45 +12505,13 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g10-2021-lte-latam-64gb.json",
+      "https://www.hmd.com/en_int/support/nokia-g10-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-g10ltelatam.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-g11",
-    "brand": "nokia",
-    "model": "G11 2022",
-    "release_year": 2022,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 270.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 3.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g11-2022.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-g11.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -12741,8 +12530,8 @@
       "dpi": 270.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12750,6 +12539,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g11-2022-nfc.json",
+      "https://www.hmd.com/en_int/support/nokia-g11-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
@@ -12774,8 +12564,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 3.0,
     "build": null,
@@ -12783,7 +12573,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g11-plus/nokia-g11-plus-beridzeg45-2992-3gb.json",
-      "https://www.gsmarena.com/nokia_g11_plus-11644.php"
+      "https://www.gsmarena.com/nokia_g11_plus-11644.php",
+      "https://www.hmd.com/en_int/support/nokia-g11-plus-user-guide/keys-and-parts"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -12807,8 +12598,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -12817,6 +12608,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g20/nokia-g20-4gb-64gb-4g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-g20-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
       "https://www.mobiledokan.com/mobile/nokia-g20"
     ],
@@ -12875,8 +12667,8 @@
       "dpi": 270.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -12885,6 +12677,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g21-6gb-ram-128gb/nokia-g21-6gb-ram-128gb-6gb-128gb-4g-lte.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-g21-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -12909,8 +12702,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -12919,6 +12712,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/g22/nokia-g22-4gb-64gb-4g-lte.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-g22-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -12943,8 +12737,8 @@
       "dpi": 269.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -12952,6 +12746,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/g310-5g/nokia-g310-5g-4gb-128gb-5g.json",
+      "https://www.hmd.com/en_int/support/nokia-g310-5g-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -12976,8 +12771,8 @@
       "dpi": 401.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -12985,45 +12780,13 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g400-5g/nokia-g400-5g-4gb-64gb-5g.json",
+      "https://www.hmd.com/en_int/support/nokia-g400-5g-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-g4005g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-g50",
-    "brand": "nokia",
-    "model": "G50 2021",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1560,
-      "dpi": 252.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/g50-2021.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-g50.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -13061,39 +12824,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-nokia-g60",
-    "brand": "nokia",
-    "model": "G60 2022",
-    "release_year": 2022,
-    "os_family": "android",
-    "os_version": "12",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 400.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g60-2022.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-g60.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-nokia-g605g",
     "brand": "nokia",
     "model": "Nokia G60 5G",
@@ -13108,8 +12838,8 @@
       "dpi": 400.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -13118,6 +12848,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/g60-5g/nokia-g60-5g-6gb-128gb-5g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.hmd.com/en_int/support/nokia-g60-5g-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -13142,8 +12873,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -13151,6 +12882,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/x10-2021.json",
+      "https://www.hmd.com/en_int/support/nokia-x10-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
@@ -13208,8 +12940,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -13217,6 +12949,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/x20-2021.json",
+      "https://www.hmd.com/en_int/support/nokia-x20-user-guide/keys-and-parts",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
@@ -13256,40 +12989,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-nokia-x30.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-nokia-x305g",
-    "brand": "nokia",
-    "model": "Nokia X30 5G",
-    "release_year": 2022,
-    "os_family": "android",
-    "os_version": "12",
-    "shell_id": "nokia",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 409.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2022/x30-5g/nokia-x30-5g-8gb-256gb-5g.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-nokia-x305g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -13374,8 +13073,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -13384,7 +13083,8 @@
     "sources": [
       "https://cmf.tech/products/phone-1",
       "https://en.wikipedia.org/wiki/CMF_Phone_1",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nothing/2024/cmf-phone-1.json"
+      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nothing/2024/cmf-phone-1.json",
+      "https://www.smartprix.com/bytes/nothing-cmf-phone-1-review-set-to-disrupt-the-budget-market/"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -13540,8 +13240,8 @@
       "dpi": 402.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -13550,7 +13250,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Nothing_Phone_(1)",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nothing/2022/nothing-phone-1.json",
-      "https://nothing.tech/products/phone-1"
+      "https://nothing.tech/products/phone-1",
+      "https://www.gsmarena.com/nothing_phone_1-review-2453p2.php"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -13608,8 +13309,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -13618,6 +13319,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Nothing_Phone_(2a)",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nothing/2024/nothing-phone-2a.json",
+      "https://hothardware.com/reviews/nothing-phone-2a-review",
       "https://nothing.tech/products/phone-2a"
     ],
     "confidence": 0.85,
@@ -13744,8 +13446,8 @@
       "dpi": 526.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -13754,46 +13456,13 @@
     "sources": [
       "https://en.wikipedia.org/wiki/OnePlus_10_Pro",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/oneplus-10-pro.json",
+      "https://www.expertreviews.co.uk/technology/phones/oneplus-10-pro-review",
       "https://www.oneplus.com/us/oneplus-10-pro/specs"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-10pro.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-10pro5g",
-    "brand": "oneplus",
-    "model": "Oneplus 10 Pro 5G",
-    "release_year": 2022,
-    "os_family": "android",
-    "os_version": "12",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1440,
-      "height_px": 3216,
-      "dpi": 526.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/10-pro-5g/oneplus-10-pro-5g-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/oneplus-10-pro-5g-12gb-ram"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-10pro5g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -13845,8 +13514,8 @@
       "dpi": 394.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -13855,6 +13524,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/OnePlus_10T",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/oneplus-10t.json",
+      "https://www.androidcentral.com/phones/oneplus-10t-review",
       "https://www.oneplus.com/global/10t/specs"
     ],
     "confidence": 0.85,
@@ -13879,8 +13549,8 @@
       "dpi": 526.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -13889,7 +13559,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/OnePlus_11",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/oneplus-11.json",
-      "https://www.oneplus.com/us/oneplus-11/specs"
+      "https://www.oneplus.com/us/oneplus-11/specs",
+      "https://www.tomsguide.com/reviews/oneplus-11"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -14106,39 +13777,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-oneplus-13s5g",
-    "brand": "oneplus",
-    "model": "OnePlus 13s 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1216,
-      "height_px": 2640,
-      "dpi": 460.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/13s-5g/oneplus-13s-5g-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-13s5g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-oneplus-13t",
     "brand": "oneplus",
     "model": "OnePlus 13T",
@@ -14208,39 +13846,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-oneplus-155g",
-    "brand": "oneplus",
-    "model": "OnePlus 15 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1272,
-      "height_px": 2772,
-      "dpi": 450.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 16.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/15-5g-16gb-ram-512gb/oneplus-15-5g-16gb-ram-512gb-16gb-512gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-155g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-oneplus-15r",
     "brand": "oneplus",
     "model": "OnePlus 15R",
@@ -14289,8 +13894,8 @@
       "dpi": 402.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -14299,6 +13904,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/OnePlus_9_series",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/oneplus-9.json",
+      "https://hothardware.com/reviews/oneplus-9-and-9-pro-review",
       "https://www.oneplus.com/global/9/specs"
     ],
     "confidence": 0.85,
@@ -14323,8 +13929,8 @@
       "dpi": 526.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -14333,6 +13939,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/OnePlus_9_series",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/oneplus-9-pro.json",
+      "https://hothardware.com/reviews/oneplus-9-and-9-pro-review",
       "https://www.oneplus.com/global/9-pro/specs"
     ],
     "confidence": 0.85,
@@ -14372,39 +13979,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-9r.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-9rt",
-    "brand": "oneplus",
-    "model": "9RT",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 398.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/9rt.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-9rt.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -14807,39 +14381,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-oneplus-nord2",
-    "brand": "oneplus",
-    "model": "Nord 2",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 409.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/nord-2.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nord2.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-oneplus-nord25g",
     "brand": "oneplus",
     "model": "Oneplus Nord 2 5G",
@@ -14854,8 +14395,8 @@
       "dpi": 409.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -14864,7 +14405,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/nord-2-5g/oneplus-nord-2-5g-12gb-256gb-5g.json",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/oneplus-nord-2-5g-12gb-256gb"
+      "https://www.mobiledokan.com/mobile/oneplus-nord-2-5g-12gb-256gb",
+      "https://www.techadvisor.com/article/722526/oneplus-nord-2-review.html"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -14888,8 +14430,8 @@
       "dpi": 409.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -14897,45 +14439,13 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-2t.json",
+      "https://www.gsmarena.com/oneplus_nord_2t-review-2461p2.php",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-nord2t.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nord3",
-    "brand": "oneplus",
-    "model": "OnePlus Nord 3",
-    "release_year": 2023,
-    "os_family": "android",
-    "os_version": "13",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1240,
-      "height_px": 2772,
-      "dpi": 451.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 16.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-3/oneplus-nord-3-16gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nord3.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -14987,8 +14497,8 @@
       "dpi": 451.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -14997,6 +14507,7 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-4/oneplus-nord-4-12gb-256gb-5g.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.gizmochina.com/2024/09/25/oneplus-nord-4-review/",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
       "https://www.mobiledokan.com/mobile/oneplus-nord-4-12gb-256gb"
     ],
@@ -15089,8 +14600,8 @@
       "dpi": 409.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_left"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -15098,6 +14609,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-ce-2.json",
+      "https://www.ephotozine.com/article/oneplus-nord-ce-2-smartphone-review-35904",
       "https://www.gsmarena.com/oneplus_nord_ce_2_5g-11259.php",
       "https://www.kaggle.com/datasets/abdulmalik1518/mobiles-dataset-2025",
       "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
@@ -15106,39 +14618,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-nordce2.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nordce25g",
-    "brand": "oneplus",
-    "model": "OnePlus Nord CE 2 5G",
-    "release_year": 2022,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 409.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-ce-2-5g/oneplus-nord-ce-2-5g-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordce25g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -15174,40 +14653,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-nordce2lite.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nordce2lite5g",
-    "brand": "oneplus",
-    "model": "Oneplus Nord CE 2 Lite 5G",
-    "release_year": 2022,
-    "os_family": "android",
-    "os_version": "12",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2412,
-      "dpi": 401.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-ce-2-lite-5g/oneplus-nord-ce-2-lite-5g-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/oneplus-nord-ce-2-lite-5g"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordce2lite5g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -15259,8 +14704,8 @@
       "dpi": 392.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -15268,45 +14713,13 @@
     "source_type": "scraper",
     "sources": [
       "https://aitoolbuzz.com/mobiles/oneplus-nord-ce-3-lite",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-ce-3-lite/oneplus-nord-ce-3-lite-aitoolbuzz-7434-8gb-128gb-5g.json"
+      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-ce-3-lite/oneplus-nord-ce-3-lite-aitoolbuzz-7434-8gb-128gb-5g.json",
+      "https://www.megabites.com.ph/review-oneplus-nord-ce-3-lite-5g-8gb256gb/"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-nordce3lite.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nordce3lite5g",
-    "brand": "oneplus",
-    "model": "OnePlus Nord CE 3 Lite 5G",
-    "release_year": 2023,
-    "os_family": "android",
-    "os_version": "13",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 392.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-ce-3-lite-5g-8gb-ram-256gb/oneplus-nord-ce-3-lite-5g-8gb-ram-256gb-8gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordce3lite5g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -15346,72 +14759,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-oneplus-nordce4lite",
-    "brand": "oneplus",
-    "model": "OnePlus Nord CE4 Lite",
-    "release_year": 2024,
-    "os_family": "android",
-    "os_version": "14",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 395.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://aitoolbuzz.com/mobiles/oneplus-nord-ce4-lite",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7438-8gb-128gb-5g.json"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordce4lite.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nordce4lite5g",
-    "brand": "oneplus",
-    "model": "OnePlus Nord CE 4 Lite 5G",
-    "release_year": 2024,
-    "os_family": "android",
-    "os_version": "14",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 395.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce-4-lite-5g/oneplus-nord-ce-4-lite-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordce4lite5g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-oneplus-nordce4liteindia",
     "brand": "oneplus",
     "model": "OnePlus Nord CE4 Lite (India)",
@@ -15426,8 +14773,8 @@
       "dpi": 395.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -15435,7 +14782,8 @@
     "source_type": "scraper",
     "sources": [
       "https://aitoolbuzz.com/mobiles/oneplus-nord-ce4-lite-india",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7439-8gb-128gb-5g.json"
+      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7439-8gb-128gb-5g.json",
+      "https://www.gizmochina.com/2024/08/05/oneplus-nord-ce-4-lite-review/3/"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -15475,39 +14823,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-nordce5.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nordce55g",
-    "brand": "oneplus",
-    "model": "OnePlus Nord CE 5 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2392,
-      "dpi": 388.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2025/nord-ce-5-5g/oneplus-nord-ce-5-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordce55g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -15608,39 +14923,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-nordce6lite5g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nordn20",
-    "brand": "oneplus",
-    "model": "Nord N20",
-    "release_year": 2022,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 409.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-n20.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordn20.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -15807,39 +15089,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-oneplus-nordn300.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-oneplus-nordn305g",
-    "brand": "oneplus",
-    "model": "OnePlus Nord N30 5G",
-    "release_year": 2023,
-    "os_family": "android",
-    "os_version": "13",
-    "shell_id": "oneplus",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 392.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-n30-5g/oneplus-nord-n30-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-oneplus-nordn305g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -18343,8 +17592,8 @@
       "dpi": 450.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -18353,7 +17602,8 @@
     "sources": [
       "https://aitoolbuzz.com/mobiles/realme-14-pro-plus",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2025/14-pro-plus/realme-14-pro-plus-aitoolbuzz-8714-12gb-128gb-5g.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://www.smartprix.com/bytes/realme-14-pro-review-does-it-deliver-on-all-fronts/"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -20145,39 +19395,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-realme-x9",
-    "brand": "realme",
-    "model": "Realme X9",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "realme",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 409.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/realme/2025/x9/realme-x9-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-realme-x9.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxya06",
     "brand": "samsung",
     "model": "Galaxy A06",
@@ -20411,40 +19628,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-samsung-galaxya26",
-    "brand": "samsung",
-    "model": "Samsung Galaxy A26",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 385.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a26/samsung-galaxy-a26-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/samsung-galaxy-a26"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxya26.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxya265g",
     "brand": "samsung",
     "model": "Galaxy A26 5G",
@@ -20459,8 +19642,8 @@
       "dpi": 385.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "teardrop",
+      "position": "top_center"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -20469,6 +19652,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Samsung_Galaxy_A26",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a26.json",
+      "https://webcdn.cox.com/content/dam/cox/residential/support/Mobile/Print_Media/samsungA26datasheet.pdf",
       "https://www.samsung.com/global/galaxy/galaxy-a26/specs/"
     ],
     "confidence": 0.85,
@@ -20548,39 +19732,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-samsung-galaxya53s5g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy A53s 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "12",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 405.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a53s-5g/samsung-galaxy-a53s-5g-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxya53s5g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxya56",
     "brand": "samsung",
     "model": "Galaxy A56",
@@ -20595,8 +19746,8 @@
       "dpi": 385.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -20605,78 +19756,13 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Samsung_Galaxy_A56",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a56.json",
+      "https://images.samsung.com/is/content/samsung/assets/iran/smartphones/mobile-catalogue/07-2025/general-catalog-july-2025.pdf",
       "https://www.samsung.com/global/galaxy/galaxy-a56/specs/"
     ],
     "confidence": 0.85,
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxya56.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxya565g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy A56 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 385.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a56-5g/samsung-galaxy-a56-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxya565g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxya57",
-    "brand": "samsung",
-    "model": "Samsung Galaxy A57",
-    "release_year": 2026,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 385.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-a57-12gb-ram-256gb/samsung-galaxy-a57-12gb-ram-256gb-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxya57.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -20712,72 +19798,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxya575g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxya755g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy A75 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "12",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2412,
-      "dpi": 394.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-a75-5g/samsung-galaxy-a75-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxya755g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxya835g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy A83 5G",
-    "release_year": 2026,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1440,
-      "height_px": 3200,
-      "dpi": 523.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-a83-5g/samsung-galaxy-a83-5g-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxya835g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -20877,39 +19897,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxyf16.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxyf165g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy F16 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 385.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f16-5g/samsung-galaxy-f16-5g-4gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyf165g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -21047,39 +20034,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-samsung-galaxyf365g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy F36 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 385.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f36-5g/samsung-galaxy-f36-5g-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyf365g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxyf56",
     "brand": "samsung",
     "model": "Samsung Galaxy F56",
@@ -21110,39 +20064,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxyf56.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxyf565g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy F56 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 382.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f56-5g/samsung-galaxy-f56-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyf565g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -21180,72 +20101,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-samsung-galaxyf645g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy F64 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "12",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 393.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-f64-5g/samsung-galaxy-f64-5g-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyf645g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxyf70e",
-    "brand": "samsung",
-    "model": "Samsung Galaxy F70e",
-    "release_year": 2026,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 262.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/samsung-galaxy-f70e/samsung-galaxy-f70e-4gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyf70e.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxyf70e5g",
     "brand": "samsung",
     "model": "Samsung Galaxy F70e 5G",
@@ -21275,39 +20130,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxyf70e5g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxym06",
-    "brand": "samsung",
-    "model": "Samsung Galaxy M06",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 260.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m06-4gb-ram-64gb/samsung-galaxy-m06-4gb-ram-64gb-4gb-64gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxym06.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -21407,39 +20229,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxym16.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxym165g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy M16 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "14",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 385.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m16-5g/samsung-galaxy-m16-5g-4gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxym165g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -21544,50 +20333,17 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-samsung-galaxym365g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy M36 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 385.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m36-5g/samsung-galaxy-m36-5g-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxym365g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxym445g",
     "brand": "samsung",
     "model": "Samsung Galaxy M44 5G",
-    "release_year": 2026,
+    "release_year": 2023,
     "os_family": "android",
     "os_version": "13",
     "shell_id": "samsung",
     "base_image_id": null,
     "screen": {
       "width_px": 1080,
-      "height_px": 2400,
+      "height_px": 2408,
       "dpi": 400.0
     },
     "notch": {
@@ -21600,6 +20356,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+      "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "confidence": 0.85,
@@ -21644,39 +20401,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-samsung-galaxym565g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy M56 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2340,
-      "dpi": 382.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-m56-5g/samsung-galaxy-m56-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxym565g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxys24",
     "brand": "samsung",
     "model": "Galaxy S24",
@@ -21691,8 +20415,8 @@
       "dpi": 416.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -21701,6 +20425,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Samsung_Galaxy_S24",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2024/galaxy-s24.json",
+      "https://www.01net.com/tests/test-des-samsung-galaxy-s24-et-s24-plus-plus-petits-plus-endurants-et-moins-chers.html",
       "https://www.samsung.com/global/galaxy/galaxy-s24/specs/"
     ],
     "confidence": 0.85,
@@ -21725,8 +20450,8 @@
       "dpi": 513.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -21735,6 +20460,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Samsung_Galaxy_S24",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2024/galaxy-s24-plus.json",
+      "https://www.01net.com/tests/test-des-samsung-galaxy-s24-et-s24-plus-plus-petits-plus-endurants-et-moins-chers.html",
       "https://www.samsung.com/global/galaxy/galaxy-s24/specs/"
     ],
     "confidence": 0.85,
@@ -21836,6 +20562,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+      "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
       "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
       "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
     ],
@@ -21895,8 +20622,8 @@
       "dpi": 498.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -21905,7 +20632,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Samsung_Galaxy_S25_Ultra",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-ultra.json",
-      "https://www.samsung.com/global/galaxy/galaxy-s25-ultra/specs/"
+      "https://www.samsung.com/global/galaxy/galaxy-s25-ultra/specs/",
+      "https://www.tomsguide.com/tablets/android-tablets/samsung-galaxy-s25-ultra-vs-google-pixel-9-pro-xl"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22084,72 +20812,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-samsung-galaxyzflip75g",
-    "brand": "samsung",
-    "model": "Samsung Galaxy Z Flip 7 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2520,
-      "dpi": 397.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-z-flip-7-5g/samsung-galaxy-z-flip-7-5g-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyzflip75g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxyzflip7fe",
-    "brand": "samsung",
-    "model": "Samsung Galaxy Z Flip 7 FE",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2640,
-      "dpi": 426.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-z-flip-7-fe-8gb-ram-256gb/samsung-galaxy-z-flip-7-fe-8gb-ram-256gb-8gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyzflip7fe.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-samsung-galaxyzflip7fe5g",
     "brand": "samsung",
     "model": "Samsung Galaxy Z Flip 7 FE 5G",
@@ -22179,39 +20841,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxyzflip7fe5g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxyzflip7olympicedition",
-    "brand": "samsung",
-    "model": "Samsung Galaxy Z Flip 7 Olympic Edition",
-    "release_year": 2026,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2520,
-      "dpi": 397.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-flip-7-olympic-edition/samsung-galaxy-z-flip-7-olympic-edition-12gb-512gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyzflip7olympicedition.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -22259,9 +20888,9 @@
     "shell_id": "samsung",
     "base_image_id": null,
     "screen": {
-      "width_px": 1828,
-      "height_px": 2584,
-      "dpi": 416.0
+      "width_px": 2256,
+      "height_px": 2504,
+      "dpi": 422.0
     },
     "notch": {
       "type": "unknown",
@@ -22273,6 +20902,7 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+      "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
@@ -22280,39 +20910,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-samsung-galaxyzfold8ultra.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-samsung-galaxyzfoldwide",
-    "brand": "samsung",
-    "model": "Samsung Galaxy Z Fold Wide",
-    "release_year": 2026,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "samsung",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1828,
-      "height_px": 2584,
-      "dpi": 416.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-wide/samsung-galaxy-z-fold-wide-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-samsung-galaxyzfoldwide.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -22331,8 +20928,8 @@
       "dpi": 457.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 4.0,
     "build": null,
@@ -22340,7 +20937,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/xperia-10-ii/sony-xperia-10-ii-scrapegsma-656.json",
-      "https://github.com/cigarplug/scrape-gsma"
+      "https://github.com/cigarplug/scrape-gsma",
+      "https://www.techradar.com/reviews/sony-xperia-10-ii"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22364,8 +20962,8 @@
       "dpi": 457.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -22373,7 +20971,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2021/xperia-10-iii.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+      "https://www.techradar.com/reviews/sony-xperia-10-iii"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22430,8 +21029,8 @@
       "dpi": 457.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -22439,7 +21038,8 @@
     "source_type": "scraper",
     "sources": [
       "https://aitoolbuzz.com/mobiles/sony-xperia-10-iv",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-10-iv/sony-xperia-10-iv-aitoolbuzz-10726-6gb-128gb-5g.json"
+      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-10-iv/sony-xperia-10-iv-aitoolbuzz-10726-6gb-128gb-5g.json",
+      "https://www.sony.com.hk/press/pdf/20220511_e.pdf"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22463,8 +21063,8 @@
       "dpi": 449.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 6.0,
     "build": null,
@@ -22472,7 +21072,8 @@
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2023/xperia-10-v/sony-xperia-10-v-6gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset",
+      "https://www.nextpit.de/handys/sony-xperia-10-v/test"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22530,8 +21131,8 @@
       "dpi": 643.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -22540,6 +21141,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Sony_Xperia_1_II",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-1-ii.json",
+      "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php",
       "https://www.sony.com/electronics/mobile-phones/xperia-1-ii"
     ],
     "confidence": 0.85,
@@ -22598,17 +21200,19 @@
       "dpi": 643.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
-    "ram_gb": 16.0,
+    "ram_gb": 12.0,
     "build": null,
     "runtime_eligible": false,
     "source_type": "scraper",
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-1-iv/sony-xperia-1-iv-16gb-512gb-5g.json",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/sony-xperia-1-iv"
+      "https://www.mobiledokan.com/mobile/sony-xperia-1-iv",
+      "https://www.sony.co.uk/presscentre/sonys-new-xperia-1-iv-is-a-powerhouse-in-content-creation-with-the-worlds-first-true-optical-zoom-lens-and-more",
+      "https://www.sony.com.hk/press/pdf/20220511_1_e.pdf"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22632,8 +21236,8 @@
       "dpi": 643.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -22642,7 +21246,8 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Sony_Xperia_1_V",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2023/xperia-1-v.json",
-      "https://www.sony.com/en/articles/xperia-1-v-specifications"
+      "https://www.sony.com/en/articles/xperia-1-v-specifications",
+      "https://www.techradar.com/phones/sony-xperia-phones/sony-xperia-1-v-review"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22666,8 +21271,8 @@
       "dpi": 396.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -22676,6 +21281,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Sony_Xperia_1_VI",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2024/xperia-1-vi.json",
+      "https://www.phonearena.com/reviews/sony-xperia-1-vi-review_id6291",
       "https://www.sony.com/en/articles/xperia-1-vi-specifications"
     ],
     "confidence": 0.85,
@@ -22700,8 +21306,8 @@
       "dpi": 396.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -22711,7 +21317,8 @@
       "https://en.wikipedia.org/wiki/Sony_Xperia_1_VII",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2025/sony-xperia-1-vii.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.sony.com/electronics/mobile-phones/xperia-1-vii"
+      "https://www.sony.com/electronics/mobile-phones/xperia-1-vii",
+      "https://www.techradar.com/phones/sony-xperia-phones/sony-xperia-1-vii-review"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22735,8 +21342,8 @@
       "dpi": 449.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -22745,6 +21352,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Sony_Xperia_5_II",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2020/sony-xperia-5-ii.json",
+      "https://www.dxomark.com/sony-xperia-5-ii-display-review-holding-the-middle-ground/",
       "https://www.sony.com/electronics/mobile-phones/xperia-5-ii"
     ],
     "confidence": 0.85,
@@ -22803,8 +21411,8 @@
       "dpi": 449.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -22813,7 +21421,8 @@
     "sources": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+      "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+      "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -22837,8 +21446,8 @@
       "dpi": 449.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 8.0,
     "build": null,
@@ -22847,6 +21456,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Sony_Xperia_5_V",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2023/xperia-5-v.json",
+      "https://www.notebookcheck.net/Sony-Xperia-5-V-review-Compact-premium-smartphone-with-professional-camera.756123.0.html",
       "https://www.sony.com/en/articles/xperia-5-v-specifications"
     ],
     "confidence": 0.85,
@@ -22970,8 +21580,8 @@
       "dpi": 643.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "none",
+      "position": "none"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -22980,6 +21590,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Sony_Xperia_Pro-I",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2021/sony-xperia-pro-i.json",
+      "https://www.notebookcheck.net/Sony-Xperia-Pro-I-review-Premium-smartphone-with-the-giant-image-sensor-of-a-compact-camera.601477.0.html",
       "https://www.sony.com/en/articles/xperia-pro-i"
     ],
     "confidence": 0.85,
@@ -23155,73 +21766,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-tcl-10se",
-    "brand": "tcl",
-    "model": "TCL 10 SE",
-    "release_year": 2020,
-    "os_family": "android",
-    "os_version": "10",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-se/tcl-10-se-4gb-128gb-4g-lte.json",
-      "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-10se.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-10seltelatamt766a",
-    "brand": "tcl",
-    "model": "10 SE LTE LATAM 64GB T766A",
-    "release_year": 2020,
-    "os_family": "android",
-    "os_version": "10",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-se-lte-latam-64gb-t766a.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-10seltelatamt766a.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-tcl-10seltelatamt766j",
     "brand": "tcl",
     "model": "10 SE LTE LATAM 128GB T766J",
@@ -23252,39 +21796,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-tcl-10seltelatamt766j.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-10tabmid",
-    "brand": "tcl",
-    "model": "TCL 10 TabMid",
-    "release_year": 2020,
-    "os_family": "android",
-    "os_version": "10",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1200,
-      "height_px": 1920,
-      "dpi": 283.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 3.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2020/10-tabmid/tcl-10-tabmid-3gb-32gb-4g-lte.json",
-      "https://www.kaggle.com/datasets/jakubkhalponiak/phones-2024"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-10tabmid.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -23385,107 +21896,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-tcl-20e.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-20eltelatam6125a",
-    "brand": "tcl",
-    "model": "20E 2021 LTE LATAM 64GB 6125A",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 3.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e-2021-lte-latam-64gb-6125a.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-20eltelatam6125a.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-20eltelatam6125f",
-    "brand": "tcl",
-    "model": "20E 2021 LTE LATAM 64GB 6125F",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 3.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e-2021-lte-latam-64gb-6125f.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-20eltelatam6125f.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-20eltelatam6125f1",
-    "brand": "tcl",
-    "model": "20E 2021 LTE LATAM 128GB 6125F1",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20e-2021-lte-latam-128gb-6125f1.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-20eltelatam6125f1.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -23751,73 +22161,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-tcl-20y.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-20yltelatam6156a",
-    "brand": "tcl",
-    "model": "20Y 2021 LTE LATAM 64GB 6156A",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20y-2021-lte-latam-64gb-6156a.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-20yltelatam6156a.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-20yltelatam6156a1",
-    "brand": "tcl",
-    "model": "20Y 2021 LTE LATAM 128GB 6156A1",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 269.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/20y-2021-lte-latam-128gb-6156a1.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-20yltelatam6156a1.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -24897,39 +23240,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-tcl-a30.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-tcl-a30ltelatam5102o",
-    "brand": "tcl",
-    "model": "A30 LTE LATAM 5102O",
-    "release_year": 2021,
-    "os_family": "android",
-    "os_version": "11",
-    "shell_id": "tcl",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1440,
-      "dpi": 293.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 3.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/tcl/2021/a30-lte-latam-5102o.json",
-      "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-tcl-a30ltelatam5102o.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -27466,40 +25776,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-vivo-t45g",
-    "brand": "vivo",
-    "model": "Vivo T4 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "vivo",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2392,
-      "dpi": 388.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/t4-5g/vivo-t4-5g-8gb-128gb-5g.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-vivo-t45g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-vivo-t4lite5g",
     "brand": "vivo",
     "model": "Vivo T4 Lite 5G",
@@ -27631,40 +25907,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-vivo-t4x.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-vivo-t4x5g",
-    "brand": "vivo",
-    "model": "Vivo T4x 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "vivo",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2408,
-      "dpi": 393.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/t4x-5g/vivo-t4x-5g-6gb-128gb-5g.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-vivo-t4x5g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -27818,8 +26060,8 @@
       "dpi": 388.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 12.0,
     "build": null,
@@ -27828,7 +26070,8 @@
     "sources": [
       "https://aitoolbuzz.com/mobiles/vivo-v50",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/v50/vivo-v50-aitoolbuzz-12156-12gb-128gb-5g.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv"
+      "https://storage.googleapis.com/play_public/supported_devices.csv",
+      "https://technology.inquirer.net/141661/a-look-at-the-vivo-v50-vivos-latest-mid-range-powerhouse"
     ],
     "confidence": 0.85,
     "verified_by": null,
@@ -27868,39 +26111,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-vivo-v50e.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-vivo-v50e5g",
-    "brand": "vivo",
-    "model": "Vivo V50e 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "vivo",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2392,
-      "dpi": 388.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/v50e-5g/vivo-v50e-5g-8gb-128gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-vivo-v50e5g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -28277,39 +26487,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-vivo-x300pro5g",
-    "brand": "vivo",
-    "model": "Vivo X300 Pro 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "vivo",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1260,
-      "height_px": 2800,
-      "dpi": 453.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/x300-pro-5g/vivo-x300-pro-5g-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-vivo-x300pro5g.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-vivo-x300s",
     "brand": "vivo",
     "model": "Vivo X300s",
@@ -28611,40 +26788,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-vivo-y19.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-vivo-y195g",
-    "brand": "vivo",
-    "model": "Vivo Y19 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "vivo",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 260.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/y19-5g/vivo-y19-5g-4gb-64gb-5g.json",
-      "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-vivo-y195g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -29015,39 +27158,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-vivo-y29s.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-vivo-y29s5g",
-    "brand": "vivo",
-    "model": "Vivo Y29s 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "vivo",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 260.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/vivo/2025/y29s-5g/vivo-y29s-5g-8gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-vivo-y29s5g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -29505,8 +27615,8 @@
       "dpi": 521.0
     },
     "notch": {
-      "type": "unknown",
-      "position": "unknown"
+      "type": "punch_hole",
+      "position": "top_center"
     },
     "ram_gb": 16.0,
     "build": null,
@@ -29515,6 +27625,7 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Xiaomi_14_Ultra",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2024/xiaomi-14-ultra.json",
+      "https://gl123.alsgp0.mi-fds.com/gl123/XIAOMI/Xiaomi%2014%20Ultra/N1%20%E5%8C%88%E7%89%99%E5%88%A9%E8%AF%AD%E8%AF%B4%E6%98%8E%E4%B9%A6%EF%BC%88HyperOS%EF%BC%89.pdf",
       "https://www.mi.com/global/product/xiaomi14ultra"
     ],
     "confidence": 0.85,
@@ -29863,74 +27974,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-xiaomi-iqoo13",
-    "brand": "xiaomi",
-    "model": "iQOO 13",
-    "release_year": 2024,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "xiaomi",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1440,
-      "height_px": 3168,
-      "dpi": 510.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://en.wikipedia.org/wiki/IQOO_13",
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2024/iqoo-13.json",
-      "https://www.vivo.com/iqoo/iqoo-13/specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-xiaomi-iqoo13.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-xiaomi-iqooneo11",
-    "brand": "xiaomi",
-    "model": "iQOO Neo 11",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "xiaomi",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1440,
-      "height_px": 3168,
-      "dpi": 510.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/iqoo-neo-11.json",
-      "https://www.gsmarena.com/vivo_iqoo_neo11_5g_(china)-14268.php",
-      "https://www.vivo.com/iqoo/iqoo-neo-11/specs"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-xiaomi-iqooneo11.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-xiaomi-mixflip",
     "brand": "xiaomi",
     "model": "Xiaomi Mix Flip",
@@ -29993,39 +28036,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-xiaomi-mixflip2.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-xiaomi-mixflip2diamondlimitededition",
-    "brand": "xiaomi",
-    "model": "Xiaomi Mix Flip 2 Diamond Limited Edition",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "xiaomi",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1224,
-      "height_px": 2912,
-      "dpi": 460.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/mix-flip-2-diamond-limited-edition/xiaomi-mix-flip-2-diamond-limited-edition-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-xiaomi-mixflip2diamondlimitededition.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -30264,39 +28274,6 @@
     "review_status": "needs-human"
   },
   {
-    "id": "gen-xiaomi-pococ85x",
-    "brand": "xiaomi",
-    "model": "Poco C85x",
-    "release_year": 2026,
-    "os_family": "android",
-    "os_version": "16",
-    "shell_id": "xiaomi",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 720,
-      "height_px": 1600,
-      "dpi": 254.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 4.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2026/poco-c85x/xiaomi-poco-c85x-4gb-64gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-xiaomi-pococ85x.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
     "id": "gen-xiaomi-pococ85x5g",
     "brand": "xiaomi",
     "model": "Poco C85x 5G",
@@ -30427,39 +28404,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-xiaomi-pocof7pro.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-xiaomi-pocof7pro5g",
-    "brand": "xiaomi",
-    "model": "Poco F7 Pro 5G",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "15",
-    "shell_id": "xiaomi",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1440,
-      "height_px": 3200,
-      "dpi": 526.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 12.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/poco-f7-pro-5g/xiaomi-poco-f7-pro-5g-12gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-xiaomi-pocof7pro5g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -30696,39 +28640,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-xiaomi-pocox6.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-xiaomi-pocox65g",
-    "brand": "xiaomi",
-    "model": "Poco X6 5G",
-    "release_year": 2024,
-    "os_family": "android",
-    "os_version": "13",
-    "shell_id": "xiaomi",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1220,
-      "height_px": 2712,
-      "dpi": 446.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 8.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2024/poco-x6-5g/xiaomi-poco-x6-5g-8gb-256gb-5g.json",
-      "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-xiaomi-pocox65g.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
@@ -31229,40 +29140,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/gen-xiaomi-redminote13s.html",
-    "cohort": "generated",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "gen-xiaomi-redminote14",
-    "brand": "xiaomi",
-    "model": "Xiaomi Redmi Note 14",
-    "release_year": 2025,
-    "os_family": "android",
-    "os_version": "14",
-    "shell_id": "xiaomi",
-    "base_image_id": null,
-    "screen": {
-      "width_px": 1080,
-      "height_px": 2400,
-      "dpi": 395.0
-    },
-    "notch": {
-      "type": "unknown",
-      "position": "unknown"
-    },
-    "ram_gb": 6.0,
-    "build": null,
-    "runtime_eligible": false,
-    "source_type": "scraper",
-    "sources": [
-      "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/xiaomi/2025/redmi-note-14/xiaomi-redmi-note-14-6gb-128gb-4g.json",
-      "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/xiaomi-redmi-note-14"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/gen-xiaomi-redminote14.html",
     "cohort": "generated",
     "review_status": "needs-human"
   },
