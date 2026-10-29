@@ -38,3 +38,17 @@ Stage B static/interactive scope accepted. Missing Vivo build blocks are deferre
 
 ## Stage C implementation addendum
 Per-brand quota/diversity failures use explicit measured exemptions in data/devices.csv.exemptions.yaml; global 3 OS versions, 2 screen-size classes and 2 chipset families remain mandatory. Nothing target11; no invented or cosmetic/RAM duplicates. Missing notch geometry is represented explicitly as unknown in static drafts and omitted from artwork, never asserted as a hardware absence. Known reference build fragments remain separate; generated profiles always null/false. Runtime source enum includes third_party_device_db and firmware_dump, with human-review/complete-identity admission unchanged. X100 regional choice is needs-human and Stage D remains prepared-not-authorized.
+
+## ADR 015 — OCI provisioning guardrails (binding)
+
+Status: Accepted (29 October 2026)
+Context: Stage D requires a free-tier Oracle Always Free ARM VM to run Redroid. Oracle's free tier is capped at 2 OCPU / 12 GB per tenancy, capacity in home regions is frequently exhausted, and any mistake in shape, region, or billing model can silently accrue charges.
+
+Decision:
+1. Codex may ONLY launch shape `VM.Standard.A1.Flex` with `--shape-config '{"ocpus":2,"memoryInGBs":12}'`. Any other shape is a P0 defect. Stop immediately and report.
+2. Preflight (already completed).
+3. Retry policy: Use `oci-arm-free-retry` (or your prepared script) pinned to a specific commit. Bounded: max 500 attempts OR 24 hours, whichever first. Backoff: 60 seconds. Log every attempt outcome. Stop immediately on any error other than "Out of host capacity" — especially LimitExceeded, NotAuthenticated, NotAuthorizedOrNotFound must be distinguished. Do not retry through auth or quota errors.
+4. No fallback. If capacity is not available in the home region within the bounds above, report and stop. Codex MUST NOT: Create a second Oracle account; Provision in a non-home region; Upgrade to pay-as-you-go; Provision a different shape; Use a trial or promotional credit.
+5. Post-launch tagging and evidence: Immediately after a successful launch, tag the instance `--freeform-tags '{"project":"simufarm","tier":"always-free","stage":"D"}'`. Record instance OCID, shape, AD, public IP, launch timestamp, and preflight A1 availability to `data/runtime/oci-instance.json` BEFORE any SSH.
+6. Reporting: After execution, report preflight results, attempt count, time-to-capacity, region/AD, instance OCID. Do not claim success unless the instance is confirmed at 2 OCPU / 12 GB.
+7. Cost safety: Any observation of non-free billing MUST halt execution.

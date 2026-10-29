@@ -14,3 +14,5 @@ artifacts/
 *.avd/
 test-results/
 playwright-report/
+# Local cloud identity/connection evidence; never publish automatically.
+data/runtime/oci-instance.json
