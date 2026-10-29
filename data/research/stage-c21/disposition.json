@@ -1,0 +1,52 @@
+{
+  "decision_date": "2026-10-29",
+  "authority": "Explicit user acceptance of seven unresolved geometry entries",
+  "status": "accepted_documented_deviation",
+  "records": [
+    {
+      "id": "gen-google-pixel10",
+      "unresolved_geometry": "unknown",
+      "disposition": "exhausted sources",
+      "scope": "Checked accessible sources; operator-accepted exhaustion, no marketing-image inference, no guessed value"
+    },
+    {
+      "id": "gen-google-pixel10a",
+      "unresolved_geometry": "unknown",
+      "disposition": "exhausted sources",
+      "scope": "Checked accessible sources; operator-accepted exhaustion, no marketing-image inference, no guessed value"
+    },
+    {
+      "id": "gen-huawei-mate50pro",
+      "unresolved_geometry": "unknown",
+      "disposition": "exhausted sources",
+      "scope": "Checked accessible sources; operator-accepted exhaustion, no marketing-image inference, no guessed value"
+    },
+    {
+      "id": "gen-infinix-hot40pro",
+      "unresolved_geometry": "unknown",
+      "disposition": "exhausted sources",
+      "scope": "Checked accessible sources; operator-accepted exhaustion, no marketing-image inference, no guessed value"
+    },
+    {
+      "id": "gen-lg-k31",
+      "unresolved_geometry": "unknown",
+      "disposition": "exhausted sources",
+      "scope": "Checked accessible sources; operator-accepted exhaustion, no marketing-image inference, no guessed value"
+    },
+    {
+      "id": "gen-lg-q31",
+      "unresolved_geometry": "unknown",
+      "disposition": "exhausted sources",
+      "scope": "Checked accessible sources; operator-accepted exhaustion, no marketing-image inference, no guessed value"
+    },
+    {
+      "id": "gen-zte-bladel9",
+      "unresolved_geometry": "unknown",
+      "disposition": "exhausted sources",
+      "scope": "Checked accessible sources; operator-accepted exhaustion, no marketing-image inference, no guessed value"
+    }
+  ],
+  "complete_geometry_count_reported": 93,
+  "selection_count": 100,
+  "do_not_claim_100_confirmed_geometries": true
+}
