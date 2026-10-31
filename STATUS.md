@@ -1,54 +1,11 @@
-# SimuFarm status — Stage C implementation, 27 October 2026
+# SimuFarm status — 31 October 2026
 
-Stage A and Stage B static scope accepted; Stage B merged in PR #2. Stage C implementation is delivered for review. Static generation target: **100% (1,000/1,000 profiles and pages)**, plus 22 preserved reference drafts/pages. Overall Stage C acceptance remains pending. The cohort is a sourced secondary-data static draft, not 1,000 independently manufacturer-verified specifications. Model-level popularity rank coverage is 0/1,000; deterministic coverage/release-recency selection is disclosed and needs operator acceptance against the original popularity requirement. No Stage D execution.
+**StageD pivoted to local Ubuntu22.04 hardware over Meshnet. Prepared; awaiting server IP and SSH username.** ADR015 is superseded by ADR016. Both Oracle launch scripts are execution-disabled before credentials/API access. No retry runner or sleep inhibitor is present; the monitoring automation was already deleted after the29October halt.
 
-All **1,000 generated profiles explicitly serialize build: null and runtime_eligible: false**. Tests inspect every real generated file and compare CSV identities/counts. Human-approved runtime profiles: 0. Approved runtime directory admissions: 0. Earlier Vivo partial build evidence remains in the separate reference/evidence track.
+Oracle historical actuals:16launch attempts; final HTTP429; no returned VM OCID. Only free network prerequisites were created. Cleanup commands are provided separately for the user; no cleanup or Oracle API query was executed for this pivot. No paid resources provisioned or MobileAPI calls made.
 
-## Actual generated counts and diversity
+Local actuals:0server connections,0containers booted,0ADB confirmations,0APK installs; boot time, RAM and identity uniqueness remain unmeasured. Architecture and Redroid image selection are pending hardware preflight. See docs/STAGE_D_LOCAL.md and docs/CAPACITY.md.
 
-| Brand | Profiles | Android versions | Screen-size classes | Chipset families |
-|---|---:|---:|---:|---:|
-| vivo | 64 | 4 | 2 | 4 |
-| samsung | 64 | 6 | 2 | 4 |
-| xiaomi | 64 | 5 | 2 | 4 |
-| oppo | 64 | 4 | 2 | 3 |
-| realme | 64 | 6 | 2 | 4 |
-| oneplus | 64 | 6 | 2 | 3 |
-| google | 24 | 7 | 3 | 2 |
-| motorola | 64 | 6 | 2 | 4 |
-| honor | 64 | 5 | 2 | 3 |
-| huawei | 55 | 5 | 3 | 4 |
-| nokia | 60 | 4 | 3 | 3 |
-| sony | 20 | 6 | 3 | 2 |
-| asus | 27 | 6 | 2 | 2 |
-| lenovo | 15 | 3 | 1 | 3 |
-| lg | 23 | 1 | 3 | 2 |
-| tecno | 64 | 7 | 2 | 3 |
-| infinix | 64 | 6 | 2 | 3 |
-| nothing | 11 | 5 | 1 | 2 |
-| zte | 64 | 7 | 2 | 4 |
-| tcl | 61 | 6 | 3 | 4 |
-| **Total** | **1,000** | **7 global** | **3 global** | **7 global** |
+C2 engineering was accepted. Seven C2.1 geometry unknowns were accepted as exhausted-source deviations, with no guessed values. Generated-artifact integration from the cloud-conflicted original checkout remains a separate unfinished track; no new complete data-validation claim is made here. Older StageC1000-row status is archived under docs/archive/stage-c-status-2026-10-27.md and is not the current verification claim.
 
-Nothing-company count 11 includes nine Nothing phones and two explicitly disclosed CMF models; no cosmetic Community Edition or RAM/carrier variants pad the quota. If the operator requires the Nothing brand alone, that leaves a two-model shortfall and needs a quota decision, not invented devices.
-
-Global mandatory minima (3 OS versions / 2 sizes / 2 chipset families) pass. Observed Android versions 10–16; seven normalized chipset families. Size classes: <6 inches, 6–<6.5 inches, >=6.5 inches.
-
-## Exemptions filed
-
-23 measured entries in data/devices.csv.exemptions.yaml: quota redistribution for all 20 brands plus three diversity exceptions:
-- Lenovo: 1 screen-size class (large).
-- LG: 1 Android version (10).
-- Nothing-company: 1 screen-size class (large).
-
-Each entry includes brand, constraint, reason and actual global diversity preserved. No blanket exemptions were applied to Google, Sony, TCL, Tecno, Infinix or HONOR when the actual source cohort passed. Unknown chipset placeholders and spelling duplicates are rejected.
-
-## Validation and zero-spend counters
-
-Local validation: **76 Python tests, 19 Playwright tests**, Ruff, contract drift, 1,022-profile source validation, frontend build and two-run idempotency checks pass. All 1,000 generated URLs served HTTP 200 and expected shell/static warnings; five brands were browser-rendered and ten existing visual snapshots passed. Remote Python 3.12 / Node 22 CI passed on 04878ce: run 40512173427, job elapsed 49 seconds on a public standard runner. Evidence: data/validation/stage-c-ci.json. PR #3 remains draft and unmerged. A later report-only commit has separate checks.
-
-Oracle VMs created 0; VM managed uptime 0; containers 0; boot time/RAM unmeasured; MobileAPI calls 0; conservative cap 50/month, actual account remaining unknown. Billable resources touched 0; spend **$0**. No paid API, provisioning, trial or runtime image pull. Repository public standard-runner CI only.
-
-Contract 0.4.0 includes third_party_device_db and firmware_dump and rejects incomplete/unreviewed runtime promotion. X100 China/India choice is needs-human in the runtime task. Separate DeepSeek evidence commit 25848cb is candidate-only; Y100 additional extraction remains paused. Stage D task remains prepared-not-authorized and includes X100 region confirmation before Stage E.
-
-Pinned-source importer was rerun separately and reproduced identical CSV bytes (SHA256 e6712a51267d2eceb0b99654b980ca048c3bd8c6222f368b583688482397a7b2).
+StageE has not begun; human-reviewed runtime-eligible subset remains0. The local hardware pivot does not promote a profile or resolve the X100 region decision.

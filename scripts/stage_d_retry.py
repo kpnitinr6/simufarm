@@ -12,6 +12,11 @@ SHAPE = "VM.Standard.A1.Flex"
 UPSTREAM = "https://github.com/ibrahaimbadri/oci-arm-free-retry/tree/8de2e4cef89b453dd00945a89f0811fb323bfd25"
 
 
+def oracle_enabled():
+    target = Path(__file__).resolve().parents[1] / "config/stage-d-target.json"
+    return target.exists() and json.loads(target.read_text()).get("oracle_enabled") is True
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -23,6 +28,8 @@ def main():
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--max-attempts", type=int, default=12)
     args = parser.parse_args()
+    if args.execute and not oracle_enabled():
+        raise SystemExit("Oracle disabled: ADR 015 superseded by local hardware pivot")
     if not 1 <= args.max_attempts <= 144:
         parser.error("max-attempts must be 1..144")
     proof = json.loads(args.preflight.read_text())

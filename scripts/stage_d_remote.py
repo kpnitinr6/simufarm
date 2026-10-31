@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run only on the authorized ARM VM; collect actuals without identity spoofing."""
+"""Run on the authorized local Linux server; collect actuals without identity spoofing."""
 
 import argparse
 import hashlib
@@ -38,12 +38,21 @@ def main():
     parser.add_argument("--apk", type=Path, required=True)
     parser.add_argument("--apk-sha256", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--image", default=IMAGE, help="Verified immutable Redroid image for host architecture"
+    )
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
     if not args.execute:
         parser.error("Explicit --execute is required on the authorized remote host")
-    if platform.system() != "Linux" or platform.machine() not in ("aarch64", "arm64"):
-        raise SystemExit("Requires Linux ARM64; no local desktop runtime")
+    architectures = {"aarch64": "arm64", "arm64": "arm64", "x86_64": "amd64", "amd64": "amd64"}
+    arch = architectures.get(platform.machine())
+    if platform.system() != "Linux" or arch is None:
+        raise SystemExit("Requires authorized Linux ARM64 or x86_64 server")
+    if not re.fullmatch(r"redroid/redroid@sha256:[0-9a-f]{64}", args.image):
+        raise SystemExit("A verified immutable Redroid image digest is required")
+    if arch == "amd64" and args.image == IMAGE:
+        raise SystemExit("ARM image cannot run on x86_64; supply verified amd64 digest")
     profile = json.loads(args.profile.read_text())
     if profile["id"] != "vivo-x100" or profile["brand"] != "vivo":
         raise SystemExit("Stage D authorizes the existing vivo-x100 profile only")
@@ -52,7 +61,9 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     report = {
         "observed_at": datetime.now(UTC).isoformat(),
-        "image": IMAGE,
+        "image": args.image,
+        "host_architecture": arch,
+        "deployment_target": "local-linux-meshnet",
         "profile_id": profile["id"],
         "profile_build_applied": False,
         "profile_build_ignored_for_diagnostic": profile.get("build") is not None,
@@ -71,16 +82,15 @@ def main():
 
     save()
     try:
-        if report["kvm_present"]:
-            raise RuntimeError("/dev/kvm exists; required absence check failed")
+        # Redroid does not require KVM; local hardware may legitimately expose it.
         # Deliberately fail rather than install unreviewed kernel packages or reboot.
-        run("sudo", "modprobe", "binder_linux", "devices=binder,hwbinder,vndbinder")
-        run("sudo", "modprobe", "ashmem_linux")
+        run("sudo", "-n", "modprobe", "binder_linux", "devices=binder,hwbinder,vndbinder")
+        run("sudo", "-n", "modprobe", "ashmem_linux")
         report["lsmod"] = run("lsmod")
-        run("docker", "pull", "--platform", "linux/arm64", IMAGE)
-        report["image_inspect"] = json.loads(run("docker", "image", "inspect", IMAGE))[0]
-        if report["image_inspect"]["Architecture"] != "arm64":
-            raise RuntimeError("Pulled image is not ARM64")
+        run("docker", "pull", "--platform", f"linux/{arch}", args.image)
+        report["image_inspect"] = json.loads(run("docker", "image", "inspect", args.image))[0]
+        if report["image_inspect"]["Architecture"] != arch:
+            raise RuntimeError("Pulled image architecture differs from host")
         for index, port in enumerate((5555, 5556), 1):
             name = f"simufarm-stage-d-{args.output.name}-{index}"
             volume = name + "-data"
@@ -106,12 +116,12 @@ def main():
                 name,
                 "--privileged",
                 "--platform",
-                "linux/arm64",
+                f"linux/{arch}",
                 "-v",
                 volume + ":/data",
                 "-p",
                 f"127.0.0.1:{port}:5555",
-                IMAGE,
+                args.image,
                 f"androidboot.redroid_width={profile['screen']['width_px']}",
                 f"androidboot.redroid_height={profile['screen']['height_px']}",
                 f"androidboot.redroid_dpi={profile['screen']['dpi']}",
