@@ -44,6 +44,7 @@ def test_wrong_shape_or_size_is_p0(shape, ocpus, memory):
 
 
 def setup_run(tmp_path, monkeypatch, error):
+    monkeypatch.setattr(runner, "oracle_enabled", lambda: True)
     proof = {
         "home_region": "ap-mumbai-1",
         "ad": "PeUh:AP-MUMBAI-1-AD-1",
@@ -143,3 +144,24 @@ def test_24_hour_wall_deadline_prevents_attempts_after_sleep(tmp_path, monkeypat
     monkeypatch.setattr(runner.time, "time", lambda: next(times))
     runner.main()
     assert count == [] and sleeps == []
+
+
+def test_pivot_disables_oracle_before_loading_credentials(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "runner",
+            "--preflight",
+            str(tmp_path / "missing"),
+            "--state-dir",
+            str(tmp_path / "run"),
+            "--evidence",
+            str(tmp_path / "evidence"),
+            "--pin",
+            "unused",
+            "--execute",
+        ],
+    )
+    with pytest.raises(SystemExit, match="Oracle disabled"):
+        runner.main()

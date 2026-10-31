@@ -41,7 +41,7 @@ Per-brand quota/diversity failures use explicit measured exemptions in data/devi
 
 ## ADR 015 — OCI provisioning guardrails (binding)
 
-Status: Accepted (29 October 2026)
+Status: Superseded by Local Hardware Pivot (31 October 2026)
 Context: Stage D requires a free-tier Oracle Always Free ARM VM to run Redroid. Oracle's free tier is capped at 2 OCPU / 12 GB per tenancy, capacity in home regions is frequently exhausted, and any mistake in shape, region, or billing model can silently accrue charges.
 
 Decision:
@@ -52,3 +52,9 @@ Decision:
 5. Post-launch tagging and evidence: Immediately after a successful launch, tag the instance `--freeform-tags '{"project":"simufarm","tier":"always-free","stage":"D"}'`. Record instance OCID, shape, AD, public IP, launch timestamp, and preflight A1 availability to `data/runtime/oci-instance.json` BEFORE any SSH.
 6. Reporting: After execution, report preflight results, attempt count, time-to-capacity, region/AD, instance OCID. Do not claim success unless the instance is confirmed at 2 OCPU / 12 GB.
 7. Cost safety: Any observation of non-free billing MUST halt execution.
+
+## ADR 016 — Local hardware Stage D over Meshnet
+
+Status: Accepted (31 October 2026)
+
+Stage D targets a user-owned Ubuntu22.04 server over its Meshnet IPv4 address using SSH. Oracle provisioning/retries and automatic Oracle API calls are disabled. Oracle cleanup commands are supplied for the user to run; cleanup has not been executed or verified by Codex. No paid cloud resources or MobileAPI calls are authorized. Await the IP and SSH username before any connection. Detect CPU architecture before selecting an immutable Redroid image; do not assume Ampere/ARM. KVM is optional and is recorded, not required or forbidden. Keep ADB bound to remote loopback and use SSH tunnels if needed. Human runtime-profile promotion and StageE remain separate gates.
