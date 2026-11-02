@@ -1,0 +1,49 @@
+{
+  "retrieved_at": "2026-11-02",
+  "region": "China",
+  "human_reviewed": false,
+  "test_only": true,
+  "runtime_eligible": false,
+  "actual_runtime_android": 13,
+  "fingerprint_firmware_android": 16,
+  "ota_url": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2026081814112724c2221ef32dd40b0088b606dfc508d5.zip",
+  "ota_full_downloaded": false,
+  "ota_signature_verified": false,
+  "range_start": 10262845316,
+  "range_end": 10262976387,
+  "metadata_entry_offset": 10262957002,
+  "metadata_zip_crc32": "4c1ba2d4",
+  "metadata_sha256": "e0a6398108e3a208c7821d489f52ce5453e3e092f17112d2556606a6a8b4a129",
+  "discovery_url": "https://github.com/long36708/vivo-ota-watcher/blob/eee2d0e5ab4cc4a51ea4f01c59eb197df8b88d6b/results/PD2309.json",
+  "fields": {
+    "ro.product.model": {
+      "source": "https://www.vivo.com.cn/vivo/param/x100",
+      "evidence": "\u5168\u7f51\u901a\uff08V2309A\uff09; vivo X100",
+      "confidence": 0.99
+    },
+    "ro.product.brand": {
+      "source": "https://deviceinfohw.ru/devices/item.php?item=120403",
+      "evidence": "BRAND vivo; MODEL V2309A; PRODUCT PD2309",
+      "confidence": 0.95
+    },
+    "ro.product.device": {
+      "source": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2026081814112724c2221ef32dd40b0088b606dfc508d5.zip",
+      "local": "ota-metadata.txt:16",
+      "evidence": "pre-device=PD2309",
+      "confidence": 0.99
+    },
+    "ro.build.fingerprint": {
+      "source": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2026081814112724c2221ef32dd40b0088b606dfc508d5.zip",
+      "local": "ota-metadata.txt:8",
+      "evidence": "vivo/PD2309/PD2309:16/BP2A.250605.031.A3/compiler260818110530:user/release-keys",
+      "confidence": 0.99
+    }
+  },
+  "limits": [
+    "Metadata ZIP CRC checked; full 10GB archive hash and cryptographic signature not checked.",
+    "Device value is OTA pre-device metadata, not a raw getprop dump.",
+    "Android16 fingerprint overlay does not turn Android13 into Vivo firmware.",
+    "Pending human build-block review; isolated authorized Stage E test only."
+  ],
+  "database_snapshot_sha256": "bb1059b7c2fe286acf544aa75131531ad3b468ab4b17118b0b1403a4b2260f5f"
+}

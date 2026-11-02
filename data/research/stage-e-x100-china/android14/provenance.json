@@ -1,0 +1,48 @@
+{
+  "region": "China",
+  "model": "V2309A",
+  "device": "PD2309",
+  "android_release": "14",
+  "sdk": 34,
+  "firmware_version": "PD2309_A_14.0.25.13.W10.V000L1",
+  "firmware_url": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+  "metadata_sha256": "af4d6fd097aea0305d0221bf7112869f48c85e65bed77e870d63335fde5ab9c1",
+  "method": "Three bounded read-only Vivo public OTA queries; authenticated TLS; non-real test identifier; no MobileAPI. Read final65536bytes of the official ZIP, check metadata CRC against central directory.",
+  "range": [
+    127907065,
+    127972600
+  ],
+  "full_archive_sha256_verified": false,
+  "ota_signature_verified": false,
+  "fields": {
+    "ro.product.brand": {
+      "value": "vivo",
+      "source": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+      "local": "ota-metadata.txt:7",
+      "method": "Firmware fingerprint brand; corroborated by manufacturer and device database"
+    },
+    "ro.product.model": {
+      "value": "V2309A",
+      "source": "https://www.vivo.com.cn/vivo/param/x100",
+      "method": "Manufacturer China model listing"
+    },
+    "ro.product.device": {
+      "value": "PD2309",
+      "source": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+      "local": "ota-metadata.txt:17",
+      "method": "literal pre-device"
+    },
+    "ro.build.fingerprint": {
+      "value": "vivo/PD2309/PD2309:14/UP1A.231005.007/compiler05201704:user/release-keys",
+      "source": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+      "local": "ota-metadata.txt:7",
+      "method": "literal post-build, unmodified"
+    },
+    "ro.build.version.release": {
+      "value": "14",
+      "source": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+      "local": "ota-metadata.txt:7",
+      "method": "Fingerprint release, SDK34 confirmation; actual runtime release must be independently checked"
+    }
+  }
+}

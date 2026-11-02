@@ -1,142 +1,138 @@
 {
   "profile_id": "vivo-x100",
-  "market": "India",
+  "market": "China",
   "hardware_ram_gb": 12,
-  "review_status": "needs-human",
+  "review_status": "human-approved",
   "facts_researched_by": "Codex; no Gemini/Ollama API claim",
   "field_evidence": {
     "brand": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-text"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "model": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-text"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "os_family": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-text"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "os_version": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-text"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "screen.width_px": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-text"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "screen.height_px": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-text"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "ram_gb": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-text"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "release_year": {
       "source_urls": [
-        "https://vivonewsroom.in/press-release/vivo-launches-the-ultimate-flagship-x100-series-with-next-level-of-imaging-co-engineered-with-zeiss/"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "India-market launch year; not worldwide first release"
+      "method": "Manufacturer China launch November2023"
     },
     "screen.dpi": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manufacturer-stated physical PPI"
+      "method": "round(hypot(1260,2800)/6.78,1); physical PPI derived from manufacturer dimensions"
     },
     "notch": {
       "source_urls": [
-        "https://www.vivo.com/in/products/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "visual classification from manufacturer product illustration; human review pending"
+      "method": "Retained punch-hole classification from prior reference; UI geometry is illustrative, not an OEM fidelity claim"
     },
     "id": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "SimuFarm catalog/planned-runtime identifier; authored metadata, not manufacturer spec"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "shell_id": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "SimuFarm catalog/planned-runtime identifier; authored metadata, not manufacturer spec"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "base_image_id": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "SimuFarm catalog/planned-runtime identifier; authored metadata, not manufacturer spec"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "build": {
       "source_urls": [
-        "https://www.vivo.com/in/support/upgradePackageData?id=214",
-        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip",
-        "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files"
+        "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+        "https://www.vivo.com.cn/vivo/param/x100",
+        "https://deviceinfohw.ru/devices/item.php?item=120403"
       ],
-      "method": "Literal post-build from official India OTA META-INF/com/android/metadata, mapped by cited AOSP GetBuildProp implementation. Other three properties remain unknown; not inferred from fingerprint segments. Root verified exact excerpt; offline DeepSeek extraction is reviewed separately."
+      "method": "China build provenance: data/research/stage-e-x100-china/android14/provenance.json; literal OTA post-build and pre-device, manufacturer V2309A model, vivo brand corroboration."
     },
     "verified_by": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "unknown/not stated; null is not a claimed manufacturer fact"
+      "method": "User conditional approval, applied after Android14 two-container verification; data/reviews/vivo-x100.runtime.json"
     },
     "verified_at": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "unknown/not stated; null is not a claimed manufacturer fact"
+      "method": "User conditional approval, applied after Android14 two-container verification; data/reviews/vivo-x100.runtime.json"
     },
     "source_type": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manual provenance/editorial confidence metadata, not device fact"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "sources": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manual provenance/editorial confidence metadata, not device fact"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "confidence": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "manual provenance/editorial confidence metadata, not device fact"
+      "method": "Manufacturer China specifications or explicitly authored catalog metadata; user-reviewed profile"
     },
     "runtime_eligible": {
       "source_urls": [
-        "https://www.vivo.com/in/products/param/x100",
-        "https://vivonewsroom.in/press-release/vivo-launches-the-ultimate-flagship-x100-series-with-next-level-of-imaging-co-engineered-with-zeiss/",
-        "https://www.vivo.com/in/products/x100",
-        "https://www.vivo.com/in/support/upgradePackageData?id=214",
-        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip",
-        "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files"
+        "https://www.vivo.com.cn/vivo/param/x100"
       ],
-      "method": "Stage C operator policy: static draft, no human runtime promotion; false is a policy state, not a hardware fact."
+      "method": "User conditional approval, applied after Android14 two-container verification; data/reviews/vivo-x100.runtime.json"
     }
   },
-  "runtime_ready": false,
+  "runtime_ready": true,
   "notes": [
-    "Generic original artwork; not a firmware screenshot",
-    "Screen dpi carries physical PPI only",
-    "Build properties remain unknown; no fabricated fingerprints"
+    "User conditional approval applied after genuine Android14/SDK34 test passed in two fresh containers and after restarts.",
+    "Original India profile archived separately; no China/India build mixing.",
+    "Physical PPI calculated from official1260x2800px and6.78inch diagonal; not Android logical DPI.",
+    "Fingerprint overlay is not Vivo firmware, hardware or attestation. Telephony services unavailable."
   ]
 }

@@ -118,7 +118,7 @@ def main():
     require_host(report)
     for source, name in [
         (ROOT / "scripts/stage_d_remote.py", "collector.py"),
-        (ROOT / "profiles/vivo/vivo-x100.json", "profile.json"),
+        (ROOT / "profiles/runtime/vivo-x100.json", "profile.json"),
         (a.apk, "sample.apk"),
     ]:
         upload(source, name)

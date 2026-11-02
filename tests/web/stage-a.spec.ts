@@ -5,7 +5,7 @@ for(const [id,model] of [['vivo-y100','Y100'],['vivo-x100','X100'],['vivo-v30','
   await page.goto(`/simulators/${id}.html`);
   await expect(page.getByRole('heading',{name:`vivo ${model}`})).toBeVisible();
   await expect(page.locator('[data-ready="true"]')).toBeVisible();
-  await expect(page.getByText('Human review pending.',{exact:false})).toBeVisible();
+  await expect(page.getByText(id === 'vivo-x100' ? 'Human-reviewed' : 'Human review pending.',{exact:false})).toBeVisible();
   await expect(page.locator('vivo-shell').locator('.device')).toBeVisible();
   await page.screenshot({path:`docs/proof/${id}.png`,fullPage:true});
   expect(failures).toEqual([]);

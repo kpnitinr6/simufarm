@@ -1,0 +1,22 @@
+{
+  "profile_id": "vivo-x100",
+  "region": "China",
+  "reviewer": "human operator",
+  "approved_at": "2026-11-02T13:32:20.581303+00:00",
+  "conditional_authorization": "Once the Android14 test passes, promote vivo-x100 to runtime_eligible:true and merge PR9.",
+  "conditions_passed": {
+    "two_fresh_containers": true,
+    "actual_release": "14",
+    "actual_sdk": "34",
+    "fingerprint_android": "14",
+    "distinct_serials": true,
+    "distinct_synthetic_imei_properties": true,
+    "restart_persistence": true
+  },
+  "evidence_run": "b6c10f6a90e6476b921b2b20f80643f0",
+  "fingerprint_source": "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+  "limits": [
+    "Not Vivo firmware or physical-phone certification.",
+    "No cellular telephony service; getprop IMEI only."
+  ]
+}
