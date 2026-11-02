@@ -13,8 +13,8 @@
     "dpi": 409.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2021/nord-2-5g/oneplus-nord-2-5g-12gb-256gb-5g.json",
     "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-    "https://www.mobiledokan.com/mobile/oneplus-nord-2-5g-12gb-256gb"
+    "https://www.mobiledokan.com/mobile/oneplus-nord-2-5g-12gb-256gb",
+    "https://www.techadvisor.com/article/722526/oneplus-nord-2-review.html"
   ],
   "confidence": 0.85,
   "verified_by": null,

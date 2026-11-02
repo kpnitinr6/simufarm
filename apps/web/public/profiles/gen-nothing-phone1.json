@@ -13,8 +13,8 @@
     "dpi": 402.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Nothing_Phone_(1)",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nothing/2022/nothing-phone-1.json",
-    "https://nothing.tech/products/phone-1"
+    "https://nothing.tech/products/phone-1",
+    "https://www.gsmarena.com/nothing_phone_1-review-2453p2.php"
   ],
   "confidence": 0.85,
   "verified_by": null,

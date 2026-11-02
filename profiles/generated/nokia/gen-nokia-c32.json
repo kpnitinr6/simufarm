@@ -13,8 +13,8 @@
     "dpi": 270.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "teardrop",
+    "position": "top_center"
   },
   "ram_gb": 4.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2023/c32/nokia-c32-4gb-64gb-4g.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.hmd.com/en_int/support/nokia-c32-user-guide/keys-and-parts",
     "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
     "https://www.mobiledokan.com/mobile/nokia-c32"
   ],

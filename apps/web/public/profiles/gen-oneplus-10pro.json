@@ -13,8 +13,8 @@
     "dpi": 526.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/OnePlus_10_Pro",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/oneplus-10-pro.json",
+    "https://www.expertreviews.co.uk/technology/phones/oneplus-10-pro-review",
     "https://www.oneplus.com/us/oneplus-10-pro/specs"
   ],
   "confidence": 0.85,

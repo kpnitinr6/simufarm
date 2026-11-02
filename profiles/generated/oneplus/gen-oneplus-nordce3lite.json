@@ -13,8 +13,8 @@
     "dpi": 392.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_center"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -22,7 +22,8 @@
   "source_type": "scraper",
   "sources": [
     "https://aitoolbuzz.com/mobiles/oneplus-nord-ce-3-lite",
-    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-ce-3-lite/oneplus-nord-ce-3-lite-aitoolbuzz-7434-8gb-128gb-5g.json"
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2023/nord-ce-3-lite/oneplus-nord-ce-3-lite-aitoolbuzz-7434-8gb-128gb-5g.json",
+    "https://www.megabites.com.ph/review-oneplus-nord-ce-3-lite-5g-8gb256gb/"
   ],
   "confidence": 0.85,
   "verified_by": null,

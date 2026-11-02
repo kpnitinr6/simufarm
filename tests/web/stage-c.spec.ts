@@ -4,7 +4,8 @@ test('generated collection is isolated, static-only and paginated', async ({page
  const response = await request.get('/catalog.json');
  const catalog = await response.json();
  const generated = catalog.filter((p:any) => p.cohort === 'generated');
- expect(generated).toHaveLength(1000);
+ const policy = await (await request.get('/cohort-policy.json')).json();
+ expect(generated).toHaveLength(policy.retained_candidate_count);
  for (const p of generated) {
   expect(p.build).toBeNull();
   expect(p.runtime_eligible).toBe(false);
@@ -13,7 +14,7 @@ test('generated collection is isolated, static-only and paginated', async ({page
  await page.goto('/');
  await page.getByLabel('Collection', {exact:true}).selectOption('generated');
  await expect(page.locator('article')).toHaveCount(24);
- await expect(page.getByText('1000 previews', {exact:true})).toBeVisible();
+ await expect(page.getByText(`${generated.length} previews`, {exact:true})).toBeVisible();
  const first = await page.locator('article h2').first().innerText();
  await page.getByRole('button', {name:'Next', exact:true}).click();
  await expect(page.locator('article')).toHaveCount(24);
@@ -38,11 +39,12 @@ test('representative generated pages load original shells', async ({page, reques
 });
 
 
-test('all 1000 generated URLs serve escaped static pages', async ({request}) => {
+test('all retained generated URLs serve escaped static pages', async ({request}) => {
  test.setTimeout(60000);
  const data = await (await request.get('/catalog.json')).json();
  const generated = data.filter((p:any) => p.cohort === 'generated');
- expect(generated).toHaveLength(1000);
+ const policy = await (await request.get('/cohort-policy.json')).json();
+ expect(generated).toHaveLength(policy.retained_candidate_count);
  for (let offset = 0; offset < generated.length; offset += 20) {
   await Promise.all(generated.slice(offset, offset + 20).map(async (p:any) => {
    const response = await request.get(p.url);
@@ -52,5 +54,30 @@ test('all 1000 generated URLs serve escaped static pages', async ({request}) => 
    expect(html).toContain('Runtime is disabled');
    expect(html).toContain('stage-c-attribution.txt');
   }));
+ }
+});
+
+test('C2 sourced cutout positions are reflected by the original shells', async ({page, request}) => {
+ const catalog = await (await request.get('/catalog.json')).json();
+ for (const [type, position] of [['punch_hole','top_left'], ['teardrop','top_center'], ['none','none']]) {
+  const profile = catalog.find((p:any) => p.cohort === 'generated' && p.notch.type === type && p.notch.position === position);
+  expect(profile).toBeTruthy();
+  await page.goto(profile.url);
+  const shell = page.locator(`${profile.shell_id}-shell[data-ready="true"]`);
+  const frame = shell.locator('.device');
+  await expect(frame).toHaveAttribute('data-notch', type);
+  await expect(frame).toHaveAttribute('data-notch-position', position);
+  const notch = shell.locator('.notch');
+  if (type === 'none') {
+   await expect(notch).toBeHidden();
+  } else {
+   await expect(notch).toBeVisible();
+   const box = await notch.boundingBox();
+   const screen = await shell.locator('.screen').boundingBox();
+   expect(box && screen).toBeTruthy();
+   const relativeCenter = (box!.x + box!.width / 2 - screen!.x) / screen!.width;
+   if (position === 'top_left') expect(relativeCenter).toBeLessThan(0.25);
+   else expect(Math.abs(relativeCenter - 0.5)).toBeLessThan(0.1);
+  }
  }
 });

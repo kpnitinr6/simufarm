@@ -13,8 +13,8 @@
     "dpi": 295.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 1.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2021/c01-plus/nokia-c01-plus-beridzeg45-4683-1gb.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
-    "https://www.gsmarena.com/nokia_c01_plus-10955.php"
+    "https://www.gsmarena.com/nokia_c01_plus-10955.php",
+    "https://www.hmd.com/en_int/support/nokia-c01-plus-user-guide/keys-and-parts"
   ],
   "confidence": 0.85,
   "verified_by": null,

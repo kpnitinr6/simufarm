@@ -13,8 +13,8 @@
     "dpi": 395.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_center"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -22,7 +22,8 @@
   "source_type": "scraper",
   "sources": [
     "https://aitoolbuzz.com/mobiles/oneplus-nord-ce4-lite-india",
-    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7439-8gb-128gb-5g.json"
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2024/nord-ce4-lite/oneplus-nord-ce4-lite-aitoolbuzz-7439-8gb-128gb-5g.json",
+    "https://www.gizmochina.com/2024/08/05/oneplus-nord-ce-4-lite-review/3/"
   ],
   "confidence": 0.85,
   "verified_by": null,

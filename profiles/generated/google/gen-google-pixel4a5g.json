@@ -13,8 +13,8 @@
     "dpi": 416.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 6.0,
   "build": null,
@@ -24,7 +24,8 @@
     "https://en.wikipedia.org/wiki/Pixel_4a",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2020/pixel-4a-5g.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
-    "https://store.google.com/product/pixel_4a_5g_specs"
+    "https://store.google.com/product/pixel_4a_5g_specs",
+    "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel4a(5G)"
   ],
   "confidence": 0.85,
   "verified_by": null,

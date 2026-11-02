@@ -9,7 +9,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "id"
     },
     "brand": {
@@ -18,17 +18,18 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "brand"
     },
     "model": {
       "source_urls": [
         "https://nothing.tech/products/phone-4a"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 targeted source check; human review pending: Official product page confirms existence as of 2026-10-28; retain. This existence verification does not independently verify every numeric field.",
       "csv_file": "devices.csv",
-      "csv_line": 869,
-      "csv_column": "model"
+      "csv_line": 810,
+      "csv_column": "model",
+      "source_location": "Product heading"
     },
     "release_year": {
       "source_urls": [
@@ -36,7 +37,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "release_year"
     },
     "os_family": {
@@ -45,7 +46,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "os_version": {
@@ -54,7 +55,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "os_version"
     },
     "shell_id": {
@@ -63,7 +64,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "base_image_id": {
@@ -72,7 +73,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "screen.width_px": {
@@ -81,7 +82,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "width_px"
     },
     "screen.height_px": {
@@ -90,7 +91,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "height_px"
     },
     "screen.dpi": {
@@ -99,7 +100,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "dpi"
     },
     "notch": {
@@ -108,7 +109,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "notch"
     },
     "ram_gb": {
@@ -117,7 +118,7 @@
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": "ram_gb"
     },
     "build": {
@@ -126,7 +127,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "runtime_eligible": {
@@ -135,7 +136,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "source_type": {
@@ -144,7 +145,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "sources": {
@@ -153,7 +154,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "confidence": {
@@ -162,7 +163,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "verified_by": {
@@ -171,7 +172,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     },
     "verified_at": {
@@ -180,7 +181,7 @@
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 869,
+      "csv_line": 810,
       "csv_column": null
     }
   },
@@ -195,7 +196,7 @@
       "https://nothing.tech/products/phone-4a"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 869,
+    "csv_line": 810,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -210,5 +211,16 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_targeted_source_check": {
+    "profile_id": "gen-nothing-phone-4a",
+    "source_url": "https://nothing.tech/products/phone-4a",
+    "source_location": "Product heading",
+    "verified_fields": {
+      "model": "Phone (4a)"
+    },
+    "explanation": "Official product page confirms existence as of 2026-10-28; retain. This existence verification does not independently verify every numeric field.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  }
 }
