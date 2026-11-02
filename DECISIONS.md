@@ -73,3 +73,11 @@ Status: Accepted scope; implementation pending review (2 November 2026)
 The user accepted StageD and authorized a two-instance local StageE test with synthetic serial/IMEI injection. Five concurrent containers is a planning ceiling, with2GiB reserved for the Ubuntu VM host. Try Docker environment properties first; if ignored, use the official pinned Magisk resetprop tool in an Android init boot hook. No Oracle calls or paid resources.
 
 Select the China X100 variant V2309A/PD2309/vivo, keep India V2308 separate, and require sourced China firmware metadata. This specific test authorization does not fabricate human review or promote a production runtime profile. Store the complete experimental profile under data/runtime-test-profiles with runtime_eligible:false. General runtime admission still requires human-reviewed build evidence. Sourced Android16 fingerprint is a property overlay on Android13/SDK33, not an OS upgrade. Record getprop and telephony-service results separately.
+
+## ADR 019 — Match the real runtime to China X100 Android14
+
+Status: Accepted (2 November 2026)
+
+The X100 launched on Android14; inventing a PD2309 Android13 fingerprint is forbidden. The user selected official Redroid14 ARM64 64-only plus genuine China Android14 OTA identity. Both raw base build.prop and booted release/SDK must already be14/34 before resetprop; the hook explicitly sets release14 only after that check. No editing16to14 in a fingerprint.
+
+Conditional human approval applies after two fresh containers match release14, SDK34 and an unmodified China`:14/` fingerprint, and have distinct serial/IMEI properties. Those tests and restart persistence passed. Promote only vivo-x100 China; archive its previous India reference, retain other draft flags, and merge PR9 after green CI. This resolves major-version consistency, not OEM firmware/hardware equivalence. GADS/Appium remains local-only preparation; StageF mock UI is independently authorized.

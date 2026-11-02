@@ -1,9 +1,10 @@
 {
-  "base_image": "redroid/redroid@sha256:c815ac1b1d5bd0a099b74c3e3e0eeea3b32bed8d7ab1f788c20fb74e35891716",
+  "base_image": "redroid/redroid@sha256:46478a567194aed24cd0877d4434a9e58b534d4aad30931eb21999a52f2ce131",
   "magisk_version": "v31.1",
   "apk_url": "https://github.com/topjohnwu/Magisk/releases/download/v31.1/Magisk-v31.1.apk",
   "apk_sha256": "89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7",
   "binary_entry": "lib/arm64-v8a/libmagisk.so",
   "binary_sha256": "fb0ba1b1f3472d34b8ae21edd3a69c2a44f46a3a7c34e85e37c6b2b57d22b9ec",
-  "base_init_sha256": "07eb8d3f3278b33d6836bc553313d8619b442b89d40f0dbb940ab01b1d5bfb81"
+  "base_init_sha256": "b1582344de9a76ad05b50a07a4f28c21a16c4141c3decb7a59b20cceff1e756e",
+  "requested_tag": "redroid/redroid:14.0.0_64only-latest"
 }

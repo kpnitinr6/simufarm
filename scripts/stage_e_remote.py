@@ -55,7 +55,10 @@ def properties(profile):
         raise ValueError("China identity must not mix India firmware/model fields")
     if any(not re.fullmatch(r"[A-Za-z0-9_./:+-]+", b[k]) for k in KEYS):
         raise ValueError("Unsafe property value")
-    return {k: b[k] for k in KEYS}
+    release = profile.get("os_version")
+    if release != "14" or ":14/" not in b["ro.build.fingerprint"]:
+        raise ValueError("Firmware fingerprint and actual Android14 runtime must agree")
+    return {**{k: b[k] for k in KEYS}, "ro.build.version.release": release}
 
 
 def capacity(active, available, additional=1):
@@ -130,6 +133,16 @@ def execute(root):
         raise ValueError("Magisk binary digest mismatch")
     if tool["base_image"] not in (root / "context/Dockerfile").read_text():
         raise ValueError("Pinned base image mismatch")
+    inspection = "simufarm-stage-e-base-" + root.name[:12]
+    run("docker", "create", "--name", inspection, tool["base_image"])
+    try:
+        run("docker", "cp", inspection + ":/system/build.prop", str(root / "base-build.prop"))
+    finally:
+        run("docker", "rm", inspection)
+    (root / "base-build.prop").chmod(0o644)
+    raw = (root / "base-build.prop").read_text()
+    if "ro.build.version.release=14\n" not in raw or "ro.build.version.sdk=34\n" not in raw:
+        raise ValueError("Pinned base must really be Android14/SDK34 before release injection")
     active = run("docker", "ps", "-q").splitlines()
     capacity(len(active), available_memory(), 2)
     # Legacy Docker builder preserves COPY source modes; no Android shell RUN required.

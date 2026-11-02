@@ -1,69 +1,56 @@
-# Stage E identity injection — 2 November 2026
+# Stage E — accepted Android 14 identity injection
 
-The requested local two-container **getprop identity test passed**, including persistence across a container restart. Stage D was accepted by the user. This implementation is awaiting code review and general runtime-profile promotion is still pending.
+The user accepted Stage E and approved promotion of `vivo-x100` after a genuine China Android14 fingerprint matched a real Android14 runtime. That condition passed on2November2026 in two fresh containers and again after restarting each one. `profiles/runtime/vivo-x100.json` is now the first human-reviewed runtime-eligible profile. Its India predecessor is preserved under `data/archive/stage-a-india-x100/`.
 
-## Implementation
+## Sourced identity
 
-The isolated Docker environment probe retained `-e` properties in Docker Config.Env, but Android returned the default Redroid model/brand and empty serial/IMEI properties. Its stopped container and raw evidence were retained.
+| Property | Verified value |
+|---|---|
+| ro.product.model | V2309A |
+| ro.product.brand | vivo |
+| ro.product.device | PD2309 |
+| ro.build.version.release | 14 |
+| ro.build.version.sdk | 34 |
+| ro.build.fingerprint | vivo/PD2309/PD2309:14/UP1A.231005.007/compiler05201704:user/release-keys |
 
-The fallback image derives from the immutable StageD Redroid13 ARM64 64-only digest. Official Magisk v31.1 APK SHA256 is verified before extracting its ARM64 binary; the binary digest is also checked. Only the standalone resetprop applet is used. The image bakes an Android init script which executes synchronously immediately after `load_persist_props`, before zygote starts. It reads a read-only per-instance property file and applies `magisk resetprop -n -f`. The image retains Android `/init` as PID1. It does not install a Magisk manager, root daemon or unrestricted sudo policy.
+Model: [Vivo China specifications](https://www.vivo.com.cn/vivo/param/x100). Fingerprint and device: [official China OTA](https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip), META-INF/com/android/metadata, literal post-build and pre-device. The version is PD2309_A_14.0.25.13.W10.V000L1. Metadata and field provenance are retained in `data/research/stage-e-x100-china/android14/`. Three bounded read-only queries to Vivo's public OTA service located the update. Only a65536byte range was fetched from the official ZIP; metadata CRC was checked. The full archive digest and package signature were not independently verified. No fingerprint was edited or invented.
 
-`infra/redroid-identity/toolchain.json` pins the base/tool hashes. The base init file is preserved with the one explicit boot-hook insertion; its original SHA is recorded. The Dockerfile supports the VM's existing legacy Docker builder. The first image-build attempt failed because COPY --chmod requires BuildKit; it created no StageE containers. The compatible retry succeeded.
+The official `redroid/redroid:14.0.0_64only-latest` ARM64 manifest is pinned to `sha256:46478a567194aed24cd0877d4434a9e58b534d4aad30931eb21999a52f2ce131`. Both unmodified base build.prop and actual boot SDK/release were checked. The hook refuses to run unless the runtime already reports14/34; setting a release property does not masquerade as an OS upgrade.
 
-## China build evidence
+## Boot implementation and actuals
 
-The new experimental test profile is `data/runtime-test-profiles/vivo-x100-china.json`, separate from the India reference and production catalog. It has a complete build block but remains `runtime_eligible:false`, with no fabricated human reviewer.
-
-| Property | Test value | Evidence |
-|---|---|---|
-| ro.product.model | V2309A | [Vivo China X100 specifications](https://www.vivo.com.cn/vivo/param/x100), model listing |
-| ro.product.brand | vivo | [V2309A device database record](https://deviceinfohw.ru/devices/item.php?item=120403), BRAND label; firmware fingerprint corroborates brand |
-| ro.product.device | PD2309 | [China OTA metadata](../data/research/stage-e-x100-china/ota-metadata.txt), line16 pre-device |
-| ro.build.fingerprint | vivo/PD2309/PD2309:16/BP2A.250605.031.A3/compiler260818110530:user/release-keys | Same metadata, line8 post-build |
-
-Primary firmware URL, retrieval method, field confidence, discovery commit and hashes are in `data/research/stage-e-x100-china/provenance.json`. Only bounded ranges were read from Vivo's HTTPS CDN. ZIP metadata CRC was checked; the full10GB package and its cryptographic signature were not verified. The manufacturer model and OTA device family agree with the database record. This is a sourced test candidate awaiting human build-block review.
-
-**Actual OS remains Android13, SDK33.** The available China firmware fingerprint describes Android16. Applying it does not install OriginOS, change Android APIs, reproduce Vivo hardware, or establish a coherent physical-device attestation identity.
-
-## Observed pair
-
-Run: `a0bbed5eefa24c1ea54f936cc207c1e7`; UTC12:01:47–12:02:57. Derived local image ID: `sha256:b5615825294060e4fa4d3a3f4fe2f8a5d26d005f7c7ed37ff65add691fffd53d`.
+Docker environment properties were ignored by Android in the initial isolated probe. The fallback uses the official Magisk v31.1 standalone resetprop applet, with APK and extracted ARM64 binary hashes in `infra/redroid-identity/toolchain.json`. An init hook runs synchronously immediately after load_persist_props and before zygote. A read-only per-instance property file contains the sourced build identity plus distinct synthetic serial/IMEI values. It includes ro.build.version.release=14. Android /init remains PID1; no Magisk manager, daemon or sudoers grant is installed.
 
 | Observation | Instance1 | Instance2 |
 |---|---|---|
-| Container | simufarm-stage-e-a0bbed5eefa2-1 | simufarm-stage-e-a0bbed5eefa2-2 |
+| Container | simufarm-stage-e-b6c10f6a90e6-1 | simufarm-stage-e-b6c10f6a90e6-2 |
 | Guest-loopback ADB | 127.0.0.1:5561 | 127.0.0.1:5562 |
-| First boot | 9.183s | 12.761s |
-| Restart boot | 9.133s | 10.287s |
-| First RAM sample | 636.5MiB | 645.4MiB |
-| After-restart RAM sample | 667MiB | 681.9MiB |
-| Requested six getprops match | Yes | Yes |
-| Boot-hook marker | 1 | 1 |
-| Serial/IMEI unchanged after restart | Yes | Yes |
+| First boot | 10.158s | 16.854s |
+| Restart boot | 9.424s | 9.254s |
+| First RAM sample | 650.6MiB | 619.6MiB |
+| After-restart RAM sample | 625.6MiB | 610.5MiB |
+| All7 requested properties match | Yes | Yes |
+| Actual release / SDK | 14 /34 | 14 /34 |
+| Serial and IMEI properties stable on restart | Yes | Yes |
 
-Both ro.serialno and persist.radio.imei were nonempty and different between instances. Android IDs also differed and remained stable on restart. Assigned serials have SFTEST prefixes; IMEIs use synthetic zero-prefix test values with a Luhn check digit. They are not claimed to be allocated physical-phone identifiers. Raw values remain in local evidence.
+Serials and IMEI properties are populated and different between instances; Android IDs also differ. Identifiers are synthetic test values, not claimed allocated physical-phone identities. Raw values remain in local evidence. The derived image ID is `sha256:605b2d3f881374f70b3791de001f6133eedfbba86f60851fe07e3f7694ff7362`.
 
-The separate `service call iphonesubinfo 1` probe returned `Parcel(fffffffc ffffffff 00000000 ...)`, not a usable IMEI. This is retained as an inconclusive/exception service result. No claim is made that TelephonyManager or a radio HAL exposes the injected property. Supporting application-level telephony identity requires its own interface-aware test and implementation.
+The test ran UTC12:58:25–12:59:42. Guest MemAvailable was3,549,794,304bytes afterward, above the2GiB Ubuntu reserve. Four containers remain running: two historical StageD Android13 containers plus the new Android14 pair. The old StageE Android13 pair was stopped and retained; no data volumes were cloned or deleted. Five remains the configured planning ceiling, not a load-tested concurrency guarantee.
 
-The pair ran alongside the accepted StageD pair: four running containers total, below the configured ceiling5. Each StageE instance is limited to1200MiB with no extra swap allowance. The runner checks concurrent count and MemAvailable before launches; the post-test guest MemAvailable was3,982,995,456bytes, above the2GiB reserve. These idle boot observations do not constitute a concurrency load benchmark.
+The collector returned0. Initial evidence transfer failed on a root-owned build.prop snapshot; only that nonsecret snapshot was made readable and the complete evidence transfer then succeeded. The runner now sets that snapshot's read permission itself. No boot test was repeated merely for the transfer correction.
+
+## Limits and promotion
+
+The telephony Binder probe still returns an exception parcel rather than a usable IMEI. getprop works; SIM registration, calls, SMS, cellular data and radio-HAL dependent operations do not work as on a phone. TelephonyManager identity is not established by writing persist.radio.imei.
+
+Matching Android major release and SDK resolves the specific13/16 mismatch. Redroid is still AOSP-based, not Vivo firmware: OEM APIs, drivers, sensors, certification and attestation are not reproduced. No general application-compatibility guarantee follows from a matched fingerprint.
+
+The user's human review is recorded in `data/reviews/vivo-x100.runtime.json`, applied after the matching runtime passed. Only this profile is promoted. The experimental rehearsal profile remains false, and all generated static drafts retain build:null/runtime_eligible:false.
+
+Historical Android13/Android16 evidence is retained locally and in the earlier commit; it is superseded for the active profile. No Oracle or MobileAPI calls, paid resources, new sudo policy or public ADB exposure occurred.
 
 ## Reproduction
 
-Download the exact official APK URL in toolchain.json. From the clean checkout, run:
+`scripts/stage_e_utm.py` defaults to plan-only, with no external calls. Supply the existing VM UUID, SSH key and verified known_hosts file. `--execute-test --magisk-apk /absolute/path/Magisk-v31.1.apk` runs two fresh rehearsal instances with the pinned image and verifies restart persistence. It refuses a pair if doing so exceeds5running containers or the2GiB host reserve. With four currently running, stop the specifically selected old test pair before rerunning. Never remove unrelated containers or volumes.
 
-```sh
-python scripts/stage_e_utm.py \
-  --vm-id F28BDEF7-5053-4B12-A98D-A33831B72167 \
-  --identity /Users/nitinkarwauth/.ssh/simufarm_stage_d_ed25519 \
-  --known-hosts /Volumes/SimuFarmDrive/SimuFarm/evidence/known_hosts
-```
-
-This defaults to a plan with no external calls. `--execute-test --magisk-apk /absolute/path/Magisk-v31.1.apk` executes the isolated test through existing UTM guest-agent privileges and strict localhost SSH. It creates two additional instances and refuses execution if that would exceed the five-container ceiling or the memory reserve. With the current four running containers, a new pair will be refused; stop the specifically selected old test pair before rerunning. Do not remove unrelated containers or volumes.
-
-Evidence: workspace `outputs/stage-e-runtime/observations.json`, external drive `SimuFarm/evidence/stage-e/a0bbed5eefa24c1ea54f936cc207c1e7/observations.json`, and the ignored checkout `data/runtime/local/stage-e/`. Prior failed build and environment probe evidence are retained separately. No secrets or VM disks are committed.
-
-## Validation and remaining scope
-
-112 local Python tests passed; Ruff passed. Public remote CI uses Python3.12/Node22; its outcome is recorded in the delivery report. Meaningful new checks cover mixed-region rejection, missing/unsafe properties, synthetic identifier checksums, memory/concurrency limits, pre-zygote ordering, and no-action plan mode.
-
-Remaining: code review; human review of the China build block before catalog runtime promotion; app-level telephony identity support if required; five-container workload benchmarking. The original India reference and all generated draft eligibility flags are unchanged. Zero Oracle API calls, zero MobileAPI calls, zero paid resources created in this work. Oracle cleanup remains a separate unexecuted user-run action.
+Local raw evidence: workspace `outputs/stage-e-android14-runtime/observations.json`; external drive `SimuFarm/evidence/stage-e-android14/b6c10f6a90e6476b921b2b20f80643f0/`. The implementation remains in PR9 until CI is confirmed and the authorized merge completes.

@@ -33,8 +33,14 @@ Configured ceiling: **5 concurrent containers**, reserving **2GiB for the Ubuntu
 StageE is now explicitly authorized for identity-injection tests. IMEI properties and serials will be synthetic per-instance test identifiers, never represented as original physical handset identifiers. A getprop IMEI value and a telephony-service IMEI result must be reported separately.
 
 
-## Stage E property test actuals
+## Historical Stage E Android13/16 property test actuals
 
 Two China X100 test containers booted on the derived resetprop image on 2 November 2026. First boots: **9.183s / 12.761s**; restarts: **9.133s / 10.287s**. Docker RAM samples were **636.5MiB / 645.4MiB** after first boots and **667MiB / 681.9MiB** after restarts, under a1200MiB per-container limit. Sampling occurred at different times; these figures do not replace the original StageD baseline. Two original StageD containers also remained running: four total active containers, without a four- or five-container load benchmark. Guest MemAvailable after the test was **3,982,995,456bytes (~3.71GiB)**, above the2GiB reserve.
 
 Model V2309A, brand vivo, device PD2309 and the sourced China fingerprint matched via getprop in both instances. Synthetic serial and persist.radio.imei values were populated, distinct and stable across restarts. The telephony Binder probe returned no usable IMEI; property injection does not establish modem/TelephonyManager identity support. Actual OS remains Android13/SDK33; the sourced fingerprint describes China Android16 firmware. See [STAGE_E_IDENTITY.md](STAGE_E_IDENTITY.md).
+
+## Active Android14 pair — matching fingerprint
+
+The user approved upgrading to official Redroid14 ARM64 64-only. Two fresh China X100 containers passed release14 /SDK34 /`:14/` fingerprint checks, with distinct serial/IMEI properties, stable after restart. First boots **10.158s /16.854s**; restart boots **9.424s /9.254s**. First RAM samples **650.6MiB /619.6MiB**; after restart **625.6MiB /610.5MiB**. Each has a1200MiB memory limit. Guest MemAvailable afterward **3,549,794,304bytes (~3.31GiB)**. These measurements supersede the prior13/16 pair for the active runtime, without rewriting historical evidence.
+
+Old StageE13containers are stopped and retained. Four containers currently run (two historical StageD13 plus two StageE14). Five remains a planning ceiling with a2GiB Ubuntu reserve; no five-container workload benchmark was performed. Human-reviewed runtime subset is now1profile, vivo-x100 China. getprop IMEI passes; cellular/TelephonyManager functionality remains unavailable or unverified.

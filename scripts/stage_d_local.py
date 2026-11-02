@@ -81,7 +81,7 @@ def main():
     mode = p.add_mutually_exclusive_group()
     mode.add_argument("--preflight", action="store_true")
     mode.add_argument("--execute", action="store_true")
-    p.add_argument("--profile", type=Path, default=ROOT / "profiles/vivo/vivo-x100.json")
+    p.add_argument("--profile", type=Path, default=ROOT / "profiles/runtime/vivo-x100.json")
     p.add_argument("--apk", type=Path)
     p.add_argument("--apk-sha256")
     p.add_argument("--image")
