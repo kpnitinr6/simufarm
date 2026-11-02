@@ -13,8 +13,8 @@
     "dpi": 411.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_center"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Pixel_6",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2021/pixel-6.json",
-    "https://store.google.com/us/product/pixel_6_specs"
+    "https://store.google.com/us/product/pixel_6_specs",
+    "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel6"
   ],
   "confidence": 0.85,
   "verified_by": null,

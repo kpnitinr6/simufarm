@@ -13,8 +13,8 @@
     "dpi": 395.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 16.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Asus_ROG_Phone_7",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2023/asus-rog-phone-7.json",
+    "https://jamonline.ph/reviews/asus-rog-phone-7-review/",
     "https://rog.asus.com/phones/rog-phone-7-model/"
   ],
   "confidence": 0.85,

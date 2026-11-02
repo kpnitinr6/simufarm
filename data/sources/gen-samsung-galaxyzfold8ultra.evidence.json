@@ -6,238 +6,253 @@
     "id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": "id"
     },
     "brand": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": "brand"
     },
     "model": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": "model"
     },
     "release_year": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": "release_year"
     },
     "os_family": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "os_version": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": "os_version"
     },
     "shell_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "base_image_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "screen.width_px": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
-        "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 targeted source check; human review pending: Manufacturer July 22 2026 launch verifies existence; correct main display inherited from speculative dataset. OS remains unverified (official table empty).",
       "csv_file": "devices.csv",
-      "csv_line": 128,
-      "csv_column": "width_px"
+      "csv_line": 104,
+      "csv_column": "width_px",
+      "source_location": "Specification table, lines 180-196 in web extraction dated 2026-10-28"
     },
     "screen.height_px": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
-        "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 targeted source check; human review pending: Manufacturer July 22 2026 launch verifies existence; correct main display inherited from speculative dataset. OS remains unverified (official table empty).",
       "csv_file": "devices.csv",
-      "csv_line": 128,
-      "csv_column": "height_px"
+      "csv_line": 104,
+      "csv_column": "height_px",
+      "source_location": "Specification table, lines 180-196 in web extraction dated 2026-10-28"
     },
     "screen.dpi": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
-        "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 targeted source check; human review pending: Manufacturer July 22 2026 launch verifies existence; correct main display inherited from speculative dataset. OS remains unverified (official table empty).",
       "csv_file": "devices.csv",
-      "csv_line": 128,
-      "csv_column": "dpi"
+      "csv_line": 104,
+      "csv_column": "dpi",
+      "source_location": "Specification table, lines 180-196 in web extraction dated 2026-10-28"
     },
     "notch": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": "notch"
     },
     "ram_gb": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": "ram_gb"
     },
     "build": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "runtime_eligible": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "source_type": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "sources": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "confidence": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "verified_by": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     },
     "verified_at": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+        "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 128,
+      "csv_line": 104,
       "csv_column": null
     }
   },
   "cohort": "stage-c-generated",
   "source_record": {},
   "pre_2020_justification": null,
-  "screen_inches": 7.6,
+  "screen_inches": 8.0,
   "screen_size_class": "6.5-plus",
   "chipset_family": "qualcomm-snapdragon",
   "diversity_evidence": {
     "source_urls": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-z-fold-8-ultra/samsung-galaxy-z-fold-8-ultra-12gb-256gb-5g.json",
+      "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 128,
+    "csv_line": 104,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -252,5 +267,19 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_targeted_source_check": {
+    "profile_id": "gen-samsung-galaxyzfold8ultra",
+    "source_url": "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
+    "source_location": "Specification table, lines 180-196 in web extraction dated 2026-10-28",
+    "verified_fields": {
+      "width_px": "2256",
+      "height_px": "2504",
+      "dpi": "422",
+      "screen_inches": "8.0"
+    },
+    "explanation": "Manufacturer July 22 2026 launch verifies existence; correct main display inherited from speculative dataset. OS remains unverified (official table empty).",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  }
 }

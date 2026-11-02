@@ -8,11 +8,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "id"
     },
     "brand": {
@@ -20,11 +21,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "brand"
     },
     "model": {
@@ -32,11 +34,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "model"
     },
     "release_year": {
@@ -44,11 +47,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "release_year"
     },
     "os_family": {
@@ -56,11 +60,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "os_version": {
@@ -68,11 +73,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "os_version"
     },
     "shell_id": {
@@ -80,11 +86,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "base_image_id": {
@@ -92,11 +99,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "screen.width_px": {
@@ -104,11 +112,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "width_px"
     },
     "screen.height_px": {
@@ -116,11 +125,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "height_px"
     },
     "screen.dpi": {
@@ -128,35 +138,34 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "dpi"
     },
     "notch": {
       "source_urls": [
-        "https://en.wikipedia.org/wiki/Pixel_9",
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
-        "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 source-backed geometry; human review pending: manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
       "csv_file": "devices.csv",
-      "csv_line": 408,
-      "csv_column": "notch"
+      "csv_line": 361
     },
     "ram_gb": {
       "source_urls": [
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": "ram_gb"
     },
     "build": {
@@ -164,11 +173,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "runtime_eligible": {
@@ -176,11 +186,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "source_type": {
@@ -188,11 +199,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "sources": {
@@ -200,11 +212,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "confidence": {
@@ -212,11 +225,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "verified_by": {
@@ -224,11 +238,12 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
     },
     "verified_at": {
@@ -236,12 +251,33 @@
         "https://en.wikipedia.org/wiki/Pixel_9",
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
         "https://storage.googleapis.com/play_public/supported_devices.csv",
-        "https://store.google.com/product/pixel_9_pro_specs"
+        "https://store.google.com/product/pixel_9_pro_specs",
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 408,
+      "csv_line": 361,
       "csv_column": null
+    },
+    "notch.type": {
+      "source_urls": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
+      ],
+      "method": "C2 source-backed geometry; human review pending: manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "csv_file": "devices.csv",
+      "csv_line": 361,
+      "csv_column": "notch"
+    },
+    "notch.position": {
+      "source_urls": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
+      ],
+      "method": "C2 source-backed geometry; human review pending: manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "csv_file": "devices.csv",
+      "csv_line": 361,
+      "csv_column": "notch_position"
     }
   },
   "cohort": "stage-c-generated",
@@ -255,10 +291,11 @@
       "https://en.wikipedia.org/wiki/Pixel_9",
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/google/2024/pixel-9-pro-xl.json",
       "https://storage.googleapis.com/play_public/supported_devices.csv",
-      "https://store.google.com/product/pixel_9_pro_specs"
+      "https://store.google.com/product/pixel_9_pro_specs",
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 408,
+    "csv_line": 361,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -273,5 +310,25 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_geometry_check": {
+    "id": "gen-google-pixel9proxl",
+    "model": "Pixel 9 Pro XL",
+    "brand": "google",
+    "notch": "punch_hole",
+    "notch_position": "top_center",
+    "sources": [
+      "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
+    ],
+    "method": "manufacturer_hardware_diagram_visual_inference",
+    "raw_quote": "",
+    "rank": null,
+    "rank_source": null,
+    "confidence": 0.9,
+    "human_review": "pending",
+    "runtime_eligible": false,
+    "image_url": "https://lh3.googleusercontent.com/9TZIZCWf68Q9J2IYvIcuCuqLSn-WTpL_BhncuKp7wzJox0gG03Af-S3UkmPc9JmsK_ar=w895",
+    "source_section": "Pixel 9 Pro XL",
+    "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+  }
 }

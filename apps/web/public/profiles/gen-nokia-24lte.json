@@ -13,8 +13,8 @@
     "dpi": 270.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "teardrop",
+    "position": "top_center"
   },
   "ram_gb": 3.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nokia/2020/2-4-lte.json",
     "https://storage.googleapis.com/play_public/supported_devices.csv",
+    "https://www.hmd.com/en_int/support/nokia-2-4-user-guide/keys-and-parts",
     "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
   ],
   "confidence": 0.85,

@@ -1,3 +1,5 @@
+> Historical engineering plan. C2 Option B supersedes the round-number quota; see data/cohort-policy.json and STATUS.md.
+
 # Stage C — authorized plan
 
 Operator accepted Stage B for static/interactive scope. Runtime evidence is a separate track and does not block Stage C. Interactive behavior is not claimed to be implemented by this acceptance.
