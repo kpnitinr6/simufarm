@@ -17,7 +17,7 @@ npm run build
 npm run dev
 ```
 
-Open http://127.0.0.1:5173. Device pages live under `/simulators/`, including `/simulators/vivo-x100.html`. The HTML is original artwork and does not stream Android or run APKs. The visual reference catalog retains22profiles across20brands; one reference now has reviewed runtime eligibility. Generated draft data and the accepted C2 remediation remain separate branches; source presence and round-number generation are not claims that every row is a verified distinct device.
+Open http://127.0.0.1:5173. Device pages live under `/simulators/`, including `/simulators/vivo-x100.html`. The HTML is original artwork and does not stream Android or run APKs. Each device page has an **Enable interactive chrome** button for mock status controls, text input/keyboard, rotation and dark mode. These local UI controls are available across all20brand shells; they do not imply real OS or cellular behavior. The visual reference catalog retains22profiles across20brands; one reference now has reviewed runtime eligibility. Generated draft data and the accepted C2 remediation remain separate branches; source presence and round-number generation are not claims that every row is a verified distinct device.
 
 ## Telephony limitation — this is not a real phone
 
@@ -39,3 +39,8 @@ npm run test:web
 ```
 
 CI performs code/schema/static/browser checks on public standard runners. It never provisions cloud resources, boots Android, runs nightly APK tests or consumes MobileAPI quota. MobileAPI conservative cap remains50requests/month; this work made zero calls. Runtime observations remain in local evidence rather than public Git. Do not commit private keys, VM disks, APKs or credentials.
+
+
+## Local automation preparation
+
+StageG topology, provider UI-field recipe and plan-only Appium harness are prepared in [STAGE_G_LOCAL_PREP.md](docs/STAGE_G_LOCAL_PREP.md). GADS/Appium were not installed or started, no Appium session or nightly APK run was executed, and SSH2222 is not an Appium/ADB endpoint. StageF interaction evidence is in [STAGE_F_INTERACTIVE.md](docs/STAGE_F_INTERACTIVE.md).

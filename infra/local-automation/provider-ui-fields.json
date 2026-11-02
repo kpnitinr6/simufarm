@@ -1,0 +1,14 @@
+{
+  "os": "linux",
+  "nickname": "simufarm-utm",
+  "host_address": "127.0.0.1",
+  "port": 10001,
+  "provide_android": true,
+  "provide_android_emulators": false,
+  "provide_androidtv": false,
+  "provide_ios": false,
+  "provide_tizen": false,
+  "provide_webos": false,
+  "provide_roku": false,
+  "setup_appium_servers": true
+}

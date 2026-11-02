@@ -1,0 +1,12 @@
+{
+  "platformName": "Android",
+  "appium:automationName": "UiAutomator2",
+  "appium:udid": "127.0.0.1:5561",
+  "appium:deviceName": "vivo-x100",
+  "appium:platformVersion": "14",
+  "appium:systemPort": 8201,
+  "appium:appPackage": "io.appium.android.apis",
+  "appium:appActivity": ".ApiDemos",
+  "appium:noReset": true,
+  "appium:newCommandTimeout": 60
+}

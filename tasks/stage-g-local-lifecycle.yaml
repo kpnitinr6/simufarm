@@ -1,0 +1,27 @@
+{
+  "id": "stage-g-local-lifecycle",
+  "status": "prepared-not-executed",
+  "authorization": "Preparation only; no nightly schedule or GADS/Appium deployment executed.",
+  "target": "existing-local-utm",
+  "oracle_api_calls_allowed": false,
+  "paid_resources_allowed": false,
+  "runtime_profile": "profiles/runtime/vivo-x100.json",
+  "container_ceiling": 5,
+  "host_reserve_bytes": 2147483648,
+  "steps": [
+    "Acquire shared pool lock; admit only complete human-reviewed runtime-eligible profile; queue overflow.",
+    "Check MemAvailable and active pool count including other runners.",
+    "Start one owned Android14 container with a fresh data volume and readonly property file.",
+    "Wait for ADB and boot; assert release14/SDK34 and sourced China fingerprint.",
+    "Connect the owned ADB endpoint; register/verify selected device with GADS provider using the reviewed upstream interface.",
+    "Run a bounded Appium sample; store result/screenshot/XML and expose result via the later API.",
+    "Finally: close Appium session, deregister owned device, disconnect owned ADB endpoint, stop the owned container. Retain or delete only explicitly owned test data according to the test retention policy."
+  ],
+  "remaining": [
+    "GADS local install and authenticated UI/provider registration",
+    "Shared capacity lock and bounded queue implementation",
+    "GADS-integrated Appium execution",
+    "SQLite/results API",
+    "Nightly execution only when separately enabled after an observed successful manual run"
+  ]
+}
