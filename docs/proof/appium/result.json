@@ -1,0 +1,71 @@
+{
+  "stage": "G",
+  "mode": "gads-managed-appium-smoke",
+  "passed": true,
+  "session_id": "75e54716-78f9-43ef-a6ec-9c162686cac3",
+  "capabilities": {
+    "platformName": "Android",
+    "automationName": "UiAutomator2",
+    "udid": "127.0.0.1:5561",
+    "deviceName": "127.0.0.1:5561",
+    "platformVersion": "14",
+    "systemPort": 8201,
+    "appPackage": "io.appium.android.apis",
+    "appActivity": ".ApiDemos",
+    "noReset": true,
+    "newCommandTimeout": 60,
+    "platform": "LINUX",
+    "webStorageEnabled": false,
+    "takesScreenshot": true,
+    "javascriptEnabled": true,
+    "databaseEnabled": false,
+    "networkConnectionEnabled": true,
+    "locationContextEnabled": false,
+    "warnings": {},
+    "desired": {
+      "platformName": "Android",
+      "automationName": "UiAutomator2",
+      "udid": "127.0.0.1:5561",
+      "deviceName": "vivo-x100",
+      "platformVersion": "14",
+      "systemPort": 8201,
+      "appPackage": "io.appium.android.apis",
+      "appActivity": ".ApiDemos",
+      "noReset": true,
+      "newCommandTimeout": 60
+    },
+    "deviceUDID": "127.0.0.1:5561",
+    "pixelRatio": "2.825",
+    "statBarHeight": 68,
+    "viewportRect": {
+      "left": 0,
+      "top": 68,
+      "width": 1260,
+      "height": 2732
+    },
+    "deviceApiLevel": 34,
+    "deviceManufacturer": "redroid",
+    "deviceModel": "V2309A",
+    "deviceScreenSize": "1260x2800",
+    "deviceScreenDensity": 452
+  },
+  "steps": [
+    {
+      "action": "click",
+      "accessibility_id": "Views",
+      "passed": true
+    },
+    {
+      "action": "click",
+      "accessibility_id": "Buttons",
+      "passed": true
+    },
+    {
+      "action": "click",
+      "accessibility_id": "Normal",
+      "passed": true
+    }
+  ],
+  "session_deleted": true,
+  "elapsed_seconds": 13.631
+}

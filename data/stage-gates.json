@@ -17,5 +17,20 @@
     ],
     "started": true,
     "complete": true
+  },
+  "stage_f": {
+    "complete": true,
+    "human_execution_authorized": true
+  },
+  "stage_g": {
+    "preparation_complete": true,
+    "manual_appium_smoke_passed": true,
+    "elapsed_seconds": 13.631,
+    "services_running": false,
+    "nightly_enabled": false,
+    "full_farm_orchestration_complete": false
+  },
+  "stage_h": {
+    "handoff_complete": true
   }
 }

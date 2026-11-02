@@ -44,3 +44,13 @@ Model V2309A, brand vivo, device PD2309 and the sourced China fingerprint matche
 The user approved upgrading to official Redroid14 ARM64 64-only. Two fresh China X100 containers passed release14 /SDK34 /`:14/` fingerprint checks, with distinct serial/IMEI properties, stable after restart. First boots **10.158s /16.854s**; restart boots **9.424s /9.254s**. First RAM samples **650.6MiB /619.6MiB**; after restart **625.6MiB /610.5MiB**. Each has a1200MiB memory limit. Guest MemAvailable afterward **3,549,794,304bytes (~3.31GiB)**. These measurements supersede the prior13/16 pair for the active runtime, without rewriting historical evidence.
 
 Old StageE13containers are stopped and retained. Four containers currently run (two historical StageD13 plus two StageE14). Five remains a planning ceiling with a2GiB Ubuntu reserve; no five-container workload benchmark was performed. Human-reviewed runtime subset is now1profile, vivo-x100 China. getprop IMEI passes; cellular/TelephonyManager functionality remains unavailable or unverified.
+
+## Closeout: manual Appium and stopped handoff
+
+A GADS-managed Appium3.9.0/UiAutomator2 8.7.3session on the local Android14 X100 passed the ApiDemos Views→Buttons→Normal sequence in **13.631s**, with native screenshot/XML capture and successful WebDriver deletion. GADS hub/provider, Appium, MongoDB and the owned Mac tunnel were stopped afterward. Android-aware shutdown was validated in a private PID namespace, **2.176s, exit130, no Docker-stop fallback**; retained volumes were not deleted. The first Docker-only stop had needed its timeout after a sync; the Android-aware utility corrects that behavior.
+
+A warm developer rehearsal with the VM already running and images cached passed: **99.812s** from controller workspace creation through result transfer, of which94.660s was the guest boot/restart workflow. This does not include a fresh Ubuntu install or downloads. The guide targets under10minutes with one-time prerequisites ready. The final stopped-VM startup measurement and final resource inventory are recorded in FINAL_HANDOFF.md.
+
+Five concurrent Redroid containers remains a planning ceiling with2GiB reserved for Ubuntu, not a five-way workload measurement. Current active-container count at final handoff is0; the hardware/image/toolchain and evidence are retained for the next local run.
+
+Final warm quick-start from a powered-off VM passed in **326.985s**, including VM start, SSH and two fresh-container boot/restart checks. Cached prerequisites only; the fixed bounded ADB readiness loop is regression-tested. See docs/proof/quickstart-result.json.

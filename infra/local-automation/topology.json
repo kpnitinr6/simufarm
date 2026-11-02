@@ -1,6 +1,10 @@
 {
-  "status": "prepared-not-executed",
-  "ssh": {"host": "127.0.0.1", "port": 2222, "user": "simufarm"},
+  "status": "manual-validated-services-stopped",
+  "ssh": {
+    "host": "127.0.0.1",
+    "port": 2222,
+    "user": "simufarm"
+  },
   "services_in_vm": {
     "gads_hub": "http://127.0.0.1:10000",
     "gads_provider": "http://127.0.0.1:10001",
@@ -9,14 +13,33 @@
     "adb_server": "127.0.0.1:5037"
   },
   "mac_tunnels": [
-    {"local_port": 10000, "vm_port": 10000},
-    {"local_port": 10001, "vm_port": 10001},
-    {"local_port": 14723, "vm_port": 4723}
+    {
+      "local_port": 10000,
+      "vm_port": 10000
+    },
+    {
+      "local_port": 10001,
+      "vm_port": 10001
+    },
+    {
+      "local_port": 14723,
+      "vm_port": 4723
+    }
   ],
-  "adb_devices_in_vm": ["127.0.0.1:5561", "127.0.0.1:5562"],
+  "adb_devices_in_vm": [
+    "127.0.0.1:5561",
+    "127.0.0.1:5562"
+  ],
   "container_ceiling": 5,
   "host_reserve_bytes": 2147483648,
   "gads_commit": "d8abfc32e282d872a08484cd6a1e4a535c0cebe9",
   "cloud_endpoints": [],
-  "nightly_enabled": false
+  "nightly_enabled": false,
+  "appium_mode": "GADS provider assigns a dynamic loopback port; example standalone4723is not the provider endpoint",
+  "last_observed_gads_appium": "http://127.0.0.1:41229",
+  "last_test_tunnel": {
+    "local_port": 14723,
+    "vm_port": 41229,
+    "closed": true
+  }
 }

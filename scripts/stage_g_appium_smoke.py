@@ -6,7 +6,8 @@ import base64
 import json
 import time
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.error import HTTPError
+from urllib.parse import quote, urlsplit
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,17 +34,25 @@ def request(endpoint, method, route, data=None):
     req = Request(
         endpoint + route, data=body, method=method, headers={"Content-Type": "application/json"}
     )
-    with urlopen(req, timeout=120) as response:
-        result = json.load(response)
+    try:
+        with urlopen(req, timeout=120) as response:
+            result = json.load(response)
+    except HTTPError as exc:
+        detail = exc.read().decode(errors="replace")
+        raise RuntimeError(f"Appium HTTP{exc.code} {route}: {detail}") from exc
     value = result.get("value", {})
     if isinstance(value, dict) and value.get("error"):
         raise RuntimeError(value)
     return result
 
 
-def smoke(endpoint, caps, output):
+def smoke(endpoint, caps, output, *, gads_managed=False):
     session = None
-    report = {"stage": "G", "mode": "standalone-appium-smoke", "passed": False}
+    report = {
+        "stage": "G",
+        "mode": "gads-managed-appium-smoke" if gads_managed else "standalone-appium-smoke",
+        "passed": False,
+    }
     output.mkdir(parents=True, exist_ok=False)
     start = time.monotonic()
     try:
@@ -59,6 +68,33 @@ def smoke(endpoint, caps, output):
         if not source or "<hierarchy" not in source:
             raise RuntimeError("No Android view hierarchy returned")
         (output / "source.xml").write_text(source)
+        if "io.appium.android.apis" not in source:
+            raise RuntimeError("ApiDemos package absent from the view hierarchy")
+        steps = []
+        for label in ("Views", "Buttons", "Normal"):
+            element = request(
+                endpoint,
+                "POST",
+                f"/session/{quote(session, safe='')}/element",
+                {"using": "accessibility id", "value": label},
+            )["value"]
+            element_id = element.get("element-6066-11e4-a52e-4f735466cecf") or element.get(
+                "ELEMENT"
+            )
+            if not element_id:
+                raise RuntimeError(f"Missing element id for {label}")
+            request(
+                endpoint,
+                "POST",
+                f"/session/{quote(session, safe='')}/element/{quote(element_id, safe='')}/click",
+                {},
+            )
+            steps.append({"action": "click", "accessibility_id": label, "passed": True})
+        report["steps"] = steps
+        (output / "source-after-actions.xml").write_text(
+            request(endpoint, "GET", f"/session/{quote(session, safe='')}/source")["value"]
+        )
+
         shot = request(endpoint, "GET", f"/session/{session}/screenshot")["value"]
         (output / "screenshot.png").write_bytes(base64.b64decode(shot, validate=True))
         report["passed"] = True
@@ -90,6 +126,7 @@ def main():
     )
     p.add_argument("--output", type=Path, default=ROOT / "data/runtime/local/stage-g-smoke")
     p.add_argument("--execute", action="store_true")
+    p.add_argument("--gads-managed", action="store_true")
     a = p.parse_args()
     caps = json.loads(a.capabilities.read_text())
     print(
@@ -103,7 +140,7 @@ def main():
         )
     )
     if a.execute:
-        smoke(a.endpoint, caps, a.output)
+        smoke(a.endpoint, caps, a.output, gads_managed=a.gads_managed)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 {
   "id": "stage-g-local-lifecycle",
-  "status": "prepared-not-executed",
-  "authorization": "Preparation only; no nightly schedule or GADS/Appium deployment executed.",
+  "status": "prepared-with-passing-manual-smoke",
+  "authorization": "Local manual GADS/Appium execution authorized and completed; no nightly schedule enabled.",
   "target": "existing-local-utm",
   "oracle_api_calls_allowed": false,
   "paid_resources_allowed": false,
@@ -18,10 +18,15 @@
     "Finally: close Appium session, deregister owned device, disconnect owned ADB endpoint, stop the owned container. Retain or delete only explicitly owned test data according to the test retention policy."
   ],
   "remaining": [
-    "GADS local install and authenticated UI/provider registration",
-    "Shared capacity lock and bounded queue implementation",
-    "GADS-integrated Appium execution",
-    "SQLite/results API",
-    "Nightly execution only when separately enabled after an observed successful manual run"
+    "Optional full farm executor, shared capacity queue and retention policy",
+    "Optional SQLite/results API",
+    "Optional nightly scheduling after separate operator enablement"
+  ],
+  "manual_test_evidence": "docs/proof/appium-test-results.md",
+  "completed_in_closeout": [
+    "GADS local ARM64 build and hub/provider startup",
+    "Virtual Android14 device registration and live readiness",
+    "Provider-managed Appium ApiDemos test",
+    "WebDriver deletion, service/container shutdown and proof capture"
   ]
 }

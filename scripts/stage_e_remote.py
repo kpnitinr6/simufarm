@@ -105,10 +105,15 @@ def observe(name, serial, props):
 def boot(name, serial, command):
     start = time.monotonic()
     run(*command, timeout=180)
-    while time.monotonic() - start < 180:
-        run("adb", "connect", serial, check=False, timeout=20)
-        if (
-            run(
+    deadline = start + 180
+    while time.monotonic() < deadline:
+        try:
+            remaining = max(1, int(deadline - time.monotonic()))
+            run("adb", "connect", serial, check=False, timeout=min(10, remaining))
+            remaining = int(deadline - time.monotonic())
+            if remaining <= 0:
+                break
+            completed = run(
                 "adb",
                 "-s",
                 serial,
@@ -116,12 +121,15 @@ def boot(name, serial, command):
                 "getprop",
                 "sys.boot_completed",
                 check=False,
-                timeout=20,
+                timeout=min(20, remaining),
             )
-            == "1"
-        ):
-            return round(time.monotonic() - start, 3)
-        time.sleep(2)
+            if completed == "1":
+                return round(time.monotonic() - start, 3)
+        except subprocess.TimeoutExpired:
+            # ADB may accept a connection before its early-boot shell is responsive.
+            # Keep the original global deadline; never turn readiness retries into a new boot.
+            pass
+        time.sleep(min(2, max(0, deadline - time.monotonic())))
     raise TimeoutError(f"{name} did not boot within 180 seconds")
 
 
