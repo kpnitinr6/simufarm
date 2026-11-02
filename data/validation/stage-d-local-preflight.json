@@ -1,0 +1,20 @@
+{
+  "observed_on": "2026-10-28",
+  "oci_cli_version": "3.95.1",
+  "oci_cli_python_version": "3.12.14",
+  "oci_config_present": false,
+  "repository_public_reverified": true,
+  "provision_attempts": 0,
+  "created_vms": 0,
+  "containers_booted": 0,
+  "mobileapi_calls": 0,
+  "sample_apk": {
+    "source": "https://github.com/appium/android-apidemos/releases/tag/v6.0.18",
+    "asset_url": "https://github.com/appium/android-apidemos/releases/download/v6.0.18/ApiDemos-release.apk",
+    "sha256": "14b40d24c4f129bb1b06dcdf8670c101cc1f55b89cacda4a8e3875e83f7883e8",
+    "published_github_digest_match": true,
+    "bytes": 5606635,
+    "installed_on_emulator": false
+  },
+  "cost_usd": 0
+}
