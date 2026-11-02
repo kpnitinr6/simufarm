@@ -1,76 +1,94 @@
-# Stage G — local preparation, not deployed
+# Stage G — prepared and manually validated locally
 
-StageG preparation is authorized. GADS, MongoDB, Appium and UiAutomator2 are **not installed or running by this change**, no Appium session has been executed, and no nightly schedule is enabled. The prepared harness has local unit tests; integration and device registration remain future execution work.
+The authorized local manual test is complete: GADS's provider-managed Appium server ran ApiDemos successfully in **13.631seconds**. [Proof and artifacts](proof/appium-test-results.md). Services and project containers were stopped afterward. This establishes the sample path; production queue scheduling, nightly execution and a persisted results API are future extensions.
 
-## Topology
+## Tested topology
 
-Run the GADS hub/provider, MongoDB, ADB and Appium together inside the existing Ubuntu UTM VM. Mac access goes through the already verified SSH endpoint127.0.0.1:2222. Port2222 is SSH, not ADB, GADS or Appium.
+All runtime services ran inside the existing Ubuntu22.04 ARM64 UTM VM. The Mac used the verified SSH connection on127.0.0.1:2222. Port2222 is SSH, not ADB or Appium.
 
-| Service | VM endpoint | Mac access |
+| Component | VM endpoint during test | Mac access |
 |---|---|---|
-| SSH | guest22 | 127.0.0.1:2222 |
-| GADS hub | 127.0.0.1:10000 | SSH forward10000 |
-| GADS provider | 127.0.0.1:10001 | SSH forward10001 |
-| Standalone Appium | 127.0.0.1:4723 | SSH forward14723 |
+| GADS hub | 127.0.0.1:10000 | Optional SSH forward10000 |
+| GADS provider | 127.0.0.1:10001 | Optional SSH forward10001 |
+| GADS-managed Appium | 127.0.0.1:41229, dynamically allocated | SSH forward14723 |
 | ADB server | 127.0.0.1:5037 | VM only |
-| Android14 containers | 127.0.0.1:5561 and5562 | VM only, discovered through ADB |
-| MongoDB | 127.0.0.1:27017 | VM only |
+| Android14 X100 | 127.0.0.1:5561 | VM only, through ADB |
+| MongoDB7 | 127.0.0.1:27017 | VM only |
 
-`infra/local-automation/topology.json` records the plan. No cloud IP, Oracle endpoint or public ADB listener is configured. The new services' memory consumption has not been benchmarked; recheck the2GiB Ubuntu reserve before enabling them. The five-container ceiling covers the Redroid pool, not a promise that every service can fit at once.
+Do not reuse41229as a guaranteed future port: read the provider's actual assigned port from its startup log. Standalone4723in the topology template is a separate example, not the tested GADS-owned endpoint.
 
-## Pinned prerequisites
+## Verified tools
 
-GADS source is pinned to `d8abfc32e282d872a08484cd6a1e4a535c0cebe9`, not the discontinued standalone provider repository. The provider UI model and flags were checked against that commit. Build/install GADS and its local MongoDB dependency only in a separately executed StageG task.
+- GADS v6.1.0, source commit d8abfc32e282d872a08484cd6a1e4a535c0cebe9. Official Linux binary is x86-64, so the source was built for Linux ARM64 with Go1.26.10.
+- Official release UI archive SHA25629516b50ed109d5a040e75a908aed9d90a29599bf020a1c5463341151d96a0a0, extracted under hub-ui/build before the tagged UI build.
+- Node22.22.2, Appium3.9.0, UiAutomator2driver8.7.3, OpenJDK17 and native Ubuntu ARM64 Android build-tools29.0.3 with ANDROID_HOME=/usr/lib/android-sdk.
+- Local pinned GADS Appium plugin0.0.13. Its declared npm dependencies must exist in the local source folder before installing it through Appium.
+- Mongo image pinned in infra/local-automation/toolchain.json, loopback-only, memory512MiB and WiredTiger cache0.25GiB.
 
-Prepared Appium versions: **3.9.0**, UiAutomator2 driver **9.0.1**. Their official npm metadata requires npm>=10; the combined Node22 requirement is **>=22.22.2**. Plan JDK17+ and an Android SDK with platform-tools/build-tools appropriate to API34, in addition to the existing ADB binary. Versions/engine metadata are in `infra/local-automation/toolchain.json`.
+The preparation's UiAutomator2v9/Appium3pair was incompatible: v9requires Appium4. The executed/tested pair is8.7.3/3.9.0. Do not reinstall the old incompatible combination.
 
-Later VM commands, not executed here:
+## Reproduce prerequisites
+
+Use local user-owned tool directories; no Docker-group or unrestricted sudo grant is needed. In the VM, after the one-time administrator installs Java, git, native Android tools and Docker:
 
 ```sh
-npm install --prefix "$HOME/simufarm-tools/appium" appium@3.9.0
-export APPIUM_HOME="$HOME/simufarm-tools/appium-home"
-"$HOME/simufarm-tools/appium/node_modules/.bin/appium" driver install uiautomator2@9.0.1
-adb connect 127.0.0.1:5561
-adb connect 127.0.0.1:5562
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64
+export ANDROID_HOME=/usr/lib/android-sdk
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export APPIUM_HOME="$HOME/tools/appium-home"
+# Put the verified Node22and Go1.26tool directories on PATH first.
+npm install --prefix "$HOME/tools/appium" appium@3.9.0
+export PATH="$HOME/tools/appium/node_modules/.bin:$PATH"
+appium driver install uiautomator2@8.7.3
+
+git clone --depth 1 --branch v6.1.0 https://github.com/shamanec/GADS.git "$HOME/tools/GADS-source"
+cd "$HOME/tools/GADS-source"
+git rev-parse HEAD  # must equal the pinned commit above
+# Fetch the official ui-files.zip, verify its SHA256, and extract its build/ under hub-ui/.
+go run github.com/swaggo/swag/cmd/swag@v1.16.4 init -g hub/hub.go -o docs
+go build -p 2 -tags ui -ldflags '-X main.AppVersion=v6.1.0-simufarm-arm64' -o "$HOME/tools/GADS" .
+npm install --prefix ./appium-plugin --omit=dev --ignore-scripts
+appium plugin install --source=local "$HOME/tools/GADS-source/appium-plugin"
 ```
 
-Use a dedicated service user and local SDK environment. Before session execution, install the previously checksum-verified sample ApiDemos APK into the selected Android14 container and confirm package io.appium.android.apis. A successful StageD Android13 install is not proof of installation in the new fresh Android14 data volumes.
+Download hashes for the toolchain used here are recorded in the local setup evidence; versions and the Mongo digest are committed. The source's own Swagger step is required: skipping it produces the missing GADS/docs build error observed during setup.
 
-## GADS provider recipe
+## Provider and virtual-device registration
 
-Create the provider through **Hub Admin → Providers**, using the fields in `provider-ui-fields.json`. That file is a UI-field recipe matching upstream JSON names; GADS does not consume it via an invented `--config` flag. Android-only is enabled; iOS/TV/AVD discovery is disabled. Redroid is an ADB TCP Android device, not an Android Studio AVD.
+`provider-ui-fields.json` matches upstream provider field names. Configure it through authenticated Hub Admin → Providers, or seed the same fields in the dedicated local test MongoDB gads.providers collection. The tested virtual-device entry in gads.new_devices used UDID127.0.0.1:5561, OSandroid, provider simufarm-utm, usage automation and device_type emulator. Automatic AVD discovery remained disabled: Redroid was explicitly registered as an ordinary ADB TCP endpoint, not an Android Studio AVD or physical handset. The hub assigned its default workspace.
 
-After the local binaries/dependencies and admin account exist, the verified command shapes are:
+Start the hub/provider after local registration and an actual Android14 boot/APK install:
 
 ```sh
 ./GADS hub --host-address=127.0.0.1 --port=10000 --auth=true --mongo-db=127.0.0.1:27017
 ./GADS provider --nickname=simufarm-utm --mongo-db=127.0.0.1:27017 \
-  --hub=http://127.0.0.1:10000 --provider-folder=./simufarm-utm
+  --hub=http://127.0.0.1:10000 --provider-folder=./provider --log-level=debug
 ```
 
-Register only the selected Android14 device UDIDs127.0.0.1:5561/5562 through the hub's device UI and assign provider simufarm-utm. Verify discovery and readiness; no registration API is invented or called by this preparation. Confirm GADS streaming/proxy ports separately during integration. The recipe is not a claim that GADS has discovered these containers.
+Keep credentials local. GADS provider manages its own Appium instance; do not start a competing server on the same port. Confirm GET /device/127.0.0.1:5561/info on the provider reports provider_state live and is_appium_up true before testing.
 
-GADS may own per-device Appium servers after Setup Appium servers is enabled. Do not run a competing standalone Appium server on those same ports. The standalone smoke route below is an independent preliminary test; provider-assigned Appium endpoints must be discovered during GADS integration, not assumed to equal4723.
+The local compatibility wrapper is `scripts/local_appium_wrapper.py`. Install/copy it as appium in a dedicated bin directory before the real binary on the provider's PATH. Set SIMUFARM_APPIUM_REAL to the real Appium executable and SIMUFARM_APPIUM_LOG to a local log path. It normalizes --use-plugin=gads to --use-plugins=gads and enforces address127.0.0.1 for server startup; driver/plugin-management commands pass through unchanged. The captured startup log confirmed gads0.0.13 ACTIVE and provider registration. GADS enables relaxed security for its managed Appium server; this tested route is local-only.
 
-## Local standalone harness
+## Execute the sample
 
-When explicitly executing the later standalone check, start Appium inside the VM bound to127.0.0.1:4723 and open a foreground tunnel from the Mac:
+Install the official checksum-verified ApiDemos-debug.apk into the selected container. See [proof](proof/appium-test-results.md) for its source hash. On the Mac, forward the actual GADS Appium port:
 
 ```sh
-ssh -N -p2222 -i /Users/nitinkarwauth/.ssh/simufarm_stage_d_ed25519 \
+ssh -N -p2222 -i /path/to/your/key \
   -o BatchMode=yes -o StrictHostKeyChecking=yes -o ExitOnForwardFailure=yes \
-  -o UserKnownHostsFile=/Volumes/SimuFarmDrive/SimuFarm/evidence/known_hosts \
-  -L127.0.0.1:14723:127.0.0.1:4723 \
-  -L127.0.0.1:10000:127.0.0.1:10000 \
-  -L127.0.0.1:10001:127.0.0.1:10001 simufarm@127.0.0.1
+  -o UserKnownHostsFile=/path/to/verified/known_hosts \
+  -L127.0.0.1:14723:127.0.0.1:ACTUAL-APPIUM-PORT simufarm@127.0.0.1
 ```
 
-`scripts/stage_g_appium_smoke.py` defaults to a plan with no network calls. It targets http://127.0.0.1:14723 and uses W3C capabilities from appium-capabilities.json. The appium:udid is the VM-local ADB endpoint because Appium runs in the VM. For a second simultaneous standalone session use a separate Appium server/tunnel and unique systemPort8202; the default harness intentionally supports only the first local endpoint.
+In a second Mac terminal:
 
-An explicit `--execute` checks server readiness, creates a UiAutomator2 ApiDemos session, captures XML and a screenshot, deletes the session even on failure, and writes result.json under ignored local evidence. It does not start/stop Redroid containers, register GADS devices or prove GADS integration. No execution flag was used in this preparation.
+```sh
+python scripts/stage_g_appium_smoke.py --execute --gads-managed \
+  --output data/runtime/local/my-appium-run
+```
 
-## Lifecycle work prepared for execution
+Without --execute it only prints a plan. The harness uses W3C capabilities, confirms the ApiDemos hierarchy, clicks Views→Buttons→Normal, captures screenshot/XML, deletes the session even on failure and writes result.json with pass/fail and elapsed time. This uses the GADS-owned per-device Appium server directly; the GADS grid queue endpoint was not exercised.
 
-`tasks/stage-g-local-lifecycle.yaml` records the remaining thin executor: enforce reviewed profiles and the shared capacity ceiling; start one fresh container; wait for ADB and Android completion; make it available to the provider; run the Appium task; deregister/disconnect and tear down only the owned container in finally. Do not clone data volumes. GADS does not create or destroy Redroid containers itself. Pool locking, queue overflow, results persistence/API and nightly execution are later StageG implementation work.
+Afterward, stop the provider/Appium process group and hub, stop MongoDB, close the owned SSH tunnel and shut down the specifically owned Redroid containers with the namespace-guarded utility in the quick-start guide. Retain the result artifacts. No nightly schedule is enabled.
 
-Primary sources: [GADS provider guide](https://github.com/shamanec/GADS/blob/d8abfc32e282d872a08484cd6a1e4a535c0cebe9/docs/provider.md), [hub flags](https://github.com/shamanec/GADS/blob/d8abfc32e282d872a08484cd6a1e4a535c0cebe9/docs/hub.md), [provider model](https://github.com/shamanec/GADS/blob/d8abfc32e282d872a08484cd6a1e4a535c0cebe9/common/models/config.go), [official UiAutomator2 setup](https://appium.github.io/appium-uiautomator2-driver/latest/getting-started/).
+Primary sources: [pinned provider guide](https://github.com/shamanec/GADS/blob/d8abfc32e282d872a08484cd6a1e4a535c0cebe9/docs/provider.md), [hub flags](https://github.com/shamanec/GADS/blob/d8abfc32e282d872a08484cd6a1e4a535c0cebe9/docs/hub.md), [UiAutomator2 compatibility](https://appium.github.io/appium-uiautomator2-driver/latest/getting-started/).

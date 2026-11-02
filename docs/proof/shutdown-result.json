@@ -1,0 +1,24 @@
+{
+  "webdriver_session_deleted": true,
+  "gads_appium_hub_process_groups_remaining": 0,
+  "mongo_stopped": true,
+  "running_project_containers": 0,
+  "vm_state": "stopped",
+  "host_appium_tunnel_closed": true,
+  "redroid_shutdowns": [
+    {
+      "container": "simufarm-stage-e-2ab5db4a0da0-1",
+      "exit_code": 130,
+      "docker_stop_fallback": false,
+      "shutdown_seconds": 5.424,
+      "oom_killed": false
+    },
+    {
+      "container": "simufarm-stage-e-2ab5db4a0da0-2",
+      "exit_code": 130,
+      "docker_stop_fallback": false,
+      "shutdown_seconds": 4.3,
+      "oom_killed": false
+    }
+  ]
+}

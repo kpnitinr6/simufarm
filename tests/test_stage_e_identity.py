@@ -139,3 +139,25 @@ def test_old_or_new_fingerprint_cannot_disguise_android14(version):
     )
     with pytest.raises(ValueError, match="must agree"):
         runtime.properties(data)
+
+
+def test_cold_adb_shell_timeout_retries_within_existing_boot(monkeypatch):
+    calls = []
+    failures = [True]
+
+    def fake_run(*cmd, **kwargs):
+        calls.append(cmd)
+        if cmd[0] == "docker":
+            return "owned-container-id"
+        if cmd[-1] == "sys.boot_completed":
+            if failures:
+                failures.pop()
+                raise runtime.subprocess.TimeoutExpired(cmd, kwargs["timeout"])
+            return "1"
+        return "connected"
+
+    monkeypatch.setattr(runtime, "run", fake_run)
+    monkeypatch.setattr(runtime.time, "sleep", lambda _: None)
+    assert runtime.boot("owned", "127.0.0.1:5561", ["docker", "start", "owned"]) >= 0
+    assert len([c for c in calls if c[0] == "docker"]) == 1
+    assert len([c for c in calls if c[-1] == "sys.boot_completed"]) == 2

@@ -9,12 +9,21 @@
     }
   },
   "uiautomator2": {
-    "version": "9.0.1",
+    "version": "8.7.3",
+    "peerDependencies": {
+      "appium": "^3.0.0-rc.2"
+    },
     "engines": {
-      "npm": ">=10",
-      "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+      "node": "^20.19.0 || ^22.12.0 || >=24.0.0",
+      "npm": ">=10"
     }
   },
-  "installed_by_this_change": false,
-  "runtime_integration_verified": false
+  "installed_by_this_change": true,
+  "runtime_integration_verified": true,
+  "node": "22.22.2",
+  "go": "1.26.10",
+  "java": "OpenJDK17",
+  "android_sdk": "/usr/lib/android-sdk; native ARM64 build-tools29.0.3",
+  "mongo_image": "mongo@sha256:8bb4442761a63a8dda452744082cdac9644b429807eb977b42324a63cef59ca4",
+  "execution_scope": "Manual GADS-managed ApiDemos test passed13.631s; services stopped afterward"
 }

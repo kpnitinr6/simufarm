@@ -1,49 +1,67 @@
 # SimuFarm
 
-SimuFarm combines original HTML device previews with a local Redroid runtime. Stage D and Stage E are accepted. The first reviewed runtime profile is **vivo-x100 (China V2309A / PD2309)**, running Android14/SDK34 with an unmodified, sourced China Android14 fingerprint. See [identity evidence](docs/STAGE_E_IDENTITY.md) and [capacity actuals](docs/CAPACITY.md).
+SimuFarm provides original HTML device previews and a local Android test runtime. The approved closeout scope is complete: the PR4–10stack is merged to main; StageD/E work locally, StageF interactive chrome is implemented, and StageG is prepared with a successful manual GADS-managed Appium test. [Appium proof](docs/proof/appium-test-results.md): ApiDemos passed in **13.631seconds**. Test services and project containers were stopped afterward.
 
-The runtime runs inside an Ubuntu22.04 ARM64 UTM VM on the Mac Mini's external drive:4CPU cores,8GiB RAM, SSH at `127.0.0.1:2222`. ADB is separate and bound only to loopback inside the VM. Oracle provisioning remains disabled. Five concurrent containers is a planning ceiling with2GiB reserved for Ubuntu, not a completed load benchmark.
+## Project contents
 
-## Run the visual catalog
+- **932 generated static candidate profiles**, with no padding. All retain build:null/runtime_eligible:false.
+- **22 retained reference profiles**, including the first human-reviewed runtime profile, vivo-x100 China V2309A/PD2309. There are **954 current profiles and HTML pages total**, plus20templates. These are artifact counts, not954distinct verified physical devices.
+- **20 original brand shells** with mock status/time, keyboard/text input, rotation and dark mode. HTML controls do not execute Android apps.
+- A shared official Redroid14 ARM64 64-only runtime, pinned by digest, with a genuine China Android14 fingerprint and distinct synthetic test identifiers applied before zygote.
+- Local UTM deployment/controllers, source/schema validation, browser checks, an Appium harness, proof artifacts and handoff documentation.
 
-Python3.12 and Node22 are the intended CI versions:
+C2 removed or merged68records; the earlier duplicate-free claim was incorrect. Documented source checks cover105models for named existence/geometry/spec fields, not complete verification of all932candidate specifications. Cutout coverage is100/932. Sources, conflicts and rejections remain in data/research/stage-c2/ and data/rejections.md.
+
+## Quick Start
+
+Follow [the developer guide](docs/QUICK_START.md). Its **under-ten-minute warm path** assumes a prepared/imported Ubuntu22.04 ARM64 UTM VM, verified SSH access and cached image/Magisk downloads. Fresh OS installation and large downloads are one-time prerequisites and cannot be guaranteed within ten minutes on every connection.
 
 ```sh
+git clone https://github.com/kpnitinr6/simufarm.git
+cd simufarm
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -e ./packages/device-schema -e '.[dev]'
-npm ci
-npm run build
-npm run dev
+
+python scripts/local_quickstart.py \
+  --vm-id YOUR-UTM-VM-UUID \
+  --identity /absolute/path/to/your/ssh-key \
+  --known-hosts /absolute/path/to/verified/known_hosts \
+  --magisk-apk /absolute/path/to/Magisk-v31.1.apk \
+  --execute
 ```
 
-Open http://127.0.0.1:5173. Device pages live under `/simulators/`, including `/simulators/vivo-x100.html`. The HTML is original artwork and does not stream Android or run APKs. Each device page has an **Enable interactive chrome** button for mock status controls, text input/keyboard, rotation and dark mode. These local UI controls are available across all20brand shells; they do not imply real OS or cellular behavior. The visual reference catalog retains22profiles across20brands; one reference now has reviewed runtime eligibility. Generated draft data and the accepted C2 remediation remain separate branches; source presence and round-number generation are not claims that every row is a verified distinct device.
+Replace the UUID and paths with your own. Omit --execute for a plan without VM/SSH/Docker actions. The controller starts a stopped VM, boots two fresh identity-rehearsal containers, verifies properties and restart persistence, and saves observations. It does not promote profiles or create cloud resources. Stop the specifically named containers afterward as described in the guide.
 
-## Telephony limitation — this is not a real phone
+For HTML previews, run `npm ci`, `npm run build`, then `npm run dev`; open http://127.0.0.1:5173. Device pages under /simulators/ expose **Enable interactive chrome**. The catalog cards remain static.
 
-`adb shell getprop persist.radio.imei` and `ro.serialno` return distinct **synthetic test identifiers**. This does not provide a modem, SIM or cellular service. Calls, SMS, cellular data, network registration and radio-HAL dependent operations are unavailable. A TelephonyManager or Binder request for an IMEI may return null or an error even when getprop is populated. Tests requiring cellular services need another test strategy.
+## Local capacity
 
-The Android release and sourced fingerprint now both identify Android14, with actual SDK34. Redroid does not reproduce Vivo firmware, OEM services, hardware drivers, camera/sensor behavior, DRM, battery/thermal behavior or physical-device performance. Apps requiring OEM APIs or certified devices may still fail. No Play Integrity/SafetyNet/certification bypass is implemented, and no broad crash-free compatibility claim is made.
+Tested on a Mac Mini with16GiB RAM and an external-drive UTM Ubuntu22.04 ARM64 VM allocated **4CPU /8GiB**. The configured Redroid planning ceiling is **5concurrent containers**, reserving2GiB for Ubuntu. Five-way workload capacity is not benchmarked. Android14 first boots were10.158s/16.854s; restart boots9.424s/9.254s; after-restart Docker memory625.6MiB/610.5MiB. The local Appium sample also passed. [Capacity actuals](docs/CAPACITY.md).
 
-## Evidence and review
+SSH uses localhost2222, not an Android/Appium endpoint. ADB and automation services bind to guest loopback and are accessed through distinct SSH tunnels. The VM uses the stock Binder/ashmem modules and binderfs; Redroid requires no KVM. Ordinary SSH permissions are unchanged: no unrestricted passwordless sudo or Docker-group grant was added.
 
-The active runtime profile is `profiles/runtime/vivo-x100.json`; its conditional human approval is in `data/reviews/vivo-x100.runtime.json`. The earlier India X100 source profile is archived separately; India model strings are not mixed with China firmware. Complete field provenance and literal OTA metadata are under `data/research/stage-e-x100-china/android14/`. Runtime admission still requires complete sourced builds and human review. Generated drafts remain build:null/runtime_eligible:false.
+## Limitations
+
+- **Cellular/telephony is non-functional.** IMEI/serial properties are synthetic test identifiers. No modem, SIM registration, calls, SMS or cellular data is provided. TelephonyManager/Binder IMEI may return null or an error even when getprop succeeds.
+- **Play Integrity/SafetyNet must be treated as failing or unavailable on this uncertified emulated setup.** It is not a certified physical phone and no bypass is implemented. No live attestation test was performed; do not present a measured attestation verdict that was not observed. Integrity-protected apps may reject it.
+- Android release14/SDK34 and the genuine China`:14/`fingerprint agree, but Redroid is not Vivo firmware. OEM APIs, drivers, sensors, cameras, DRM, radio, battery/thermal behavior and physical-device performance are not reproduced. One passing sample does not guarantee every app works.
+- HTML chrome is a visual mock, not OEM pixel fidelity or an Android stream. No manufacturer logos, wallpapers or firmware images are bundled.
+- Only vivo-x100 is runtime-eligible. Other profiles remain research/static artifacts with their documented uncertainty. No functional iOS emulation is provided.
+- StageG has a proven manual sample path. Production grid queuing, persisted result APIs and nightly scheduling remain future extensions, not claims made by this handoff. No nightly automation is enabled.
+
+## Evidence, tests and handoff
+
+[Final handoff](docs/FINAL_HANDOFF.md) · [Appium result](docs/proof/appium-test-results.md) · [Android identity](docs/STAGE_E_IDENTITY.md) · [Interactive UI](docs/STAGE_F_INTERACTIVE.md) · [Appium/GADS replay](docs/STAGE_G_LOCAL_PREP.md).
 
 ```sh
 pytest -q
 ruff check .
 python scripts/validate_data.py --allow-draft
+python scripts/stage_e_gate.py
 npm run contracts:check
 npx playwright install chromium
 npm run test:web
 ```
 
-CI performs code/schema/static/browser checks on public standard runners. It never provisions cloud resources, boots Android, runs nightly APK tests or consumes MobileAPI quota. MobileAPI conservative cap remains50requests/month; this work made zero calls. Runtime observations remain in local evidence rather than public Git. Do not commit private keys, VM disks, APKs or credentials.
-
-
-## Local automation preparation
-
-StageG topology, provider UI-field recipe and plan-only Appium harness are prepared in [STAGE_G_LOCAL_PREP.md](docs/STAGE_G_LOCAL_PREP.md). GADS/Appium were not installed or started, no Appium session or nightly APK run was executed, and SSH2222 is not an Appium/ADB endpoint. StageF interaction evidence is in [STAGE_F_INTERACTIVE.md](docs/STAGE_F_INTERACTIVE.md).
-## Accepted C2 data cohort
-
-932 generated static candidate profiles plus22 retained references (954 rendered pages). No padding. The prior duplicate-free claim was incorrect and68records were removed/merged. Source checks cover105models for the documented fields; this is not blanket verification of932complete spec sheets. Cutout coverage100/932, popularity unverified. All generated records stay build:null/runtime_eligible:false. One separate reference, vivo-x100 China, is human-approved for runtime. See data/cohort-policy.json and data/research/stage-c2/.
+CI runs on Python3.12/Node22 with code/schema/static/browser checks. It does not provision cloud resources or run Android/Appium. Oracle launch paths remain disabled. This closeout made **zero Oracle calls, zero MobileAPI calls and touched zero paid resources**. VM disks, private keys, credentials, APKs and local logs are excluded from public Git. The VM/key is user-owned and is not distributed in the repository.

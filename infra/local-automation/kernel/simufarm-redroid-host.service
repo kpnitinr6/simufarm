@@ -1,0 +1,11 @@
+[Unit]
+Description=Prepare stock Binder and ashmem for local SimuFarm Redroid
+After=systemd-modules-load.service
+Before=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/simufarm-redroid-host
+
+[Install]
+WantedBy=multi-user.target
