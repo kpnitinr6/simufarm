@@ -1,27 +1,25 @@
 {
   "id": "stage-d-prep",
-  "status": "authorized-blocked-access",
+  "status": "prepared-awaiting-local-endpoint",
   "agent": "codex",
-  "branch": "agent/codex/stage-d-readiness",
+  "branch": "agent/codex/stage-d-local-pivot",
   "depends_on": "Stage C engineering accepted 2026-10-28",
-  "image_policy": "redroid/redroid:13.0.0_64only-latest; metadata verified ARM64; pull pinned sha256:c815ac1b1d5bd0a099b74c3e3e0eeea3b32bed8d7ab1f788c20fb74e35891716 only on authorized VM.",
-  "provisioning_plan": "Reviewed upstream 8de2e4cef89b453dd00945a89f0811fb323bfd25. Use scripts/stage_d_retry.py, dry-run default, bounded retries and no paid fallback. Blocked until authenticated access, fresh free-allowance proof and known home-region parameters.",
+  "image_policy": "Detect server architecture first; require verified immutable matching Redroid image; no ARM assumption",
+  "provisioning_plan": "No cloud provisioning. Plan/read-only SSH preflight/explicit local deployment via scripts/stage_d_local.py.",
   "preflight": [
-    "Verify repo PUBLIC",
-    "Verify account-specific free A1 eligibility and 2 OCPU / 12 GB baseline",
-    "Review retry tool source and pin revision",
-    "Keep keys/env out of tracked files",
-    "Confirm X100 region decision (China vs India) before Stage E",
-    "Stage C engineering accepted; Stage D explicitly authorized",
-    "Verify unused aggregate compute/monthly/storage allocation across all compartments",
-    "Confirm sample APK provenance and SHA256; no download from unreviewed source",
-    "Stage E blocked until Stage C2 complete and >=1 complete human-reviewed runtime profile"
+    "Await Meshnet IPv4 and SSH username",
+    "Verify SSH host key and key-based access",
+    "Ubuntu22.04 architecture/RAM/disk/kernel checks",
+    "Check Docker, adb, sudo and binder/ashmem availability",
+    "Verify immutable image matches observed architecture",
+    "Verify sample APK checksum",
+    "Confirm X100 region before StageE; no runtime promotion"
   ],
   "zero_spend_check": {
     "will_create_bill": false,
     "passed": true,
     "execution_class": "local_only",
-    "reason": "Preparation and public metadata/source research only; no OCI launch, pull, container boot, MobileAPI, or paid action executed"
+    "reason": "Local script preparation only; zero Oracle API calls for this pivot; no server connection"
   },
   "actuals": {
     "vms_provisioned": 0,
@@ -30,5 +28,7 @@
     "identity_uniqueness": "not-tested",
     "mobileapi_calls": 0,
     "billable_resources_touched": 0
-  }
+  },
+  "deployment_target": "local-linux-meshnet",
+  "oracle_enabled": false
 }

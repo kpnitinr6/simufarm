@@ -1,6 +1,6 @@
-# Runtime capacity actuals
+# Runtime capacity actuals — 31 October 2026
 
-As of 2026-10-28, Stage D is authorized but **not executed**. Oracle credentials, account-specific unused free allowance evidence, deployment parameters and a reachable ARM host are unavailable to this task.
+Stage D now targets a user-owned Ubuntu22.04 server over Meshnet. **Prepared; awaiting IP and SSH username.** No server connection or runtime benchmark has occurred. Oracle retry process stopped after16attempts on29October (HTTP429); it is absent and disabled. No Oracle VM was returned. Free Oracle network prerequisites remain pending user-run cleanup; no Oracle API calls were made for this pivot.
 
 | Observation | Actual |
 | --- | --- |
@@ -8,7 +8,7 @@ As of 2026-10-28, Stage D is authorized but **not executed**. Oracle credentials
 | Containers booted | 0 |
 | ADB connections verified | 0 |
 | APK installations verified | 0 |
-| `/dev/kvm` absence | Not observed |
+| `/dev/kvm` presence (optional) | Not observed |
 | binder/ashmem modules | Not observed |
 | Container 1 boot seconds / RAM | Not measured |
 | Container 2 boot seconds / RAM | Not measured |
@@ -16,8 +16,6 @@ As of 2026-10-28, Stage D is authorized but **not executed**. Oracle credentials
 | MobileAPI calls | 0 |
 | Billable resources touched | 0 |
 
-The 2 OCPU / 12 GB VM is a target, not an actual allocation or a capacity benchmark. No concurrency claim is made. Raw runtime evidence will be recorded under `data/runtime/<run>/observations.json` using `scripts/stage_d_remote.py`; failures and missing values must remain visible. See [readiness procedure](STAGE_D_READINESS.md).
+Hardware architecture, CPU count, RAM and disk are unknown until SSH preflight. No concurrency/capacity figure is promised. KVM presence is recorded, not a requirement. The server's binder/ashmem availability and an architecture-matching immutable Redroid image must be verified before booting containers. Evidence will be fetched under `data/runtime/local/<run>/`. No identity values or measurements are invented. See [local deployment procedure](STAGE_D_LOCAL.md).
 
-Stage E is blocked until C2 is complete and >=1 complete human-reviewed runtime profile exists; X100 India/China identity consistency is a separate mandatory preflight.
-
-Local preparation only: isolated OCI CLI 3.95.1 and the digest-verified Appium sample APK are ready. This does not change any runtime counter. See data/validation/stage-d-local-preflight.json.
+StageE remains unstarted; at least1 complete human-reviewed runtime-eligible profile and the X100 region decision are still required. StageD diagnostics do not promote profiles.

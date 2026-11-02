@@ -1,6 +1,8 @@
-# SimuFarm status — 28 October 2026
+# SimuFarm integration status — local hardware pivot
 
-Stage C engineering accepted and merged in PR #3. Stage C2 remediation is implemented for separate review and **not merged**. Option B: no padding to 1,000. The earlier claim of no carrier/cosmetic duplicates was incorrect; 68 records were removed or merged, including the wrongly branded iQOO entries, a tablet, speculative identities and label/retail aliases.
+Oracle launch paths are disabled and ADR015 is superseded by ADR016. Local Ubuntu hardware preparation replaces Oracle provisioning; no Oracle API calls are authorized. C2 data counts below are preserved during stack integration. Later local runtime actuals will supersede the historical readiness section.
+
+Stage C engineering accepted and merged in PR #3. Stage C2 remediation is accepted and merged through PR5. Option B: no padding to 1,000. The earlier claim of no carrier/cosmetic duplicates was incorrect; 68 records were removed or merged, including the wrongly branded iQOO entries, a tablet, speculative identities and label/retail aliases.
 
 **Source-checked distinct physical device models: 105**, limited to exact-model existence, cutout geometry or specified corrected fields. **Retained sourced candidate records: 932**. It would be inaccurate to call all 932 fully verified devices. Complete human-reviewed technical/runtime profiles: 0. Physical handsets tested: 0 (software-only project). These verification scopes are separate; see data/research/stage-c2/verification-coverage.json.
 

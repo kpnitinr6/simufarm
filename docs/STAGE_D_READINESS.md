@@ -1,3 +1,5 @@
+> Superseded for deployment on31October2026. Use [local Meshnet procedure](STAGE_D_LOCAL.md). Oracle launch scripts are disabled; the remaining content is historical Oracle readiness evidence.
+
 # Stage D readiness — 2026-10-28
 
 Stage C engineering is accepted and Stage D is authorized. Execution is blocked on authenticated Oracle access, account-specific free allowance evidence, home-region network/image parameters and a reachable ARM host. No VM or container has been created by this task. Do not confuse prepared scripts with runtime validation.

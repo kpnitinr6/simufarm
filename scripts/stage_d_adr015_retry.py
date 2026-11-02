@@ -43,6 +43,11 @@ def atomic(path, data):
     temp.replace(path)
 
 
+def oracle_enabled():
+    target = Path(__file__).resolve().parents[1] / "config/stage-d-target.json"
+    return target.exists() and json.loads(target.read_text()).get("oracle_enabled") is True
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--preflight", type=Path, required=True)
@@ -51,6 +56,8 @@ def main():
     parser.add_argument("--pin", required=True)
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
+    if args.execute and not oracle_enabled():
+        raise SystemExit("Oracle disabled: ADR 015 superseded by local hardware pivot")
     c, region = oci_rest.configure()
     proof = json.loads(args.preflight.read_text())
     base = Path(__file__).resolve().parents[1]
