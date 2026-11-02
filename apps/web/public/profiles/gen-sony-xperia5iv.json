@@ -13,8 +13,8 @@
     "dpi": 449.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
     "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-    "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+    "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+    "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
   ],
   "confidence": 0.85,
   "verified_by": null,

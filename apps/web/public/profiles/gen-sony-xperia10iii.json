@@ -13,8 +13,8 @@
     "dpi": 457.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 6.0,
   "build": null,
@@ -22,7 +22,8 @@
   "source_type": "scraper",
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2021/xperia-10-iii.json",
-    "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
+    "https://www.kaggle.com/datasets/sady36/mobile-phones-specs",
+    "https://www.techradar.com/reviews/sony-xperia-10-iii"
   ],
   "confidence": 0.85,
   "verified_by": null,

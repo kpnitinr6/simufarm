@@ -6,201 +6,219 @@
     "id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "id"
     },
     "brand": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "brand"
     },
     "model": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "model"
     },
     "release_year": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
-        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 targeted source check; human review pending: 2023 Galaxy Jump 3 / SM-M446K launch; screen 1080x2408.",
       "csv_file": "devices.csv",
-      "csv_line": 108,
-      "csv_column": "release_year"
+      "csv_line": 88,
+      "csv_column": "release_year",
+      "source_location": "10 November 2023; launch paragraph and final specifications paragraph"
     },
     "os_family": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "os_version": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "os_version"
     },
     "shell_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "base_image_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "screen.width_px": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "width_px"
     },
     "screen.height_px": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
-        "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 targeted source check; human review pending: 2023 Galaxy Jump 3 / SM-M446K launch; screen 1080x2408.",
       "csv_file": "devices.csv",
-      "csv_line": 108,
-      "csv_column": "height_px"
+      "csv_line": 88,
+      "csv_column": "height_px",
+      "source_location": "10 November 2023; launch paragraph and final specifications paragraph"
     },
     "screen.dpi": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "dpi"
     },
     "notch": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "notch"
     },
     "ram_gb": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": "ram_gb"
     },
     "build": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "runtime_eligible": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "source_type": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "sources": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "confidence": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "verified_by": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     },
     "verified_at": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+        "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
         "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 108,
+      "csv_line": 88,
       "csv_column": null
     }
   },
@@ -213,10 +231,11 @@
   "diversity_evidence": {
     "source_urls": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2026/galaxy-m44-5g/samsung-galaxy-m44-5g-6gb-128gb-5g.json",
+      "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
       "https://www.kaggle.com/datasets/mayankkumarpoddar/smartprix-mobiles-dataset"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 108,
+    "csv_line": 88,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -231,5 +250,17 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_targeted_source_check": {
+    "profile_id": "gen-samsung-galaxym445g",
+    "source_url": "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
+    "source_location": "10 November 2023; launch paragraph and final specifications paragraph",
+    "verified_fields": {
+      "release_year": "2023",
+      "height_px": "2408"
+    },
+    "explanation": "2023 Galaxy Jump 3 / SM-M446K launch; screen 1080x2408.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  }
 }

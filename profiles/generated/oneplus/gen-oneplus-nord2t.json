@@ -13,8 +13,8 @@
     "dpi": 409.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_left"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -22,6 +22,7 @@
   "source_type": "scraper",
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/oneplus/2022/nord-2t.json",
+    "https://www.gsmarena.com/oneplus_nord_2t-review-2461p2.php",
     "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
   ],
   "confidence": 0.85,

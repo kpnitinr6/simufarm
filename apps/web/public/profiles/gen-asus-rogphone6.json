@@ -13,8 +13,8 @@
     "dpi": 395.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 16.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Asus_ROG_Phone_6",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2022/asus-rog-phone-6.json",
-    "https://rog.asus.com/phones/rog-phone-6-model/"
+    "https://rog.asus.com/phones/rog-phone-6-model/",
+    "https://www.techadvisor.com/article/1418170/asus-rog-phone-6-review.html"
   ],
   "confidence": 0.85,
   "verified_by": null,
