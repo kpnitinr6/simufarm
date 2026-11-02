@@ -55,7 +55,7 @@ Decision:
 
 ## ADR 016 — Local hardware Stage D over Meshnet
 
-Status: Accepted (31 October 2026)
+Status: Superseded by external-drive UTM VM (2 November 2026)
 
 Stage D targets a user-owned Ubuntu22.04 server over its Meshnet IPv4 address using SSH. Oracle provisioning/retries and automatic Oracle API calls are disabled. Oracle cleanup commands are supplied for the user to run; cleanup has not been executed or verified by Codex. No paid cloud resources or MobileAPI calls are authorized. Await the IP and SSH username before any connection. Detect CPU architecture before selecting an immutable Redroid image; do not assume Ampere/ARM. KVM is optional and is recorded, not required or forbidden. Keep ADB bound to remote loopback and use SSH tunnels if needed. Human runtime-profile promotion and StageE remain separate gates.
 

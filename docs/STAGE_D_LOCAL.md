@@ -1,3 +1,5 @@
+> Current target: [external-drive UTM VM](STAGE_D_UTM.md), with `--transport utm` and localhost2222. The Meshnet procedure below remains an optional supported transport, not the active deployment target.
+
 # Stage D — local Ubuntu 22.04 over Meshnet
 
 Status: **Prepared; awaiting Meshnet IP and SSH username.** No server connection or local runtime measurement has occurred. Oracle is disabled by `config/stage-d-target.json`; ADR015 is superseded by ADR016. Both Oracle launch entry points refuse execution before credential loading. No Oracle API calls were made for this pivot.

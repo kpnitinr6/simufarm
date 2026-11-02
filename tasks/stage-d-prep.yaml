@@ -1,6 +1,6 @@
 {
   "id": "stage-d-prep",
-  "status": "utm-installation-in-progress",
+  "status": "local-vm-operational-identity-gate-failed",
   "agent": "codex",
   "branch": "agent/codex/stage-d-utm-local",
   "depends_on": "Stage C engineering accepted 2026-10-28",
@@ -23,12 +23,21 @@
   },
   "actuals": {
     "vms_provisioned": 0,
-    "containers_booted": 0,
-    "apk_installs": 0,
-    "identity_uniqueness": "not-tested",
+    "containers_booted": 3,
+    "apk_installs": 2,
+    "identity_uniqueness": {
+      "android_id": true,
+      "adb_serial": true,
+      "imei": false,
+      "serial": false
+    },
     "mobileapi_calls": 0,
-    "billable_resources_touched": 0
+    "billable_resources_touched": 0,
+    "validated_run_containers": 2,
+    "running_containers": 2,
+    "stopped_failed_containers": 1
   },
   "deployment_target": "local-utm",
-  "oracle_enabled": false
+  "oracle_enabled": false,
+  "strict_identity_gate_passed": false
 }

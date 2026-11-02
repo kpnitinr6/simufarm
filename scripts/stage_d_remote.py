@@ -22,6 +22,11 @@ def run(*args, check=True, timeout=180):
     ).stdout.strip()
 
 
+def container_prefix(output):
+    tag = hashlib.sha256(str(Path(output).resolve()).encode()).hexdigest()[:12]
+    return f"simufarm-stage-d-{tag}"
+
+
 def identity_checks(containers):
     if len(containers) != 2:
         return {key: False for key in ("android_id", "imei", "serial", "adb_serial")}
@@ -88,13 +93,18 @@ def main():
         # Deliberately fail rather than install unreviewed kernel packages or reboot.
         run("sudo", "-n", "modprobe", "binder_linux", "devices=binder,hwbinder,vndbinder")
         run("sudo", "-n", "modprobe", "ashmem_linux")
+        binderfs = Path("/dev/binderfs")
+        binderfs.mkdir(exist_ok=True)
+        if not binderfs.is_mount():
+            run("sudo", "-n", "mount", "-t", "binder", "binder", str(binderfs))
+        report["binderfs_mounted"] = binderfs.is_mount()
         report["lsmod"] = run("lsmod")
         run("docker", "pull", "--platform", f"linux/{arch}", args.image, timeout=900)
         report["image_inspect"] = json.loads(run("docker", "image", "inspect", args.image))[0]
         if report["image_inspect"]["Architecture"] != arch:
             raise RuntimeError("Pulled image architecture differs from host")
         for index, port in enumerate((5555, 5556), 1):
-            name = f"simufarm-stage-d-{args.output.name}-{index}"
+            name = f"{container_prefix(args.output)}-{index}"
             volume = name + "-data"
             # Neither docker volume create nor docker run may reuse earlier state.
             if (
@@ -194,6 +204,13 @@ def main():
             )
     except Exception as exc:
         report["error"] = str(exc)
+        if isinstance(exc, subprocess.CalledProcessError):
+            report["command_error"] = {
+                "argv": list(exc.cmd),
+                "returncode": exc.returncode,
+                "stdout": exc.stdout,
+                "stderr": exc.stderr,
+            }
         raise
     finally:
         save()
