@@ -39,3 +39,8 @@ npm run test:web
 ```
 
 CI performs code/schema/static/browser checks on public standard runners. It never provisions cloud resources, boots Android, runs nightly APK tests or consumes MobileAPI quota. MobileAPI conservative cap remains50requests/month; this work made zero calls. Runtime observations remain in local evidence rather than public Git. Do not commit private keys, VM disks, APKs or credentials.
+
+
+## Accepted C2 data cohort
+
+932 generated static candidate profiles plus22 retained references (954 rendered pages). No padding. The prior duplicate-free claim was incorrect and68records were removed/merged. Source checks cover105models for the documented fields; this is not blanket verification of932complete spec sheets. Cutout coverage100/932, popularity unverified. All generated records stay build:null/runtime_eligible:false. One separate reference, vivo-x100 China, is human-approved for runtime. See data/cohort-policy.json and data/research/stage-c2/.

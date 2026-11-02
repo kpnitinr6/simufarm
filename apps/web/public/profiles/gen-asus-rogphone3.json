@@ -13,8 +13,8 @@
     "dpi": 391.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 16.0,
   "build": null,
@@ -22,6 +22,7 @@
   "source_type": "scraper",
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/asus/2020/rog-phone-3.json",
+    "https://www.dxomark.com/asus-rog-phone-3-display-review-struggles-with-video/",
     "https://www.kaggle.com/datasets/sady36/mobile-phones-specs"
   ],
   "confidence": 0.85,

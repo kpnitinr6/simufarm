@@ -2,7 +2,7 @@
 
 StageD and StageE accepted. The user selected real Redroid14 plus a genuine China X100 Android14 fingerprint, then authorized runtime promotion and PR9 merge after validation. Two fresh containers and both restarts passed actual release14, SDK34 and unmodified`:14/` fingerprint checks. Serial and synthetic IMEI properties differ and persist. First boots10.158s/16.854s; restarts9.424s/9.254s; after-restart Docker RAM625.6MiB/610.5MiB. See docs/STAGE_E_IDENTITY.md and docs/CAPACITY.md.
 
-**Human-reviewed runtime-eligible subset:1 — vivo-x100, China V2309A/PD2309/vivo.** The previous India reference is archived separately. Other reference/generated drafts retain their review state; all1000generated drafts still build:null/runtime_eligible:false. Production admission uses the existing review/schema policy. The isolated rehearsal profile remains false.
+**Human-reviewed runtime-eligible subset:1 — vivo-x100, China V2309A/PD2309/vivo.** The previous India reference is archived separately. Other reference/generated drafts retain their review state; all932generated static profiles still build:null/runtime_eligible:false. Production admission uses the existing review/schema policy. The isolated rehearsal profile remains false.
 
 Local Ubuntu22.04 ARM64 UTM VM:4CPUs/8GiB on external-drive storage, SSH localhost2222, Docker and Binder/ashmem verified. Four containers currently run: historical StageD13pair plus new StageE14pair. Old StageE13pair is stopped and retained. Configured ceiling5,2GiB Ubuntu reserve; five-way workload capacity unbenchmarked. Post-test MemAvailable3,549,794,304bytes.
 

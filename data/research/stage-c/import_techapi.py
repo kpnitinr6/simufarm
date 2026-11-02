@@ -238,6 +238,16 @@ def main():
     ap.add_argument("dataset", type=pathlib.Path)
     ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data"))
     a = ap.parse_args()
+    policy_path = pathlib.Path("data/cohort-policy.json")
+    if (
+        policy_path.exists()
+        and json.loads(policy_path.read_text()).get("mode") == "distinct_no_padding"
+        and a.output.resolve() == pathlib.Path("data").resolve()
+    ):
+        raise SystemExit(
+            "C2 curated catalog: import into a separate scratch --output path; do not overwrite the authoritative remediated CSV"
+        )
+
     observed_revision = subprocess.run(
         ["git", "-C", str(a.dataset), "rev-parse", "HEAD"],
         check=True,

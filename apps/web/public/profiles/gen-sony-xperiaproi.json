@@ -13,8 +13,8 @@
     "dpi": 643.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
   "ram_gb": 12.0,
   "build": null,
@@ -23,6 +23,7 @@
   "sources": [
     "https://en.wikipedia.org/wiki/Sony_Xperia_Pro-I",
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2021/sony-xperia-pro-i.json",
+    "https://www.notebookcheck.net/Sony-Xperia-Pro-I-review-Premium-smartphone-with-the-giant-image-sensor-of-a-compact-camera.601477.0.html",
     "https://www.sony.com/en/articles/xperia-pro-i"
   ],
   "confidence": 0.85,

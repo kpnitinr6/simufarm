@@ -38,7 +38,7 @@ for brand, records in brands.items():
             {
                 "brand": brand,
                 "constraint": "quota",
-                "reason": f"{len(records)} distinct selected candidate models. Approved reallocation preserves Nothing at 11 and fills the 1,000 total from other brands; regional/RAM/carrier/cosmetic duplicates excluded.",
+                "reason": f"{len(records)} distinct selected candidate models. Option B retains this measured count without padding. Known C2 aliases were removed; further source review remains pending.",
                 "global_minimum": global_counts,
             }
         )
