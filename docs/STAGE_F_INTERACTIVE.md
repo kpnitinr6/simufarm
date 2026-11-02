@@ -15,7 +15,7 @@ A rotation/focus issue that could scroll the clipped screen and hide its status 
 
 ## Verification
 
-All26local browser tests passed, including7new interaction tests. Five sample profiles cover vivo, Samsung, Google, Huawei and Tecno; a separate traversal confirms controls for all20brands, and a mobile test checks typing, Escape, rotation and page overflow. Existing catalog/generated-page checks and frame/art snapshots also passed. Screenshots were visually inspected: `docs/proof/stage-f-keyboard.png` and five `stage-f-{profile}.png` pages.
+The original local StageF suite passed26browser tests, including7new interaction tests; the integrated main CI suite passes27after C2 integration. Five sample profiles cover vivo, Samsung, Google, Huawei and Tecno; a separate traversal confirms controls for all20brands, and a mobile test checks typing, Escape, rotation and page overflow. Existing catalog/generated-page checks and frame/art snapshots also passed. Screenshots were visually inspected: `docs/proof/stage-f-keyboard.png` and five `stage-f-{profile}.png` pages.
 
 A separate local warm-server traversal measured navigation-to-controls-ready for20brands; the maximum was **70ms**, below the5second target. This measures HTML control readiness, not Android/app time-to-interactive or a production/network performance guarantee. Raw per-brand timings are stored in ignored local evidence, `data/runtime/local/stage-f/readiness.json`.
 

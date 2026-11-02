@@ -22,6 +22,6 @@ Local runtime: Ubuntu22.04 ARM64 UTM,4CPU/8GiB, external-drive128GiB sparse disk
 
 **Developer quick-start PASS:326.985s** from a stopped prepared VM through VM startup, SSH and a fresh pair's boot/restart identity checks. Cached prerequisites; fresh OS installation/download time excluded. An early cold-boot ADB timeout was corrected with bounded readiness retry and a regression test. Quick Start: docs/QUICK_START.md.
 
-StageF: mock status/time, keyboard, rotation and dark mode across20brand shells and954current pages;26browser tests, including all20brands and mobile checks. Local HTML control readiness maximum70ms on a warm server; not Android/app TTI. StageG's full production queue/result API/nightly extensions are not claimed or enabled by the manual test.
+StageF: mock status/time, keyboard, rotation and dark mode across20brand shells and954current pages;27browser tests in integrated CI, including all20brands and mobile checks. Local HTML control readiness maximum70ms on a warm server; not Android/app TTI. StageG's full production queue/result API/nightly extensions are not claimed or enabled by the manual test.
 
 Telephony is non-functional despite getprop IMEI. Play Integrity/SafetyNet is unsupported and should be assumed failing/unavailable on this uncertified emulated runtime; no attestation result was fabricated. No handset hardware or OEM firmware equivalence is claimed. See README limitations and docs/FINAL_HANDOFF.md for inventory and evidence.

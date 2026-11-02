@@ -64,7 +64,7 @@ Final state: **0project containers,0automation services, UTM VM stopped**. Appiu
 
 PR4,5,6,7,8and10are merged into main. PR9was already merged into PR8and reached main with it. Conflicts were limited to integration metadata/README decisions; C2data and runtime review gates were preserved and reconciled. No requested PR remains open. The final handoff proof/startup changes are submitted and merged with their own CI record.
 
-Local verification:134Python tests, Ruff and954-profile validation passed; the human/runtime gate passes with1reviewed profile. Existing26browser tests and production build passed for the integrated implementation. Final CI runs Python3.12/Node22 on public standard runners; the delivery report links the final main run. CI runs no Android or provisioning.
+Local verification:134Python tests, Ruff and954-profile validation passed; the human/runtime gate passes with1reviewed profile. Integrated main CI passed27browser tests and the production build. Final CI runs Python3.12/Node22 on public standard runners; the delivery report links the final main run. CI runs no Android or provisioning.
 
 ## Limitations and future extensions
 
