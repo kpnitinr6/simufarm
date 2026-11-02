@@ -14,7 +14,12 @@ spec.loader.exec_module(renderer)
 
 def test_three_stage_a_profiles_are_sourced_drafts():
     paths = list((ROOT / "profiles/vivo").glob("*.json"))
-    assert {x.stem for x in paths} == {"vivo-y100", "vivo-x100", "vivo-v30"}
+    paths.append(ROOT / "data/archive/stage-a-india-x100/profile.json")
+    assert {json.loads(x.read_text())["id"] for x in paths} == {
+        "vivo-y100",
+        "vivo-x100",
+        "vivo-v30",
+    }
     for path in paths:
         p = DeviceProfile.model_validate_json(path.read_text())
         assert len(p.sources) >= 2 and p.verified_by is None and p.verified_at is None

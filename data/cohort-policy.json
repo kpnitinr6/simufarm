@@ -10,11 +10,11 @@
     "screen_sizes": 2,
     "chipset_families": 2
   },
-  "stage_c2_complete": false,
-  "stage_e_authorized": false,
+  "stage_c2_complete": true,
+  "stage_e_authorized": true,
   "notch_geometry_selection": "Operator-approved 100-device source-backed coverage sample; popularity unverified",
   "notch_known": 100,
   "notch_unknown": 832,
   "stage_c2_engineering_complete": true,
-  "stage_c2_human_accepted": false
+  "stage_c2_human_accepted": true
 }

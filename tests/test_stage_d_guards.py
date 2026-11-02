@@ -30,3 +30,10 @@ def test_missing_imei_does_not_become_a_unique_value():
 
 def test_one_successful_boot_cannot_pass_two_container_gate():
     assert not any(remote.identity_checks(pair()[:1]).values())
+
+
+def test_separate_evidence_directories_cannot_reuse_container_names(tmp_path):
+    first = remote.container_prefix(tmp_path / "first" / "evidence")
+    second = remote.container_prefix(tmp_path / "second" / "evidence")
+    assert first != second
+    assert first == remote.container_prefix(tmp_path / "first" / "evidence")

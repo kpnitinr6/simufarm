@@ -1,18 +1,21 @@
 {
   "stage_c2": {
     "engineering_complete": true,
-    "human_accepted": false,
-    "review_required": true
+    "human_accepted": true,
+    "review_required": false
   },
   "stage_d": {
     "authorized": true,
-    "provisioning_observed": false
+    "provisioning_observed": false,
+    "target": "local-utm",
+    "complete": true
   },
   "stage_e": {
     "requires": [
       "stage_c2 engineering complete and human accepted",
       "at least one complete human-reviewed runtime-eligible profile"
     ],
-    "started": false
+    "started": true,
+    "complete": true
   }
 }

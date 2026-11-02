@@ -1,0 +1,42 @@
+{
+  "id": "vivo-x100-china",
+  "brand": "vivo",
+  "model": "X100 (China, Stage E test)",
+  "release_year": 2023,
+  "os_family": "android",
+  "os_version": "14",
+  "shell_id": "vivo",
+  "base_image_id": "redroid-14-arm64-64only",
+  "screen": {
+    "width_px": 1260,
+    "height_px": 2800,
+    "dpi": 452
+  },
+  "notch": {
+    "type": "punch_hole",
+    "position": "top_center"
+  },
+  "ram_gb": 12.0,
+  "build": {
+    "ro.product.brand": "vivo",
+    "ro.product.model": "V2309A",
+    "ro.product.device": "PD2309",
+    "ro.build.fingerprint": "vivo/PD2309/PD2309:14/UP1A.231005.007/compiler05201704:user/release-keys",
+    "source_type": "firmware",
+    "sources": [
+      "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+      "https://www.vivo.com.cn/vivo/param/x100",
+      "https://deviceinfohw.ru/devices/item.php?item=120403"
+    ]
+  },
+  "source_type": "manual",
+  "sources": [
+    "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+    "https://www.vivo.com.cn/vivo/param/x100",
+    "https://deviceinfohw.ru/devices/item.php?item=120403"
+  ],
+  "confidence": 0.95,
+  "verified_by": null,
+  "verified_at": null,
+  "runtime_eligible": false
+}

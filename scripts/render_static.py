@@ -33,6 +33,11 @@ def render_page(profile: DeviceProfile, *, cohort="reference") -> str:
         if p.notch.type == "unknown"
         else ""
     )
+    runtime_note = (
+        "This HTML page is a visual mock; the reviewed Android runtime runs separately in the local VM."
+        if p.runtime_eligible
+        else "Runtime is disabled; build provenance and human approval are required for promotion."
+    )
     source_links = "".join(
         f'<a href="{e(str(url), quote=True)}" rel="noreferrer">Source {i + 1} ↗</a>'
         for i, url in enumerate(p.sources)
@@ -43,7 +48,7 @@ def render_page(profile: DeviceProfile, *, cohort="reference") -> str:
 <main class="layout"><section class="device-stage" aria-label="Device preview"><{e(p.shell_id)}-shell model="{e(p.model, quote=True)}" screen-width="{p.screen.width_px}" screen-height="{p.screen.height_px}" notch="{p.notch.type}" notch-position="{p.notch.position}"></{e(p.shell_id)}-shell></section>
 <section class="detail"><span class="kicker">ORIGINAL FRAME. SOURCED PROFILE.</span><h1><small>{e(p.brand)}</small>{e(p.model)}</h1><p class="lead">A static device preview, built from an original web shell and a sourced device profile.</p>
 <dl class="specs"><div><dt>Resolution</dt><dd>{p.screen.width_px} × {p.screen.height_px}</dd></div><div><dt>Android</dt><dd>{e(p.os_version)}</dd></div><div><dt>Physical density*</dt><dd>{p.screen.dpi:g} PPI</dd></div><div><dt>Hardware RAM</dt><dd>{p.ram_gb:g} GB</dd></div></dl>
-<p class="notice">{review}. Runtime is disabled; build provenance and human approval are required for promotion. Original artwork; no manufacturer UI is reproduced.{cutout_note}</p><div class="sources">*Physical density from sourced specifications or labeled calculations; not Android logical DPI.{source_links}</div></section></main>
+<p class="notice">{review}. {runtime_note} Original artwork; no manufacturer UI is reproduced.{cutout_note}</p><div class="sources">*Physical density from sourced specifications or labeled calculations; not Android logical DPI.{source_links}</div></section></main>
 <footer><span>SOFTWARE ONLY · NO HANDSETS · NO CLOUD RESOURCES</span><span>Profile year · {p.release_year}</span>{attribution}</footer></body></html>
 """
 

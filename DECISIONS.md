@@ -55,8 +55,31 @@ Decision:
 
 ## ADR 016 — Local hardware Stage D over Meshnet
 
-Status: Accepted (31 October 2026)
+Status: Superseded by external-drive UTM VM (2 November 2026)
 
 Stage D targets a user-owned Ubuntu22.04 server over its Meshnet IPv4 address using SSH. Oracle provisioning/retries and automatic Oracle API calls are disabled. Oracle cleanup commands are supplied for the user to run; cleanup has not been executed or verified by Codex. No paid cloud resources or MobileAPI calls are authorized. Await the IP and SSH username before any connection. Detect CPU architecture before selecting an immutable Redroid image; do not assume Ampere/ARM. KVM is optional and is recorded, not required or forbidden. Keep ADB bound to remote loopback and use SSH tunnels if needed. Human runtime-profile promotion and StageE remain separate gates.
+
+## ADR 017 — External-drive UTM Linux VM for Stage D
+
+Status: Accepted (2 November 2026)
+
+The user confirmed the2TB Seagate One Touch external disk for erasure. Disk identity,size and external status were checked before APFS formatting as SimuFarmDrive. The1TB drive was not touched. StageD runs in a local Ubuntu22.04 ARM64 UTM QEMU/HVF VM with4vCPUs and8192MiB RAM. The128GiB sparse virtual disk and installer are physically under /Volumes/SimuFarmDrive/SimuFarm/VMs/SimuFarm.utm/. SSH forwards host127.0.0.1:2222 to guest22, using the simufarm user and key authentication. No Meshnet or Oracle endpoint is needed for this VM. ADR015 remains superseded; Oracle launch scripts stay disabled. StageD diagnostics do not promote build-null profiles or authorize StageE.
+
+
+## ADR 018 — Stage E isolated identity-property injection
+
+Status: Accepted scope; implementation pending review (2 November 2026)
+
+The user accepted StageD and authorized a two-instance local StageE test with synthetic serial/IMEI injection. Five concurrent containers is a planning ceiling, with2GiB reserved for the Ubuntu VM host. Try Docker environment properties first; if ignored, use the official pinned Magisk resetprop tool in an Android init boot hook. No Oracle calls or paid resources.
+
+Select the China X100 variant V2309A/PD2309/vivo, keep India V2308 separate, and require sourced China firmware metadata. This specific test authorization does not fabricate human review or promote a production runtime profile. Store the complete experimental profile under data/runtime-test-profiles with runtime_eligible:false. General runtime admission still requires human-reviewed build evidence. Sourced Android16 fingerprint is a property overlay on Android13/SDK33, not an OS upgrade. Record getprop and telephony-service results separately.
+
+## ADR 019 — Match the real runtime to China X100 Android14
+
+Status: Accepted (2 November 2026)
+
+The X100 launched on Android14; inventing a PD2309 Android13 fingerprint is forbidden. The user selected official Redroid14 ARM64 64-only plus genuine China Android14 OTA identity. Both raw base build.prop and booted release/SDK must already be14/34 before resetprop; the hook explicitly sets release14 only after that check. No editing16to14 in a fingerprint.
+
+Conditional human approval applies after two fresh containers match release14, SDK34 and an unmodified China`:14/` fingerprint, and have distinct serial/IMEI properties. Those tests and restart persistence passed. Promote only vivo-x100 China; archive its previous India reference, retain other draft flags, and merge PR9 after green CI. This resolves major-version consistency, not OEM firmware/hardware equivalence. GADS/Appium remains local-only preparation; StageF mock UI is independently authorized.
 ## Historical Stage D authorization — superseded by ADR016; C2 and Stage E gates (28 October 2026)
 Stage C accepted for engineering and merged. Stage D may provision only unused Always Free Oracle A1 2 OCPU/12 GB, use Redroid13_64only and collect two fresh-container actuals. Provisioning remains blocked on authentication and verified remaining allowance; no resources created. C2 separate PR is review-only, no main merge until approved. Option B retires round-number padding. The prior duplicate-free claim was incorrect. Retain sourced candidates without claiming complete verification; report exact source-checked subset and scope. The operator approved100sourced geometry checks selected for coverage with popularity unverified. Stage E requires C2 complete/reviewed plus>=1complete human-reviewed runtime profile; diagnostic boot grants no eligibility. Never infer/replace a missing IMEI or serial to make uniqueness pass.

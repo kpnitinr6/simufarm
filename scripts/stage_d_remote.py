@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Run on the authorized local Linux server; collect actuals without identity spoofing."""
 
+# Ubuntu 22.04 guest uses Python 3.10; datetime.UTC was introduced in 3.11.
+# ruff: noqa: UP017
 import argparse
 import hashlib
 import json
@@ -8,16 +10,21 @@ import platform
 import re
 import subprocess
 import time
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
-IMAGE = "redroid/redroid@sha256:c815ac1b1d5bd0a099b74c3e3e0eeea3b32bed8d7ab1f788c20fb74e35891716"
+IMAGE = "redroid/redroid@sha256:46478a567194aed24cd0877d4434a9e58b534d4aad30931eb21999a52f2ce131"
 
 
-def run(*args, check=True):
+def run(*args, check=True, timeout=180):
     return subprocess.run(
-        args, text=True, capture_output=True, check=check, timeout=180
+        args, text=True, capture_output=True, check=check, timeout=timeout
     ).stdout.strip()
+
+
+def container_prefix(output):
+    tag = hashlib.sha256(str(Path(output).resolve()).encode()).hexdigest()[:12]
+    return f"simufarm-stage-d-{tag}"
 
 
 def identity_checks(containers):
@@ -60,7 +67,7 @@ def main():
         raise SystemExit("APK SHA256 mismatch")
     args.output.mkdir(parents=True, exist_ok=False)
     report = {
-        "observed_at": datetime.now(UTC).isoformat(),
+        "observed_at": datetime.now(timezone.utc).isoformat(),
         "image": args.image,
         "host_architecture": arch,
         "deployment_target": "local-linux-meshnet",
@@ -86,13 +93,18 @@ def main():
         # Deliberately fail rather than install unreviewed kernel packages or reboot.
         run("sudo", "-n", "modprobe", "binder_linux", "devices=binder,hwbinder,vndbinder")
         run("sudo", "-n", "modprobe", "ashmem_linux")
+        binderfs = Path("/dev/binderfs")
+        binderfs.mkdir(exist_ok=True)
+        if not binderfs.is_mount():
+            run("sudo", "-n", "mount", "-t", "binder", "binder", str(binderfs))
+        report["binderfs_mounted"] = binderfs.is_mount()
         report["lsmod"] = run("lsmod")
-        run("docker", "pull", "--platform", f"linux/{arch}", args.image)
+        run("docker", "pull", "--platform", f"linux/{arch}", args.image, timeout=900)
         report["image_inspect"] = json.loads(run("docker", "image", "inspect", args.image))[0]
         if report["image_inspect"]["Architecture"] != arch:
             raise RuntimeError("Pulled image architecture differs from host")
         for index, port in enumerate((5555, 5556), 1):
-            name = f"simufarm-stage-d-{args.output.name}-{index}"
+            name = f"{container_prefix(args.output)}-{index}"
             volume = name + "-data"
             # Neither docker volume create nor docker run may reuse earlier state.
             if (
@@ -192,6 +204,13 @@ def main():
             )
     except Exception as exc:
         report["error"] = str(exc)
+        if isinstance(exc, subprocess.CalledProcessError):
+            report["command_error"] = {
+                "argv": list(exc.cmd),
+                "returncode": exc.returncode,
+                "stdout": exc.stdout,
+                "stderr": exc.stderr,
+            }
         raise
     finally:
         save()

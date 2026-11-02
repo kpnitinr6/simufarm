@@ -31963,6 +31963,51 @@
     "review_status": "needs-human"
   },
   {
+    "id": "vivo-x100",
+    "brand": "vivo",
+    "model": "X100",
+    "release_year": 2023,
+    "os_family": "android",
+    "os_version": "14",
+    "shell_id": "vivo",
+    "base_image_id": "redroid-14-arm64-64only",
+    "screen": {
+      "width_px": 1260,
+      "height_px": 2800,
+      "dpi": 452.9
+    },
+    "notch": {
+      "type": "punch_hole",
+      "position": "top_center"
+    },
+    "ram_gb": 12.0,
+    "build": {
+      "ro.product.brand": "vivo",
+      "ro.product.model": "V2309A",
+      "ro.product.device": "PD2309",
+      "ro.build.fingerprint": "vivo/PD2309/PD2309:14/UP1A.231005.007/compiler05201704:user/release-keys",
+      "source_type": "firmware",
+      "sources": [
+        "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+        "https://www.vivo.com.cn/vivo/param/x100",
+        "https://deviceinfohw.ru/devices/item.php?item=120403"
+      ]
+    },
+    "runtime_eligible": true,
+    "source_type": "manual",
+    "sources": [
+      "https://sysupdxdl.vivo.com.cn/upgrade/oem/files/2025052020184564386c61632c49847e2056ab22489809.zip",
+      "https://www.vivo.com.cn/vivo/param/x100",
+      "https://deviceinfohw.ru/devices/item.php?item=120403"
+    ],
+    "confidence": 0.95,
+    "verified_by": "human",
+    "verified_at": "2026-11-02T13:32:20.581303Z",
+    "url": "/simulators/vivo-x100.html",
+    "cohort": "reference",
+    "review_status": "human-reviewed"
+  },
+  {
     "id": "samsung-galaxy-s21",
     "brand": "Samsung",
     "model": "Galaxy S21 5G",
@@ -32162,52 +32207,6 @@
     "verified_by": null,
     "verified_at": null,
     "url": "/simulators/vivo-v30.html",
-    "cohort": "reference",
-    "review_status": "needs-human"
-  },
-  {
-    "id": "vivo-x100",
-    "brand": "vivo",
-    "model": "X100",
-    "release_year": 2024,
-    "os_family": "android",
-    "os_version": "14",
-    "shell_id": "vivo",
-    "base_image_id": "android-14-arm64",
-    "screen": {
-      "width_px": 1260,
-      "height_px": 2800,
-      "dpi": 452.0
-    },
-    "notch": {
-      "type": "punch_hole",
-      "position": "top_center"
-    },
-    "ram_gb": 12.0,
-    "build": {
-      "ro.product.brand": null,
-      "ro.product.model": null,
-      "ro.product.device": null,
-      "ro.build.fingerprint": "vivo/V2308/V2308:14/UP1A.231005.007/compiler01232129:user/release-keys",
-      "source_type": "firmware",
-      "sources": [
-        "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip"
-      ]
-    },
-    "runtime_eligible": false,
-    "source_type": "manual",
-    "sources": [
-      "https://www.vivo.com/in/products/param/x100",
-      "https://vivonewsroom.in/press-release/vivo-launches-the-ultimate-flagship-x100-series-with-next-level-of-imaging-co-engineered-with-zeiss/",
-      "https://www.vivo.com/in/products/x100",
-      "https://www.vivo.com/in/support/upgradePackageData?id=214",
-      "https://in-sysup-txdl.vivoglobal.com/upgrade/official/officialFiles/PD2309F_EX_A_14.0.13.4.W30.V000L1-update-full_1707035085.zip",
-      "https://android.googlesource.com/platform/build/+/0f8fcbe271cad06cb21e0c4602baf35758f4adb1/tools/releasetools/ota_from_target_files"
-    ],
-    "confidence": 0.85,
-    "verified_by": null,
-    "verified_at": null,
-    "url": "/simulators/vivo-x100.html",
     "cohort": "reference",
     "review_status": "needs-human"
   },

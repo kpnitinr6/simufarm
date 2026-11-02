@@ -45,3 +45,12 @@ def test_local_hardware_allows_kvm_and_both_architectures(arch):
     report["binder_module"] = {"returncode": 1}
     with pytest.raises(ValueError, match="binder_module"):
         local.require_host(report)
+
+
+def test_utm_only_accepts_localhost_and_uses_forwarded_port():
+    args = local.ssh_args("127.0.0.1", "simufarm", transport="utm", port=2222)
+    assert args[-3:] == ["-p", "2222", "simufarm@127.0.0.1"]
+    with pytest.raises(ValueError):
+        local.endpoint("100.64.0.2", "ubuntu", transport="utm")
+    with pytest.raises(ValueError):
+        local.endpoint("127.0.0.1", "ubuntu")
