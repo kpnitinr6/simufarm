@@ -1,0 +1,72 @@
+{
+  "gen-samsung-galaxym445g": {
+    "profile_id": "gen-samsung-galaxym445g",
+    "source_url": "https://www.gsmarena.com/samsung_galaxy_m44_makes_its_international_debut_in_south_korea_with_surprising_chipset-news-60556.php",
+    "source_location": "10 November 2023; launch paragraph and final specifications paragraph",
+    "verified_fields": {
+      "release_year": "2023",
+      "height_px": "2408"
+    },
+    "explanation": "2023 Galaxy Jump 3 / SM-M446K launch; screen 1080x2408.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  },
+  "gen-sony-xperia1iv": {
+    "profile_id": "gen-sony-xperia1iv",
+    "source_url": "https://www.sony.co.uk/presscentre/sonys-new-xperia-1-iv-is-a-powerhouse-in-content-creation-with-the-worlds-first-true-optical-zoom-lens-and-more",
+    "source_location": "Performance and Design, line 66 in web extraction dated 2026-10-28",
+    "verified_fields": {
+      "ram_gb": "12.0"
+    },
+    "explanation": "Sony launch confirms 12 GB RAM, not inherited 16 GB dataset variant.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  },
+  "gen-samsung-galaxys25fe": {
+    "profile_id": "gen-samsung-galaxys25fe",
+    "source_url": "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
+    "source_location": "Specification table, line 117 in web extraction dated 2026-10-28",
+    "verified_fields": {
+      "os_version": "16"
+    },
+    "explanation": "Requested Android 15 correction conflicts with official launch OS specification; retain Android 16 and escalate source conflict.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  },
+  "gen-samsung-galaxyzfold8ultra": {
+    "profile_id": "gen-samsung-galaxyzfold8ultra",
+    "source_url": "https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living",
+    "source_location": "Specification table, lines 180-196 in web extraction dated 2026-10-28",
+    "verified_fields": {
+      "width_px": "2256",
+      "height_px": "2504",
+      "dpi": "422",
+      "screen_inches": "8.0"
+    },
+    "explanation": "Manufacturer July 22 2026 launch verifies existence; correct main display inherited from speculative dataset. OS remains unverified (official table empty).",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  },
+  "gen-nothing-phone-4a": {
+    "profile_id": "gen-nothing-phone-4a",
+    "source_url": "https://nothing.tech/products/phone-4a",
+    "source_location": "Product heading",
+    "verified_fields": {
+      "model": "Phone (4a)"
+    },
+    "explanation": "Official product page confirms existence as of 2026-10-28; retain. This existence verification does not independently verify every numeric field.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  },
+  "gen-nothing-phone-4a-pro": {
+    "profile_id": "gen-nothing-phone-4a-pro",
+    "source_url": "https://us.nothing.tech/products/phone-4a-pro",
+    "source_location": "Product heading",
+    "verified_fields": {
+      "model": "Phone (4a) Pro"
+    },
+    "explanation": "Official product page confirms existence as of 2026-10-28; retain. This existence verification does not independently verify every numeric field.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  }
+}

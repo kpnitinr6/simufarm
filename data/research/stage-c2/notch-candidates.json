@@ -1,0 +1,2086 @@
+{
+  "checked_at": "2026-10-28",
+  "selection_basis": "Operator-approved: 100 sourced geometry checks selected for coverage, with popularity unverified.",
+  "complete_public_model_ranking_available": false,
+  "popularity_verified_count": 0,
+  "selected_count": 100,
+  "selected_geometry_complete_count": 100,
+  "records": [
+    {
+      "id": "gen-samsung-galaxya265g",
+      "model": "Galaxy A26 5G",
+      "brand": "samsung",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://webcdn.cox.com/content/dam/cox/residential/support/Mobile/Print_Media/samsungA26datasheet.pdf"
+      ],
+      "method": "published_manufacturer_drawing_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.85,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-samsung-galaxya56",
+      "model": "Galaxy A56",
+      "brand": "samsung",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://images.samsung.com/is/content/samsung/assets/iran/smartphones/mobile-catalogue/07-2025/general-catalog-july-2025.pdf"
+      ],
+      "method": "published_manufacturer_drawing_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-samsung-galaxys24",
+      "model": "Galaxy S24",
+      "brand": "samsung",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.01net.com/tests/test-des-samsung-galaxy-s24-et-s24-plus-plus-petits-plus-endurants-et-moins-chers.html"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "un \u00e9cran plat et un poin\u00e7on centr\u00e9",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-samsung-galaxys24plus",
+      "model": "Galaxy S24+",
+      "brand": "samsung",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.01net.com/tests/test-des-samsung-galaxy-s24-et-s24-plus-plus-petits-plus-endurants-et-moins-chers.html"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "un \u00e9cran plat et un poin\u00e7on centr\u00e9",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-samsung-galaxys25ultra",
+      "model": "Galaxy S25 Ultra",
+      "brand": "samsung",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.tomsguide.com/tablets/android-tablets/samsung-galaxy-s25-ultra-vs-google-pixel-9-pro-xl"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "large displays with centred punch-hole selfie cameras on the front.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-google-pixel9proxl",
+      "model": "Pixel 9 Pro XL",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9ProXL"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/9TZIZCWf68Q9J2IYvIcuCuqLSn-WTpL_BhncuKp7wzJox0gG03Af-S3UkmPc9JmsK_ar=w895",
+      "source_section": "Pixel 9 Pro XL",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-xiaomi-14ultra",
+      "model": "Xiaomi 14 Ultra",
+      "brand": "xiaomi",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://gl123.alsgp0.mi-fds.com/gl123/XIAOMI/Xiaomi%2014%20Ultra/N1%20%E5%8C%88%E7%89%99%E5%88%A9%E8%AF%AD%E8%AF%B4%E6%98%8E%E4%B9%A6%EF%BC%88HyperOS%EF%BC%89.pdf"
+      ],
+      "method": "published_manufacturer_drawing_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-google-pixel6a",
+      "model": "Pixel 6a",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel6a"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/dRl_6ipuj27_oXc6Tvx9P0yk_AxRjS6e6_f1I0E21breUlEROgcXk7ArD6-AepY5lQ=w895",
+      "source_section": "Pixel 6a",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel8a",
+      "model": "Pixel 8a",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel8a"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/ZEGmnVxOVHPmYwnKRVWwFjcj6TBoEQ4A3POmqJDtOkTG9yh0d8hrWf1OhVBbhmpE1A=w895",
+      "source_section": "Pixel 8a",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel5",
+      "model": "Google Pixel 5",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel5"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/PEPx0tSCUn5IO0oYjtOdsjAu28Vk_bTNpuftJ9ihWXOEkQIHmDbDbB_ahILJaLenIeWO=w895",
+      "source_section": "Pixel 5",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-sony-xperia1iv",
+      "model": "Sony Xperia 1 IV",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.sony.com.hk/press/pdf/20220511_1_e.pdf"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "no notches to interrupt the view",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia10iv",
+      "model": "Sony Xperia 10 IV",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.sony.com.hk/press/pdf/20220511_e.pdf"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "with no notch or camera hole to impair your view",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia5v",
+      "model": "Xperia 5 V",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.notebookcheck.net/Sony-Xperia-5-V-review-Compact-premium-smartphone-with-professional-camera.756123.0.html"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "the Xperia 5 V does without a punchhole or notch for the selfie camera",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia1vi",
+      "model": "Xperia 1 VI",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.phonearena.com/reviews/sony-xperia-1-vi-review_id6291"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The display is still uninterrupted by cutouts and notches",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia1vii",
+      "model": "Sony Xperia 1 VII",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.techradar.com/phones/sony-xperia-phones/sony-xperia-1-vii-review"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "there\u2019s no notch or punch-hole in the screen",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-asus-rogphone6",
+      "model": "ASUS ROG Phone 6",
+      "brand": "asus",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.techadvisor.com/article/1418170/asus-rog-phone-6-review.html"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The absence of any notch gives it an attractive symmetry",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-asus-rogphone7",
+      "model": "ASUS ROG Phone 7",
+      "brand": "asus",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://jamonline.ph/reviews/asus-rog-phone-7-review/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "the ASUS ROG Phone 7 still packs a display that doesn\u2019t come with a notch.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-asus-rogphone7ultimate",
+      "model": "ROG Phone 7 Ultimate",
+      "brand": "asus",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.computerbase.de/artikel/smartphones/asus-rog-phone-7-ultimate-test.83847/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "Display ohne Notch",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-motorola-edge50neo",
+      "model": "Motorola Edge 50 Neo",
+      "brand": "motorola",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.replacebase.co.uk/media/wysiwyg/pdf/Edge-50-Neo/XT2409-X_motorola-edge-50-neo_Level-3-Service-Manual-for-EU_V1.0.PDF"
+      ],
+      "method": "published_manufacturer_drawing_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-motorola-motoedge50neo",
+      "model": "Motorola Moto Edge 50 Neo",
+      "brand": "motorola",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.replacebase.co.uk/media/wysiwyg/pdf/Edge-50-Neo/XT2409-X_motorola-edge-50-neo_Level-3-Service-Manual-for-EU_V1.0.PDF"
+      ],
+      "method": "published_manufacturer_drawing_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-google-pixel10a",
+      "model": "Pixel 10a",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10a"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/x-desA8nDBzVNA6-q7e1hYaVR3p0m7srxcFIVrNnJFCHv7xc2Q_v5MSqx9kdBa8wDvRs=w895",
+      "source_section": "Pixel 10a",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel10proxl",
+      "model": "Pixel 10 Pro XL",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10ProXL"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/pX5BhOWb9gPjshlq-WoM1Nu4JzQ9UjLijH8euL80QSHp6OTCS3VRU3SOvAxb9jkPsw=w895",
+      "source_section": "Pixel 10 Pro XL",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel10pro",
+      "model": "Pixel 10 Pro",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10Pro"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/gFL1c9KfWQW9oYtcEX1p4hoPwhLsNOG-InLApGG4_0skPXiOMwNUTq3mdhBTQLmmtgo=w895",
+      "source_section": "Pixel 10 Pro",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel10",
+      "model": "Pixel 10",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel10"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/2kwsUPuoJFFAHErsRKb4qJmzYfAKiEDo0T1nBr_kbObC_VWfJKR9hAEXWGhh_xs9Xw=w895",
+      "source_section": "Pixel 10",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel9a",
+      "model": "Google Pixel 9a",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9a"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/XFZ7p13l-GEItDSuhfalHKlKFBuNV3Z05iYyky1VPmFXH391qJ4C6tAw-bo8vNnT31_r=w895",
+      "source_section": "Pixel 9a",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel9pro",
+      "model": "Pixel 9 Pro",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9Pro"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/8prREqjhIinmCZdoqYBfFX3wozjexPcudjtbIkNFpSOY4ZItz13tjclUhyeM-zRuYQ=w895",
+      "source_section": "Pixel 9 Pro",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel9",
+      "model": "Pixel 9",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel9"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/J-Sm99rc8JjJmKumj1PwFBphShjyf4ZIf9wzSvkvAhfJygpJKdY2Z7pEyqx_HjTwn70=w895",
+      "source_section": "Pixel 9",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel8pro",
+      "model": "Pixel 8 Pro",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel8Pro"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/gdsUmAxaDZ_Fhq6uLQQH1XIp1fEpzedWpTa0T1pbBmawbHIMGG386nZdUX3kQDocRQ=w895",
+      "source_section": "Pixel 8 Pro",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel7a",
+      "model": "Pixel 7a",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel7a"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/MuhLo87Xm7uq7VTzVR5mx5cw-GkANPdMYjGQVXPykFXzLg7lGyODxwl_GZUSlmTmkq0=w895",
+      "source_section": "Pixel 7a",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel7pro",
+      "model": "Pixel 7 Pro",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel7Pro"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/TeQDOg-YJN131hmEbVZf00qRlXUaWBaKZU_RAtREHJmwxjgidz77UqQRTF68X0c9rqY=w895",
+      "source_section": "Pixel 7 Pro",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel7",
+      "model": "Pixel 7",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel7"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/f1R3GC2jxD2xwhcHQSJV9euDNiOOlFMXVijtvcbd3aHIMUHmjLEXWxrQ9iFXILIpRQ=w895",
+      "source_section": "Pixel 7",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel6pro",
+      "model": "Pixel 6 Pro",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel6Pro"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/wmYQWRXziwC-yFLoNSbbXrGJ3NWY3MILsK97QOCTQd4mVxnWXEUFITI9ufu39ChmlVeX=w895",
+      "source_section": "Pixel 6 Pro",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel6",
+      "model": "Pixel 6",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel6"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/miV_1GIJHjGt8slMs-Kn114Am_Z4-5FB2Yklq7cF4TB73fiT1t_5w1qstJB8gc5z744=w895",
+      "source_section": "Pixel 6",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel5a",
+      "model": "Pixel 5a",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel5a(5G)"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/tO7Wx8_Vd63dCPN2Z4DZQIaGlHDddYP3cn3lOQt3XJRxO0XUGk_zS3SpvVpChuUT8g=w895",
+      "source_section": "Pixel 5a (5G)",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-google-pixel4a5g",
+      "model": "Google Pixel 4a (5G)",
+      "brand": "google",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://support.google.com/pixelphone/answer/7157629?hl=en#Pixel4a(5G)"
+      ],
+      "method": "manufacturer_hardware_diagram_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://lh3.googleusercontent.com/tO7Wx8_Vd63dCPN2Z4DZQIaGlHDddYP3cn3lOQt3XJRxO0XUGk_zS3SpvVpChuUT8g=w895",
+      "source_section": "Pixel 4a (5G)",
+      "geometry_note": "Camera shown inside display at stated position. Actual diagram inspected in Chromium contact sheet; no family-based propagation."
+    },
+    {
+      "id": "gen-sony-xperia1v",
+      "model": "Xperia 1 V",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.techradar.com/phones/sony-xperia-phones/sony-xperia-1-v-review"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "This screen has no notch, no punch hole.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia10iii",
+      "model": "Xperia 10 III",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.techradar.com/reviews/sony-xperia-10-iii"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "This is an ultra-tall 21:9 display with no notch or punch-hole.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia5iv",
+      "model": "Sony Xperia 5 IV",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "No notch por aqu\u00ed, no notch por all\u00e1",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-asus-rogphone5",
+      "model": "ASUS ROG Phone 5",
+      "brand": "asus",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.xataka.com/analisis/asus-rog-phone-5-analisis-caracteristicas-precio-especificaciones/amp"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "sin notch ni agujero para la c\u00e1mara frontal",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-nord4",
+      "model": "Oneplus Nord 4",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.gizmochina.com/2024/09/25/oneplus-nord-4-review/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The OnePlus Nord 4 sports a 6.74-inch centered punch-hole 10-bit HDR10+ enabled AMOLED display.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-nordce4liteindia",
+      "model": "OnePlus Nord CE4 Lite (India)",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.gizmochina.com/2024/08/05/oneplus-nord-ce-4-lite-review/3/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The new 6.67-inch centered punch-hole display",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-nordce3lite",
+      "model": "OnePlus Nord CE 3 Lite",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.megabites.com.ph/review-oneplus-nord-ce-3-lite-5g-8gb256gb/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The front camera has a centered punch-hole",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-11",
+      "model": "OnePlus 11",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.tomsguide.com/reviews/oneplus-11"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "the front camera hole-punch cutout in the top left corner.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-10pro",
+      "model": "OnePlus 10 Pro",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.expertreviews.co.uk/technology/phones/oneplus-10-pro-review"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "It has its selfie camera punched out of a hole in the top-left corner",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-10t",
+      "model": "OnePlus 10T",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.androidcentral.com/phones/oneplus-10t-review"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "OnePlus has also centered the punch-hole camera in the display",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-nothing-phone1",
+      "model": "Nothing Phone (1)",
+      "brand": "nothing",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.gsmarena.com/nothing_phone_1-review-2453p2.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "a hole punch camera in the top left",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-nothing-phone2a",
+      "model": "Nothing Phone (2a)",
+      "brand": "nothing",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://hothardware.com/reviews/nothing-phone-2a-review"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "a center punch-hole for the 32MP shooter.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-nothing-cmfphone1",
+      "model": "CMF Phone 1",
+      "brand": "nothing",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.smartprix.com/bytes/nothing-cmf-phone-1-review-set-to-disrupt-the-budget-market/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "a centered punch-hole setup for the selfie camera.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia10ii",
+      "model": "Sony Xperia 10 II",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.techradar.com/reviews/sony-xperia-10-ii"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "a flat notchless display",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia5ii",
+      "model": "Sony Xperia 5 II",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.dxomark.com/sony-xperia-5-ii-display-review-holding-the-middle-ground/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "There is no notch on Sony Xperia 5 II",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia1ii",
+      "model": "Sony Xperia 1 II",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.gsmarena.com/sony_xperia_1_ii-review-2115p2.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "the Xperia 1 II still has no notch, instead keeping the selfie camera in the top bezel.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperia10v",
+      "model": "Sony Xperia 10 V",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.nextpit.de/handys/sony-xperia-10-v/test"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "Displayr\u00e4nder recht dick (daf\u00fcr gibt's keine Notch)",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-sony-xperiaproi",
+      "model": "Sony Xperia Pro-I",
+      "brand": "sony",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.notebookcheck.net/Sony-Xperia-Pro-I-review-Premium-smartphone-with-the-giant-image-sensor-of-a-compact-camera.601477.0.html"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "there is no notch or punch hole on the Xperia Pro-I.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-asus-rogphone3",
+      "model": "ROG Phone 3",
+      "brand": "asus",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.dxomark.com/asus-rog-phone-3-display-review-struggles-with-video/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The ROG Phone 3 doesn\u2019t have a notch",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-9",
+      "model": "OnePlus 9",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://hothardware.com/reviews/oneplus-9-and-9-pro-review"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "both phones have a punch hole for the 16MP selfie camera in the top left corner of the screen.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-9pro",
+      "model": "OnePlus 9 Pro",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://hothardware.com/reviews/oneplus-9-and-9-pro-review"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "both phones have a punch hole for the 16MP selfie camera in the top left corner of the screen.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-nord25g",
+      "model": "Oneplus Nord 2 5G",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.techadvisor.com/article/722526/oneplus-nord-2-review.html"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "There\u2019s a punch-hole selfie camera interrupting the top-left corner of the display",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-nord2t",
+      "model": "Nord 2T",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.gsmarena.com/oneplus_nord_2t-review-2461p2.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The panel has a perforation at the top left for the 32MP selfie camera.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-oneplus-nordce2",
+      "model": "OnePlus Nord CE 2",
+      "brand": "oneplus",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.ephotozine.com/article/oneplus-nord-ce-2-smartphone-review-35904"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "the 16MP selfie camera is cut out of the top left corner",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-realme-14proplus",
+      "model": "Realme 14 Pro+",
+      "brand": "realme",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.smartprix.com/bytes/realme-14-pro-review-does-it-deliver-on-all-fronts/"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "a centered punch-hole for the camera.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-vivo-v50",
+      "model": "vivo V50",
+      "brand": "vivo",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://technology.inquirer.net/141661/a-look-at-the-vivo-v50-vivos-latest-mid-range-powerhouse"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "A centered punch-hole at the top of the display",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-nokia-13",
+      "model": "Nokia 1.3",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-1-3-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/1oG7UDAoyK6gUnKGPzEymg/96801d59ae7a05f48ab5aa50ef2b9a1a/nokia_1_3-user_guide-hero.png",
+      "source_title": "Nokia 1.3 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/3fqaA7pVfsnkC64qStBJnz/a9d4b5c853d370c35de7fa40033e1f56/Nokia_1_3_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-14",
+      "model": "Nokia 1.4",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-1-4-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/sm5Nue1TRU8xNmtv6v0mT/59a3bfdf70b31abafd6c7c7a2f612a1d/nokia_1_4-user_guide-hero.png",
+      "source_title": "Nokia 1.4 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/s6UzRZFLNhy4tgyOro1bl/1e7d98c821f34d3ee0f09148fc81ee24/Nokia_1_4_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-24lte",
+      "model": "2.4 LTE",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-2-4-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/14UBx2qIvKFxF6dCMRuUDL/868755bed25620f20d0bbc22dfad464a/nokia_2_4-user_guide-hero.png",
+      "source_title": "Nokia 2.4 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/6AHGo6mImMZnEOZtylsbFu/02a5245406cf36da0ba6344e606d35e0/Nokia_2_4_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-34",
+      "model": "Nokia 3.4",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-3-4-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/3QS0CDtyhMQpLRnGmU2TCJ/f3924e994c519b2508ad8348e539fa83/nokia_3_4-user_guide-hero.png",
+      "source_title": "Nokia 3.4 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/2dqkBKeZHCgjhtYsMHgt3C/0fa8bea0a50c399d49cb55b016c971a7/Nokia_3_4_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_left."
+    },
+    {
+      "id": "gen-nokia-53",
+      "model": "Nokia 5.3",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-5-3-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/3ByifJAZWRJIvBQ5uUnOY0/63fd9e54d085dda6c9cb0313f764dc13/nokia_5_3-user_guide-hero.png",
+      "source_title": "Nokia 5.3 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/3PiTwVNvo4DDIgtbuBfJNE/cb7f64c686bb26a64e3ca59370f6716f/Nokia_5_3_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-54",
+      "model": "Nokia 5.4",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-5-4-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/6qbA6nOSdUYpreVFiO4eTB/9c6a67f6da63f67e9be4daf6f35ff729/nokia_5_4-user_guide-hero.png",
+      "source_title": "Nokia 5.4 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/XlRywyIsfE7FdkYkFvnPa/7d91681be04ac101560d478ef31e4264/Nokia_5_4_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_left."
+    },
+    {
+      "id": "gen-nokia-835g",
+      "model": "Nokia 8.3 5G",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-8-3-5g-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/1U0UlndqRax5bPHSZtEhLG/850abdea79362590abaf74fcefd69518/nokia_8_3_5G-user_guide-hero.png",
+      "source_title": "Nokia 8.3 5G user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/5Y0iGEaamZlcLXIEuoXcEm/948e88f991e0daa7b7390e132bc2cc12/Nokia_8_3_5G_keys_and_parts.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_left."
+    },
+    {
+      "id": "gen-nokia-c01plus",
+      "model": "Nokia C01 Plus",
+      "brand": "nokia",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c01-plus-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/49cwBIxcDGj9ieByNa38Yt/ace230544184cb91dec946529a5772ab/nokia_C01_plus-user_guide-hero.png",
+      "source_title": "Nokia C01 Plus user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/sQR6W9m1jSW3gK9fQeYIL/d179979940ea70170530abe11ef67f99/Nokia_C01_Plus_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Camera lies in bezel outside rectangular display."
+    },
+    {
+      "id": "gen-nokia-c10",
+      "model": "Nokia C10",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c10-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/2X6NEgL1JEWg2XjvrKEcCW/0bb675574e121d79b1b3054367974ff9/nokia_C10-user_guide-hero.png",
+      "source_title": "Nokia C10 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/519VFkiC4b0iY5BdfhiK5g/0b5280deda0c2f5eeb912faea20d31fb/Nokia_C10_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c110",
+      "model": "Nokia C110",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c110-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/2rbO0baH64lqZvD7fE2SOd/e591ae76909aa939487eb7db65f8a214/nokia_C110-user_guide-hero.png",
+      "source_title": "Nokia C110 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/2bcvqA0LZTdcU8qzopJ7U6/451dbc12f07cc34da6e42b1a0b9ea4e1/Nokia_C110_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c12",
+      "model": "Nokia C12",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c12-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/5PeF6P6Z96cvgM240DpQw/fc1d7c115d40523b80523fa868708514/nokia_C12-user_guide-hero.png",
+      "source_title": "Nokia C12 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/2aEAGVXNq6FLTDac3mOf36/5e1a15f4e0792b948d7eadc8c29ccf65/Nokia_C12_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c12ndedition",
+      "model": "Nokia C1 2nd Edition",
+      "brand": "nokia",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c1-2nd-edition-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/5sWAahOKTkjmj6kB0XCOu0/6b256249c9dba7f897639a9f3472bc72/nokia_C1_2nd_Edition-user_guide-hero.png",
+      "source_title": "Nokia C1 2nd Edition user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/1lbQYmQCcp9fFC4jjB0bkV/052d7eb96343d3267d6e450e15d1a9c3/Nokia_C1_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Camera lies in bezel outside rectangular display."
+    },
+    {
+      "id": "gen-nokia-c20",
+      "model": "Nokia C20",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c20-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/5sJNU09cingqWio3dTPULM/5267e87d4433b7324fc00aec09cf0bbc/nokia_C20-user_guide-hero.png",
+      "source_title": "Nokia C20 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/4RZPBn17tyD3aXxsSCqMZS/abb5db2ed2cc7cc29930612c7e5384f3/Nokia_C20_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c200",
+      "model": "Nokia C200",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c200-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/6GijCPgBugLZT8HjKrTL3m/ab7bb379e00f37c9ce8ee115c403641e/nokia_C200-user_guide-hero.png",
+      "source_title": "Nokia C200 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/5DSJ8XIs3ztDd9S28DgsX8/798be775b3aa76a685607d30cd8912f4/Nokia_C200_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c21",
+      "model": "Nokia C21",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c21-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/6l1V9Cqx8UYXI9ChqQHpNv/55a94b63f4ad793d57283c0536b7014f/nokia_C21-user_guide-hero.png",
+      "source_title": "Nokia C21 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/2PgEGNWF8mKZpZn0uDU8cw/d294b9c8cf469cac2464dc582b370e4a/Nokia_C21_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c210",
+      "model": "Nokia C210",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c210-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/2nk82XhGXwiFrV6Jvo9RKQ/b7f25107174598fc8d6747e6e89d5a5a/nokia_C210-user_guide-hero.png",
+      "source_title": "Nokia C210 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/2zUfLIT0qm2noJ1GrWakmY/21163e021db7165fccb1d8792cccaf5a/Nokia_C210_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c21plus",
+      "model": "Nokia C21 Plus",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c21-plus-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/320yPQgjwT2rQzqDNnKh44/365962b529e39d011a4d28fd1418ecf6/nokia_C21_plus-user_guide-hero.png",
+      "source_title": "Nokia C21 Plus user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/3XprLr2OYZRJzLo4YSjQaE/0b2131d4c924a2ffc0727d2d23055652/Nokia_C21_Plus_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c22",
+      "model": "Nokia C22",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c22-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/37QMO2PSLEgAxsbxqW3hq0/64a32ee3fdbac5fe23feb780f18d550e/nokia_C22-user_guide-hero.png",
+      "source_title": "Nokia C22 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/6aAMH9rXzQ2o7SfR6sGVsV/28171df11916306ef0cd8045531182d9/Nokia_C22_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c2tava",
+      "model": "Nokia C2 Tava",
+      "brand": "nokia",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c2-tava-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/5dPl75bilid7MajCMW6egJ/710e9a1d9b07b6a5607b1d50f4db2ebc/nokia_C2-user_guide-hero-Blue.png",
+      "source_title": "Nokia C2 Tava user guide",
+      "diagram_url": null,
+      "geometry_note": "Camera lies in bezel outside rectangular display."
+    },
+    {
+      "id": "gen-nokia-c2tennen",
+      "model": "Nokia C2 Tennen",
+      "brand": "nokia",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c2-tennen-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/2rZ9IQElzwEF9ZzV1Xyk4d/edcac3c5021297bcd2e092db85c40e8a/nokia_C2-user_guide-hero-Steel.png",
+      "source_title": "Nokia C2 Tennen user guide",
+      "diagram_url": null,
+      "geometry_note": "Camera lies in bezel outside rectangular display."
+    },
+    {
+      "id": "gen-nokia-c3",
+      "model": "Nokia C3",
+      "brand": "nokia",
+      "notch": "none",
+      "notch_position": "none",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c3-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/3rOAvVGdGXKtWprH6mw95j/1d4f0f625f80d3f94e9babc78f347d13/nokia_C3-user_guide-hero.png",
+      "source_title": "Nokia C3 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/5JmKDQ4CkP89k1pWnGqPt1/7a1ea328144ada41c506bea2e361c384/Nokia_C3_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Camera lies in bezel outside rectangular display."
+    },
+    {
+      "id": "gen-nokia-c30",
+      "model": "Nokia C30",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c30-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/3AJuoLkSBU2nz8GXtgp6eK/87aa7e3455e83cd039de96c979c83a7f/nokia_C30-user_guide-hero.png",
+      "source_title": "Nokia C30 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/7GM0dnWyfmTDgC9b07eIxO/caa94838cf1021773bf0133923ccb874/Nokia_C30_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c300",
+      "model": "Nokia C300",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c300-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/sGYEs4lmdk1MKc69O3WZC/cc2481d049aa80b968f5918d0d5f9f91/nokia_C300-user_guide-hero.png",
+      "source_title": "Nokia C300 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/0q0G5bOYkr13uRIWQGqm5/8a2f824f4afaac066001551cf9e4444e/Nokia_C300_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c31",
+      "model": "Nokia C31",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c31-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/5uyQuK9DZwoBYzdwyJsLAz/dce60e74a6e566c53cee3a0fadf17aa3/nokia_C31-user_guide-hero.png",
+      "source_title": "Nokia C31 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/68XWjrf1jwTMwfM30IbgmK/babf1298c5873438ced29a38b12bf47a/Nokia_C31_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c32",
+      "model": "Nokia C32",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c32-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/64KAg3DvAQYlYkMxd8br7D/53fe75d39f25c6b24342937d29525cbf/nokia_C32-user_guide-hero.png",
+      "source_title": "Nokia C32 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/6peCb9ghTp14LKJC17pX99/a8cef1c2f3ebb9043b307adbc7d4dd85/Nokia_C32_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-c5endi",
+      "model": "Nokia C5 Endi",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-c5-endi-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/1bb380iSXQDxsTzSJKJTpF/a1e8271df3ca0bfa66e563f3f87a7de6/nokia_C5-user_guide-hero.png",
+      "source_title": "Nokia C5 Endi user guide",
+      "diagram_url": null,
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g100",
+      "model": "Nokia G100",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g100-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/334adX0n8pHGwP0jZVvePT/9a0f80a605c1c674a3691c95871b0cc0/nokia_G100-user_guide-hero.png",
+      "source_title": "Nokia G100 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/2aJUdNWX207xbD9Pe2SojJ/4029226db8c194851c33ee56ca9f3553/Nokia_G100_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g10ltelatam",
+      "model": "G10 2021 LTE LATAM 64GB",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g10-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/4gFsgN5Hty2sVADgSY8wvf/b17a886d4e4ce57020c8ddb6577be11c/nokia_G10-user_guide-hero.png",
+      "source_title": "Nokia G10 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/6vvZm3DCiaHrNcyRYXIih8/372eb3608543e1a67329411fa9ac3153/Nokia_G10_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g11nfc",
+      "model": "G11 2022 NFC",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g11-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/ACqDQMx4vbJxa2ppr3LID/345af6ec7de0cc49e2c87076fb269e1c/nokia_G11-user_guide-hero.png",
+      "source_title": "Nokia G11 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/5NpT1w2QjjxEtrhAPrG5mG/5373be41d1cfae0af9ffa883b7c6f1eb/Nokia_G11_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g11plus",
+      "model": "Nokia G11 Plus",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g11-plus-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/ncLi2jcjBMjnNmBqV9zpi/7c06dc2129d407ab77aede5eeeceed1d/nokia_G11_plus-user_guide-hero.png",
+      "source_title": "Nokia G11 Plus user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/47SkFjqx6bsejCmlzZxOvV/9b4388eae948eb0b31019ee643cd2be1/Nokia_G11_Plus_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g20",
+      "model": "Nokia G20",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g20-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/2lNbjesif9zWEFpw1CNot4/b32a67a1d80f75409f958970b276f270/nokia_G20-user_guide-hero.png",
+      "source_title": "Nokia G20 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/5QGIFSddcVWXii7JfpO0kC/22370c39f68b4ea95ca69058b371e6fa/Nokia_G20_front_and_back_nfc.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g21",
+      "model": "Nokia G21",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g21-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/69szl713ewBokernE5MKyI/a113b56f7d859b0aae88859a6afaaaab/nokia_G21-user_guide-hero.png",
+      "source_title": "Nokia G21 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/5srSLkRsSev3J765yRMEY/4eb8f01aa2a44df4eecbbcb0bf690eeb/Nokia_G21_front_and_back_2.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g22",
+      "model": "Nokia G22",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g22-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/5AimDGCJpLrWV6MYLEQMLB/034c93c564e17232ce21e57bd34cfc26/nokia_G22-user_guide-hero.png",
+      "source_title": "Nokia G22 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/54O8wwAzjxU1BjzSAuJMbZ/3f551bcd9b362fb007863019811c6709/Nokia_G22_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g3105g",
+      "model": "Nokia G310 5G",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g310-5g-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/78xSL6G4okbnLyePt9t1Fc/cbd71ab7cf2d99d28ab372b8212c62dd/nokia_G310_5g-user_guide-hero.png",
+      "source_title": "Nokia G310 5G user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/7ee8DxqjAI1CfolIADCmnf/a81a8826383c5ffaa32729c138ec57e7/Nokia_G310_5G_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g4005g",
+      "model": "Nokia G400 5G",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g400-5g-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/5aHSeLp1ya80rZHe7idrqg/722546a21f43fc94de1a7b95ea88ea9e/nokia_G400_5G-user_guide-hero.png",
+      "source_title": "Nokia G400 5G user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/7mTQxHyNzi5t4ElqOpY5EY/b5db995a1432bce59b102ed8c7f24b73/Nokia_G400_5G_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-g605g",
+      "model": "Nokia G60 5G",
+      "brand": "nokia",
+      "notch": "teardrop",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-g60-5g-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/16WJujocjcMv8YLtqDEWo5/63ab8f577ea3ee8684dce0a74ccd534e/nokia_G60_5G-user_guide-hero.png",
+      "source_title": "Nokia G60 5G user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/u8B1KPlfAJL2Dj2CJoYND/d5e53f69e1e23c26edf1eea38b4b3efc/Nokia_G60_5G_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows rounded/V-shaped camera cutout connected to upper display edge at top_center."
+    },
+    {
+      "id": "gen-nokia-x10",
+      "model": "X10 2021",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-x10-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/47ZSj6EbNBakWKCBIZAQeX/5e8f604a80628525445f37e6d122e8a0/nokia_X10-user_guide-hero.png",
+      "source_title": "Nokia X10 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/6alBhf4ezoaxm3r6JmwFGX/edf0625f20f1d36a36b239c33215d6f3/Nokia_X10_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_center."
+    },
+    {
+      "id": "gen-nokia-x20",
+      "model": "X20 2021",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-x20-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/7F3gL2jp9dsA2aGxXfZHNp/88314f14ac0aadc5f4cf91d43e142daa/nokia_X20-user_guide-hero.png",
+      "source_title": "Nokia X20 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/KR0WC1C3TTLokMaBybdD9/0e7342d1217ff34bfad524e9d9eb62ae/Nokia_X20_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_center."
+    },
+    {
+      "id": "gen-nokia-xr20",
+      "model": "Nokia XR20",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-xr20-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/7HYswbxM78WwzvhYs6dXka/0232b6275a641e02a850c6f786acf6c3/nokia_XR20-user_guide-hero.png",
+      "source_title": "Nokia XR20 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/P2IUO00evPyBDNzOJTojZ/d0d49f25d465c08ac682658638497087/Nokia_XR20_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_center."
+    }
+  ],
+  "additional_geometry_candidates": [
+    {
+      "id": "gen-samsung-galaxya06",
+      "model": "Galaxy A06",
+      "brand": "samsung",
+      "notch": "teardrop",
+      "notch_position": "unknown",
+      "sources": [
+        "https://www.gsmarena.com/samsung_galaxy_a06-review-2743p2.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "the teardrop selfie camera notch",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "geometry_note": "Text establishes notch type; position not independently established by this record."
+    },
+    {
+      "id": "gen-samsung-galaxya065g",
+      "model": "Samsung Galaxy A06 5G",
+      "brand": "samsung",
+      "notch": "teardrop",
+      "notch_position": "unknown",
+      "sources": [
+        "https://www.gsmarena.com/samsung_galaxy_a06_5g_launches_in_india_with_dimensity_6300_4_os_updates-news-66615.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The front-facing camera is an 8MP module (f/2.0) inside a notch.",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.8,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "geometry_note": "Text establishes notch type; position not independently established by this record."
+    },
+    {
+      "id": "gen-xiaomi-14t",
+      "model": "Xiaomi 14T",
+      "brand": "xiaomi",
+      "notch": "punch_hole",
+      "notch_position": "unknown",
+      "sources": [
+        "https://www.gsmarena.com/xiaomi_14t-review-2748p2.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "It has a small punch-hole for the selfie camera",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-motorola-edge50",
+      "model": "Motorola Edge 50",
+      "brand": "motorola",
+      "notch": "punch_hole",
+      "notch_position": "unknown",
+      "sources": [
+        "https://www.gsmarena.com/motorola_edge_50-review-2764p3.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "The display has a tiny camera punchhole",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-motorola-edge50fusion",
+      "model": "Motorola Edge 50 Fusion",
+      "brand": "motorola",
+      "notch": "punch_hole",
+      "notch_position": "unknown",
+      "sources": [
+        "https://en-us.support.motorola.com/app/answers/detail/a_id/187366"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "Punch Hole",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-motorola-edge50pro",
+      "model": "Motorola Edge 50 Pro",
+      "brand": "motorola",
+      "notch": "punch_hole",
+      "notch_position": "unknown",
+      "sources": [
+        "https://www.gsmarena.com/motorola_edge_50_pro_vanilla_cream_india_price_sale_date-news-63603.php"
+      ],
+      "method": "published_geometry_description",
+      "raw_quote": "a punch-hole for the 50MP selfie camera",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.9,
+      "human_review": "pending",
+      "runtime_eligible": false
+    },
+    {
+      "id": "gen-nokia-xr21",
+      "model": "Nokia XR21",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_center",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-xr21-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/63Xxw7bwlEewAZckAoJfrb/39209c25e2ff43ae245e33bc10a2ab45/nokia_XR21-user_guide-hero.png",
+      "source_title": "Nokia XR21 user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/4jb4sm6GEZ3grJLQ9G4vqC/fb37fb46546362c9be96b3f1f6e05d0d/Nokia_XR21_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_center."
+    }
+  ],
+  "removed_alias_candidates": [
+    "gen-samsung-galaxya26",
+    "gen-samsung-galaxya565g",
+    "gen-oneplus-nordce4lite",
+    "gen-oneplus-nordce4lite5g",
+    "gen-oneplus-nordce3lite5g",
+    "gen-oneplus-10pro5g",
+    "gen-oneplus-nord2",
+    "gen-oneplus-nordce25g"
+  ],
+  "human_review": "pending",
+  "billable_resources_touched": 0,
+  "mobileapi_calls": 0,
+  "excluded_after_carrier_family_collapse": [
+    {
+      "id": "gen-nokia-8v5guw",
+      "model": "Nokia 8 V 5G UW",
+      "brand": "nokia",
+      "notch": "punch_hole",
+      "notch_position": "top_left",
+      "sources": [
+        "https://www.hmd.com/en_int/support/nokia-8-v-5g-uw-user-guide/keys-and-parts"
+      ],
+      "method": "manufacturer_front_render_visual_inference",
+      "raw_quote": "",
+      "rank": null,
+      "rank_source": null,
+      "confidence": 0.95,
+      "human_review": "pending",
+      "runtime_eligible": false,
+      "image_url": "https://images.ctfassets.net/0weg701w29lb/6U1RlGACzoxlpHCCScfmX6/02b40c10861571714d2d9865ac9293b9/nokia_8_V_5G-user_guide-hero.png",
+      "source_title": "Nokia 8 V 5G UW user guide",
+      "diagram_url": "https://images.ctfassets.net/0weg701w29lb/1ztFFalQTBoa0dYQ3XiS8A/3e422815ab1c8e0284d611429cb3c7e6/Nokia_8_V_5G_UW_front_and_back.jpg?h=400&fm=png&fl=png8",
+      "geometry_note": "Front product render shows circular isolated camera hole at top_left."
+    }
+  ]
+}

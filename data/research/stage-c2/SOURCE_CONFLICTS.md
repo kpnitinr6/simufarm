@@ -1,0 +1,22 @@
+# Stage C2 source conflicts and verification limits
+
+Checked 2026-10-28. Option B is adopted: no padding. The 932 retained records are sourced distinct candidates after the enumerated alias cleanup, **not 932 completely verified physical devices**. Every remaining inherited specification has not been independently checked. Human review remains pending. Build/runtime flags are handled by the generator, outside this data-only change.
+
+## Requested corrections that conflict with evidence
+
+- **Galaxy A53s 5G:** exact identity is not confirmed. Samsung's [2022 launch](https://news.samsung.com/in/samsung-launches-galaxy-a53-5g-with-64mp-ois-camera-and-5nm-processor-announces-exciting-pre-book-offers) identifies **A53 5G**, using Exynos 1280, not A53s with the inherited Snapdragon specification. The GSMArena A53 review contains an isolated apparent “A53s” editorial typo but its title and tested product are A53. Quarantine the A53s row rather than relabel a speculative device and assign 2022.
+- **Galaxy S25 FE:** retain Android **16**, because the [manufacturer launch specification](https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia) explicitly says Android 16 / One UI 8. Changing it to 15 would contradict the primary source. Needs human resolution of requested-value conflict.
+- **Galaxy Z Fold8 Ultra:** [Samsung UK launch, 22 July 2026](https://news.samsung.com/uk/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living) confirms existence. Retain; replace speculative screen dimensions with the official unfolded main display 2256×2504, 8.0 inches, 422 ppi. Official table's OS cell is empty, so inherited Android 16 is not verified by this source. Runtime use prohibited by default.
+- **Nothing Phone (4a)/(4a) Pro:** [Nothing UK](https://nothing.tech/products/phone-4a) and [Nothing US](https://us.nothing.tech/products/phone-4a-pro) confirm commercial products. Retain. These existence checks do not verify every inherited numeric specification.
+
+## Removed unconfirmed identities
+
+Exact-name manufacturer/GSMArena searches did not provide qualifying product specifications or launch announcements for Galaxy A83 5G, A75 5G, F64 5G, Z Fold Wide, Realme X9, or A53s 5G. Search results containing rumors, community posts, or unrelated model names were rejected. An official Samsung generic IMEI support article mentions “A75” as an example but provides no product identity/specification/launch; that is insufficient to authenticate the candidate's specs. Z Fold Wide is a rumored label and must not be silently equated with official Fold8. Realme X9 results came from an imitation gsm-arena.com domain marked rumored; this is **not gsmarena.com** and was rejected.
+
+Queries used: `"Galaxy A83" site:samsung.com`, `"Galaxy A75" site:samsung.com`, `"Galaxy F64" site:samsung.com`, `"Z Fold Wide" site:samsung.com`, `"Galaxy Z Fold Wide" site:news.samsung.com`, `"Realme X9" site:realme.com`, `"Realme X9" site:gsmarena.com`, `"Samsung Galaxy A53s" gsmarena`, and exact-name GSMArena searches. Lack of confirmation is not proof that a device can never exist; these records may return with qualifying evidence.
+
+## Regional handling
+
+The specified TCL and Nokia aliases are collapsed into one retained source row each. A surviving ID may still include a regional/storage label because IDs are stable source identifiers; this does not add a second catalog device. TCL 20 SE T671O and Nokia X100 already have only one row each, so nothing is fabricated or deleted merely to alter the spelling. A follow-up source check identifies Nokia 8 V as the Verizon/mmWave adaptation of Nokia 8.3; one carrier-family profile is retained under the requested policy, while the radio difference remains documented in the rejection log. Vivo Y19s 5G has only one row; no Y19s base row exists to merge. Additional uncertain TCL 50 LE/50 XE cellular variants remain separate pending radio/SKU verification.
+
+The source-ranking rule used for requested merge groups is manufacturer URLs, then GSMArena, then Wikipedia, then fewer Kaggle-only references; deterministic ID breaks ties. Original source paths and surviving source URLs are retained in change-log.json. This ranks supplied sources, rather than certifying every supplied URL or source value. The original upstream attribution remains in the repository.

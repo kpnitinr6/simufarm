@@ -13,17 +13,19 @@
     "dpi": 643.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "none",
+    "position": "none"
   },
-  "ram_gb": 16.0,
+  "ram_gb": 12.0,
   "build": null,
   "runtime_eligible": false,
   "source_type": "scraper",
   "sources": [
     "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-1-iv/sony-xperia-1-iv-16gb-512gb-5g.json",
     "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-    "https://www.mobiledokan.com/mobile/sony-xperia-1-iv"
+    "https://www.mobiledokan.com/mobile/sony-xperia-1-iv",
+    "https://www.sony.co.uk/presscentre/sonys-new-xperia-1-iv-is-a-powerhouse-in-content-creation-with-the-worlds-first-true-optical-zoom-lens-and-more",
+    "https://www.sony.com.hk/press/pdf/20220511_1_e.pdf"
   ],
   "confidence": 0.85,
   "verified_by": null,

@@ -44,3 +44,6 @@ CI performs code/schema/static/browser checks on public standard runners. It nev
 ## Local automation preparation
 
 StageG topology, provider UI-field recipe and plan-only Appium harness are prepared in [STAGE_G_LOCAL_PREP.md](docs/STAGE_G_LOCAL_PREP.md). GADS/Appium were not installed or started, no Appium session or nightly APK run was executed, and SSH2222 is not an Appium/ADB endpoint. StageF interaction evidence is in [STAGE_F_INTERACTIVE.md](docs/STAGE_F_INTERACTIVE.md).
+## Accepted C2 data cohort
+
+932 generated static candidate profiles plus22 retained references (954 rendered pages). No padding. The prior duplicate-free claim was incorrect and68records were removed/merged. Source checks cover105models for the documented fields; this is not blanket verification of932complete spec sheets. Cutout coverage100/932, popularity unverified. All generated records stay build:null/runtime_eligible:false. One separate reference, vivo-x100 China, is human-approved for runtime. See data/cohort-policy.json and data/research/stage-c2/.

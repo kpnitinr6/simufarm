@@ -1,3 +1,7 @@
+# Historical Stage C engineering snapshot
+
+This report describes the accepted pre-C2 engineering revision. Its duplicate-free data claim was incorrect. Current no-padding counts, rejections and verification scope are in STATUS.md and data/research/stage-c2/.
+
 # Stage C execution report — 27 October 2026
 
 The static generation pipeline is implemented and the real cohort contains **1,000 profiles plus 1,000 pages**. The 22 earlier reference profiles/pages remain separate, so the catalog serves 1,022 total static previews. Stage C has not been accepted or merged; Stage D remains unexecuted.

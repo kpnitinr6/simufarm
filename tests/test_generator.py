@@ -191,3 +191,26 @@ def test_plus_is_a_distinct_hardware_model(tmp_path):
         )
         == 2
     )
+
+
+def test_option_b_does_not_pad_or_require_round_total():
+    rows = cohort_rows()[:-3]
+    assert (
+        sum(
+            generator.validate_cohort(
+                rows,
+                quota_exemptions()
+                + [
+                    {
+                        "brand": "brand18",
+                        "constraint": "quota",
+                        "reason": "No padding after remediation",
+                        "global_minimum": "All mandatory global minima still pass",
+                    }
+                ],
+                target_total=None,
+                nothing_target=None,
+            ).values()
+        )
+        == 997
+    )

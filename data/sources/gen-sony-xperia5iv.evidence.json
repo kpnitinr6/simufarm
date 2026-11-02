@@ -7,221 +7,258 @@
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "id"
     },
     "brand": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "brand"
     },
     "model": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "model"
     },
     "release_year": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "release_year"
     },
     "os_family": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "os_version": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "os_version"
     },
     "shell_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "base_image_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "screen.width_px": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "width_px"
     },
     "screen.height_px": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "height_px"
     },
     "screen.dpi": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "dpi"
     },
     "notch": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
-        "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 source-backed geometry; human review pending: published_geometry_description",
+      "raw_quote": "No notch por aquí, no notch por allá",
       "csv_file": "devices.csv",
-      "csv_line": 667,
-      "csv_column": "notch"
+      "csv_line": 608
     },
     "ram_gb": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": "ram_gb"
     },
     "build": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "runtime_eligible": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "source_type": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "sources": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "confidence": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "verified_by": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
     },
     "verified_at": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
         "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+        "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 667,
+      "csv_line": 608,
       "csv_column": null
+    },
+    "notch.type": {
+      "source_urls": [
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
+      ],
+      "method": "C2 source-backed geometry; human review pending: published_geometry_description",
+      "raw_quote": "No notch por aquí, no notch por allá",
+      "csv_file": "devices.csv",
+      "csv_line": 608,
+      "csv_column": "notch"
+    },
+    "notch.position": {
+      "source_urls": [
+        "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
+      ],
+      "method": "C2 source-backed geometry; human review pending: published_geometry_description",
+      "raw_quote": "No notch por aquí, no notch por allá",
+      "csv_file": "devices.csv",
+      "csv_line": 608,
+      "csv_column": "notch_position"
     }
   },
   "cohort": "stage-c-generated",
@@ -234,10 +271,11 @@
     "source_urls": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/sony/2022/xperia-5-iv/sony-xperia-5-iv-8gb-128gb-5g.json",
       "https://www.kaggle.com/datasets/rajibdab/global-smartphone-database-2025",
-      "https://www.mobiledokan.com/mobile/sony-xperia-5-iv"
+      "https://www.mobiledokan.com/mobile/sony-xperia-5-iv",
+      "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 667,
+    "csv_line": 608,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -252,5 +290,22 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_geometry_check": {
+    "id": "gen-sony-xperia5iv",
+    "model": "Sony Xperia 5 IV",
+    "brand": "sony",
+    "notch": "none",
+    "notch_position": "none",
+    "sources": [
+      "https://www.xataka.com/analisis/sony-xperia-5-iv-analisis-caracteristicas-precio-especificaciones"
+    ],
+    "method": "published_geometry_description",
+    "raw_quote": "No notch por aquí, no notch por allá",
+    "rank": null,
+    "rank_source": null,
+    "confidence": 0.9,
+    "human_review": "pending",
+    "runtime_eligible": false
+  }
 }

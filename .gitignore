@@ -21,3 +21,4 @@ data/runtime/oci-instance.json
 data/runtime/local/
 *.utm/
 *.iso
+.DS_Store

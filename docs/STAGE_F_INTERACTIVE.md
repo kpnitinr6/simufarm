@@ -2,7 +2,7 @@
 
 Implemented mock status controls, editable time, keyboard/text input, portrait/landscape rotation and dark mode. Each existing simulator URL exposes **Enable interactive chrome**; static catalog cards retain their original appearance. All20brand shells reuse one shared JS/CSS implementation. Device draft/review labels and runtime eligibility remain separate from this mock interaction mode.
 
-The current engineering checkout renders1022URLs:22reference profiles plus1000generated drafts. Interactive controls are available on each via the shared shell. This is a count of rendered artifacts, not a new claim about verified distinct devices: accepted C2/C2.1data integration remains a separate branch. No device was invented or duplicated for StageF and no generation eligibility flag was changed.
+The current engineering checkout renders954URLs:22reference profiles plus932generated static profiles. Interactive controls are available on each via the shared shell. This is a count of rendered artifacts, not a new claim about verified distinct devices: accepted C2 data remediation is now integrated into main. No device was invented or duplicated for StageF and no generation eligibility flag was changed.
 
 ## Behavior
 

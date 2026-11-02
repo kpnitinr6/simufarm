@@ -13,8 +13,8 @@
     "dpi": 395.0
   },
   "notch": {
-    "type": "unknown",
-    "position": "unknown"
+    "type": "punch_hole",
+    "position": "top_center"
   },
   "ram_gb": 8.0,
   "build": null,
@@ -23,7 +23,8 @@
   "sources": [
     "https://cmf.tech/products/phone-1",
     "https://en.wikipedia.org/wiki/CMF_Phone_1",
-    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nothing/2024/cmf-phone-1.json"
+    "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/nothing/2024/cmf-phone-1.json",
+    "https://www.smartprix.com/bytes/nothing-cmf-phone-1-review-set-to-disrupt-the-budget-market/"
   ],
   "confidence": 0.85,
   "verified_by": null,

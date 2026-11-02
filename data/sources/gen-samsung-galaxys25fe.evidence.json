@@ -6,221 +6,239 @@
     "id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "id"
     },
     "brand": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "brand"
     },
     "model": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "model"
     },
     "release_year": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "release_year"
     },
     "os_family": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "os_version": {
       "source_urls": [
-        "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
-        "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
-        "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia"
       ],
-      "method": "CSV supplied fact; human review pending",
+      "method": "C2 targeted source check; human review pending: Requested Android 15 correction conflicts with official launch OS specification; retain Android 16 and escalate source conflict.",
       "csv_file": "devices.csv",
-      "csv_line": 115,
-      "csv_column": "os_version"
+      "csv_line": 94,
+      "csv_column": "os_version",
+      "source_location": "Specification table, line 117 in web extraction dated 2026-10-28"
     },
     "shell_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "base_image_id": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "screen.width_px": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "width_px"
     },
     "screen.height_px": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "height_px"
     },
     "screen.dpi": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "dpi"
     },
     "notch": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "notch"
     },
     "ram_gb": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "CSV supplied fact; human review pending",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": "ram_gb"
     },
     "build": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "runtime_eligible": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "source_type": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "sources": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "confidence": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "verified_by": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     },
     "verified_at": {
       "source_urls": [
         "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+        "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
         "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
         "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
       ],
       "method": "Generator static-only policy or template metadata; not a device fact",
       "csv_file": "devices.csv",
-      "csv_line": 115,
+      "csv_line": 94,
       "csv_column": null
     }
   },
@@ -233,11 +251,12 @@
   "diversity_evidence": {
     "source_urls": [
       "https://github.com/GetTechAPI/TechAPI/blob/db1dea0c38ff07fcf400aa05d8c8e4393348eb25/data/smartphone/samsung/2025/galaxy-s25-fe.json",
+      "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
       "https://www.gsmarena.com/samsung_galaxy_s25_fe_5g-14042.php",
       "https://www.samsung.com/us/smartphones/galaxy-s25-fe/"
     ],
     "csv_file": "devices.csv",
-    "csv_line": 115,
+    "csv_line": 94,
     "csv_columns": [
       "screen_inches",
       "chipset_family",
@@ -252,5 +271,16 @@
     "Sources identify supplied evidence, not independent verification.",
     "dpi is supplied physical PPI; no logical density claim.",
     "Build is null and runtime eligibility is false by generator policy."
-  ]
+  ],
+  "c2_targeted_source_check": {
+    "profile_id": "gen-samsung-galaxys25fe",
+    "source_url": "https://news.samsung.com/es/samsung-presenta-el-galaxy-s25-fe-la-puerta-de-entrada-a-galaxy-ai-y-a-las-funciones-esenciales-de-los-modelos-insignia",
+    "source_location": "Specification table, line 117 in web extraction dated 2026-10-28",
+    "verified_fields": {
+      "os_version": "16"
+    },
+    "explanation": "Requested Android 15 correction conflicts with official launch OS specification; retain Android 16 and escalate source conflict.",
+    "verified_at": "2026-10-28",
+    "human_reviewed": false
+  }
 }
