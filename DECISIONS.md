@@ -64,3 +64,12 @@ Stage D targets a user-owned Ubuntu22.04 server over its Meshnet IPv4 address us
 Status: Accepted (2 November 2026)
 
 The user confirmed the2TB Seagate One Touch external disk for erasure. Disk identity,size and external status were checked before APFS formatting as SimuFarmDrive. The1TB drive was not touched. StageD runs in a local Ubuntu22.04 ARM64 UTM QEMU/HVF VM with4vCPUs and8192MiB RAM. The128GiB sparse virtual disk and installer are physically under /Volumes/SimuFarmDrive/SimuFarm/VMs/SimuFarm.utm/. SSH forwards host127.0.0.1:2222 to guest22, using the simufarm user and key authentication. No Meshnet or Oracle endpoint is needed for this VM. ADR015 remains superseded; Oracle launch scripts stay disabled. StageD diagnostics do not promote build-null profiles or authorize StageE.
+
+
+## ADR 018 — Stage E isolated identity-property injection
+
+Status: Accepted scope; implementation pending review (2 November 2026)
+
+The user accepted StageD and authorized a two-instance local StageE test with synthetic serial/IMEI injection. Five concurrent containers is a planning ceiling, with2GiB reserved for the Ubuntu VM host. Try Docker environment properties first; if ignored, use the official pinned Magisk resetprop tool in an Android init boot hook. No Oracle calls or paid resources.
+
+Select the China X100 variant V2309A/PD2309/vivo, keep India V2308 separate, and require sourced China firmware metadata. This specific test authorization does not fabricate human review or promote a production runtime profile. Store the complete experimental profile under data/runtime-test-profiles with runtime_eligible:false. General runtime admission still requires human-reviewed build evidence. Sourced Android16 fingerprint is a property overlay on Android13/SDK33, not an OS upgrade. Record getprop and telephony-service results separately.

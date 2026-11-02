@@ -19,7 +19,8 @@
       "required_checks": [
         "Exact URL, numbered raw source lines and retrieval hash",
         "Identify region and firmware version; explicitly flag mismatch with India V2308"
-      ]
+      ],
+      "stage_e_candidate": "data/runtime-test-profiles/vivo-x100-china.json"
     },
     "vivo-v30": {
       "candidate_values": {
@@ -48,7 +49,7 @@
     "Review packet with accept/reject/pending disposition; human alone promotes",
     "Record inaccessible sources and contradictions without substituting guessed values"
   ],
-  "schema_note": "Current enum lacks third_party_device_db and firmware_dump. Retain these requested classes in candidate evidence; extend reviewed field-level provenance schema before any later promotion. Mixed field provenance cannot be flattened to one misleading source type.",
+  "schema_note": "Source enum includes third_party_device_db and firmware_dump. Field-level provenance is retained in the candidate packet; human review precedes general runtime promotion.",
   "zero_spend_check": {
     "will_create_bill": false,
     "passed": true,
@@ -58,11 +59,12 @@
   "needs_human_decisions": [
     {
       "id": "x100-region",
-      "status": "needs-human",
+      "status": "china-selected-for-isolated-stage-e-test",
       "promotion_blocked": true,
       "option_a_recommended": "Create vivo-x100-china with V2309A / PD2309 / vivo and a same-family China OTA fingerprint; keep existing India reference separate.",
       "option_b": "Keep India profile; find V2308 / V2310A model evidence and cross-check with India fingerprint.",
-      "rule": "Do not combine V2309A China identity with the existing India fingerprint. No candidate is approval."
+      "rule": "Do not combine V2309A China identity with the existing India fingerprint. No candidate is approval.",
+      "decision": "User selected China variant for the authorized test on 2 November 2026. Complete candidate packet: data/research/stage-e-x100-china/provenance.json. Build-block review remains pending before general runtime promotion."
     }
   ],
   "candidate_track_commit": "25848cb1721da2af477f5cfef2dbebf9472848ab",
