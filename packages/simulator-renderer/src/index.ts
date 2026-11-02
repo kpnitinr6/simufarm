@@ -1,3 +1,3 @@
-// Stage A uses the shared shells/vivo Web Component, copied by scripts/render_static.py.
-// Static preview generation is separate from future runtime identity/profile application.
-export const STAGE = 'A';
+// Shared original shells are copied by scripts/render_static.py.
+// Stage F mock chrome lives in ../interactive; it does not execute Android.
+export const STAGE = 'F';

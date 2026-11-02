@@ -12,6 +12,7 @@ export class VivoShell extends HTMLElement {
    root.querySelector('.device').dataset.notch=this.getAttribute('notch')||'none';
    root.querySelector('.device').dataset.notchPosition=this.getAttribute('notch-position')||'top_center';
    this.setAttribute('data-ready','true');
+   if(this.closest('.device-stage'))import('../../interactive/chrome.js').then(m=>m.installChrome(this)).catch(()=>{this.setAttribute('data-chrome-error','true')});
   }catch{root.textContent='Device shell unavailable';this.setAttribute('data-error','true')}
  }
 }

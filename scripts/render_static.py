@@ -103,6 +103,11 @@ def generate(profile_dir: Path, output: Path, *, allow_draft=False, root=ROOT):
     attribution_source = root / "data/research/stage-c/ATTRIBUTION.md"
     if attribution_source.exists():
         write_if_changed(output / "assets/stage-c-attribution.txt", attribution_source.read_text())
+    for name in ("chrome.js", "chrome.css"):
+        write_if_changed(
+            output / "assets/interactive" / name,
+            (root / "packages/simulator-renderer/interactive" / name).read_text(),
+        )
     for shell_id in sorted({p.shell_id for p in profiles}):
         for name in ("shell.html", "shell.css", "shell.js", "meta.json"):
             write_if_changed(

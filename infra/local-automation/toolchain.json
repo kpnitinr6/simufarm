@@ -1,0 +1,20 @@
+{
+  "gads_repository": "https://github.com/shamanec/GADS",
+  "gads_commit": "d8abfc32e282d872a08484cd6a1e4a535c0cebe9",
+  "appium": {
+    "version": "3.9.0",
+    "engines": {
+      "npm": ">=10",
+      "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+    }
+  },
+  "uiautomator2": {
+    "version": "9.0.1",
+    "engines": {
+      "npm": ">=10",
+      "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+    }
+  },
+  "installed_by_this_change": false,
+  "runtime_integration_verified": false
+}
