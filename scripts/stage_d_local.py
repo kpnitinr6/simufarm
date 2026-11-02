@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plan, inspect or deploy Stage D on a local Ubuntu server over Meshnet SSH."""
+"""Plan, inspect or deploy Stage D on a local Ubuntu server over Meshnet or localhost UTM SSH."""
 
 import argparse
 import hashlib
@@ -27,16 +27,21 @@ print(json.dumps({'system':platform.system(),'architecture':platform.machine(),'
 """
 
 
-def endpoint(host, user):
+def endpoint(host, user, transport="meshnet"):
     address = ipaddress.ip_address(host)
-    if address.version != 4 or address not in MESHNET:
+    if transport == "utm":
+        if address != ipaddress.ip_address("127.0.0.1"):
+            raise ValueError("UTM transport accepts localhost IPv4 only")
+    elif address.version != 4 or address not in MESHNET:
         raise ValueError("Expected Meshnet IPv4 in 100.64.0.0/10")
     if not re.fullmatch(r"[a-z_][a-z0-9_-]*", user):
         raise ValueError("Invalid SSH username")
     return f"{user}@{address}"
 
 
-def ssh_args(host, user, key=None):
+def ssh_args(host, user, key=None, transport="meshnet", port=22, known_hosts=None):
+    if not 1 <= port <= 65535:
+        raise ValueError("Invalid SSH port")
     args = [
         "ssh",
         "-o",
@@ -48,7 +53,9 @@ def ssh_args(host, user, key=None):
     ]
     if key:
         args += ["-i", str(key)]
-    return args + [endpoint(host, user)]
+    if known_hosts:
+        args += ["-o", f"UserKnownHostsFile={known_hosts}"]
+    return args + ["-p", str(port), endpoint(host, user, transport)]
 
 
 def require_host(report):
@@ -68,6 +75,9 @@ def main():
     p.add_argument("--host", required=True)
     p.add_argument("--user", required=True)
     p.add_argument("--identity", type=Path)
+    p.add_argument("--transport", choices=["meshnet", "utm"], default="meshnet")
+    p.add_argument("--port", type=int)
+    p.add_argument("--known-hosts", type=Path)
     mode = p.add_mutually_exclusive_group()
     mode.add_argument("--preflight", action="store_true")
     mode.add_argument("--execute", action="store_true")
@@ -77,10 +87,12 @@ def main():
     p.add_argument("--image")
     p.add_argument("--output", type=Path, default=ROOT / "data/runtime/local")
     a = p.parse_args()
-    ssh = ssh_args(a.host, a.user, a.identity)
+    a.port = a.port if a.port is not None else (2222 if a.transport == "utm" else 22)
+    ssh = ssh_args(a.host, a.user, a.identity, a.transport, a.port, a.known_hosts)
     plan = {
-        "target": endpoint(a.host, a.user),
-        "transport": "SSH over Meshnet",
+        "target": endpoint(a.host, a.user, a.transport),
+        "transport": a.transport,
+        "port": a.port,
         "execute": a.execute,
         "oracle_api_calls": 0,
         "adb_bind": "remote loopback only",
@@ -111,7 +123,9 @@ def main():
         p.error("Stage D diagnostic profile must be vivo-x100")
     run = "simufarm-stage-d/" + uuid.uuid4().hex
     subprocess.run(ssh + [shlex.join(["mkdir", "-p", run])], check=True, timeout=30)
-    scp = ["scp", "-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=yes"]
+    scp = ["scp", "-P", str(a.port), "-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=yes"]
+    if a.known_hosts:
+        scp += ["-o", f"UserKnownHostsFile={a.known_hosts}"]
     if a.identity:
         scp += ["-i", str(a.identity)]
     for source, name in [
@@ -120,7 +134,7 @@ def main():
         (a.apk, "sample.apk"),
     ]:
         subprocess.run(
-            scp + [str(source), endpoint(a.host, a.user) + ":" + run + "/" + name],
+            scp + [str(source), endpoint(a.host, a.user, a.transport) + ":" + run + "/" + name],
             check=True,
             timeout=180,
         )
@@ -145,7 +159,7 @@ def main():
         scp
         + [
             "-r",
-            endpoint(a.host, a.user) + ":" + run + "/evidence",
+            endpoint(a.host, a.user, a.transport) + ":" + run + "/evidence",
             str(a.output / Path(run).name),
         ],
         check=False,

@@ -1,1 +1,1 @@
-{"target":"local-linux-meshnet","oracle_enabled":false,"changed_on":"2026-10-31","server_endpoint":null,"ssh_user":null}
+{"target":"local-utm","oracle_enabled":false,"changed_on":"2026-11-02","server_endpoint":"127.0.0.1","ssh_port":2222,"ssh_user":"simufarm"}

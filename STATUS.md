@@ -1,3 +1,11 @@
+# Current Stage D update — 2 November 2026
+
+User-confirmed2TB external Seagate drive formatted APFS as SimuFarmDrive;1TB drive untouched. UTM5.0.8 installed. External128GiB sparse disk,4CPU/8192MiB ARM64 Ubuntu22.04 VM configured, localhost2222→guest22. Official Ubuntu22.04.5 ISO SHA256 and Appium6.0.18 APK SHA256 verified. Unattended installation retry in progress after optional package failure; failed virtual disk preserved. SSH and runtime success are not yet established. See docs/STAGE_D_UTM.md.
+
+Oracle remains disabled; zero Oracle/MobileAPI calls for the UTM setup. StageE has not begun. The previous dated status follows as history.
+
+---
+
 # SimuFarm status — 31 October 2026
 
 **StageD pivoted to local Ubuntu22.04 hardware over Meshnet. Prepared; awaiting server IP and SSH username.** ADR015 is superseded by ADR016. Both Oracle launch scripts are execution-disabled before credentials/API access. No retry runner or sleep inhibitor is present; the monitoring automation was already deleted after the29October halt.

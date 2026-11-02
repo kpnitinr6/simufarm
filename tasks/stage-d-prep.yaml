@@ -1,19 +1,19 @@
 {
   "id": "stage-d-prep",
-  "status": "prepared-awaiting-local-endpoint",
+  "status": "utm-installation-in-progress",
   "agent": "codex",
-  "branch": "agent/codex/stage-d-local-pivot",
+  "branch": "agent/codex/stage-d-utm-local",
   "depends_on": "Stage C engineering accepted 2026-10-28",
-  "image_policy": "Detect server architecture first; require verified immutable matching Redroid image; no ARM assumption",
-  "provisioning_plan": "No cloud provisioning. Plan/read-only SSH preflight/explicit local deployment via scripts/stage_d_local.py.",
+  "image_policy": "Pinned Redroid13ARM64 child digest; inspect guest architecture before pull.",
+  "provisioning_plan": "User-confirmed external APFS disk hosts UTM Ubuntu22.04 ARM64,4CPU/8GB; SSHlocalhost2222. No Oracle calls.",
   "preflight": [
-    "Await Meshnet IPv4 and SSH username",
-    "Verify SSH host key and key-based access",
-    "Ubuntu22.04 architecture/RAM/disk/kernel checks",
-    "Check Docker, adb, sudo and binder/ashmem availability",
-    "Verify immutable image matches observed architecture",
-    "Verify sample APK checksum",
-    "Confirm X100 region before StageE; no runtime promotion"
+    "Verified2TB external identity before user-confirmed erase",
+    "Official ISO and sample APK checksum verified",
+    "Finish Ubuntu22.04 unattended install",
+    "Verify host SSH key via local UTM channel",
+    "Verify Docker, binder/ashmem, actual4CPU/8GB",
+    "Boot two diagnostic containers and report actuals",
+    "Do not promote runtime profiles or begin StageE"
   ],
   "zero_spend_check": {
     "will_create_bill": false,
@@ -29,6 +29,6 @@
     "mobileapi_calls": 0,
     "billable_resources_touched": 0
   },
-  "deployment_target": "local-linux-meshnet",
+  "deployment_target": "local-utm",
   "oracle_enabled": false
 }

@@ -58,3 +58,9 @@ Decision:
 Status: Accepted (31 October 2026)
 
 Stage D targets a user-owned Ubuntu22.04 server over its Meshnet IPv4 address using SSH. Oracle provisioning/retries and automatic Oracle API calls are disabled. Oracle cleanup commands are supplied for the user to run; cleanup has not been executed or verified by Codex. No paid cloud resources or MobileAPI calls are authorized. Await the IP and SSH username before any connection. Detect CPU architecture before selecting an immutable Redroid image; do not assume Ampere/ARM. KVM is optional and is recorded, not required or forbidden. Keep ADB bound to remote loopback and use SSH tunnels if needed. Human runtime-profile promotion and StageE remain separate gates.
+
+## ADR 017 — External-drive UTM Linux VM for Stage D
+
+Status: Accepted (2 November 2026)
+
+The user confirmed the2TB Seagate One Touch external disk for erasure. Disk identity,size and external status were checked before APFS formatting as SimuFarmDrive. The1TB drive was not touched. StageD runs in a local Ubuntu22.04 ARM64 UTM QEMU/HVF VM with4vCPUs and8192MiB RAM. The128GiB sparse virtual disk and installer are physically under /Volumes/SimuFarmDrive/SimuFarm/VMs/SimuFarm.utm/. SSH forwards host127.0.0.1:2222 to guest22, using the simufarm user and key authentication. No Meshnet or Oracle endpoint is needed for this VM. ADR015 remains superseded; Oracle launch scripts stay disabled. StageD diagnostics do not promote build-null profiles or authorize StageE.

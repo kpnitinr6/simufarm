@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Run on the authorized local Linux server; collect actuals without identity spoofing."""
 
+# Ubuntu 22.04 guest uses Python 3.10; datetime.UTC was introduced in 3.11.
+# ruff: noqa: UP017
 import argparse
 import hashlib
 import json
@@ -8,15 +10,15 @@ import platform
 import re
 import subprocess
 import time
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 IMAGE = "redroid/redroid@sha256:c815ac1b1d5bd0a099b74c3e3e0eeea3b32bed8d7ab1f788c20fb74e35891716"
 
 
-def run(*args, check=True):
+def run(*args, check=True, timeout=180):
     return subprocess.run(
-        args, text=True, capture_output=True, check=check, timeout=180
+        args, text=True, capture_output=True, check=check, timeout=timeout
     ).stdout.strip()
 
 
@@ -60,7 +62,7 @@ def main():
         raise SystemExit("APK SHA256 mismatch")
     args.output.mkdir(parents=True, exist_ok=False)
     report = {
-        "observed_at": datetime.now(UTC).isoformat(),
+        "observed_at": datetime.now(timezone.utc).isoformat(),
         "image": args.image,
         "host_architecture": arch,
         "deployment_target": "local-linux-meshnet",
@@ -87,7 +89,7 @@ def main():
         run("sudo", "-n", "modprobe", "binder_linux", "devices=binder,hwbinder,vndbinder")
         run("sudo", "-n", "modprobe", "ashmem_linux")
         report["lsmod"] = run("lsmod")
-        run("docker", "pull", "--platform", f"linux/{arch}", args.image)
+        run("docker", "pull", "--platform", f"linux/{arch}", args.image, timeout=900)
         report["image_inspect"] = json.loads(run("docker", "image", "inspect", args.image))[0]
         if report["image_inspect"]["Architecture"] != arch:
             raise RuntimeError("Pulled image architecture differs from host")
