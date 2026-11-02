@@ -18,11 +18,11 @@
   "zero_spend_check": {
     "will_create_bill": false,
     "passed": true,
-    "execution_class": "local_only",
-    "reason": "Local script preparation only; zero Oracle API calls for this pivot; no server connection"
+    "execution_class": "local_utm_runtime",
+    "reason": "Executed on owned local UTM VM; Oracle disabled; zero Oracle/MobileAPI calls and no paid cloud resources."
   },
   "actuals": {
-    "vms_provisioned": 0,
+    "vms_provisioned": 1,
     "containers_booted": 3,
     "apk_installs": 2,
     "identity_uniqueness": {
@@ -35,7 +35,9 @@
     "billable_resources_touched": 0,
     "validated_run_containers": 2,
     "running_containers": 2,
-    "stopped_failed_containers": 1
+    "stopped_failed_containers": 1,
+    "local_vms_created": 1,
+    "oracle_vms_provisioned": 0
   },
   "deployment_target": "local-utm",
   "oracle_enabled": false,
