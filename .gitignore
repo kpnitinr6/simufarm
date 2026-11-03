@@ -22,3 +22,7 @@ data/runtime/local/
 *.utm/
 *.iso
 .DS_Store
+
+# Traffic screenshots, per-run URLs/metadata and local proxy lists.
+results/traffic/
+proxies.txt

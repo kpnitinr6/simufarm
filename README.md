@@ -35,6 +35,38 @@ Replace the UUID and paths with your own. Omit --execute for a plan without VM/S
 
 For HTML previews, run `npm ci`, `npm run build`, then `npm run dev`; open http://127.0.0.1:5173. Device pages under /simulators/ expose **Enable interactive chrome**. The catalog cards remain static.
 
+## Sequential Traffic Bot
+
+Inside the prepared **Linux VM**, use the standard-library runner for sequential URL/scroll/screenshot tests on a site you control or are authorized to test:
+
+```sh
+python3 scripts/run_traffic_bot.py --url "https://example.com" --proxy-file proxies.txt --limit 5
+# Validate the complete CSV without starting Docker/ADB or visiting any URL:
+python3 scripts/run_traffic_bot.py --url "https://example.com" --dry-run
+```
+
+`python scripts/run_traffic_bot.py ...` also works where `python` selects Python 3.10+.
+Run as an account already authorized for Docker; the script does not grant Docker access or start the VM. Install `adb`, and `aapt` when using `--apk /absolute/path/browser.apk`. Cache the pinned stock Redroid image from `infra/redroid-identity/toolchain.json` first; the runner never pulls an image. The host must already have working Binder/ashmem/binderfs. Stop other containers first. No GADS/Appium service is needed.
+
+Without `--limit`, all **932 CSV rows are screen-size/DPI scenarios**, each on a fresh stock Android 14 container. The CSV has no build block; it does **not** supply 932 runtime-approved identities or OS versions. This runner never injects build properties, changes runtime eligibility, or claims genuine/organic users. Random timing and scrolling are test inputs, not a guarantee of human-like behavior or fraud-detection bypass. The reviewed X100 identity remains a separate runtime track.
+
+`--proxy-file` cycles one endpoint per scenario; omit it for direct traffic. Format: `http://host:port` or `host:port` (one per line, blank lines and `#` comments accepted). Files ending in `.csv` are parsed with Python CSV handling and must have a `proxy` column; additional columns and quoted CSV fields are supported. Endpoints are normalized to `http://host:port` before cycling, then converted to Android host/port settings. Android's global `http_proxy` setting accepts host/port, **not username/password credentials or SOCKS URLs**; those inputs are rejected before any device boots. Authenticated upstreams need a separately configured local relay. The setting is not a VPN, and apps may bypass it; the runner verifies the setting, not the effective egress IP. No proxy address/credentials or target URL is printed in logs. Keep proxy lists out of Git.
+
+`--apk` accepts either a single APK or an extracted split bundle directory:
+
+```sh
+python3 scripts/run_traffic_bot.py --url "https://example.com" --apk ./chrome --limit 5
+python3 scripts/run_traffic_bot.py --url "https://example.com" --apk ./browser.apk --limit 5
+```
+
+A folder must contain `base.apk` and matching `split_config.*.apk` files directly inside it. All top-level `*.apk` files are installed together with `adb install-multiple -r`; use a folder containing only one app's matching bundle, compatible with Android 14 / ARM64. A single file uses `adb install -r`. Archives (`.apks`/`.xapk`) must be extracted first. The runner checks `sys.boot_completed`, waits for ADB and pauses briefly before installation; package detection uses `base.apk` for split bundles. APK validation also runs during `--dry-run` without installing anything. Installation still requires all required compatible splits; Chrome first-run screens and external dependencies are not automatically resolved.
+
+The stock image may have **no Chrome**. Supply the Chrome APK or split folder using `--apk`. The pipeline explicitly launches `com.android.chrome/com.google.android.apps.chrome.Main` with the URL instead of resolving a generic VIEW intent; non-Chrome APKs are rejected for this browser pipeline. Browser first-run/consent screens may require a preconfigured test APK; screenshots are captures, not assertions that website content loaded successfully.
+
+After Docker starts, the runner waits 15 seconds before its first ADB connection; boot readiness is still bounded. Each scenario waits 5 seconds, makes 3–4 randomized upward swipes, waits 10 seconds, captures `results/traffic/<profile_id>.png`, and resets the Android global HTTP proxy to `:0` before removing its owned container and anonymous data volume. If ADB is unavailable, a warning is logged and container removal still proceeds. `runs.jsonl` records pass/fail, elapsed time, actual Android release and the geometry-only scope. Logs show progress and cleanup. Default inter-scenario delay is uniformly randomized **60–120 seconds**, configurable with `--delay-min`/`--delay-max`; there is no final delay. Processing is strictly sequential with a VM-wide file lock; cleanup failure aborts the batch. Ctrl-C/SIGTERM attempt cleanup; power loss/SIGKILL cannot, so inspect owned `simufarm-traffic-*` containers after an unclean exit. Ordinary Docker stop may need its 30-second forced-stop fallback; disposable test data is removed, not retained.
+
+For a full 932-row batch the default inter-scenario delays alone take approximately 15.5–31 hours; loading/scroll waits, boots and teardown add to that. Use `--limit 5` first. Exit status is nonzero if any scenario fails. Screenshots/results are ignored by Git. See [Android ADB documentation](https://developer.android.com/tools/adb) and [AOSP proxy setting definition](https://android.googlesource.com/platform/frameworks/base/+/c52839277b8714d150a9fe276b6ba3fa8a0cbf38/core/java/android/provider/Settings.java).
+
 ## Local capacity
 
 Tested on a Mac Mini with16GiB RAM and an external-drive UTM Ubuntu22.04 ARM64 VM allocated **4CPU /8GiB**. The configured Redroid planning ceiling is **5concurrent containers**, reserving2GiB for Ubuntu. Five-way workload capacity is not benchmarked. Android14 first boots were10.158s/16.854s; restart boots9.424s/9.254s; after-restart Docker memory625.6MiB/610.5MiB. The local Appium sample also passed. [Capacity actuals](docs/CAPACITY.md).
