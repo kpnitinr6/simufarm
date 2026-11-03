@@ -8,6 +8,7 @@ import hashlib
 import itertools
 import json
 import logging
+import os
 import random
 import re
 import shlex
@@ -23,7 +24,10 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "install-recovery-v5"
+VERSION = "memory-hygiene-v6"
+CACHE_HELPER = Path("/usr/local/sbin/simufarm-drop-caches")
+CACHE_WARNING_SHOWN = False
+MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 
@@ -118,6 +122,81 @@ def load_profiles(path):
     return rows
 
 
+def memory_snapshot():
+    """Use the same MemAvailable field that free(1) reports, including reclaimable cache."""
+    values = {}
+    try:
+        for line in Path("/proc/meminfo").read_text().splitlines():
+            key, _, value = line.partition(":")
+            if key in {
+                "MemAvailable",
+                "MemFree",
+                "Cached",
+                "SReclaimable",
+                "SUnreclaim",
+                "SwapFree",
+            }:
+                values[key] = int(value.split()[0]) // 1024
+    except (OSError, ValueError):
+        return {}
+    return values
+
+
+def memory_hygiene(enabled=True):
+    global CACHE_WARNING_SHOWN
+    before = memory_snapshot()
+    result = {"before_mib": before, "status": "disabled"}
+    if not enabled:
+        return result
+    try:
+        if os.geteuid() == 0:
+            task = ["/bin/sh", "-c", "/usr/bin/sync && echo 3 > /proc/sys/vm/drop_caches"]
+        elif CACHE_HELPER.is_file():
+            task = ["/usr/bin/sudo", "-n", str(CACHE_HELPER)]
+        else:
+            raise RuntimeError("cache helper is not installed")
+        # GNU timeout also bounds the helper's process group, including sync/sudo children.
+        command("/usr/bin/timeout", "--kill-after=5s", "30s", *task, timeout=40)
+        result["status"] = "completed"
+    except (RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
+        result["status"] = "unavailable"
+        result["error"] = type(exc).__name__
+        if not CACHE_WARNING_SHOWN:
+            LOG.warning(
+                "  cache cleanup unavailable; run as root or install the dedicated sudo helper (see README)"
+            )
+            CACHE_WARNING_SHOWN = True
+    result["after_mib"] = memory_snapshot()
+    LOG.info(
+        "  memory available: %s -> %s MiB; cache cleanup %s",
+        before.get("MemAvailable", "unknown"),
+        result["after_mib"].get("MemAvailable", "unknown"),
+        result["status"],
+    )
+    return result
+
+
+def wait_for_memory(retries=3, cleanup_enabled=True):
+    for attempt in range(retries + 1):
+        available = memory_snapshot().get("MemAvailable")
+        if available is None:
+            raise SetupError("Cannot read Linux MemAvailable; stopping before container launch")
+        if available >= MIN_AVAILABLE_MIB:
+            return
+        LOG.warning(
+            "  low memory: %d MiB available; need %d MiB to retain the 2 GiB host reserve",
+            available,
+            MIN_AVAILABLE_MIB,
+        )
+        if attempt == retries:
+            raise SetupError(
+                "Memory stayed low after bounded retries; stopping batch instead of skipping devices. Free memory or restart the VM before resuming."
+            )
+        memory_hygiene(enabled=cleanup_enabled)
+        LOG.info("  waiting 30s before rechecking memory (%d/%d)", attempt + 1, retries)
+        time.sleep(30)
+
+
 class Device:
     def __init__(self, image, row, port):
         self.name = "simufarm-traffic-" + uuid.uuid4().hex
@@ -125,6 +204,8 @@ class Device:
         self.image, self.row, self.port = image, row, port
         self.created = False
         self.binderfs = None
+        self.memory_wait_retries = 3
+        self.skip_cache_cleanup = False
 
     def shell(self, *args, timeout=30):
         # adb shell joins its arguments remotely: quote once for Android's shell too.
@@ -137,18 +218,7 @@ class Device:
         # No automatic pulls, privileged daemon changes, host networking or identity injection.
         if command("docker", "ps", "-q"):
             raise RuntimeError("Stop existing containers before this sequential traffic run")
-        available = (
-            int(
-                next(
-                    line.split()[1]
-                    for line in Path("/proc/meminfo").read_text().splitlines()
-                    if line.startswith("MemAvailable:")
-                )
-            )
-            * 1024
-        )
-        if available < 2 * 1024**3 + 1200 * 1024**2:
-            raise RuntimeError("Insufficient memory to retain the 2 GiB host reserve")
+        wait_for_memory(self.memory_wait_retries, cleanup_enabled=not self.skip_cache_cleanup)
         if self.port:
             try:
                 with socket.socket() as probe:
@@ -365,6 +435,8 @@ def execute(args, rows, proxies):
     for index, row in enumerate(rows, 1):
         device = Device(args.image, row, args.adb_port)
         device.binderfs = getattr(args, "binderfs", None)
+        device.memory_wait_retries = getattr(args, "memory_wait_retries", 3)
+        device.skip_cache_cleanup = getattr(args, "skip_cache_cleanup", False)
         proxy = next(proxy_cycle)
         started = time.monotonic()
         record = {
@@ -399,10 +471,17 @@ def execute(args, rows, proxies):
             LOG.error("  %s", record["error"])
         finally:
             # Cleanup failure aborts the entire batch: never overlap devices.
-            device.close()
-            record["elapsed_seconds"] = round(time.monotonic() - started, 3)
-            with (args.results / "runs.jsonl").open("a") as stream:
-                stream.write(json.dumps(record) + "\n")
+            try:
+                device.close()
+            except (RuntimeError, OSError, subprocess.TimeoutExpired):
+                record["status"] = "failed"
+                record["teardown_error"] = "Container teardown failed; batch stopped"
+                raise
+            finally:
+                record["memory_cleanup"] = memory_hygiene(enabled=not device.skip_cache_cleanup)
+                record["elapsed_seconds"] = round(time.monotonic() - started, 3)
+                with (args.results / "runs.jsonl").open("a") as stream:
+                    stream.write(json.dumps(record) + "\n")
         LOG.info("  %s in %.1fs; container removed", record["status"], record["elapsed_seconds"])
         if index < len(rows):
             delay = rng.uniform(args.delay_min, args.delay_max)
@@ -426,6 +505,17 @@ def main(argv=None):
     )
     parser.add_argument("--proxy-file", type=Path)
     parser.add_argument("--limit", type=int)
+    parser.add_argument(
+        "--memory-wait-retries",
+        type=int,
+        default=3,
+        help="Low-memory retries, 30 seconds apart (default: 3)",
+    )
+    parser.add_argument(
+        "--skip-cache-cleanup",
+        action="store_true",
+        help="Measure memory but skip optional cache dropping",
+    )
     parser.add_argument("--delay-min", type=float, default=60)
     parser.add_argument("--delay-max", type=float, default=120)
     parser.add_argument("--csv", type=Path, default=ROOT / "data/devices.csv")
@@ -458,6 +548,8 @@ def main(argv=None):
         redact_diagnostic(args.image),
     )
     try:
+        if args.memory_wait_retries < 0:
+            raise ValueError("--memory-wait-retries must be nonnegative")
         if args.install_timeout <= 0:
             raise ValueError("--install-timeout must be a positive number of seconds")
         LOG.info("APK installation timeout: %ds", args.install_timeout)
