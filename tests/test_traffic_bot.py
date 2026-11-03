@@ -204,7 +204,7 @@ def test_boot_delay_before_adb_connection():
         patch.object(bot.time, "sleep", side_effect=lambda t: events.append(("sleep", t))),
     ):
         device.start()
-    started = events.index(("docker", "start", device.name))
+    started = next(i for i, item in enumerate(events) if item[:2] == ("docker", "run"))
     assert events[started + 1] == ("sleep", 15)
     assert events[started + 2] == ("adb", "connect", device.serial)
 
@@ -223,7 +223,7 @@ def test_cleanup_reset_failure_still_stops_and_removes():
     assert device.created is False
 
 
-def test_docker_stderr_is_actionable_and_redacted():
+def test_docker_stderr_is_actionable_and_redacted(capsys):
     result = SimpleNamespace(
         returncode=125,
         stdout="",
@@ -239,6 +239,9 @@ def test_docker_stderr_is_actionable_and_redacted():
     assert "invalid pid mode: private" in message
     assert "secret" not in message
     assert "[redacted]" in message
+    printed = capsys.readouterr().err
+    assert "invalid pid mode: private" in printed
+    assert "secret" not in printed
 
 
 def test_dynamic_port_and_clean_slate_without_invalid_pid_flag():
@@ -256,8 +259,12 @@ def test_dynamic_port_and_clean_slate_without_invalid_pid_flag():
         patch.object(bot.time, "sleep"),
     ):
         device.start()
-    create = next(item for item in events if item[:2] == ("docker", "create"))
+    create = next(item for item in events if item[:2] == ("docker", "run"))
     assert "--pid=private" not in create
+    assert create[2] == "-d"
+    assert "--privileged" in create
+    assert "--mount" not in create
+    assert create[create.index("-v") + 1] == "/data"
     assert "127.0.0.1::5555" in create
     assert events.index(("docker", "rm", "-f", "-v", device.name)) < events.index(create)
     assert device.serial == "127.0.0.1:49153"
@@ -274,7 +281,7 @@ def test_fixed_port_in_use_has_clear_message():
         sock.return_value.__enter__.return_value.bind.side_effect = OSError("in use")
         with pytest.raises(bot.SetupError, match="omit --adb-port"):
             device.start()
-        assert all(call.args[:2] != ("docker", "create") for call in command.call_args_list)
+        assert all(call.args[:2] != ("docker", "run") for call in command.call_args_list)
 
 
 def test_missing_container_cleanup_does_not_hide_real_docker_errors():
@@ -296,3 +303,61 @@ def test_failed_create_cleanup_preserves_original_error(tmp_path):
             bot.execute(args, [{"id": "a"}], [])
         device.return_value.close.assert_called_once()
     assert "invalid pid mode" in (tmp_path / "runs.jsonl").read_text()
+
+
+def test_explicit_binderfs_mount_not_apk_folder(tmp_path):
+    events = []
+    device = bot.Device(
+        "redroid/redroid:14.0.0_64only-latest",
+        {"width_px": 1080, "height_px": 2400, "dpi": 400},
+        5575,
+    )
+    device.binderfs = tmp_path
+    with (
+        patch.object(bot, "command", side_effect=lambda *a, **kw: events.append(a) or ""),
+        patch.object(bot.Path, "read_text", return_value="MemAvailable: 8000000 kB"),
+        patch.object(bot.socket, "socket"),
+        patch.object(device, "shell", return_value="1"),
+        patch.object(bot.time, "sleep"),
+    ):
+        device.start()
+    run = next(item for item in events if item[:2] == ("docker", "run"))
+    assert f"type=bind,src={tmp_path},dst=/dev/binderfs" in run
+    assert "redroid/redroid:14.0.0_64only-latest" in run
+    assert all("chrome" not in item for item in run)
+
+
+def test_missing_binderfs_path_rejected_without_docker(tmp_path):
+    with patch.object(bot, "command") as command:
+        assert (
+            bot.main(
+                [
+                    "--url",
+                    "https://example.com",
+                    "--binderfs",
+                    str(tmp_path / "missing"),
+                    "--dry-run",
+                ]
+            )
+            == 1
+        )
+        command.assert_not_called()
+
+
+def test_version_marker_without_url_or_docker(capsys):
+    with patch.object(bot, "command") as command:
+        with pytest.raises(SystemExit) as caught:
+            bot.main(["--version"])
+        assert caught.value.code == 0
+        command.assert_not_called()
+    assert "docker-run-diagnostics-v2" in capsys.readouterr().out
+
+
+def test_docker_stdout_fallback_printed_immediately(capsys):
+    result = SimpleNamespace(returncode=125, stdout="invalid argument from wrapper", stderr="")
+    with (
+        patch.object(bot.subprocess, "run", return_value=result),
+        pytest.raises(bot.DockerCommandError),
+    ):
+        bot.command("docker", "run", "-d", "image")
+    assert "invalid argument from wrapper" in capsys.readouterr().err
