@@ -75,9 +75,37 @@ After Docker starts, the runner waits 15 seconds before its first ADB connection
 
 For a full 932-row batch the default inter-scenario delays alone take approximately 15.5–31 hours; loading/scroll waits, boots and teardown add to that. Use `--limit 5` first. Exit status is nonzero if any scenario fails. Screenshots/results are ignored by Git. See [Android ADB documentation](https://developer.android.com/tools/adb) and [AOSP proxy setting definition](https://android.googlesource.com/platform/frameworks/base/+/c52839277b8714d150a9fe276b6ba3fa8a0cbf38/core/java/android/provider/Settings.java).
 
+### Memory hygiene on the Linux VM
+
+After each successful or failed teardown, the runner attempts `sync` plus `drop_caches=3`, logs available memory before/after, and records memory/cache/reclaimable/unreclaimable slab measurements in `runs.jsonl`. Root runs perform the fixed command directly; ordinary users use the dedicated helper below with non-interactive sudo. Cleanup is bounded to 30 seconds plus a 5-second termination grace period. A permission/setup failure is logged and does not wait for a password. `--skip-cache-cleanup` disables cache dropping.
+
+One-time setup **inside Ubuntu**, using an administrator account (replace `simufarm` in the sudoers entry if your runtime user differs):
+
+```sh
+sudo install -o root -g root -m 0755 scripts/simufarm-drop-caches /usr/local/sbin/simufarm-drop-caches
+sudo visudo -f /etc/sudoers.d/simufarm-drop-caches
+```
+
+Add exactly this entry; the `""` restricts it to no arguments:
+
+```sudoers
+simufarm ALL=(root) NOPASSWD: /usr/local/sbin/simufarm-drop-caches ""
+```
+
+Then validate the file:
+
+```sh
+sudo chmod 0440 /etc/sudoers.d/simufarm-drop-caches
+sudo visudo -cf /etc/sudoers.d/simufarm-drop-caches
+```
+
+The installed helper and its parent directories must stay root-owned and unwritable by the runtime user. This grants the fixed cleanup operation only. The bot never edits sudoers, changes Docker privileges, or reboots the VM.
+
+Before each launch, memory pressure causes a warning, cleanup attempt and a 30-second wait, with `--memory-wait-retries 3` by default (four checks, up to 90 seconds of waits). Persistent pressure stops the batch instead of rapidly skipping the remaining rows. The threshold is **3248 MiB**, preserving the existing 2048 MiB host reserve after the 1200 MiB container allowance; this is stricter than a 2500 MiB floor. The measurement is `/proc/meminfo`'s `MemAvailable`, the same field used by `free -m`, which already accounts for reclaimable cache. Dropping caches does not free live process allocations or unreclaimable slab and can increase subsequent disk I/O. [Linux memory reporting](https://www.kernel.org/doc/html/v6.15/filesystems/proc.html), [cache dropping semantics](https://kernel.org/doc/html/v6.7/admin-guide/sysctl/vm.html).
+
 ### Diagnosing Docker startup
 
-The startup banner shows `install-recovery-v5`, the resolved script path, its SHA-256 prefix and selected image. Verify `python3 scripts/run_traffic_bot.py --version` shows this marker after pulling. The older bare `docker command failed (exit 125)` message is not emitted by this version.
+The startup banner shows `memory-hygiene-v6`, the resolved script path, its SHA-256 prefix and selected image. Verify `python3 scripts/run_traffic_bot.py --version` shows this marker after pulling. The older bare `docker command failed (exit 125)` message is not emitted by this version.
 
 The runner prints the exact generated `docker run -d --privileged ...` command and, on failure, Docker's captured stderr immediately (falling back to stdout when stderr is empty). Credentials in HTTP URLs are redacted. The default is the cached `redroid/redroid:14.0.0_64only-latest` tag; no image is silently pulled. Disposable `/data` uses an anonymous Docker volume. APK paths such as `./chrome` are **never Docker mounts**; files are installed using ADB after Android boots. Proxy settings are likewise applied through ADB, not Docker environment variables.
 

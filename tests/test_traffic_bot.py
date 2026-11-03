@@ -12,6 +12,14 @@ bot = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(bot)
 
 
+REAL_MEMORY_HYGIENE = bot.memory_hygiene
+
+
+@pytest.fixture(autouse=True)
+def prevent_host_cache_changes(monkeypatch):
+    monkeypatch.setattr(bot, "memory_hygiene", lambda **kwargs: {"status": "mocked"})
+
+
 def test_proxy_rejects_credentials_before_docker(tmp_path):
     proxies = tmp_path / "proxies.txt"
     proxies.write_text("http://secret:password@127.0.0.1:8080\n")
@@ -70,7 +78,7 @@ def test_cleanup_failure_aborts_batch(tmp_path):
     args = SimpleNamespace(
         results=tmp_path, image="image", adb_port=5575, delay_min=60, delay_max=120
     )
-    with patch.object(bot, "Device") as device, patch.object(bot, "visit"):
+    with patch.object(bot, "Device") as device, patch.object(bot, "visit", return_value=3):
         device.return_value.shell.return_value = "14"
         device.return_value.close.side_effect = RuntimeError("cleanup failed")
         with pytest.raises(RuntimeError, match="cleanup failed"):
@@ -377,7 +385,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "install-recovery-v5" in capsys.readouterr().out
+    assert "memory-hygiene-v6" in capsys.readouterr().out
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -590,3 +598,132 @@ def test_failed_force_removal_aborts_without_overlapping_devices(tmp_path):
         )
         bot.execute(args, [{"id": "a"}, {"id": "b"}], [])
     assert device.call_count == 1
+
+
+def test_low_memory_waits_then_recovers():
+    with (
+        patch.object(
+            bot, "memory_snapshot", side_effect=[{"MemAvailable": 2400}, {"MemAvailable": 4000}]
+        ),
+        patch.object(bot, "memory_hygiene") as cleanup,
+        patch.object(bot.time, "sleep") as sleep,
+    ):
+        bot.wait_for_memory()
+    cleanup.assert_called_once_with(enabled=True)
+    sleep.assert_called_once_with(30)
+
+
+def test_persistent_low_memory_stops_after_bounded_retries():
+    with (
+        patch.object(bot, "memory_snapshot", return_value={"MemAvailable": 2000}) as measure,
+        patch.object(bot.time, "sleep") as sleep,
+        pytest.raises(bot.SetupError, match="stopping batch instead of skipping"),
+    ):
+        bot.wait_for_memory(retries=3)
+    assert measure.call_count == 4
+    assert sleep.call_args_list == [call(30)] * 3
+
+
+@pytest.mark.parametrize(
+    "outcome", [3, RuntimeError("failed visit"), bot.InstallTimeout("stalled")]
+)
+def test_memory_cleanup_runs_after_every_device_teardown(tmp_path, outcome):
+    events = []
+    args = SimpleNamespace(results=tmp_path, image="image", adb_port=0, delay_min=0, delay_max=0)
+
+    def cleanup(**kwargs):
+        events.append("memory")
+        return {"status": "completed"}
+
+    with (
+        patch.object(bot, "Device") as device,
+        patch.object(bot, "visit", side_effect=[outcome]),
+        patch.object(bot, "memory_hygiene", side_effect=cleanup),
+    ):
+        device.return_value.shell.return_value = "14"
+        device.return_value.close.side_effect = lambda: events.append("close")
+        device.return_value.recover_install_timeout.return_value = {}
+        assert bot.execute(args, [{"id": "a"}], []) == int(isinstance(outcome, Exception))
+    assert events == ["close", "memory"]
+    record = bot.json.loads((tmp_path / "runs.jsonl").read_text())
+    assert record["memory_cleanup"]["status"] == "completed"
+
+
+def test_root_cleanup_is_bounded_and_measures_memory():
+    with (
+        patch.object(bot.os, "geteuid", return_value=0),
+        patch.object(
+            bot, "memory_snapshot", side_effect=[{"MemAvailable": 3200}, {"MemAvailable": 3900}]
+        ),
+        patch.object(bot, "command") as command,
+    ):
+        result = REAL_MEMORY_HYGIENE()
+    args = command.call_args.args
+    assert args[:4] == ("/usr/bin/timeout", "--kill-after=5s", "30s", "/bin/sh")
+    assert args[-1] == "/usr/bin/sync && echo 3 > /proc/sys/vm/drop_caches"
+    assert command.call_args.kwargs["timeout"] == 40
+    assert result["status"] == "completed"
+    assert result["after_mib"]["MemAvailable"] == 3900
+
+
+def test_nonroot_missing_helper_never_prompts_for_password():
+    with (
+        patch.object(bot.os, "geteuid", return_value=1000),
+        patch.object(bot.Path, "is_file", return_value=False),
+        patch.object(bot, "memory_snapshot", return_value={"MemAvailable": 4000}),
+        patch.object(bot, "CACHE_WARNING_SHOWN", False),
+        patch.object(bot, "command") as command,
+    ):
+        result = REAL_MEMORY_HYGIENE()
+    assert result["status"] == "unavailable"
+    command.assert_not_called()
+
+
+def test_helper_rejects_arguments_without_dropping_host_caches():
+    helper = bot.ROOT / "scripts/simufarm-drop-caches"
+    result = bot.subprocess.run(
+        ["/bin/sh", str(helper), "unexpected"], capture_output=True, check=False
+    )
+    assert result.returncode == 64
+
+
+def test_memory_reporting_uses_available_not_free():
+    with patch.object(
+        bot.Path,
+        "read_text",
+        return_value="MemAvailable: 4096000 kB\nMemFree: 1024 kB\nCached: 2048000 kB\nSUnreclaim: 102400 kB\n",
+    ):
+        values = bot.memory_snapshot()
+    assert values == {"MemAvailable": 4000, "MemFree": 1, "Cached": 2000, "SUnreclaim": 100}
+
+
+def test_persistent_memory_pressure_does_not_skip_through_batch(tmp_path):
+    args = SimpleNamespace(
+        results=tmp_path, image="image", adb_port=0, memory_wait_retries=0, delay_min=0, delay_max=0
+    )
+    with (
+        patch.object(bot, "Device", wraps=bot.Device) as device,
+        patch.object(bot, "memory_snapshot", return_value={"MemAvailable": 2000}),
+        patch.object(bot, "command") as command,
+        pytest.raises(bot.SetupError, match="Memory stayed low"),
+    ):
+        command.return_value = ""
+        bot.execute(args, [{"id": "a"}, {"id": "b"}], [])
+    assert device.call_count == 1
+    assert all(item.args[:2] != ("docker", "run") for item in command.call_args_list)
+
+
+def test_nonroot_cleanup_uses_only_noninteractive_fixed_helper():
+    with (
+        patch.object(bot.os, "geteuid", return_value=1000),
+        patch.object(bot.Path, "is_file", return_value=True),
+        patch.object(bot, "memory_snapshot", return_value={"MemAvailable": 4000}),
+        patch.object(bot, "command") as command,
+    ):
+        result = REAL_MEMORY_HYGIENE()
+    assert command.call_args.args[3:] == (
+        "/usr/bin/sudo",
+        "-n",
+        "/usr/local/sbin/simufarm-drop-caches",
+    )
+    assert result["status"] == "completed"
