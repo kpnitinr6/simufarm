@@ -307,6 +307,7 @@ def execute(args, rows, proxies):
             record["status"] = "passed"
         except SetupError as exc:
             record["error"] = str(exc)
+            LOG.error("  %s", exc)
             raise
         except (RuntimeError, subprocess.TimeoutExpired, TimeoutError) as exc:
             failures += 1
