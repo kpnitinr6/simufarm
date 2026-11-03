@@ -84,11 +84,20 @@ def test_success_screenshot_and_swipe_count(tmp_path):
     png = b"\x89PNG\r\n\x1a\n" + b"test"
     args = SimpleNamespace(apk=None, url="https://example.com", results=tmp_path)
     with (
-        patch.object(device, "shell", side_effect=lambda *a: next(responses)),
+        patch.object(device, "shell", side_effect=lambda *a: next(responses)) as shell,
         patch.object(bot, "command", return_value=png),
         patch.object(bot.time, "sleep"),
     ):
         count = bot.visit(device, args, None, bot.random.Random(1))
+    assert shell.call_args_list[2].args == (
+        "am",
+        "start",
+        "-W",
+        "-n",
+        "com.android.chrome/com.google.android.apps.chrome.Main",
+        "-d",
+        "https://example.com",
+    )
     assert count == 3
     assert (tmp_path / "test.png").read_bytes() == png
 
@@ -159,3 +168,56 @@ def test_incomplete_boot_prevents_install(tmp_path):
         with pytest.raises(bot.SetupError, match="boot is incomplete"):
             bot.install_apk(device, apk)
         command.assert_called_once_with("adb", "-s", device.serial, "wait-for-device", timeout=30)
+
+
+@pytest.mark.parametrize("csv_mode", [False, True])
+def test_proxy_inputs_normalize_and_dry_run(tmp_path, csv_mode):
+    path = tmp_path / ("proxies.csv" if csv_mode else "proxies.txt")
+    path.write_text(
+        'proxy,description\n"192.0.2.1:8080","quoted, field"\nhttp://192.0.2.2:3128,test\n'
+        if csv_mode
+        else "# test\n192.0.2.1:8080\nhttp://192.0.2.2:3128\n"
+    )
+    assert bot.load_proxies(path) == ["http://192.0.2.1:8080", "http://192.0.2.2:3128"]
+    with patch.object(bot, "command") as command:
+        assert (
+            bot.main(["--url", "https://example.com", "--proxy-file", str(path), "--dry-run"]) == 0
+        )
+        command.assert_not_called()
+
+
+def test_missing_proxy_column_rejected(tmp_path):
+    path = tmp_path / "proxies.csv"
+    path.write_text("host,port\n192.0.2.1,8080\n")
+    with pytest.raises(ValueError, match="proxy column"):
+        bot.load_proxies(path)
+
+
+def test_boot_delay_before_adb_connection():
+    events = []
+    device = bot.Device("image", {"width_px": 1080, "height_px": 2400, "dpi": 400}, 5575)
+    with (
+        patch.object(bot, "command", side_effect=lambda *a, **kw: events.append(a) or ""),
+        patch.object(bot.Path, "read_text", return_value="MemAvailable: 8000000 kB"),
+        patch.object(bot.socket, "socket"),
+        patch.object(device, "shell", return_value="1"),
+        patch.object(bot.time, "sleep", side_effect=lambda t: events.append(("sleep", t))),
+    ):
+        device.start()
+    started = events.index(("docker", "start", device.name))
+    assert events[started + 1] == ("sleep", 15)
+    assert events[started + 2] == ("adb", "connect", device.serial)
+
+
+def test_cleanup_reset_failure_still_stops_and_removes():
+    device = bot.Device("image", {"id": "test"}, 5575)
+    device.created = True
+    with (
+        patch.object(device, "shell", side_effect=RuntimeError("offline")) as shell,
+        patch.object(bot, "command") as command,
+    ):
+        device.close()
+    shell.assert_called_once_with("settings", "put", "global", "http_proxy", ":0", timeout=10)
+    assert command.call_args_list[0].args[:2] == ("docker", "stop")
+    assert command.call_args_list[1].args == ("docker", "rm", "-f", "-v", device.name)
+    assert device.created is False

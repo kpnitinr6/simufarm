@@ -52,6 +52,26 @@ def proxy_address(raw):
     return f"{host}:{p.port}"
 
 
+def load_proxies(path):
+    """Read CSV's proxy column or a plain list, returning canonical HTTP URLs."""
+    with path.open(encoding="utf-8-sig", newline="") as stream:
+        if path.suffix.lower() == ".csv":
+            reader = csv.DictReader(stream)
+            if not reader.fieldnames or "proxy" not in reader.fieldnames:
+                raise ValueError("Proxy CSV must have a proxy column")
+            values = [row.get("proxy") or "" for row in reader]
+        else:
+            values = list(stream)
+    proxies = [
+        "http://" + proxy_address(value.strip())
+        for value in values
+        if value.strip() and not value.lstrip().startswith("#")
+    ]
+    if not proxies:
+        raise ValueError("Proxy file has no proxies")
+    return proxies
+
+
 def load_profiles(path):
     with path.open(newline="") as stream:
         rows = list(csv.DictReader(stream))
@@ -127,6 +147,7 @@ class Device:
         )
         command("docker", "start", self.name)
         deadline = time.monotonic() + 180
+        time.sleep(15)
         while time.monotonic() < deadline:
             try:
                 command("adb", "connect", self.serial, timeout=5)
@@ -140,6 +161,10 @@ class Device:
 
     def close(self):
         if self.created:
+            try:
+                self.shell("settings", "put", "global", "http_proxy", ":0", timeout=10)
+            except (RuntimeError, OSError, subprocess.TimeoutExpired):
+                LOG.warning("  proxy reset unavailable; proceeding with container removal")
             # Only our unique container; volumes removed too. Never kill a shared ADB server.
             try:
                 command("docker", "stop", "--time", "30", self.name, timeout=40)
@@ -184,18 +209,23 @@ def install_apk(device, path):
 
 
 def visit(device, args, proxy, rng):
+    proxy = proxy_address(proxy) if proxy else None
     device.shell("settings", "put", "global", "http_proxy", proxy or ":0")
     if device.shell("settings", "get", "global", "http_proxy") != (proxy or ":0"):
         raise RuntimeError("Android proxy setting did not persist")
-    package = None
-    if args.apk:
-        package = install_apk(device, args.apk)
-    intent = ["am", "start", "-W", "-a", "android.intent.action.VIEW", "-d", args.url]
-    if package:
-        intent += ["-p", package]
-    result = device.shell(*intent)
+    if args.apk and install_apk(device, args.apk) != "com.android.chrome":
+        raise SetupError("This browsing pipeline requires the com.android.chrome APK")
+    result = device.shell(
+        "am",
+        "start",
+        "-W",
+        "-n",
+        "com.android.chrome/com.google.android.apps.chrome.Main",
+        "-d",
+        args.url,
+    )
     if "Error:" in result or "Exception" in result or "Activity:" not in result:
-        raise SetupError("No URL-capable activity; supply a browser APK with a VIEW handler")
+        raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
     time.sleep(5)
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
@@ -304,13 +334,7 @@ def main(argv=None):
             apk_files(args.apk)
         proxies = []
         if args.proxy_file:
-            proxies = [
-                proxy_address(line.strip())
-                for line in args.proxy_file.read_text().splitlines()
-                if line.strip() and not line.lstrip().startswith("#")
-            ]
-            if not proxies:
-                raise ValueError("Proxy file has no proxies")
+            proxies = load_proxies(args.proxy_file)
         rows = load_profiles(args.csv)
         if args.limit:
             rows = rows[: args.limit]
