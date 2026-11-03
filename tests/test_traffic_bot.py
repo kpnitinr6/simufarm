@@ -106,3 +106,56 @@ def test_setup_error_cleans_and_aborts(tmp_path):
             bot.execute(args, [{"id": "a"}, {"id": "b"}], [])
         device.return_value.close.assert_called_once()
         assert device.call_count == 1
+
+
+@pytest.mark.parametrize("split", [False, True])
+def test_apk_install_mode_and_boot_order(tmp_path, split):
+    base = tmp_path / "base.apk"
+    base.touch()
+    extra = tmp_path / "split_config.arm64_v8a.apk"
+    if split:
+        extra.touch()
+    events = []
+    device = bot.Device("image", {"id": "test"}, 5575)
+
+    def command(*args, **kwargs):
+        events.append(args)
+        if args[0] == "aapt":
+            return "package: name='com.android.chrome' versionCode='1'"
+        return "Success"
+
+    with (
+        patch.object(bot, "command", side_effect=command),
+        patch.object(device, "shell", return_value="1") as shell,
+        patch.object(bot.time, "sleep", side_effect=lambda t: events.append(("sleep", t))),
+    ):
+        assert bot.install_apk(device, tmp_path if split else base) == "com.android.chrome"
+    assert events[0] == ("adb", "-s", device.serial, "wait-for-device")
+    assert events[1] == ("sleep", 2)
+    shell.assert_called_once_with("getprop", "sys.boot_completed")
+    assert events[2] == ("aapt", "dump", "badging", str(base))
+    expected = (
+        "adb",
+        "-s",
+        device.serial,
+        "install-multiple" if split else "install",
+        "-r",
+        str(base),
+    )
+    assert events[3] == expected + ((str(extra),) if split else ())
+
+
+def test_empty_split_folder_rejected_before_docker(tmp_path):
+    with patch.object(bot, "command") as command:
+        assert bot.main(["--url", "https://example.com", "--apk", str(tmp_path)]) == 1
+        command.assert_not_called()
+
+
+def test_incomplete_boot_prevents_install(tmp_path):
+    apk = tmp_path / "base.apk"
+    apk.touch()
+    device = bot.Device("image", {"id": "test"}, 5575)
+    with patch.object(bot, "command") as command, patch.object(device, "shell", return_value="0"):
+        with pytest.raises(bot.SetupError, match="boot is incomplete"):
+            bot.install_apk(device, apk)
+        command.assert_called_once_with("adb", "-s", device.serial, "wait-for-device", timeout=30)

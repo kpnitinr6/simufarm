@@ -52,6 +52,15 @@ Without `--limit`, all **932 CSV rows are screen-size/DPI scenarios**, each on a
 
 `--proxy-file` cycles one endpoint per scenario; omit it for direct traffic. Format: `http://host:port` (one per line, blank lines and `#` comments accepted). Android's global `http_proxy` setting accepts host/port, **not username/password credentials or SOCKS URLs**; those inputs are rejected before any device boots. Authenticated upstreams need a separately configured local relay. The setting is not a VPN, and apps may bypass it; the runner verifies the setting, not the effective egress IP. No proxy address/credentials or target URL is printed in logs. Keep proxy lists out of Git.
 
+`--apk` accepts either a single APK or an extracted split bundle directory:
+
+```sh
+python3 scripts/run_traffic_bot.py --url "https://example.com" --apk ./chrome --limit 5
+python3 scripts/run_traffic_bot.py --url "https://example.com" --apk ./browser.apk --limit 5
+```
+
+A folder must contain `base.apk` and matching `split_config.*.apk` files directly inside it. All top-level `*.apk` files are installed together with `adb install-multiple -r`; use a folder containing only one app's matching bundle, compatible with Android 14 / ARM64. A single file uses `adb install -r`. Archives (`.apks`/`.xapk`) must be extracted first. The runner checks `sys.boot_completed`, waits for ADB and pauses briefly before installation; package detection uses `base.apk` for split bundles. APK validation also runs during `--dry-run` without installing anything. Installation still requires all required compatible splits; Chrome first-run screens and external dependencies are not automatically resolved.
+
 The stock image may have **no browser**. WebView alone is not a launchable browser. If there is no URL-capable activity, the batch stops after cleanup; supply a trusted browser/test APK using `--apk`; it must handle HTTP(S) VIEW intents. The runner installs it into each fresh container and explicitly opens the URL within that package. Browser first-run/consent screens may require a preconfigured test APK; screenshots are captures, not assertions that website content loaded successfully.
 
 Boot readiness is bounded, then each scenario waits 5 seconds, makes 3–4 randomized upward swipes, waits 10 seconds, captures `results/traffic/<profile_id>.png`, and removes its owned container and anonymous data volume. `runs.jsonl` records pass/fail, elapsed time, actual Android release and the geometry-only scope. Logs show progress and cleanup. Default inter-scenario delay is uniformly randomized **60–120 seconds**, configurable with `--delay-min`/`--delay-max`; there is no final delay. Processing is strictly sequential with a VM-wide file lock; cleanup failure aborts the batch. Ctrl-C/SIGTERM attempt cleanup; power loss/SIGKILL cannot, so inspect owned `simufarm-traffic-*` containers after an unclean exit. Ordinary Docker stop may need its 30-second forced-stop fallback; disposable test data is removed, not retained.

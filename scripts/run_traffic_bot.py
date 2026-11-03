@@ -149,20 +149,47 @@ class Device:
         command("adb", "disconnect", self.serial, check=False)
 
 
+def apk_files(path):
+    """Return a single APK or a deterministic, base-first split install set."""
+    if path.is_dir():
+        base = path / "base.apk"
+        files = sorted(p for p in path.glob("*.apk") if p.is_file())
+        if not files or base not in files:
+            raise ValueError("Split APK folder must contain base.apk and its matching APK splits")
+        return [base, *(p for p in files if p != base)]
+    if not path.is_file() or path.suffix.lower() != ".apk":
+        raise ValueError("--apk must be an APK file or a folder containing base.apk")
+    return [path]
+
+
+def install_apk(device, path):
+    files = apk_files(path)
+    command("adb", "-s", device.serial, "wait-for-device", timeout=30)
+    if device.shell("getprop", "sys.boot_completed") != "1":
+        raise SetupError("Android boot is incomplete; refusing APK installation")
+    time.sleep(2)
+    # aapt reads the package from the base, never an arbitrary configuration split.
+    badging = command("aapt", "dump", "badging", str(files[0]))
+    match = re.search(r"^package: name='([A-Za-z0-9_.]+)'", badging, re.MULTILINE)
+    if not match:
+        raise SetupError("Unable to read APK package with aapt")
+    mode = "install-multiple" if path.is_dir() else "install"
+    LOG.info("  installing %d APK file(s)", len(files))
+    installed = command(
+        "adb", "-s", device.serial, mode, "-r", *(str(p) for p in files), timeout=180
+    )
+    if "Success" not in installed:
+        raise SetupError("APK installation failed")
+    return match.group(1)
+
+
 def visit(device, args, proxy, rng):
     device.shell("settings", "put", "global", "http_proxy", proxy or ":0")
     if device.shell("settings", "get", "global", "http_proxy") != (proxy or ":0"):
         raise RuntimeError("Android proxy setting did not persist")
     package = None
     if args.apk:
-        installed = command("adb", "-s", device.serial, "install", str(args.apk), timeout=180)
-        if "Success" not in installed:
-            raise RuntimeError("APK installation failed")
-        badging = command("aapt", "dump", "badging", str(args.apk))
-        match = re.search(r"^package: name='([A-Za-z0-9_.]+)'", badging, re.MULTILINE)
-        if not match:
-            raise RuntimeError("Unable to read APK package with aapt")
-        package = match.group(1)
+        package = install_apk(device, args.apk)
     intent = ["am", "start", "-W", "-a", "android.intent.action.VIEW", "-d", args.url]
     if package:
         intent += ["-p", package]
@@ -245,7 +272,9 @@ def execute(args, rows, proxies):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", required=True)
-    parser.add_argument("--apk", type=Path)
+    parser.add_argument(
+        "--apk", type=Path, help="APK file or folder containing base.apk and splits"
+    )
     parser.add_argument("--proxy-file", type=Path)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--delay-min", type=float, default=60)
@@ -272,6 +301,7 @@ def main(argv=None):
             raise ValueError("Invalid ADB port")
         if args.apk:
             args.apk = args.apk.resolve(strict=True)
+            apk_files(args.apk)
         proxies = []
         if args.proxy_file:
             proxies = [
