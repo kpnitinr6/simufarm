@@ -127,7 +127,8 @@ def test_setup_error_cleans_and_aborts(tmp_path):
 
 
 @pytest.mark.parametrize("split", [False, True])
-def test_apk_install_mode_and_boot_order(tmp_path, split, caplog):
+@pytest.mark.parametrize("install_timeout", [900, 1200])
+def test_apk_install_mode_and_boot_order(tmp_path, split, install_timeout, caplog):
     base = tmp_path / "base.apk"
     base.touch()
     extra = tmp_path / "split_config.arm64_v8a.apk"
@@ -139,9 +140,12 @@ def test_apk_install_mode_and_boot_order(tmp_path, split, caplog):
     def command(*args, **kwargs):
         events.append(args)
         if args[0] == "adb" and args[3] in ("install", "install-multiple"):
-            assert kwargs["timeout"] == (600 if split else 180)
-            if split:
-                assert "Installing APK bundle (this may take a few minutes)..." in caplog.text
+            assert kwargs["timeout"] == install_timeout
+            assert (
+                "Installing APK bundle (this can take a few minutes on nested VMs)..."
+                in caplog.text
+            )
+            assert f"timeout={install_timeout}s" in caplog.text
         if args[0] == "aapt":
             return "package: name='com.android.chrome' versionCode='1'"
         return "Success"
@@ -152,7 +156,10 @@ def test_apk_install_mode_and_boot_order(tmp_path, split, caplog):
         patch.object(bot.time, "sleep", side_effect=lambda t: events.append(("sleep", t))),
         caplog.at_level("INFO", logger="traffic"),
     ):
-        assert bot.install_apk(device, tmp_path if split else base) == "com.android.chrome"
+        assert (
+            bot.install_apk(device, tmp_path if split else base, install_timeout)
+            == "com.android.chrome"
+        )
     assert events[0] == ("adb", "-s", device.serial, "wait-for-device")
     assert events[1] == ("sleep", 2)
     shell.assert_called_once_with("getprop", "sys.boot_completed")
@@ -364,7 +371,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "chrome-first-run-v3" in capsys.readouterr().out
+    assert "install-timeout-v4" in capsys.readouterr().out
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -411,6 +418,7 @@ def test_complete_browser_flow_installs_and_sets_flags_before_url(tmp_path):
             return "14"
 
     def install(*args):
+        assert args[2] == 1200
         events.append("install")
         return "com.android.chrome"
 
@@ -424,6 +432,7 @@ def test_complete_browser_flow_installs_and_sets_flags_before_url(tmp_path):
         adb_port=0,
         delay_min=0,
         delay_max=0,
+        install_timeout=1200,
         apk=Path("chrome"),
         url="https://example.com",
     )
@@ -453,3 +462,34 @@ def test_failed_chrome_flag_write_verification_prevents_url(tmp_path):
     ):
         bot.visit(device, args, None, bot.random.Random(1))
     assert all(call.args[:2] != ("am", "start") for call in shell.call_args_list)
+
+
+@pytest.mark.parametrize("seconds", ["0", "-1"])
+def test_invalid_install_timeout_rejected_before_resources(seconds):
+    with patch.object(bot, "command") as command:
+        assert (
+            bot.main(["--url", "https://example.com", "--install-timeout", seconds, "--dry-run"])
+            == 1
+        )
+        command.assert_not_called()
+
+
+def test_install_timeout_reports_specific_deadline(tmp_path):
+    apk = tmp_path / "base.apk"
+    apk.touch()
+    device = bot.Device("image", {"id": "test"}, 5575)
+
+    def command(*args, **kwargs):
+        if args[0] == "aapt":
+            return "package: name='com.android.chrome'"
+        if "install" in args:
+            raise bot.subprocess.TimeoutExpired(args, kwargs["timeout"])
+        return ""
+
+    with (
+        patch.object(bot, "command", side_effect=command),
+        patch.object(device, "shell", return_value="1"),
+        patch.object(bot.time, "sleep"),
+        pytest.raises(bot.SetupError, match="APK installation timed out after 900s"),
+    ):
+        bot.install_apk(device, apk)
