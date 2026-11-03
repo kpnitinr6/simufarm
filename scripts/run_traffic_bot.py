@@ -23,7 +23,9 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "docker-run-diagnostics-v2"
+VERSION = "chrome-first-run-v3"
+CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
+CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 
 
 class SetupError(RuntimeError):
@@ -257,13 +259,28 @@ def install_apk(device, path):
     return match.group(1)
 
 
+def configure_chrome(device):
+    LOG.info("  disabling Chrome first-run screens")
+    device.shell("am", "force-stop", "com.android.chrome")
+    # Device.shell quotes each argument for the remote shell, including this fixed script.
+    script = (
+        f"echo {shlex.quote(CHROME_FLAGS)} > {CHROME_FLAGS_PATH} && chmod 644 {CHROME_FLAGS_PATH}"
+    )
+    device.shell("sh", "-c", script)
+    if device.shell("cat", CHROME_FLAGS_PATH) != CHROME_FLAGS:
+        raise SetupError("Chrome command-line flags did not persist; refusing URL launch")
+
+
 def visit(device, args, proxy, rng):
+    LOG.info("  setting Android proxy")
     proxy = proxy_address(proxy) if proxy else None
     device.shell("settings", "put", "global", "http_proxy", proxy or ":0")
     if device.shell("settings", "get", "global", "http_proxy") != (proxy or ":0"):
         raise RuntimeError("Android proxy setting did not persist")
     if args.apk and install_apk(device, args.apk) != "com.android.chrome":
         raise SetupError("This browsing pipeline requires the com.android.chrome APK")
+    configure_chrome(device)
+    LOG.info("  opening target URL in Chrome")
     result = device.shell(
         "am",
         "start",
@@ -276,6 +293,7 @@ def visit(device, args, proxy, rng):
     if "Error:" in result or "Exception" in result or "Activity:" not in result:
         raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
     time.sleep(5)
+    LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
     for _ in range(swipes):
@@ -291,6 +309,7 @@ def visit(device, args, proxy, rng):
         )
         time.sleep(rng.uniform(0.5, 1.5))
     time.sleep(10)
+    LOG.info("  capturing screenshot")
     image = command("adb", "-s", device.serial, "exec-out", "screencap", "-p", binary=True)
     if not image.startswith(b"\x89PNG\r\n\x1a\n"):
         raise RuntimeError("ADB did not return a PNG screenshot")
@@ -322,7 +341,6 @@ def execute(args, rows, proxies):
             (args.results / (row["id"] + ".png")).unlink(missing_ok=True)
             device.start()
             record["actual_android_release"] = device.shell("getprop", "ro.build.version.release")
-            LOG.info("  visiting, scrolling and capturing")
             record["swipes"] = visit(device, args, proxy, rng)
             record["status"] = "passed"
         except SetupError as exc:

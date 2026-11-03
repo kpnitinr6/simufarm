@@ -80,16 +80,25 @@ def test_cleanup_failure_aborts_batch(tmp_path):
 
 def test_success_screenshot_and_swipe_count(tmp_path):
     device = bot.Device("image", {"id": "test", "width_px": 1080, "height_px": 2400}, 5575)
-    responses = iter(["", ":0", "Status: ok\nActivity: test/.Browser", "", "", ""])
+
+    def response(*args):
+        if args[:2] == ("settings", "get"):
+            return ":0"
+        if args[0] == "cat":
+            return bot.CHROME_FLAGS
+        if args[:2] == ("am", "start"):
+            return "Status: ok\nActivity: com.android.chrome/.Main"
+        return ""
+
     png = b"\x89PNG\r\n\x1a\n" + b"test"
     args = SimpleNamespace(apk=None, url="https://example.com", results=tmp_path)
     with (
-        patch.object(device, "shell", side_effect=lambda *a: next(responses)) as shell,
+        patch.object(device, "shell", side_effect=response) as shell,
         patch.object(bot, "command", return_value=png),
         patch.object(bot.time, "sleep"),
     ):
         count = bot.visit(device, args, None, bot.random.Random(1))
-    assert shell.call_args_list[2].args == (
+    assert next(call.args for call in shell.call_args_list if call.args[:2] == ("am", "start")) == (
         "am",
         "start",
         "-W",
@@ -350,7 +359,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "docker-run-diagnostics-v2" in capsys.readouterr().out
+    assert "chrome-first-run-v3" in capsys.readouterr().out
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -361,3 +370,81 @@ def test_docker_stdout_fallback_printed_immediately(capsys):
     ):
         bot.command("docker", "run", "-d", "image")
     assert "invalid argument from wrapper" in capsys.readouterr().err
+
+
+def test_complete_browser_flow_installs_and_sets_flags_before_url(tmp_path):
+    events = []
+
+    class FakeDevice:
+        serial = "127.0.0.1:5555"
+
+        def __init__(self, image, row, port):
+            self.row = row
+
+        def start(self):
+            events.append("boot")
+
+        def close(self):
+            events.append("teardown")
+
+        def shell(self, *args):
+            if args[:2] == ("settings", "put"):
+                events.append("proxy")
+            elif args[:2] == ("settings", "get"):
+                return ":0"
+            elif args[:2] == ("sh", "-c"):
+                assert "chrome --disable-fre --no-default-browser-check --no-first-run" in args[2]
+                assert "/data/local/tmp/chrome-command-line" in args[2]
+                events.append("flags")
+            elif args[0] == "cat":
+                return bot.CHROME_FLAGS
+            elif args[:2] == ("am", "start"):
+                events.append("url")
+                return "Activity: com.android.chrome/.Main"
+            elif args[:2] == ("input", "swipe"):
+                events.append("swipe")
+            return "14"
+
+    def install(*args):
+        events.append("install")
+        return "com.android.chrome"
+
+    def command(*args, **kwargs):
+        events.append("screenshot")
+        return b"\x89PNG\r\n\x1a\n" + b"test"
+
+    args = SimpleNamespace(
+        results=tmp_path,
+        image="image",
+        adb_port=0,
+        delay_min=0,
+        delay_max=0,
+        apk=Path("chrome"),
+        url="https://example.com",
+    )
+    with (
+        patch.object(bot, "Device", FakeDevice),
+        patch.object(bot, "install_apk", side_effect=install),
+        patch.object(bot, "command", side_effect=command),
+        patch.object(bot.time, "sleep"),
+    ):
+        assert bot.execute(args, [{"id": "test", "width_px": 1080, "height_px": 2400}], []) == 0
+    assert events[:5] == ["boot", "proxy", "install", "flags", "url"]
+    assert all(event == "swipe" for event in events[5:-2])
+    assert len(events[5:-2]) in (3, 4)
+    assert events[-2:] == ["screenshot", "teardown"]
+
+
+def test_failed_chrome_flag_write_verification_prevents_url(tmp_path):
+    device = bot.Device("image", {"id": "test"}, 5575)
+    args = SimpleNamespace(apk=None, url="https://example.com", results=tmp_path)
+
+    def response(*args):
+        return ":0" if args[:2] == ("settings", "get") else ""
+
+    with (
+        patch.object(device, "shell", side_effect=response) as shell,
+        pytest.raises(bot.SetupError, match="flags did not persist"),
+    ):
+        bot.visit(device, args, None, bot.random.Random(1))
+    assert all(call.args[:2] != ("am", "start") for call in shell.call_args_list)
