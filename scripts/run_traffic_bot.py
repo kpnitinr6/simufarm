@@ -251,8 +251,16 @@ def install_apk(device, path):
         raise SetupError("Unable to read APK package with aapt")
     mode = "install-multiple" if path.is_dir() else "install"
     LOG.info("  installing %d APK file(s)", len(files))
+    if path.is_dir():
+        LOG.info("Installing APK bundle (this may take a few minutes)...")
     installed = command(
-        "adb", "-s", device.serial, mode, "-r", *(str(p) for p in files), timeout=180
+        "adb",
+        "-s",
+        device.serial,
+        mode,
+        "-r",
+        *(str(p) for p in files),
+        timeout=600 if path.is_dir() else 180,
     )
     if "Success" not in installed:
         raise SetupError("APK installation failed")

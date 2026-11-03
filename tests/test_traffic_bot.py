@@ -127,7 +127,7 @@ def test_setup_error_cleans_and_aborts(tmp_path):
 
 
 @pytest.mark.parametrize("split", [False, True])
-def test_apk_install_mode_and_boot_order(tmp_path, split):
+def test_apk_install_mode_and_boot_order(tmp_path, split, caplog):
     base = tmp_path / "base.apk"
     base.touch()
     extra = tmp_path / "split_config.arm64_v8a.apk"
@@ -138,6 +138,10 @@ def test_apk_install_mode_and_boot_order(tmp_path, split):
 
     def command(*args, **kwargs):
         events.append(args)
+        if args[0] == "adb" and args[3] in ("install", "install-multiple"):
+            assert kwargs["timeout"] == (600 if split else 180)
+            if split:
+                assert "Installing APK bundle (this may take a few minutes)..." in caplog.text
         if args[0] == "aapt":
             return "package: name='com.android.chrome' versionCode='1'"
         return "Success"
@@ -146,6 +150,7 @@ def test_apk_install_mode_and_boot_order(tmp_path, split):
         patch.object(bot, "command", side_effect=command),
         patch.object(device, "shell", return_value="1") as shell,
         patch.object(bot.time, "sleep", side_effect=lambda t: events.append(("sleep", t))),
+        caplog.at_level("INFO", logger="traffic"),
     ):
         assert bot.install_apk(device, tmp_path if split else base) == "com.android.chrome"
     assert events[0] == ("adb", "-s", device.serial, "wait-for-device")
