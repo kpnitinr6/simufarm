@@ -59,6 +59,12 @@ python3 scripts/run_traffic_bot.py --url "https://example.com" --apk ./chrome --
 python3 scripts/run_traffic_bot.py --url "https://example.com" --apk ./browser.apk --limit 5
 ```
 
+APK installation defaults to **900 seconds (15 minutes)** for both single files and split bundles. Override it with `--install-timeout 1200` (positive seconds). Logs show the effective timeout immediately before installation; an install timeout names that deadline explicitly. For example:
+
+```sh
+python3 scripts/run_traffic_bot.py --url "https://example.com" --apk ./chrome --install-timeout 900 --limit 1
+```
+
 A folder must contain `base.apk` and matching `split_config.*.apk` files directly inside it. All top-level `*.apk` files are installed together with `adb install-multiple -r`; use a folder containing only one app's matching bundle, compatible with Android 14 / ARM64. A single file uses `adb install -r`. Archives (`.apks`/`.xapk`) must be extracted first. The runner checks `sys.boot_completed`, waits for ADB and pauses briefly before installation; package detection uses `base.apk` for split bundles. APK validation also runs during `--dry-run` without installing anything. Installation still requires all required compatible splits; External APK dependencies are not automatically resolved.
 
 The stock image may have **no Chrome**. Supply the Chrome APK or split folder using `--apk`. The pipeline explicitly launches `com.android.chrome/com.google.android.apps.chrome.Main` with the URL instead of resolving a generic VIEW intent; non-Chrome APKs are rejected for this browser pipeline. Before URL launch, Chrome is force-stopped and `chrome --disable-fre --no-default-browser-check --no-first-run` is written to `/data/local/tmp/chrome-command-line` with mode 0644 and verified by reading it back. These test flags request skipping Chrome onboarding; acceptance depends on the Chrome build/rooted environment, and file verification does not prove page loading. See [Chromium command-line guidance](https://www.chromium.org/developers/how-tos/run-chromium-with-flags/). Screenshots are captures, not assertions that website content loaded successfully.
@@ -69,7 +75,7 @@ For a full 932-row batch the default inter-scenario delays alone take approximat
 
 ### Diagnosing Docker startup
 
-The startup banner shows `chrome-first-run-v3`, the resolved script path, its SHA-256 prefix and selected image. Verify `python3 scripts/run_traffic_bot.py --version` shows this marker after pulling. The older bare `docker command failed (exit 125)` message is not emitted by this version.
+The startup banner shows `install-timeout-v4`, the resolved script path, its SHA-256 prefix and selected image. Verify `python3 scripts/run_traffic_bot.py --version` shows this marker after pulling. The older bare `docker command failed (exit 125)` message is not emitted by this version.
 
 The runner prints the exact generated `docker run -d --privileged ...` command and, on failure, Docker's captured stderr immediately (falling back to stdout when stderr is empty). Credentials in HTTP URLs are redacted. The default is the cached `redroid/redroid:14.0.0_64only-latest` tag; no image is silently pulled. Disposable `/data` uses an anonymous Docker volume. APK paths such as `./chrome` are **never Docker mounts**; files are installed using ADB after Android boots. Proxy settings are likewise applied through ADB, not Docker environment variables.
 

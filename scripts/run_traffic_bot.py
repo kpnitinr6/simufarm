@@ -23,7 +23,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "chrome-first-run-v3"
+VERSION = "install-timeout-v4"
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 
@@ -238,7 +238,7 @@ def apk_files(path):
     return [path]
 
 
-def install_apk(device, path):
+def install_apk(device, path, install_timeout=900):
     files = apk_files(path)
     command("adb", "-s", device.serial, "wait-for-device", timeout=30)
     if device.shell("getprop", "sys.boot_completed") != "1":
@@ -250,18 +250,20 @@ def install_apk(device, path):
     if not match:
         raise SetupError("Unable to read APK package with aapt")
     mode = "install-multiple" if path.is_dir() else "install"
-    LOG.info("  installing %d APK file(s)", len(files))
-    if path.is_dir():
-        LOG.info("Installing APK bundle (this may take a few minutes)...")
-    installed = command(
-        "adb",
-        "-s",
-        device.serial,
-        mode,
-        "-r",
-        *(str(p) for p in files),
-        timeout=600 if path.is_dir() else 180,
-    )
+    LOG.info("  installing %d APK file(s); timeout=%ds", len(files), install_timeout)
+    LOG.info("Installing APK bundle (this can take a few minutes on nested VMs)...")
+    try:
+        installed = command(
+            "adb",
+            "-s",
+            device.serial,
+            mode,
+            "-r",
+            *(str(p) for p in files),
+            timeout=install_timeout,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise SetupError(f"APK installation timed out after {install_timeout}s") from exc
     if "Success" not in installed:
         raise SetupError("APK installation failed")
     return match.group(1)
@@ -285,7 +287,7 @@ def visit(device, args, proxy, rng):
     device.shell("settings", "put", "global", "http_proxy", proxy or ":0")
     if device.shell("settings", "get", "global", "http_proxy") != (proxy or ":0"):
         raise RuntimeError("Android proxy setting did not persist")
-    if args.apk and install_apk(device, args.apk) != "com.android.chrome":
+    if args.apk and install_apk(device, args.apk, args.install_timeout) != "com.android.chrome":
         raise SetupError("This browsing pipeline requires the com.android.chrome APK")
     configure_chrome(device)
     LOG.info("  opening target URL in Chrome")
@@ -382,6 +384,12 @@ def main(argv=None):
     parser.add_argument(
         "--apk", type=Path, help="APK file or folder containing base.apk and splits"
     )
+    parser.add_argument(
+        "--install-timeout",
+        type=int,
+        default=900,
+        help="APK install timeout in seconds, single or split (default: 900)",
+    )
     parser.add_argument("--proxy-file", type=Path)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--delay-min", type=float, default=60)
@@ -416,6 +424,9 @@ def main(argv=None):
         redact_diagnostic(args.image),
     )
     try:
+        if args.install_timeout <= 0:
+            raise ValueError("--install-timeout must be a positive number of seconds")
+        LOG.info("APK installation timeout: %ds", args.install_timeout)
         if args.binderfs:
             args.binderfs = args.binderfs.resolve(strict=True)
             if not args.binderfs.is_dir() or any(c in str(args.binderfs) for c in ",\n\r"):
