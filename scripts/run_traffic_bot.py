@@ -27,12 +27,25 @@ class SetupError(RuntimeError):
     """An invariant setup failure that should stop the batch after cleanup."""
 
 
-def command(*args, timeout=60, binary=False, check=True):
+class DockerCommandError(SetupError):
+    """Docker setup failures abort the batch with actionable daemon diagnostics."""
+
+
+def command(*args, timeout=60, binary=False, check=True, missing_ok=False):
     result = subprocess.run(
         args, check=False, capture_output=True, text=not binary, timeout=timeout
     )
     if check and result.returncode:
-        # Do not echo commands, URLs, proxy endpoints or app output into terminal logs.
+        if args[0] == "docker":
+            error = result.stderr.decode(errors="replace") if binary else result.stderr
+            if missing_ok and args[1] == "rm" and "no such container" in error.lower():
+                return b"" if binary else ""
+            # Preserve Docker diagnostics, but redact URL credentials and terminal controls.
+            error = re.sub(r"(https?://)[^\s/@]+@", r"\1[redacted]@", error)
+            error = re.sub(r"[\x00-\x08\x0b-\x1f\x7f]", "", error).strip()[:4096]
+            raise DockerCommandError(
+                f"docker {args[1]} failed (exit {result.returncode}): {error or '(empty stderr)'}"
+            )
         raise RuntimeError(f"{args[0]} command failed (exit {result.returncode})")
     return result.stdout if binary else result.stdout.strip()
 
@@ -91,7 +104,7 @@ def load_profiles(path):
 class Device:
     def __init__(self, image, row, port):
         self.name = "simufarm-traffic-" + uuid.uuid4().hex
-        self.serial = f"127.0.0.1:{port}"
+        self.serial = f"127.0.0.1:{port}" if port else None
         self.image, self.row, self.port = image, row, port
         self.created = False
 
@@ -118,8 +131,16 @@ class Device:
         )
         if available < 2 * 1024**3 + 1200 * 1024**2:
             raise RuntimeError("Insufficient memory to retain the 2 GiB host reserve")
-        with socket.socket() as probe:
-            probe.bind(("127.0.0.1", self.port))
+        if self.port:
+            try:
+                with socket.socket() as probe:
+                    probe.bind(("127.0.0.1", self.port))
+            except OSError as exc:
+                raise SetupError(
+                    f"ADB port {self.port} is unavailable; omit --adb-port for automatic allocation"
+                ) from exc
+        # Exact per-run UUID name only; ignore absence, never remove other containers.
+        command("docker", "rm", "-f", "-v", self.name, missing_ok=True)
         self.created = True
         command(
             "docker",
@@ -130,7 +151,6 @@ class Device:
             "--label",
             "simufarm.traffic=true",
             "--privileged",
-            "--pid=private",
             "--memory",
             "1200m",
             "--memory-swap",
@@ -138,7 +158,7 @@ class Device:
             "-v",
             "/data",
             "-p",
-            f"127.0.0.1:{self.port}:5555",
+            f"127.0.0.1:{self.port or ''}:5555",
             self.image,
             f"androidboot.redroid_width={r['width_px']}",
             f"androidboot.redroid_height={r['height_px']}",
@@ -148,6 +168,14 @@ class Device:
         command("docker", "start", self.name)
         deadline = time.monotonic() + 180
         time.sleep(15)
+        if not self.port:
+            mapping = command("docker", "port", self.name, "5555/tcp")
+            match = re.fullmatch(r"127\.0\.0\.1:(\d+)", mapping)
+            if not match or not 1 <= int(match.group(1)) <= 65535:
+                raise SetupError("Docker did not provide a loopback ADB port mapping")
+            self.port = int(match.group(1))
+            self.serial = mapping
+        LOG.info("  ADB endpoint %s", self.serial)
         while time.monotonic() < deadline:
             try:
                 command("adb", "connect", self.serial, timeout=5)
@@ -162,16 +190,18 @@ class Device:
     def close(self):
         if self.created:
             try:
-                self.shell("settings", "put", "global", "http_proxy", ":0", timeout=10)
+                if self.serial:
+                    self.shell("settings", "put", "global", "http_proxy", ":0", timeout=10)
             except (RuntimeError, OSError, subprocess.TimeoutExpired):
                 LOG.warning("  proxy reset unavailable; proceeding with container removal")
             # Only our unique container; volumes removed too. Never kill a shared ADB server.
             try:
-                command("docker", "stop", "--time", "30", self.name, timeout=40)
+                command("docker", "stop", "--time", "30", self.name, timeout=40, check=False)
             finally:
-                command("docker", "rm", "-f", "-v", self.name)
+                command("docker", "rm", "-f", "-v", self.name, missing_ok=True)
                 self.created = False
-        command("adb", "disconnect", self.serial, check=False)
+        if self.serial:
+            command("adb", "disconnect", self.serial, check=False)
 
 
 def apk_files(path):
@@ -311,7 +341,9 @@ def main(argv=None):
     parser.add_argument("--delay-max", type=float, default=120)
     parser.add_argument("--csv", type=Path, default=ROOT / "data/devices.csv")
     parser.add_argument("--results", type=Path, default=ROOT / "results/traffic")
-    parser.add_argument("--adb-port", type=int, default=5575)
+    parser.add_argument(
+        "--adb-port", type=int, default=0, help="Host ADB port (default: Docker-assigned)"
+    )
     tool = json.loads((ROOT / "infra/redroid-identity/toolchain.json").read_text())
     parser.add_argument("--image", default=tool["base_image"])
     parser.add_argument(
@@ -327,7 +359,7 @@ def main(argv=None):
             raise ValueError("Require 0 <= delay-min <= delay-max <= 86400")
         if args.limit is not None and args.limit < 1:
             raise ValueError("limit must be positive")
-        if not 1024 <= args.adb_port <= 65535:
+        if args.adb_port != 0 and not 1024 <= args.adb_port <= 65535:
             raise ValueError("Invalid ADB port")
         if args.apk:
             args.apk = args.apk.resolve(strict=True)
