@@ -4,6 +4,7 @@
 import argparse
 import csv
 import fcntl
+import hashlib
 import itertools
 import json
 import logging
@@ -13,6 +14,7 @@ import shlex
 import signal
 import socket
 import subprocess
+import sys
 import tempfile
 import time
 import uuid
@@ -21,6 +23,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
+VERSION = "docker-run-diagnostics-v2"
 
 
 class SetupError(RuntimeError):
@@ -29,6 +32,11 @@ class SetupError(RuntimeError):
 
 class DockerCommandError(SetupError):
     """Docker setup failures abort the batch with actionable daemon diagnostics."""
+
+
+def redact_diagnostic(value):
+    value = re.sub(r"(https?://)[^\s/@]+@", r"\1[redacted]@", value)
+    return re.sub(r"[\x00-\x08\x0b-\x1f\x7f]", "", value).strip()[:8192]
 
 
 def command(*args, timeout=60, binary=False, check=True, missing_ok=False):
@@ -40,12 +48,15 @@ def command(*args, timeout=60, binary=False, check=True, missing_ok=False):
             error = result.stderr.decode(errors="replace") if binary else result.stderr
             if missing_ok and args[1] == "rm" and "no such container" in error.lower():
                 return b"" if binary else ""
-            # Preserve Docker diagnostics, but redact URL credentials and terminal controls.
-            error = re.sub(r"(https?://)[^\s/@]+@", r"\1[redacted]@", error)
-            error = re.sub(r"[\x00-\x08\x0b-\x1f\x7f]", "", error).strip()[:4096]
-            raise DockerCommandError(
-                f"docker {args[1]} failed (exit {result.returncode}): {error or '(empty stderr)'}"
+            output = result.stdout.decode(errors="replace") if binary else result.stdout
+            error = redact_diagnostic(error or output or "(empty stdout/stderr)")
+            # Emit immediately, before callers/cleanup can replace the original exception.
+            print(
+                f"Docker {args[1]} stderr (exit {result.returncode}):\n{error}",
+                file=sys.stderr,
+                flush=True,
             )
+            raise DockerCommandError(f"docker {args[1]} failed (exit {result.returncode}): {error}")
         raise RuntimeError(f"{args[0]} command failed (exit {result.returncode})")
     return result.stdout if binary else result.stdout.strip()
 
@@ -107,6 +118,7 @@ class Device:
         self.serial = f"127.0.0.1:{port}" if port else None
         self.image, self.row, self.port = image, row, port
         self.created = False
+        self.binderfs = None
 
     def shell(self, *args, timeout=30):
         # adb shell joins its arguments remotely: quote once for Android's shell too.
@@ -142,9 +154,10 @@ class Device:
         # Exact per-run UUID name only; ignore absence, never remove other containers.
         command("docker", "rm", "-f", "-v", self.name, missing_ok=True)
         self.created = True
-        command(
+        docker_args = [
             "docker",
-            "create",
+            "run",
+            "-d",
             "--pull=never",
             "--name",
             self.name,
@@ -159,13 +172,19 @@ class Device:
             "/data",
             "-p",
             f"127.0.0.1:{self.port or ''}:5555",
+            *(
+                ["--mount", f"type=bind,src={self.binderfs},dst=/dev/binderfs"]
+                if self.binderfs
+                else []
+            ),
             self.image,
             f"androidboot.redroid_width={r['width_px']}",
             f"androidboot.redroid_height={r['height_px']}",
             f"androidboot.redroid_dpi={r['dpi']}",
             "androidboot.redroid_gpu_mode=guest",
-        )
-        command("docker", "start", self.name)
+        ]
+        LOG.info("  Docker command: %s", redact_diagnostic(shlex.join(docker_args)))
+        command(*docker_args, timeout=120)
         deadline = time.monotonic() + 180
         time.sleep(15)
         if not self.port:
@@ -287,6 +306,7 @@ def execute(args, rows, proxies):
     args.results.mkdir(parents=True, exist_ok=True)
     for index, row in enumerate(rows, 1):
         device = Device(args.image, row, args.adb_port)
+        device.binderfs = getattr(args, "binderfs", None)
         proxy = next(proxy_cycle)
         started = time.monotonic()
         record = {
@@ -346,13 +366,34 @@ def main(argv=None):
         "--adb-port", type=int, default=0, help="Host ADB port (default: Docker-assigned)"
     )
     tool = json.loads((ROOT / "infra/redroid-identity/toolchain.json").read_text())
-    parser.add_argument("--image", default=tool["base_image"])
+    parser.add_argument(
+        "--image",
+        default=tool["requested_tag"],
+        help="Cached image tag or digest (no automatic pull)",
+    )
+    parser.add_argument(
+        "--binderfs",
+        type=Path,
+        help="Optional existing host binderfs path to bind at /dev/binderfs",
+    )
+    parser.add_argument("--version", action="version", version=VERSION)
     parser.add_argument(
         "--dry-run", action="store_true", help="Validate inputs only; no Docker/ADB/network"
     )
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
+    LOG.info(
+        "Traffic bot %s | script=%s | sha256=%s | image=%s",
+        VERSION,
+        Path(__file__).resolve(),
+        hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12],
+        redact_diagnostic(args.image),
+    )
     try:
+        if args.binderfs:
+            args.binderfs = args.binderfs.resolve(strict=True)
+            if not args.binderfs.is_dir() or any(c in str(args.binderfs) for c in ",\n\r"):
+                raise ValueError("--binderfs must be an existing directory without commas/newlines")
         url = urlsplit(args.url)
         if url.scheme not in ("http", "https") or not url.hostname or url.username or url.password:
             raise ValueError("URL must be HTTP(S), without embedded credentials")
