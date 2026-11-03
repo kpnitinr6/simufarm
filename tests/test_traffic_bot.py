@@ -221,3 +221,78 @@ def test_cleanup_reset_failure_still_stops_and_removes():
     assert command.call_args_list[0].args[:2] == ("docker", "stop")
     assert command.call_args_list[1].args == ("docker", "rm", "-f", "-v", device.name)
     assert device.created is False
+
+
+def test_docker_stderr_is_actionable_and_redacted():
+    result = SimpleNamespace(
+        returncode=125,
+        stdout="",
+        stderr="invalid pid mode: private; https://user:secret@registry.example/image",
+    )
+    with (
+        patch.object(bot.subprocess, "run", return_value=result),
+        pytest.raises(bot.DockerCommandError) as caught,
+    ):
+        bot.command("docker", "create", "image")
+    message = str(caught.value)
+    assert "docker create failed (exit 125)" in message
+    assert "invalid pid mode: private" in message
+    assert "secret" not in message
+    assert "[redacted]" in message
+
+
+def test_dynamic_port_and_clean_slate_without_invalid_pid_flag():
+    events = []
+    device = bot.Device("image", {"width_px": 1080, "height_px": 2400, "dpi": 400}, 0)
+
+    def command(*args, **kwargs):
+        events.append(args)
+        return "127.0.0.1:49153" if args[:2] == ("docker", "port") else ""
+
+    with (
+        patch.object(bot, "command", side_effect=command),
+        patch.object(bot.Path, "read_text", return_value="MemAvailable: 8000000 kB"),
+        patch.object(device, "shell", return_value="1"),
+        patch.object(bot.time, "sleep"),
+    ):
+        device.start()
+    create = next(item for item in events if item[:2] == ("docker", "create"))
+    assert "--pid=private" not in create
+    assert "127.0.0.1::5555" in create
+    assert events.index(("docker", "rm", "-f", "-v", device.name)) < events.index(create)
+    assert device.serial == "127.0.0.1:49153"
+    assert ("adb", "connect", device.serial) in events
+
+
+def test_fixed_port_in_use_has_clear_message():
+    device = bot.Device("image", {"width_px": 1080, "height_px": 2400, "dpi": 400}, 5575)
+    with (
+        patch.object(bot, "command", return_value="") as command,
+        patch.object(bot.Path, "read_text", return_value="MemAvailable: 8000000 kB"),
+        patch.object(bot.socket, "socket") as sock,
+    ):
+        sock.return_value.__enter__.return_value.bind.side_effect = OSError("in use")
+        with pytest.raises(bot.SetupError, match="omit --adb-port"):
+            device.start()
+        assert all(call.args[:2] != ("docker", "create") for call in command.call_args_list)
+
+
+def test_missing_container_cleanup_does_not_hide_real_docker_errors():
+    result = SimpleNamespace(
+        returncode=1, stdout="", stderr="Error response from daemon: No such container: test"
+    )
+    with patch.object(bot.subprocess, "run", return_value=result):
+        assert bot.command("docker", "rm", "-f", "test", missing_ok=True) == ""
+        result.stderr = "permission denied while connecting to the Docker daemon"
+        with pytest.raises(bot.DockerCommandError, match="permission denied"):
+            bot.command("docker", "rm", "-f", "test", missing_ok=True)
+
+
+def test_failed_create_cleanup_preserves_original_error(tmp_path):
+    args = SimpleNamespace(results=tmp_path, image="image", adb_port=0, delay_min=60, delay_max=120)
+    with patch.object(bot, "Device") as device:
+        device.return_value.start.side_effect = bot.DockerCommandError("invalid pid mode")
+        with pytest.raises(bot.DockerCommandError, match="invalid pid mode"):
+            bot.execute(args, [{"id": "a"}], [])
+        device.return_value.close.assert_called_once()
+    assert "invalid pid mode" in (tmp_path / "runs.jsonl").read_text()
