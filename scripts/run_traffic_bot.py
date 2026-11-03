@@ -23,13 +23,17 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "install-timeout-v4"
+VERSION = "install-recovery-v5"
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 
 
 class SetupError(RuntimeError):
     """An invariant setup failure that should stop the batch after cleanup."""
+
+
+class InstallTimeout(RuntimeError):
+    """A stalled device should be discarded and the sequential batch continued."""
 
 
 class DockerCommandError(SetupError):
@@ -208,6 +212,19 @@ class Device:
             time.sleep(2)
         raise TimeoutError("Android boot exceeded 180 seconds")
 
+    def recover_install_timeout(self):
+        LOG.warning("  restarting ADB and force-removing the stalled container")
+        try:
+            command("adb", "kill-server", timeout=10, check=False)
+        except (OSError, RuntimeError, subprocess.TimeoutExpired):
+            LOG.warning("  adb kill-server did not complete; proceeding with forced removal")
+        if self.created:
+            # If removal fails, abort rather than overlap a still-running device.
+            command("docker", "rm", "-f", "-v", self.name, timeout=30, missing_ok=True)
+            self.created = False
+        self.serial = None
+        return {"adb_server_reset_attempted": True, "forced_container_removal": True}
+
     def close(self):
         if self.created:
             try:
@@ -238,11 +255,23 @@ def apk_files(path):
     return [path]
 
 
-def install_apk(device, path, install_timeout=900):
+def install_apk(device, path, install_timeout=300):
     files = apk_files(path)
-    command("adb", "-s", device.serial, "wait-for-device", timeout=30)
-    if device.shell("getprop", "sys.boot_completed") != "1":
-        raise SetupError("Android boot is incomplete; refusing APK installation")
+    try:
+        command("adb", "-s", device.serial, "wait-for-device", timeout=30)
+    except subprocess.TimeoutExpired as exc:
+        raise InstallTimeout("ADB readiness timed out before APK installation") from exc
+    for attempt in range(3):
+        try:
+            if device.shell("getprop", "sys.boot_completed", timeout=10) == "1":
+                break
+        except (RuntimeError, subprocess.TimeoutExpired):
+            pass
+        if attempt < 2:
+            LOG.warning("  Android not boot-ready (check %d/3); retrying in 10s", attempt + 1)
+            time.sleep(10)
+    else:
+        raise InstallTimeout("Android boot is incomplete after 3 checks; skipping device")
     time.sleep(2)
     # aapt reads the package from the base, never an arbitrary configuration split.
     badging = command("aapt", "dump", "badging", str(files[0]))
@@ -263,7 +292,7 @@ def install_apk(device, path, install_timeout=900):
             timeout=install_timeout,
         )
     except subprocess.TimeoutExpired as exc:
-        raise SetupError(f"APK installation timed out after {install_timeout}s") from exc
+        raise InstallTimeout(f"APK installation timed out after {install_timeout}s") from exc
     if "Success" not in installed:
         raise SetupError("APK installation failed")
     return match.group(1)
@@ -353,6 +382,11 @@ def execute(args, rows, proxies):
             record["actual_android_release"] = device.shell("getprop", "ro.build.version.release")
             record["swipes"] = visit(device, args, proxy, rng)
             record["status"] = "passed"
+        except InstallTimeout as exc:
+            failures += 1
+            record["error"] = str(exc)
+            LOG.error("  %s; recovering and skipping this device", exc)
+            record["recovery"] = device.recover_install_timeout()
         except SetupError as exc:
             record["error"] = str(exc)
             LOG.error("  %s", exc)
@@ -387,8 +421,8 @@ def main(argv=None):
     parser.add_argument(
         "--install-timeout",
         type=int,
-        default=900,
-        help="APK install timeout in seconds, single or split (default: 900)",
+        default=300,
+        help="APK install timeout in seconds, single or split (default: 300)",
     )
     parser.add_argument("--proxy-file", type=Path)
     parser.add_argument("--limit", type=int)

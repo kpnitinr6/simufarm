@@ -1,7 +1,7 @@
 import importlib.util
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import call, patch
 
 import pytest
 
@@ -127,7 +127,7 @@ def test_setup_error_cleans_and_aborts(tmp_path):
 
 
 @pytest.mark.parametrize("split", [False, True])
-@pytest.mark.parametrize("install_timeout", [900, 1200])
+@pytest.mark.parametrize("install_timeout", [300, 1200])
 def test_apk_install_mode_and_boot_order(tmp_path, split, install_timeout, caplog):
     base = tmp_path / "base.apk"
     base.touch()
@@ -162,7 +162,7 @@ def test_apk_install_mode_and_boot_order(tmp_path, split, install_timeout, caplo
         )
     assert events[0] == ("adb", "-s", device.serial, "wait-for-device")
     assert events[1] == ("sleep", 2)
-    shell.assert_called_once_with("getprop", "sys.boot_completed")
+    shell.assert_called_once_with("getprop", "sys.boot_completed", timeout=10)
     assert events[2] == ("aapt", "dump", "badging", str(base))
     expected = (
         "adb",
@@ -185,10 +185,16 @@ def test_incomplete_boot_prevents_install(tmp_path):
     apk = tmp_path / "base.apk"
     apk.touch()
     device = bot.Device("image", {"id": "test"}, 5575)
-    with patch.object(bot, "command") as command, patch.object(device, "shell", return_value="0"):
-        with pytest.raises(bot.SetupError, match="boot is incomplete"):
-            bot.install_apk(device, apk)
-        command.assert_called_once_with("adb", "-s", device.serial, "wait-for-device", timeout=30)
+    with (
+        patch.object(bot, "command") as command,
+        patch.object(device, "shell", return_value="0") as shell,
+        patch.object(bot.time, "sleep") as sleep,
+        pytest.raises(bot.InstallTimeout, match="boot is incomplete"),
+    ):
+        bot.install_apk(device, apk)
+    assert shell.call_count == 3
+    assert sleep.call_args_list == [call(10), call(10)]
+    command.assert_called_once_with("adb", "-s", device.serial, "wait-for-device", timeout=30)
 
 
 @pytest.mark.parametrize("csv_mode", [False, True])
@@ -371,7 +377,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "install-timeout-v4" in capsys.readouterr().out
+    assert "install-recovery-v5" in capsys.readouterr().out
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -490,6 +496,97 @@ def test_install_timeout_reports_specific_deadline(tmp_path):
         patch.object(bot, "command", side_effect=command),
         patch.object(device, "shell", return_value="1"),
         patch.object(bot.time, "sleep"),
-        pytest.raises(bot.SetupError, match="APK installation timed out after 900s"),
+        pytest.raises(bot.InstallTimeout, match="APK installation timed out after 300s"),
     ):
         bot.install_apk(device, apk)
+
+
+def test_install_boot_checks_retry_then_install(tmp_path):
+    apk = tmp_path / "base.apk"
+    apk.touch()
+    device = bot.Device("image", {"id": "test"}, 5575)
+
+    def command(*args, **kwargs):
+        return "package: name='com.android.chrome'" if args[0] == "aapt" else "Success"
+
+    with (
+        patch.object(bot, "command", side_effect=command),
+        patch.object(device, "shell", side_effect=["0", "0", "1"]) as shell,
+        patch.object(bot.time, "sleep") as sleep,
+    ):
+        assert bot.install_apk(device, apk) == "com.android.chrome"
+    assert shell.call_count == 3
+    assert sleep.call_args_list == [call(10), call(10), call(2)]
+
+
+def test_hung_kill_server_cannot_prevent_forced_removal():
+    device = bot.Device("image", {"id": "test"}, 5575)
+    device.created = True
+    events = []
+
+    def command(*args, **kwargs):
+        events.append((args, kwargs))
+        if args == ("adb", "kill-server"):
+            raise bot.subprocess.TimeoutExpired(args, kwargs["timeout"])
+        return ""
+
+    with patch.object(bot, "command", side_effect=command):
+        recovery = device.recover_install_timeout()
+        device.close()
+    assert events[0] == (("adb", "kill-server"), {"timeout": 10, "check": False})
+    assert events[1] == (
+        ("docker", "rm", "-f", "-v", device.name),
+        {"timeout": 30, "missing_ok": True},
+    )
+    assert len(events) == 2
+    assert device.serial is None and device.created is False
+    assert recovery["forced_container_removal"] is True
+
+
+def test_install_stall_recovers_before_booting_next_device(tmp_path):
+    events = []
+
+    class FakeDevice:
+        def __init__(self, image, row, port):
+            self.row = row
+
+        def start(self):
+            events.append("start-" + self.row["id"])
+
+        def shell(self, *args):
+            return "14"
+
+        def recover_install_timeout(self):
+            events.append("recover-" + self.row["id"])
+            return {"forced_container_removal": True}
+
+        def close(self):
+            events.append("close-" + self.row["id"])
+
+    args = SimpleNamespace(results=tmp_path, image="image", adb_port=0, delay_min=0, delay_max=0)
+    with (
+        patch.object(bot, "Device", FakeDevice),
+        patch.object(bot, "visit", side_effect=[bot.InstallTimeout("APK stalled"), 3]),
+        patch.object(bot.time, "sleep"),
+    ):
+        assert bot.execute(args, [{"id": "a"}, {"id": "b"}], []) == 1
+    assert events == ["start-a", "recover-a", "close-a", "start-b", "close-b"]
+    records = [bot.json.loads(line) for line in (tmp_path / "runs.jsonl").read_text().splitlines()]
+    assert records[0]["status"] == "failed"
+    assert records[0]["recovery"]["forced_container_removal"] is True
+    assert records[1]["status"] == "passed"
+
+
+def test_failed_force_removal_aborts_without_overlapping_devices(tmp_path):
+    args = SimpleNamespace(results=tmp_path, image="image", adb_port=0, delay_min=0, delay_max=0)
+    with (
+        patch.object(bot, "Device") as device,
+        patch.object(bot, "visit", side_effect=bot.InstallTimeout("stalled")),
+        pytest.raises(bot.DockerCommandError, match="remove failed"),
+    ):
+        device.return_value.shell.return_value = "14"
+        device.return_value.recover_install_timeout.side_effect = bot.DockerCommandError(
+            "remove failed"
+        )
+        bot.execute(args, [{"id": "a"}, {"id": "b"}], [])
+    assert device.call_count == 1
