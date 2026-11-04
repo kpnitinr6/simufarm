@@ -24,7 +24,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "vm-memory-setup-v7"
+VERSION = "teardown-recovery-v8"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
@@ -300,12 +300,24 @@ class Device:
                 LOG.warning("  proxy reset unavailable; proceeding with container removal")
             # Only our unique container; volumes removed too. Never kill a shared ADB server.
             try:
-                command("docker", "stop", "--time", "30", self.name, timeout=40, check=False)
+                command("docker", "stop", "--time", "30", self.name, timeout=40)
+            except (RuntimeError, OSError, subprocess.TimeoutExpired):
+                LOG.warning("Container froze during teardown; forcing kill.")
+                try:
+                    command("docker", "kill", self.name, timeout=10, check=False)
+                except (RuntimeError, OSError, subprocess.TimeoutExpired):
+                    LOG.warning("  Docker kill unavailable; proceeding with forced removal")
             finally:
-                command("docker", "rm", "-f", "-v", self.name, missing_ok=True)
+                # A successful removal resolves graceful-stop/kill failures. If this fails,
+                # stop the batch rather than start a second container alongside the first.
+                command("docker", "rm", "-f", "-v", self.name, timeout=30, missing_ok=True)
                 self.created = False
         if self.serial:
-            command("adb", "disconnect", self.serial, check=False)
+            try:
+                command("adb", "disconnect", self.serial, timeout=10, check=False)
+            except (RuntimeError, OSError, subprocess.TimeoutExpired):
+                LOG.warning("  ADB disconnect unavailable; container already removed")
+            self.serial = None
 
 
 def apk_files(path):

@@ -386,7 +386,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "vm-memory-setup-v7" in capsys.readouterr().out
+    assert "teardown-recovery-v8" in capsys.readouterr().out
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -797,3 +797,100 @@ def test_pagecache_clear_failure_is_caught_and_visible(failure, caplog):
     assert command.call_count == 2
     assert "CRITICAL: Sudo permissions missing." in caplog.text
     assert "sudo bash scripts/setup_vm_memory.sh" in caplog.text
+
+
+def test_stop_timeout_kills_removes_and_returns(caplog):
+    device = bot.Device("image", {"id": "test"}, 5575)
+    device.created = True
+    events = []
+
+    def command(*args, **kwargs):
+        events.append((args, kwargs))
+        if args[:2] == ("docker", "stop"):
+            raise bot.subprocess.TimeoutExpired(args, 40)
+        return ""
+
+    with patch.object(device, "shell"), patch.object(bot, "command", side_effect=command):
+        device.close()
+    assert [event[0][:2] for event in events] == [
+        ("docker", "stop"),
+        ("docker", "kill"),
+        ("docker", "rm"),
+        ("adb", "disconnect"),
+    ]
+    assert events[1][1]["timeout"] == 10
+    assert events[2][0] == ("docker", "rm", "-f", "-v", device.name)
+    assert events[2][1]["timeout"] == 30
+    assert device.created is False and device.serial is None
+    assert "Container froze during teardown; forcing kill." in caplog.text
+
+
+def test_hung_stop_kill_and_disconnect_cannot_abort_after_removal():
+    device = bot.Device("image", {"id": "test"}, 5575)
+    device.created = True
+    events = []
+
+    def command(*args, **kwargs):
+        events.append(args[:2])
+        if args[:2] != ("docker", "rm"):
+            raise bot.subprocess.TimeoutExpired(args, kwargs["timeout"])
+        return ""
+
+    with patch.object(device, "shell"), patch.object(bot, "command", side_effect=command):
+        device.close()
+    assert events == [
+        ("docker", "stop"),
+        ("docker", "kill"),
+        ("docker", "rm"),
+        ("adb", "disconnect"),
+    ]
+    assert device.created is False
+
+
+def test_teardown_timeout_does_not_block_next_device(tmp_path):
+    events = []
+
+    def start(device):
+        device.created = True
+        events.append(("start", device.row["id"]))
+
+    def command(*args, **kwargs):
+        if args[:2] == ("docker", "stop"):
+            raise bot.subprocess.TimeoutExpired(args, 40)
+        if args[:2] == ("docker", "rm"):
+            events.append(("remove", args[-1]))
+        return ""
+
+    args = SimpleNamespace(results=tmp_path, image="image", adb_port=5575, delay_min=0, delay_max=0)
+    with (
+        patch.object(bot.Device, "start", start),
+        patch.object(bot.Device, "shell", return_value="14"),
+        patch.object(bot, "command", side_effect=command),
+        patch.object(bot, "visit", return_value=3),
+        patch.object(bot.time, "sleep"),
+    ):
+        assert bot.execute(args, [{"id": "a"}, {"id": "b"}], []) == 0
+    assert events[0] == ("start", "a")
+    assert events[1][0] == "remove"
+    assert events[2] == ("start", "b")
+    assert events[3][0] == "remove"
+
+
+def test_forced_removal_failure_still_prevents_overlap():
+    device = bot.Device("image", {"id": "test"}, 5575)
+    device.created = True
+
+    def command(*args, **kwargs):
+        if args[:2] == ("docker", "stop"):
+            raise bot.subprocess.TimeoutExpired(args, 40)
+        if args[:2] == ("docker", "rm"):
+            raise bot.DockerCommandError("cannot remove")
+        return ""
+
+    with (
+        patch.object(device, "shell"),
+        patch.object(bot, "command", side_effect=command),
+        pytest.raises(bot.DockerCommandError, match="cannot remove"),
+    ):
+        device.close()
+    assert device.created is True
