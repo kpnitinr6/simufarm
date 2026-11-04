@@ -24,9 +24,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "memory-hygiene-v6"
-CACHE_HELPER = Path("/usr/local/sbin/simufarm-drop-caches")
-CACHE_WARNING_SHOWN = False
+VERSION = "vm-memory-setup-v7"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
@@ -143,29 +141,27 @@ def memory_snapshot():
 
 
 def memory_hygiene(enabled=True):
-    global CACHE_WARNING_SHOWN
     before = memory_snapshot()
     result = {"before_mib": before, "status": "disabled"}
     if not enabled:
         return result
     try:
-        if os.geteuid() == 0:
-            task = ["/bin/sh", "-c", "/usr/bin/sync && echo 3 > /proc/sys/vm/drop_caches"]
-        elif CACHE_HELPER.is_file():
-            task = ["/usr/bin/sudo", "-n", str(CACHE_HELPER)]
-        else:
-            raise RuntimeError("cache helper is not installed")
-        # GNU timeout also bounds the helper's process group, including sync/sudo children.
-        command("/usr/bin/timeout", "--kill-after=5s", "30s", *task, timeout=40)
+        prefix = [] if os.geteuid() == 0 else ["/usr/bin/sudo", "-n"]
+        tasks = [
+            [*prefix, "/usr/bin/sync"],
+            [*prefix, "/bin/sh", "-c", "echo 1 > /proc/sys/vm/drop_caches"],
+        ]
+        # Bound each operation and its process group, including sudo children.
+        for task in tasks:
+            command("/usr/bin/timeout", "--kill-after=5s", "30s", *task, timeout=40)
         result["status"] = "completed"
     except (RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
         result["status"] = "unavailable"
         result["error"] = type(exc).__name__
-        if not CACHE_WARNING_SHOWN:
-            LOG.warning(
-                "  cache cleanup unavailable; run as root or install the dedicated sudo helper (see README)"
-            )
-            CACHE_WARNING_SHOWN = True
+        LOG.critical(
+            "CRITICAL: Sudo permissions missing. Please run 'sudo bash scripts/setup_vm_memory.sh' inside the VM once."
+        )
+        LOG.error("  cache cleanup failed: %s", exc)
     result["after_mib"] = memory_snapshot()
     LOG.info(
         "  memory available: %s -> %s MiB; cache cleanup %s",

@@ -1,4 +1,5 @@
 import importlib.util
+import shutil
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import call, patch
@@ -385,7 +386,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "memory-hygiene-v6" in capsys.readouterr().out
+    assert "vm-memory-setup-v7" in capsys.readouterr().out
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -658,25 +659,31 @@ def test_root_cleanup_is_bounded_and_measures_memory():
         patch.object(bot, "command") as command,
     ):
         result = REAL_MEMORY_HYGIENE()
-    args = command.call_args.args
-    assert args[:4] == ("/usr/bin/timeout", "--kill-after=5s", "30s", "/bin/sh")
-    assert args[-1] == "/usr/bin/sync && echo 3 > /proc/sys/vm/drop_caches"
-    assert command.call_args.kwargs["timeout"] == 40
+    assert command.call_count == 2
+    assert command.call_args_list[0].args[3:] == ("/usr/bin/sync",)
+    assert command.call_args_list[1].args[3:] == (
+        "/bin/sh",
+        "-c",
+        "echo 1 > /proc/sys/vm/drop_caches",
+    )
+    assert all(item.kwargs["timeout"] == 40 for item in command.call_args_list)
     assert result["status"] == "completed"
     assert result["after_mib"]["MemAvailable"] == 3900
 
 
-def test_nonroot_missing_helper_never_prompts_for_password():
+def test_nonroot_sudo_failure_has_visible_setup_instruction(caplog):
     with (
         patch.object(bot.os, "geteuid", return_value=1000),
-        patch.object(bot.Path, "is_file", return_value=False),
         patch.object(bot, "memory_snapshot", return_value={"MemAvailable": 4000}),
-        patch.object(bot, "CACHE_WARNING_SHOWN", False),
-        patch.object(bot, "command") as command,
+        patch.object(bot, "command", side_effect=RuntimeError("permission denied")) as command,
     ):
         result = REAL_MEMORY_HYGIENE()
     assert result["status"] == "unavailable"
-    command.assert_not_called()
+    assert command.call_args.args[3:] == ("/usr/bin/sudo", "-n", "/usr/bin/sync")
+    assert (
+        "CRITICAL: Sudo permissions missing. Please run 'sudo bash scripts/setup_vm_memory.sh' inside the VM once."
+        in caplog.text
+    )
 
 
 def test_helper_rejects_arguments_without_dropping_host_caches():
@@ -713,7 +720,7 @@ def test_persistent_memory_pressure_does_not_skip_through_batch(tmp_path):
     assert all(item.args[:2] != ("docker", "run") for item in command.call_args_list)
 
 
-def test_nonroot_cleanup_uses_only_noninteractive_fixed_helper():
+def test_nonroot_cleanup_uses_noninteractive_sudo_sync_and_pagecache_only():
     with (
         patch.object(bot.os, "geteuid", return_value=1000),
         patch.object(bot.Path, "is_file", return_value=True),
@@ -721,9 +728,72 @@ def test_nonroot_cleanup_uses_only_noninteractive_fixed_helper():
         patch.object(bot, "command") as command,
     ):
         result = REAL_MEMORY_HYGIENE()
-    assert command.call_args.args[3:] == (
+    assert command.call_args_list[0].args[3:] == ("/usr/bin/sudo", "-n", "/usr/bin/sync")
+    assert command.call_args_list[1].args[3:] == (
         "/usr/bin/sudo",
         "-n",
-        "/usr/local/sbin/simufarm-drop-caches",
+        "/bin/sh",
+        "-c",
+        "echo 1 > /proc/sys/vm/drop_caches",
     )
     assert result["status"] == "completed"
+
+
+def test_vm_setup_rejects_nonroot_without_mutating_system():
+    if bot.os.geteuid() == 0:
+        pytest.skip("Root environment cannot exercise nonroot entry guard")
+    script = bot.ROOT / "scripts/setup_vm_memory.sh"
+    result = bot.subprocess.run(
+        ["/bin/bash", str(script)], capture_output=True, text=True, check=False
+    )
+    assert result.returncode == 1
+    assert "Run this setup as root" in result.stderr
+    assert "root console/root shell" in result.stderr
+
+
+def test_declared_sudoers_rule_passes_real_visudo(tmp_path):
+    visudo = shutil.which("visudo") or (
+        "/usr/sbin/visudo" if Path("/usr/sbin/visudo").exists() else None
+    )
+    if visudo is None:
+        pytest.skip("visudo is not installed on this test host")
+    source = (bot.ROOT / "scripts/setup_vm_memory.sh").read_text()
+    match = bot.re.search(r"^readonly RULE='([^']+)'$", source, bot.re.MULTILINE)
+    assert match
+    candidate = tmp_path / "simufarm-cache"
+    candidate.write_text(match.group(1) + "\n")
+    candidate.chmod(0o440)
+    result = bot.subprocess.run(
+        [visudo, "-cf", str(candidate)], capture_output=True, text=True, check=False
+    )
+    assert result.returncode == 0, result.stderr
+
+
+def test_vm_setup_bash_syntax():
+    result = bot.subprocess.run(
+        ["/bin/bash", "-n", str(bot.ROOT / "scripts/setup_vm_memory.sh")],
+        capture_output=True,
+        check=False,
+    )
+    assert result.returncode == 0
+
+
+@pytest.mark.parametrize(
+    "failure",
+    [
+        RuntimeError("sudo denied"),
+        bot.subprocess.TimeoutExpired(["sudo"], 30),
+        FileNotFoundError("sudo missing"),
+    ],
+)
+def test_pagecache_clear_failure_is_caught_and_visible(failure, caplog):
+    with (
+        patch.object(bot.os, "geteuid", return_value=1000),
+        patch.object(bot, "memory_snapshot", return_value={"MemAvailable": 4000}),
+        patch.object(bot, "command", side_effect=["", failure]) as command,
+    ):
+        result = REAL_MEMORY_HYGIENE()
+    assert result["status"] == "unavailable"
+    assert command.call_count == 2
+    assert "CRITICAL: Sudo permissions missing." in caplog.text
+    assert "sudo bash scripts/setup_vm_memory.sh" in caplog.text
