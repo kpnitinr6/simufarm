@@ -8,4 +8,4 @@ if [ "$(/usr/bin/id -u)" -ne 0 ]; then
     exit 77
 fi
 /usr/bin/sync
-printf '3\n' > /proc/sys/vm/drop_caches
+printf '1\n' > /proc/sys/vm/drop_caches

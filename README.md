@@ -35,6 +35,20 @@ Replace the UUID and paths with your own. Omit --execute for a plan without VM/S
 
 For HTML previews, run `npm ci`, `npm run build`, then `npm run dev`; open http://127.0.0.1:5173. Device pages under /simulators/ expose **Enable interactive chrome**. The catalog cards remain static.
 
+## Linux VM Setup
+
+### **REQUIRED: Enable memory cleanup before running the traffic bot**
+
+**REQUIRED**: Before running the traffic bot, you MUST run `sudo bash scripts/setup_vm_memory.sh` once to enable memory cleanup.
+
+```sh
+sudo bash scripts/setup_vm_memory.sh
+```
+
+Run this inside the Ubuntu VM from the repository directory. **If `simufarm` has no working sudo access and no password, the first invocation must use an existing root console/root shell: `bash scripts/setup_vm_memory.sh`.** Sudo cannot bootstrap its own permissions. After that one root invocation, the setup command and memory cleanup work without a password.
+
+The setup installs `simufarm ALL=(ALL) NOPASSWD: ALL` in `/etc/sudoers.d/simufarm-cache` with root ownership/mode 0440 and installs the root-owned cache helper. This grants `simufarm` full passwordless sudo, as configured for this dedicated test VM. It validates sudoers before activation, rolls back the policy if verification fails, and verifies a harmless `sudo -n true` as `simufarm`. The files persist across normal reboots; no reboot is needed for activation. Running setup again is supported. The setup itself does not drop caches or reboot the VM.
+
 ## Sequential Traffic Bot
 
 Inside the prepared **Linux VM**, use the standard-library runner for sequential URL/scroll/screenshot tests on a site you control or are authorized to test:
@@ -77,35 +91,15 @@ For a full 932-row batch the default inter-scenario delays alone take approximat
 
 ### Memory hygiene on the Linux VM
 
-After each successful or failed teardown, the runner attempts `sync` plus `drop_caches=3`, logs available memory before/after, and records memory/cache/reclaimable/unreclaimable slab measurements in `runs.jsonl`. Root runs perform the fixed command directly; ordinary users use the dedicated helper below with non-interactive sudo. Cleanup is bounded to 30 seconds plus a 5-second termination grace period. A permission/setup failure is logged and does not wait for a password. `--skip-cache-cleanup` disables cache dropping.
+After each successful or failed teardown, the runner executes `sync` followed by `echo 1 > /proc/sys/vm/drop_caches`, clearing clean pagecache only. Root runs execute directly; ordinary users use `sudo -n` for both commands. Each operation is bounded to 30 seconds plus a 5-second termination grace period. Failures are caught, emit the prominent setup instruction, and never wait for a password. See the **required Linux VM setup** above. `--skip-cache-cleanup` disables cache dropping.
 
-One-time setup **inside Ubuntu**, using an administrator account (replace `simufarm` in the sudoers entry if your runtime user differs):
-
-```sh
-sudo install -o root -g root -m 0755 scripts/simufarm-drop-caches /usr/local/sbin/simufarm-drop-caches
-sudo visudo -f /etc/sudoers.d/simufarm-drop-caches
-```
-
-Add exactly this entry; the `""` restricts it to no arguments:
-
-```sudoers
-simufarm ALL=(root) NOPASSWD: /usr/local/sbin/simufarm-drop-caches ""
-```
-
-Then validate the file:
-
-```sh
-sudo chmod 0440 /etc/sudoers.d/simufarm-drop-caches
-sudo visudo -cf /etc/sudoers.d/simufarm-drop-caches
-```
-
-The installed helper and its parent directories must stay root-owned and unwritable by the runtime user. This grants the fixed cleanup operation only. The bot never edits sudoers, changes Docker privileges, or reboots the VM.
+The runner logs available memory before/after and records memory/cache/reclaimable/unreclaimable slab measurements in `runs.jsonl`. No claim is made that a cache drop always resolves memory pressure.
 
 Before each launch, memory pressure causes a warning, cleanup attempt and a 30-second wait, with `--memory-wait-retries 3` by default (four checks, up to 90 seconds of waits). Persistent pressure stops the batch instead of rapidly skipping the remaining rows. The threshold is **3248 MiB**, preserving the existing 2048 MiB host reserve after the 1200 MiB container allowance; this is stricter than a 2500 MiB floor. The measurement is `/proc/meminfo`'s `MemAvailable`, the same field used by `free -m`, which already accounts for reclaimable cache. Dropping caches does not free live process allocations or unreclaimable slab and can increase subsequent disk I/O. [Linux memory reporting](https://www.kernel.org/doc/html/v6.15/filesystems/proc.html), [cache dropping semantics](https://kernel.org/doc/html/v6.7/admin-guide/sysctl/vm.html).
 
 ### Diagnosing Docker startup
 
-The startup banner shows `memory-hygiene-v6`, the resolved script path, its SHA-256 prefix and selected image. Verify `python3 scripts/run_traffic_bot.py --version` shows this marker after pulling. The older bare `docker command failed (exit 125)` message is not emitted by this version.
+The startup banner shows `vm-memory-setup-v7`, the resolved script path, its SHA-256 prefix and selected image. Verify `python3 scripts/run_traffic_bot.py --version` shows this marker after pulling. The older bare `docker command failed (exit 125)` message is not emitted by this version.
 
 The runner prints the exact generated `docker run -d --privileged ...` command and, on failure, Docker's captured stderr immediately (falling back to stdout when stderr is empty). Credentials in HTTP URLs are redacted. The default is the cached `redroid/redroid:14.0.0_64only-latest` tag; no image is silently pulled. Disposable `/data` uses an anonymous Docker volume. APK paths such as `./chrome` are **never Docker mounts**; files are installed using ADB after Android boots. Proxy settings are likewise applied through ADB, not Docker environment variables.
 
@@ -115,7 +109,7 @@ The default uses Redroid's privileged startup with no host binderfs bind, matchi
 
 Tested on a Mac Mini with16GiB RAM and an external-drive UTM Ubuntu22.04 ARM64 VM allocated **4CPU /8GiB**. The configured Redroid planning ceiling is **5concurrent containers**, reserving2GiB for Ubuntu. Five-way workload capacity is not benchmarked. Android14 first boots were10.158s/16.854s; restart boots9.424s/9.254s; after-restart Docker memory625.6MiB/610.5MiB. The local Appium sample also passed. [Capacity actuals](docs/CAPACITY.md).
 
-SSH uses localhost2222, not an Android/Appium endpoint. ADB and automation services bind to guest loopback and are accessed through distinct SSH tunnels. The VM uses the stock Binder/ashmem modules and binderfs; Redroid requires no KVM. Ordinary SSH permissions are unchanged: no unrestricted passwordless sudo or Docker-group grant was added.
+SSH uses localhost2222, not an Android/Appium endpoint. ADB and automation services bind to guest loopback and are accessed through distinct SSH tunnels. The VM uses the stock Binder/ashmem modules and binderfs; Redroid requires no KVM. The required memory setup intentionally grants `simufarm` full passwordless sudo inside the dedicated VM. It does not alter SSH authentication or Docker-group membership.
 
 ## Limitations
 
