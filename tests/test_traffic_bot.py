@@ -104,7 +104,7 @@ def test_success_screenshot_and_swipe_count(tmp_path):
     with (
         patch.object(device, "shell", side_effect=response) as shell,
         patch.object(bot, "command", return_value=png),
-        patch.object(bot.time, "sleep"),
+        patch.object(bot.time, "sleep") as sleep,
     ):
         count = bot.visit(device, args, None, bot.random.Random(1))
     assert next(call.args for call in shell.call_args_list if call.args[:2] == ("am", "start")) == (
@@ -117,6 +117,11 @@ def test_success_screenshot_and_swipe_count(tmp_path):
         "https://example.com",
     )
     assert count == 3
+    waits = [entry.args[0] for entry in sleep.call_args_list]
+    assert len(waits) == count + 1
+    assert waits[0] == 5
+    assert all(3 <= seconds <= 5 for seconds in waits[1:-1])
+    assert 10 <= waits[-1] <= 20
     assert (tmp_path / "test.png").read_bytes() == png
 
 
@@ -386,7 +391,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "teardown-recovery-v8" in capsys.readouterr().out
+    assert "url-queue-v9" in capsys.readouterr().out
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -894,3 +899,44 @@ def test_forced_removal_failure_still_prevents_overlap():
     ):
         device.close()
     assert device.created is True
+
+
+def test_url_queue_cycles_in_order_even_after_a_failed_visit(tmp_path):
+    queue = tmp_path / "urls.txt"
+    queue.write_text("# posts\nhttps://example.com/post/one\n\nhttps://example.com/post/two\n")
+    urls = bot.load_target_urls(queue)
+    args = SimpleNamespace(
+        results=tmp_path,
+        image="image",
+        adb_port=0,
+        delay_min=0,
+        delay_max=0,
+        url="https://example.com/fallback",
+    )
+    visits = []
+
+    def visit(device, visit_args, proxy, rng):
+        visits.append(visit_args.url)
+        if len(visits) == 2:
+            raise RuntimeError("visit failed")
+        return 3
+
+    with (
+        patch.object(bot, "Device") as device,
+        patch.object(bot, "visit", side_effect=visit),
+        patch.object(bot.time, "sleep"),
+    ):
+        device.return_value.shell.return_value = "14"
+        assert bot.execute(args, [{"id": str(i)} for i in range(5)], [], urls) == 1
+
+    assert visits == [urls[0], urls[1], urls[0], urls[1], urls[0]]
+    assert args.url == "https://example.com/fallback"
+
+
+@pytest.mark.parametrize("contents", ["# empty\n", "https://example.com/one\nfile:///tmp/two\n"])
+def test_invalid_url_file_stops_before_docker(tmp_path, contents):
+    queue = tmp_path / "urls.txt"
+    queue.write_text(contents)
+    with patch.object(bot, "command") as command:
+        assert bot.main(["--url-file", str(queue), "--url", "https://example.com/fallback"]) == 1
+        command.assert_not_called()

@@ -2,6 +2,7 @@
 """Sequential, screen-geometry traffic scenarios on stock Redroid (no identity promotion)."""
 
 import argparse
+import copy
 import csv
 import fcntl
 import hashlib
@@ -24,7 +25,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "teardown-recovery-v8"
+VERSION = "url-queue-v9"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
@@ -388,6 +389,32 @@ def configure_chrome(device):
         raise SetupError("Chrome command-line flags did not persist; refusing URL launch")
 
 
+def validate_target_url(value):
+    url = urlsplit(value)
+    if url.scheme not in ("http", "https") or not url.hostname or url.username is not None:
+        raise ValueError("URL must be HTTP(S), without embedded credentials")
+    if any(character.isspace() for character in value):
+        raise ValueError("URL must not contain whitespace")
+    # Validate the port before starting a device.
+    _ = url.port
+    return value
+
+
+def load_target_urls(path):
+    urls = []
+    for number, line in enumerate(path.read_text(encoding="utf-8-sig").splitlines(), 1):
+        value = line.strip()
+        if not value or value.startswith("#"):
+            continue
+        try:
+            urls.append(validate_target_url(value))
+        except ValueError as exc:
+            raise ValueError(f"Invalid target URL on line {number}: {exc}") from exc
+    if not urls:
+        raise ValueError("URL file must contain at least one target URL")
+    return urls
+
+
 def visit(device, args, proxy, rng):
     LOG.info("  setting Android proxy")
     proxy = proxy_address(proxy) if proxy else None
@@ -413,7 +440,7 @@ def visit(device, args, proxy, rng):
     LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
-    for _ in range(swipes):
+    for index in range(swipes):
         x = rng.randint(int(width * 0.35), int(width * 0.65))
         device.shell(
             "input",
@@ -424,8 +451,9 @@ def visit(device, args, proxy, rng):
             int(height * rng.uniform(0.2, 0.35)),
             rng.randint(300, 800),
         )
-        time.sleep(rng.uniform(0.5, 1.5))
-    time.sleep(10)
+        if index + 1 < swipes:
+            time.sleep(rng.uniform(3, 5))
+    time.sleep(rng.uniform(10, 20))
     LOG.info("  capturing screenshot")
     image = command("adb", "-s", device.serial, "exec-out", "screencap", "-p", binary=True)
     if not image.startswith(b"\x89PNG\r\n\x1a\n"):
@@ -435,12 +463,16 @@ def visit(device, args, proxy, rng):
     return swipes
 
 
-def execute(args, rows, proxies):
+def execute(args, rows, proxies, urls=None):
     rng = random.Random()
     failures = 0
     proxy_cycle = itertools.cycle(proxies or [None])
     args.results.mkdir(parents=True, exist_ok=True)
     for index, row in enumerate(rows, 1):
+        visit_args = args
+        if urls:
+            visit_args = copy.copy(args)
+            visit_args.url = urls[(index - 1) % len(urls)]
         device = Device(args.image, row, args.adb_port)
         device.binderfs = getattr(args, "binderfs", None)
         device.memory_wait_retries = getattr(args, "memory_wait_retries", 3)
@@ -460,7 +492,7 @@ def execute(args, rows, proxies):
             (args.results / (row["id"] + ".png")).unlink(missing_ok=True)
             device.start()
             record["actual_android_release"] = device.shell("getprop", "ro.build.version.release")
-            record["swipes"] = visit(device, args, proxy, rng)
+            record["swipes"] = visit(device, visit_args, proxy, rng)
             record["status"] = "passed"
         except InstallTimeout as exc:
             failures += 1
@@ -501,7 +533,8 @@ def execute(args, rows, proxies):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--url", required=True)
+    parser.add_argument("--url", help="Single target URL when --url-file is omitted")
+    parser.add_argument("--url-file", type=Path, help="Target URLs, one per line, cycled in order")
     parser.add_argument(
         "--apk", type=Path, help="APK file or folder containing base.apk and splits"
     )
@@ -565,9 +598,12 @@ def main(argv=None):
             args.binderfs = args.binderfs.resolve(strict=True)
             if not args.binderfs.is_dir() or any(c in str(args.binderfs) for c in ",\n\r"):
                 raise ValueError("--binderfs must be an existing directory without commas/newlines")
-        url = urlsplit(args.url)
-        if url.scheme not in ("http", "https") or not url.hostname or url.username or url.password:
-            raise ValueError("URL must be HTTP(S), without embedded credentials")
+        urls = (
+            load_target_urls(args.url_file)
+            if args.url_file
+            else [validate_target_url(args.url or "")]
+        )
+        LOG.info("%d target URL(s); cycling in file order", len(urls))
         if not 0 <= args.delay_min <= args.delay_max or args.delay_max > 86400:
             raise ValueError("Require 0 <= delay-min <= delay-max <= 86400")
         if args.limit is not None and args.limit < 1:
@@ -599,7 +635,7 @@ def main(argv=None):
             if command("docker", "ps", "-q"):
                 raise RuntimeError("Stop existing containers before this sequential traffic run")
             command("docker", "image", "inspect", args.image)
-            return execute(args, rows, proxies)
+            return execute(args, rows, proxies, urls)
     except (ValueError, OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
         LOG.error("Stopped: %s", type(exc).__name__ if isinstance(exc, OSError) else exc)
         return 1
