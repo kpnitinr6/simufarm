@@ -386,7 +386,7 @@ def test_version_marker_without_url_or_docker(capsys):
             bot.main(["--version"])
         assert caught.value.code == 0
         command.assert_not_called()
-    assert "teardown-recovery-v8" in capsys.readouterr().out
+    assert capsys.readouterr().out.strip() == bot.VERSION
 
 
 def test_docker_stdout_fallback_printed_immediately(capsys):
@@ -473,6 +473,7 @@ def test_failed_chrome_flag_write_verification_prevents_url(tmp_path):
 
     with (
         patch.object(device, "shell", side_effect=response) as shell,
+        patch.object(bot, "command", return_value=b"\x89PNG\r\n\x1a\n"),
         pytest.raises(bot.SetupError, match="flags did not persist"),
     ):
         bot.visit(device, args, None, bot.random.Random(1))
@@ -913,3 +914,35 @@ def test_search_result_point_matches_target_domain(label, expected):
     </hierarchy>
     """
     assert bot.search_result_point(hierarchy, "https://www.nowshout.com") == expected
+
+
+@pytest.mark.parametrize("capture_ok", [True, False])
+def test_missing_search_result_saves_diagnostics_before_reraising(tmp_path, capture_ok):
+    device = bot.Device("image", {"id": "test"}, 5575)
+    args = SimpleNamespace(results=tmp_path)
+    png = b"\x89PNG\r\n\x1a\n" + b"test"
+    xml = "<hierarchy />"
+    error = bot.SearchResultMissing("No tappable result")
+
+    def adb(*argv, **kwargs):
+        if argv[3] == "exec-out":
+            if not capture_ok:
+                raise bot.subprocess.TimeoutExpired(argv, kwargs["timeout"])
+            return png
+        assert argv[3:5] == ("pull", bot.SEARCH_DUMP_PATH)
+        Path(argv[5]).write_text(xml)
+
+    with (
+        patch.object(bot, "browse", side_effect=error),
+        patch.object(bot, "command", side_effect=adb) as command,
+        pytest.raises(bot.SearchResultMissing) as failure,
+    ):
+        bot.visit(device, args, None, bot.random.Random(1))
+
+    assert failure.value is error
+    assert [entry.args[3] for entry in command.call_args_list] == ["exec-out", "pull"]
+    screenshot = tmp_path / "test_failed.png"
+    assert screenshot.exists() == capture_ok
+    if capture_ok:
+        assert screenshot.read_bytes() == png
+    assert (tmp_path / "test_failed.xml").read_text() == xml

@@ -25,10 +25,11 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "search-navigation-v11"
+VERSION = "search-diagnostics-v12"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
+SEARCH_DUMP_PATH = "/sdcard/window_dump.xml"
 
 
 class SetupError(RuntimeError):
@@ -420,7 +421,7 @@ def search_result_point(hierarchy, target_url):
     return None
 
 
-def visit(device, args, proxy, rng):
+def browse(device, args, proxy, rng):
     LOG.info("  setting Android proxy")
     proxy = proxy_address(proxy) if proxy else None
     device.shell("settings", "put", "global", "http_proxy", proxy or ":0")
@@ -447,11 +448,10 @@ def visit(device, args, proxy, rng):
         raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
     time.sleep(5)
     if keyword:
-        dump_path = "/data/local/tmp/simufarm-search.xml"
-        device.shell("uiautomator", "dump", dump_path)
         try:
-            point = search_result_point(device.shell("cat", dump_path), args.url)
-        except ET.ParseError as exc:
+            device.shell("uiautomator", "dump", SEARCH_DUMP_PATH)
+            point = search_result_point(device.shell("cat", SEARCH_DUMP_PATH), args.url)
+        except (ET.ParseError, RuntimeError, subprocess.TimeoutExpired) as exc:
             raise SearchResultMissing("Could not read the Google results screen") from exc
         if point is None:
             raise SearchResultMissing("No tappable result for the target domain on the search screen")
@@ -474,12 +474,40 @@ def visit(device, args, proxy, rng):
         )
         time.sleep(rng.uniform(0.5, 1.5))
     time.sleep(10)
-    LOG.info("  capturing screenshot")
-    image = command("adb", "-s", device.serial, "exec-out", "screencap", "-p", binary=True)
-    if not image.startswith(b"\x89PNG\r\n\x1a\n"):
-        raise RuntimeError("ADB did not return a PNG screenshot")
-    target = args.results / (device.row["id"] + ".png")
-    target.write_bytes(image)
+    return swipes
+
+
+def visit(device, args, proxy, rng):
+    profile_id = device.row["id"]
+    failed = True
+    search_failed = False
+    try:
+        swipes = browse(device, args, proxy, rng)
+        failed = False
+    except SearchResultMissing:
+        search_failed = True
+        raise
+    finally:
+        screenshot = args.results / f"{profile_id}{'_failed' if failed else ''}.png"
+        LOG.info("  capturing screenshot: %s", screenshot)
+        try:
+            image = command("adb", "-s", device.serial, "exec-out", "screencap", "-p",
+                            binary=True, timeout=10)
+            if not image.startswith(b"\x89PNG\r\n\x1a\n"):
+                raise RuntimeError("ADB did not return a PNG screenshot")
+            screenshot.write_bytes(image)
+        except (RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
+            if not failed:
+                raise
+            LOG.warning("  failure screenshot unavailable: %s", redact_diagnostic(str(exc)))
+        if search_failed:
+            target = args.results / f"{profile_id}_failed.xml"
+            try:
+                command("adb", "-s", device.serial, "pull", SEARCH_DUMP_PATH, str(target),
+                        timeout=10)
+                LOG.info("  saved search UI dump: %s", target)
+            except (RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
+                LOG.warning("  search UI dump unavailable: %s", redact_diagnostic(str(exc)))
     return swipes
 
 
@@ -505,7 +533,8 @@ def execute(args, rows, proxies):
         }
         LOG.info("[%d/%d] %s — booting (stock Android, geometry only)", index, len(rows), row["id"])
         try:
-            (args.results / (row["id"] + ".png")).unlink(missing_ok=True)
+            for suffix in (".png", "_failed.png", "_failed.xml"):
+                (args.results / f"{row['id']}{suffix}").unlink(missing_ok=True)
             device.start()
             record["actual_android_release"] = device.shell("getprop", "ro.build.version.release")
             record["swipes"] = visit(device, args, proxy, rng)
