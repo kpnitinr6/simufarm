@@ -988,4 +988,26 @@ def test_search_dismisses_notification_prompt_before_tapping_result(tmp_path):
     assert adb.call_args_list[6:12] == [
         dump, read, call("input", "tap", 50, 50), dump, read, call("input", "tap", 50, 220)
     ]
-    assert sleep.call_args_list[:3] == [call(3), call(2), call(5)]
+    assert sleep.call_args_list[:3] == [call(6), call(2), call(5)]
+
+
+def test_search_popup_check_retries_and_logs_dump_error(caplog):
+    consent = """
+    <hierarchy>
+      <node package="com.android.chrome" text="Accept all" clickable="true" bounds="[10,10][90,30]" />
+      <node package="com.android.chrome" text="Reject all" clickable="true" bounds="[10,40][90,60]" />
+    </hierarchy>
+    """
+    with (
+        patch.object(bot, "read_search_screen", side_effect=[
+            RuntimeError("UI dump failed"), "<hierarchy />", consent,
+        ]) as read_screen,
+        patch.object(bot.time, "sleep") as sleep,
+        patch.object(bot, "Device") as device,
+    ):
+        bot.dismiss_search_popup(device)
+
+    assert read_screen.call_count == 3
+    assert sleep.call_args_list == [call(6), call(3), call(3), call(2)]
+    device.shell.assert_called_once_with("input", "tap", 50, 50)
+    assert "Popup check failed: UI dump failed" in caplog.text

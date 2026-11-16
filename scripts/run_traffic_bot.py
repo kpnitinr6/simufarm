@@ -25,7 +25,7 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "search-notifications-v13"
+VERSION = "search-popup-retry-v14"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = (
     "chrome --disable-fre --no-default-browser-check --no-first-run "
@@ -433,6 +433,22 @@ def read_search_screen(device):
     return device.shell("cat", SEARCH_DUMP_PATH)
 
 
+def dismiss_search_popup(device):
+    for attempt in range(3):
+        time.sleep(6 if attempt == 0 else 3)
+        try:
+            screen = read_search_screen(device)
+            for label in ("no thanks", "reject all", "accept all", "continue"):
+                point = chrome_control_point(screen, lambda text: text.strip().casefold() == label)
+                if point is not None:
+                    LOG.info("  dismissing search popup via %s", label)
+                    device.shell("input", "tap", *point)
+                    time.sleep(2)
+                    return
+        except (ET.ParseError, RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
+            LOG.warning("Popup check failed: %s", redact_diagnostic(str(exc)))
+
+
 def browse(device, args, proxy, rng):
     LOG.info("  setting Android proxy")
     proxy = proxy_address(proxy) if proxy else None
@@ -459,14 +475,8 @@ def browse(device, args, proxy, rng):
     if "Error:" in result or "Exception" in result or "Activity:" not in result:
         raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
     if keyword:
+        dismiss_search_popup(device)
         try:
-            time.sleep(3)
-            screen = read_search_screen(device)
-            dismiss_point = chrome_control_point(screen, lambda label: label.strip().casefold() == "no thanks")
-            if dismiss_point is not None:
-                LOG.info("  dismissing Chrome notification prompt")
-                device.shell("input", "tap", *dismiss_point)
-            time.sleep(2)
             point = search_result_point(read_search_screen(device), args.url)
         except (ET.ParseError, RuntimeError, subprocess.TimeoutExpired) as exc:
             raise SearchResultMissing("Could not read the Google results screen") from exc
