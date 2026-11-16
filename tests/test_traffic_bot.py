@@ -946,3 +946,46 @@ def test_missing_search_result_saves_diagnostics_before_reraising(tmp_path, capt
     if capture_ok:
         assert screenshot.read_bytes() == png
     assert (tmp_path / "test_failed.xml").read_text() == xml
+
+
+def test_search_dismisses_notification_prompt_before_tapping_result(tmp_path):
+    device = bot.Device("image", {"id": "test", "width_px": 1080, "height_px": 2400}, 5575)
+    args = SimpleNamespace(
+        apk=None, url="https://www.nowshout.com", results=tmp_path, search_keyword="example query"
+    )
+    prompt = """
+    <hierarchy>
+      <node package="com.android.chrome" text="Continue" clickable="true" bounds="[10,10][90,30]" />
+      <node package="com.android.chrome" text="No thanks" clickable="true" bounds="[10,40][90,60]" />
+    </hierarchy>
+    """
+    results = """
+    <hierarchy>
+      <node package="com.android.chrome" text="nowshout.com" clickable="true" bounds="[10,200][90,240]" />
+    </hierarchy>
+    """
+    screens = iter([prompt, results])
+
+    def shell(*argv):
+        if argv[:2] == ("settings", "get"):
+            return ":0"
+        if argv == ("cat", bot.CHROME_FLAGS_PATH):
+            return bot.CHROME_FLAGS
+        if argv == ("cat", bot.SEARCH_DUMP_PATH):
+            return next(screens)
+        if argv[:2] == ("am", "start"):
+            return "Status: ok\nActivity: com.android.chrome/.Main"
+        return ""
+
+    with (
+        patch.object(device, "shell", side_effect=shell) as adb,
+        patch.object(bot.time, "sleep") as sleep,
+    ):
+        bot.browse(device, args, None, bot.random.Random(1))
+
+    dump = call("uiautomator", "dump", bot.SEARCH_DUMP_PATH)
+    read = call("cat", bot.SEARCH_DUMP_PATH)
+    assert adb.call_args_list[6:12] == [
+        dump, read, call("input", "tap", 50, 50), dump, read, call("input", "tap", 50, 220)
+    ]
+    assert sleep.call_args_list[:3] == [call(3), call(2), call(5)]

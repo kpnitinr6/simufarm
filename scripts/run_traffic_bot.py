@@ -25,9 +25,12 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "search-diagnostics-v12"
+VERSION = "search-notifications-v13"
 MIN_AVAILABLE_MIB = 2048 + 1200
-CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
+CHROME_FLAGS = (
+    "chrome --disable-fre --no-default-browser-check --no-first-run "
+    "--disable-notifications --disable-features=NotificationPermission"
+)
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 SEARCH_DUMP_PATH = "/sdcard/window_dump.xml"
 
@@ -401,12 +404,16 @@ def search_result_point(hierarchy, target_url):
         rf"(?:^|https?://|\s)(?:[\w-]+\.)*{re.escape(host)}(?=$|[\s/›»])",
         re.IGNORECASE,
     )
+    return chrome_control_point(hierarchy, domain.search)
+
+
+def chrome_control_point(hierarchy, matches):
     root = ET.fromstring(hierarchy)
     parents = {child: parent for parent in root.iter() for child in parent}
     for node in root.iter("node"):
         if node.get("package") != "com.android.chrome" or node.get("class") == "android.widget.EditText":
             continue
-        if not any(domain.search(node.get(field, "")) for field in ("text", "content-desc")):
+        if not any(matches(node.get(field, "")) for field in ("text", "content-desc")):
             continue
         clickable = node
         while clickable is not None and clickable.get("clickable") != "true":
@@ -419,6 +426,11 @@ def search_result_point(hierarchy, target_url):
             if right > left and bottom > top:
                 return (left + right) // 2, (top + bottom) // 2
     return None
+
+
+def read_search_screen(device):
+    device.shell("uiautomator", "dump", SEARCH_DUMP_PATH)
+    return device.shell("cat", SEARCH_DUMP_PATH)
 
 
 def browse(device, args, proxy, rng):
@@ -446,18 +458,23 @@ def browse(device, args, proxy, rng):
     )
     if "Error:" in result or "Exception" in result or "Activity:" not in result:
         raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
-    time.sleep(5)
     if keyword:
         try:
-            device.shell("uiautomator", "dump", SEARCH_DUMP_PATH)
-            point = search_result_point(device.shell("cat", SEARCH_DUMP_PATH), args.url)
+            time.sleep(3)
+            screen = read_search_screen(device)
+            dismiss_point = chrome_control_point(screen, lambda label: label.strip().casefold() == "no thanks")
+            if dismiss_point is not None:
+                LOG.info("  dismissing Chrome notification prompt")
+                device.shell("input", "tap", *dismiss_point)
+            time.sleep(2)
+            point = search_result_point(read_search_screen(device), args.url)
         except (ET.ParseError, RuntimeError, subprocess.TimeoutExpired) as exc:
             raise SearchResultMissing("Could not read the Google results screen") from exc
         if point is None:
             raise SearchResultMissing("No tappable result for the target domain on the search screen")
         LOG.info("  tapping search result for %s", urlsplit(args.url).hostname)
         device.shell("input", "tap", *point)
-        time.sleep(5)
+    time.sleep(5)
     LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
