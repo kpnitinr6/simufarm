@@ -105,6 +105,22 @@ The runner prints the exact generated `docker run -d --privileged ...` command a
 
 The default uses Redroid's privileged startup with no host binderfs bind, matching the working manual command. If your host explicitly requires sharing its existing binderfs, add `--binderfs /dev/binderfs`; the source must already exist and is mounted via `--mount type=bind` so Docker cannot silently create a missing source directory. This flag does not load modules or create a binderfs mount. The separate reviewed identity runtime keeps its digest pin.
 
+Use `--search-keyword` to test navigation from a Google results screen. The runner
+looks for the target domain among visible results after five seconds. If the
+screen has no matching tappable result, the runner records the failure and
+continues after teardown.
+
+```bash
+python3 scripts/run_traffic_bot.py \
+  --url "https://www.nowshout.com" \
+  --search-keyword "Government workers out-of-office replies" \
+  --apk "./chrome" --proxy-file proxies.csv \
+  --csv data/devices_final.csv --install-timeout 300 --limit 1
+```
+
+The UI match uses a visible domain label. Confirm the landing page in the
+screenshot. Search navigation alone does not verify GA4 channel attribution.
+
 ## Local capacity
 
 Tested on a Mac Mini with16GiB RAM and an external-drive UTM Ubuntu22.04 ARM64 VM allocated **4CPU /8GiB**. The configured Redroid planning ceiling is **5concurrent containers**, reserving2GiB for Ubuntu. Five-way workload capacity is not benchmarked. Android14 first boots were10.158s/16.854s; restart boots9.424s/9.254s; after-restart Docker memory625.6MiB/610.5MiB. The local Appium sample also passed. [Capacity actuals](docs/CAPACITY.md).

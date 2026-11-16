@@ -19,12 +19,13 @@ import sys
 import tempfile
 import time
 import uuid
+import xml.etree.ElementTree as ET
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "teardown-recovery-v8"
+VERSION = "search-navigation-v11"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = "chrome --disable-fre --no-default-browser-check --no-first-run"
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
@@ -36,6 +37,10 @@ class SetupError(RuntimeError):
 
 class InstallTimeout(RuntimeError):
     """A stalled device should be discarded and the sequential batch continued."""
+
+
+class SearchResultMissing(RuntimeError):
+    """The current search screen has no tappable result for the target site."""
 
 
 class DockerCommandError(SetupError):
@@ -388,6 +393,33 @@ def configure_chrome(device):
         raise SetupError("Chrome command-line flags did not persist; refusing URL launch")
 
 
+def search_result_point(hierarchy, target_url):
+    host = urlsplit(target_url).hostname.removeprefix("www.")
+    # Match a visible domain label, including Google's breadcrumb separator.
+    domain = re.compile(
+        rf"(?:^|https?://|\s)(?:[\w-]+\.)*{re.escape(host)}(?=$|[\s/›»])",
+        re.IGNORECASE,
+    )
+    root = ET.fromstring(hierarchy)
+    parents = {child: parent for parent in root.iter() for child in parent}
+    for node in root.iter("node"):
+        if node.get("package") != "com.android.chrome" or node.get("class") == "android.widget.EditText":
+            continue
+        if not any(domain.search(node.get(field, "")) for field in ("text", "content-desc")):
+            continue
+        clickable = node
+        while clickable is not None and clickable.get("clickable") != "true":
+            clickable = parents.get(clickable)
+        if clickable is None or clickable.get("package") != "com.android.chrome":
+            continue
+        bounds = re.fullmatch(r"\[(\d+),(\d+)\]\[(\d+),(\d+)\]", clickable.get("bounds", ""))
+        if bounds:
+            left, top, right, bottom = map(int, bounds.groups())
+            if right > left and bottom > top:
+                return (left + right) // 2, (top + bottom) // 2
+    return None
+
+
 def visit(device, args, proxy, rng):
     LOG.info("  setting Android proxy")
     proxy = proxy_address(proxy) if proxy else None
@@ -397,7 +429,11 @@ def visit(device, args, proxy, rng):
     if args.apk and install_apk(device, args.apk, args.install_timeout) != "com.android.chrome":
         raise SetupError("This browsing pipeline requires the com.android.chrome APK")
     configure_chrome(device)
-    LOG.info("  opening target URL in Chrome")
+    keyword = getattr(args, "search_keyword", None)
+    launch_url = args.url
+    if keyword:
+        launch_url = "https://www.google.com/search?" + urlencode({"q": keyword})
+    LOG.info("  opening %s in Chrome", "Google search" if keyword else "target URL")
     result = device.shell(
         "am",
         "start",
@@ -405,11 +441,23 @@ def visit(device, args, proxy, rng):
         "-n",
         "com.android.chrome/com.google.android.apps.chrome.Main",
         "-d",
-        args.url,
+        launch_url,
     )
     if "Error:" in result or "Exception" in result or "Activity:" not in result:
         raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
     time.sleep(5)
+    if keyword:
+        dump_path = "/data/local/tmp/simufarm-search.xml"
+        device.shell("uiautomator", "dump", dump_path)
+        try:
+            point = search_result_point(device.shell("cat", dump_path), args.url)
+        except ET.ParseError as exc:
+            raise SearchResultMissing("Could not read the Google results screen") from exc
+        if point is None:
+            raise SearchResultMissing("No tappable result for the target domain on the search screen")
+        LOG.info("  tapping search result for %s", urlsplit(args.url).hostname)
+        device.shell("input", "tap", *point)
+        time.sleep(5)
     LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
@@ -467,6 +515,10 @@ def execute(args, rows, proxies):
             record["error"] = str(exc)
             LOG.error("  %s; recovering and skipping this device", exc)
             record["recovery"] = device.recover_install_timeout()
+        except SearchResultMissing as exc:
+            failures += 1
+            record["error"] = str(exc)
+            LOG.warning("  %s; skipping this device", exc)
         except SetupError as exc:
             record["error"] = str(exc)
             LOG.error("  %s", exc)
@@ -502,6 +554,7 @@ def execute(args, rows, proxies):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", required=True)
+    parser.add_argument("--search-keyword", help="Open Google results and tap a result for the target domain")
     parser.add_argument(
         "--apk", type=Path, help="APK file or folder containing base.apk and splits"
     )
@@ -556,6 +609,10 @@ def main(argv=None):
         redact_diagnostic(args.image),
     )
     try:
+        if args.search_keyword is not None:
+            args.search_keyword = args.search_keyword.strip()
+            if not args.search_keyword:
+                raise ValueError("--search-keyword must contain a search query")
         if args.memory_wait_retries < 0:
             raise ValueError("--memory-wait-retries must be nonnegative")
         if args.install_timeout <= 0:

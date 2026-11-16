@@ -894,3 +894,22 @@ def test_forced_removal_failure_still_prevents_overlap():
     ):
         device.close()
     assert device.created is True
+
+
+@pytest.mark.parametrize(
+    ("label", "expected"),
+    [
+        ("https://www.nowshout.com › article", (110, 65)),
+        ("https://nowshout.com.example.org › article", None),
+        ("https://example.org/nowshout.com", None),
+    ],
+)
+def test_search_result_point_matches_target_domain(label, expected):
+    hierarchy = f"""
+    <hierarchy>
+      <node package="com.android.chrome" clickable="true" bounds="[10,30][210,100]">
+        <node package="com.android.chrome" text="{label}" clickable="false" />
+      </node>
+    </hierarchy>
+    """
+    assert bot.search_result_point(hierarchy, "https://www.nowshout.com") == expected
