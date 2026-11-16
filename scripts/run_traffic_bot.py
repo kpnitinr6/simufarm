@@ -25,11 +25,12 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "search-dpad-v17"
+VERSION = "chrome-destination-v18"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = (
     "chrome --disable-fre --no-default-browser-check --no-first-run "
-    "--disable-notifications --disable-features=NotificationPermission"
+    "--disable-notifications --disable-features=NotificationPermission "
+    "--disable-gpu --disable-software-rasterizer"
 )
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 SEARCH_DUMP_PATH = "/sdcard/window_dump.xml"
@@ -44,7 +45,7 @@ class InstallTimeout(RuntimeError):
 
 
 class SearchResultMissing(RuntimeError):
-    """The current search screen has no tappable result for the target site."""
+    """Chrome did not reach the expected foreground destination."""
 
 
 class DockerCommandError(SetupError):
@@ -423,6 +424,34 @@ def read_search_screen(device):
     return device.shell("cat", SEARCH_DUMP_PATH)
 
 
+def verify_chrome_focus(device):
+    windows = device.shell("dumpsys", "window", "windows", timeout=10)
+    if "mCurrentFocus=" not in windows:
+        windows = device.shell("dumpsys", "window", timeout=10)
+    if not re.search(r"^\s*mCurrentFocus=.*\bcom\.android\.chrome/", windows, re.MULTILINE):
+        raise SearchResultMissing("Chrome is not the focused window")
+
+
+def verify_chrome_destination(device, target_url):
+    verify_chrome_focus(device)
+    expected = urlsplit(target_url).hostname.removeprefix("www.")
+    try:
+        screen = ET.fromstring(read_search_screen(device))
+    except (ET.ParseError, RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
+        raise SearchResultMissing("Could not read Chrome's address bar") from exc
+    for node in screen.iter("node"):
+        if node.get("resource-id") != "com.android.chrome:id/url_bar":
+            continue
+        address = node.get("text", "").strip()
+        try:
+            actual = urlsplit(address if re.match(r"https?://", address, re.I) else f"https://{address}").hostname
+        except ValueError:
+            continue
+        if actual and actual.removeprefix("www.") == expected:
+            return
+    raise SearchResultMissing(f"Chrome's address bar did not confirm the target domain {expected}")
+
+
 def log_search_screen_text(hierarchy):
     all_text = [node.get("text", "").strip() for node in ET.fromstring(hierarchy).iter("node")]
     all_text = [value for value in all_text if value]
@@ -487,7 +516,8 @@ def browse(device, args, proxy, rng):
         for _ in range(offset):
             device.shell("input", "keyevent", 20)
         device.shell("input", "keyevent", 66)
-    time.sleep(5)
+    time.sleep(10 if keyword else 5)
+    verify_chrome_destination(device, args.url)
     LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
@@ -504,6 +534,7 @@ def browse(device, args, proxy, rng):
         )
         time.sleep(rng.uniform(0.5, 1.5))
     time.sleep(10)
+    verify_chrome_focus(device)
     return swipes
 
 

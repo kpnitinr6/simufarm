@@ -102,6 +102,8 @@ def test_success_screenshot_and_swipe_count(tmp_path):
     png = b"\x89PNG\r\n\x1a\n" + b"test"
     args = SimpleNamespace(apk=None, url="https://example.com", results=tmp_path)
     with (
+        patch.object(bot, "verify_chrome_destination"),
+        patch.object(bot, "verify_chrome_focus"),
         patch.object(device, "shell", side_effect=response) as shell,
         patch.object(bot, "command", return_value=png),
         patch.object(bot.time, "sleep"),
@@ -452,6 +454,8 @@ def test_complete_browser_flow_installs_and_sets_flags_before_url(tmp_path):
         url="https://example.com",
     )
     with (
+        patch.object(bot, "verify_chrome_destination"),
+        patch.object(bot, "verify_chrome_focus"),
         patch.object(bot, "Device", FakeDevice),
         patch.object(bot, "install_apk", side_effect=install),
         patch.object(bot, "command", side_effect=command),
@@ -956,6 +960,8 @@ def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, o
         return ""
 
     with (
+        patch.object(bot, "verify_chrome_destination"),
+        patch.object(bot, "verify_chrome_focus"),
         patch.object(device, "shell", side_effect=shell) as adb,
         patch.object(bot.time, "sleep") as sleep,
     ):
@@ -969,7 +975,7 @@ def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, o
         *[call("input", "keyevent", 20)] * offset,
         call("input", "keyevent", 66),
     ]
-    assert sleep.call_args_list[:3] == [call(6), call(2), call(5)]
+    assert sleep.call_args_list[:3] == [call(6), call(2), call(10)]
 
 
 def test_search_popup_check_retries_and_logs_dump_error(caplog):
@@ -1003,3 +1009,26 @@ def test_screen_text_logs_first_ten_labels_and_scans_full_dump(caplog):
     snippet = next(message for message in caplog.messages if message.startswith("Screen text snippet:"))
     assert snippet == "Screen text snippet: " + " | ".join(f"Result {index}" for index in range(10))
     assert "WARNING: Blocked by Google! Found: unusual traffic" in caplog.messages
+
+
+@pytest.mark.parametrize(("address", "passes"), [
+    ("www.nowshout.com/blog/example", True),
+    ("https://nowshout.com/", True),
+    ("google.com/search?q=nowshout.com", False),
+    ("nowshout.com.example.org", False),
+    ("", False),
+])
+def test_verify_chrome_destination_checks_address_bar_host(address, passes):
+    with (
+        patch.object(bot, "Device") as device,
+        patch.object(bot, "read_search_screen", return_value=(
+            '<hierarchy><node resource-id="com.android.chrome:id/url_bar" '
+            f'text="{address}" /></hierarchy>'
+        )),
+    ):
+        device.shell.return_value = "mCurrentFocus=Window{abc u0 com.android.chrome/.Main}"
+        if passes:
+            bot.verify_chrome_destination(device, "https://www.nowshout.com")
+        else:
+            with pytest.raises(bot.SearchResultMissing, match="address bar"):
+                bot.verify_chrome_destination(device, "https://www.nowshout.com")
