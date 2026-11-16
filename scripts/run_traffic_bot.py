@@ -25,11 +25,12 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "search-screen-text-v15"
+VERSION = "search-accessibility-v16"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = (
     "chrome --disable-fre --no-default-browser-check --no-first-run "
-    "--disable-notifications --disable-features=NotificationPermission"
+    "--disable-notifications --disable-features=NotificationPermission "
+    "--force-renderer-accessibility"
 )
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 SEARCH_DUMP_PATH = "/sdcard/window_dump.xml"
