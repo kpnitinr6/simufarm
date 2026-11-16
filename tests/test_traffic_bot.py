@@ -1011,3 +1011,14 @@ def test_search_popup_check_retries_and_logs_dump_error(caplog):
     assert sleep.call_args_list == [call(6), call(3), call(3), call(2)]
     device.shell.assert_called_once_with("input", "tap", 50, 50)
     assert "Popup check failed: UI dump failed" in caplog.text
+
+
+def test_screen_text_logs_first_ten_labels_and_scans_full_dump(caplog):
+    labels = "".join(f'<node text="Result {index}" />' for index in range(10))
+    hierarchy = f'<hierarchy>{labels}<node text="Unusual TRAFFIC" /></hierarchy>'
+    with caplog.at_level("INFO", logger="traffic"):
+        bot.log_search_screen_text(hierarchy)
+
+    snippet = next(message for message in caplog.messages if message.startswith("Screen text snippet:"))
+    assert snippet == "Screen text snippet: " + " | ".join(f"Result {index}" for index in range(10))
+    assert "WARNING: Blocked by Google! Found: unusual traffic" in caplog.messages

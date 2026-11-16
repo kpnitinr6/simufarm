@@ -25,7 +25,7 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "search-popup-retry-v14"
+VERSION = "search-screen-text-v15"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = (
     "chrome --disable-fre --no-default-browser-check --no-first-run "
@@ -433,6 +433,17 @@ def read_search_screen(device):
     return device.shell("cat", SEARCH_DUMP_PATH)
 
 
+def log_search_screen_text(hierarchy):
+    all_text = [node.get("text", "").strip() for node in ET.fromstring(hierarchy).iter("node")]
+    all_text = [value for value in all_text if value]
+    snippet = " | ".join(all_text[:10])
+    LOG.info("Screen text snippet: %s", redact_diagnostic(snippet) or "(no text)")
+    screen_text = " ".join(" ".join(all_text).casefold().split())
+    for keyword in ("captcha", "unusual traffic", "before you continue", "sign in"):
+        if re.search(rf"\b{keyword}\b", screen_text):
+            LOG.warning("WARNING: Blocked by Google! Found: %s", keyword)
+
+
 def dismiss_search_popup(device):
     for attempt in range(3):
         time.sleep(6 if attempt == 0 else 3)
@@ -477,10 +488,12 @@ def browse(device, args, proxy, rng):
     if keyword:
         dismiss_search_popup(device)
         try:
-            point = search_result_point(read_search_screen(device), args.url)
+            screen = read_search_screen(device)
+            point = search_result_point(screen, args.url)
         except (ET.ParseError, RuntimeError, subprocess.TimeoutExpired) as exc:
             raise SearchResultMissing("Could not read the Google results screen") from exc
         if point is None:
+            log_search_screen_text(screen)
             raise SearchResultMissing("No tappable result for the target domain on the search screen")
         LOG.info("  tapping search result for %s", urlsplit(args.url).hostname)
         device.shell("input", "tap", *point)
