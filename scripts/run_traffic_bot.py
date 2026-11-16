@@ -25,12 +25,11 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "search-accessibility-v16"
+VERSION = "search-dpad-v17"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_FLAGS = (
     "chrome --disable-fre --no-default-browser-check --no-first-run "
-    "--disable-notifications --disable-features=NotificationPermission "
-    "--force-renderer-accessibility"
+    "--disable-notifications --disable-features=NotificationPermission"
 )
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 SEARCH_DUMP_PATH = "/sdcard/window_dump.xml"
@@ -398,16 +397,6 @@ def configure_chrome(device):
         raise SetupError("Chrome command-line flags did not persist; refusing URL launch")
 
 
-def search_result_point(hierarchy, target_url):
-    host = urlsplit(target_url).hostname.removeprefix("www.")
-    # Match a visible domain label, including Google's breadcrumb separator.
-    domain = re.compile(
-        rf"(?:^|https?://|\s)(?:[\w-]+\.)*{re.escape(host)}(?=$|[\s/›»])",
-        re.IGNORECASE,
-    )
-    return chrome_control_point(hierarchy, domain.search)
-
-
 def chrome_control_point(hierarchy, matches):
     root = ET.fromstring(hierarchy)
     parents = {child: parent for parent in root.iter() for child in parent}
@@ -456,9 +445,10 @@ def dismiss_search_popup(device):
                     LOG.info("  dismissing search popup via %s", label)
                     device.shell("input", "tap", *point)
                     time.sleep(2)
-                    return
+                    return True
         except (ET.ParseError, RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
             LOG.warning("Popup check failed: %s", redact_diagnostic(str(exc)))
+    return False
 
 
 def browse(device, args, proxy, rng):
@@ -487,17 +477,16 @@ def browse(device, args, proxy, rng):
     if "Error:" in result or "Exception" in result or "Activity:" not in result:
         raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
     if keyword:
-        dismiss_search_popup(device)
-        try:
-            screen = read_search_screen(device)
-            point = search_result_point(screen, args.url)
-        except (ET.ParseError, RuntimeError, subprocess.TimeoutExpired) as exc:
-            raise SearchResultMissing("Could not read the Google results screen") from exc
-        if point is None:
-            log_search_screen_text(screen)
-            raise SearchResultMissing("No tappable result for the target domain on the search screen")
-        LOG.info("  tapping search result for %s", urlsplit(args.url).hostname)
-        device.shell("input", "tap", *point)
+        if not dismiss_search_popup(device):
+            time.sleep(5)
+        activities = device.shell("dumpsys", "activity", "activities")
+        if not re.search(r"(?:topResumedActivity|mResumedActivity)[:=].* com\.android\.chrome/", activities):
+            raise SearchResultMissing("Chrome is not in the foreground after opening Google")
+        offset = args.dpda_tap_offset
+        LOG.info("  sending %d D-pad DOWN event(s), then ENTER", offset)
+        for _ in range(offset):
+            device.shell("input", "keyevent", 20)
+        device.shell("input", "keyevent", 66)
     time.sleep(5)
     LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
@@ -547,7 +536,8 @@ def visit(device, args, proxy, rng):
                 command("adb", "-s", device.serial, "pull", SEARCH_DUMP_PATH, str(target),
                         timeout=10)
                 LOG.info("  saved search UI dump: %s", target)
-            except (RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
+                log_search_screen_text(target.read_text(encoding="utf-8"))
+            except (ET.ParseError, UnicodeError, RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
                 LOG.warning("  search UI dump unavailable: %s", redact_diagnostic(str(exc)))
     return swipes
 
@@ -624,7 +614,11 @@ def execute(args, rows, proxies):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", required=True)
-    parser.add_argument("--search-keyword", help="Open Google results and tap a result for the target domain")
+    parser.add_argument("--search-keyword", help="Open Google results and select the focused item")
+    parser.add_argument(
+        "--dpda-tap-offset", type=int, default=3,
+        help="Number of D-pad DOWN events before ENTER in search mode (default: 3)",
+    )
     parser.add_argument(
         "--apk", type=Path, help="APK file or folder containing base.apk and splits"
     )
@@ -679,6 +673,8 @@ def main(argv=None):
         redact_diagnostic(args.image),
     )
     try:
+        if args.dpda_tap_offset < 0:
+            raise ValueError("--dpda-tap-offset must be nonnegative")
         if args.search_keyword is not None:
             args.search_keyword = args.search_keyword.strip()
             if not args.search_keyword:

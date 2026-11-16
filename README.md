@@ -105,10 +105,9 @@ The runner prints the exact generated `docker run -d --privileged ...` command a
 
 The default uses Redroid's privileged startup with no host binderfs bind, matching the working manual command. If your host explicitly requires sharing its existing binderfs, add `--binderfs /dev/binderfs`; the source must already exist and is mounted via `--mount type=bind` so Docker cannot silently create a missing source directory. This flag does not load modules or create a binderfs mount. The separate reviewed identity runtime keeps its digest pin.
 
-Use `--search-keyword` to test navigation from a Google results screen. The runner
-looks for the target domain among visible results after five seconds. If the
-screen has no matching tappable result, the runner records the failure and
-continues after teardown.
+Use `--search-keyword` to test keyboard navigation from Google Search. After
+checking for popups, the runner presses D-pad Down three times and then Enter.
+Change the number of Down presses with `--dpda-tap-offset`.
 
 ```bash
 python3 scripts/run_traffic_bot.py \
@@ -118,8 +117,9 @@ python3 scripts/run_traffic_bot.py \
   --csv data/devices_final.csv --install-timeout 300 --limit 1
 ```
 
-The UI match uses a visible domain label. Confirm the landing page in the
-screenshot. Search navigation alone does not verify GA4 channel attribution.
+The selected item depends on Chrome’s focus order. Inspect the screenshot to
+confirm which page opened. The runner does not verify the destination domain,
+result type, or GA4 channel attribution.
 
 ## Local capacity
 
