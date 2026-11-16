@@ -25,12 +25,13 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "chrome-destination-v18"
+VERSION = "browser-package-v19"
 MIN_AVAILABLE_MIB = 2048 + 1200
+CHROME_PACKAGE = "com.android.chrome"
+WEBVIEW_TESTER_PACKAGE = "org.chromium.webview_shell"
 CHROME_FLAGS = (
     "chrome --disable-fre --no-default-browser-check --no-first-run "
-    "--disable-notifications --disable-features=NotificationPermission "
-    "--disable-gpu --disable-software-rasterizer"
+    "--disable-notifications --disable-features=NotificationPermission"
 )
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
 SEARCH_DUMP_PATH = "/sdcard/window_dump.xml"
@@ -398,18 +399,18 @@ def configure_chrome(device):
         raise SetupError("Chrome command-line flags did not persist; refusing URL launch")
 
 
-def chrome_control_point(hierarchy, matches):
+def browser_control_point(hierarchy, matches, package):
     root = ET.fromstring(hierarchy)
     parents = {child: parent for parent in root.iter() for child in parent}
     for node in root.iter("node"):
-        if node.get("package") != "com.android.chrome" or node.get("class") == "android.widget.EditText":
+        if node.get("package") != package or node.get("class") == "android.widget.EditText":
             continue
         if not any(matches(node.get(field, "")) for field in ("text", "content-desc")):
             continue
         clickable = node
         while clickable is not None and clickable.get("clickable") != "true":
             clickable = parents.get(clickable)
-        if clickable is None or clickable.get("package") != "com.android.chrome":
+        if clickable is None or clickable.get("package") != package:
             continue
         bounds = re.fullmatch(r"\[(\d+),(\d+)\]\[(\d+),(\d+)\]", clickable.get("bounds", ""))
         if bounds:
@@ -424,23 +425,24 @@ def read_search_screen(device):
     return device.shell("cat", SEARCH_DUMP_PATH)
 
 
-def verify_chrome_focus(device):
+def verify_browser_focus(device, package=CHROME_PACKAGE):
     windows = device.shell("dumpsys", "window", "windows", timeout=10)
     if "mCurrentFocus=" not in windows:
         windows = device.shell("dumpsys", "window", timeout=10)
-    if not re.search(r"^\s*mCurrentFocus=.*\bcom\.android\.chrome/", windows, re.MULTILINE):
-        raise SearchResultMissing("Chrome is not the focused window")
+    if not re.search(rf"^\s*mCurrentFocus=.*\b{re.escape(package)}/", windows, re.MULTILINE):
+        raise SearchResultMissing(f"{package} is not the focused window")
 
 
-def verify_chrome_destination(device, target_url):
-    verify_chrome_focus(device)
+def verify_browser_destination(device, target_url, package=CHROME_PACKAGE):
+    verify_browser_focus(device, package)
+    address_ids = {f"{package}:id/url_bar", f"{package}:id/url_field"}
     expected = urlsplit(target_url).hostname.removeprefix("www.")
     try:
         screen = ET.fromstring(read_search_screen(device))
     except (ET.ParseError, RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
-        raise SearchResultMissing("Could not read Chrome's address bar") from exc
+        raise SearchResultMissing("Could not read the browser address bar") from exc
     for node in screen.iter("node"):
-        if node.get("resource-id") != "com.android.chrome:id/url_bar":
+        if node.get("resource-id") not in address_ids:
             continue
         address = node.get("text", "").strip()
         try:
@@ -449,7 +451,7 @@ def verify_chrome_destination(device, target_url):
             continue
         if actual and actual.removeprefix("www.") == expected:
             return
-    raise SearchResultMissing(f"Chrome's address bar did not confirm the target domain {expected}")
+    raise SearchResultMissing(f"the browser address bar did not confirm the target domain {expected}")
 
 
 def log_search_screen_text(hierarchy):
@@ -463,13 +465,13 @@ def log_search_screen_text(hierarchy):
             LOG.warning("WARNING: Blocked by Google! Found: %s", keyword)
 
 
-def dismiss_search_popup(device):
+def dismiss_search_popup(device, package=CHROME_PACKAGE):
     for attempt in range(3):
         time.sleep(6 if attempt == 0 else 3)
         try:
             screen = read_search_screen(device)
             for label in ("no thanks", "reject all", "accept all", "continue"):
-                point = chrome_control_point(screen, lambda text: text.strip().casefold() == label)
+                point = browser_control_point(screen, lambda text: text.strip().casefold() == label, package)
                 if point is not None:
                     LOG.info("  dismissing search popup via %s", label)
                     device.shell("input", "tap", *point)
@@ -486,38 +488,37 @@ def browse(device, args, proxy, rng):
     device.shell("settings", "put", "global", "http_proxy", proxy or ":0")
     if device.shell("settings", "get", "global", "http_proxy") != (proxy or ":0"):
         raise RuntimeError("Android proxy setting did not persist")
-    if args.apk and install_apk(device, args.apk, args.install_timeout) != "com.android.chrome":
-        raise SetupError("This browsing pipeline requires the com.android.chrome APK")
-    configure_chrome(device)
+    package = getattr(args, "browser_package", CHROME_PACKAGE)
+    if args.apk and install_apk(device, args.apk, args.install_timeout) != package:
+        raise SetupError(f"The supplied APK must install the selected browser package {package}")
+    if package == CHROME_PACKAGE:
+        configure_chrome(device)
+        component = ("-n", f"{package}/com.google.android.apps.chrome.Main")
+    elif package == WEBVIEW_TESTER_PACKAGE:
+        component = ("-n", f"{package}/.WebViewBrowserActivity")
+    else:
+        component = ("-a", "android.intent.action.VIEW", "-p", package)
     keyword = getattr(args, "search_keyword", None)
     launch_url = args.url
     if keyword:
         launch_url = "https://www.google.com/search?" + urlencode({"q": keyword})
-    LOG.info("  opening %s in Chrome", "Google search" if keyword else "target URL")
-    result = device.shell(
-        "am",
-        "start",
-        "-W",
-        "-n",
-        "com.android.chrome/com.google.android.apps.chrome.Main",
-        "-d",
-        launch_url,
-    )
+    LOG.info("  opening %s in %s", "Google search" if keyword else "target URL", package)
+    result = device.shell("am", "start", "-W", *component, "-d", launch_url)
     if "Error:" in result or "Exception" in result or "Activity:" not in result:
-        raise SetupError("Chrome launch failed; provide a compatible Chrome APK or split folder")
+        raise SetupError(f"Could not launch {package}; verify it is installed and can open URLs")
     if keyword:
-        if not dismiss_search_popup(device):
+        if not dismiss_search_popup(device, package):
             time.sleep(5)
         activities = device.shell("dumpsys", "activity", "activities")
-        if not re.search(r"(?:topResumedActivity|mResumedActivity)[:=].* com\.android\.chrome/", activities):
-            raise SearchResultMissing("Chrome is not in the foreground after opening Google")
+        if not re.search(rf"(?:topResumedActivity|mResumedActivity)[:=].* {re.escape(package)}/", activities):
+            raise SearchResultMissing(f"{package} is not in the foreground after opening Google")
         offset = args.dpda_tap_offset
         LOG.info("  sending %d D-pad DOWN event(s), then ENTER", offset)
         for _ in range(offset):
             device.shell("input", "keyevent", 20)
         device.shell("input", "keyevent", 66)
     time.sleep(10 if keyword else 5)
-    verify_chrome_destination(device, args.url)
+    verify_browser_destination(device, args.url, package)
     LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
@@ -534,7 +535,7 @@ def browse(device, args, proxy, rng):
         )
         time.sleep(rng.uniform(0.5, 1.5))
     time.sleep(10)
-    verify_chrome_focus(device)
+    verify_browser_focus(device, package)
     return swipes
 
 
@@ -645,6 +646,7 @@ def execute(args, rows, proxies):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", required=True)
+    parser.add_argument("--browser-package", default=CHROME_PACKAGE, help="Android browser package (default: com.android.chrome)")
     parser.add_argument("--search-keyword", help="Open Google results and select the focused item")
     parser.add_argument(
         "--dpda-tap-offset", type=int, default=3,
@@ -704,6 +706,8 @@ def main(argv=None):
         redact_diagnostic(args.image),
     )
     try:
+        if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*)+", args.browser_package):
+            raise ValueError("--browser-package must be an Android package name")
         if args.dpda_tap_offset < 0:
             raise ValueError("--dpda-tap-offset must be nonnegative")
         if args.search_keyword is not None:

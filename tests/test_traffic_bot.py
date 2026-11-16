@@ -102,8 +102,8 @@ def test_success_screenshot_and_swipe_count(tmp_path):
     png = b"\x89PNG\r\n\x1a\n" + b"test"
     args = SimpleNamespace(apk=None, url="https://example.com", results=tmp_path)
     with (
-        patch.object(bot, "verify_chrome_destination"),
-        patch.object(bot, "verify_chrome_focus"),
+        patch.object(bot, "verify_browser_destination"),
+        patch.object(bot, "verify_browser_focus"),
         patch.object(device, "shell", side_effect=response) as shell,
         patch.object(bot, "command", return_value=png),
         patch.object(bot.time, "sleep"),
@@ -454,8 +454,8 @@ def test_complete_browser_flow_installs_and_sets_flags_before_url(tmp_path):
         url="https://example.com",
     )
     with (
-        patch.object(bot, "verify_chrome_destination"),
-        patch.object(bot, "verify_chrome_focus"),
+        patch.object(bot, "verify_browser_destination"),
+        patch.object(bot, "verify_browser_focus"),
         patch.object(bot, "Device", FakeDevice),
         patch.object(bot, "install_apk", side_effect=install),
         patch.object(bot, "command", side_effect=command),
@@ -933,17 +933,17 @@ def test_missing_search_result_saves_diagnostics_before_reraising(tmp_path, capt
     assert (tmp_path / "test_failed.xml").read_text() == xml
 
 
-@pytest.mark.parametrize("offset", [2, 3])
-def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, offset):
+@pytest.mark.parametrize(("offset", "package"), [(2, bot.CHROME_PACKAGE), (3, bot.WEBVIEW_TESTER_PACKAGE)])
+def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, offset, package):
     device = bot.Device("image", {"id": "test", "width_px": 1080, "height_px": 2400}, 5575)
     args = SimpleNamespace(
         apk=None, url="https://www.nowshout.com", results=tmp_path, search_keyword="example query",
-        dpda_tap_offset=offset,
+        dpda_tap_offset=offset, browser_package=package,
     )
-    prompt = """
+    prompt = f"""
     <hierarchy>
-      <node package="com.android.chrome" text="Continue" clickable="true" bounds="[10,10][90,30]" />
-      <node package="com.android.chrome" text="No thanks" clickable="true" bounds="[10,40][90,60]" />
+      <node package="{package}" text="Continue" clickable="true" bounds="[10,10][90,30]" />
+      <node package="{package}" text="No thanks" clickable="true" bounds="[10,40][90,60]" />
     </hierarchy>
     """
     def shell(*argv):
@@ -954,14 +954,14 @@ def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, o
         if argv == ("cat", bot.SEARCH_DUMP_PATH):
             return prompt
         if argv == ("dumpsys", "activity", "activities"):
-            return "topResumedActivity=ActivityRecord{abc u0 com.android.chrome/.Main t10}"
+            return f"topResumedActivity=ActivityRecord{{abc u0 {package}/.Main t10}}"
         if argv[:2] == ("am", "start"):
             return "Status: ok\nActivity: com.android.chrome/.Main"
         return ""
 
     with (
-        patch.object(bot, "verify_chrome_destination"),
-        patch.object(bot, "verify_chrome_focus"),
+        patch.object(bot, "verify_browser_destination"),
+        patch.object(bot, "verify_browser_focus"),
         patch.object(device, "shell", side_effect=shell) as adb,
         patch.object(bot.time, "sleep") as sleep,
     ):
@@ -969,12 +969,17 @@ def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, o
 
     dump = call("uiautomator", "dump", bot.SEARCH_DUMP_PATH)
     read = call("cat", bot.SEARCH_DUMP_PATH)
-    assert adb.call_args_list[6:11 + offset] == [
+    search_steps = [entry for entry in adb.call_args_list if entry.args[:1] in (("uiautomator",), ("dumpsys",)) or entry == read or entry.args[:2] in (("input", "tap"), ("input", "keyevent"))]
+    assert search_steps == [
         dump, read, call("input", "tap", 50, 50),
         call("dumpsys", "activity", "activities"),
         *[call("input", "keyevent", 20)] * offset,
         call("input", "keyevent", 66),
     ]
+    if package == bot.WEBVIEW_TESTER_PACKAGE:
+        assert call("am", "start", "-W", "-n", f"{package}/.WebViewBrowserActivity",
+                    "-d", "https://www.google.com/search?q=example+query") in adb.call_args_list
+        assert all(entry.args[:2] != ("am", "force-stop") for entry in adb.call_args_list)
     assert sleep.call_args_list[:3] == [call(6), call(2), call(10)]
 
 
@@ -1018,7 +1023,7 @@ def test_screen_text_logs_first_ten_labels_and_scans_full_dump(caplog):
     ("nowshout.com.example.org", False),
     ("", False),
 ])
-def test_verify_chrome_destination_checks_address_bar_host(address, passes):
+def test_verify_browser_destination_checks_address_bar_host(address, passes):
     with (
         patch.object(bot, "Device") as device,
         patch.object(bot, "read_search_screen", return_value=(
@@ -1028,7 +1033,7 @@ def test_verify_chrome_destination_checks_address_bar_host(address, passes):
     ):
         device.shell.return_value = "mCurrentFocus=Window{abc u0 com.android.chrome/.Main}"
         if passes:
-            bot.verify_chrome_destination(device, "https://www.nowshout.com")
+            bot.verify_browser_destination(device, "https://www.nowshout.com")
         else:
             with pytest.raises(bot.SearchResultMissing, match="address bar"):
-                bot.verify_chrome_destination(device, "https://www.nowshout.com")
+                bot.verify_browser_destination(device, "https://www.nowshout.com")

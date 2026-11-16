@@ -117,9 +117,14 @@ python3 scripts/run_traffic_bot.py \
   --csv data/devices_final.csv --install-timeout 300 --limit 1
 ```
 
-The selected item depends on Chrome’s focus order. Inspect the screenshot to
-confirm which page opened. The runner does not verify the destination domain,
-result type, or GA4 channel attribution.
+Chrome is the default browser. To use the preinstalled AOSP WebView Browser
+Tester, add `--browser-package org.chromium.webview_shell` and omit the Chrome
+`--apk`. Other browser packages must handle HTTP(S) view intents and expose their
+address bar as `url_bar` or `url_field` for destination verification.
+
+The selected item depends on the browser’s focus order. Inspect the screenshot to
+confirm which page opened. The runner checks the destination hostname. Result type
+and GA4 channel attribution require separate verification.
 
 ## Local capacity
 
