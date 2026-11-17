@@ -118,8 +118,10 @@ python3 scripts/run_traffic_bot.py \
 ```
 
 Chrome is the default browser. To use the preinstalled AOSP WebView Browser
-Tester, add `--browser-package org.chromium.webview_shell` and omit the Chrome
-`--apk`. Other browser packages must handle HTTP(S) view intents and expose their
+Tester, add `--browser-package org.chromium.webview_shell`.
+`--browser-package com.android.webview` selects the same tester.
+The runner ignores `--apk` for non-Chrome browsers, which must already be
+installed. Other browser packages must handle HTTP(S) view intents and expose their
 address bar as `url_bar` or `url_field` for destination verification.
 
 The selected item depends on the browser’s focus order. Inspect the screenshot to

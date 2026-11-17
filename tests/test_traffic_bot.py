@@ -1037,3 +1037,20 @@ def test_verify_browser_destination_checks_address_bar_host(address, passes):
         else:
             with pytest.raises(bot.SearchResultMissing, match="address bar"):
                 bot.verify_browser_destination(device, "https://www.nowshout.com")
+
+
+@pytest.mark.parametrize("package", [bot.WEBVIEW_TESTER_PACKAGE, bot.WEBVIEW_PROVIDER_PACKAGE])
+def test_webview_ignores_chrome_apk_and_selects_tester(tmp_path, package):
+    with (
+        patch.object(bot.tempfile, "gettempdir", return_value=str(tmp_path)),
+        patch.object(bot, "command", return_value=""),
+        patch.object(bot, "execute", return_value=0) as execute,
+    ):
+        assert bot.main([
+            "--url", "https://example.com", "--browser-package", package,
+            "--apk", str(tmp_path / "missing-chrome"), "--limit", "1",
+        ]) == 0
+
+    args = execute.call_args.args[0]
+    assert args.apk is None
+    assert args.browser_package == bot.WEBVIEW_TESTER_PACKAGE
