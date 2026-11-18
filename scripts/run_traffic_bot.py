@@ -25,7 +25,7 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "webview-apk-bypass-v20"
+VERSION = "webview-explicit-launch-v21"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_PACKAGE = "com.android.chrome"
 WEBVIEW_TESTER_PACKAGE = "org.chromium.webview_shell"
@@ -77,6 +77,10 @@ def command(*args, timeout=60, binary=False, check=True, missing_ok=False):
                 flush=True,
             )
             raise DockerCommandError(f"docker {args[1]} failed (exit {result.returncode}): {error}")
+        if args[0] == "adb" and not binary:
+            diagnostic = redact_diagnostic(result.stderr or result.stdout)
+            if diagnostic:
+                raise RuntimeError(f"adb command failed (exit {result.returncode}): {diagnostic}")
         raise RuntimeError(f"{args[0]} command failed (exit {result.returncode})")
     return result.stdout if binary else result.stdout.strip()
 
@@ -483,6 +487,41 @@ def dismiss_search_popup(device, package=CHROME_PACKAGE):
     return False
 
 
+def launch_browser(device, package, component, url):
+    def start(intent):
+        try:
+            result = device.shell("am", "start", "-W", *intent, "-d", url)
+        except RuntimeError as exc:
+            return str(exc)
+        if "Error:" in result or "Exception" in result:
+            return result
+        if "Activity:" in result or re.search(r"^Status: ok\s*$", result, re.MULTILINE):
+            return None
+        return result or "(empty Android launch response)"
+
+    error = start(component)
+    if error is None:
+        return
+    if package == WEBVIEW_TESTER_PACKAGE:
+        LOG.warning("  WebView activity launch failed: %s", redact_diagnostic(error))
+        resolved = device.shell(
+            "cmd", "package", "resolve-activity", "--brief",
+            "-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", package,
+        )
+        activity = next(
+            (line for line in reversed(resolved.splitlines())
+             if re.fullmatch(rf"{re.escape(package)}/[\w.$]+", line)),
+            None,
+        )
+        if activity and activity not in component:
+            error = start(("-n", activity, "-a", "android.intent.action.VIEW"))
+            if error is None:
+                return
+        else:
+            error = f"{error}\nActivity resolution: {resolved or '(empty response)'}"
+    raise SetupError(f"Could not launch {package}: {redact_diagnostic(error)}")
+
+
 def browse(device, args, proxy, rng):
     LOG.info("  setting Android proxy")
     proxy = proxy_address(proxy) if proxy else None
@@ -496,7 +535,7 @@ def browse(device, args, proxy, rng):
         configure_chrome(device)
         component = ("-n", f"{package}/com.google.android.apps.chrome.Main")
     elif package == WEBVIEW_TESTER_PACKAGE:
-        component = ("-n", f"{package}/.WebViewBrowserActivity")
+        component = ("-n", f"{package}/.WebViewBrowserActivity", "-a", "android.intent.action.VIEW")
     else:
         component = ("-a", "android.intent.action.VIEW", "-p", package)
     keyword = getattr(args, "search_keyword", None)
@@ -504,9 +543,7 @@ def browse(device, args, proxy, rng):
     if keyword:
         launch_url = "https://www.google.com/search?" + urlencode({"q": keyword})
     LOG.info("  opening %s in %s", "Google search" if keyword else "target URL", package)
-    result = device.shell("am", "start", "-W", *component, "-d", launch_url)
-    if "Error:" in result or "Exception" in result or "Activity:" not in result:
-        raise SetupError(f"Could not launch {package}; verify it is installed and can open URLs")
+    launch_browser(device, package, component, launch_url)
     if keyword:
         if not dismiss_search_popup(device, package):
             time.sleep(5)

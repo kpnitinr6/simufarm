@@ -2,7 +2,7 @@ import importlib.util
 import shutil
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import call, patch
+from unittest.mock import Mock, call, patch
 
 import pytest
 
@@ -978,6 +978,7 @@ def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, o
     ]
     if package == bot.WEBVIEW_TESTER_PACKAGE:
         assert call("am", "start", "-W", "-n", f"{package}/.WebViewBrowserActivity",
+                    "-a", "android.intent.action.VIEW",
                     "-d", "https://www.google.com/search?q=example+query") in adb.call_args_list
         assert all(entry.args[:2] != ("am", "force-stop") for entry in adb.call_args_list)
     assert sleep.call_args_list[:3] == [call(6), call(2), call(10)]
@@ -1054,3 +1055,20 @@ def test_webview_ignores_chrome_apk_and_selects_tester(tmp_path, package):
     args = execute.call_args.args[0]
     assert args.apk is None
     assert args.browser_package == bot.WEBVIEW_TESTER_PACKAGE
+
+
+def test_webview_launch_retries_with_resolved_launcher_activity():
+    package = bot.WEBVIEW_TESTER_PACKAGE
+    url = "https://www.google.com/search?q=example"
+    resolved = f"{package}/.BrowserActivity"
+    initial = ("-n", f"{package}/.WebViewBrowserActivity", "-a", "android.intent.action.VIEW")
+    device = SimpleNamespace(shell=Mock(side_effect=["Error: activity missing", resolved, "Status: ok"]))
+
+    bot.launch_browser(device, package, initial, url)
+
+    assert device.shell.call_args_list == [
+        call("am", "start", "-W", *initial, "-d", url),
+        call("cmd", "package", "resolve-activity", "--brief",
+             "-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", package),
+        call("am", "start", "-W", "-n", resolved, "-a", "android.intent.action.VIEW", "-d", url),
+    ]
