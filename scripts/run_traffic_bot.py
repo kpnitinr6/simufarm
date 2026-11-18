@@ -442,7 +442,7 @@ def verify_browser_focus(device, package=CHROME_PACKAGE):
         raise SearchResultMissing(f"{package} is not the focused window")
 
 
-def verify_browser_destination(device, target_url, package=CHROME_PACKAGE):
+def verify_browser_destination(device, target_url, package=CHROME_PACKAGE, search_keyword=None):
     verify_browser_focus(device, package)
     address_ids = {f"{package}:id/url_bar", f"{package}:id/url_field"}
     target = urlsplit(target_url)
@@ -470,20 +470,27 @@ def verify_browser_destination(device, target_url, package=CHROME_PACKAGE):
         for value in (node.get("text", ""), node.get("content-desc", ""))
         if value.strip()
     ]
-    domain = re.compile(rf"(?:^|\s)(?:https?://)?(?:www\.)?{re.escape(expected)}(?=$|[\s/›»])", re.I)
-    if any(domain.search(label) for label in labels):
-        LOG.info("  confirmed target domain in the UI")
-        return
-
-    page_name = unquote(target.path.rstrip("/").rsplit("/", 1)[-1])
-    title = " ".join(re.split(r"[-_\s]+", page_name.casefold())).strip()
-    site_name = expected.split(".")[-2] if "." in expected else expected
-    # Via can expose the document title at the start of the dump with its toolbar hidden.
-    # Search result labels deeper in the tree are weaker evidence of navigation.
     title_label = labels[0].casefold() if labels else ""
-    if title and title_label in {title, f"{title} - {site_name}", f"{title} | {site_name}"}:
-        LOG.info("  matched the expected page title with the address bar hidden")
-        return
+    # Search pages can display the query and destination in their result labels.
+    is_search_screen = re.search(r"\b(?:google search|bing search|search results)\b", title_label)
+    if not is_search_screen:
+        domain = re.compile(rf"(?:^|\s)(?:https?://)?(?:www\.)?{re.escape(expected)}(?=$|[\s/›»])", re.I)
+        if any(domain.search(label) for label in labels):
+            LOG.info("  confirmed target domain in the UI")
+            return
+
+        site_name = expected.split(".")[-2] if "." in expected else expected
+        screen_text = " ".join(labels).casefold()
+        if re.search(rf"(?<![\w.-]){re.escape(site_name)}(?![\w.-])", screen_text):
+            LOG.info("  matched the target site name with the address bar hidden")
+            return
+
+        page_name = unquote(target.path.rstrip("/").rsplit("/", 1)[-1])
+        title = " ".join(re.split(r"[-_\s]+", page_name.casefold())).strip()
+        keyword_words = set(re.findall(r"\w+", (search_keyword or "").casefold()))
+        if (title and title == title_label) or keyword_words.intersection(re.findall(r"\w+", screen_text)):
+            LOG.info("  matched destination text with the address bar hidden")
+            return
     raise SearchResultMissing(f"the browser address bar and page text did not confirm {expected}")
 
 
@@ -644,7 +651,7 @@ def browse(device, args, proxy, rng):
         LOG.info("  tapping search screen at (540, %d)", args.tap_offset_y)
         device.shell("input", "tap", 540, args.tap_offset_y)
     time.sleep(10 if keyword else 5)
-    verify_browser_destination(device, args.url, package)
+    verify_browser_destination(device, args.url, package, search_keyword=keyword)
     LOG.info("  scrolling and waiting")
     width, height = device.row["width_px"], device.row["height_px"]
     swipes = rng.randint(3, 4)
