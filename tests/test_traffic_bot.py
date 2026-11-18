@@ -1164,3 +1164,21 @@ def test_via_activity_resolution_falls_back_to_apk_badging(tmp_path):
             "mark.via.gp/com.via.browser.MainActivity"
         )
     command.assert_called_once_with("aapt", "dump", "badging", str(apk))
+
+
+@pytest.mark.parametrize(("labels", "passes"), [
+    (["Android - Wikipedia", "Wikipedia", "User navigation"], True),
+    (["Android"], True),
+    (["https://en.wikipedia.org/wiki/Android"], True),
+    (["Bing Search", "Android - Wikipedia"], False),
+    (["https://en.wikipedia.org.example.com/wiki/Android"], False),
+])
+def test_hidden_address_bar_uses_page_title_or_domain(labels, passes):
+    device = SimpleNamespace(shell=Mock(return_value="mCurrentFocus=Window{abc u0 mark.via.gp/.Main}"))
+    nodes = "".join(f'<node text="{label}" />' for label in labels)
+    with patch.object(bot, "read_search_screen", return_value=f"<hierarchy>{nodes}</hierarchy>"):
+        if passes:
+            bot.verify_browser_destination(device, "https://en.wikipedia.org/wiki/Android", "mark.via.gp")
+        else:
+            with pytest.raises(bot.SearchResultMissing, match="did not confirm"):
+                bot.verify_browser_destination(device, "https://en.wikipedia.org/wiki/Android", "mark.via.gp")

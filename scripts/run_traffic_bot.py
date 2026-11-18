@@ -21,7 +21,7 @@ import time
 import uuid
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from urllib.parse import urlencode, urlsplit
+from urllib.parse import unquote, urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
@@ -445,7 +445,8 @@ def verify_browser_focus(device, package=CHROME_PACKAGE):
 def verify_browser_destination(device, target_url, package=CHROME_PACKAGE):
     verify_browser_focus(device, package)
     address_ids = {f"{package}:id/url_bar", f"{package}:id/url_field"}
-    expected = urlsplit(target_url).hostname.removeprefix("www.")
+    target = urlsplit(target_url)
+    expected = target.hostname.removeprefix("www.")
     try:
         screen = ET.fromstring(read_search_screen(device))
     except (ET.ParseError, RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
@@ -460,7 +461,30 @@ def verify_browser_destination(device, target_url, package=CHROME_PACKAGE):
             continue
         if actual and actual.removeprefix("www.") == expected:
             return
-    raise SearchResultMissing(f"the browser address bar did not confirm the target domain {expected}")
+        if address:
+            raise SearchResultMissing(f"the browser address bar did not confirm the target domain {expected}")
+
+    labels = [
+        value.strip()
+        for node in screen.iter("node")
+        for value in (node.get("text", ""), node.get("content-desc", ""))
+        if value.strip()
+    ]
+    domain = re.compile(rf"(?:^|\s)(?:https?://)?(?:www\.)?{re.escape(expected)}(?=$|[\s/›»])", re.I)
+    if any(domain.search(label) for label in labels):
+        LOG.info("  confirmed target domain in the UI")
+        return
+
+    page_name = unquote(target.path.rstrip("/").rsplit("/", 1)[-1])
+    title = " ".join(re.split(r"[-_\s]+", page_name.casefold())).strip()
+    site_name = expected.split(".")[-2] if "." in expected else expected
+    # Via can expose the document title at the start of the dump with its toolbar hidden.
+    # Search result labels deeper in the tree are weaker evidence of navigation.
+    title_label = labels[0].casefold() if labels else ""
+    if title and title_label in {title, f"{title} - {site_name}", f"{title} | {site_name}"}:
+        LOG.info("  matched the expected page title with the address bar hidden")
+        return
+    raise SearchResultMissing(f"the browser address bar and page text did not confirm {expected}")
 
 
 def log_search_screen_text(hierarchy):
