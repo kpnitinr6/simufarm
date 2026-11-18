@@ -90,7 +90,9 @@ def test_cleanup_failure_aborts_batch(tmp_path):
 def test_success_screenshot_and_swipe_count(tmp_path):
     device = bot.Device("image", {"id": "test", "width_px": 1080, "height_px": 2400}, 5575)
 
-    def response(*args):
+    def response(*args, **kwargs):
+        if args == ("getprop", "sys.boot_completed"):
+            return "1"
         if args[:2] == ("settings", "get"):
             return ":0"
         if args[0] == "cat":
@@ -416,7 +418,9 @@ def test_complete_browser_flow_installs_and_sets_flags_before_url(tmp_path):
         def close(self):
             events.append("teardown")
 
-        def shell(self, *args):
+        def shell(self, *args, **kwargs):
+            if args == ("getprop", "sys.boot_completed"):
+                return "1"
             if args[:2] == ("settings", "put"):
                 events.append("proxy")
             elif args[:2] == ("settings", "get"):
@@ -946,7 +950,9 @@ def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset
       <node package="{package}" text="No thanks" clickable="true" bounds="[10,40][90,60]" />
     </hierarchy>
     """
-    def shell(*argv):
+    def shell(*argv, **kwargs):
+        if argv == ("getprop", "sys.boot_completed"):
+            return "1"
         if argv[:2] == ("settings", "get"):
             return ":0"
         if argv == ("cat", bot.CHROME_FLAGS_PATH):
@@ -987,7 +993,7 @@ def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset
                     "-a", "android.intent.action.VIEW",
                     "-d", "https://www.google.com/search?q=example+query") in adb.call_args_list
         assert all(entry.args[:2] != ("am", "force-stop") for entry in adb.call_args_list)
-    assert sleep.call_args_list[:4] == [call(12), call(2), call(2), call(10)]
+    assert sleep.call_args_list[:5] == [call(5), call(12), call(2), call(2), call(10)]
 
 
 def test_search_popup_check_retries_and_logs_dump_error(caplog):
@@ -1069,11 +1075,21 @@ def test_webview_launch_retries_with_resolved_launcher_activity():
     url = "https://www.google.com/search?q=example"
     resolved = f"{package}/.BrowserActivity"
     initial = ("-n", f"{package}/.WebViewBrowserActivity", "-a", "android.intent.action.VIEW")
-    device = SimpleNamespace(shell=Mock(side_effect=["Error: activity missing", resolved, "Status: ok"]))
+    device = SimpleNamespace(shell=Mock(side_effect=["0", "1", "Error: activity missing", resolved, "Status: ok"]))
 
-    bot.launch_browser(device, package, initial, url)
+    timeline = Mock()
+    timeline.attach_mock(device.shell, "shell")
+    with patch.object(bot.time, "sleep", timeline.sleep):
+        bot.launch_browser(device, package, initial, url)
 
-    assert device.shell.call_args_list == [
+    assert timeline.mock_calls[:5] == [
+        call.shell("getprop", "sys.boot_completed", timeout=5),
+        call.sleep(2),
+        call.shell("getprop", "sys.boot_completed", timeout=5),
+        call.sleep(5),
+        call.shell("am", "start", "-W", *initial, "-d", url),
+    ]
+    assert device.shell.call_args_list[2:] == [
         call("am", "start", "-W", *initial, "-d", url),
         call("cmd", "package", "resolve-activity", "--brief",
              "-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", package),

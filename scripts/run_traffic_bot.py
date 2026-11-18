@@ -487,7 +487,24 @@ def dismiss_search_popup(device, package=CHROME_PACKAGE):
     return False
 
 
+def wait_for_browser_boot(device):
+    deadline = time.monotonic() + 180
+    while time.monotonic() < deadline:
+        try:
+            boot_completed = device.shell("getprop", "sys.boot_completed", timeout=5) == "1"
+        except (RuntimeError, subprocess.TimeoutExpired):
+            boot_completed = False
+        if boot_completed:
+            LOG.info("  Android boot complete; waiting 5s for package registration")
+            time.sleep(5)
+            return
+        time.sleep(2)
+    raise TimeoutError("Android did not report boot completion within 180 seconds before browser launch")
+
+
 def launch_browser(device, package, component, url):
+    wait_for_browser_boot(device)
+
     def start(intent):
         try:
             result = device.shell("am", "start", "-W", *intent, "-d", url)
