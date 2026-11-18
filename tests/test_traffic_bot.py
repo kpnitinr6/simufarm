@@ -933,12 +933,12 @@ def test_missing_search_result_saves_diagnostics_before_reraising(tmp_path, capt
     assert (tmp_path / "test_failed.xml").read_text() == xml
 
 
-@pytest.mark.parametrize(("offset", "package"), [(2, bot.CHROME_PACKAGE), (3, bot.WEBVIEW_TESTER_PACKAGE)])
-def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, offset, package):
+@pytest.mark.parametrize(("offset", "package"), [(800, bot.CHROME_PACKAGE), (920, bot.WEBVIEW_TESTER_PACKAGE)])
+def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset, package):
     device = bot.Device("image", {"id": "test", "width_px": 1080, "height_px": 2400}, 5575)
     args = SimpleNamespace(
         apk=None, url="https://www.nowshout.com", results=tmp_path, search_keyword="example query",
-        dpda_tap_offset=offset, browser_package=package,
+        tap_offset_y=offset, browser_package=package,
     )
     prompt = f"""
     <hierarchy>
@@ -973,8 +973,7 @@ def test_search_dismisses_notification_prompt_before_dpad_navigation(tmp_path, o
     assert search_steps == [
         dump, read, call("input", "tap", 50, 50),
         call("dumpsys", "activity", "activities"),
-        *[call("input", "keyevent", 20)] * offset,
-        call("input", "keyevent", 66),
+        call("input", "tap", 540, offset),
     ]
     if package == bot.WEBVIEW_TESTER_PACKAGE:
         assert call("am", "start", "-W", "-n", f"{package}/.WebViewBrowserActivity",

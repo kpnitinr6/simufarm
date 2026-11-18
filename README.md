@@ -105,9 +105,9 @@ The runner prints the exact generated `docker run -d --privileged ...` command a
 
 The default uses Redroid's privileged startup with no host binderfs bind, matching the working manual command. If your host explicitly requires sharing its existing binderfs, add `--binderfs /dev/binderfs`; the source must already exist and is mounted via `--mount type=bind` so Docker cannot silently create a missing source directory. This flag does not load modules or create a binderfs mount. The separate reviewed identity runtime keeps its digest pin.
 
-Use `--search-keyword` to test keyboard navigation from Google Search. After
-checking for popups, the runner presses D-pad Down three times and then Enter.
-Change the number of Down presses with `--dpda-tap-offset`.
+Use `--search-keyword` to test navigation from Google Search. After checking for
+popups, the runner taps screen coordinates `(540, 800)`. Adjust the vertical
+position with `--tap-offset-y`.
 
 ```bash
 python3 scripts/run_traffic_bot.py \
@@ -124,7 +124,7 @@ The runner ignores `--apk` for non-Chrome browsers, which must already be
 installed. Other browser packages must handle HTTP(S) view intents and expose their
 address bar as `url_bar` or `url_field` for destination verification.
 
-The selected item depends on the browser’s focus order. Inspect the screenshot to
+The selected item depends on the results layout. Inspect the screenshot to
 confirm which page opened. The runner checks the destination hostname. Result type
 and GA4 channel attribution require separate verification.
 

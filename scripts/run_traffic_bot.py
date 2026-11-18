@@ -25,7 +25,7 @@ from urllib.parse import urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "webview-explicit-launch-v21"
+VERSION = "webview-tap-search-result-v22"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_PACKAGE = "com.android.chrome"
 WEBVIEW_TESTER_PACKAGE = "org.chromium.webview_shell"
@@ -465,7 +465,7 @@ def log_search_screen_text(hierarchy):
     snippet = " | ".join(all_text[:10])
     LOG.info("Screen text snippet: %s", redact_diagnostic(snippet) or "(no text)")
     screen_text = " ".join(" ".join(all_text).casefold().split())
-    for keyword in ("captcha", "unusual traffic", "before you continue", "sign in"):
+    for keyword in ("captcha", "unusual traffic"):
         if re.search(rf"\b{keyword}\b", screen_text):
             LOG.warning("WARNING: Blocked by Google! Found: %s", keyword)
 
@@ -550,11 +550,8 @@ def browse(device, args, proxy, rng):
         activities = device.shell("dumpsys", "activity", "activities")
         if not re.search(rf"(?:topResumedActivity|mResumedActivity)[:=].* {re.escape(package)}/", activities):
             raise SearchResultMissing(f"{package} is not in the foreground after opening Google")
-        offset = args.dpda_tap_offset
-        LOG.info("  sending %d D-pad DOWN event(s), then ENTER", offset)
-        for _ in range(offset):
-            device.shell("input", "keyevent", 20)
-        device.shell("input", "keyevent", 66)
+        LOG.info("  tapping search screen at (540, %d)", args.tap_offset_y)
+        device.shell("input", "tap", 540, args.tap_offset_y)
     time.sleep(10 if keyword else 5)
     verify_browser_destination(device, args.url, package)
     LOG.info("  scrolling and waiting")
@@ -687,8 +684,8 @@ def main(argv=None):
     parser.add_argument("--browser-package", default=CHROME_PACKAGE, help="Android browser package (default: com.android.chrome)")
     parser.add_argument("--search-keyword", help="Open Google results and select the focused item")
     parser.add_argument(
-        "--dpda-tap-offset", type=int, default=3,
-        help="Number of D-pad DOWN events before ENTER in search mode (default: 3)",
+        "--tap-offset-y", type=int, default=800,
+        help="Y coordinate for the search result tap (default: 800)",
     )
     parser.add_argument(
         "--apk", type=Path, help="Chrome APK file or split folder (ignored for other browsers)"
@@ -746,8 +743,8 @@ def main(argv=None):
     try:
         if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*)+", args.browser_package):
             raise ValueError("--browser-package must be an Android package name")
-        if args.dpda_tap_offset < 0:
-            raise ValueError("--dpda-tap-offset must be nonnegative")
+        if args.tap_offset_y < 0:
+            raise ValueError("--tap-offset-y must be nonnegative")
         if args.search_keyword is not None:
             args.search_keyword = args.search_keyword.strip()
             if not args.search_keyword:
