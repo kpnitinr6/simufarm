@@ -969,10 +969,17 @@ def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset
 
     dump = call("uiautomator", "dump", bot.SEARCH_DUMP_PATH)
     read = call("cat", bot.SEARCH_DUMP_PATH)
-    search_steps = [entry for entry in adb.call_args_list if entry.args[:1] in (("uiautomator",), ("dumpsys",)) or entry == read or entry.args[:2] in (("input", "tap"), ("input", "keyevent"))]
+    search_steps = [
+        entry for entry in adb.call_args_list
+        if entry.args[:1] in (("uiautomator",), ("dumpsys",))
+        or entry == read
+        or entry.args[:2] in (("input", "tap"), ("input", "keyevent"))
+        or entry == call("input", "swipe", 540, 1800, 540, 600, 500)
+    ]
     assert search_steps == [
         dump, read, call("input", "tap", 50, 50),
         call("dumpsys", "activity", "activities"),
+        call("input", "swipe", 540, 1800, 540, 600, 500),
         call("input", "tap", 540, offset),
     ]
     if package == bot.WEBVIEW_TESTER_PACKAGE:
@@ -980,7 +987,7 @@ def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset
                     "-a", "android.intent.action.VIEW",
                     "-d", "https://www.google.com/search?q=example+query") in adb.call_args_list
         assert all(entry.args[:2] != ("am", "force-stop") for entry in adb.call_args_list)
-    assert sleep.call_args_list[:3] == [call(12), call(2), call(10)]
+    assert sleep.call_args_list[:4] == [call(12), call(2), call(2), call(10)]
 
 
 def test_search_popup_check_retries_and_logs_dump_error(caplog):

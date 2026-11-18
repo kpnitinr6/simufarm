@@ -549,6 +549,9 @@ def browse(device, args, proxy, rng):
         activities = device.shell("dumpsys", "activity", "activities")
         if not re.search(rf"(?:topResumedActivity|mResumedActivity)[:=].* {re.escape(package)}/", activities):
             raise SearchResultMissing(f"{package} is not in the foreground after opening Google")
+        LOG.info("  scrolling down the search results")
+        device.shell("input", "swipe", 540, 1800, 540, 600, 500)
+        time.sleep(2)
         LOG.info("  tapping search screen at (540, %d)", args.tap_offset_y)
         device.shell("input", "tap", 540, args.tap_offset_y)
     time.sleep(10 if keyword else 5)
