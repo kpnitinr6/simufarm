@@ -1052,8 +1052,10 @@ def test_verify_browser_destination_checks_address_bar_host(address, passes):
                 bot.verify_browser_destination(device, "https://www.nowshout.com")
 
 
-@pytest.mark.parametrize("package", [bot.WEBVIEW_TESTER_PACKAGE, bot.WEBVIEW_PROVIDER_PACKAGE])
-def test_webview_ignores_chrome_apk_and_selects_tester(tmp_path, package):
+@pytest.mark.parametrize("package", [bot.WEBVIEW_TESTER_PACKAGE, bot.WEBVIEW_PROVIDER_PACKAGE, "mark.via.gp"])
+def test_browser_selection_retains_supplied_apk(tmp_path, package):
+    apk = tmp_path / "browser.apk"
+    apk.touch()
     with (
         patch.object(bot.tempfile, "gettempdir", return_value=str(tmp_path)),
         patch.object(bot, "command", return_value=""),
@@ -1061,13 +1063,14 @@ def test_webview_ignores_chrome_apk_and_selects_tester(tmp_path, package):
     ):
         assert bot.main([
             "--url", "https://example.com", "--browser-package", package,
-            "--apk", str(tmp_path / "missing-chrome"), "--limit", "1",
+            "--apk", str(apk), "--limit", "1",
         ]) == 0
 
     args = execute.call_args.args[0]
-    assert args.apk is None
+    assert args.apk == apk
     assert args.tap_offset_y == 1200
-    assert args.browser_package == bot.WEBVIEW_TESTER_PACKAGE
+    expected = bot.WEBVIEW_TESTER_PACKAGE if package == bot.WEBVIEW_PROVIDER_PACKAGE else package
+    assert args.browser_package == expected
 
 
 def test_webview_launch_retries_with_resolved_launcher_activity():
@@ -1094,4 +1097,28 @@ def test_webview_launch_retries_with_resolved_launcher_activity():
         call("cmd", "package", "resolve-activity", "--brief",
              "-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", package),
         call("am", "start", "-W", "-n", resolved, "-a", "android.intent.action.VIEW", "-d", url),
+    ]
+
+
+def test_via_apk_is_installed_before_package_scoped_view_launch(tmp_path):
+    url = "https://example.com"
+    args = SimpleNamespace(
+        browser_package="mark.via.gp", apk=tmp_path / "via.apk", install_timeout=300, url=url,
+    )
+    timeline = Mock()
+    device = SimpleNamespace(shell=Mock(side_effect=["", ":0"]))
+    with (
+        patch.object(bot, "install_apk", timeline.install_apk),
+        patch.object(bot, "launch_browser", timeline.launch_browser),
+    ):
+        timeline.install_apk.return_value = "mark.via.gp"
+        timeline.launch_browser.side_effect = RuntimeError("stop after launch")
+        with pytest.raises(RuntimeError, match="stop after launch"):
+            bot.browse(device, args, None, bot.random.Random(1))
+
+    assert timeline.mock_calls == [
+        call.install_apk(device, args.apk, 300),
+        call.launch_browser(
+            device, "mark.via.gp", ("-a", "android.intent.action.VIEW", "-p", "mark.via.gp"), url,
+        ),
     ]

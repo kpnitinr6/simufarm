@@ -519,8 +519,8 @@ def launch_browser(device, package, component, url):
     error = start(component)
     if error is None:
         return
-    if package == WEBVIEW_TESTER_PACKAGE:
-        LOG.warning("  WebView activity launch failed: %s", redact_diagnostic(error))
+    if package != CHROME_PACKAGE:
+        LOG.warning("  %s activity launch failed: %s", package, redact_diagnostic(error))
         resolved = device.shell(
             "cmd", "package", "resolve-activity", "--brief",
             "-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", package,
@@ -546,9 +546,11 @@ def browse(device, args, proxy, rng):
     if device.shell("settings", "get", "global", "http_proxy") != (proxy or ":0"):
         raise RuntimeError("Android proxy setting did not persist")
     package = getattr(args, "browser_package", CHROME_PACKAGE)
+    if args.apk:
+        installed_package = install_apk(device, args.apk, args.install_timeout)
+        if installed_package != package:
+            raise SetupError(f"The supplied APK installed {installed_package}; selected browser is {package}")
     if package == CHROME_PACKAGE:
-        if args.apk and install_apk(device, args.apk, args.install_timeout) != package:
-            raise SetupError(f"The supplied APK must install the selected browser package {package}")
         configure_chrome(device)
         component = ("-n", f"{package}/com.google.android.apps.chrome.Main")
     elif package == WEBVIEW_TESTER_PACKAGE:
@@ -707,7 +709,7 @@ def main(argv=None):
         help="Y coordinate for the search result tap (default: 1200)",
     )
     parser.add_argument(
-        "--apk", type=Path, help="Chrome APK file or split folder (ignored for other browsers)"
+        "--apk", type=Path, help="APK file or split folder for the selected browser"
     )
     parser.add_argument(
         "--install-timeout",
@@ -789,9 +791,6 @@ def main(argv=None):
         if args.browser_package == WEBVIEW_PROVIDER_PACKAGE:
             args.browser_package = WEBVIEW_TESTER_PACKAGE
             LOG.info("Using %s to browse with Android WebView", args.browser_package)
-        if args.apk and args.browser_package != CHROME_PACKAGE:
-            LOG.info("Ignoring --apk for preinstalled browser %s", args.browser_package)
-            args.apk = None
         if args.apk:
             args.apk = args.apk.resolve(strict=True)
             apk_files(args.apk)
