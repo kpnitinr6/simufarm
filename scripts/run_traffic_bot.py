@@ -507,7 +507,7 @@ def launch_browser(device, package, component, url):
 
     def start(intent):
         try:
-            result = device.shell("am", "start", "-W", *intent, "-d", url)
+            result = device.shell("am", "start", "-W", *intent)
         except RuntimeError as exc:
             return str(exc)
         if "Error:" in result or "Exception" in result:
@@ -516,7 +516,22 @@ def launch_browser(device, package, component, url):
             return None
         return result or "(empty Android launch response)"
 
-    error = start(component)
+    if package == "mark.via.gp":
+        error = start(("-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", "-p", package))
+        if error is not None:
+            raise SetupError(f"Could not open Via for first-run setup: {redact_diagnostic(error)}")
+        time.sleep(3)
+        try:
+            screen = read_search_screen(device)
+            agree = browser_control_point(screen, lambda text: text.strip().casefold() == "agree", package)
+        except (ET.ParseError, RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
+            raise SearchResultMissing("Could not inspect Via's first-run screen") from exc
+        if agree is not None:
+            LOG.info("  accepting Via first-run terms")
+            device.shell("input", "tap", *agree)
+        time.sleep(2)
+
+    error = start((*component, "-d", url))
     if error is None:
         return
     if package != CHROME_PACKAGE:
@@ -531,7 +546,7 @@ def launch_browser(device, package, component, url):
             None,
         )
         if activity and activity not in component:
-            error = start(("-n", activity, "-a", "android.intent.action.VIEW"))
+            error = start(("-n", activity, "-a", "android.intent.action.VIEW", "-d", url))
             if error is None:
                 return
         else:
