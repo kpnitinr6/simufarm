@@ -1119,7 +1119,7 @@ def test_via_apk_is_installed_before_package_scoped_view_launch(tmp_path):
     assert timeline.mock_calls == [
         call.install_apk(device, args.apk, 300),
         call.launch_browser(
-            device, "mark.via.gp", ("-a", "android.intent.action.VIEW", "-p", "mark.via.gp"), url,
+            device, "mark.via.gp", ("-a", "android.intent.action.VIEW", "-p", "mark.via.gp"), url, apk=args.apk,
         ),
     ]
 
@@ -1132,7 +1132,8 @@ def test_via_first_run_precedes_url_intent(show_terms):
     button = f'<node package="{package}" text="Agree" clickable="true" bounds="[10,20][30,40]" />'
     screen = f"<hierarchy>{button if show_terms else ''}</hierarchy>"
     timeline = Mock()
-    timeline.shell.side_effect = ["1", "Events injected: 1", "", screen] + [""] * show_terms + ["Status: ok"]
+    activity = f"{package}/.MainActivity"
+    timeline.shell.side_effect = ["1", activity, "Status: ok", "", screen] + [""] * show_terms + ["Status: ok"]
     device = SimpleNamespace(shell=timeline.shell)
     with patch.object(bot.time, "sleep", timeline.sleep):
         bot.launch_browser(device, package, component, url)
@@ -1140,7 +1141,8 @@ def test_via_first_run_precedes_url_intent(show_terms):
     assert timeline.mock_calls == [
         call.shell("getprop", "sys.boot_completed", timeout=5),
         call.sleep(5),
-        call.shell("monkey", "-p", package, "-c", "android.intent.category.LAUNCHER", "1"),
+        call.shell("cmd", "package", "resolve-activity", "--brief", package),
+        call.shell("am", "start", "-W", "-n", activity),
         call.sleep(3),
         call.shell("uiautomator", "dump", bot.SEARCH_DUMP_PATH),
         call.shell("cat", bot.SEARCH_DUMP_PATH),
@@ -1148,3 +1150,14 @@ def test_via_first_run_precedes_url_intent(show_terms):
         call.sleep(2),
         call.shell("am", "start", "-W", *component, "-d", url),
     ]
+
+
+def test_via_activity_resolution_falls_back_to_apk_badging(tmp_path):
+    apk = tmp_path / "via.apk"
+    apk.touch()
+    device = SimpleNamespace(shell=Mock(return_value="No activity found"))
+    with patch.object(bot, "command", return_value="launchable-activity: name='com.via.browser.MainActivity'") as command:
+        assert bot.resolve_via_activity(device, "mark.via.gp", apk) == (
+            "mark.via.gp/com.via.browser.MainActivity"
+        )
+    command.assert_called_once_with("aapt", "dump", "badging", str(apk))

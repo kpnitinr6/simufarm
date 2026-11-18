@@ -502,7 +502,35 @@ def wait_for_browser_boot(device):
     raise TimeoutError("Android did not report boot completion within 180 seconds before browser launch")
 
 
-def launch_browser(device, package, component, url):
+def resolved_component(output, package):
+    return next(
+        (line for line in reversed(output.splitlines())
+         if re.fullmatch(rf"{re.escape(package)}/[\w.$]+", line)),
+        None,
+    )
+
+
+def resolve_via_activity(device, package, apk):
+    try:
+        resolution = device.shell("cmd", "package", "resolve-activity", "--brief", package)
+    except (RuntimeError, subprocess.TimeoutExpired) as exc:
+        resolution = str(exc)
+    activity = resolved_component(resolution, package)
+    if activity:
+        return activity
+    if apk:
+        try:
+            badging = command("aapt", "dump", "badging", str(apk_files(apk)[0]))
+        except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
+            raise SetupError(f"Could not read Via's launchable activity from its APK: {exc}") from exc
+        match = re.search(r"^launchable-activity: name='([.\w$]+)'", badging, re.MULTILINE)
+        if match:
+            return f"{package}/{match.group(1)}"
+    diagnostic = redact_diagnostic(resolution) or "(empty response)"
+    raise SetupError(f"Could not resolve Via's launcher activity: {diagnostic}; no launchable activity found in the APK")
+
+
+def launch_browser(device, package, component, url, apk=None):
     wait_for_browser_boot(device)
 
     def start(intent):
@@ -517,12 +545,10 @@ def launch_browser(device, package, component, url):
         return result or "(empty Android launch response)"
 
     if package == "mark.via.gp":
-        try:
-            result = device.shell("monkey", "-p", package, "-c", "android.intent.category.LAUNCHER", "1")
-        except (RuntimeError, subprocess.TimeoutExpired) as exc:
-            raise SetupError(f"Could not open Via with monkey: {redact_diagnostic(str(exc))}") from exc
-        if not re.search(r"^Events injected:\s*1\s*$", result, re.MULTILINE):
-            raise SetupError(f"Could not open Via with monkey: {redact_diagnostic(result) or '(empty response)'}")
+        activity = resolve_via_activity(device, package, apk)
+        error = start(("-n", activity))
+        if error is not None:
+            raise SetupError(f"Could not open Via activity {activity}: {redact_diagnostic(error)}")
         time.sleep(3)
         try:
             screen = read_search_screen(device)
@@ -543,11 +569,7 @@ def launch_browser(device, package, component, url):
             "cmd", "package", "resolve-activity", "--brief",
             "-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", package,
         )
-        activity = next(
-            (line for line in reversed(resolved.splitlines())
-             if re.fullmatch(rf"{re.escape(package)}/[\w.$]+", line)),
-            None,
-        )
+        activity = resolved_component(resolved, package)
         if activity and activity not in component:
             error = start(("-n", activity, "-a", "android.intent.action.VIEW", "-d", url))
             if error is None:
@@ -580,7 +602,7 @@ def browse(device, args, proxy, rng):
     if keyword:
         launch_url = "https://www.google.com/search?" + urlencode({"q": keyword})
     LOG.info("  opening %s in %s", "Google search" if keyword else "target URL", package)
-    launch_browser(device, package, component, launch_url)
+    launch_browser(device, package, component, launch_url, apk=args.apk)
     if keyword:
         dismiss_search_popup(device, package)
         activities = device.shell("dumpsys", "activity", "activities")
