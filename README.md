@@ -107,7 +107,7 @@ The default uses Redroid's privileged startup with no host binderfs bind, matchi
 
 Use `--search-keyword` to test navigation from Google Search. After checking for
 popups, the runner swipes up once, waits two seconds, and taps screen coordinates
-`(540, 1200)`. It waits at least 12 seconds after opening Google and another
+`(540, 1200)`. It waits at least 25 seconds after opening Google and another
 10 seconds after the tap before checking the address bar. Adjust the vertical
 position with `--tap-offset-y`.
 

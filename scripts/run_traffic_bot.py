@@ -472,7 +472,7 @@ def log_search_screen_text(hierarchy):
 
 def dismiss_search_popup(device, package=CHROME_PACKAGE):
     for attempt in range(3):
-        time.sleep(12 if attempt == 0 else 3)
+        time.sleep(25 if attempt == 0 else 3)
         try:
             screen = read_search_screen(device)
             for label in ("no thanks", "reject all", "accept all", "continue"):

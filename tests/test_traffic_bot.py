@@ -993,7 +993,7 @@ def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset
                     "-a", "android.intent.action.VIEW",
                     "-d", "https://www.google.com/search?q=example+query") in adb.call_args_list
         assert all(entry.args[:2] != ("am", "force-stop") for entry in adb.call_args_list)
-    assert sleep.call_args_list[:5] == [call(5), call(12), call(2), call(2), call(10)]
+    assert sleep.call_args_list[:5] == [call(5), call(25), call(2), call(2), call(10)]
 
 
 def test_search_popup_check_retries_and_logs_dump_error(caplog):
@@ -1013,7 +1013,7 @@ def test_search_popup_check_retries_and_logs_dump_error(caplog):
         bot.dismiss_search_popup(device)
 
     assert read_screen.call_count == 3
-    assert sleep.call_args_list == [call(12), call(3), call(3), call(2)]
+    assert sleep.call_args_list == [call(25), call(3), call(3), call(2)]
     device.shell.assert_called_once_with("input", "tap", 50, 50)
     assert "Popup check failed: UI dump failed" in caplog.text
 
