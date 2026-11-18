@@ -1132,7 +1132,7 @@ def test_via_first_run_precedes_url_intent(show_terms):
     button = f'<node package="{package}" text="Agree" clickable="true" bounds="[10,20][30,40]" />'
     screen = f"<hierarchy>{button if show_terms else ''}</hierarchy>"
     timeline = Mock()
-    timeline.shell.side_effect = ["1", "Status: ok", "", screen] + [""] * show_terms + ["Status: ok"]
+    timeline.shell.side_effect = ["1", "Events injected: 1", "", screen] + [""] * show_terms + ["Status: ok"]
     device = SimpleNamespace(shell=timeline.shell)
     with patch.object(bot.time, "sleep", timeline.sleep):
         bot.launch_browser(device, package, component, url)
@@ -1140,8 +1140,7 @@ def test_via_first_run_precedes_url_intent(show_terms):
     assert timeline.mock_calls == [
         call.shell("getprop", "sys.boot_completed", timeout=5),
         call.sleep(5),
-        call.shell("am", "start", "-W", "-a", "android.intent.action.MAIN",
-                   "-c", "android.intent.category.LAUNCHER", "-p", package),
+        call.shell("monkey", "-p", package, "-c", "android.intent.category.LAUNCHER", "1"),
         call.sleep(3),
         call.shell("uiautomator", "dump", bot.SEARCH_DUMP_PATH),
         call.shell("cat", bot.SEARCH_DUMP_PATH),

@@ -517,9 +517,12 @@ def launch_browser(device, package, component, url):
         return result or "(empty Android launch response)"
 
     if package == "mark.via.gp":
-        error = start(("-a", "android.intent.action.MAIN", "-c", "android.intent.category.LAUNCHER", "-p", package))
-        if error is not None:
-            raise SetupError(f"Could not open Via for first-run setup: {redact_diagnostic(error)}")
+        try:
+            result = device.shell("monkey", "-p", package, "-c", "android.intent.category.LAUNCHER", "1")
+        except (RuntimeError, subprocess.TimeoutExpired) as exc:
+            raise SetupError(f"Could not open Via with monkey: {redact_diagnostic(str(exc))}") from exc
+        if not re.search(r"^Events injected:\s*1\s*$", result, re.MULTILINE):
+            raise SetupError(f"Could not open Via with monkey: {redact_diagnostic(result) or '(empty response)'}")
         time.sleep(3)
         try:
             screen = read_search_screen(device)
