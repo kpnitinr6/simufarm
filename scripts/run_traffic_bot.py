@@ -35,6 +35,10 @@ CHROME_FLAGS = (
     "--disable-notifications --disable-features=NotificationPermission"
 )
 CHROME_FLAGS_PATH = "/data/local/tmp/chrome-command-line"
+SEARCH_URLS = {
+    "google": "https://www.google.com/search",
+    "bing": "https://www.bing.com/search",
+}
 SEARCH_DUMP_PATH = "/sdcard/window_dump.xml"
 
 
@@ -465,9 +469,10 @@ def log_search_screen_text(hierarchy):
     snippet = " | ".join(all_text[:10])
     LOG.info("Screen text snippet: %s", redact_diagnostic(snippet) or "(no text)")
     screen_text = " ".join(" ".join(all_text).casefold().split())
-    for keyword in ("captcha", "unusual traffic"):
-        if re.search(rf"\b{keyword}\b", screen_text):
-            LOG.warning("WARNING: Blocked by Google! Found: %s", keyword)
+    if re.search(r"\bunusual traffic\b", screen_text):
+        LOG.warning("WARNING: Google CAPTCHA Detected. Proxy is required.")
+    elif re.search(r"\b(?:re)?captcha\b", screen_text):
+        LOG.warning("WARNING: Blocked by Google! Found: captcha")
 
 
 def dismiss_search_popup(device, package=CHROME_PACKAGE):
@@ -598,16 +603,17 @@ def browse(device, args, proxy, rng):
     else:
         component = ("-a", "android.intent.action.VIEW", "-p", package)
     keyword = getattr(args, "search_keyword", None)
+    engine = getattr(args, "search_engine", "google")
     launch_url = args.url
     if keyword:
-        launch_url = "https://www.google.com/search?" + urlencode({"q": keyword})
-    LOG.info("  opening %s in %s", "Google search" if keyword else "target URL", package)
+        launch_url = SEARCH_URLS[engine] + "?" + urlencode({"q": keyword})
+    LOG.info("  opening %s in %s", f"{engine.title()} search" if keyword else "target URL", package)
     launch_browser(device, package, component, launch_url, apk=args.apk)
     if keyword:
         dismiss_search_popup(device, package)
         activities = device.shell("dumpsys", "activity", "activities")
         if not re.search(rf"(?:topResumedActivity|mResumedActivity)[:=].* {re.escape(package)}/", activities):
-            raise SearchResultMissing(f"{package} is not in the foreground after opening Google")
+            raise SearchResultMissing(f"{package} is not in the foreground after opening {engine.title()}")
         LOG.info("  scrolling down the search results")
         device.shell("input", "swipe", 540, 1800, 540, 600, 500)
         time.sleep(2)
@@ -743,7 +749,9 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", required=True)
     parser.add_argument("--browser-package", default=CHROME_PACKAGE, help="Android browser package (default: com.android.chrome)")
-    parser.add_argument("--search-keyword", help="Open Google results and select the focused item")
+    parser.add_argument("--search-keyword", help="Open search results and tap the configured coordinates")
+    parser.add_argument("--search-engine", choices=SEARCH_URLS, default="google",
+                        help="Search engine used with --search-keyword (default: google)")
     parser.add_argument(
         "--tap-offset-y", type=int, default=1200,
         help="Y coordinate for the search result tap (default: 1200)",

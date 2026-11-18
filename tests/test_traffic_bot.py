@@ -940,9 +940,10 @@ def test_missing_search_result_saves_diagnostics_before_reraising(tmp_path, capt
 @pytest.mark.parametrize(("offset", "package"), [(1200, bot.CHROME_PACKAGE), (920, bot.WEBVIEW_TESTER_PACKAGE)])
 def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset, package):
     device = bot.Device("image", {"id": "test", "width_px": 1080, "height_px": 2400}, 5575)
+    engine = "bing" if package == bot.WEBVIEW_TESTER_PACKAGE else "google"
     args = SimpleNamespace(
         apk=None, url="https://www.nowshout.com", results=tmp_path, search_keyword="example query",
-        tap_offset_y=offset, browser_package=package,
+        tap_offset_y=offset, browser_package=package, search_engine=engine,
     )
     prompt = f"""
     <hierarchy>
@@ -988,10 +989,12 @@ def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset
         call("input", "swipe", 540, 1800, 540, 600, 500),
         call("input", "tap", 540, offset),
     ]
+    expected_url = f"https://www.{engine}.com/search?q=example+query"
+    assert next(entry.args[-1] for entry in adb.call_args_list if entry.args[:2] == ("am", "start")) == expected_url
     if package == bot.WEBVIEW_TESTER_PACKAGE:
         assert call("am", "start", "-W", "-n", f"{package}/.WebViewBrowserActivity",
                     "-a", "android.intent.action.VIEW",
-                    "-d", "https://www.google.com/search?q=example+query") in adb.call_args_list
+                    "-d", expected_url) in adb.call_args_list
         assert all(entry.args[:2] != ("am", "force-stop") for entry in adb.call_args_list)
     assert sleep.call_args_list[:5] == [call(5), call(25), call(2), call(2), call(10)]
 
@@ -1026,7 +1029,7 @@ def test_screen_text_logs_first_ten_labels_and_scans_full_dump(caplog):
 
     snippet = next(message for message in caplog.messages if message.startswith("Screen text snippet:"))
     assert snippet == "Screen text snippet: " + " | ".join(f"Result {index}" for index in range(10))
-    assert "WARNING: Blocked by Google! Found: unusual traffic" in caplog.messages
+    assert "WARNING: Google CAPTCHA Detected. Proxy is required." in caplog.messages
 
 
 @pytest.mark.parametrize(("address", "passes"), [

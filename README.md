@@ -105,9 +105,10 @@ The runner prints the exact generated `docker run -d --privileged ...` command a
 
 The default uses Redroid's privileged startup with no host binderfs bind, matching the working manual command. If your host explicitly requires sharing its existing binderfs, add `--binderfs /dev/binderfs`; the source must already exist and is mounted via `--mount type=bind` so Docker cannot silently create a missing source directory. This flag does not load modules or create a binderfs mount. The separate reviewed identity runtime keeps its digest pin.
 
-Use `--search-keyword` to test navigation from Google Search. After checking for
+Use `--search-keyword` to test navigation from search results. Google is the
+default. Add `--search-engine bing` to use Bing. After checking for
 popups, the runner swipes up once, waits two seconds, and taps screen coordinates
-`(540, 1200)`. It waits at least 25 seconds after opening Google and another
+`(540, 1200)`. It waits at least 25 seconds after opening the search page and another
 10 seconds after the tap before checking the address bar. Adjust the vertical
 position with `--tap-offset-y`.
 
