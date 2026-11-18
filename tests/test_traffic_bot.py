@@ -933,7 +933,7 @@ def test_missing_search_result_saves_diagnostics_before_reraising(tmp_path, capt
     assert (tmp_path / "test_failed.xml").read_text() == xml
 
 
-@pytest.mark.parametrize(("offset", "package"), [(800, bot.CHROME_PACKAGE), (920, bot.WEBVIEW_TESTER_PACKAGE)])
+@pytest.mark.parametrize(("offset", "package"), [(1200, bot.CHROME_PACKAGE), (920, bot.WEBVIEW_TESTER_PACKAGE)])
 def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset, package):
     device = bot.Device("image", {"id": "test", "width_px": 1080, "height_px": 2400}, 5575)
     args = SimpleNamespace(
@@ -980,7 +980,7 @@ def test_search_dismisses_notification_prompt_before_result_tap(tmp_path, offset
                     "-a", "android.intent.action.VIEW",
                     "-d", "https://www.google.com/search?q=example+query") in adb.call_args_list
         assert all(entry.args[:2] != ("am", "force-stop") for entry in adb.call_args_list)
-    assert sleep.call_args_list[:3] == [call(6), call(2), call(10)]
+    assert sleep.call_args_list[:3] == [call(12), call(2), call(10)]
 
 
 def test_search_popup_check_retries_and_logs_dump_error(caplog):
@@ -1000,7 +1000,7 @@ def test_search_popup_check_retries_and_logs_dump_error(caplog):
         bot.dismiss_search_popup(device)
 
     assert read_screen.call_count == 3
-    assert sleep.call_args_list == [call(6), call(3), call(3), call(2)]
+    assert sleep.call_args_list == [call(12), call(3), call(3), call(2)]
     device.shell.assert_called_once_with("input", "tap", 50, 50)
     assert "Popup check failed: UI dump failed" in caplog.text
 
@@ -1053,6 +1053,7 @@ def test_webview_ignores_chrome_apk_and_selects_tester(tmp_path, package):
 
     args = execute.call_args.args[0]
     assert args.apk is None
+    assert args.tap_offset_y == 1200
     assert args.browser_package == bot.WEBVIEW_TESTER_PACKAGE
 
 

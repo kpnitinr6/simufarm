@@ -472,7 +472,7 @@ def log_search_screen_text(hierarchy):
 
 def dismiss_search_popup(device, package=CHROME_PACKAGE):
     for attempt in range(3):
-        time.sleep(6 if attempt == 0 else 3)
+        time.sleep(12 if attempt == 0 else 3)
         try:
             screen = read_search_screen(device)
             for label in ("no thanks", "reject all", "accept all", "continue"):
@@ -545,13 +545,12 @@ def browse(device, args, proxy, rng):
     LOG.info("  opening %s in %s", "Google search" if keyword else "target URL", package)
     launch_browser(device, package, component, launch_url)
     if keyword:
-        if not dismiss_search_popup(device, package):
-            time.sleep(5)
+        dismiss_search_popup(device, package)
         activities = device.shell("dumpsys", "activity", "activities")
         if not re.search(rf"(?:topResumedActivity|mResumedActivity)[:=].* {re.escape(package)}/", activities):
             raise SearchResultMissing(f"{package} is not in the foreground after opening Google")
-        LOG.info("  tapping search screen at (540, 800)")
-        device.shell("input", "tap", "540", "800")
+        LOG.info("  tapping search screen at (540, %d)", args.tap_offset_y)
+        device.shell("input", "tap", 540, args.tap_offset_y)
     time.sleep(10 if keyword else 5)
     verify_browser_destination(device, args.url, package)
     LOG.info("  scrolling and waiting")
@@ -684,6 +683,10 @@ def main(argv=None):
     parser.add_argument("--browser-package", default=CHROME_PACKAGE, help="Android browser package (default: com.android.chrome)")
     parser.add_argument("--search-keyword", help="Open Google results and select the focused item")
     parser.add_argument(
+        "--tap-offset-y", type=int, default=1200,
+        help="Y coordinate for the search result tap (default: 1200)",
+    )
+    parser.add_argument(
         "--apk", type=Path, help="Chrome APK file or split folder (ignored for other browsers)"
     )
     parser.add_argument(
@@ -739,6 +742,8 @@ def main(argv=None):
     try:
         if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*)+", args.browser_package):
             raise ValueError("--browser-package must be an Android package name")
+        if args.tap_offset_y < 0:
+            raise ValueError("--tap-offset-y must be nonnegative")
         if args.search_keyword is not None:
             args.search_keyword = args.search_keyword.strip()
             if not args.search_keyword:
