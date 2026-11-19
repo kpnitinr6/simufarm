@@ -25,7 +25,7 @@ from urllib.parse import unquote, urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOG = logging.getLogger("traffic")
-VERSION = "webview-tap-search-result-v22"
+VERSION = "hidden-site-name-v23"
 MIN_AVAILABLE_MIB = 2048 + 1200
 CHROME_PACKAGE = "com.android.chrome"
 WEBVIEW_TESTER_PACKAGE = "org.chromium.webview_shell"
@@ -481,7 +481,10 @@ def verify_browser_destination(device, target_url, package=CHROME_PACKAGE, searc
 
         site_name = expected.split(".")[-2] if "." in expected else expected
         screen_text = " ".join(labels).casefold()
-        if re.search(rf"(?<![\w.-]){re.escape(site_name)}(?![\w.-])", screen_text):
+        site_text = " ".join(
+            label for label in labels if not re.match(r"https?://", label, re.I)
+        ).casefold()
+        if site_name.casefold() in site_text:
             LOG.info("  matched the target site name with the address bar hidden")
             return
 

@@ -1193,3 +1193,16 @@ def test_hidden_address_bar_accepts_search_keyword_word():
             device, "https://en.wikipedia.org/wiki/Android", "mark.via.gp",
             search_keyword="Android Wikipedia",
         )
+
+
+@pytest.mark.parametrize("label", [
+    "How NowShout Reports Court Cases - NOWSHOUT",
+    "ReadNowShout",
+])
+def test_nowshout_hidden_address_bar_accepts_site_name_substring(label):
+    device = SimpleNamespace(
+        shell=Mock(return_value="mCurrentFocus=Window{abc u0 mark.via.gp/.Main}"),
+    )
+    screen = f'<hierarchy><node text="{label}" /><node text="Skip to content" /></hierarchy>'
+    with patch.object(bot, "read_search_screen", return_value=screen):
+        bot.verify_browser_destination(device, "https://www.nowshout.com", "mark.via.gp")
